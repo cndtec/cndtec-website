@@ -92,7 +92,7 @@
      .side-img { background-image: url('assets/images/xxx.jpg'); ... } */
 
   /* === 사업분야 프리뷰 === */
-  .areas-preview { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .areas-preview { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
   .area-prev-card {
     padding: 32px; background: var(--white); border: 1px solid var(--line);
     border-radius: var(--radius); transition: all 0.3s; box-shadow: var(--shadow-sm);
@@ -113,7 +113,8 @@
   }
 
   @media (max-width: 920px) {
-    .areas-preview, .hero-visual { grid-template-columns: 1fr; }
+    .areas-preview { grid-template-columns: repeat(2,1fr); }
+    .hero-visual { grid-template-columns: 1fr; }
     .hero-visual .main-img { height: 240px; }
   }
 </style>
@@ -425,39 +426,51 @@
   <div class="container">
     <div class="sec-head">
       <div class="sec-tag"><span class="bar"></span>BUSINESS AREAS</div>
-      <h2 data-ko="세 가지 핵심 사업 분야" data-en="Three Core Business Areas">세 가지 핵심 사업 분야</h2>
-      <p data-ko="데이터 계측, 센서 공급, 특수 목적 측정 — 표준 제품 공급부터 맞춤 설계까지." data-en="Data acquisition, sensor supply, and special-purpose measurement — off-the-shelf and bespoke.">
-        데이터 계측, 센서 공급, 특수 목적 측정 — 표준 제품 공급부터 맞춤 설계까지.
+      <h2 data-ko="8가지 핵심 사업 분야" data-en="8 Core Business Areas">8가지 핵심 사업 분야</h2>
+      <p data-ko="DAQ 시스템 구축부터 커스텀 센서 제작, 잔류응력 측정, 현장 용역까지 — 계측의 전 과정을 한 곳에서." data-en="DAQ integration to custom sensor fabrication, residual stress measurement, on-site services — the full measurement chain under one roof.">
+        DAQ 시스템 구축부터 커스텀 센서 제작, 잔류응력 측정, 현장 용역까지 — 계측의 전 과정을 한 곳에서.
       </p>
     </div>
     <div class="areas-preview">
-      <a href="products.html#daq" class="area-prev-card fade-in">
+      <a href="products.html" class="area-prev-card fade-in">
         <div class="icon-wrap">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l2 3 2-2 2 4 4-5"/></svg>
         </div>
-        <h3 data-ko="데이터 계측" data-en="Data Acquisition">데이터 계측</h3>
-        <div class="sub">DATA ACQUISITION · DAQ</div>
-        <p data-ko="DAQ 시스템, 실시간 모니터링·분석 SW, 상태 모니터링 — USB·산업용·고속 타입." data-en="DAQ systems, real-time monitoring &amp; analysis, condition monitoring — USB, industrial &amp; high-speed.">DAQ 시스템, 실시간 모니터링·분석 SW, 상태 모니터링 — USB·산업용·고속 타입.</p>
+        <h3 data-ko="DAQ · 데이터로거" data-en="DAQ &amp; Datalogger">DAQ · 데이터로거</h3>
+        <div class="sub">DATA ACQUISITION</div>
+        <p data-ko="HBM, Gantner, Data Translation, CNDTECH 장비 공급·구축·소프트웨어 설정." data-en="HBM, Gantner, Data Translation, CNDTECH — supply, integration, software setup.">HBM, Gantner, Data Translation, CNDTECH 장비 공급·구축·소프트웨어 설정.</p>
         <span class="more-link" data-ko="자세히 보기 →" data-en="Learn more →">자세히 보기 →</span>
       </a>
-      <a href="products.html#sensors" class="area-prev-card fade-in">
+      <a href="products.html" class="area-prev-card fade-in">
         <div class="icon-wrap">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
         </div>
-        <h3 data-ko="센서·트랜스듀서" data-en="Sensors / Transducers">센서·트랜스듀서</h3>
-        <div class="sub">SENSORS · TRANSDUCERS</div>
-        <p data-ko="스트레인게이지, 로드셀, 포스·토크·압력·변위·진동·소음 센서 및 주문 제작형 트랜스듀서." data-en="Strain gauges, load cells, force/torque/pressure/displacement/vibration sensors &amp; custom transducers.">스트레인게이지, 로드셀, 포스·토크·압력·변위·진동·소음 센서 및 주문 제작형 트랜스듀서.</p>
+        <h3 data-ko="잔류응력 측정" data-en="Residual Stress">잔류응력 측정</h3>
+        <div class="sub">ASTM E837 · HOLE DRILLING</div>
+        <p data-ko="잔류응력 측정 시스템 공급 및 현장 측정 서비스. 용접부·단조품·구조물 적용." data-en="Residual stress system supply &amp; on-site measurement. Welds, forgings, structures.">잔류응력 측정 시스템 공급 및 현장 측정 서비스. 용접부·단조품·구조물 적용.</p>
         <span class="more-link" data-ko="자세히 보기 →" data-en="Learn more →">자세히 보기 →</span>
       </a>
-      <a href="products.html#special" class="area-prev-card fade-in">
+      <a href="products.html" class="area-prev-card fade-in">
         <div class="icon-wrap">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 7v6c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V7l-8-5z"/><path d="M9 12l2 2 4-4"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
-        <h3 data-ko="특수 목적 측정" data-en="Special-Purpose Measurement">특수 목적 측정</h3>
-        <div class="sub">SPECIAL APPLICATIONS</div>
-        <p data-ko="잔류응력(ASTM E837), 볼트 축력, 프레스 로드, 구조물 안전진단, 텔레메트리 시스템." data-en="Residual stress (ASTM E837), bolt tension, press load, structural health monitoring, telemetry.">잔류응력(ASTM E837), 볼트 축력, 프레스 로드, 구조물 안전진단, 텔레메트리 시스템.</p>
+        <h3 data-ko="커스텀 센서 제작" data-en="Custom Sensor">커스텀 센서 제작</h3>
+        <div class="sub">CUSTOM FABRICATION</div>
+        <p data-ko="풀브릿지 SG 기반 축력 측정 볼트, 토크 측정 시스템 등 고객 맞춤 센서 설계·제작." data-en="Full-bridge SG bolt tension sensors, torque systems — bespoke design to spec.">풀브릿지 SG 기반 축력 측정 볼트, 토크 측정 시스템 등 고객 맞춤 센서 설계·제작.</p>
         <span class="more-link" data-ko="자세히 보기 →" data-en="Learn more →">자세히 보기 →</span>
       </a>
+      <a href="products.html" class="area-prev-card fade-in">
+        <div class="icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 data-ko="현장 계측 용역" data-en="On-Site Service">현장 계측 용역</h3>
+        <div class="sub">ON-SITE MEASUREMENT</div>
+        <p data-ko="시험 설계, 센서 설치, 데이터 수집·분석까지 원스톱 현장 서비스." data-en="One-stop on-site: test design → sensor install → data acquisition → analysis.">시험 설계, 센서 설치, 데이터 수집·분석까지 원스톱 현장 서비스.</p>
+        <span class="more-link" data-ko="자세히 보기 →" data-en="Learn more →">자세히 보기 →</span>
+      </a>
+    </div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="products.html" class="btn btn-dark" data-ko="전체 사업분야 보기 →" data-en="View All Business Areas →">전체 사업분야 보기 →</a>
     </div>
   </div>
 </section>
