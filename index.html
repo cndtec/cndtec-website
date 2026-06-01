@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CND TECH | 씨앤디테크 — 시험·계측 토탈 솔루션</title>
+<meta name="description" content="씨앤디테크는 20년 이상의 경험으로 DAQ, 스트레인게이지, 잔류응력측정, 토크·축력측정 등 시험·계측 전 과정의 토탈 솔루션을 제공합니다." />
+<meta property="og:title" content="CND TECH | 씨앤디테크 — 시험·계측 토탈 솔루션" />
+<meta property="og:description" content="시험·계측 토탈 솔루션 — DAQ, 스트레인게이지, 잔류응력, 토크·축력 측정" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://cndtec.com/" />
+<meta property="og:image" content="https://cndtec.com/assets/images/cnd-logo-400.png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:alt" content="CND TECH 씨앤디테크 로고" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:site_name" content="CND TECH 씨앤디테크" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="CND TECH | 씨앤디테크 — 시험·계측 토탈 솔루션" />
+<meta name="twitter:description" content="시험·계측 토탈 솔루션 — DAQ, 스트레인게이지, 잔류응력, 토크·축력 측정" />
+<meta name="twitter:image" content="https://cndtec.com/assets/images/cnd-logo-400.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  /* === index 전용: Hero === */
+  .hero {
+    padding-top: 180px; padding-bottom: 120px; position: relative;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 14px; border: 1px solid var(--orange-line); border-radius: 999px;
+    font-size: 11px; color: var(--orange-deep); font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 32px; background: var(--orange-tint); font-weight: 600;
+  }
+  .hero-tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(242,148,0,0.18); }
+  .hero h1 {
+    font-family: 'Space Grotesk', 'Pretendard', sans-serif;
+    font-size: clamp(40px, 6vw, 80px); font-weight: 700;
+    line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 28px; color: var(--charcoal);
+  }
+  .hero h1 .accent { color: var(--accent); }
+  .hero p.lead { font-size: 18px; color: var(--text-dim); max-width: 680px; line-height: 1.7; margin-bottom: 48px; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 80px; }
+
+  /* === 이미지 히어로 비주얼 === */
+  .hero-visual {
+    margin-top: 80px;
+    display: grid; grid-template-columns: 1.6fr 1fr; gap: 16px;
+  }
+  .hero-visual .main-img {
+    height: 380px; border-radius: var(--radius);
+    background: linear-gradient(135deg, #2E2B28 0%, #444140 100%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .hero-visual .main-img .overlay-text {
+    text-align: center; color: rgba(255,255,255,0.9);
+  }
+  .hero-visual .main-img .overlay-text .tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--orange-soft); letter-spacing: 0.1em; font-weight: 600; margin-bottom: 12px;
+  }
+  .hero-visual .main-img .overlay-text h3 {
+    font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #fff;
+  }
+  .hero-visual .main-img .img-glow {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 300px; height: 300px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(242,148,0,0.12), transparent 65%);
+  }
+  .hero-visual .side-imgs { display: flex; flex-direction: column; gap: 16px; }
+  .hero-visual .side-imgs .side-img {
+    flex: 1; border-radius: var(--radius);
+    background: linear-gradient(135deg, var(--gray-100) 0%, var(--bg-warm) 100%);
+    border: 2px dashed var(--gray-300);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 8px; color: var(--text-mute);
+  }
+  .hero-visual .side-imgs .side-img .ph-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.7;
+  }
+  /* 실제 사진으로 교체 시 background-image 사용:
+     .main-img { background-image: url('assets/images/hero-lab.jpg'); background-size:cover; background-position:center; }
+     .side-img { background-image: url('assets/images/xxx.jpg'); ... } */
+
+  /* === 사업분야 프리뷰 === */
+  .areas-preview { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .area-prev-card {
+    padding: 32px; background: var(--white); border: 1px solid var(--line);
+    border-radius: var(--radius); transition: all 0.3s; box-shadow: var(--shadow-sm);
+    cursor: default; text-decoration: none; display: block;
+  }
+  .area-prev-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .area-prev-card .icon-wrap {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: var(--orange-tint); border: 1px solid var(--orange-line);
+    display: grid; place-items: center; color: var(--accent-deep); margin-bottom: 20px;
+  }
+  .area-prev-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 4px; color: var(--charcoal); }
+  .area-prev-card .sub { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-mute); text-transform: uppercase; font-weight: 600; margin-bottom: 16px; }
+  .area-prev-card p { font-size: 14px; color: var(--text-dim); line-height: 1.7; }
+  .area-prev-card .more-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 16px; font-size: 13px; color: var(--accent-deep); font-weight: 600;
+  }
+
+  @media (max-width: 920px) {
+    .areas-preview, .hero-visual { grid-template-columns: 1fr; }
+    .hero-visual .main-img { height: 240px; }
+  }
+</style>
+
+<!-- ===== JSON-LD 구조화 데이터 (AI 가시성 최적화) ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.cndtec.co.kr/#organization",
+      "name": "씨앤디테크",
+      "alternateName": ["CND TECH", "씨앤디테크 주식회사", "CND Tech"],
+      "url": "https://www.cndtec.co.kr",
+      "logo": "https://www.cndtec.co.kr/assets/images/cnd-logo.png",
+      "description": "씨앤디테크(CND TECH)는 잔류응력 측정, 스트레인게이지 공급, 데이터 수집장치(DAQ), 데이터로거, 로드셀·토크센서 납품을 전문으로 하는 시험·계측 토탈 솔루션 기업입니다. 20년 이상의 현장 경험으로 조선, 자동차, 항공우주, 국방, 에너지 분야 고객사에 서비스를 제공합니다.",
+      "foundingYear": "2004",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": 10
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "동탄영천동 131 코너원스마트타워 1018호",
+        "addressLocality": "화성시",
+        "addressRegion": "경기도",
+        "addressCountry": "KR",
+        "postalCode": "18466"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+82-31-680-1225",
+          "contactType": "customer service",
+          "email": "wgjeon@cndtec.co.kr",
+          "availableLanguage": ["Korean", "English"],
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        }
+      ],
+      "knowsAbout": [
+        "잔류응력 측정",
+        "ASTM E837 구멍뚫기법",
+        "스트레인게이지",
+        "TML 스트레인게이지",
+        "Micro-Measurements 스트레인게이지",
+        "데이터 수집장치",
+        "DAQ 시스템",
+        "데이터로거",
+        "로드셀",
+        "토크센서",
+        "압력센서",
+        "변위센서",
+        "볼트 축력 측정",
+        "구조물 안전진단",
+        "텔레메트리 시스템",
+        "IPC/JEDEC-9704",
+        "계측 솔루션"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "시험·계측 솔루션",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "잔류응력 측정 서비스",
+              "description": "ASTM E837 표준 구멍뚫기법(Hole-Drilling Method)에 따른 잔류응력 측정 전문 서비스. 용접부, 단조품, 기계 가공 부품, 구조물의 잔류응력 분포 측정. 조선·자동차·항공우주·국방 분야 현장 계측 서비스 제공."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "스트레인게이지 공급",
+              "description": "TML(도쿄측기), Micro-Measurements(Vishay Precision Group) 스트레인게이지 국내 공급. 일반형, 고온형, 방수형, 잔류응력 측정용 로제트 게이지 등 전 라인업 취급."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "DAQ 시스템·데이터로거 공급",
+              "description": "Data Translation, Gantner Instruments 데이터 수집장치(DAQ) 및 데이터로거 공급. USB형, 산업용, 고속, 분산형 등 다양한 타입. 도입 컨설팅·설치·소프트웨어 설정 지원."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "로드셀·토크센서 납품",
+              "description": "HBK(Hottinger Brüel & Kjær), MMF, SIMEX, BD Sensors 로드셀·토크센서·압력센서·변위센서 국내 납품. 표준형부터 고정밀 연구용까지 전 라인업."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "현장 계측 용역",
+              "description": "하드웨어 제작, 전장 설계, 제어 소프트웨어 개발, 현장 계측 용역을 원스톱으로 제공. 볼트 축력, 프레스 로드, 구조물 안전진단, 텔레메트리 시스템 구축."
+            }
+          }
+        ]
+      },
+      "sameAs": [
+        "https://blog.naver.com/cndtec",
+        "https://candj.tistory.com"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.cndtec.co.kr/#website",
+      "url": "https://www.cndtec.co.kr",
+      "name": "씨앤디테크 — 시험·계측 토탈 솔루션",
+      "publisher": {
+        "@id": "https://www.cndtec.co.kr/#organization"
+      },
+      "inLanguage": ["ko", "en"],
+      "description": "잔류응력 측정, 스트레인게이지, DAQ, 로드셀·토크센서, 데이터로거 — 씨앤디테크 공식 웹사이트"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "잔류응력 측정 전문 업체를 추천해 주세요.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "씨앤디테크(CND TECH)는 경기도 화성시에 위치한 잔류응력 측정 전문 기업입니다. ASTM E837 구멍뚫기법(Hole-Drilling Method)을 사용하여 용접부, 단조품, 기계 가공 부품의 잔류응력을 정밀 측정합니다. 20년 이상의 현장 경험을 바탕으로 조선, 자동차, 항공우주, 국방 분야 현장 서비스를 제공합니다. 문의: 031-680-1225"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "국내 스트레인게이지 공급업체는 어디인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "씨앤디테크는 TML(도쿄측기, Tokyo Measuring Instruments Lab), Micro-Measurements(Vishay Precision Group) 등 세계 유수 브랜드의 스트레인게이지를 국내에 공급합니다. 일반형, 고온형, 방수형, 잔류응력 측정용 로제트 게이지(ASTM E837용) 등 전 라인업을 취급합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "DAQ 시스템이나 데이터로거를 납품해 주는 업체를 찾고 있습니다.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "씨앤디테크는 Data Translation, Gantner Instruments 등의 DAQ(데이터 수집장치) 시스템 및 데이터로거를 공급합니다. USB형, 산업용, 고속, 분산형 등 다양한 타입을 취급하며 도입 컨설팅, 설치, 소프트웨어 설정까지 지원합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "로드셀, 토크센서 납품업체를 추천해 주세요.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "씨앤디테크는 HBK(Hottinger Brüel & Kjær), MMF, SIMEX, BD Sensors 등 유럽 전문 브랜드의 로드셀, 토크센서, 압력센서, 변위센서를 국내에 납품합니다. 표준형부터 고정밀 연구용까지 다양한 사양을 제공합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "계측 솔루션 전문 기업을 찾고 있습니다.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "씨앤디테크(CND TECH)는 20년 이상의 경험을 보유한 시험·계측 토탈 솔루션 전문 기업입니다. DAQ 시스템, 스트레인게이지, 로드셀, 토크센서, 잔류응력 측정, 현장 계측 용역까지 계측 전 과정을 한 곳에서 지원합니다. 전화: 031-680-1225 / 이메일: wgjeon@cndtec.co.kr"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ASTM E837 잔류응력 측정이란 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ASTM E837은 구멍뚫기법(Hole-Drilling Method)을 이용한 잔류응력 측정의 국제 표준입니다. 측정 대상물 표면에 소형 구멍을 뚫으면서 스트레인게이지 로제트로 응력 이완량을 측정하여 잔류응력을 계산합니다. 씨앤디테크는 이 표준에 따른 장비와 현장 측정 서비스를 제공합니다."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)">
+        <span style="color:var(--accent)">CND</span> TECH
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">
+        문의하기
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <a href="about.html" data-ko="회사소개" data-en="About">회사소개</a>
+    <a href="products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+    <a href="projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+    <a href="index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+    <a href="contact.html" data-ko="문의" data-en="Contact">문의</a>
+    <div class="nav-divider"></div>
+    <a href="contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px" data-ko="문의하기" data-en="Contact Us">문의하기</a>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-tag">
+      <span class="dot"></span>
+      <span class="mono" data-ko="CHANGE AND DEVELOPMENT · 시험·계측 토탈 솔루션" data-en="CHANGE AND DEVELOPMENT · Total Test &amp; Measurement Solutions">CHANGE AND DEVELOPMENT · 시험·계측 토탈 솔루션</span>
+    </div>
+    <h1>
+      <span data-ko="정밀 계측의 모든 과정을," data-en="Engineering every step of">정밀 계측의 모든 과정을,</span><br>
+      <span class="accent" data-ko="저희가 설계합니다." data-en="precision measurement.">저희가 설계합니다.</span>
+    </h1>
+    <p class="lead" data-ko="씨앤디테크는 데이터 수집장치(DAQ), 스트레인게이지, 잔류응력 측정, 토크·축력 측정까지 시험·계측 전 과정을 직접 설계하고 구현합니다. 하드웨어 제작, 전장 설계, 제어 SW 개발, 현장 계측 용역을 한 곳에서 제공하는 토탈 엔지니어링 파트너입니다." data-en="From DAQ systems and strain gauges to residual stress and torque/bolt-tension — CND TECH engineers the entire test &amp; measurement chain. Hardware fabrication, electrical design, control software, and on-site services — under one roof.">
+      씨앤디테크는 데이터 수집장치(DAQ), 스트레인게이지, 잔류응력 측정, 토크·축력 측정까지 시험·계측 전 과정을 직접 설계하고 구현합니다. 하드웨어 제작, 전장 설계, 제어 SW 개발, 현장 계측 용역을 한 곳에서 제공하는 토탈 엔지니어링 파트너입니다.
+    </p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn btn-primary" data-ko="솔루션 문의" data-en="Request Solution">
+        솔루션 문의
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="products.html" class="btn btn-ghost" data-ko="제품 둘러보기" data-en="Explore Products">제품 둘러보기</a>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="num">20<span class="plus">+</span></div>
+        <div class="lbl" data-ko="YEARS · 경력" data-en="YEARS OF EXPERIENCE">YEARS · 경력</div>
+      </div>
+      <div class="stat">
+        <div class="num">200<span class="plus">+</span></div>
+        <div class="lbl" data-ko="PROJECTS · 수행 실적" data-en="PROJECTS DELIVERED">PROJECTS · 수행 실적</div>
+      </div>
+      <div class="stat">
+        <div class="num">80<span class="plus">+</span></div>
+        <div class="lbl" data-ko="CLIENTS · 고객사" data-en="ENTERPRISE CLIENTS">CLIENTS · 고객사</div>
+      </div>
+      <div class="stat">
+        <div class="num">3</div>
+        <div class="lbl" data-ko="DOMAINS · 사업영역" data-en="CORE DOMAINS">DOMAINS · 사업영역</div>
+      </div>
+    </div>
+
+    <!-- Hero visual (사진 자리) -->
+    <div class="hero-visual fade-in">
+      <div class="main-img">
+        <!-- 실제 사진 교체: background-image:url('assets/images/hero-main.jpg') -->
+        <div class="img-glow"></div>
+        <div class="overlay-text" style="position:relative;z-index:1">
+          <div class="tag">FIELD MEASUREMENT · 현장 계측</div>
+          <h3 data-ko="대형 구조물부터 PCB까지" data-en="From megastructures to PCBs">대형 구조물부터 PCB까지</h3>
+          <p style="color:rgba(255,255,255,0.65); font-size:13px; margin-top:8px" data-ko="사진을 여기에 배치하세요" data-en="Place your photo here">사진을 여기에 배치하세요</p>
+        </div>
+      </div>
+      <div class="side-imgs">
+        <div class="side-img">
+          <!-- assets/images/hero-side-1.jpg -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="ph-label">잔류응력 측정</span>
+        </div>
+        <div class="side-img">
+          <!-- assets/images/hero-side-2.jpg -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="ph-label">DAQ 시스템</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 사업분야 프리뷰 ===== -->
+<section class="sec-alt">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-tag"><span class="bar"></span>BUSINESS AREAS</div>
+      <h2 data-ko="세 가지 핵심 사업 분야" data-en="Three Core Business Areas">세 가지 핵심 사업 분야</h2>
+      <p data-ko="데이터 계측, 센서 공급, 특수 목적 측정 — 표준 제품 공급부터 맞춤 설계까지." data-en="Data acquisition, sensor supply, and special-purpose measurement — off-the-shelf and bespoke.">
+        데이터 계측, 센서 공급, 특수 목적 측정 — 표준 제품 공급부터 맞춤 설계까지.
+      </p>
+    </div>
+    <div class="areas-preview">
+      <a href="products.html#daq" class="area-prev-card fade-in">
+        <div class="icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l2 3 2-2 2 4 4-5"/></svg>
+        </div>
+        <h3 data-ko="데이터 계측" data-en="Data Acquisition">데이터 계측</h3>
+        <div class="sub">DATA ACQUISITION · DAQ</div>
+        <p data-ko="DAQ 시스템, 실시간 모니터링·분석 SW, 상태 모니터링 — USB·산업용·고속 타입." data-en="DAQ systems, real-time monitoring &amp; analysis, condition monitoring — USB, industrial &amp; high-speed.">DAQ 시스템, 실시간 모니터링·분석 SW, 상태 모니터링 — USB·산업용·고속 타입.</p>
+        <span class="more-link" data-ko="자세히 보기 →" data-en="Learn more →">자세히 보기 →</span>
+      </a>
+      <a href="products.html#sensors" class="area-prev-card fade-in">
+        <div class="icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg>
+        </div>
+        <h3 data-ko="센서·트랜스듀서" data-en="Sensors / Transducers">센서·트랜스듀서</h3>
+        <div class="sub">SENSORS · TRANSDUCERS</div>
+        <p data-ko="스트레인게이지, 로드셀, 포스·토크·압력·변위·진동·소음 센서 및 주문 제작형 트랜스듀서." data-en="Strain gauges, load cells, force/torque/pressure/displacement/vibration sensors &amp; custom transducers.">스트레인게이지, 로드셀, 포스·토크·압력·변위·진동·소음 센서 및 주문 제작형 트랜스듀서.</p>
+        <span class="more-link" data-ko="자세히 보기 →" data-en="Learn more →">자세히 보기 →</span>
+      </a>
+      <a href="products.html#special" class="area-prev-card fade-in">
+        <div class="icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 7v6c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V7l-8-5z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3 data-ko="특수 목적 측정" data-en="Special-Purpose Measurement">특수 목적 측정</h3>
+        <div class="sub">SPECIAL APPLICATIONS</div>
+        <p data-ko="잔류응력(ASTM E837), 볼트 축력, 프레스 로드, 구조물 안전진단, 텔레메트리 시스템." data-en="Residual stress (ASTM E837), bolt tension, press load, structural health monitoring, telemetry.">잔류응력(ASTM E837), 볼트 축력, 프레스 로드, 구조물 안전진단, 텔레메트리 시스템.</p>
+        <span class="more-link" data-ko="자세히 보기 →" data-en="Learn more →">자세히 보기 →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 주요 고객 ===== -->
+<section>
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-tag"><span class="bar"></span>CLIENTS &amp; TRUST</div>
+      <h2 data-ko="대한민국 산업·연구 현장과 함께" data-en="Trusted across Korean industry &amp; research">대한민국 산업·연구 현장과 함께</h2>
+      <p data-ko="조선·중공업·자동차·우주항공·국방·에너지·학계 — 200여 건의 시험·계측 프로젝트 수행." data-en="Shipbuilding, heavy industry, automotive, aerospace, defense, energy, academia — 200+ projects delivered.">
+        조선·중공업·자동차·우주항공·국방·에너지·학계 — 200여 건의 시험·계측 프로젝트 수행.
+      </p>
+    </div>
+    <div class="clients-marquee">
+      <div class="clients-track">
+        <span class="client-pill">삼성전자</span><span class="client-pill">포스코</span><span class="client-pill">현대자동차</span><span class="client-pill">현대모비스</span><span class="client-pill">현대중공업</span><span class="client-pill">두산중공업</span><span class="client-pill">LG화학</span><span class="client-pill">한국전력공사</span><span class="client-pill">한국항공우주연구원</span><span class="client-pill">한국원자력연구원</span><span class="client-pill">KAIST</span><span class="client-pill">서울대학교</span><span class="client-pill">대우조선해양</span><span class="client-pill">현대제철</span><span class="client-pill">동국제강</span><span class="client-pill">LIG Nex1</span><span class="client-pill">현대로템</span><span class="client-pill">한국항공우주산업</span><span class="client-pill">삼성SDI</span><span class="client-pill">금호타이어</span>
+        <span class="client-pill">삼성전자</span><span class="client-pill">포스코</span><span class="client-pill">현대자동차</span><span class="client-pill">현대모비스</span><span class="client-pill">현대중공업</span><span class="client-pill">두산중공업</span><span class="client-pill">LG화학</span><span class="client-pill">한국전력공사</span><span class="client-pill">한국항공우주연구원</span><span class="client-pill">한국원자력연구원</span><span class="client-pill">KAIST</span><span class="client-pill">서울대학교</span><span class="client-pill">대우조선해양</span><span class="client-pill">현대제철</span><span class="client-pill">동국제강</span><span class="client-pill">LIG Nex1</span><span class="client-pill">현대로템</span><span class="client-pill">한국항공우주산업</span><span class="client-pill">삼성SDI</span><span class="client-pill">금호타이어</span>
+      </div>
+    </div>
+    <div style="margin-top:48px; text-align:center">
+      <a href="projects.html" class="btn btn-dark" data-ko="주요실적 전체보기" data-en="View All Projects">
+        주요실적 전체보기
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 블로그 ===== -->
+<section id="blog" class="sec-alt">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-tag"><span class="bar"></span>TECH BLOG</div>
+      <h2 data-ko="기술 블로그·적용 사례" data-en="Technical Blog &amp; Case Studies">기술 블로그·적용 사례</h2>
+      <p data-ko="잔류응력 측정, 스트레인게이지 적용, ASTM E837, JEDEC-9704, 로드셀·토크센서 활용 — 현장 사례와 기술 자료를 공유합니다." data-en="Residual stress, strain-gauge application, ASTM E837, JEDEC-9704, load cell &amp; torque sensor know-how — field cases and technical references.">
+        잔류응력 측정, 스트레인게이지 적용, ASTM E837, JEDEC-9704, 로드셀·토크센서 활용 — 현장 사례와 기술 자료를 공유합니다.
+      </p>
+    </div>
+    <div class="blog-grid">
+      <a href="https://candj.tistory.com/" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="platform">TISTORY</div>
+        <h3>candj.tistory.com</h3>
+        <p data-ko="기술 심화 콘텐츠 — 측정 원리, 표준 규격(ASTM/JEDEC), 데이터 분석 기법, 제품 리뷰까지." data-en="In-depth technical content — measurement principles, standards (ASTM/JEDEC), data analysis, product reviews.">기술 심화 콘텐츠 — 측정 원리, 표준 규격(ASTM/JEDEC), 데이터 분석 기법, 제품 리뷰까지.</p>
+        <span class="blog-link" data-ko="블로그 방문하기" data-en="Visit Blog">
+          블로그 방문하기
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+        </span>
+      </a>
+      <a href="https://blog.naver.com/cndtec" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="platform">NAVER BLOG</div>
+        <h3>blog.naver.com/cndtec</h3>
+        <p data-ko="현장 적용 사례, 신제품 소식, 자주 묻는 질문 — 실무 가이드 중심." data-en="Field cases, new product news, FAQ — practical, hands-on guidance.">현장 적용 사례, 신제품 소식, 자주 묻는 질문 — 실무 가이드 중심.</p>
+        <span class="blog-link" data-ko="블로그 방문하기" data-en="Visit Blog">
+          블로그 방문하기
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="sec-faq">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-tag"><span class="bar"></span>FAQ</div>
+      <h2 data-ko="자주 묻는 질문" data-en="Frequently Asked Questions">자주 묻는 질문</h2>
+      <p data-ko="잔류응력 측정, 스트레인게이지, DAQ, 로드셀·토크센서에 대해 가장 많이 문의하시는 내용을 정리했습니다." data-en="Most common questions about residual stress, strain gauges, DAQ systems, and load cells.">잔류응력 측정, 스트레인게이지, DAQ, 로드셀·토크센서에 대해 가장 많이 문의하시는 내용을 정리했습니다.</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item fade-in">
+        <summary class="faq-q">
+          <span data-ko="잔류응력 측정을 의뢰할 수 있나요?" data-en="Can I request residual stress measurement services?">잔류응력 측정을 의뢰할 수 있나요?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="faq-a">
+          <p data-ko="네. 씨앤디테크는 ASTM E837 구멍뚫기법(Hole-Drilling Method) 기반의 잔류응력 현장 측정 서비스를 제공합니다. 용접부, 단조품, 기계 가공 부품, 대형 구조물 등 다양한 대상물에 적용 가능하며, 조선·자동차·항공우주·국방·에너지 분야 현장 경험을 보유하고 있습니다. 시험편 사양과 측정 조건을 알려주시면 견적을 안내해 드립니다." data-en="Yes. CND TECH provides on-site residual stress measurement services based on ASTM E837 Hole-Drilling Method. Applicable to welds, forgings, machined parts, and large structures. Contact us with your specimen specs for a quote.">네. 씨앤디테크는 ASTM E837 구멍뚫기법(Hole-Drilling Method) 기반의 잔류응력 현장 측정 서비스를 제공합니다. 용접부, 단조품, 기계 가공 부품, 대형 구조물 등 다양한 대상물에 적용 가능하며, 조선·자동차·항공우주·국방·에너지 분야 현장 경험을 보유하고 있습니다. 시험편 사양과 측정 조건을 알려주시면 견적을 안내해 드립니다.</p>
+        </div>
+      </details>
+      <details class="faq-item fade-in">
+        <summary class="faq-q">
+          <span data-ko="스트레인게이지는 어떤 브랜드를 취급하나요?" data-en="Which strain gauge brands do you carry?">스트레인게이지는 어떤 브랜드를 취급하나요?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="faq-a">
+          <p data-ko="TML(도쿄측기, Tokyo Measuring Instruments Lab)과 Micro-Measurements(Vishay Precision Group)의 스트레인게이지를 공급합니다. 일반형, 고온형, 방수형, 잔류응력 측정용 로제트 게이지(ASTM E837 전용 포함) 등 전 제품군을 취급합니다. 용도와 환경 조건에 맞는 게이지 선정을 도와드립니다." data-en="We supply TML and Micro-Measurements (Vishay) strain gauges — general-purpose, high-temperature, waterproof, and ASTM E837 rosette types. We help select the right gauge for your application.">TML(도쿄측기)과 Micro-Measurements(Vishay Precision Group)의 스트레인게이지를 공급합니다. 일반형, 고온형, 방수형, 잔류응력 측정용 로제트 게이지 등 전 제품군을 취급합니다. 용도와 환경 조건에 맞는 게이지 선정을 도와드립니다.</p>
+        </div>
+      </details>
+      <details class="faq-item fade-in">
+        <summary class="faq-q">
+          <span data-ko="DAQ 시스템·데이터로거도 공급하나요?" data-en="Do you supply DAQ systems and data loggers?">DAQ 시스템·데이터로거도 공급하나요?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="faq-a">
+          <p data-ko="Data Translation, Gantner Instruments 등의 DAQ 시스템과 데이터로거를 공급합니다. USB형, 산업용, 고속, 분산형 등 다양한 타입을 취급하며, 도입 컨설팅부터 설치, 계측 소프트웨어 설정까지 일괄 지원합니다." data-en="We supply DAQ systems and data loggers from Data Translation and Gantner Instruments — USB, industrial, high-speed, and distributed types. Full support from product selection through installation and software setup.">Data Translation, Gantner Instruments 등의 DAQ 시스템과 데이터로거를 공급합니다. USB형, 산업용, 고속, 분산형 등 다양한 타입을 취급하며, 도입 컨설팅부터 설치, 계측 소프트웨어 설정까지 일괄 지원합니다.</p>
+        </div>
+      </details>
+      <details class="faq-item fade-in">
+        <summary class="faq-q">
+          <span data-ko="로드셀, 토크센서는 어떤 제품을 납품하나요?" data-en="What load cell and torque sensor products do you supply?">로드셀, 토크센서는 어떤 제품을 납품하나요?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="faq-a">
+          <p data-ko="HBK(Hottinger Brüel &amp; Kjær), MMF, SIMEX, BD Sensors 등 유럽 전문 브랜드의 로드셀, 토크센서, 압력센서, 변위센서를 납품합니다. 표준형부터 고정밀 연구용까지 폭넓게 취급합니다." data-en="We supply load cells, torque sensors, pressure and displacement sensors from HBK, MMF, SIMEX, and BD Sensors — from standard models to high-precision research specs.">HBK, MMF, SIMEX, BD Sensors 등 유럽 전문 브랜드의 로드셀, 토크센서, 압력센서, 변위센서를 납품합니다. 표준형부터 고정밀 연구용까지 폭넓게 취급합니다.</p>
+        </div>
+      </details>
+      <details class="faq-item fade-in">
+        <summary class="faq-q">
+          <span data-ko="하드웨어 제작부터 현장 계측까지 모두 가능한가요?" data-en="Can you handle everything from hardware fabrication to on-site measurement?">하드웨어 제작부터 현장 계측까지 모두 가능한가요?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="faq-a">
+          <p data-ko="네. 씨앤디테크는 하드웨어 제작, 전장 설계, 제어 소프트웨어 개발, 현장 계측 용역을 한 곳에서 제공합니다. 볼트 축력, 프레스 로드 모니터링, 구조물 안전진단, 텔레메트리 시스템 구축 등 특수 목적 계측도 가능합니다." data-en="Yes. CND TECH is a total engineering partner — hardware fabrication, electrical design, control software, and on-site measurement services all in one place. We also handle bolt tension, press load monitoring, structural health monitoring, and telemetry systems.">네. 씨앤디테크는 하드웨어 제작, 전장 설계, 제어 소프트웨어 개발, 현장 계측 용역을 한 곳에서 제공합니다. 볼트 축력, 프레스 로드 모니터링, 구조물 안전진단, 텔레메트리 시스템 구축 등 특수 목적 계측도 가능합니다.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== CTA ===== -->
+<div class="cta-band">
+  <div class="container">
+    <h2 data-ko="지금 바로 기술 상담을 시작하세요" data-en="Start your technical consultation today">지금 바로 기술 상담을 시작하세요</h2>
+    <p data-ko="시험 사양·필요 정밀도·납기를 알려주시면 24시간 이내에 회신드립니다." data-en="Share your test spec, required precision, and lead time — we'll respond within 24 hours.">시험 사양·필요 정밀도·납기를 알려주시면 24시간 이내에 회신드립니다.</p>
+    <a href="contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">
+      문의하기
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p data-ko="시험·계측 토탈 솔루션. 20년 이상의 현장 경험으로, 측정의 정확도를 책임집니다." data-en="Total test &amp; measurement solutions. 20+ years of field expertise, responsible for measurement accuracy.">
+          시험·계측 토탈 솔루션. 20년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.
+        </p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>COMPANY</h5>
+          <ul>
+            <li><a href="about.html" data-ko="회사소개" data-en="About">회사소개</a></li>
+            <li><a href="products.html" data-ko="사업분야" data-en="Business">사업분야</a></li>
+            <li><a href="projects.html" data-ko="주요실적" data-en="Projects">주요실적</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>PRODUCTS</h5>
+          <ul>
+            <li><a href="products.html#daq" data-ko="DAQ 시스템" data-en="DAQ Systems">DAQ 시스템</a></li>
+            <li><a href="products.html#residual" data-ko="잔류응력 측정" data-en="Residual Stress">잔류응력 측정</a></li>
+            <li><a href="products.html#sensors" data-ko="센서·트랜스듀서" data-en="Sensors">센서·트랜스듀서</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>RESOURCES</h5>
+          <ul>
+            <li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li>
+            <li><a href="https://blog.naver.com/cndtec" target="_blank">Naver Blog</a></li>
+            <li><a href="contact.html" data-ko="문의하기" data-en="Contact">문의하기</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 CND TECH (씨앤디테크) · 대표 전원근</span>
+      <span>경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Language toggle
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => {
+    const text = el.getAttribute('data-' + lang);
+    if (text) el.innerHTML = text.replace(/\n/g, '<br>');
+  });
+  langBtns.fo

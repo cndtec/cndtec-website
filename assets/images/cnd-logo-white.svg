@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 180" role="img" aria-label="CND TECH — Measure What Matters">
+  <title>CND TECH</title>
+  <defs>
+    <style>
+      .icon-light { fill: none; stroke: #ffffff; stroke-linecap: butt; }
+      .icon-orange { fill: none; stroke: #F29400; stroke-linecap: butt; }
+      .text-orange { fill: #F29400; font-family: 'Arial Black', 'Franklin Gothic Heavy', sans-serif; font-weight: 900; }
+      .text-white { fill: #ffffff; font-family: 'Arial Black', 'Franklin Gothic Heavy', sans-serif; font-weight: 900; }
+      .text-sub { fill: rgba(255,255,255,0.75); font-family: Arial, sans-serif; font-weight: 400; letter-spacing: 3.5px; }
+    </style>
+  </defs>
+
+  <!-- ── C 아이콘 ── -->
+  <path class="icon-light" stroke-width="14"
+    d="M 143.0 40.5 A 74 74 0 1 0 143.0 139.5" />
+  <path class="icon-orange" stroke-width="11"
+    d="M 125.9 55.9 A 51 51 0 1 0 125.9 124.1" />
+  <path class="icon-light" stroke-width="9"
+    d="M 110.3 69.9 A 30 30 0 1 0 110.3 110.1" />
+
+  <!-- ── 텍스트 ── -->
+  <text x="182" y="108" font-size="68">
+    <tspan class="text-orange">CND</tspan><tspan class="text-white"> TECH</tspan>
+  </text>
+  <text class="text-sub" x="185" y="132" font-size="13.5">MEASURE WHAT MATTERS</text>
+</svg>

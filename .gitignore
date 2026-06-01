@@ -1,0 +1,6 @@
+# 작업용 파일 제외
+*.sketch
+*.psd
+*.ai
+Thumbs.db
+.DS_Store

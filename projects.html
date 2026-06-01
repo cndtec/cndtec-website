@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>주요실적 | CND TECH 씨앤디테크</title>
+<meta name="description" content="씨앤디테크 주요 실적 — 삼성전자, 포스코, 현대자동차, KAIST, 한국원자력연구원 등 200여 건의 시험·계측 프로젝트." />
+<meta property="og:title" content="주요실적 | CND TECH 씨앤디테크" />
+<meta property="og:description" content="삼성전자, 포스코, 현대자동차, KAIST, 한국원자력연구원 등 200여 건의 시험·계측 프로젝트 실적." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://cndtec.com/projects.html" />
+<meta property="og:image" content="https://cndtec.com/assets/images/cnd-logo-400.png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:alt" content="CND TECH 씨앤디테크 로고" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:site_name" content="CND TECH 씨앤디테크" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="주요실적 | CND TECH 씨앤디테크" />
+<meta name="twitter:description" content="삼성전자, 포스코, 현대자동차 등 200여 건의 시험·계측 프로젝트 실적." />
+<meta name="twitter:image" content="https://cndtec.com/assets/images/cnd-logo-400.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .proj-full { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-top: 48px; }
+  .proj-col { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow-sm); }
+  .proj-col h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--charcoal); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .proj-col h3 .badge { font-family: 'JetBrains Mono', monospace; font-size: 10px; padding: 3px 8px; border-radius: 5px; background: var(--charcoal); color: var(--orange-soft); font-weight: 700; }
+  .proj-col ul { list-style: none; margin-top: 16px; }
+  .proj-col ul li { padding: 10px 0; font-size: 13px; color: var(--text-dim); line-height: 1.6; border-bottom: 1px solid var(--line); display: flex; gap: 10px; }
+  .proj-col ul li:last-child { border-bottom: none; }
+  .proj-col ul li::before { content: '›'; color: var(--accent); flex-shrink: 0; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
+  @media (max-width: 920px) { .proj-full { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="projects.html" class="page-active" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle"><button class="lang-btn active" data-lang="ko">KO</button><button class="lang-btn" data-lang="en">EN</button></div>
+      <a href="contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="about.html">회사소개</a><a href="products.html">사업분야·제품</a><a href="projects.html" class="page-active">주요실적</a><a href="index.html#blog">블로그</a><a href="contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>주요실적</span></div>
+    <div class="page-hero-tag"><span class="dot"></span><span class="mono">04 / PROJECTS &amp; CLIENTS</span></div>
+    <h1>
+      <span data-ko="대한민국 산업·연구의" data-en="Trusted at the heart of">대한민국 산업·연구의</span><br>
+      <span class="accent" data-ko="핵심 현장에서" data-en="Korean industry &amp; research">핵심 현장에서</span>
+    </h1>
+    <p class="sub" data-ko="대기업·연구기관·국가 R&D 현장 200여 건의 시험·계측 프로젝트를 수행해 왔습니다." data-en="200+ test &amp; measurement projects delivered for major enterprises, research institutes, and national R&amp;D programs.">
+      대기업·연구기관·국가 R&D 현장 200여 건의 시험·계측 프로젝트를 수행해 왔습니다.
+    </p>
+  </div>
+</div>
+
+<!-- 주요 고객사 마퀴 -->
+<section class="sec-alt">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-tag"><span class="bar"></span>CLIENTS</div>
+      <h2 data-ko="주요 고객사" data-en="Key Clients">주요 고객사</h2>
+      <p data-ko="조선·중공업·자동차·우주항공·국방·에너지·학계 등 각 분야 최고 기업·기관과 함께합니다." data-en="Partnering with the top companies and institutions in shipbuilding, heavy industry, automotive, aerospace, defense, energy, and academia.">조선·중공업·자동차·우주항공·국방·에너지·학계 등 각 분야 최고 기업·기관과 함께합니다.</p>
+    </div>
+    <div class="clients-marquee">
+      <div class="clients-track">
+        <span class="client-pill">삼성전자</span><span class="client-pill">포스코</span><span class="client-pill">현대자동차</span><span class="client-pill">현대모비스</span><span class="client-pill">현대중공업</span><span class="client-pill">두산중공업</span><span class="client-pill">LG화학</span><span class="client-pill">LG하우시스</span><span class="client-pill">한국전력공사</span><span class="client-pill">한국항공우주연구원</span><span class="client-pill">한국원자력연구원</span><span class="client-pill">KAIST</span><span class="client-pill">서울대학교</span><span class="client-pill">대우조선해양</span><span class="client-pill">현대제철</span><span class="client-pill">동국제강</span><span class="client-pill">LIG Nex1</span><span class="client-pill">현대로템</span><span class="client-pill">자동차부품연구원</span><span class="client-pill">철도기술연구원</span><span class="client-pill">효성중공업</span><span class="client-pill">한국항공우주산업</span><span class="client-pill">삼성SDI</span><span class="client-pill">금호타이어</span><span class="client-pill">르노</span><span class="client-pill">ADD</span><span class="client-pill">삼성E&C</span><span class="client-pill">STX</span><span class="client-pill">LS산전</span>
+        <span class="client-pill">삼성전자</span><span class="client-pill">포스코</span><span class="client-pill">현대자동차</span><span class="client-pill">현대모비스</span><span class="client-pill">현대중공업</span><span class="client-pill">두산중공업</span><span class="client-pill">LG화학</span><span class="client-pill">LG하우시스</span><span class="client-pill">한국전력공사</span><span class="client-pill">한국항공우주연구원</span><span class="client-pill">한국원자력연구원</span><span class="client-pill">KAIST</span><span class="client-pill">서울대학교</span><span class="client-pill">대우조선해양</span><span class="client-pill">현대제철</span><span class="client-pill">동국제강</span><span class="client-pill">LIG Nex1</span><span class="client-pill">현대로템</span><span class="client-pill">자동차부품연구원</span><span class="client-pill">철도기술연구원</span><span class="client-pill">효성중공업</span><span class="client-pill">한국항공우주산업</span><span class="client-pill">삼성SDI</span><span class="client-pill">금호타이어</span><span class="client-pill">르노</span><span class="client-pill">ADD</span><span class="client-pill">삼성E&C</span><span class="client-pill">STX</span><span class="client-pill">LS산전</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 실적 상세 -->
+<section>
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-tag"><span class="bar"></span>PROJECT DETAILS</div>
+      <h2 data-ko="분야별 주요 실적" data-en="Projects by Category">분야별 주요 실적</h2>
+    </div>
+
+    <!-- 2열 (원래 스타일) -->
+    <div class="achievement-tabs">
+      <div class="ach-block fade-in">
+        <h3><span data-ko="시험기 · 계측 시스템" data-en="Test Rigs &amp; Measurement Systems">시험기 · 계측 시스템</span><span class="badge">SYS · 50+</span></h3>
+        <ul>
+          <li data-ko="축마력 계측 시스템 — 대우조선해양 · HJ중공업 · STX조선" data-en="Shaft Power System — Daewoo · HJ Heavy · STX">축마력 계측 시스템 — 대우조선해양 · HJ중공업 · STX조선</li>
+          <li data-ko="풍력발전기 블레이드 내구·무게 측정 — KAI · 강원대" data-en="Wind Turbine Blade Durability/Weight — KAI · Kangwon Univ.">풍력발전기 블레이드 내구·무게 측정 — KAI · 강원대</li>
+          <li data-ko="모형 수조 캐비테이션 시험 — 서울대 · 현대중공업 · KAIST" data-en="Cavitation Tank Test — SNU · HHI · KAIST">모형 수조 캐비테이션 시험 — 서울대 · 현대중공업 · KAIST</li>
+          <li data-ko="프레스 로드 모니터링 — 르노 · 세아베스틸 · 현대로템" data-en="Press Load Monitoring — Renault · Sea Best Steel · Hyundai Rotem">프레스 로드 모니터링 — 르노 · 세아베스틸 · 현대로템</li>
+          <li data-ko="압연 롤러 토크 모니터링 — 동국제강 · 포스코" data-en="Rolling Mill Torque Monitoring — Dongkuk · POSCO">압연 롤러 토크 모니터링 — 동국제강 · 포스코</li>
+          <li data-ko="차량 도어 피로 시험기 — 현대자동차 · 자동차부품연구원" data-en="Vehicle Door Fatigue Tester — Hyundai · KATECH">차량 도어 피로 시험기 — 현대자동차 · 자동차부품연구원</li>
+          <li data-ko="철차 축 피로 시험 — 금호기계 · 철도기술연구원" data-en="Railway Axle Fatigue — Kumho · KRRI">철차 축 피로 시험 — 금호기계 · 철도기술연구원</li>
+          <li data-ko="항공기 브레이크 내마모 시험 — 다원프릭션" data-en="Aircraft Brake Wear Test — Dawon Friction">항공기 브레이크 내마모 시험 — 다원프릭션</li>
+          <li data-ko="인장·압축 시험기 — 인천대 · LS산전 · LG화학" data-en="Tensile/Compression Tester — Incheon Univ. · LS · LG Chem">인장·압축 시험기 — 인천대 · LS산전 · LG화학</li>
+          <li data-ko="회전기 볼트 축력 측정 — 현대중공업" data-en="Rotating Machine Bolt Tension — HHI">회전기 볼트 축력 측정 — 현대중공업</li>
+        </ul>
+      </div>
+
+      <div class="ach-block fade-in">
+        <h3><span data-ko="측정 용역 · 응력 평가" data-en="Measurement Services &amp; Stress Evaluation">측정 용역 · 응력 평가</span><span class="badge">SVC · 100+</span></h3>
+        <ul>
+          <li data-ko="잔류응력 측정·용역 — 두산중공업 · 한국원자력연 · 포스코 · 삼성전자 · 서울대" data-en="Residual Stress — Doosan · KAERI · POSCO · Samsung · SNU">잔류응력 측정·용역 — 두산중공업 · 한국원자력연 · 포스코 · 삼성전자 · 서울대</li>
+          <li data-ko="국가대표 봅슬레이·체조 Force 측정 — KAIST" data-en="National Team Bobsleigh / Gymnastics Force — KAIST">국가대표 봅슬레이·체조 Force 측정 — KAIST</li>
+          <li data-ko="모형 선박 수중 폭발 응력·진동 — ADD · KAIST" data-en="Submarine Underwater Explosion Stress — ADD · KAIST">모형 선박 수중 폭발 응력·진동 — ADD · KAIST</li>
+          <li data-ko="배터리 충전 팽창 응력 — 자동차부품연구원 · 삼성SDI" data-en="Battery Swelling Stress — KATECH · Samsung SDI">배터리 충전 팽창 응력 — 자동차부품연구원 · 삼성SDI</li>
+          <li data-ko="복합화력발전소 복수기 응력 — 삼성E&C" data-en="Combined Cycle Plant Condenser Stress — Samsung E&amp;C">복합화력발전소 복수기 응력 — 삼성E&C</li>
+          <li data-ko="휠체어·차량 충돌 시험 응력 — 한국교통안전공단" data-en="Wheelchair/Vehicle Crash Stress — KOTSA">휠체어·차량 충돌 시험 응력 — 한국교통안전공단</li>
+          <li data-ko="PCB 기판 조립 응력 — LIG Nex1 · 삼성전자 · 케피코" data-en="PCB Assembly Stress — LIG Nex1 · Samsung · Kefico">PCB 기판 조립 응력 — LIG Nex1 · 삼성전자 · 케피코</li>
+          <li data-ko="진동 측정 평가 — GS건설 · 서울지하철 · 한국항공우주연구원" data-en="Vibration Evaluation — GS E&amp;C · Seoul Metro · KARI">진동 측정 평가 — GS건설 · 서울지하철 · 한국항공우주연구원</li>
+          <li data-ko="스트레인게이지 부착 용역 — STX · ADD · 서울대 · KNR · 한국해양연구원" data-en="Strain Gauge Installation — STX · ADD · SNU · KNR · KIOST">스트레인게이지 부착 용역 — STX · ADD · 서울대 · KNR · 한국해양연구원</li>
+          <li data-ko="선박 Hull 진동 측정 — 삼우TES / 압력 측정 — STX · LG화학 · 포스코" data-en="Hull Vibration — Samwoo TES / Pressure — STX · LG Chem · POSCO">선박 Hull 진동 / 압력 측정 — 삼우TES · STX · 포스코</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3열 추가 실적 -->
+    <div class="proj-full">
+      <div class="proj-col fade-in">
+        <h3><span data-ko="진동·소음 시스템" data-en="Vibration &amp; Noise Systems">진동·소음 시스템</span><span class="badge">VIB · 30+</span></h3>
+        <ul>
+          <li data-ko="샤시 진동 측정 — LG하우시스" data-en="Chassis Vibration — LG Hausys">샤시 진동 측정 — LG하우시스</li>
+          <li data-ko="휴대용 진동측정 — LG화학 · 철도연구원 · 현대자동차" data-en="Portable Vibration — LG Chem · KRRI · Hyundai">휴대용 진동측정 — LG화학 · 철도연구원 · 현대자동차</li>
+          <li data-ko="진동 측정 — 한국항공우주연구원 · 테크윙 · LIG NEX1 · 현대로템" data-en="Vibration System — KARI · Techwing · LIG NEX1 · Rotem">진동 측정 — 한국항공우주연구원 · LIG NEX1 · 현대로템</li>
+          <li data-ko="태양열 판넬 응력·진동 — 미지에너텍" data-en="Solar Panel Stress/Vib — Miji Enertech">태양열 판넬 응력·진동 — 미지에너텍</li>
+          <li data-ko="토크 측정 — 서울대 · 현대중공업 · 현대로템" data-en="Torque Measurement — SNU · HHI · Rotem">토크 측정 — 서울대 · 현대중공업 · 현대로템</li>
+        </ul>
+      </div>
+      <div class="proj-col fade-in">
+        <h3><span data-ko="볼트·축력 측정" data-en="Bolt &amp; Tension Measurement">볼트·축력 측정</span><span class="badge">BOLT · 20+</span></h3>
+        <ul>
+          <li data-ko="축력 측정 볼트 센서 — 항공우주연구원 · 자동차부품연구원 · 현대위아" data-en="Bolt Tension Sensors — KARI · KATECH · Hyundai Wia">축력 측정 볼트 센서 — 항공우주연구원 · 현대위아</li>
+          <li data-ko="— 선일다이파스 · 현대중공업 · 두산인프라코어" data-en="— Sunil Dypass · HHI · Doosan Infracore">— 선일다이파스 · 현대중공업 · 두산인프라코어</li>
+          <li data-ko="— 울산대학교 · 계양정밀" data-en="— Ulsan Univ. · Keyang">— 울산대학교 · 계양정밀</li>
+          <li data-ko="회전기 볼트 축력 측정 시스템 — 현대중공업" data-en="Rotating Bolt Tension — HHI">회전기 볼트 축력 측정 시스템 — 현대중공업</li>
+          <li data-ko="항공기 발사체 축력 — 한국항공우주연구원" data-en="Launch Vehicle Bolt Tension — KARI">항공기 발사체 축력 — 한국항공우주연구원</li>
+        </ul>
+      </div>
+      <div class="proj-col fade-in">
+        <h3><span data-ko="하중·모니터링 시스템" data-en="Load &amp; Monitoring Systems">하중·모니터링 시스템</span><span class="badge">LOAD · 30+</span></h3>
+        <ul>
+          <li data-ko="하중 모니터링 & 계근 — 대우조선해양" data-en="Load Monitoring & Weighing — Daewoo">하중 모니터링 & 계근 — 대우조선해양</li>
+          <li data-ko="크레인 하중 측정 — 건설부품연구원" data-en="Crane Load — CONSTAR">크레인 하중 측정 — 건설부품연구원</li>
+          <li data-ko="케이블카 하중 모니터링 — 통영관광개발공사" data-en="Cable Car Load — Tongyeong Tourism">케이블카 하중 모니터링 — 통영관광개발공사</li>
+          <li data-ko="타이어 무게 측정 — 금호타이어" data-en="Tire Weight — Kumho Tire">타이어 무게 측정 — 금호타이어</li>
+          <li data-ko="LCD 판넬 하중 측정 — 삼성코닝" data-en="LCD Panel Load — Samsung Corning">LCD 판넬 하중 측정 — 삼성코닝</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 하이라이트 -->
+<section class="sec-alt">
+  <div class="container">
+    <div class="highlight-strip fade-in">
+      <div class="quote-mark">"</div>
+      <div>
+        <h4 data-ko="국가대표 봅슬레이 Force 측정 · KAIST 협업" data-en="National Bobsleigh Team Force Measurement · with KAIST">국가대표 봅슬레이 Force 측정 · KAIST 협업</h4>
+        <p data-ko="조선·중공업·자동차·우주항공·국방·체육 — 정밀이 요구되는 곳이라면 어디든. 0.1µε 단위까지 신뢰할 수 있는 데이터를 만듭니다." data-en="From shipbuilding to motorsports, aerospace to athletics — wherever precision is non-negotiable, we deliver data trustworthy down to 0.1µε.">
+          조선·중공업·자동차·우주항공·국방·체육 — 정밀이 요구되는 곳이라면 어디든. 0.1µε 단위까지 신뢰할 수 있는 데이터를 만듭니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="container">
+    <h2 data-ko="다음 프로젝트도 함께하세요" data-en="Let's work on your next project">다음 프로젝트도 함께하세요</h2>
+    <p data-ko="어떤 분야든 문의 주시면, 최적의 계측 솔루션을 제안해 드립니다." data-en="Whatever your field, we'll propose the optimal measurement solution.">어떤 분야든 문의 주시면, 최적의 계측 솔루션을 제안해 드립니다.</p>
+    <a href="contact.html" class="btn btn-primary">문의하기 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 20년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="about.html">회사소개</a></li><li><a href="products.html">사업분야</a></li><li><a href="projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>PRODUCTS</h5><ul><li><a href="products.html#daq">DAQ 시스템</a></li><li><a href="products.html#residual">잔류응력 측정</a></li><li><a href="products.html#sensors">센서·트랜스듀서</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="contact.html">문의하기</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li><li><a href="https://blog.naver.com/cndtec" target="_blank">Naver Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 CND TECH (씨앤디테크) · 대표 전원근</span>
+      <span>경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span>
+    </div>
+  </div>
+</footer>
+
+<script

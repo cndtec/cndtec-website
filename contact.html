@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>문의하기 | CND TECH 씨앤디테크</title>
+<meta name="description" content="씨앤디테크 문의 — 기술 상담, 견적 요청, 현장 방문 모두 환영합니다. TEL 031-680-1225 / wgjeon@cndtec.co.kr" />
+<meta property="og:title" content="문의하기 | CND TECH 씨앤디테크" />
+<meta property="og:description" content="기술 상담·견적 요청·현장 방문 모두 환영합니다. TEL 031-680-1225 / wgjeon@cndtec.co.kr" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://cndtec.com/contact.html" />
+<meta property="og:image" content="https://cndtec.com/assets/images/cnd-logo-400.png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:alt" content="CND TECH 씨앤디테크 로고" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:site_name" content="CND TECH 씨앤디테크" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="문의하기 | CND TECH 씨앤디테크" />
+<meta name="twitter:description" content="기술 상담·견적 요청·현장 방문 모두 환영합니다. TEL 031-680-1225" />
+<meta name="twitter:image" content="https://cndtec.com/assets/images/cnd-logo-400.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .contact-page-grid {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: start;
+  }
+  .contact-detail-card {
+    background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 40px; box-shadow: var(--shadow-md); position: relative; overflow: hidden;
+  }
+  .contact-detail-card::before {
+    content: ''; position: absolute; top: -80px; right: -80px;
+    width: 220px; height: 220px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(242,148,0,0.1), transparent 70%);
+  }
+  .contact-detail-card h2 {
+    font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700;
+    letter-spacing: -0.02em; color: var(--charcoal); line-height: 1.3; margin-bottom: 14px;
+  }
+  .contact-detail-card p.sub { color: var(--text-dim); margin-bottom: 36px; line-height: 1.7; }
+
+  .quick-info {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px;
+  }
+  .qi-item {
+    padding: 16px; background: var(--bg-warm); border: 1px solid var(--line);
+    border-radius: 10px;
+  }
+  .qi-item .qi-lbl {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--accent-deep); font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; margin-bottom: 6px;
+  }
+  .qi-item .qi-val { font-size: 14px; font-weight: 600; color: var(--charcoal); }
+
+  /* 지도 */
+  .map-section { margin-top: 32px; }
+  .map-section h4 {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--text-mute); text-transform: uppercase; letter-spacing: 0.08em;
+    font-weight: 700; margin-bottom: 12px;
+  }
+  .map-placeholder {
+    height: 240px; background: linear-gradient(135deg, var(--gray-100) 0%, var(--bg-warm) 100%);
+    border: 2px dashed var(--gray-300); border-radius: var(--radius);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 12px; color: var(--text-mute);
+  }
+  .map-placeholder .ph-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.7;
+  }
+
+  /* 폼 */
+  .form-card {
+    background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 40px; box-shadow: var(--shadow-sm);
+  }
+  .form-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 8px; color: var(--charcoal); }
+  .form-card p { color: var(--text-dim); font-size: 13px; margin-bottom: 28px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .success-msg {
+    display: none; padding: 16px; background: #f0fdf4; border: 1px solid #86efac;
+    border-radius: 8px; color: #166534; font-size: 14px; font-weight: 600;
+    margin-top: 16px;
+  }
+  .success-msg.show { display: block; }
+
+  @media (max-width: 920px) {
+    .contact-page-grid { grid-template-columns: 1fr; gap: 32px; }
+    .quick-info { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "url": "https://www.cndtec.co.kr/contact.html",
+  "name": "문의하기 — 씨앤디테크 CND TECH",
+  "description": "잔류응력 측정, 스트레인게이지, DAQ, 로드셀·토크센서 문의. 전화: 031-680-1225",
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://www.cndtec.co.kr/#organization",
+    "name": "씨앤디테크",
+    "telephone": "+82-31-680-1225",
+    "email": "wgjeon@cndtec.co.kr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "동탄영천동 131 코너원스마트타워 1018호",
+      "addressLocality": "화성시",
+      "addressRegion": "경기도",
+      "addressCountry": "KR"
+    }
+  }
+}
+</script>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="contact.html" class="page-active" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle"><button class="lang-btn active" data-lang="ko">KO</button><button class="lang-btn" data-lang="en">EN</button></div>
+      <a href="contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <button class="menu-toggle" id="menuBtn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="about.html">회사소개</a><a href="products.html">사업분야·제품</a><a href="projects.html">주요실적</a><a href="index.html#blog">블로그</a><a href="contact.html" class="page-active">문의</a>
+    <div class="nav-divider"></div>
+    <a href="contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>문의하기</span></div>
+    <div class="page-hero-tag"><span class="dot"></span><span class="mono">06 / CONTACT</span></div>
+    <h1>
+      <span data-ko="프로젝트 문의·" data-en="Project Inquiry &amp;">프로젝트 문의·</span><span class="accent" data-ko="기술 상담" data-en="Technical Consultation">기술 상담</span>
+    </h1>
+    <p class="sub" data-ko="시험 사양·필요 정밀도·납기를 알려주시면 24시간 이내에 가능한 솔루션을 회신드립니다. 견적·기술 상담·현장 방문 모두 환영합니다." data-en="Share your test spec, required precision, and lead time — we'll respond within 24 hours. Quotes, consultation, on-site visits — all welcome.">
+      시험 사양·필요 정밀도·납기를 알려주시면 24시간 이내에 가능한 솔루션을 회신드립니다.
+    </p>
+  </div>
+</div>
+
+<!-- CONTACT MAIN -->
+<section>
+  <div class="container">
+    <div class="contact-page-grid">
+
+      <!-- 왼쪽: 연락처 정보 + 지도 -->
+      <div>
+        <div class="contact-detail-card fade-in">
+          <h2 data-ko="씨앤디테크와 함께,<br>측정의 정확도를 한 단계 위로." data-en="Let's raise your measurement<br>to the next precision tier.">씨앤디테크와 함께,<br>측정의 정확도를 한 단계 위로.</h2>
+          <p class="sub" data-ko="어떤 계측 문제든 편하게 연락 주세요." data-en="Whatever your measurement challenge, feel free to reach out.">어떤 계측 문제든 편하게 연락 주세요.</p>
+          <ul class="contact-list">
+            <li>
+              <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div>
+                <div class="lbl">ADDRESS</div>
+                <div class="val" data-ko="경기도 화성시 동탄영천동 131<br>코너원스마트타워 1018호" data-en="Rm 1018, Corner One Smart Tower<br>131 Dongtanyeongcheon-dong, Hwaseong-si, Gyeonggi-do">경기도 화성시 동탄영천동 131<br>코너원스마트타워 1018호</div>
+              </div>
+            </li>
+            <li>
+              <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+              <div>
+                <div class="lbl">PHONE</div>
+                <div class="val"><a href="tel:031-680-1225" style="color:inherit">031-680-1225</a></div>
+              </div>
+            </li>
+            <li>
+              <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6L12 13 2 6"/></svg></div>
+              <div>
+                <div class="lbl">EMAIL</div>
+                <div class="val"><a href="mailto:wgjeon@cndtec.co.kr" style="color:inherit">wgjeon@cndtec.co.kr</a></div>
+              </div>
+            </li>
+            <li>
+              <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div>
+              <div>
+                <div class="lbl">WEB</div>
+                <div class="val"><a href="http://www.cndtec.co.kr" target="_blank" rel="noopener" style="color:inherit">www.cndtec.co.kr</a></div>
+              </div>
+            </li>
+          </ul>
+          <div class="quick-info">
+            <div class="qi-item">
+              <div class="qi-lbl" data-ko="응답 시간" data-en="Response Time">응답 시간</div>
+              <div class="qi-val" data-ko="24시간 이내" data-en="Within 24 hours">24시간 이내</div>
+            </div>
+            <div class="qi-item">
+              <div class="qi-lbl" data-ko="상담 방식" data-en="Consultation">상담 방식</div>
+              <div class="qi-val" data-ko="전화·이메일·방문" data-en="Phone · Email · Visit">전화·이메일·방문</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 지도 -->
+        <div class="map-section">
+          <h4 data-ko="오시는 길" data-en="DIRECTIONS">오시는 길</h4>
+          <iframe
+            src="https://maps.google.com/maps?q=경기도+화성시+동탄영천동+131+코너원스마트타워&output=embed&hl=ko&z=16"
+            width="100%" height="240"
+            style="border:0; border-radius:14px; display:block;"
+            allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="CND TECH 오시는 길">
+          </iframe>
+          <a href="https://map.naver.com/v5/search/코너원스마트타워" target="_blank" rel="noopener" class="map-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-ko="네이버지도에서 보기" data-en="View on Naver Maps">네이버지도에서 보기</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 오른쪽: 문의 폼 -->
+      <div class="form-card fade-in">
+        <h3 data-ko="빠른 견적·문의" data-en="Quick Inquiry">빠른 견적·문의</h3>
+        <p data-ko="아래 정보를 남겨주시면 담당자가 신속히 회신드립니다." data-en="Leave your details and we'll get back to you promptly.">아래 정보를 남겨주시면 담당자가 신속히 회신드립니다.</p>
+
+        <form id="inquiryForm" name="inquiryForm" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="inquiryForm">
+          <!-- 스팸봇 방지 허니팟 (숨김) -->
+          <p style="display:none"><label>스팸방지: <input name="bot-field"></label></p>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-ko="회사명 *" data-en="Company *">회사명 *</label>
+              <input type="text" name="company" required placeholder="씨앤디테크">
+            </div>
+            <div class="form-group">
+              <label data-ko="담당자명 *" data-en="Name *">담당자명 *</label>
+              <input type="text" name="name" required placeholder="홍길동">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-ko="이메일 *" data-en="Email *">이메일 *</label>
+              <input type="email" name="email" required placeholder="name@company.com">
+            </div>
+            <div class="form-group">
+              <label data-ko="연락처" data-en="Phone">연락처</label>
+              <input type="tel" name="phone" placeholder="010-0000-0000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label data-ko="문의 분야" data-en="Inquiry Category">문의 분야</label>
+            <select name="category">
+              <option value="" data-ko="선택해주세요" data-en="Please select">선택해주세요</option>
+              <option value="daq" data-ko="DAQ 시스템" data-en="DAQ Systems">DAQ 시스템</option>
+              <option value="sg" data-ko="스트레인게이지·로드셀" data-en="Strain Gauges / Load Cells">스트레인게이지·로드셀</option>
+              <option value="residual" data-ko="잔류응력 측정" data-en="Residual Stress Measurement">잔류응력 측정</option>
+              <option value="bolt" data-ko="볼트 축력 측정" data-en="Bolt-Tension Measurement">볼트 축력 측정</option>
+              <option value="telemetry" data-ko="텔레메트리 시스템" data-en="Telemetry System">텔레메트리 시스템</option>
+              <option value="vibration" data-ko="진동·소음 측정" data-en="Vibration &amp; Noise">진동·소음 측정</option>
+              <option value="service" data-ko="현장 계측 용역" data-en="On-Site Measurement Services">현장 계측 용역</option>
+              <option value="custom" data-ko="주문 제작·기타" data-en="Custom / Other">주문 제작·기타</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label data-ko="문의 내용 *" data-en="Inquiry *">문의 내용 *</label>
+            <textarea name="message" required style="min-height:120px"
+              placeholder="시험 사양, 필요 정밀도, 납기, 참고 규격 등을 적어주세요."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:14px" data-ko="문의 보내기" data-en="Send Inquiry">
+            문의 보내기
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+          <div class="success-msg" id="successMsg">
+            ✓ 문의가 접수되었습니다. 24시간 이내에 회신드리겠습니다.<br>
+            <span style="font-weight:400; color:#166534; font-size:13px">긴급 문의: 031-680-1225</span>
+          </div>
+          <p style="margin-top:14px; font-size:12px; color:var(--text-mute); text-align:center" data-ko="* 전송된 문의는 이메일로 즉시 수신됩니다. 긴급 문의: 031-680-1225" data-en="* Inquiries are delivered immediately by email. Urgent: 031-680-1225">
+            * 전송된 문의는 담당자 이메일로 즉시 수신됩니다. 긴급: 031-680-1225
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 20년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="about.html">회사소개</a></li><li><a href="products.html">사업분야</a></li><li><a href="projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>PRODUCTS</h5><ul><li><a href="products.html#daq">DAQ 시스템</a></li><li><a href="products.html#residual">잔류응력 측정</a></li><li><a href="products.html#sensors">센서·트랜스듀서</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 CND TECH (씨앤디테크) · 대표 전원근</span>
+      <span>경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t.replace(/\n/g, '<br>'); });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventLis

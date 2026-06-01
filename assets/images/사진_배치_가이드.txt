@@ -1,0 +1,81 @@
+======================================
+  CND TECH 홈페이지 — 사진 배치 가이드
+======================================
+
+이 폴더(assets/images/)에 사진을 넣으면 자동 적용됩니다.
+아래 파일명으로 저장하면 각 위치에 사진이 들어갑니다.
+
+──────────────────────────────────────
+  로고
+──────────────────────────────────────
+cnd-logo-400.png       → 헤더 로고 (투명 배경 PNG, 높이 42px 기준)
+
+──────────────────────────────────────
+  index.html — 히어로 비주얼
+──────────────────────────────────────
+hero-main.jpg          → 좌측 큰 이미지 (권장: 900×600px 이상)
+hero-side-1.jpg        → 우측 상단 이미지 (잔류응력 측정 장면)
+hero-side-2.jpg        → 우측 하단 이미지 (DAQ 시스템)
+
+  교체 방법 (index.html의 .main-img):
+    background-image: url('assets/images/hero-main.jpg');
+    background-size: cover;
+    background-position: center;
+    border: none; (dashed border 제거)
+
+──────────────────────────────────────
+  about.html — 갤러리 그리드
+──────────────────────────────────────
+about-main.jpg         → 좌측 세로 큰 사진 (사무실 또는 현장 전경)
+about-daq.jpg          → 우측 상단 (DAQ 시스템)
+about-residual.jpg     → 우측 중단 (잔류응력 측정)
+about-field.jpg        → 우측 하단1 (현장 설치)
+about-hardware.jpg     → 우측 하단2 (제작 장비)
+
+  교체 방법 (about.html의 .g-img):
+    background-image: url('assets/images/about-main.jpg');
+    background-size: cover;
+    background-position: center;
+    border: none;
+
+──────────────────────────────────────
+  products.html — 제품 카드 이미지
+──────────────────────────────────────
+prod-daq.jpg           → P-01 DAQ 시스템
+prod-sg.jpg            → P-02 스트레인게이지·로드셀
+prod-residual.jpg      → P-03 잔류응력 측정 시스템
+prod-telemetry.jpg     → P-04 텔레메트리
+prod-bolt.jpg          → P-05 볼트 축력
+prod-vibration.jpg     → P-06 진동·소음
+prod-pressure.jpg      → P-07 압력/차압/레벨
+prod-bridge.jpg        → P-08 브릿지 박스
+prod-service.jpg       → P-09 현장 용역
+
+  교체 방법 (products.html CSS에 추가):
+    .prod-img-card[data-id="daq"] .img-zone {
+      background: url('assets/images/prod-daq.jpg') center/cover;
+      border: none;
+    }
+    /* 각 data-id에 맞게 반복 */
+
+──────────────────────────────────────
+  contact.html — 지도
+──────────────────────────────────────
+  .map-placeholder를 iframe으로 교체:
+
+  <iframe
+    src="https://map.naver.com/v5/embed?..."
+    width="100%" height="240"
+    style="border:0; border-radius:14px;"
+    allowfullscreen loading="lazy">
+  </iframe>
+
+  또는 카카오맵 embed 코드 사용
+
+──────────────────────────────────────
+  권장 이미지 사양
+──────────────────────────────────────
+  포맷: JPG (사진), PNG (로고/투명배경)
+  해상도: 1200px 이상 (히어로), 800px 이상 (제품)
+  압축: TinyJPG / Squoosh 등으로 최적화 후 업로드
+  비율: 히어로 16:9 또는 3:2 / 제품 카드 4:3
