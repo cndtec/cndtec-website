@@ -39,7 +39,12 @@ cndtec-website/
 - 5개 HTML 파일 img src 모두 PNG → SVG로 교체 완료
 - og:image는 PNG 유지 (소셜 미디어 SVG 미지원 대비)
 
+- 헤더/푸터 로고 PNG 교체 (투명배경) ✅
+- GitHub Pages 배포 ✅ (https://cndtec.github.io/cndtec-website)
+- 헤더 로고 120px, 네비 17px ✅
+- 푸터 로고 숨김, 링크 가운데 정렬 ✅
+
 ## 다음 작업 후보
 - 사진 실제 삽입 (assets/images/사진_배치_가이드.txt 참고)
-- 커스텀 도메인 연결 (cndtec.com)
+- 커스텀 도메인 연결 (www.cndtec.co.kr → 카페24 DNS 설정 필요)
 - og:image 메타태그 이미지 추가 ✅
