@@ -54,3 +54,13 @@ cndtec-website/
 - 도메인 전파 확인 후 GitHub Pages Custom domain 설정
 - og:image 메타태그 이미지 추가 ✅
 - 나머지 문구 다듬기
+
+## 작업 지침 (세션 공통)
+- 파일 전체 Read 금지 → grep으로 필요 라인만 찾고, Read는 offset/limit으로 해당 부분만
+- Edit으로 정확히 그 부분만 교체
+- 컨텍스트 절약을 위해 불필요한 파일 내용 출력 최소화
+- 작업 완료 후 이 CLAUDE.md의 "내일 남은 작업" 섹션 업데이트
+
+## 파일 위치
+- 웹사이트: C:\Users\wgjeo\클로이드 폴더\cndtec-website\
+- bash 경로: /sessions/lucid-zealous-goldberg/mnt/클로이드 폴더/cndtec-website/

@@ -653,3 +653,51 @@ footer { background: var(--charcoal); color: #d6d2cb; padding: 64px 0 32px; }
   .faq-q { padding: 18px 20px; font-size: 15px; }
   .faq-a { padding: 0 20px 18px; }
 }
+
+
+/* ===== 씨앤디테크 소개 · 강점 카드 ===== */
+.idx-strength-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.idx-strength-card {
+  padding: 36px 28px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.idx-strength-card:hover {
+  border-color: var(--orange-line);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.idx-s-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+.idx-strength-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+.idx-strength-card p {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.75;
+}
+
+@media (max-width: 1024px) {
+  .idx-strength-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .idx-strength-gr
