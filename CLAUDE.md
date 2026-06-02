@@ -44,7 +44,13 @@ cndtec-website/
 - 헤더 로고 120px, 네비 17px ✅
 - 푸터 로고 숨김, 링크 가운데 정렬 ✅
 
-## 다음 작업 후보
+- 사업분야 8개 재구성 (products.html) ✅
+- index.html 히어로 문구·스탯 수정 ✅
+- 파비콘 오렌지 C 아이콘 교체 ✅
+- 커스텀 도메인 Cloudflare 네임서버 설정 완료 (전파 대기 중)
+
+## 내일 남은 작업
 - 사진 실제 삽입 (assets/images/사진_배치_가이드.txt 참고)
-- 커스텀 도메인 연결 (www.cndtec.co.kr → 카페24 DNS 설정 필요)
+- 도메인 전파 확인 후 GitHub Pages Custom domain 설정
 - og:image 메타태그 이미지 추가 ✅
+- 나머지 문구 다듬기
