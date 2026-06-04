@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>축력 볼트 제작 | CND TECH 씨앤디테크</title>
+<meta name="description" content="풀브릿지 스트레인게이지 기반 축력 측정 볼트 커스텀 제작. 체결력 관리, 볼트 축력 모니터링 시스템 구축." />
+<meta property="og:title" content="축력 볼트 제작 | CND TECH 씨앤디테크" />
+<meta property="og:description" content="풀브릿지 스트레인게이지 기반 축력 측정 볼트 커스텀 제작. 체결력 관리, 볼트 축력 모니터링 시스템 구축." />
+<meta property="og:type" content="article" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=4">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "축력 볼트 커스텀 제작 기술 가이드",
+  "description": "풀브릿지 스트레인게이지 기반 볼트 축력 측정 원리, 제작 사양, 산업 적용 가이드",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://cndtec.co.kr"},
+  "inLanguage": "ko"
+}
+</script>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">FULL-BRIDGE SG · BOLT LOAD</div>
+      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(32px,5vw,60px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);" data-ko="축력 볼트 제작" data-en="Bolt Tension Measurement">축력 볼트 제작</h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:680px; line-height:1.7; margin-bottom:0;" data-ko="풀브릿지 스트레인게이지 기반 축력 측정 볼트 커스텀 제작. 체결력 관리, 볼트 축력 모니터링 시스템 구축." data-en="풀브릿지 스트레인게이지 기반 축력 측정 볼트 커스텀 제작. 체결력 관리, 볼트 축력 모니터링 시스템 구축.">풀브릿지 스트레인게이지 기반 축력 측정 볼트 커스텀 제작. 체결력 관리, 볼트 축력 모니터링 시스템 구축.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding:60px 0 100px;">
+  <div class="container">
+    <div style="max-width:800px; display:flex; flex-direction:column; gap:48px;">
+      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="볼트 축력 측정의 필요성" data-en="Why Measure Bolt Tension?">볼트 축력 측정의 필요성</h2>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="볼트 체결력(축력)은 구조물, 기계 장비, 압력 용기의 신뢰성을 결정하는 핵심 요소입니다. 토크 렌치로 체결해도 마찰 계수 변동으로 실제 축력이 20~30% 오차를 가질 수 있습니다. 직접 축력을 측정하면 정확한 체결 관리와 장기 모니터링이 가능합니다." data-en="Bolt tension is critical for structural integrity. Torque-based tightening can have 20–30% error due to friction variation. Direct tension measurement enables accurate clamp load management and long-term monitoring.">볼트 체결력(축력)은 구조물, 기계 장비, 압력 용기의 신뢰성을 결정하는 핵심 요소입니다. 토크 렌치로 체결해도 마찰 계수 변동으로 실제 축력이 20~30% 오차를 가질 수 있습니다. 직접 축력을 측정하면 정확한 체결 관리와 장기 모니터링이 가능합니다.</p>
+      </div>
+      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="풀브릿지 스트레인게이지 측정 원리" data-en="Full-Bridge Measurement Principle">풀브릿지 스트레인게이지 측정 원리</h2>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="볼트 내부에 4개의 스트레인게이지를 풀 브릿지로 구성하여 온도 보상과 굽힘 영향을 제거합니다. 볼트에 축하중이 가해지면 게이지가 저항 변화를 감지하고, 이를 전압 출력으로 변환합니다. 교정 곡선을 통해 출력 전압을 실제 축력(kN)으로 환산합니다." data-en="Four gauges in a full-bridge configuration inside the bolt eliminate temperature effects and bending. Axial load causes a resistance change converted to voltage output, calibrated to actual tension (kN).">볼트 내부에 4개의 스트레인게이지를 풀 브릿지로 구성하여 온도 보상과 굽힘 영향을 제거합니다. 볼트에 축하중이 가해지면 게이지가 저항 변화를 감지하고, 이를 전압 출력으로 변환합니다. 교정 곡선을 통해 출력 전압을 실제 축력(kN)으로 환산합니다.</p>
+      </div>
+      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="커스텀 제작 사양" data-en="Custom Fabrication Specs">커스텀 제작 사양</h2>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="고객의 볼트 규격(M8~M100 이상), 재질, 측정 범위, 출력 타입(mV/V, 4~20mA, 디지털)에 맞게 설계·제작합니다. 방수·방진 처리, 고온 환경용 특수 접착제, 무선 텔레메트리 연동도 가능합니다. 씨앤디테크는 설계부터 교정·납품까지 일괄 제공합니다." data-en="Custom-designed to customer bolt specs (M8–M100+), material, measurement range, and output type (mV/V, 4–20mA, digital). Waterproofing, high-temperature adhesive, and wireless telemetry integration available.">고객의 볼트 규격(M8~M100 이상), 재질, 측정 범위, 출력 타입(mV/V, 4~20mA, 디지털)에 맞게 설계·제작합니다. 방수·방진 처리, 고온 환경용 특수 접착제, 무선 텔레메트리 연동도 가능합니다. 씨앤디테크는 설계부터 교정·납품까지 일괄 제공합니다.</p>
+      </div>
+      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="적용 분야" data-en="Applications">적용 분야</h2>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="선박·해양 구조물 플랜지 체결 관리, 교량·철도 교각 앵커볼트 모니터링, 원자력 발전소 압력 용기 스터드 볼트, 풍력 타워 기초 볼트, 자동차 엔진·변속기 체결 시험에 적용됩니다." data-en="Applied to flange joint management on ships/offshore, bridge anchor bolt monitoring, nuclear pressure vessel stud bolts, wind tower foundation bolts, and automotive powertrain assembly testing.">선박·해양 구조물 플랜지 체결 관리, 교량·철도 교각 앵커볼트 모니터링, 원자력 발전소 압력 용기 스터드 볼트, 풍력 타워 기초 볼트, 자동차 엔진·변속기 체결 시험에 적용됩니다.</p>
+      </div>
+    </div>
+    <div style="margin-top:64px; padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius); max-width:800px;">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;" data-ko="측정 서비스 문의" data-en="Service Inquiry">측정 서비스 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;" data-ko="씨앤디테크는 축력 볼트 제작 장비 공급과 현장 측정 서비스를 제공합니다. 사양과 요구 사항을 알려주시면 최적의 솔루션을 제안드립니다." data-en="CND TECH provides Bolt Tension Measurement equipment and on-site services. Share your specs and requirements for a tailored proposal.">씨앤디테크는 축력 볼트 제작 장비 공급과 현장 측정 서비스를 제공합니다. 사양과 요구 사항을 알려주시면 최적의 솔루션을 제안드립니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 20년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="residual-stress.html">잔류응력 측정</a></li><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="pcb-stress.html">PCB 응력 측정</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 CND TECH (씨앤디테크) · 대표 전원근</span>
+      <span>경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span>
+    </div>
+  </div>
+</footer>
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+</body>
+</html>

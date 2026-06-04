@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>기술자료 | CND TECH 씨앤디테크</title>
+<meta name="description" content="잔류응력 측정, 스트레인게이지, 축력 볼트, PCB 응력 측정(IPC/JEDEC 9704A), 텔레메트리 시스템에 관한 씨앤디테크의 기술 자료 모음입니다." />
+<meta property="og:title" content="기술자료 | CND TECH 씨앤디테크" />
+<meta property="og:description" content="잔류응력·스트레인게이지·축력볼트·PCB응력·텔레메트리 전문 기술 자료" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://cndtec.co.kr/resources/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=4">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "씨앤디테크 기술자료",
+  "url": "https://cndtec.co.kr/resources/",
+  "publisher": { "@type": "Organization", "name": "씨앤디테크", "url": "https://cndtec.co.kr" },
+  "description": "잔류응력 측정, 스트레인게이지, 축력 볼트, PCB 응력 측정, 텔레메트리 시스템 기술 자료"
+}
+</script>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a>
+    <a href="../products.html">사업분야·제품</a>
+    <a href="../projects.html">주요실적</a>
+    <a href="index.html">기술자료</a>
+    <a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<section style="padding-top:160px; padding-bottom:40px;">
+  <div class="container">
+    <div class="sec-tag"><span class="bar"></span>TECHNICAL RESOURCES</div>
+    <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(32px,5vw,56px); font-weight:700; letter-spacing:-0.03em; margin:16px 0 16px; color:var(--charcoal);" data-ko="기술자료 라이브러리" data-en="Technical Resource Library">기술자료 라이브러리</h1>
+    <p style="font-size:18px; color:var(--text-dim); max-width:640px; line-height:1.7;" data-ko="씨앤디테크의 핵심 기술 분야별 원리, 적용 사례, 규격 정보를 정리한 전문 기술 자료입니다." data-en="In-depth technical references covering principles, case studies, and standards for each of CND TECH's core service areas.">씨앤디테크의 핵심 기술 분야별 원리, 적용 사례, 규격 정보를 정리한 전문 기술 자료입니다.</p>
+  </div>
+</section>
+
+<section style="padding-bottom:100px;">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:24px;">
+
+      <a href="residual-stress.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">ASTM E837</div>
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">잔류응력 측정</h2>
+        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">구멍뚫기법(Hole-Drilling Method) 원리, 측정 절차, 용접부·단조품·구조물 적용 사례 및 규격 해설.</p>
+        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
+      </a>
+
+      <a href="strain-gauge.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">TML · MM</div>
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">스트레인게이지 측정</h2>
+        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">스트레인게이지 선정·부착·결선 방법, 브릿지 회로 구성, TML·Micro-Measurements 제품 가이드.</p>
+        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
+      </a>
+
+      <a href="bolt-tension.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">FULL-BRIDGE SG</div>
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">축력 볼트 제작</h2>
+        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">풀브릿지 스트레인게이지 기반 볼트 축력 측정 원리, 커스텀 제작 사양, 산업 현장 적용 가이드.</p>
+        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
+      </a>
+
+      <a href="pcb-stress.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">IPC/JEDEC-9704A</div>
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">PCB 응력 측정</h2>
+        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">IPC/JEDEC-9704A 규격 기반 PCB 굽힘 응력 측정, 솔더 조인트 신뢰성 평가, 측정 셋업 가이드.</p>
+        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
+      </a>
+
+      <a href="telemetry.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">WIRELESS DAQ</div>
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">텔레메트리 시스템</h2>
+        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">무선 계측 시스템 구성, 회전체·이동체 계측 적용, 데이터 수집·전송 방식 및 구축 사례.</p>
+        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 20년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="residual-stress.html">잔류응력 측정</a></li><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="pcb-stress.html">PCB 응력 측정</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 CND TECH (씨앤디테크) · 대표 전원근</span>
+      <span>경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+.res-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+</style>
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+</body>
+</html>

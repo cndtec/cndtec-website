@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>텔레메트리 시스템 | CND TECH 씨앤디테크</title>
+<meta name="description" content="무선 계측 텔레메트리 시스템 설계·구축. 회전체·이동체 응력·토크 무선 측정, 현장 계측 솔루션." />
+<meta property="og:title" content="텔레메트리 시스템 | CND TECH 씨앤디테크" />
+<meta property="og:description" content="무선 계측 텔레메트리 시스템 설계·구축. 회전체·이동체 응력·토크 무선 측정, 현장 계측 솔루션." />
+<meta property="og:type" content="article" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=4">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "텔레메트리 무선 계측 시스템 기술 가이드",
+  "description": "텔레메트리 시스템 구성, 회전체 무선 계측, 데이터 수집·전송 방식, 산업 적용 사례",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://cndtec.co.kr"},
+  "inLanguage": "ko"
+}
+</script>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">WIRELESS · TELEMETRY</div>
+      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(32px,5vw,60px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);" data-ko="텔레메트리 시스템" data-en="Telemetry System">텔레메트리 시스템</h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:680px; line-height:1.7; margin-bottom:0;" data-ko="무선 계측 텔레메트리 시스템 설계·구축. 회전체·이동체 응력·토크 무선 측정, 현장 계측 솔루션." data-en="무선 계측 텔레메트리 시스템 설계·구축. 회전체·이동체 응력·토크 무선 측정, 현장 계측 솔루션.">무선 계측 텔레메트리 시스템 설계·구축. 회전체·이동체 응력·토크 무선 측정, 현장 계측 솔루션.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding:60px 0 100px;">
+  <div class="container">
+    <div style="max-width:800px; display:flex; flex-direction:column; gap:48px;">
+      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="텔레메트리 시스템이란?" data-en="What is a Telemetry System?">텔레메트리 시스템이란?</h2>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="텔레메트리(Telemetry)는 유선 연결이 불가능한 회전체, 이동체, 원격 구조물의 계측 데이터를 무선으로 수집·전송하는 기술입니다. 회전축 응력, 토크, 온도, 진동 데이터를 실시간으로 취득할 수 있어 기어박스, 드라이브 샤프트, 터빈, 프로펠러 등에 활용됩니다." data-en="Telemetry wirelessly acquires and transmits measurement data from rotating, moving, or remote objects where wired connections are impractical — enabling real-time stress, torque, temperature, and vibration data from gearboxes, drive shafts, turbines, and propellers.">텔레메트리(Telemetry)는 유선 연결이 불가능한 회전체, 이동체, 원격 구조물의 계측 데이터를 무선으로 수집·전송하는 기술입니다. 회전축 응력, 토크, 온도, 진동 데이터를 실시간으로 취득할 수 있어 기어박스, 드라이브 샤프트, 터빈, 프로펠러 등에 활용됩니다.</p>
+      </div>
+      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="시스템 구성" data-en="System Architecture">시스템 구성</h2>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="씨앤디테크의 텔레메트리 시스템은 ① 센서(스트레인게이지·토크센서) → ② 신호 컨디셔너(소형 증폭기, 회전체 탑재) → ③ 무선 송신 모듈 → ④ 수신기 → ⑤ DAQ 시스템·PC로 구성됩니다. RF, 슬립링, 광텔레메트리 방식 중 용도에 맞게 선택합니다." data-en="CND TECH telemetry: ① sensors (SG/torque) → ② signal conditioner (miniature amplifier on rotor) → ③ wireless TX module → ④ receiver → ⑤ DAQ/PC. RF, slip ring, and optical telemetry options are available.">씨앤디테크의 텔레메트리 시스템은 ① 센서(스트레인게이지·토크센서) → ② 신호 컨디셔너(소형 증폭기, 회전체 탑재) → ③ 무선 송신 모듈 → ④ 수신기 → ⑤ DAQ 시스템·PC로 구성됩니다. RF, 슬립링, 광텔레메트리 방식 중 용도에 맞게 선택합니다.</p>
+      </div>
+      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="회전체 계측 적용" data-en="Rotating Body Measurement">회전체 계측 적용</h2>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="회전하는 샤프트, 기어, 프로펠러, 임펠러에 스트레인게이지를 부착하고 소형 무선 송신 모듈을 장착하면 회전 중 실시간 응력·토크 데이터를 수신할 수 있습니다. 배터리 또는 비접촉 전력 전송(무선 전원) 방식을 사용합니다." data-en="Strain gauges bonded to rotating shafts, gears, propellers, or impellers with a compact wireless TX module provide real-time stress/torque data during rotation — powered by battery or contactless power transfer.">회전하는 샤프트, 기어, 프로펠러, 임펠러에 스트레인게이지를 부착하고 소형 무선 송신 모듈을 장착하면 회전 중 실시간 응력·토크 데이터를 수신할 수 있습니다. 배터리 또는 비접촉 전력 전송(무선 전원) 방식을 사용합니다.</p>
+      </div>
+      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="적용 사례 및 구축 서비스" data-en="Case Studies & Service">적용 사례 및 구축 서비스</h2>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="선박 프로펠러 샤프트 토크 계측, 헬리콥터 로터 블레이드 응력 모니터링, 자동차 드라이브샤프트 내구 시험, 풍력 발전기 블레이드 하중 측정에 적용해왔습니다. 씨앤디테크는 시스템 설계·제작, 현장 설치, 데이터 분석까지 일괄 제공합니다." data-en="Applied to ship propeller shaft torque, helicopter rotor blade stress, automotive driveshaft durability, and wind turbine blade load measurement. CND TECH delivers full system design, installation, and data analysis.">선박 프로펠러 샤프트 토크 계측, 헬리콥터 로터 블레이드 응력 모니터링, 자동차 드라이브샤프트 내구 시험, 풍력 발전기 블레이드 하중 측정에 적용해왔습니다. 씨앤디테크는 시스템 설계·제작, 현장 설치, 데이터 분석까지 일괄 제공합니다.</p>
+      </div>
+    </div>
+    <div style="margin-top:64px; padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius); max-width:800px;">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;" data-ko="측정 서비스 문의" data-en="Service Inquiry">측정 서비스 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;" data-ko="씨앤디테크는 텔레메트리 시스템 장비 공급과 현장 측정 서비스를 제공합니다. 사양과 요구 사항을 알려주시면 최적의 솔루션을 제안드립니다." data-en="CND TECH provides Telemetry System equipment and on-site services. Share your specs and requirements for a tailored proposal.">씨앤디테크는 텔레메트리 시스템 장비 공급과 현장 측정 서비스를 제공합니다. 사양과 요구 사항을 알려주시면 최적의 솔루션을 제안드립니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 20년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="residual-stress.html">잔류응력 측정</a></li><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="pcb-stress.html">PCB 응력 측정</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 CND TECH (씨앤디테크) · 대표 전원근</span>
+      <span>경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span>
+    </div>
+  </div>
+</footer>
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+</body>
+</html>

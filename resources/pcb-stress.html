@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PCB 응력 측정 IPC/JEDEC-9704A | CND TECH 씨앤디테크</title>
+<meta name="description" content="IPC/JEDEC-9704A 규격 기반 PCB 굽힘 응력 측정, 솔더 조인트 신뢰성 평가 서비스. SMT 공정, 낙하·굽힘 시험 계측." />
+<meta property="og:title" content="PCB 응력 측정 IPC/JEDEC-9704A | CND TECH 씨앤디테크" />
+<meta property="og:description" content="IPC/JEDEC-9704A 규격 기반 PCB 굽힘 응력 측정, 솔더 조인트 신뢰성 평가 서비스. SMT 공정, 낙하·굽힘 시험 계측." />
+<meta property="og:type" content="article" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=4">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "IPC/JEDEC-9704A PCB 응력 측정 기술 가이드",
+  "description": "IPC/JEDEC-9704A 규격 기반 PCB 굽힘 응력 측정 원리, 셋업, 판정 기준, 솔더 조인트 신뢰성 평가",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://cndtec.co.kr"},
+  "inLanguage": "ko"
+}
+</script>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">IPC/JEDEC-9704A</div>
+      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(32px,5vw,60px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);" data-ko="PCB 응력 측정" data-en="PCB Strain Measurement">PCB 응력 측정</h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:680px; line-height:1.7; margin-bottom:0;" data-ko="IPC/JEDEC-9704A 규격 기반 PCB 굽힘 응력 측정, 솔더 조인트 신뢰성 평가 서비스. SMT 공정, 낙하·굽힘 시험 계측." data-en="IPC/JEDEC-9704A 규격 기반 PCB 굽힘 응력 측정, 솔더 조인트 신뢰성 평가 서비스. SMT 공정, 낙하·굽힘 시험 계측.">IPC/JEDEC-9704A 규격 기반 PCB 굽힘 응력 측정, 솔더 조인트 신뢰성 평가 서비스. SMT 공정, 낙하·굽힘 시험 계측.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding:60px 0 100px;">
+  <div class="container">
+    <div style="max-width:800px; display:flex; flex-direction:column; gap:48px;">
+      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="PCB 응력 측정의 목적" data-en="Purpose of PCB Strain Measurement">PCB 응력 측정의 목적</h2>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="PCB(인쇄회로기판)에 가해지는 굽힘 응력은 솔더 조인트, BGA 패키지, 커넥터의 파손 원인이 됩니다. SMT 조립 공정, 나사 체결, 낙하 충격, 진동 시험 시 PCB에 발생하는 변형률을 측정하여 신뢰성 한계를 평가합니다." data-en="PCB bending stress causes solder joint, BGA, and connector failures. Measuring PCB strain during SMT assembly, screw mounting, drop impact, and vibration tests allows reliability limit evaluation.">PCB(인쇄회로기판)에 가해지는 굽힘 응력은 솔더 조인트, BGA 패키지, 커넥터의 파손 원인이 됩니다. SMT 조립 공정, 나사 체결, 낙하 충격, 진동 시험 시 PCB에 발생하는 변형률을 측정하여 신뢰성 한계를 평가합니다.</p>
+      </div>
+      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="IPC/JEDEC-9704A 규격 개요" data-en="IPC/JEDEC-9704A Standard Overview">IPC/JEDEC-9704A 규격 개요</h2>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="IPC/JEDEC-9704A는 PCB 조립 공정 중 발생하는 굽힘 응력을 스트레인게이지로 측정하는 방법을 정의한 산업 표준입니다. 게이지 부착 위치(BGA 패키지 인근), 측정 방향(X·Y·45°), 허용 변형률 한계(일반적으로 500~1000 μɛ) 등을 규정합니다." data-en="IPC/JEDEC-9704A defines PCB bending strain measurement during assembly using strain gauges — specifying gauge placement near BGA packages, measurement axes (X, Y, 45°), and allowable strain limits (typically 500–1000 μɛ).">IPC/JEDEC-9704A는 PCB 조립 공정 중 발생하는 굽힘 응력을 스트레인게이지로 측정하는 방법을 정의한 산업 표준입니다. 게이지 부착 위치(BGA 패키지 인근), 측정 방향(X·Y·45°), 허용 변형률 한계(일반적으로 500~1000 μɛ) 등을 규정합니다.</p>
+      </div>
+      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="측정 셋업 및 절차" data-en="Measurement Setup & Procedure">측정 셋업 및 절차</h2>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="BGA·QFP 패키지 인근 지정 위치에 소형 스트레인게이지(게이지 길이 1~3mm)를 부착합니다. 다채널 DAQ 시스템으로 공정 중 실시간 변형률을 수집합니다. 씨앤디테크는 측정 셋업 설계, 게이지 공급, DAQ 시스템 구성, 데이터 분석까지 원스톱 서비스를 제공합니다." data-en="Small gauges (1–3mm) are bonded near BGA/QFP packages. A multi-channel DAQ captures real-time strain during the process. CND TECH provides full service from setup design to data analysis.">BGA·QFP 패키지 인근 지정 위치에 소형 스트레인게이지(게이지 길이 1~3mm)를 부착합니다. 다채널 DAQ 시스템으로 공정 중 실시간 변형률을 수집합니다. 씨앤디테크는 측정 셋업 설계, 게이지 공급, DAQ 시스템 구성, 데이터 분석까지 원스톱 서비스를 제공합니다.</p>
+      </div>
+      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="판정 기준 및 결과 해석" data-en="Pass/Fail Criteria & Analysis">판정 기준 및 결과 해석</h2>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="측정 변형률이 허용 한계를 초과하면 솔더 조인트 파손 위험이 높아집니다. 씨앤디테크는 측정 결과를 IPC/JEDEC-9704A 기준으로 분석하고, 공정 개선 권고안(픽스처 변경, 나사 체결 순서 최적화 등)을 제공합니다." data-en="Strain exceeding the allowable limit indicates solder joint failure risk. CND TECH analyzes results against IPC/JEDEC-9704A criteria and provides process improvement recommendations.">측정 변형률이 허용 한계를 초과하면 솔더 조인트 파손 위험이 높아집니다. 씨앤디테크는 측정 결과를 IPC/JEDEC-9704A 기준으로 분석하고, 공정 개선 권고안(픽스처 변경, 나사 체결 순서 최적화 등)을 제공합니다.</p>
+      </div>
+    </div>
+    <div style="margin-top:64px; padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius); max-width:800px;">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;" data-ko="측정 서비스 문의" data-en="Service Inquiry">측정 서비스 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;" data-ko="씨앤디테크는 PCB 응력 측정 장비 공급과 현장 측정 서비스를 제공합니다. 사양과 요구 사항을 알려주시면 최적의 솔루션을 제안드립니다." data-en="CND TECH provides PCB Strain Measurement equipment and on-site services. Share your specs and requirements for a tailored proposal.">씨앤디테크는 PCB 응력 측정 장비 공급과 현장 측정 서비스를 제공합니다. 사양과 요구 사항을 알려주시면 최적의 솔루션을 제안드립니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 20년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="residual-stress.html">잔류응력 측정</a></li><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="pcb-stress.html">PCB 응력 측정</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 CND TECH (씨앤디테크) · 대표 전원근</span>
+      <span>경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span>
+    </div>
+  </div>
+</footer>
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+</body>
+</html>
