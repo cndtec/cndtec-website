@@ -155,5 +155,38 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
 </script>
+
+<!-- ===== 리뉴얼 안내 팝업 ===== -->
+<div id="renewalPopup" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:9999; align-items:center; justify-content:center;">
+  <div style="background:#fff; border-radius:16px; padding:40px 36px; max-width:440px; width:90%; text-align:center; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.2);">
+    <div style="width:56px; height:56px; background:#FFF3DC; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F29400" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+    </div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#F29400; font-weight:700; letter-spacing:0.1em; margin-bottom:12px;">WEBSITE RENEWAL</div>
+    <h2 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:22px; font-weight:700; color:#2E2B28; margin-bottom:14px; line-height:1.3;">홈페이지 리뉴얼 중입니다</h2>
+    <p style="font-size:14px; color:#6B6560; line-height:1.75; margin-bottom:24px;">보다 나은 서비스로 찾아뵐 수 있도록<br>빠른 시간 내에 완성하겠습니다.<br>불편을 드려 죄송합니다.</p>
+    <p style="font-size:13px; color:#9C9590; margin-bottom:24px;">문의: <a href="tel:031-680-1225" style="color:#F29400; font-weight:600;">031-680-1225</a> · <a href="mailto:wgjeon@cndtec.co.kr" style="color:#F29400; font-weight:600;">wgjeon@cndtec.co.kr</a></p>
+    <button onclick="closeRenewalPopup()" style="background:#F29400; color:#fff; border:none; border-radius:8px; padding:12px 32px; font-size:15px; font-weight:600; cursor:pointer; width:100%;">확인</button>
+  </div>
+</div>
+<script>
+function closeRenewalPopup() {
+  document.getElementById('renewalPopup').style.display = 'none';
+  try { localStorage.setItem('renewal-closed', Date.now()); } catch(e) {}
+}
+(function() {
+  try {
+    var closed = localStorage.getItem('renewal-closed');
+    var oneDayMs = 24 * 60 * 60 * 1000;
+    if (!closed || Date.now() - Number(closed) > oneDayMs) {
+      var popup = document.getElementById('renewalPopup');
+      popup.style.display = 'flex';
+    }
+  } catch(e) {
+    document.getElementById('renewalPopup').style.display = 'flex';
+  }
+})();
+</script>
+
 </body>
 </html>

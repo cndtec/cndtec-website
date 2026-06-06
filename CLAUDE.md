@@ -1,19 +1,26 @@
 # CND TECH 웹사이트 — 작업 현황
 
-## 현재 진행 상황
+## 완료된 작업 전체
 - style.css ✅
-- index.html ✅  
+- index.html ✅
 - about.html ✅
 - products.html ✅
 - projects.html ✅
 - contact.html ✅
 - JSON-LD 구조화 데이터 ✅
 - FAQ 섹션 ✅
-- Netlify 설정 ✅
-
-## 완료된 Netlify 설정 파일
-- `netlify.toml` — 빌드 설정, 보안 헤더(CSP 포함), 캐시 정책
-- `_redirects` — www → non-www 정규화, 확장자 없는 URL 라우팅
+- Netlify 설정 ✅ (netlify.toml, _redirects)
+- SVG 로고 제작 및 HTML 교체 ✅
+- 파비콘 교체 ✅
+- 커스텀 도메인 Cloudflare 설정 ✅
+- og:image 메타태그 ✅
+- 모바일 메뉴·언어전환 JS 복구 ✅
+- Formspree 문의폼 연동 ✅ (mrednazk / wgjeon@cndtec.co.kr)
+- HBK 로고 투명배경 교체 ✅
+- 히어로 문구 개선 ✅ (MEASURE WHAT MATTERS)
+- 모바일 헤더 로고·패딩 조정 ✅
+- 기술자료 섹션 추가 ✅ (resources/ 5개 페이지)
+- Google Analytics 삽입 ✅ (G-B25Y10FQK1)
 
 ## 프로젝트 구조
 ```
@@ -23,44 +30,35 @@ cndtec-website/
 ├── products.html
 ├── projects.html
 ├── contact.html
+├── resources/
+│   ├── index.html          ← 기술자료 목록
+│   ├── residual-stress.html
+│   ├── strain-gauge.html
+│   ├── bolt-tension.html
+│   ├── pcb-stress.html
+│   └── telemetry.html
 ├── css/style.css
 ├── assets/images/
-│   ├── cnd-logo*.png
-│   └── logos/logo-*.{png,svg}
-├── netlify.toml        ← Netlify 배포 설정
-└── _redirects          ← URL 리다이렉트 규칙
+├── netlify.toml
+└── _redirects
 ```
 
-- SVG 로고 제작 및 HTML 교체 ✅
-
-## 완료된 SVG 로고
-- `assets/images/cnd-logo.svg` — 기본 (검정+오렌지, 라이트 배경용)
-- `assets/images/cnd-logo-white.svg` — 화이트 버전 (다크 배경/푸터용)
-- 5개 HTML 파일 img src 모두 PNG → SVG로 교체 완료
-- og:image는 PNG 유지 (소셜 미디어 SVG 미지원 대비)
-
-- 헤더/푸터 로고 PNG 교체 (투명배경) ✅
-- GitHub Pages 배포 ✅ (https://cndtec.github.io/cndtec-website)
-- 헤더 로고 120px, 네비 17px ✅
-- 푸터 로고 숨김, 링크 가운데 정렬 ✅
-
-- 사업분야 8개 재구성 (products.html) ✅
-- index.html 히어로 문구·스탯 수정 ✅
-- 파비콘 오렌지 C 아이콘 교체 ✅
-- 커스텀 도메인 Cloudflare 네임서버 설정 완료 (전파 대기 중)
-
-## 내일 남은 작업
+## 남은 작업
 - 사진 실제 삽입 (assets/images/사진_배치_가이드.txt 참고)
+- 기술자료 페이지 세부 내용 다듬기
 - 도메인 전파 확인 후 GitHub Pages Custom domain 설정
-- og:image 메타태그 이미지 추가 ✅
-- 나머지 문구 다듬기
 
 ## 작업 지침 (세션 공통)
 - 파일 전체 Read 금지 → grep으로 필요 라인만 찾고, Read는 offset/limit으로 해당 부분만
 - Edit으로 정확히 그 부분만 교체
 - 컨텍스트 절약을 위해 불필요한 파일 내용 출력 최소화
-- 작업 완료 후 이 CLAUDE.md의 "내일 남은 작업" 섹션 업데이트
+- 작업 완료 후 이 CLAUDE.md 업데이트
 
 ## 파일 위치
 - 웹사이트: C:\Users\wgjeo\클로이드 폴더\cndtec-website\
 - bash 경로: /sessions/lucid-zealous-goldberg/mnt/클로이드 폴더/cndtec-website/
+
+## 주요 연동 서비스
+- Formspree: https://formspree.io/f/mrednazk
+- Google Analytics: G-B25Y10FQK1
+- GitHub: https://github.com/cndtec/cndtec-website
