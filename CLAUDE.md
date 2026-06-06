@@ -19,7 +19,7 @@
 - HBK 로고 투명배경 교체 ✅
 - 히어로 문구 개선 ✅ (MEASURE WHAT MATTERS)
 - 모바일 헤더 로고·패딩 조정 ✅
-- 기술자료 섹션 추가 ✅ (resources/ 5개 페이지)
+- 기술자료 섹션 추가 ✅ (resources/ 6개 페이지)
 - Google Analytics 삽입 ✅ (G-B25Y10FQK1)
 
 ## 프로젝트 구조
@@ -36,7 +36,8 @@ cndtec-website/
 │   ├── strain-gauge.html
 │   ├── bolt-tension.html
 │   ├── pcb-stress.html
-│   └── telemetry.html
+│   ├── telemetry.html
+│   └── daq-system.html
 ├── css/style.css
 ├── assets/images/
 ├── netlify.toml
