@@ -67,10 +67,11 @@
   /* 이미지 zoom */
   .prod-img-card .img-zone { overflow: hidden; }
   .prod-img-card .img-zone.has-photo {
-    background: var(--gray-100); border-bottom: none; padding: 0;
-    display: block;
+    background: #e8e4de; border-bottom: none; padding: 0;
+    display: block; position: relative;
   }
   .prod-img-card .img-zone img {
+    position: absolute; inset: 0;
     width: 100%; height: 100%; object-fit: cover; display: block;
     transition: transform 0.45s ease;
   }
@@ -549,4 +550,4 @@ function closeRenewalPopup() {
 
 </body>
 </html>
-                                                                                                                                                                                                                                
+                                                                                                                                                                                  
