@@ -432,7 +432,7 @@
         <span class="hv-label">DAQ 시스템</span>
       </a>
       <a href="resources/residual-stress.html" class="hv-card ripple-host">
-        <div class="zoom-bg" style="background-image:url('assets/images/잔류응력측정.png')"></div>
+        <div class="zoom-bg" style="background-image:url('assets/images/ASTM.png')"></div>
         <span class="hv-label">잔류응력측정시스템</span>
       </a>
       <a href="resources/pcb-stress.html" class="hv-card ripple-host">
@@ -440,7 +440,7 @@
         <span class="hv-label">PCB 스트레인 응력 측정</span>
       </a>
       <a href="resources/bolt-tension.html" class="hv-card ripple-host">
-        <div class="zoom-bg" style="background-image:url('assets/images/축력측정볼트센서.png')"></div>
+        <div class="zoom-bg" style="background-image:url('assets/images/bolt-sensor.png')"></div>
         <span class="hv-label">축력 볼트 (커스텀 센서)</span>
       </a>
     </div>
@@ -790,4 +790,6 @@ document.querySelectorAll('.ripple-host').forEach(el => {
 <script>
 function closeRenewalPopup() {
   document.getElementById('renewalPopup').style.display = 'none';
-  try { localStorage.setItem('renewal-closed', Date.now
+  try { localStorage.setItem('renewal-closed', Date.now()); } catch(e) {}
+}
+(funct
