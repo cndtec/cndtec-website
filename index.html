@@ -50,13 +50,14 @@
   .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 80px; }
 
   /* === 이미지 히어로 비주얼 === */
+  /* Hero visual — 단일 컬럼 세로 스택 */
   .hero-visual {
-    margin-top: 60px;
-    display: flex; flex-direction: column; gap: 8px;
+    margin-top: 80px;
+    display: flex; flex-direction: column; gap: 12px;
   }
   .hero-visual .hv-card {
     width: 100%;
-    height: clamp(90px, 11vw, 160px);
+    aspect-ratio: 16 / 9;   /* 이미지와 동일 비율 → 짤림 없음 */
     border-radius: var(--radius);
     position: relative; overflow: hidden;
     cursor: pointer; text-decoration: none;
@@ -66,26 +67,11 @@
   }
   .hero-visual .hv-card .zoom-bg {
     position: absolute; inset: 0;
-    background-size: contain; background-position: center; background-repeat: no-repeat;
+    background-size: cover; background-position: center;
     transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94);
   }
   .hero-visual .hv-card:hover .zoom-bg { transform: scale(1.04); }
   .hero-visual .hv-card:hover { box-shadow: 0 10px 36px rgba(0,0,0,0.28); }
-  /* 호버 레이블 */
-  .hero-visual .hv-card .hv-label {
-    position: absolute; bottom: 12px; left: 16px;
-    padding: 5px 14px;
-    background: rgba(20,16,12,0.82);
-    border: 1px solid rgba(255,190,80,0.4);
-    border-radius: 6px;
-    color: #ffd166; font-size: 15px; font-weight: 700; letter-spacing: 0.02em;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.9);
-    opacity: 0; transform: translateY(6px);
-    transition: opacity 0.28s, transform 0.28s;
-    pointer-events: none;
-    white-space: nowrap;
-  }
-  .hero-visual .hv-card:hover .hv-label { opacity: 1; transform: translateY(0); }
   /* 레거시 호환 */
   .hero-visual .main-img { display: none; }
   .hero-visual .side-imgs { display: none; }
@@ -126,15 +112,7 @@
 
   @media (max-width: 920px) {
     .areas-preview { grid-template-columns: repeat(2,1fr); }
-    .hero-visual { gap: 5px; margin-top: 32px; }
-    .hero-visual .hv-card { height: 80px; }
-    /* 모바일: 레이블 항상 표시 (hover 없음) */
-    .hero-visual .hv-card .hv-label { opacity: 1; transform: translateY(0); font-size: 12px; padding: 4px 10px; bottom: 8px; left: 10px; }
-  }
-  @media (max-width: 920px) {
-    .hero { padding-top: 120px; padding-bottom: 60px; }
-    .hero p.lead { font-size: 15px; margin-bottom: 28px; }
-    .hero-actions { margin-bottom: 40px; }
+    .hero-visual .hv-card { aspect-ratio: 16 / 9; }
   }
 </style>
 
@@ -410,7 +388,7 @@
         <div class="lbl" data-ko="YEARS · 경력" data-en="YEARS OF EXPERIENCE">YEARS · 경력</div>
       </div>
       <div class="stat">
-        <div class="num">500<span class="plus">+</span></div>
+        <div class="num">1000<span class="plus">+</span></div>
         <div class="lbl" data-ko="PROJECTS · 수행 실적" data-en="PROJECTS DELIVERED">PROJECTS · 수행 실적</div>
       </div>
       <div class="stat">
@@ -427,19 +405,15 @@
     <div class="hero-visual fade-in">
       <a href="resources/daq-system.html" class="hv-card ripple-host">
         <div class="zoom-bg" style="background-image:url('assets/images/daq.png')"></div>
-        <span class="hv-label">DAQ 시스템</span>
       </a>
       <a href="resources/residual-stress.html" class="hv-card ripple-host">
         <div class="zoom-bg" style="background-image:url('assets/images/ASTM.png')"></div>
-        <span class="hv-label">잔류응력측정시스템</span>
       </a>
       <a href="resources/pcb-stress.html" class="hv-card ripple-host">
         <div class="zoom-bg" style="background-image:url('assets/images/pcb-strain.png')"></div>
-        <span class="hv-label">PCB 스트레인 응력 측정</span>
       </a>
       <a href="resources/bolt-tension.html" class="hv-card ripple-host">
         <div class="zoom-bg" style="background-image:url('assets/images/축력측정볼트센서.png')"></div>
-        <span class="hv-label">축력 볼트 (커스텀 센서)</span>
       </a>
     </div>
   </div>
@@ -541,8 +515,8 @@
     <div class="sec-head">
       <div class="sec-tag"><span class="bar"></span>CLIENTS &amp; TRUST</div>
       <h2 data-ko="대한민국 산업·연구 현장과 함께" data-en="Trusted across Korean industry &amp; research">대한민국 산업·연구 현장과 함께</h2>
-      <p data-ko="조선·중공업·자동차·우주항공·국방·에너지·학계 — 500여 건 이상의 시험·계측 프로젝트 수행." data-en="Shipbuilding, heavy industry, automotive, aerospace, defense, energy, academia — 500+ projects delivered.">
-        조선·중공업·자동차·우주항공·국방·에너지·학계 — 500여 건 이상의 시험·계측 프로젝트 수행.
+      <p data-ko="조선·중공업·자동차·우주항공·국방·에너지·학계 — 200여 건의 시험·계측 프로젝트 수행." data-en="Shipbuilding, heavy industry, automotive, aerospace, defense, energy, academia — 200+ projects delivered.">
+        조선·중공업·자동차·우주항공·국방·에너지·학계 — 200여 건의 시험·계측 프로젝트 수행.
       </p>
     </div>
     <div class="clients-marquee">
@@ -792,4 +766,17 @@ function closeRenewalPopup() {
 }
 (function() {
   try {
-    var closed = localStorage.getItem('renewal
+    var closed = localStorage.getItem('renewal-closed');
+    var oneDayMs = 24 * 60 * 60 * 1000;
+    if (!closed || Date.now() - Number(closed) > oneDayMs) {
+      var popup = document.getElementById('renewalPopup');
+      popup.style.display = 'flex';
+    }
+  } catch(e) {
+    document.getElementById('renewalPopup').style.display = 'flex';
+  }
+})();
+</script>
+
+</body>
+</html>

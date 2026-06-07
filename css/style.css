@@ -576,14 +576,9 @@ footer { background: var(--charcoal); color: #d6d2cb; padding: 64px 0 32px; }
 @media (max-width: 920px) {
   .nav-links { display: none; }
   .menu-toggle { display: flex; }
-  /* 모바일: 언어 토글·문의 버튼 숨김 → 햄버거만 표시 */
-  .nav-cta .lang-toggle { display: none; }
-  .nav-cta a.btn { display: none; }
   .nav { padding: 10px 16px; }
   .brand-logo { height: 60px; max-width: 200px; }
-  .areas, .blog-grid, .contact-wrap, .achievement-tabs { grid-template-columns: 1fr; gap: 20px; }
-  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .idx-strength-grid { grid-template-columns: repeat(2, 1fr); }
+  .areas, .product-grid, .blog-grid, .contact-wrap, .achievement-tabs { grid-template-columns: 1fr; gap: 20px; }
   .about-list { grid-template-columns: 1fr; }
   .contact-wrap { padding: 32px 24px; }
   .hero-stats { grid-template-columns: repeat(2, 1fr); }
@@ -603,8 +598,6 @@ footer { background: var(--charcoal); color: #d6d2cb; padding: 64px 0 32px; }
   .stat-cards, .photo-grid { grid-template-columns: 1fr; }
   .partner-logos { gap: 10px; }
   .hero-stats { grid-template-columns: 1fr 1fr; }
-  .product-grid { grid-template-columns: 1fr; }
-  .idx-strength-grid { grid-template-columns: 1fr; }
 }
 
 /* ── Mobile nav drawer ── */
@@ -690,4 +683,24 @@ footer { background: var(--charcoal); color: #d6d2cb; padding: 64px 0 32px; }
   font-weight: 700;
   color: var(--accent);
   letter-spacing: 0.05em;
-  
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+.idx-strength-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+.idx-strength-card p {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.75;
+}
+
+@media (max-width: 1024px) {
+  .idx-strength-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .idx-strength-gr
