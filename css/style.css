@@ -604,7 +604,8 @@ footer { background: var(--charcoal); color: #d6d2cb; padding: 64px 0 32px; }
   .partner-logos { gap: 10px; }
   .hero-stats { grid-template-columns: 1fr 1fr; }
   .product-grid { grid-template-columns: 1fr; }
-  .idx-strength-grid { grid-template-columns: 1fr; }
+  .idx-strength-grid { grid-template-columns: 1fr; gap: 12px; }
+  .idx-strength-card { padding: 24px 20px; }
 }
 
 /* ── Mobile nav drawer ── */
@@ -687,7 +688,4 @@ footer { background: var(--charcoal); color: #d6d2cb; padding: 64px 0 32px; }
 .idx-s-num {
   font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: 0.05em;
-  
+  font-weight: 7
