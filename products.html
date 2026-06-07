@@ -64,15 +64,17 @@
   /* 카드 → a태그 */
   a.prod-img-card { display: block; text-decoration: none; color: inherit; }
 
-  /* 이미지 zoom */
+  /* 이미지 — 전체 보이기 */
   .prod-img-card .img-zone { overflow: hidden; }
   .prod-img-card .img-zone.has-photo {
-    background: #e8e4de; border-bottom: none; padding: 0;
-    display: block; position: relative;
+    background: #f0ece6; border-bottom: none; padding: 8px;
+    display: flex; align-items: center; justify-content: center;
+    height: 200px;
   }
   .prod-img-card .img-zone img {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%; object-fit: cover; display: block;
+    max-width: 100%; max-height: 184px;
+    width: auto; height: auto;
+    object-fit: contain; display: block;
     transition: transform 0.45s ease;
   }
   .prod-img-card:hover .img-zone img { transform: scale(1.06); }
@@ -312,7 +314,7 @@
 
       <!-- P-01 -->
       <a href="resources/daq-system.html" class="prod-img-card fade-in" data-id="daq">
-        <div class="img-zone has-photo" style="height:180px">
+        <div class="img-zone has-photo" style="height:200px">
           <img src="assets/images/데이터수집장치.png" alt="DAQ 데이터수집장치 시스템">
         </div>
         <div class="card-body">
@@ -325,9 +327,8 @@
 
       <!-- P-02 -->
       <a href="resources/strain-gauge.html" class="prod-img-card fade-in" data-id="sg">
-        <div class="img-zone">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
-          <span class="ph-label">스트레인게이지 공급</span>
+        <div class="img-zone has-photo" style="height:200px">
+          <img src="assets/images/스트레인게이지.png" alt="스트레인게이지 공급">
         </div>
         <div class="card-body">
           <div class="prod-num">// P-02</div>
@@ -339,7 +340,7 @@
 
       <!-- P-03 -->
       <a href="resources/residual-stress.html" class="prod-img-card fade-in" data-id="residual">
-        <div class="img-zone has-photo" style="height:180px">
+        <div class="img-zone has-photo" style="height:200px">
           <img src="assets/images/잔류응력측정.png" alt="잔류응력 측정 ASTM E837">
         </div>
         <div class="card-body">
@@ -352,9 +353,8 @@
 
       <!-- P-04 -->
       <a href="resources/sensors.html" class="prod-img-card fade-in" data-id="sensors">
-        <div class="img-zone">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg>
-          <span class="ph-label">센서 공급</span>
+        <div class="img-zone has-photo" style="height:200px">
+          <img src="assets/images/센서류.png" alt="센서 공급">
         </div>
         <div class="card-body">
           <div class="prod-num">// P-04</div>
@@ -366,7 +366,7 @@
 
       <!-- P-05 -->
       <a href="resources/custom-sensor.html" class="prod-img-card fade-in" data-id="custom">
-        <div class="img-zone has-photo" style="height:180px">
+        <div class="img-zone has-photo" style="height:200px">
           <img src="assets/images/커스텀센서제작.png" alt="커스텀 센서 제작">
         </div>
         <div class="card-body">
@@ -379,7 +379,7 @@
 
       <!-- P-06 -->
       <a href="resources/telemetry.html" class="prod-img-card fade-in" data-id="telemetry">
-        <div class="img-zone has-photo" style="height:180px">
+        <div class="img-zone has-photo" style="height:200px">
           <img src="assets/images/텔레메터리시스템.png" alt="텔레메트리 시스템">
         </div>
         <div class="card-body">
@@ -392,9 +392,8 @@
 
       <!-- P-07 -->
       <a href="resources/vibration.html" class="prod-img-card fade-in" data-id="vibration">
-        <div class="img-zone">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 12h2l2-6 2 12 2-8 2 4 2-2h4"/></svg>
-          <span class="ph-label">진동·소음 측정</span>
+        <div class="img-zone has-photo" style="height:200px">
+          <img src="assets/images/진동센서.png" alt="진동·소음 측정">
         </div>
         <div class="card-body">
           <div class="prod-num">// P-07</div>
@@ -406,7 +405,7 @@
 
       <!-- P-08 -->
       <a href="resources/field-service.html" class="prod-img-card fade-in" data-id="service">
-        <div class="img-zone has-photo" style="height:180px">
+        <div class="img-zone has-photo" style="height:200px">
           <img src="assets/images/현장계측.png" alt="현장 계측 용역">
         </div>
         <div class="card-body">
@@ -550,4 +549,4 @@ function closeRenewalPopup() {
 
 </body>
 </html>
-                                                                                                                                                                                  
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            

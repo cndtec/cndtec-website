@@ -52,11 +52,11 @@
   /* === 이미지 히어로 비주얼 === */
   .hero-visual {
     margin-top: 60px;
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;
+    display: flex; flex-direction: column; gap: 8px;
   }
   .hero-visual .hv-card {
     width: 100%;
-    height: clamp(140px, 18vw, 290px);
+    height: clamp(90px, 11vw, 160px);
     border-radius: var(--radius);
     position: relative; overflow: hidden;
     cursor: pointer; text-decoration: none;
@@ -122,10 +122,10 @@
 
   @media (max-width: 920px) {
     .areas-preview { grid-template-columns: repeat(2,1fr); }
-    .hero-visual { gap: 6px; margin-top: 36px; }
-    .hero-visual .hv-card { height: 130px; }
+    .hero-visual { gap: 5px; margin-top: 32px; }
+    .hero-visual .hv-card { height: 80px; }
     /* 모바일: 레이블 항상 표시 (hover 없음) */
-    .hero-visual .hv-card .hv-label { opacity: 1; transform: translateY(0); font-size: 11px; padding: 22px 12px 10px; }
+    .hero-visual .hv-card .hv-label { opacity: 1; transform: translateY(0); font-size: 10px; padding: 18px 10px 8px; }
   }
   @media (max-width: 920px) {
     .hero { padding-top: 120px; padding-bottom: 60px; }
@@ -791,4 +791,5 @@ function closeRenewalPopup() {
     var closed = localStorage.getItem('renewal-closed');
     var oneDayMs = 24 * 60 * 60 * 1000;
     if (!closed || Date.now() - Number(closed) > oneDayMs) {
-      var popup = document.getElementById(
+      var popup = document.getElementById('renewalPopup');
+ 
