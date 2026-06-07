@@ -56,7 +56,8 @@
   }
   .hero-visual .hv-card {
     width: 100%;
-    height: clamp(200px, 26vw, 380px);
+    aspect-ratio: 16/9;
+    height: auto;
     border-radius: var(--radius);
     position: relative; overflow: hidden;
     cursor: pointer; text-decoration: none;
@@ -66,7 +67,7 @@
   }
   .hero-visual .hv-card .zoom-bg {
     position: absolute; inset: 0;
-    background-size: contain; background-position: center; background-repeat: no-repeat;
+    background-size: cover; background-position: center; background-repeat: no-repeat;
     transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94);
   }
   .hero-visual .hv-card:hover .zoom-bg { transform: scale(1.04); }
@@ -127,7 +128,7 @@
   @media (max-width: 920px) {
     .areas-preview { grid-template-columns: repeat(2,1fr); }
     .hero-visual { gap: 5px; margin-top: 32px; }
-    .hero-visual .hv-card { height: 150px; }
+    .hero-visual .hv-card { aspect-ratio: 16/9; height: auto; }
     /* 모바일: 레이블 항상 표시 (hover 없음) */
     .hero-visual .hv-card .hv-label { opacity: 1; transform: translateY(0); font-size: 12px; padding: 4px 10px; bottom: 8px; left: 10px; }
   }
@@ -792,4 +793,4 @@ function closeRenewalPopup() {
 }
 (function() {
   try {
-    var closed = localStorage.getItem('ren
+    var closed = local
