@@ -50,35 +50,28 @@
   .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 80px; }
 
   /* === 이미지 히어로 비주얼 === */
-  /* Hero visual — 세로 스택 레이아웃 */
+  /* Hero visual — 단일 컬럼 세로 스택 */
   .hero-visual {
     margin-top: 80px;
     display: flex; flex-direction: column; gap: 12px;
   }
-  /* 공통 카드 */
   .hero-visual .hv-card {
+    width: 100%; height: 260px;
     border-radius: var(--radius);
     position: relative; overflow: hidden;
     cursor: pointer; text-decoration: none;
     background: #2a2828;
-    transition: box-shadow 0.3s;
     display: block;
+    transition: box-shadow 0.3s;
   }
   .hero-visual .hv-card .zoom-bg {
     position: absolute; inset: 0;
     background-size: cover; background-position: center;
     transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94);
   }
-  .hero-visual .hv-card:hover .zoom-bg { transform: scale(1.06); }
-  .hero-visual .hv-card:hover { box-shadow: 0 10px 36px rgba(0,0,0,0.30); }
-  /* 상단 메인 카드 (DAQ) */
-  .hero-visual .hv-main { height: 300px; }
-  /* 하단 3칸 가로 행 */
-  .hero-visual .hv-row {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
-  }
-  .hero-visual .hv-row .hv-card { height: 200px; }
-  /* 레거시 클래스 호환 (ripple 등) */
+  .hero-visual .hv-card:hover .zoom-bg { transform: scale(1.05); }
+  .hero-visual .hv-card:hover { box-shadow: 0 10px 36px rgba(0,0,0,0.28); }
+  /* 레거시 호환 */
   .hero-visual .main-img { display: none; }
   .hero-visual .side-imgs { display: none; }
 
@@ -118,9 +111,7 @@
 
   @media (max-width: 920px) {
     .areas-preview { grid-template-columns: repeat(2,1fr); }
-    .hero-visual .hv-main { height: 200px; }
-    .hero-visual .hv-row { grid-template-columns: 1fr; }
-    .hero-visual .hv-row .hv-card { height: 160px; }
+    .hero-visual .hv-card { height: 180px; }
   }
 </style>
 
@@ -411,22 +402,18 @@
 
     <!-- Hero visual (사진 자리) -->
     <div class="hero-visual fade-in">
-      <!-- 상단: DAQ 시스템 (전체 너비) -->
-      <a href="resources/daq-system.html" class="hv-card hv-main ripple-host">
+      <a href="resources/daq-system.html" class="hv-card ripple-host">
         <div class="zoom-bg" style="background-image:url('assets/images/daq.png')"></div>
       </a>
-      <!-- 하단: 잔류응력 · PCB 스트레인 · 축력볼트 (3열) -->
-      <div class="hv-row">
-        <a href="resources/residual-stress.html" class="hv-card ripple-host">
-          <div class="zoom-bg" style="background-image:url('assets/images/ASTM.png')"></div>
-        </a>
-        <a href="resources/pcb-stress.html" class="hv-card ripple-host">
-          <div class="zoom-bg" style="background-image:url('assets/images/pcb-strain.png')"></div>
-        </a>
-        <a href="resources/bolt-tension.html" class="hv-card ripple-host">
-          <div class="zoom-bg" style="background-image:url('assets/images/축력측정볼트센서.png'); background-size:contain; background-repeat:no-repeat; background-position:center;"></div>
-        </a>
-      </div>
+      <a href="resources/residual-stress.html" class="hv-card ripple-host">
+        <div class="zoom-bg" style="background-image:url('assets/images/ASTM.png')"></div>
+      </a>
+      <a href="resources/pcb-stress.html" class="hv-card ripple-host">
+        <div class="zoom-bg" style="background-image:url('assets/images/pcb-strain.png')"></div>
+      </a>
+      <a href="resources/bolt-tension.html" class="hv-card ripple-host">
+        <div class="zoom-bg" style="background-image:url('assets/images/축력측정볼트센서.png')"></div>
+      </a>
     </div>
   </div>
 </section>
