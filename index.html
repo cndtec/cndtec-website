@@ -50,14 +50,13 @@
   .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 80px; }
 
   /* === 이미지 히어로 비주얼 === */
-  /* Hero visual — 단일 컬럼 세로 스택 */
   .hero-visual {
-    margin-top: 80px;
-    display: flex; flex-direction: column; gap: 12px;
+    margin-top: 60px;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;
   }
   .hero-visual .hv-card {
     width: 100%;
-    aspect-ratio: 16 / 9;   /* 이미지와 동일 비율 → 짤림 없음 */
+    height: clamp(140px, 18vw, 290px);
     border-radius: var(--radius);
     position: relative; overflow: hidden;
     cursor: pointer; text-decoration: none;
@@ -70,8 +69,19 @@
     background-size: cover; background-position: center;
     transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94);
   }
-  .hero-visual .hv-card:hover .zoom-bg { transform: scale(1.04); }
+  .hero-visual .hv-card:hover .zoom-bg { transform: scale(1.05); }
   .hero-visual .hv-card:hover { box-shadow: 0 10px 36px rgba(0,0,0,0.28); }
+  /* 호버 레이블 */
+  .hero-visual .hv-card .hv-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 28px 16px 14px;
+    background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%);
+    color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 0.01em;
+    opacity: 0; transform: translateY(6px);
+    transition: opacity 0.32s, transform 0.32s;
+    pointer-events: none;
+  }
+  .hero-visual .hv-card:hover .hv-label { opacity: 1; transform: translateY(0); }
   /* 레거시 호환 */
   .hero-visual .main-img { display: none; }
   .hero-visual .side-imgs { display: none; }
@@ -112,7 +122,15 @@
 
   @media (max-width: 920px) {
     .areas-preview { grid-template-columns: repeat(2,1fr); }
-    .hero-visual .hv-card { aspect-ratio: 16 / 9; }
+    .hero-visual { gap: 6px; margin-top: 36px; }
+    .hero-visual .hv-card { height: 130px; }
+    /* 모바일: 레이블 항상 표시 (hover 없음) */
+    .hero-visual .hv-card .hv-label { opacity: 1; transform: translateY(0); font-size: 11px; padding: 22px 12px 10px; }
+  }
+  @media (max-width: 920px) {
+    .hero { padding-top: 120px; padding-bottom: 60px; }
+    .hero p.lead { font-size: 15px; margin-bottom: 28px; }
+    .hero-actions { margin-bottom: 40px; }
   }
 </style>
 
@@ -405,15 +423,19 @@
     <div class="hero-visual fade-in">
       <a href="resources/daq-system.html" class="hv-card ripple-host">
         <div class="zoom-bg" style="background-image:url('assets/images/daq.png')"></div>
+        <span class="hv-label">DAQ 시스템</span>
       </a>
       <a href="resources/residual-stress.html" class="hv-card ripple-host">
         <div class="zoom-bg" style="background-image:url('assets/images/ASTM.png')"></div>
+        <span class="hv-label">잔류응력 측정</span>
       </a>
       <a href="resources/pcb-stress.html" class="hv-card ripple-host">
         <div class="zoom-bg" style="background-image:url('assets/images/pcb-strain.png')"></div>
+        <span class="hv-label">PCB 스트레인게이지</span>
       </a>
       <a href="resources/bolt-tension.html" class="hv-card ripple-host">
         <div class="zoom-bg" style="background-image:url('assets/images/축력측정볼트센서.png')"></div>
+        <span class="hv-label">축력측정 볼트센서</span>
       </a>
     </div>
   </div>
@@ -769,14 +791,4 @@ function closeRenewalPopup() {
     var closed = localStorage.getItem('renewal-closed');
     var oneDayMs = 24 * 60 * 60 * 1000;
     if (!closed || Date.now() - Number(closed) > oneDayMs) {
-      var popup = document.getElementById('renewalPopup');
-      popup.style.display = 'flex';
-    }
-  } catch(e) {
-    document.getElementById('renewalPopup').style.display = 'flex';
-  }
-})();
-</script>
-
-</body>
-</html>
+      var popup = document.getElementById(

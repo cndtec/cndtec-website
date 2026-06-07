@@ -576,6 +576,9 @@ footer { background: var(--charcoal); color: #d6d2cb; padding: 64px 0 32px; }
 @media (max-width: 920px) {
   .nav-links { display: none; }
   .menu-toggle { display: flex; }
+  /* 모바일: 언어 토글·문의 버튼 숨김 → 햄버거만 표시 */
+  .nav-cta .lang-toggle { display: none; }
+  .nav-cta a.btn { display: none; }
   .nav { padding: 10px 16px; }
   .brand-logo { height: 60px; max-width: 200px; }
   .areas, .product-grid, .blog-grid, .contact-wrap, .achievement-tabs { grid-template-columns: 1fr; gap: 20px; }
@@ -695,12 +698,4 @@ footer { background: var(--charcoal); color: #d6d2cb; padding: 64px 0 32px; }
 }
 .idx-strength-card p {
   font-size: 14px;
-  color: var(--text-dim);
-  line-height: 1.75;
-}
-
-@media (max-width: 1024px) {
-  .idx-strength-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 600px) {
-  .idx-strength-gr
+  col
