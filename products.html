@@ -53,6 +53,13 @@
   .prod-img-card .card-body .prod-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-mute); font-weight: 600; margin-bottom: 8px; }
   .prod-img-card .card-body h3 { font-size: 18px; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; }
   .prod-img-card .card-body p { font-size: 13px; color: var(--text-dim); line-height: 1.6; margin-bottom: 14px; }
+  .prod-img-card .brands { display: flex; flex-wrap: wrap; gap: 6px; }
+  .prod-img-card .brands span {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    padding: 3px 8px; border-radius: 4px;
+    background: var(--orange-tint); color: var(--accent-deep);
+    border: 1px solid var(--orange-line); font-weight: 600; letter-spacing: 0.03em;
+  }
 
   /* section anchor offset (fixed header) */
   .sec-anchor { scroll-margin-top: 90px; }
@@ -297,7 +304,7 @@
           <div class="prod-num">// P-01</div>
           <h3 data-ko="DAQ · 데이터로거 시스템" data-en="DAQ &amp; Datalogger Systems">DAQ · 데이터로거 시스템</h3>
           <p data-ko="HBM, Gantner, Data Translation, CNDTECH 장비 공급 및 구축. 스트레인·전압·전류·가속도 멀티 입력, 실시간 모니터링 소프트웨어 설정." data-en="HBM, Gantner, Data Translation, CNDTECH systems supply &amp; integration. Multi-input DAQ with real-time monitoring software setup.">HBM, Gantner, Data Translation, CNDTECH 장비 공급 및 구축. 스트레인·전압·전류·가속도 멀티 입력, 실시간 모니터링 소프트웨어 설정.</p>
-          <div class="brands"><span>HBM</span><span>Gantner</span><span>Data Translation</span><span>CNDTECH</span></div>
+          <div class="brands"><span>HBM</span><span>GANTNER</span><span>SIMEX</span><span>Data Translation</span><span>GREEN TECH</span><span>CNDTECH</span></div>
         </div>
       </div>
 
@@ -311,7 +318,7 @@
           <div class="prod-num">// P-02</div>
           <h3 data-ko="스트레인게이지 공급" data-en="Strain Gauge Supply">스트레인게이지 공급</h3>
           <p data-ko="TML, HBM 스트레인게이지 전 라인업 공급. 일반형·고온형·방수형·잔류응력 측정용 로제트 게이지(ASTM E837) 포함." data-en="Full lineup of TML &amp; HBM strain gauges — standard, high-temp, waterproof, and ASTM E837 rosette gauges.">TML, HBM 스트레인게이지 전 라인업 공급. 일반형·고온형·방수형·잔류응력 측정용 로제트 게이지 포함.</p>
-          <div class="brands"><span>TML</span><span>HBM</span><span>Micro-Measurements</span></div>
+          <div class="brands"><span>HBM</span><span>TML</span></div>
         </div>
       </div>
 
@@ -324,7 +331,7 @@
         <div class="card-body">
           <div class="prod-num">// P-03</div>
           <h3 data-ko="잔류응력 측정" data-en="Residual Stress Measurement">잔류응력 측정</h3>
-          <p data-ko="ASTM E837 Hole-Drilling 방식 잔류응력 측정 시스템 공급 및 현장 측정 서비스. 용접부·단조품·구조물 적용. 400,000 rpm 스핀들, Integral·Kockelmann 자동 분석." data-en="ASTM E837 Hole-Drilling residual stress system supply &amp; on-site measurement service. Welds, forgings, structures. 400k rpm spindle, auto-analysis.">ASTM E837 Hole-Drilling 방식 잔류응력 측정 시스템 공급 및 현장 측정 서비스. 용접부·단조품·구조물 적용.</p>
+          <p data-ko="플라스틱, 고분자소재, 금속 소재 잔류응력측정 및 분석 지원. ASTM E837 잔류응력측정 솔루션 제공." data-en="Residual stress measurement and analysis for plastics, polymers, and metals. ASTM E837 residual stress measurement solutions.">플라스틱, 고분자소재, 금속 소재 잔류응력측정 및 분석 지원. ASTM E837 잔류응력측정 솔루션 제공.</p>
           <div class="brands"><span>ASTM E837</span><span>SINT RESTAN</span><span>현장 서비스</span></div>
         </div>
       </div>
@@ -339,7 +346,7 @@
           <div class="prod-num">// P-04</div>
           <h3 data-ko="센서 공급" data-en="Sensor Supply">센서 공급</h3>
           <p data-ko="로드셀, 토크센서, 압력센서, 변위센서 공급. HBM, MMF, SIMEX, BD Sensors 등 유럽 전문 브랜드 취급." data-en="Load cells, torque sensors, pressure sensors, displacement sensors. European specialist brands: HBM, MMF, SIMEX, BD Sensors.">로드셀, 토크센서, 압력센서, 변위센서 공급. HBM, MMF, SIMEX, BD Sensors 등 유럽 전문 브랜드 취급.</p>
-          <div class="brands"><span>HBM</span><span>MMF</span><span>SIMEX</span><span>BD Sensors</span></div>
+          <div class="brands"><span>HBM</span><span>MMF</span><span>BD Sensors</span></div>
         </div>
       </div>
 
@@ -353,7 +360,7 @@
           <div class="prod-num">// P-05</div>
           <h3 data-ko="커스텀 센서 제작" data-en="Custom Sensor Fabrication">커스텀 센서 제작</h3>
           <p data-ko="풀브릿지 스트레인게이지 기반 커스텀 센서 제작. 축력 측정 볼트 제작, 토크 측정 시스템 등 고객 요구사양에 맞춘 전용 센서 설계·제작." data-en="Full-bridge SG-based custom sensor fabrication. Bolt tension sensors, torque measurement systems — bespoke design to spec.">풀브릿지 스트레인게이지 기반 커스텀 센서 제작. 축력 측정 볼트, 토크 측정 시스템 등 고객 요구사양 맞춤 설계·제작.</p>
-          <div class="brands"><span>Full-Bridge SG</span><span>축력 볼트</span><span>토크 시스템</span></div>
+          <div class="brands"><span>스트레인 게이지 기반 커스텀 센서 제작 공급</span></div>
         </div>
       </div>
 
@@ -367,7 +374,7 @@
           <div class="prod-num">// P-06</div>
           <h3 data-ko="텔레메트리 시스템" data-en="Telemetry System">텔레메트리 시스템</h3>
           <p data-ko="회전체·이동체의 토크, 하중, 진동 데이터를 무선으로 실시간 취득. 인덕티브·배터리 타입, 다채널 지원." data-en="Wireless real-time data acquisition for torque, load, vibration on rotating/moving parts. Inductive &amp; battery, multi-channel.">회전체·이동체의 토크, 하중, 진동 데이터를 무선으로 실시간 취득. 인덕티브·배터리 타입, 다채널 지원.</p>
-          <div class="brands"><span>무선 측정</span><span>Inductive</span><span>Battery</span></div>
+          <div class="brands"><span>Torque</span><span>Torsional vibration 측정</span></div>
         </div>
       </div>
 
@@ -381,7 +388,7 @@
           <div class="prod-num">// P-07</div>
           <h3 data-ko="진동·소음 측정" data-en="Vibration &amp; Noise Measurement">진동·소음 측정</h3>
           <p data-ko="MMF 가속도계, 마이크로폰, 진동 측정 시스템 공급. IEPE/Charge 타입 단축·3축 가속도계, 진동 분석 및 소음 측정 지원." data-en="MMF accelerometers, microphones, vibration measurement systems. IEPE/Charge single &amp; tri-axis, vibration analysis &amp; noise measurement support.">MMF 가속도계, 마이크로폰, 진동 측정 시스템 공급. 진동 분석 및 소음 측정 지원.</p>
-          <div class="brands"><span>MMF</span><span>IEPE/Charge</span><span>3축 가속도계</span></div>
+          <div class="brands"><span>MMF사 IEPE/Charge 타입 가속도센서</span></div>
         </div>
       </div>
 
@@ -395,7 +402,7 @@
           <div class="prod-num">// P-08</div>
           <h3 data-ko="현장 계측 용역" data-en="On-Site Measurement Service">현장 계측 용역</h3>
           <p data-ko="시험 설계, 센서 설치, 데이터 수집, 분석까지 원스톱 현장 서비스. 조선·자동차·항공우주·국방·에너지·연구기관 현장 경험 보유." data-en="One-stop on-site service: test design → sensor install → data acquisition → analysis &amp; reporting. Experience across shipbuilding, automotive, aerospace, defense, energy.">시험 설계, 센서 설치, 데이터 수집, 분석까지 원스톱 현장 서비스. 조선·자동차·항공우주·국방·에너지·연구기관 현장 경험 보유.</p>
-          <div class="brands"><span>원스톱 서비스</span><span>현장 출장</span><span>보고서 제공</span></div>
+          <div class="brands"><span>측정 컨설팅 및 측정, 분석 보고서 제공</span></div>
         </div>
       </div>
 
