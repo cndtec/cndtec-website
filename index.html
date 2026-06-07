@@ -56,8 +56,7 @@
   }
   .hero-visual .hv-card {
     width: 100%;
-    aspect-ratio: 16/9;
-    height: auto;
+    height: clamp(160px, 18vw, 260px);
     border-radius: var(--radius);
     position: relative; overflow: hidden;
     cursor: pointer; text-decoration: none;
@@ -128,7 +127,7 @@
   @media (max-width: 920px) {
     .areas-preview { grid-template-columns: repeat(2,1fr); }
     .hero-visual { gap: 5px; margin-top: 32px; }
-    .hero-visual .hv-card { aspect-ratio: 16/9; height: auto; }
+    .hero-visual .hv-card { height: 140px; }
     /* 모바일: 레이블 항상 표시 (hover 없음) */
     .hero-visual .hv-card .hv-label { opacity: 1; transform: translateY(0); font-size: 12px; padding: 4px 10px; bottom: 8px; left: 10px; }
   }
@@ -427,7 +426,7 @@
     <!-- Hero visual (사진 자리) -->
     <div class="hero-visual fade-in">
       <a href="resources/daq-system.html" class="hv-card ripple-host">
-        <div class="zoom-bg" style="background-image:url('assets/images/DAQ.png')"></div>
+        <div class="zoom-bg" style="background-image:url('assets/images/daq.png')"></div>
         <span class="hv-label">DAQ 시스템</span>
       </a>
       <a href="resources/residual-stress.html" class="hv-card ripple-host">
@@ -793,4 +792,4 @@ function closeRenewalPopup() {
 }
 (function() {
   try {
-    var closed = local
+    var closed = localStorage.getItem('renew
