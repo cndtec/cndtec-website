@@ -52,21 +52,23 @@
   /* === 이미지 히어로 비주얼 === */
   .hero-visual {
     margin-top: 60px;
-    display: flex; flex-direction: column; gap: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
   }
   .hero-visual .hv-card {
     width: 100%;
-    height: clamp(160px, 18vw, 260px);
+    height: clamp(140px, 16vw, 220px);
     border-radius: var(--radius);
     position: relative; overflow: hidden;
     cursor: pointer; text-decoration: none;
-    background: #f5f3f0;
+    background: #ffffff;
     display: block;
     transition: box-shadow 0.3s;
   }
   .hero-visual .hv-card .zoom-bg {
     position: absolute; inset: 0;
-    background-size: cover; background-position: center; background-repeat: no-repeat;
+    background-size: contain; background-position: center; background-repeat: no-repeat;
     transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94);
   }
   .hero-visual .hv-card:hover .zoom-bg { transform: scale(1.04); }
@@ -126,8 +128,8 @@
 
   @media (max-width: 920px) {
     .areas-preview { grid-template-columns: repeat(2,1fr); }
-    .hero-visual { gap: 5px; margin-top: 32px; }
-    .hero-visual .hv-card { height: 140px; }
+    .hero-visual { gap: 5px; margin-top: 32px; grid-template-columns: 1fr 1fr; }
+    .hero-visual .hv-card { height: 100px; }
     /* 모바일: 레이블 항상 표시 (hover 없음) */
     .hero-visual .hv-card .hv-label { opacity: 1; transform: translateY(0); font-size: 12px; padding: 4px 10px; bottom: 8px; left: 10px; }
   }
@@ -430,7 +432,7 @@
         <span class="hv-label">DAQ 시스템</span>
       </a>
       <a href="resources/residual-stress.html" class="hv-card ripple-host">
-        <div class="zoom-bg" style="background-image:url('assets/images/ASTM.png')"></div>
+        <div class="zoom-bg" style="background-image:url('assets/images/잔류응력측정.png')"></div>
         <span class="hv-label">잔류응력측정시스템</span>
       </a>
       <a href="resources/pcb-stress.html" class="hv-card ripple-host">
@@ -790,6 +792,4 @@ function closeRenewalPopup() {
   document.getElementById('renewalPopup').style.display = 'none';
   try { localStorage.setItem('renewal-closed', Date.now()); } catch(e) {}
 }
-(function() {
-  try {
-    var closed = localStorage.getItem('renew
+(f
