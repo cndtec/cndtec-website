@@ -56,11 +56,11 @@
   }
   .hero-visual .hv-card {
     width: 100%;
-    height: clamp(90px, 11vw, 160px);
+    height: clamp(200px, 26vw, 380px);
     border-radius: var(--radius);
     position: relative; overflow: hidden;
     cursor: pointer; text-decoration: none;
-    background: #1c1917;
+    background: #f5f3f0;
     display: block;
     transition: box-shadow 0.3s;
   }
@@ -127,7 +127,7 @@
   @media (max-width: 920px) {
     .areas-preview { grid-template-columns: repeat(2,1fr); }
     .hero-visual { gap: 5px; margin-top: 32px; }
-    .hero-visual .hv-card { height: 80px; }
+    .hero-visual .hv-card { height: 150px; }
     /* 모바일: 레이블 항상 표시 (hover 없음) */
     .hero-visual .hv-card .hv-label { opacity: 1; transform: translateY(0); font-size: 12px; padding: 4px 10px; bottom: 8px; left: 10px; }
   }
@@ -426,7 +426,7 @@
     <!-- Hero visual (사진 자리) -->
     <div class="hero-visual fade-in">
       <a href="resources/daq-system.html" class="hv-card ripple-host">
-        <div class="zoom-bg" style="background-image:url('assets/images/daq.png')"></div>
+        <div class="zoom-bg" style="background-image:url('assets/images/DAQ.png')"></div>
         <span class="hv-label">DAQ 시스템</span>
       </a>
       <a href="resources/residual-stress.html" class="hv-card ripple-host">
@@ -434,7 +434,7 @@
         <span class="hv-label">잔류응력측정시스템</span>
       </a>
       <a href="resources/pcb-stress.html" class="hv-card ripple-host">
-        <div class="zoom-bg" style="background-image:url('assets/images/pcb-strain.png')"></div>
+        <div class="zoom-bg" style="background-image:url('assets/images/PCB%20STRAIN.png')"></div>
         <span class="hv-label">PCB 스트레인 응력 측정</span>
       </a>
       <a href="resources/bolt-tension.html" class="hv-card ripple-host">
@@ -792,4 +792,4 @@ function closeRenewalPopup() {
 }
 (function() {
   try {
-    var closed = localStorage.getItem('renewal
+    var closed = localStorage.getItem('ren
