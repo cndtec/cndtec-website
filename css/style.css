@@ -7,7 +7,7 @@
 
 :root {
   --orange:        #F29400;
-  --orange-deep:   #D97A00;
+  --orange-deep:   #A85C00;
   --orange-soft:   #FFB13D;
   --orange-tint:   #FFF6E6;
   --orange-line:   #FFE0A8;
@@ -15,6 +15,7 @@
   --charcoal-2:    #2E2B28;
   --gray-900:      #444140;
   --gray-700:      #6B6660;
+  --gray-600:      #767270;
   --gray-500:      #94908A;
   --gray-300:      #C9C4BC;
   --gray-200:      #E5E1D9;
@@ -26,7 +27,7 @@
 
   --text:       var(--charcoal);
   --text-dim:   var(--gray-700);
-  --text-mute:  var(--gray-500);
+  --text-mute:  var(--gray-600);
   --line:       var(--gray-200);
   --line-strong:var(--gray-300);
   --accent:     var(--orange);
