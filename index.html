@@ -55,13 +55,23 @@
     display: grid; grid-template-columns: 1.6fr 1fr; gap: 16px;
   }
   .hero-visual .main-img {
-    height: 380px; border-radius: var(--radius);
+    height: 400px; border-radius: var(--radius);
     background: linear-gradient(135deg, #2E2B28 0%, #444140 100%);
+    background-image: url('assets/images/bolt-sensor.png');
+    background-size: cover; background-position: center;
     display: flex; align-items: center; justify-content: center;
     position: relative; overflow: hidden;
+    cursor: pointer; text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
   }
+  .hero-visual .main-img::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(20,17,14,0.72) 0%, rgba(40,35,30,0.45) 100%);
+    z-index: 0;
+  }
+  .hero-visual .main-img:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,0.28); }
   .hero-visual .main-img .overlay-text {
-    text-align: center; color: rgba(255,255,255,0.9);
+    text-align: center; color: rgba(255,255,255,0.9); position: relative; z-index: 1;
   }
   .hero-visual .main-img .overlay-text .tag {
     font-family: 'JetBrains Mono', monospace; font-size: 11px;
@@ -70,26 +80,54 @@
   .hero-visual .main-img .overlay-text h3 {
     font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #fff;
   }
+  .hero-visual .main-img .overlay-text .card-hint {
+    display: block; margin-top: 14px; font-size: 13px;
+    color: rgba(255,255,255,0.45); font-weight: 500; transition: color 0.25s;
+  }
+  .hero-visual .main-img:hover .card-hint { color: var(--orange-soft); }
   .hero-visual .main-img .img-glow {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 300px; height: 300px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(242,148,0,0.12), transparent 65%);
+    width: 300px; height: 300px; border-radius: 50%; z-index: 0;
+    background: radial-gradient(circle, rgba(242,148,0,0.10), transparent 65%);
   }
-  .hero-visual .side-imgs { display: flex; flex-direction: column; gap: 16px; }
+
+  /* 사이드 이미지 카드 */
+  .hero-visual .side-imgs { display: flex; flex-direction: column; gap: 12px; }
   .hero-visual .side-imgs .side-img {
     flex: 1; border-radius: var(--radius);
-    background: linear-gradient(135deg, var(--gray-100) 0%, var(--bg-warm) 100%);
-    border: 2px dashed var(--gray-300);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 8px; color: var(--text-mute);
+    background-color: #2a2828;
+    background-size: cover; background-position: center;
+    border: none; position: relative; overflow: hidden;
+    text-decoration: none; min-height: 90px;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .hero-visual .side-imgs .side-img .side-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.68) 0%, transparent 60%);
+    display: flex; align-items: flex-end; padding: 10px 14px;
+    transition: background 0.25s;
+  }
+  .hero-visual .side-imgs .side-img:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.22); }
+  .hero-visual .side-imgs .side-img:hover .side-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(242,148,0,0.12) 100%);
   }
   .hero-visual .side-imgs .side-img .ph-label {
-    font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.7;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em; color: #fff; opacity: 0.9;
   }
-  /* 실제 사진으로 교체 시 background-image 사용:
-     .main-img { background-image: url('assets/images/hero-lab.jpg'); background-size:cover; background-position:center; }
-     .side-img { background-image: url('assets/images/xxx.jpg'); ... } */
+
+  /* Ripple 클릭 효과 */
+  .ripple-host { position: relative; overflow: hidden; }
+  @keyframes ripple-out {
+    from { transform: translate(-50%, -50%) scale(0); opacity: 0.45; }
+    to   { transform: translate(-50%, -50%) scale(5); opacity: 0; }
+  }
+  .ripple-circle {
+    position: absolute; border-radius: 50%; pointer-events: none;
+    width: 80px; height: 80px; z-index: 20;
+    background: rgba(242, 148, 0, 0.38);
+    animation: ripple-out 0.55s ease-out forwards;
+  }
 
   /* === 사업분야 프리뷰 === */
   .areas-preview { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
@@ -406,26 +444,27 @@
 
     <!-- Hero visual (사진 자리) -->
     <div class="hero-visual fade-in">
-      <div class="main-img">
-        <!-- 실제 사진 교체: background-image:url('assets/images/hero-main.jpg') -->
+      <a href="resources/bolt-tension.html" class="main-img ripple-host">
         <div class="img-glow"></div>
-        <div class="overlay-text" style="position:relative;z-index:1">
+        <div class="overlay-text">
           <div class="tag">FIELD MEASUREMENT · 현장 계측</div>
           <h3 data-ko="대형 구조물부터 PCB까지" data-en="From megastructures to PCBs">대형 구조물부터 PCB까지</h3>
-          <p style="color:rgba(255,255,255,0.65); font-size:13px; margin-top:8px" data-ko="사진을 여기에 배치하세요" data-en="Place your photo here">사진을 여기에 배치하세요</p>
+          <span class="card-hint" data-ko="기술자료 보기 →" data-en="View technical docs →">기술자료 보기 →</span>
         </div>
-      </div>
+      </a>
       <div class="side-imgs">
-        <div class="side-img">
-          <!-- assets/images/hero-side-1.jpg -->
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span class="ph-label">잔류응력 측정</span>
-        </div>
-        <div class="side-img">
-          <!-- assets/images/hero-side-2.jpg -->
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span class="ph-label">DAQ 시스템</span>
-        </div>
+        <a href="resources/residual-stress.html" class="side-img ripple-host"
+           style="background-image:url('assets/images/ASTM.png')">
+          <div class="side-overlay"><span class="ph-label">ASTM · 잔류응력</span></div>
+        </a>
+        <a href="resources/daq-system.html" class="side-img ripple-host"
+           style="background-image:url('assets/images/daq.png')">
+          <div class="side-overlay"><span class="ph-label">DAQ 시스템</span></div>
+        </a>
+        <a href="resources/pcb-stress.html" class="side-img ripple-host"
+           style="background-image:url('assets/images/pcb-strain.png')">
+          <div class="side-overlay"><span class="ph-label">PCB 스트레인</span></div>
+        </a>
       </div>
     </div>
   </div>
@@ -719,6 +758,19 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 // Scroll header
 window.addEventListener('scroll', () => {
   document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Ripple 클릭 효과
+document.querySelectorAll('.ripple-host').forEach(el => {
+  el.addEventListener('click', function(e) {
+    const rect = el.getBoundingClientRect();
+    const circle = document.createElement('span');
+    circle.className = 'ripple-circle';
+    circle.style.left = (e.clientX - rect.left) + 'px';
+    circle.style.top  = (e.clientY - rect.top)  + 'px';
+    el.appendChild(circle);
+    setTimeout(() => circle.remove(), 600);
+  });
 });
 </script>
 
