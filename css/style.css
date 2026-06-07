@@ -583,7 +583,7 @@ footer { background: var(--charcoal); color: #d6d2cb; padding: 64px 0 32px; }
   .brand-logo { height: 60px; max-width: 200px; }
   .areas, .blog-grid, .contact-wrap, .achievement-tabs { grid-template-columns: 1fr; gap: 20px; }
   .product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .idx-strength-grid { grid-template-columns: repeat(2, 1fr); }
+  .idx-strength-grid { gap: 12px; }
   .about-list { grid-template-columns: 1fr; }
   .contact-wrap { padding: 32px 24px; }
   .hero-stats { grid-template-columns: repeat(2, 1fr); }
@@ -604,7 +604,6 @@ footer { background: var(--charcoal); color: #d6d2cb; padding: 64px 0 32px; }
   .partner-logos { gap: 10px; }
   .hero-stats { grid-template-columns: 1fr 1fr; }
   .product-grid { grid-template-columns: 1fr; }
-  .idx-strength-grid { grid-template-columns: 1fr; gap: 12px; }
   .idx-strength-card { padding: 24px 20px; }
 }
 
@@ -669,7 +668,7 @@ footer { background: var(--charcoal); color: #d6d2cb; padding: 64px 0 32px; }
 /* ===== 씨앤디테크 소개 · 강점 카드 ===== */
 .idx-strength-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 .idx-strength-card {
@@ -688,4 +687,7 @@ footer { background: var(--charcoal); color: #d6d2cb; padding: 64px 0 32px; }
 .idx-s-num {
   font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
-  font-weight: 7
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin-bottom:
