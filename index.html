@@ -127,7 +127,7 @@
   }
 
   @media (max-width: 920px) {
-    .areas-preview { grid-template-columns: repeat(2,1fr); }
+    .areas-preview { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
     .hero-visual { gap: 5px; margin-top: 32px; grid-template-columns: 1fr 1fr; }
     .hero-visual .hv-card { height: 100px; }
     /* 모바일: 레이블 항상 표시 (hover 없음) */
@@ -790,6 +790,4 @@ document.querySelectorAll('.ripple-host').forEach(el => {
 <script>
 function closeRenewalPopup() {
   document.getElementById('renewalPopup').style.display = 'none';
-  try { localStorage.setItem('renewal-closed', Date.now()); } catch(e) {}
-}
-(f
+  try { localStorage.setItem('renewal-closed', Date.now
