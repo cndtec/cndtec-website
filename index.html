@@ -56,11 +56,12 @@
     display: flex; flex-direction: column; gap: 12px;
   }
   .hero-visual .hv-card {
-    width: 100%; height: 260px;
+    width: 100%;
+    aspect-ratio: 16 / 9;   /* 이미지와 동일 비율 → 짤림 없음 */
     border-radius: var(--radius);
     position: relative; overflow: hidden;
     cursor: pointer; text-decoration: none;
-    background: #2a2828;
+    background: #1c1917;
     display: block;
     transition: box-shadow 0.3s;
   }
@@ -69,7 +70,7 @@
     background-size: cover; background-position: center;
     transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94);
   }
-  .hero-visual .hv-card:hover .zoom-bg { transform: scale(1.05); }
+  .hero-visual .hv-card:hover .zoom-bg { transform: scale(1.04); }
   .hero-visual .hv-card:hover { box-shadow: 0 10px 36px rgba(0,0,0,0.28); }
   /* 레거시 호환 */
   .hero-visual .main-img { display: none; }
@@ -111,7 +112,7 @@
 
   @media (max-width: 920px) {
     .areas-preview { grid-template-columns: repeat(2,1fr); }
-    .hero-visual .hv-card { height: 180px; }
+    .hero-visual .hv-card { aspect-ratio: 16 / 9; }
   }
 </style>
 
