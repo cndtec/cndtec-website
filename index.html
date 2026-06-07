@@ -57,46 +57,42 @@
   .hero-visual .main-img {
     height: 400px; border-radius: var(--radius);
     background: linear-gradient(135deg, #2E2B28 0%, #3a3835 100%);
-    background-image: url('assets/images/daq-unit-compact.png');
-    background-size: 78%; background-position: center;
-    background-repeat: no-repeat;
-    display: flex; align-items: center; justify-content: center;
     position: relative; overflow: hidden;
     cursor: pointer; text-decoration: none;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: box-shadow 0.3s;
   }
-  .hero-visual .main-img::before {
-    content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse at center, rgba(232,119,34,0.07) 0%, transparent 70%);
-    z-index: 0;
+  .hero-visual .main-img .zoom-bg {
+    position: absolute; inset: 0;
+    background-image: url('assets/images/daq.png');
+    background-size: cover; background-position: center;
+    transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94);
   }
-  .hero-visual .main-img:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,0.28); }
+  .hero-visual .main-img:hover .zoom-bg { transform: scale(1.07); }
+  .hero-visual .main-img:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.32); }
   .hero-visual .main-img .overlay-text { display: none; }
   .hero-visual .main-img .img-glow {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 300px; height: 300px; border-radius: 50%; z-index: 0;
-    background: radial-gradient(circle, rgba(242,148,0,0.08), transparent 65%);
+    width: 300px; height: 300px; border-radius: 50%; z-index: 1; pointer-events: none;
+    background: radial-gradient(circle, rgba(242,148,0,0.06), transparent 65%);
   }
 
   /* 사이드 이미지 카드 */
   .hero-visual .side-imgs { display: flex; flex-direction: column; gap: 12px; }
   .hero-visual .side-imgs .side-img {
     flex: 1; border-radius: var(--radius);
-    background-color: #2a2828;
-    background-size: cover; background-position: center;
+    background: #2a2828;
     border: none; position: relative; overflow: hidden;
     text-decoration: none; min-height: 120px;
-    transition: transform 0.25s, box-shadow 0.25s;
+    transition: box-shadow 0.25s;
   }
-  .hero-visual .side-imgs .side-img .side-overlay {
+  .hero-visual .side-imgs .side-img .zoom-bg {
     position: absolute; inset: 0;
-    background: transparent;
-    transition: background 0.25s;
+    background-size: cover; background-position: center;
+    transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94);
   }
-  .hero-visual .side-imgs .side-img:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.22); }
-  .hero-visual .side-imgs .side-img:hover .side-overlay {
-    background: rgba(232,119,34,0.08);
-  }
+  .hero-visual .side-imgs .side-img:hover .zoom-bg { transform: scale(1.08); }
+  .hero-visual .side-imgs .side-img:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.26); }
+  .hero-visual .side-imgs .side-img .side-overlay { display: none; }
   .hero-visual .side-imgs .side-img .ph-label { display: none; }
 
   /* Ripple 클릭 효과 */
@@ -428,20 +424,18 @@
     <!-- Hero visual (사진 자리) -->
     <div class="hero-visual fade-in">
       <a href="resources/daq-system.html" class="main-img ripple-host">
+        <div class="zoom-bg"></div>
         <div class="img-glow"></div>
       </a>
       <div class="side-imgs">
-        <a href="resources/residual-stress.html" class="side-img ripple-host"
-           style="background-image:url('assets/images/ASTM.png')">
-          <div class="side-overlay"></div>
+        <a href="resources/residual-stress.html" class="side-img ripple-host">
+          <div class="zoom-bg" style="background-image:url('assets/images/ASTM.png')"></div>
         </a>
-        <a href="resources/pcb-stress.html" class="side-img ripple-host"
-           style="background-image:url('assets/images/pcb-strain.png')">
-          <div class="side-overlay"></div>
+        <a href="resources/pcb-stress.html" class="side-img ripple-host">
+          <div class="zoom-bg" style="background-image:url('assets/images/pcb-strain.png')"></div>
         </a>
-        <a href="resources/bolt-tension.html" class="side-img ripple-host"
-           style="background-image:url('assets/images/축력측정볼트센서.png'); background-size:contain; background-repeat:no-repeat; background-color:#2a2828;">
-          <div class="side-overlay"></div>
+        <a href="resources/bolt-tension.html" class="side-img ripple-host">
+          <div class="zoom-bg" style="background-image:url('assets/images/축력측정볼트센서.png'); background-size:contain; background-repeat:no-repeat; background-position:center;"></div>
         </a>
       </div>
     </div>
