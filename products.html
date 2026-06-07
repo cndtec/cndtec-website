@@ -528,14 +528,4 @@ function closeRenewalPopup() {
     var closed = localStorage.getItem('renewal-closed');
     var oneDayMs = 24 * 60 * 60 * 1000;
     if (!closed || Date.now() - Number(closed) > oneDayMs) {
-      var popup = document.getElementById('renewalPopup');
-      popup.style.display = 'flex';
-    }
-  } catch(e) {
-    document.getElementById('renewalPopup').style.display = 'flex';
-  }
-})();
-</script>
-
-</body>
-</html>
+      var popup = documen
