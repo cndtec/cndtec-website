@@ -567,4 +567,22 @@ window.addEventListener('scroll', () => {
 <script>
 function closeRenewalPopup() {
   document.getElementById('renewalPopup').style.display = 'none';
-  
+  try { localStorage.setItem('renewal-closed', Date.now()); } catch(e) {}
+}
+(function() {
+  try {
+    var closed = localStorage.getItem('renewal-closed');
+    var oneDayMs = 24 * 60 * 60 * 1000;
+    if (!closed || Date.now() - Number(closed) > oneDayMs) {
+      var popup = document.getElementById('renewalPopup');
+      popup.style.display = 'flex';
+    }
+  } catch(e) {
+    document.getElementById('renewalPopup').style.display = 'flex';
+  }
+})();
+</script>
+
+</body>
+</html>
+               
