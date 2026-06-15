@@ -21,6 +21,11 @@
 - 모바일 헤더 로고·패딩 조정 ✅
 - 기술자료 섹션 추가 ✅ (resources/ 6개 페이지)
 - Google Analytics 삽입 ✅ (G-B25Y10FQK1)
+- 스트레인게이지 부착 가이드 페이지 추가 ✅ (resources/strain-gauge-bonding.html, 사진 10장 포함)
+- 전체 사이트 콘텐츠 업데이트 커밋 & GitHub 푸시 완료 ✅ (2026-06-15, GitHub Desktop 사용 → Netlify 자동 배포)
+- strain-gauge-bonding.html STEP06/07 콘텐츠 수정 및 SEO 타이틀 변경 ✅ (2026-06-15, "스트레인게이지 부착법 (Strain Gauge Installation)"로 title/meta/JSON-LD/H1 통일, STEP07을 "표면 세정"으로 개명)
+- strain-gauge-bonding.html 설명 글씨 크기 확대 ✅ (2026-06-15, STEP01~10 설명 문단 font-size 15px→16px)
+- daq-system.html 제품명 "CND GTDL" → "GTDL"로 전체 수정 ✅ (2026-06-15, title/meta/JSON-LD/H1/alt/본문/모델명 10곳, "CND TECH" 회사명은 그대로 유지) — 커밋/푸시 필요
 
 ## 프로젝트 구조
 ```
@@ -37,7 +42,8 @@ cndtec-website/
 │   ├── bolt-tension.html
 │   ├── pcb-stress.html
 │   ├── telemetry.html
-│   └── daq-system.html
+│   ├── daq-system.html
+│   └── strain-gauge-bonding.html
 ├── css/style.css
 ├── assets/images/
 ├── netlify.toml
