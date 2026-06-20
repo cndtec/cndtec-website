@@ -71,3 +71,46 @@ cndtec-website/
 - Formspree: https://formspree.io/f/mrednazk
 - Google Analytics: G-B25Y10FQK1
 - GitHub: https://github.com/cndtec/cndtec-website
+
+## 홈페이지 & 콘텐츠 마케팅 전략 지침
+### 1. 검색 채널별 전략
+- 네이버: 단기 핵심 (블로그 SEO + 파워링크)
+- 구글: 중장기 (티스토리 + 홈페이지)
+- 유튜브: 6개월 후 기술 영상 시작
+- AI 검색: 1년 후 구조화 콘텐츠 대응
+- 현재 트렌드: 네이버/구글 모두 블로그보다
+  공식 웹사이트 우선 노출로 알고리즘 변화 중
+
+### 2. 홈페이지 전략 (최우선)
+현재 상태: 90% 완성, Netlify 배포 예정
+추가 작업 목록:
+- /services/residual-stress
+- /services/noise-measurement
+- /services/astm-e837
+- /products/hbm-daq
+- /tech/
+- /cases/
+SEO 적용사항:
+- 서비스 페이지마다 타겟 키워드 1개 집중
+- Schema Markup 적용
+- 파일명/ALT태그 키워드 포함 필수
+
+### 3. 콘텐츠 차별화
+- 홈페이지: 짧고 전문적, 구매 유도, CTA 명확
+- 네이버 블로그: 길고 친근하게, 정보 제공
+- 티스토리: 네이버 글 재편집, 구글 SEO 최적화
+- 사진은 동일 사용, 글만 플랫폼별 다르게
+
+### 4. 사진 운영
+보정 앱: Lightroom Mobile (메인), Snapseed
+변환 도구: Squoosh.app (WebP 변환 + 압축)
+플랫폼별 스펙:
+- 홈페이지: WebP 1920px, 500KB 이하
+- 블로그: JPG 1200px, 1MB 이하
+- 썸네일: JPG 800px
+파일명 규칙: 영문 키워드로
+예) hbm-mx1615b-strain-gauge-setup.webp
+촬영 체크리스트:
+- 조명 > 구도 > 후보정 순서
+- 삼각대 거치, 가로 방향, 3~5장 연속
+- Lightroom 보정 → Squoosh 변환 → 업로드
