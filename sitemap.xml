@@ -2,91 +2,91 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://cndtec.co.kr/</loc>
+    <loc>https://www.cndtec.co.kr/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://cndtec.co.kr/about</loc>
+    <loc>https://www.cndtec.co.kr/about</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://cndtec.co.kr/products</loc>
+    <loc>https://www.cndtec.co.kr/products</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cndtec.co.kr/projects</loc>
+    <loc>https://www.cndtec.co.kr/projects</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://cndtec.co.kr/contact</loc>
+    <loc>https://www.cndtec.co.kr/contact</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://cndtec.co.kr/resources/</loc>
+    <loc>https://www.cndtec.co.kr/resources/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cndtec.co.kr/resources/residual-stress.html</loc>
+    <loc>https://www.cndtec.co.kr/resources/residual-stress.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://cndtec.co.kr/resources/strain-gauge.html</loc>
+    <loc>https://www.cndtec.co.kr/resources/strain-gauge.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://cndtec.co.kr/resources/strain-gauge-bonding.html</loc>
+    <loc>https://www.cndtec.co.kr/resources/strain-gauge-bonding.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://cndtec.co.kr/resources/bolt-tension.html</loc>
+    <loc>https://www.cndtec.co.kr/resources/bolt-tension.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://cndtec.co.kr/resources/pcb-stress.html</loc>
+    <loc>https://www.cndtec.co.kr/resources/pcb-stress.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://cndtec.co.kr/resources/telemetry.html</loc>
+    <loc>https://www.cndtec.co.kr/resources/telemetry.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://cndtec.co.kr/resources/daq-system.html</loc>
+    <loc>https://www.cndtec.co.kr/resources/daq-system.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -102,10 +102,12 @@ resources/custom-sensor.html, field-service.html, sensors.html, vibration.html �
 - 웹사이트: C:\Users\wgjeo\클로이드 폴더\cndtec-website\
 - bash 경로: /sessions/lucid-zealous-goldberg/mnt/클로이드 폴더/cndtec-website/
 
-## ⚠️ 실제 도메인: cndtec.co.kr (cndtec.com 아님!)
+## ⚠️ 실제 도메인: https://www.cndtec.co.kr (canonical, www 포함!)
 - 2026-06-22 확인: Google Search Console DNS 인증 화면에서 실제 운영 도메인이 cndtec.co.kr임을 확인
-- og:url, sitemap.xml, robots.txt, _redirects에 잘못 들어가 있던 cndtec.com → cndtec.co.kr로 전체 수정 완료
-- 앞으로 도메인 관련 작업/신규 메타태그 작성 시 반드시 cndtec.co.kr 사용할 것
+- 같은 날 실제 배포 사이트를 fetch로 직접 확인한 결과, Cloudflare 단에서 비-www(cndtec.co.kr) → www(www.cndtec.co.kr)로 301 리다이렉트되고 있음 → **실제 canonical은 www 포함 버전**
+- og:url·og:image·twitter:image, sitemap.xml 전체 <loc>, robots.txt의 sitemap 경로를 전부 `https://www.cndtec.co.kr`로 통일
+- _redirects의 기존 규칙(www→non-www)은 실제 리다이렉트 방향과 반대였음 → "non-www → www 정규화"로 수정
+- 앞으로 도메인 관련 작업/신규 메타태그·sitemap 추가 시 반드시 `https://www.cndtec.co.kr` (www 포함) 사용할 것
 
 ## 주요 연동 서비스
 - Formspree: https://formspree.io/f/mrednazk

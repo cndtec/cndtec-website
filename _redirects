@@ -1,8 +1,8 @@
 # CND TECH — Netlify _redirects
 # netlify.toml의 [[redirects]] 와 병행 사용
 
-# www → non-www 정규화
-https://www.cndtec.co.kr/*   https://cndtec.co.kr/:splat   301!
+# non-www → www 정규화 (Cloudflare에서 실제로 www를 canonical로 사용 중 — 2026-06-22 확인)
+https://cndtec.co.kr/*   https://www.cndtec.co.kr/:splat   301!
 
 # 확장자 없는 URL 지원 (선택적)
 /about     /about.html    200
