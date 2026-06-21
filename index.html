@@ -58,17 +58,17 @@
   }
   .hero-visual .hv-card {
     width: 100%;
-    height: clamp(140px, 16vw, 220px);
+    height: clamp(170px, 19vw, 260px);
     border-radius: var(--radius);
     position: relative; overflow: hidden;
     cursor: pointer; text-decoration: none;
-    background: #FAFAF7;
+    background: #FFFFFF;
     display: block;
     transition: box-shadow 0.3s;
   }
   .hero-visual .hv-card .zoom-bg {
     position: absolute; inset: 0;
-    background-size: contain; background-position: center; background-repeat: no-repeat;
+    background-size: 92%; background-position: center; background-repeat: no-repeat;
     transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94);
   }
   .hero-visual .hv-card:hover .zoom-bg { transform: scale(1.04); }
@@ -129,7 +129,7 @@
   @media (max-width: 920px) {
     .areas-preview { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
     .hero-visual { gap: 5px; margin-top: 32px; grid-template-columns: 1fr 1fr; }
-    .hero-visual .hv-card { height: 100px; }
+    .hero-visual .hv-card { height: 120px; }
     /* 모바일: 레이블 항상 표시 (hover 없음) */
     .hero-visual .hv-card .hv-label { opacity: 1; transform: translateY(0); font-size: 12px; padding: 4px 10px; bottom: 8px; left: 10px; }
   }
