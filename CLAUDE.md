@@ -34,6 +34,12 @@
 - about.html 갤러리 클리핑 버그 수정 + 링크화 ✅ (2026-06-22, .g-img min-height:0 추가로 캡션 잘림 해결, 소개문구 삭제, 카드 hover 효과(translateY+이미지 scale) 추가, 5개 카드 전부 <a> 링크화 — DAQ·축력볼트→products.html, 현장계측·잔류응력·진동측정→projects.html) — 커밋/푸시 필요
 - 리뉴얼 안내 팝업(renewalPopup) 전체 사이트 제거 ✅ (2026-06-22, about/contact/index/products/projects + resources 7개 파일 총 12곳에서 팝업 HTML+script 삭제)
 - projects.html 14개 카테고리 중 SG부착·PCB 카드에 추가했던 LINE ICON 2개 제거 ✅ (2026-06-22, 사용자 요청으로 주요 실적 섹션은 아이콘 없이 텍스트만 유지)
+- index.html 히어로 이미지 4개 테두리 제거·크기 확대 ✅ (2026-06-22, hv-card 배경 #FAFAF7→#FFFFFF로 이미지와 통일, background-size contain→92%, 카드 높이 클램프 확대) — 커밋/푸시 필요
+- about.html 갤러리 캡션 글자 확대 ✅ (2026-06-22, 한글 12.5px→16px·영문 10px→12px, 굵게) — 커밋/푸시 필요
+- resources/index.html 스트레인게이지 카드 설명·배지 수정 ✅ (2026-06-22, "TML·MM"→"HBM·TML", 설명을 "원리·선정·부착·결선·브릿지회로·HBM·TML 제품가이드"로 변경) — 커밋/푸시 필요
+- sitemap.xml, robots.txt 신규 생성 ✅ (2026-06-22, 콘텐츠 있는 13페이지 등록, robots.txt에 sitemap 경로 포함) — 커밋/푸시 + Search Console 제출 필요
+- 고립된 4개 기술자료 스텁 페이지 처리 ✅ (2026-06-22, custom-sensor/field-service/sensors/vibration이 전부 "준비 중" 빈 페이지임을 확인 → noindex 메타태그 추가, sitemap 제외, resources/index.html 미노출 유지. 콘텐츠 작성 시 풀어줄 다음 기술자료 후보로 CLAUDE.md에 기록) — 커밋/푸시 필요
+- 기술자료 신규 페이지 자동 체크리스트 + sitemap 자동 업데이트 지침 추가 ✅ (2026-06-22, CLAUDE.md에 "⭐ 기술자료 신규 페이지 작업 시 자동 체크리스트" 섹션 신설 — 앞으로 기술자료 요청 시 sitemap.xml 추가를 별도 요청 없이 항상 수행)
 
 ## 프로젝트 구조
 ```
@@ -62,6 +68,28 @@ cndtec-website/
 - 사진 실제 삽입 (assets/images/사진_배치_가이드.txt 참고)
 - 기술자료 페이지 세부 내용 다듬기
 - 도메인 전파 확인 후 GitHub Pages Custom domain 설정
+- Netlify 배포 후 Google Search Console / 네이버 서치어드바이저에 sitemap.xml 제출 필요 (아직 미제출)
+
+## 다음 기술자료 후보 (제목·키워드 이미 세팅된 빈 스텁 페이지)
+resources/custom-sensor.html, field-service.html, sensors.html, vibration.html — 4개 모두 "// COMING SOON" 상태로 실제 콘텐츠 없음. 그래서 resources/index.html 목록에는 의도적으로 미노출, sitemap.xml에서도 제외, <meta name="robots" content="noindex, follow"> 추가해 둠 (저품질·중복 콘텐츠로 색인되는 것 방지).
+- custom-sensor.html → 커스텀 센서 제작 (축력측정 볼트·토크 측정 시스템)
+- field-service.html → 현장 계측 용역 (시험 설계·설치·분석 원스톱)
+- sensors.html → 센서 공급 (로드셀·토크·압력·변위, HBM·MMF·BD Sensors)
+- vibration.html → 진동·소음 측정 (MMF 가속도계·마이크로폰, IEPE/Charge)
+콘텐츠 작성 완료되면: noindex 메타태그 제거 → resources/index.html에 카드 추가 → sitemap.xml에 <url> 추가.
+
+## sitemap.xml / robots.txt ✅ (2026-06-22 생성)
+- 루트에 sitemap.xml(실제 콘텐츠 있는 13페이지만 등록), robots.txt(sitemap 경로 포함) 생성 완료 — 커밋/푸시 필요
+- 위 4개 스텁 페이지는 콘텐츠 작성 전까지 sitemap 제외
+
+## ⭐ 기술자료 신규 페이지 작업 시 자동 체크리스트 (사용자가 매번 말 안 해도 항상 적용)
+사용자가 "기술자료/블로그/가이드 페이지 만들어줘" 류의 요청을 하면, 별도 지시가 없어도 아래를 전부 자동으로 수행할 것:
+1. resources/index.html "기술자료 목록"에 카드 추가 (아이콘 보유 시 매칭, 없으면 텍스트만)
+2. `<script type="application/ld+json">` 구조화 데이터 삽입 (Article 또는 HowTo, 기존 strain-gauge-bonding.html 패턴 참고)
+3. title / meta description / H1 — 타겟 키워드 1개에 집중해서 작성
+4. 이미지 파일명·alt 텍스트는 영문 키워드로 (예: hbm-mx1615b-strain-gauge-setup.webp) — 사진 운영 규칙 섹션 참고
+5. **sitemap.xml에 `<url>` 블록 자동 추가** (loc, lastmod=작업일, changefreq=monthly, priority=0.7) — 사용자가 요청하지 않아도 항상 추가
+6. CLAUDE.md "완료된 작업 전체" 목록에 로그 한 줄 추가
 
 ## 작업 지침 (세션 공통)
 - 파일 전체 Read 금지 → grep으로 필요 라인만 찾고, Read는 offset/limit으로 해당 부분만
