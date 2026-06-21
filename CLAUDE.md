@@ -40,6 +40,7 @@
 - sitemap.xml, robots.txt 신규 생성 ✅ (2026-06-22, 콘텐츠 있는 13페이지 등록, robots.txt에 sitemap 경로 포함) — 커밋/푸시 + Search Console 제출 필요
 - 고립된 4개 기술자료 스텁 페이지 처리 ✅ (2026-06-22, custom-sensor/field-service/sensors/vibration이 전부 "준비 중" 빈 페이지임을 확인 → noindex 메타태그 추가, sitemap 제외, resources/index.html 미노출 유지. 콘텐츠 작성 시 풀어줄 다음 기술자료 후보로 CLAUDE.md에 기록) — 커밋/푸시 필요
 - 기술자료 신규 페이지 자동 체크리스트 + sitemap 자동 업데이트 지침 추가 ✅ (2026-06-22, CLAUDE.md에 "⭐ 기술자료 신규 페이지 작업 시 자동 체크리스트" 섹션 신설 — 앞으로 기술자료 요청 시 sitemap.xml 추가를 별도 요청 없이 항상 수행)
+- 도메인 오류 수정: cndtec.com → cndtec.co.kr ✅ (2026-06-22, Google Search Console 인증 중 발견. about/contact/index/products/projects의 og:url, robots.txt의 sitemap 경로, sitemap.xml 전체 <loc>, _redirects www 리다이렉트 규칙까지 전체 수정) — 커밋/푸시 필요
 
 ## 프로젝트 구조
 ```
@@ -100,6 +101,11 @@ resources/custom-sensor.html, field-service.html, sensors.html, vibration.html �
 ## 파일 위치
 - 웹사이트: C:\Users\wgjeo\클로이드 폴더\cndtec-website\
 - bash 경로: /sessions/lucid-zealous-goldberg/mnt/클로이드 폴더/cndtec-website/
+
+## ⚠️ 실제 도메인: cndtec.co.kr (cndtec.com 아님!)
+- 2026-06-22 확인: Google Search Console DNS 인증 화면에서 실제 운영 도메인이 cndtec.co.kr임을 확인
+- og:url, sitemap.xml, robots.txt, _redirects에 잘못 들어가 있던 cndtec.com → cndtec.co.kr로 전체 수정 완료
+- 앞으로 도메인 관련 작업/신규 메타태그 작성 시 반드시 cndtec.co.kr 사용할 것
 
 ## 주요 연동 서비스
 - Formspree: https://formspree.io/f/mrednazk

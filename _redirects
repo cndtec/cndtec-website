@@ -2,7 +2,7 @@
 # netlify.toml의 [[redirects]] 와 병행 사용
 
 # www → non-www 정규화
-https://www.cndtec.com/*   https://cndtec.com/:splat   301!
+https://www.cndtec.co.kr/*   https://cndtec.co.kr/:splat   301!
 
 # 확장자 없는 URL 지원 (선택적)
 /about     /about.html    200
