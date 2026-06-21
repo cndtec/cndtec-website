@@ -100,8 +100,8 @@
   /* 사진 갤러리 그리드 */
   .gallery-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 220px 220px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 220px);
     gap: 12px;
     margin-top: 56px;
   }
@@ -110,7 +110,6 @@
     text-decoration: none; transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
   .gallery-grid .g-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-  .gallery-grid .g-item.tall { grid-row: span 2; }
   .gallery-grid .g-img {
     width: 100%; flex: 1 1 auto; min-height: 0; overflow: hidden;
     background: linear-gradient(135deg, var(--gray-100) 0%, var(--bg-warm) 100%);
@@ -144,7 +143,6 @@
     .brand-grid { grid-template-columns: repeat(2, 1fr); }
     .strength-grid { grid-template-columns: 1fr; }
     .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-    .gallery-grid .g-item.tall { grid-row: span 1; }
     .gallery-grid .g-item { height: 180px; }
   }
 </style>
@@ -360,7 +358,7 @@
       <h2 data-ko="사업 분야" data-en="Capabilities">사업 분야</h2>
     </div>
     <div class="gallery-grid fade-in">
-      <a href="projects.html" class="g-item tall">
+      <a href="projects.html" class="g-item">
         <div class="g-img has-icon">
           <img src="assets/images/LINE ICON 현장계측.png" alt="현장 계측 서비스">
         </div>
@@ -374,21 +372,15 @@
       </a>
       <a href="projects.html" class="g-item">
         <div class="g-img has-icon">
-          <img src="assets/images/LINE ICON 잔류응력측정.png" alt="잔류응력 측정">
-        </div>
-        <div class="g-cap">잔류응력 측정<span class="en">RESIDUAL STRESS</span></div>
-      </a>
-      <a href="projects.html" class="g-item">
-        <div class="g-img has-icon">
           <img src="assets/images/LINE ICON 진동측정.png" alt="진동 측정 시스템">
         </div>
         <div class="g-cap">진동 측정<span class="en">VIBRATION MEASUREMENT</span></div>
       </a>
-      <a href="products.html" class="g-item">
+      <a href="resources/telemetry.html" class="g-item">
         <div class="g-img has-icon">
-          <img src="assets/images/LINE ICON 커스텀센서.png" alt="커스텀 센서 제작">
+          <img src="assets/images/LINE ICON TELEMETRY SYSTEM.png" alt="텔레메트리 시스템">
         </div>
-        <div class="g-cap">축력 볼트 센서<span class="en">BOLT TENSION SENSOR</span></div>
+        <div class="g-cap">텔레메트리 시스템<span class="en">TELEMETRY</span></div>
       </a>
       <a href="resources/strain-gauge.html" class="g-item">
         <div class="g-img has-icon">
@@ -402,11 +394,17 @@
         </div>
         <div class="g-cap">PCB 응력측정<span class="en">PCB STRESS</span></div>
       </a>
-      <a href="resources/telemetry.html" class="g-item">
+      <a href="projects.html" class="g-item">
         <div class="g-img has-icon">
-          <img src="assets/images/LINE ICON TELEMETRY SYSTEM.png" alt="텔레메트리 시스템">
+          <img src="assets/images/LINE ICON 잔류응력측정.png" alt="잔류응력 측정">
         </div>
-        <div class="g-cap">텔레메트리 시스템<span class="en">TELEMETRY</span></div>
+        <div class="g-cap">잔류응력 측정<span class="en">RESIDUAL STRESS</span></div>
+      </a>
+      <a href="products.html" class="g-item">
+        <div class="g-img has-icon">
+          <img src="assets/images/LINE ICON 커스텀센서.png" alt="커스텀 센서 제작">
+        </div>
+        <div class="g-cap">축력 볼트 센서<span class="en">BOLT TENSION SENSOR</span></div>
       </a>
     </div>
   </div>

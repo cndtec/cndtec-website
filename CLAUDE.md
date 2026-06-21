@@ -97,6 +97,7 @@ resources/custom-sensor.html, field-service.html, sensors.html, vibration.html �
 - Edit으로 정확히 그 부분만 교체
 - 컨텍스트 절약을 위해 불필요한 파일 내용 출력 최소화
 - 작업 완료 후 이 CLAUDE.md 업데이트
+- ⭐ **파일 수정 후에는 사용자가 요청하지 않아도 항상 git add/commit/push 명령어를 안내할 것** (cmd.exe 기준, repo 경로로 cd 포함) — 2026-06-22 사용자 지시
 
 ## 파일 위치
 - 웹사이트: C:\Users\wgjeo\클로이드 폴더\cndtec-website\
