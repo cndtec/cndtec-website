@@ -105,10 +105,14 @@
     gap: 12px;
     margin-top: 56px;
   }
-  .gallery-grid .g-item { border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+  .gallery-grid .g-item {
+    border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column;
+    text-decoration: none; transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .gallery-grid .g-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
   .gallery-grid .g-item.tall { grid-row: span 2; }
   .gallery-grid .g-img {
-    width: 100%; flex: 1;
+    width: 100%; flex: 1 1 auto; min-height: 0; overflow: hidden;
     background: linear-gradient(135deg, var(--gray-100) 0%, var(--bg-warm) 100%);
     border: 2px dashed var(--gray-300);
     display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -122,9 +126,12 @@
     background: var(--white); border: 1px solid var(--line); border-bottom: none; padding: 28px;
   }
   .gallery-grid .g-img.has-icon img {
-    width: 100%; height: 100%; object-fit: contain;
+    max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;
+    transition: transform 0.25s ease;
   }
+  .gallery-grid .g-item:hover .g-img.has-icon img { transform: scale(1.06); }
   .gallery-grid .g-cap {
+    flex: 0 0 auto;
     background: var(--charcoal); color: var(--white); text-align: center;
     padding: 10px 8px; font-size: 12.5px; font-weight: 600;
   }
@@ -351,39 +358,38 @@
     <div class="sec-head">
       <div class="sec-tag"><span class="bar"></span>CAPABILITIES</div>
       <h2 data-ko="사업 분야" data-en="Capabilities">사업 분야</h2>
-      <p data-ko="씨앤디테크가 다루는 주요 계측 분야를 한눈에 정리했습니다." data-en="An overview of CND TECH's core measurement capabilities.">씨앤디테크가 다루는 주요 계측 분야를 한눈에 정리했습니다.</p>
     </div>
     <div class="gallery-grid fade-in">
-      <div class="g-item tall">
+      <a href="projects.html" class="g-item tall">
         <div class="g-img has-icon">
           <img src="assets/images/LINE ICON 현장계측.png" alt="현장 계측 서비스">
         </div>
         <div class="g-cap">현장 계측<span class="en">FIELD MEASUREMENT</span></div>
-      </div>
-      <div class="g-item">
+      </a>
+      <a href="products.html" class="g-item">
         <div class="g-img has-icon">
           <img src="assets/images/LINE ICON DAQ.png" alt="DAQ 데이터로거 시스템">
         </div>
         <div class="g-cap">데이터수집장치<span class="en">DAQ SYSTEM</span></div>
-      </div>
-      <div class="g-item">
+      </a>
+      <a href="projects.html" class="g-item">
         <div class="g-img has-icon">
           <img src="assets/images/LINE ICON 잔류응력측정.png" alt="잔류응력 측정">
         </div>
         <div class="g-cap">잔류응력 측정<span class="en">RESIDUAL STRESS</span></div>
-      </div>
-      <div class="g-item">
+      </a>
+      <a href="projects.html" class="g-item">
         <div class="g-img has-icon">
           <img src="assets/images/LINE ICON 진동측정.png" alt="진동 측정 시스템">
         </div>
         <div class="g-cap">진동 측정<span class="en">VIBRATION MEASUREMENT</span></div>
-      </div>
-      <div class="g-item">
+      </a>
+      <a href="products.html" class="g-item">
         <div class="g-img has-icon">
           <img src="assets/images/LINE ICON 커스텀센서.png" alt="커스텀 센서 제작">
         </div>
         <div class="g-cap">축력 볼트 센서<span class="en">BOLT TENSION SENSOR</span></div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
