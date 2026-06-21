@@ -201,60 +201,6 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
 </script>
 
-<!-- ===== 리뉴얼 안내 팝업 ===== -->
-<div id="renewalPopup" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:9999; align-items:center; justify-content:center; padding:16px;">
-  <div style="background:#fff; border-radius:16px; padding:36px 32px; max-width:480px; width:100%; text-align:center; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.2); max-height:90vh; overflow-y:auto;">
-    <div style="width:52px; height:52px; background:#FFF3DC; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F29400" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-    </div>
-    <div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#F29400; font-weight:700; letter-spacing:0.1em; margin-bottom:10px;">WEBSITE RENEWAL</div>
-    <h2 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:21px; font-weight:700; color:#2E2B28; margin-bottom:12px; line-height:1.3;">홈페이지 리뉴얼 중입니다</h2>
-    <p style="font-size:14px; color:#6B6560; line-height:1.8; margin-bottom:20px;">보다 나은 서비스로 찾아뵐 수 있도록<br>빠른 시간 내에 완성하겠습니다.<br>불편을 드려 죄송합니다.</p>
-
-    <div style="background:#F8F6F4; border-radius:10px; padding:18px 20px; margin-bottom:20px; text-align:left;">
-      <div style="font-size:12px; font-weight:700; color:#2E2B28; margin-bottom:10px; font-family:'JetBrains Mono',monospace; letter-spacing:0.05em;">📋 기술자료 · 블로그</div>
-      <p style="font-size:13px; color:#6B6560; margin-bottom:12px; line-height:1.6;">기술 자료 및 적용 사례는 아래 블로그에서 확인하실 수 있습니다.</p>
-      <div style="display:flex; flex-direction:column; gap:8px;">
-        <a href="https://candj.tistory.com/" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:8px; padding:10px 14px; background:#fff; border:1px solid #E8E4E0; border-radius:8px; text-decoration:none; color:#2E2B28; font-size:13px; font-weight:600;">
-          <span style="font-size:16px;">📝</span> Tistory 기술 블로그 <span style="margin-left:auto; color:#F29400;">→</span>
-        </a>
-        <a href="https://blog.naver.com/cndtec" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:8px; padding:10px 14px; background:#fff; border:1px solid #E8E4E0; border-radius:8px; text-decoration:none; color:#2E2B28; font-size:13px; font-weight:600;">
-          <span style="font-size:16px;">📗</span> 네이버 블로그 <span style="margin-left:auto; color:#F29400;">→</span>
-        </a>
-      </div>
-    </div>
-
-    <div style="background:#FFF8EC; border:1px solid #FFE0A0; border-radius:10px; padding:14px 18px; margin-bottom:20px; text-align:left;">
-      <div style="font-size:12px; font-weight:700; color:#2E2B28; margin-bottom:8px; font-family:'JetBrains Mono',monospace; letter-spacing:0.05em;">✅ 기본 정보 및 문의는 정상 운영 중</div>
-      <p style="font-size:13px; color:#6B6560; line-height:1.6; margin-bottom:10px;">회사 소개, 제품·서비스 안내, 문의 접수는 현재도 이용 가능합니다.</p>
-      <div style="display:flex; gap:8px; flex-wrap:wrap;">
-        <a href="tel:031-680-1225" style="font-size:13px; color:#F29400; font-weight:700; text-decoration:none;">📞 031-680-1225</a>
-        <span style="color:#ccc;">|</span>
-        <a href="mailto:wgjeon@cndtec.co.kr" style="font-size:13px; color:#F29400; font-weight:700; text-decoration:none;">✉ wgjeon@cndtec.co.kr</a>
-      </div>
-    </div>
-
-    <button onclick="closeRenewalPopup()" style="background:#F29400; color:#fff; border:none; border-radius:8px; padding:12px 32px; font-size:15px; font-weight:600; cursor:pointer; width:100%;">확인, 둘러볼게요</button>
-  </div>
-</div>
-<script>
-function closeRenewalPopup() {
-  document.getElementById('renewalPopup').style.display = 'none';
-  try { localStorage.setItem('renewal-closed', Date.now()); } catch(e) {}
-}
-(function() {
-  try {
-    var closed = localStorage.getItem('renewal-closed');
-    var oneDayMs = 24 * 60 * 60 * 1000;
-    if (!closed || Date.now() - Number(closed) > oneDayMs) {
-      var popup = document.getElementById('renewalPopup');
-      popup.style.display = 'flex';
-    }
-  } catch(e) {
-    document.getElementById('renewalPopup').style.display = 'flex';
-  }
-})();
-</script>
 
 </body>
 </html>
