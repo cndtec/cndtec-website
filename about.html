@@ -118,10 +118,12 @@
     font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600;
     text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.7;
   }
-  /* 실제 사진 교체 예:
-     .g-item:nth-child(1) .g-img { background: url('assets/images/office.jpg') center/cover; border: none; }
-     .g-item:nth-child(2) .g-img { background: url('assets/images/lab.jpg') center/cover; border: none; }
-  */
+  .gallery-grid .g-img.has-icon {
+    background: var(--white); border: 1px solid var(--line); padding: 28px;
+  }
+  .gallery-grid .g-img.has-icon img {
+    width: 100%; height: 100%; object-fit: contain;
+  }
 
   @media (max-width: 920px) {
     .brand-grid { grid-template-columns: repeat(2, 1fr); }
@@ -341,39 +343,32 @@
     <div class="sec-head">
       <div class="sec-tag"><span class="bar"></span>GALLERY</div>
       <h2 data-ko="현장과 제품" data-en="Field &amp; Products">현장과 제품</h2>
-      <p data-ko="실제 계측 현장과 제작 장비 사진을 이곳에 배치하세요." data-en="Place your field and product photos here.">실제 계측 현장과 제작 장비 사진을 이곳에 배치하세요.</p>
+      <p data-ko="씨앤디테크의 계측 분야를 한눈에 보는 아이콘 갤러리입니다." data-en="An icon gallery overview of CND TECH's measurement fields.">씨앤디테크의 계측 분야를 한눈에 보는 아이콘 갤러리입니다.</p>
     </div>
     <div class="gallery-grid fade-in">
       <div class="g-item tall">
-        <div class="g-img">
-          <!-- 사진 교체: background-image:url('assets/images/about-main.jpg') -->
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span class="ph-label" data-ko="메인 현장 사진" data-en="Main Field Photo">메인 현장 사진</span>
-          <span style="font-size:11px; color:var(--text-mute); opacity:0.6" data-ko="권장 비율: 세로형" data-en="Recommended: portrait">권장 비율: 세로형</span>
+        <div class="g-img has-icon">
+          <img src="assets/images/LINE ICON 현장계측.png" alt="현장 계측 서비스">
         </div>
       </div>
       <div class="g-item">
-        <div class="g-img">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span class="ph-label" data-ko="DAQ 장비" data-en="DAQ System">DAQ 장비</span>
+        <div class="g-img has-icon">
+          <img src="assets/images/LINE ICON DAQ.png" alt="DAQ 데이터로거 시스템">
         </div>
       </div>
       <div class="g-item">
-        <div class="g-img">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span class="ph-label" data-ko="잔류응력 측정" data-en="Residual Stress">잔류응력 측정</span>
+        <div class="g-img has-icon">
+          <img src="assets/images/LINE ICON 잔류응력측정.png" alt="잔류응력 측정">
         </div>
       </div>
       <div class="g-item">
-        <div class="g-img">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span class="ph-label" data-ko="현장 설치" data-en="Field Installation">현장 설치</span>
+        <div class="g-img has-icon">
+          <img src="assets/images/LINE ICON 진동측정.png" alt="진동 측정 시스템">
         </div>
       </div>
       <div class="g-item">
-        <div class="g-img">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span class="ph-label" data-ko="제작 장비" data-en="Custom Hardware">제작 장비</span>
+        <div class="g-img has-icon">
+          <img src="assets/images/LINE ICON 커스텀센서.png" alt="커스텀 센서 제작">
         </div>
       </div>
     </div>
