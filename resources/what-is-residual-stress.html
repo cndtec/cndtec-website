@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>잔류응력이란? 정의·발생 원인·측정 방법 총정리 | 씨앤디테크</title>
+<meta name="description" content="잔류응력(Residual Stress)의 정의, 발생 원인, 산업별 영향, 홀드릴링·XRD·초음파 측정 방법 비교까지 한눈에. 씨앤디테크 기술 가이드." />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/what-is-residual-stress.html" />
+<meta property="og:title" content="잔류응력이란? 정의·발생 원인·측정 방법 총정리 | 씨앤디테크" />
+<meta property="og:description" content="잔류응력의 정의, 발생 원인, 산업별 영향, 홀드릴링·XRD·초음파 측정 방법 비교까지 한눈에. 씨앤디테크 기술 가이드." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/what-is-residual-stress.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=5">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "잔류응력이란? 정의·발생 원인·측정 방법 총정리",
+  "description": "잔류응력(Residual Stress)의 정의, 발생 원인, 산업별 영향, 홀드릴링·XRD·초음파 측정 방법 비교",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "inLanguage": "ko",
+  "datePublished": "2026-06-23",
+  "keywords": ["잔류응력이란", "잔류응력 정의", "잔류응력 발생 원인", "잔류응력 측정", "홀드릴링", "ASTM E837", "XRD 잔류응력"]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+/* 영상 반응형 래퍼 */
+.video-wrap {
+  position: relative; padding-bottom: 56.25%;
+  height: 0; overflow: hidden;
+  border-radius: var(--radius);
+  background: #111;
+  margin: 32px 0;
+}
+.video-wrap iframe {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  border: none;
+}
+
+/* 측정 방법 비교 표 */
+.method-table {
+  width: 100%; border-collapse: collapse; font-size: 14px; margin: 24px 0;
+}
+.method-table th {
+  background: var(--charcoal); color: #fff;
+  padding: 12px 16px; text-align: left; font-weight: 600; font-size: 13px;
+}
+.method-table th:first-child { border-radius: 8px 0 0 0; }
+.method-table th:last-child  { border-radius: 0 8px 0 0; }
+.method-table td {
+  padding: 12px 16px; border-bottom: 1px solid var(--line);
+  color: var(--text-dim); vertical-align: top; line-height: 1.6;
+}
+.method-table tr:last-child td { border-bottom: none; }
+.method-table tr:nth-child(even) td { background: var(--bg-soft); }
+.method-table .tag-rec {
+  display: inline-block; padding: 2px 8px; border-radius: 999px;
+  font-size: 11px; font-weight: 700; font-family: 'JetBrains Mono', monospace;
+  background: var(--orange-tint); color: var(--accent-deep);
+  border: 1px solid var(--orange-line);
+}
+
+/* 발생원인 카드 */
+.cause-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px; margin: 20px 0;
+}
+.cause-card {
+  padding: 20px; background: var(--white);
+  border: 1px solid var(--line); border-radius: var(--radius);
+  display: flex; gap: 14px; align-items: flex-start;
+}
+.cause-num {
+  flex-shrink: 0; width: 32px; height: 32px; border-radius: 8px;
+  background: var(--orange-tint); border: 1px solid var(--orange-line);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace; font-size: 13px;
+  font-weight: 700; color: var(--accent-deep);
+}
+.cause-card h4 { font-size: 14px; font-weight: 700; color: var(--charcoal); margin-bottom: 4px; }
+.cause-card p  { font-size: 13px; color: var(--text-mute); line-height: 1.6; margin: 0; }
+
+/* 영향 구분 박스 */
+.impact-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0;
+}
+.impact-box {
+  padding: 24px; border-radius: var(--radius);
+  border: 1px solid var(--line);
+}
+.impact-box.neg { background: #fff5f5; border-color: #ffc9c9; }
+.impact-box.pos { background: #f0fff4; border-color: #b2f2bb; }
+.impact-box h4  { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+.impact-box.neg h4 { color: #c92a2a; }
+.impact-box.pos h4 { color: #2f9e44; }
+.impact-box ul  { margin: 0; padding-left: 18px; }
+.impact-box li  { font-size: 14px; color: var(--text-dim); line-height: 1.8; }
+
+/* 적용분야 태그 클라우드 */
+.field-tags {
+  display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0;
+}
+.field-tag {
+  padding: 6px 14px; background: var(--bg-soft);
+  border: 1px solid var(--line); border-radius: 999px;
+  font-size: 13px; color: var(--text-dim); font-weight: 500;
+}
+
+/* 관련 자료 링크 */
+.related-links {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px;
+}
+.related-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 16px; border-radius: var(--radius);
+  border: 1px solid var(--line); background: var(--white);
+  font-size: 13px; font-weight: 600; color: var(--charcoal);
+  text-decoration: none; transition: all 0.2s;
+}
+.related-link:hover { border-color: var(--accent); color: var(--accent-deep); }
+
+@media (max-width: 640px) {
+  .impact-row { grid-template-columns: 1fr; }
+  .method-table { font-size: 12px; }
+  .method-table th, .method-table td { padding: 10px 10px; }
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html">회사소개</a>
+      <a href="../products.html">사업분야·제품</a>
+      <a href="../projects.html">주요실적</a>
+      <a href="index.html" class="page-active">기술자료</a>
+      <a href="../index.html#blog">블로그</a>
+      <a href="../contact.html">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary">
+        문의하기
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <a href="../about.html">회사소개</a>
+    <a href="../products.html">사업분야·제품</a>
+    <a href="../projects.html">주요실적</a>
+    <a href="index.html">기술자료</a>
+    <a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">
+        RESIDUAL STRESS · 기초 개념
+      </div>
+      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(32px,5vw,60px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">
+        잔류응력이란?
+      </h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:700px; line-height:1.7; margin-bottom:0;">
+        잔류응력의 정의와 발생 원인부터, 구조물 신뢰성에 미치는 영향, 홀드릴링·XRD·초음파 측정 방법 비교까지 — 엔지니어가 알아야 할 모든 것을 정리했습니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section style="padding: 48px 0 100px;">
+  <div class="container">
+    <div style="max-width:820px; display:flex; flex-direction:column; gap:56px;">
+
+      <!-- 1. 정의 + 영상 -->
+      <div class="fade-in">
+        <h2 style="font-size:24px; font-weight:700; color:var(--charcoal); margin-bottom:16px; padding-bottom:12px; border-bottom:2px solid var(--accent);">
+          잔류응력(Residual Stress)의 정의
+        </h2>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:16px;">
+          <strong style="color:var(--charcoal);">잔류응력(Residual Stress)</strong>이란 외부 하중이 전혀 가해지지 않은 상태에서 재료 내부에 자존하는 응력을 말합니다.
+          제조·가공 과정에서 필연적으로 발생하며, 이후 구조물에 운용 하중이 부가될 때 잔류응력이 자연스럽게 더해지기 때문에
+          부품의 피로 수명, 파손 위험, 치수 안정성에 직접적인 영향을 미칩니다.
+        </p>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.85;">
+          쉽게 말하면, 아무것도 하지 않아도 이미 '눌려 있거나 당겨 있는 상태'인 것입니다.
+          이 초기 상태를 정확히 파악해야 구조물의 실제 안전성과 내구성을 평가할 수 있습니다.
+        </p>
+
+        <!-- YouTube 영상 -->
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/qvx0KK41KYw"
+            title="잔류응력이란 무엇인가? — 씨앤디테크 기술 영상"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p style="font-size:13px; color:var(--text-mute); margin-top:-16px;">
+          ▲ 잔류응력의 개념과 홀드릴링 측정 방식을 영상으로 확인하세요.
+        </p>
+      </div>
+
+      <!-- 2. 발생 원인 -->
+      <div class="fade-in">
+        <h2 style="font-size:24px; font-weight:700; color:var(--charcoal); margin-bottom:16px; padding-bottom:12px; border-bottom:2px solid var(--accent);">
+          잔류응력의 주요 발생 원인
+        </h2>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">
+          잔류응력은 거의 모든 제조 공정에서 발생합니다. 특히 아래 5가지 요인이 대표적입니다.
+        </p>
+        <div class="cause-grid">
+          <div class="cause-card">
+            <div class="cause-num">01</div>
+            <div>
+              <h4>불균일 가열·냉각</h4>
+              <p>제조 공정 중 부품 내 온도 구배가 생기면 열팽창·수축 차이로 잔류응력 발생</p>
+            </div>
+          </div>
+          <div class="cause-card">
+            <div class="cause-num">02</div>
+            <div>
+              <h4>용접·주조·단조</h4>
+              <p>고온에서 급격한 상변태 및 소성 변형이 일어나는 주요 잔류응력 발생 공정</p>
+            </div>
+          </div>
+          <div class="cause-card">
+            <div class="cause-num">03</div>
+            <div>
+              <h4>기계 가공</h4>
+              <p>선삭·밀링·연삭 등 절삭력에 의한 소성 변형으로 표면 잔류응력 형성</p>
+            </div>
+          </div>
+          <div class="cause-card">
+            <div class="cause-num">04</div>
+            <div>
+              <h4>열처리</h4>
+              <p>템퍼링·질화·침탄 등 관통 또는 표면 열처리 시 상변태 응력 발생</p>
+            </div>
+          </div>
+          <div class="cause-card">
+            <div class="cause-num">05</div>
+            <div>
+              <h4>표면 처리</h4>
+              <p>쇼트피닝·샌드블라스팅 등 표면 처리 공정에서 압축 잔류응력 의도적 부여</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. 영향 (긍정/부정) -->
+      <div class="fade-in">
+        <h2 style="font-size:24px; font-weight:700; color:var(--charcoal); margin-bottom:16px; padding-bottom:12px; border-bottom:2px solid var(--accent);">
+          잔류응력이 구조물에 미치는 영향
+        </h2>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">
+          잔류응력은 반드시 나쁜 것이 아닙니다. <strong style="color:var(--charcoal);">인장 잔류응력</strong>은 균열을 촉진하고 피로 수명을 단축시키지만,
+          <strong style="color:var(--charcoal);">압축 잔류응력</strong>은 오히려 피로 저항성을 높여 수명 연장에 활용됩니다.
+        </p>
+        <div class="impact-row">
+          <div class="impact-box neg">
+            <h4>⚠ 인장 잔류응력 — 위험 요소</h4>
+            <ul>
+              <li>피로 균열 성장 촉진</li>
+              <li>피로 수명 단축</li>
+              <li>응력 부식 균열(SCC) 가속</li>
+              <li>구조물·치수 안정성 저하</li>
+              <li>적재 용량·안전 마진 감소</li>
+            </ul>
+          </div>
+          <div class="impact-box pos">
+            <h4>✓ 압축 잔류응력 — 활용 요소</h4>
+            <ul>
+              <li>균열 개구 억제 → 피로 저항성 향상</li>
+              <li>쇼트피닝으로 의도적 부여</li>
+              <li>터빈 블레이드, 스프링, 기어 등에 활용</li>
+              <li>표면 경화 처리 후 내구성 증대</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. 적용 분야 -->
+      <div class="fade-in">
+        <h2 style="font-size:24px; font-weight:700; color:var(--charcoal); margin-bottom:16px; padding-bottom:12px; border-bottom:2px solid var(--accent);">
+          잔류응력 측정이 필요한 산업 분야
+        </h2>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:16px;">
+          구조적 신뢰성이 중요한 모든 산업에서 잔류응력 측정이 요구됩니다.
+        </p>
+        <div class="field-tags">
+          <span class="field-tag">⚓ 조선·해양 구조물</span>
+          <span class="field-tag">🚗 자동차 부품</span>
+          <span class="field-tag">✈ 항공우주</span>
+          <span class="field-tag">🔩 압력용기·배관</span>
+          <span class="field-tag">⚙ 터빈·컴프레서</span>
+          <span class="field-tag">🏗 교량·철골 구조물</span>
+          <span class="field-tag">⚡ 원자력 발전</span>
+          <span class="field-tag">🛤 철도 레일</span>
+          <span class="field-tag">🔬 반도체·PCB</span>
+          <span class="field-tag">🛡 국방·방산</span>
+        </div>
+      </div>
+
+      <!-- 5. 측정 방법 비교 -->
+      <div class="fade-in">
+        <h2 style="font-size:24px; font-weight:700; color:var(--charcoal); margin-bottom:16px; padding-bottom:12px; border-bottom:2px solid var(--accent);">
+          잔류응력 측정 방법 비교
+        </h2>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">
+          잔류응력을 측정하는 방법은 여러 가지가 있습니다. 적용 재료, 측정 깊이, 파괴 허용 여부에 따라 최적의 방법이 달라집니다.
+        </p>
+        <div style="overflow-x:auto;">
+          <table class="method-table">
+            <thead>
+              <tr>
+                <th>측정 방법</th>
+                <th>분류</th>
+                <th>측정 깊이</th>
+                <th>특징</th>
+                <th>씨앤디테크</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>홀드릴링법 (HDM)</strong><br><span style="font-size:12px; color:var(--text-mute);">ASTM E837</span></td>
+                <td>반파괴</td>
+                <td>표면 ~ 1mm</td>
+                <td>정밀도 높음. 금속·고분자 모두 적용 가능. 단순 형상 필수.</td>
+                <td><span class="tag-rec">전문 공급·용역</span></td>
+              </tr>
+              <tr>
+                <td><strong>X선 회절 (XRD)</strong><br><span style="font-size:12px; color:var(--text-mute);">PANalytical 등</span></td>
+                <td>비파괴</td>
+                <td>수십~수백 μm</td>
+                <td>비접촉 표면 측정. 결정 구조 정보 획득 가능. 장비 비용 높음.</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td><strong>초음파법</strong><br><span style="font-size:12px; color:var(--text-mute);">음향 방출법 등</span></td>
+                <td>비파괴</td>
+                <td>전체 두께</td>
+                <td>다양한 형상 적용 가능. 방향 측정 불가(크기만). 재료·보정 조건에 민감.</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td><strong>기계적 변형 방출 (MSR)</strong></td>
+                <td>파괴</td>
+                <td>전단면</td>
+                <td>단면 전체 응력 분포 파악 가능. 시험편 절단 필요.</td>
+                <td>—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:13px; color:var(--text-mute); margin-top:8px;">
+          씨앤디테크는 <strong>ASTM E837 홀드릴링법</strong> 기반 잔류응력 측정 장비 공급 및 현장 측정 용역을 전문으로 합니다.
+        </p>
+      </div>
+
+      <!-- 6. 씨앤디테크 서비스 요약 -->
+      <div class="fade-in">
+        <h2 style="font-size:24px; font-weight:700; color:var(--charcoal); margin-bottom:16px; padding-bottom:12px; border-bottom:2px solid var(--accent);">
+          씨앤디테크의 잔류응력 측정 서비스
+        </h2>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:16px;">
+          씨앤디테크는 이탈리아 <strong style="color:var(--charcoal);">SINT Technology</strong>의 한국 공식 대리점으로,
+          ASTM E837 기반 잔류응력 측정 시스템 공급과 현장 측정 용역을 모두 제공합니다.
+          용접부, 단조품, 기계 가공 부품, 대형 구조물 등 다양한 대상물에 25년 이상의 현장 경험을 보유하고 있습니다.
+        </p>
+
+        <!-- 관련 자료 링크 -->
+        <div style="margin-top:24px;">
+          <p style="font-size:13px; font-weight:700; color:var(--text-mute); margin-bottom:10px; font-family:'JetBrains Mono',monospace;">관련 기술자료</p>
+          <div class="related-links">
+            <a href="residual-stress.html" class="related-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+              ASTM E837 홀드릴링 상세 가이드
+            </a>
+            <a href="strain-gauge.html" class="related-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+              스트레인게이지 선정 가이드
+            </a>
+            <a href="https://candj.tistory.com/6" target="_blank" rel="noopener" class="related-link" style="color:var(--text-mute);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+              블로그: 잔류응력 측정 정의와 방식
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /max-width -->
+
+    <!-- CTA 박스 -->
+    <div style="margin-top:64px; padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius); max-width:820px;">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">잔류응력 측정 서비스 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">
+        시험편 사양, 측정 위치, 요구 정밀도를 알려주시면 최적의 측정 방안과 견적을 안내해 드립니다.
+      </p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark"
+             onerror="this.style.display:'none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="what-is-residual-stress.html">잔류응력이란?</a></li><li><a href="residual-stress.html">ASTM E837 측정법</a></li><li><a href="strain-gauge.html">스트레인게이지</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 CND TECH (씨앤디테크) · 대표 전원근</span>
+      <span>경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+</body>
+</html>
