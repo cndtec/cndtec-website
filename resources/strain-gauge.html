@@ -4,11 +4,13 @@
 <meta charset="UTF-8" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>스트레인게이지 측정 서비스 | CND TECH 씨앤디테크</title>
-<meta name="description" content="TML, Micro-Measurements 스트레인게이지 공급 및 측정 서비스. 게이지 선정, 부착, 결선, 브릿지 회로 구성 전문 가이드." />
-<meta property="og:title" content="스트레인게이지 측정 서비스 | CND TECH 씨앤디테크" />
-<meta property="og:description" content="TML, Micro-Measurements 스트레인게이지 공급 및 측정 서비스. 게이지 선정, 부착, 결선, 브릿지 회로 구성 전문 가이드." />
+<title>스트레인게이지 원리·종류·선정 가이드 | 씨앤디테크</title>
+<meta name="description" content="스트레인게이지(Strain Gauge) 원리, 금속포일·반도체·광섬유 종류 비교, 저항값·형태별 선정 기준 총정리. 씨앤디테크 TML·Micro-Measurements 공급 및 측정 서비스." />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/strain-gauge.html" />
+<meta property="og:title" content="스트레인게이지 원리·종류·선정 가이드 | 씨앤디테크" />
+<meta property="og:description" content="스트레인게이지 원리, 종류 비교, 저항값·형태별 선정 기준. TML·Micro-Measurements 공급 및 측정 서비스." />
 <meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/strain-gauge.html" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,11 +20,60 @@
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "스트레인게이지 선정 및 측정 기술 가이드",
-  "description": "스트레인게이지 원리, 선정 방법, 부착 절차, 브릿지 회로 구성, TML·Micro-Measurements 제품 가이드",
+  "headline": "스트레인게이지 원리·종류·선정 가이드",
+  "description": "스트레인게이지 원리, 금속포일·반도체·광섬유 종류 비교, 저항값·형태별 선정 기준, 스트레인게이지 센서 응용",
   "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
   "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
-  "inLanguage": "ko"
+  "inLanguage": "ko",
+  "keywords": "스트레인게이지, strain gauge, 스트레인게이지 원리, 스트레인게이지 선정, 금속 포일 스트레인게이지, 게이지 팩터"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "스트레인게이지란 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "스트레인게이지(Strain Gauge)는 재료의 변형률(Strain)을 전기 저항 변화로 측정하는 센서입니다. 재료 표면에 부착하면 변형에 따라 게이지의 저항값이 변하고, 이를 Wheatstone 브릿지 회로로 측정하여 응력을 계산합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "스트레인게이지 저항값(120Ω, 350Ω)은 어떻게 선택하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "120Ω은 일반 구조 시험·실험실 용도에 가장 널리 사용됩니다. 350Ω은 로드셀·토크센서 등 센서 제작용으로 적합하며 자가발열이 적습니다. 700Ω 이상은 텔레메트리나 배터리 구동 장비처럼 저전력이 필요한 특수 용도에 사용합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "로제트 스트레인게이지는 언제 사용하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "스트레인 방향을 미리 알 수 없거나 복잡한 응력 상태를 측정할 때 로제트 게이지를 사용합니다. 2축 로제트(45° 배열)는 전단·토크 측정에, 3축 로제트(0°/45°/90° 또는 0°/60°/120°)는 주응력 방향과 크기 동시 측정에 적합합니다. 잔류응력 측정(ASTM E837)에도 전용 로제트 게이지가 사용됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "게이지 팩터(Gauge Factor)란 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "게이지 팩터(GF)는 저항 변화율과 변형률의 비로 정의됩니다: GF = (ΔR/R) / ε. 금속 포일 게이지의 GF는 약 2.0이고, 반도체 게이지는 50~150으로 훨씬 큽니다. GF가 클수록 감도가 높지만 비선형성도 커집니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "스트레인게이지 부착 시 표면 처리는 왜 중요한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "부착면의 이물질·산화층·유분이 남아 있으면 접착 강도가 낮아져 게이지가 피측정물과 함께 정확히 변형되지 않습니다. 연마 → 세척 → 중화 → 건조 순서의 표면 처리가 측정 정밀도를 결정하는 가장 중요한 단계입니다."
+      }
+    }
+  ]
 }
 </script>
 <!-- Google tag (gtag.js) -->
@@ -33,6 +84,149 @@
   gtag('js', new Date());
   gtag('config', 'G-B25Y10FQK1');
 </script>
+<style>
+.sg-section { padding: 44px 0; border-bottom: 1px solid var(--line); }
+.sg-section:last-child { border-bottom: none; }
+.sg-section-title {
+  font-family: 'Space Grotesk', 'Pretendard', sans-serif;
+  font-size: 22px; font-weight: 700; color: var(--charcoal);
+  margin-bottom: 18px;
+  display: flex; align-items: center; gap: 10px;
+}
+.sg-section-title::before {
+  content: ''; display: inline-block;
+  width: 4px; height: 22px;
+  background: var(--accent); border-radius: 2px; flex-shrink: 0;
+}
+
+/* 수식 블록 */
+.sg-formula {
+  display: inline-block;
+  padding: 14px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  color: var(--charcoal);
+  margin: 12px 0;
+}
+.sg-formula span { color: var(--accent); font-weight: 700; }
+
+/* 3열 비교 카드 */
+.sg-compare-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+@media (max-width: 720px) { .sg-compare-grid { grid-template-columns: 1fr; } }
+.sg-compare-card {
+  padding: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.sg-compare-card.highlight { border-color: var(--accent); }
+.sg-compare-card .cc-name {
+  font-weight: 700; font-size: 15px; color: var(--charcoal); margin-bottom: 4px;
+}
+.sg-compare-card .cc-sub {
+  font-size: 12px; color: var(--text-mute); margin-bottom: 12px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.sg-compare-card .cc-row {
+  display: flex; justify-content: space-between;
+  font-size: 13px; padding: 5px 0; border-bottom: 1px solid var(--line);
+  gap: 8px;
+}
+.sg-compare-card .cc-row:last-child { border-bottom: none; }
+.sg-compare-card .cc-row .cc-label { color: var(--text-mute); flex-shrink: 0; }
+.sg-compare-card .cc-row .cc-val { color: var(--charcoal); font-weight: 500; text-align: right; }
+
+/* 테이블 */
+.sg-table {
+  width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0;
+}
+.sg-table th, .sg-table td {
+  padding: 10px 14px; border: 1px solid var(--line); vertical-align: top;
+}
+.sg-table th {
+  background: var(--orange-tint); font-weight: 600; color: var(--charcoal);
+}
+.sg-table td { color: var(--text-dim); }
+.sg-table tr:nth-child(even) td { background: var(--bg-card); }
+
+/* 게이지 형태 카드 */
+.sg-type-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 16px 0;
+}
+@media (max-width: 560px) { .sg-type-grid { grid-template-columns: 1fr; } }
+.sg-type-card {
+  padding: 18px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.sg-type-card .tc-badge {
+  display: inline-block; padding: 2px 8px;
+  background: var(--orange-tint); border: 1px solid var(--orange-line);
+  border-radius: 4px; font-size: 11px; font-weight: 700;
+  color: var(--accent-deep); font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 8px;
+}
+.sg-type-card .tc-name { font-weight: 700; font-size: 15px; color: var(--charcoal); margin-bottom: 6px; }
+.sg-type-card .tc-desc { font-size: 13px; color: var(--text-mute); line-height: 1.5; }
+
+/* 원인 카드 */
+.sg-cause-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0;
+}
+@media (max-width: 600px) { .sg-cause-grid { grid-template-columns: 1fr; } }
+.sg-cause-card {
+  padding: 18px 16px; text-align: center;
+  background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.sg-cause-card .cause-icon { font-size: 28px; margin-bottom: 8px; }
+.sg-cause-card .cause-name { font-weight: 700; font-size: 14px; color: var(--charcoal); margin-bottom: 4px; }
+.sg-cause-card .cause-desc { font-size: 12px; color: var(--text-mute); line-height: 1.4; }
+
+/* 센서 목록 */
+.sg-sensor-list {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 16px 0;
+}
+@media (max-width: 560px) { .sg-sensor-list { grid-template-columns: 1fr; } }
+.sg-sensor-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px; background: var(--bg-card);
+  border: 1px solid var(--line); border-radius: var(--radius);
+}
+.sg-sensor-item .si-icon {
+  font-size: 22px; flex-shrink: 0; margin-top: 2px;
+}
+.sg-sensor-item .si-name { font-weight: 700; font-size: 14px; color: var(--charcoal); margin-bottom: 3px; }
+.sg-sensor-item .si-desc { font-size: 12px; color: var(--text-mute); line-height: 1.4; }
+
+/* stat 그리드 */
+.sg-stat-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 28px 0;
+}
+@media (max-width: 640px) { .sg-stat-grid { grid-template-columns: 1fr; } }
+.sg-stat-card {
+  padding: 22px 18px; background: var(--bg-card);
+  border: 1px solid var(--line); border-radius: var(--radius); text-align: center;
+}
+.sg-stat-card .sv { font-family: 'JetBrains Mono',monospace; font-size:26px; font-weight:700; color:var(--accent); line-height:1.1; margin-bottom:6px; }
+.sg-stat-card .sl { font-size:12px; color:var(--text-mute); line-height:1.4; }
+
+/* FAQ */
+.sg-faq { display: flex; flex-direction: column; gap: 12px; margin: 16px 0; }
+.sg-faq-item { padding: 18px 20px; background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius); }
+.sg-faq-item .faq-q { font-weight: 700; font-size: 15px; color: var(--charcoal); margin-bottom: 8px; display: flex; gap: 8px; }
+.sg-faq-item .faq-q::before { content: 'Q'; color: var(--accent); font-family: 'JetBrains Mono',monospace; flex-shrink: 0; }
+.sg-faq-item .faq-a { font-size: 14px; color: var(--text-dim); line-height: 1.7; padding-left: 20px; }
+</style>
 </head>
 <body>
 <div class="bg-grid"></div>
@@ -56,7 +250,7 @@
         <button class="lang-btn active" data-lang="ko">KO</button>
         <button class="lang-btn" data-lang="en">EN</button>
       </div>
-      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <a href="../contact.html" class="btn btn-primary">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
       <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
     </div>
   </div>
@@ -70,44 +264,328 @@
   </div>
 </div>
 
+<!-- ── HERO ── -->
 <section style="padding-top:160px; padding-bottom:20px;">
   <div class="container">
     <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
     <div style="margin-top:20px;">
-      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">TML · MICRO-MEASUREMENTS</div>
-      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(32px,5vw,60px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);" data-ko="스트레인게이지 측정" data-en="Strain Gauge Measurement">스트레인게이지 측정</h1>
-      <p style="font-size:17px; color:var(--text-dim); max-width:680px; line-height:1.7; margin-bottom:0;" data-ko="TML, Micro-Measurements 스트레인게이지 공급 및 측정 서비스. 게이지 선정, 부착, 결선, 브릿지 회로 구성 전문 가이드." data-en="TML, Micro-Measurements 스트레인게이지 공급 및 측정 서비스. 게이지 선정, 부착, 결선, 브릿지 회로 구성 전문 가이드.">TML, Micro-Measurements 스트레인게이지 공급 및 측정 서비스. 게이지 선정, 부착, 결선, 브릿지 회로 구성 전문 가이드.</p>
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">STRAIN GAUGE · TML · MICRO-MEASUREMENTS</div>
+      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(28px,5vw,56px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">스트레인게이지 원리·종류·선정 가이드</h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:720px; line-height:1.7; margin-bottom:0;">스트레인(변형률) 정의부터 금속포일·반도체·광섬유 종류 비교, 저항값·형태별 선정 기준, Wheatstone 브릿지 회로 구성까지 — 씨앤디테크의 스트레인게이지 기술 가이드입니다.</p>
+    </div>
+
+    <div class="sg-stat-grid fade-in">
+      <div class="sg-stat-card">
+        <div class="sv">GF ≈ 2</div>
+        <div class="sl">금속 포일 게이지 팩터<br>(반도체는 50~150)</div>
+      </div>
+      <div class="sg-stat-card">
+        <div class="sv">120 Ω</div>
+        <div class="sl">일반 구조 시험 표준 저항값<br>350Ω — 센서 제작용</div>
+      </div>
+      <div class="sg-stat-card">
+        <div class="sv">±0.1 με</div>
+        <div class="sl">고품질 게이지의 분해능<br>(1 με = 1 μm/m)</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section style="padding:60px 0 100px;">
-  <div class="container">
-    <div style="max-width:800px; display:flex; flex-direction:column; gap:48px;">
-      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="스트레인게이지란?" data-en="What is a Strain Gauge?">스트레인게이지란?</h2>
-        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="스트레인게이지(Strain Gauge)는 재료의 변형률(Strain)을 전기 저항 변화로 측정하는 센서입니다. 재료 표면에 부착하면 변형에 따른 저항 변화를 Wheatstone 브릿지 회로로 측정하여 응력을 계산합니다. 정밀도가 높고 소형이어서 구조물, 기계 부품, PCB 등 다양한 대상에 적용됩니다." data-en="A strain gauge measures material deformation as a resistance change. Bonded to a surface, it captures strain via a Wheatstone bridge circuit to calculate stress — precise, compact, and applicable to structures, machine parts, and PCBs.">스트레인게이지(Strain Gauge)는 재료의 변형률(Strain)을 전기 저항 변화로 측정하는 센서입니다. 재료 표면에 부착하면 변형에 따른 저항 변화를 Wheatstone 브릿지 회로로 측정하여 응력을 계산합니다. 정밀도가 높고 소형이어서 구조물, 기계 부품, PCB 등 다양한 대상에 적용됩니다.</p>
-      </div>
-      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="게이지 선정 방법" data-en="Gauge Selection Guide">게이지 선정 방법</h2>
-        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="측정 환경(온도, 습도, 진동), 피측정재 재질(금속, 복합재, 콘크리트), 측정 목적(1축/2축/잔류응력)에 따라 게이지 타입이 달라집니다. 일반형(EA/FLA 시리즈), 고온형, 방수형, 잔류응력용 로제트 게이지(ASTM E837 전용) 등을 목적에 맞게 선택합니다. 씨앤디테크는 TML(도쿄측기)과 Micro-Measurements(Vishay) 전 제품군을 공급합니다." data-en="Gauge type depends on environment (temperature, humidity, vibration), base material, and measurement purpose (uniaxial/biaxial/residual stress). CND TECH supplies full TML and Micro-Measurements lineups.">측정 환경(온도, 습도, 진동), 피측정재 재질(금속, 복합재, 콘크리트), 측정 목적(1축/2축/잔류응력)에 따라 게이지 타입이 달라집니다. 일반형(EA/FLA 시리즈), 고온형, 방수형, 잔류응력용 로제트 게이지(ASTM E837 전용) 등을 목적에 맞게 선택합니다. 씨앤디테크는 TML(도쿄측기)과 Micro-Measurements(Vishay) 전 제품군을 공급합니다.</p>
-      </div>
-      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="부착 및 결선 절차" data-en="Bonding & Wiring">부착 및 결선 절차</h2>
-        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="게이지 부착은 표면 처리(연마 → 세척 → 중화) → 접착제 도포 → 게이지 위치 결정 → 경화 → 리드선 납땜 순서로 진행합니다. 올바른 부착은 측정 정밀도를 결정하는 가장 중요한 단계입니다. 씨앤디테크는 현장 부착 서비스 및 기술 교육을 제공합니다." data-en="Bonding sequence: surface prep (grinding → cleaning → neutralizing) → adhesive application → gauge placement → curing → lead wire soldering. Correct bonding is the most critical step for measurement accuracy.">게이지 부착은 표면 처리(연마 → 세척 → 중화) → 접착제 도포 → 게이지 위치 결정 → 경화 → 리드선 납땜 순서로 진행합니다. 올바른 부착은 측정 정밀도를 결정하는 가장 중요한 단계입니다. 씨앤디테크는 현장 부착 서비스 및 기술 교육을 제공합니다.</p>
-        <p style="margin-top:14px;"><a href="strain-gauge-bonding.html" style="font-size:14px; color:var(--accent-deep); font-weight:600; text-decoration:none;" data-ko="→ 사진으로 보는 10단계 부착 가이드 보기" data-en="→ See the 10-step bonding guide with photos">→ 사진으로 보는 10단계 부착 가이드 보기</a></p>
-      </div>
-      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="브릿지 회로 구성" data-en="Bridge Circuit Configuration">브릿지 회로 구성</h2>
-        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="1/4 브릿지(단일 게이지), 하프 브릿지(2개), 풀 브릿지(4개) 구성에 따라 감도와 온도 보상 특성이 달라집니다. 볼트 축력 측정에는 풀 브릿지, 일반 응력 측정에는 1/4 또는 하프 브릿지가 주로 사용됩니다. 씨앤디테크는 최적의 브릿지 구성을 설계·제작합니다." data-en="Quarter (1 gauge), half (2 gauges), and full bridge (4 gauges) configurations differ in sensitivity and temperature compensation. Full bridge is used for bolt-tension; quarter/half bridge for general stress measurement.">1/4 브릿지(단일 게이지), 하프 브릿지(2개), 풀 브릿지(4개) 구성에 따라 감도와 온도 보상 특성이 달라집니다. 볼트 축력 측정에는 풀 브릿지, 일반 응력 측정에는 1/4 또는 하프 브릿지가 주로 사용됩니다. 씨앤디테크는 최적의 브릿지 구성을 설계·제작합니다.</p>
+<!-- ── 본문 ── -->
+<section style="padding:0 0 100px;">
+  <div class="container" style="max-width:860px;">
+
+    <!-- 1. 스트레인이란? -->
+    <div class="sg-section fade-in">
+      <h2 class="sg-section-title">스트레인(변형률)이란?</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:14px;">
+        스트레인(Strain, 변형률)은 물체가 힘을 받아 형태가 변하는 정도를 나타내는 무차원 량입니다.
+        원래 길이 <strong>L</strong>에서 변화량 <strong>ΔL</strong>이 발생했을 때 변형률 <strong>ε</strong>은:
+      </p>
+      <div class="sg-formula"><span>ε</span> = ΔL / L &nbsp;&nbsp;[단위: μm/m 또는 με]</div>
+      <p style="font-size:14px; color:var(--text-mute); margin: 8px 0 20px;">1 με(마이크로스트레인) = 1 μm/m = 1×10⁻⁶</p>
+
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:14px;">스트레인을 일으키는 원인은 크게 3가지입니다:</p>
+      <div class="sg-cause-grid">
+        <div class="sg-cause-card">
+          <div class="cause-icon">⚙️</div>
+          <div class="cause-name">기계적 하중</div>
+          <div class="cause-desc">Mechanical Loads<br>외부 힘, 압력, 진동에 의한 변형</div>
+        </div>
+        <div class="sg-cause-card">
+          <div class="cause-icon">🌡️</div>
+          <div class="cause-name">온도 변화</div>
+          <div class="cause-desc">Temperature Changes<br>열팽창·수축에 의한 변형</div>
+        </div>
+        <div class="sg-cause-card">
+          <div class="cause-icon">🔩</div>
+          <div class="cause-name">잔류응력</div>
+          <div class="cause-desc">Released Residual Stresses<br>제조 공정 후 내부에 남은 응력</div>
+        </div>
       </div>
     </div>
-    <div style="margin-top:64px; padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius); max-width:800px;">
-      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;" data-ko="측정 서비스 문의" data-en="Service Inquiry">측정 서비스 문의</h3>
-      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;" data-ko="씨앤디테크는 스트레인게이지 측정 장비 공급과 현장 측정 서비스를 제공합니다. 사양과 요구 사항을 알려주시면 최적의 솔루션을 제안드립니다." data-en="CND TECH provides Strain Gauge Measurement equipment and on-site services. Share your specs and requirements for a tailored proposal.">씨앤디테크는 스트레인게이지 측정 장비 공급과 현장 측정 서비스를 제공합니다. 사양과 요구 사항을 알려주시면 최적의 솔루션을 제안드립니다.</p>
+
+    <!-- 2. 스트레인게이지 측정 원리 -->
+    <div class="sg-section fade-in">
+      <h2 class="sg-section-title">스트레인게이지 측정 원리</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:14px;">
+        스트레인게이지는 재료와 함께 변형되면 전기 저항이 변화하는 성질을 이용합니다.
+        <strong>게이지 팩터(Gauge Factor, GF)</strong>는 저항 변화율과 변형률의 비로 정의됩니다:
+      </p>
+      <div class="sg-formula"><span>GF</span> = (ΔR / R) / ε &nbsp;&nbsp;→&nbsp;&nbsp; <span>ΔR / R</span> = GF × ε</div>
+      <p style="font-size:14px; color:var(--text-mute); margin: 8px 0 16px;">금속 포일 게이지 GF ≈ 2.0 &nbsp;/&nbsp; 반도체 게이지 GF = 50~150</p>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8;">
+        이 저항 변화는 매우 미세하므로 <strong>Wheatstone 브릿지 회로</strong>를 사용해 고정밀 측정합니다.
+        1/4 브릿지(단일 게이지), 하프 브릿지(2개), 풀 브릿지(4개) 구성에 따라 감도와 온도 보상 특성이 달라집니다.
+      </p>
+    </div>
+
+    <!-- 3. 스트레인게이지 종류 비교 -->
+    <div class="sg-section fade-in">
+      <h2 class="sg-section-title">스트레인게이지 종류 비교</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        크게 3가지 방식이 있으며, 산업 현장에서는 <strong>금속 포일 스트레인게이지</strong>가 가장 널리 사용됩니다.
+      </p>
+      <div class="sg-compare-grid">
+        <div class="sg-compare-card highlight">
+          <div class="cc-name">금속 포일 (Metal Foil)</div>
+          <div class="cc-sub">가장 일반적인 타입</div>
+          <div class="cc-row"><span class="cc-label">소재</span><span class="cc-val">콘스탄탄·카르마·니켈 합금</span></div>
+          <div class="cc-row"><span class="cc-label">게이지 팩터</span><span class="cc-val">약 2.0</span></div>
+          <div class="cc-row"><span class="cc-label">감도</span><span class="cc-val">중간</span></div>
+          <div class="cc-row"><span class="cc-label">가격</span><span class="cc-val">저렴</span></div>
+          <div class="cc-row"><span class="cc-label">특징</span><span class="cc-val">설치 용이, 반복성 우수</span></div>
+          <div class="cc-row"><span class="cc-label">단점</span><span class="cc-val">온도·습기 민감</span></div>
+        </div>
+        <div class="sg-compare-card">
+          <div class="cc-name">반도체 (Semiconductor)</div>
+          <div class="cc-sub">고감도 특수 용도</div>
+          <div class="cc-row"><span class="cc-label">소재</span><span class="cc-val">실리콘·게르마늄</span></div>
+          <div class="cc-row"><span class="cc-label">게이지 팩터</span><span class="cc-val">50 ~ 150</span></div>
+          <div class="cc-row"><span class="cc-label">감도</span><span class="cc-val">매우 높음</span></div>
+          <div class="cc-row"><span class="cc-label">가격</span><span class="cc-val">고가</span></div>
+          <div class="cc-row"><span class="cc-label">특징</span><span class="cc-val">고감도, 빠른 응답</span></div>
+          <div class="cc-row"><span class="cc-label">단점</span><span class="cc-val">취성, 전용 장비 필요</span></div>
+        </div>
+        <div class="sg-compare-card">
+          <div class="cc-name">광섬유 (Fiber Optic)</div>
+          <div class="cc-sub">열악 환경·장거리용</div>
+          <div class="cc-row"><span class="cc-label">소재</span><span class="cc-val">실리카 유리·플라스틱 광섬유</span></div>
+          <div class="cc-row"><span class="cc-label">측정 방식</span><span class="cc-val">광 강도/위상 변화</span></div>
+          <div class="cc-row"><span class="cc-label">감도</span><span class="cc-val">높음</span></div>
+          <div class="cc-row"><span class="cc-label">가격</span><span class="cc-val">매우 고가</span></div>
+          <div class="cc-row"><span class="cc-label">특징</span><span class="cc-val">EMI 내성, 장거리 측정</span></div>
+          <div class="cc-row"><span class="cc-label">단점</span><span class="cc-val">전용 인터로게이터 필요</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. 게이지 형태와 측정 목적 -->
+    <div class="sg-section fade-in">
+      <h2 class="sg-section-title">게이지 형태와 측정 목적</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        스트레인게이지는 측정하려는 응력 방향과 상태에 따라 형태를 선택합니다.
+      </p>
+      <div class="sg-type-grid">
+        <div class="sg-type-card">
+          <div class="tc-badge">LINEAR · 1축</div>
+          <div class="tc-name">단축 스트레인게이지</div>
+          <div class="tc-desc">한 방향으로만 변형이 발생하는 경우에 사용. 보, 로드, 단순 인장·압축 측정에 적합. 가장 기본적인 형태.</div>
+        </div>
+        <div class="sg-type-card">
+          <div class="tc-badge">DOUBLE · 1축 2중</div>
+          <div class="tc-name">더블 스트레인게이지</div>
+          <div class="tc-desc">동일 축 2개 게이지 배열. 온도 보상이 필요한 단방향 측정에 사용. 하프 브릿지 구성 시 유리.</div>
+        </div>
+        <div class="sg-type-card">
+          <div class="tc-badge">ROSETTE · 2축</div>
+          <div class="tc-name">2축 로제트 (45°)</div>
+          <div class="tc-desc">45° 배열 2축 게이지. 전단 응력·토크 측정에 사용. 잔류응력 측정(ASTM E837) 전용 2축 로제트도 있음.</div>
+        </div>
+        <div class="sg-type-card">
+          <div class="tc-badge">ROSETTE · 3축</div>
+          <div class="tc-name">3축 로제트 (0°/45°/90°)</div>
+          <div class="tc-desc">응력 방향을 모를 때, 복잡한 구조물에서 주응력 방향·크기를 동시에 구할 때 사용. 잔류응력 홀드릴링에도 사용.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. 선정 기준 -->
+    <div class="sg-section fade-in">
+      <h2 class="sg-section-title">스트레인게이지 선정 기준</h2>
+
+      <h3 style="font-size:16px; font-weight:700; color:var(--charcoal); margin: 20px 0 10px;">① 저항값 선택</h3>
+      <table class="sg-table">
+        <tr>
+          <th>저항값</th>
+          <th>주요 용도</th>
+          <th>특징</th>
+        </tr>
+        <tr>
+          <td><strong>120 Ω</strong></td>
+          <td>일반 구조 시험, 실험실 측정</td>
+          <td>가장 보편적, 신호 크기 적당</td>
+        </tr>
+        <tr>
+          <td><strong>350 Ω</strong></td>
+          <td>로드셀·토크센서 등 센서 제작</td>
+          <td>자가발열 적음, 센서 정밀도 유리</td>
+        </tr>
+        <tr>
+          <td><strong>700 Ω 이상</strong></td>
+          <td>텔레메트리, 배터리 구동 장비</td>
+          <td>저전력 소비 필요 시 사용</td>
+        </tr>
+        <tr>
+          <td><strong>1,000 Ω</strong></td>
+          <td>의료·항공 등 특수 저전력 용도</td>
+          <td>고저항 → 소전류, 낮은 자가발열</td>
+        </tr>
+      </table>
+
+      <h3 style="font-size:16px; font-weight:700; color:var(--charcoal); margin: 28px 0 10px;">② 사용 환경 및 대상물 조건</h3>
+      <table class="sg-table">
+        <tr>
+          <th>조건</th>
+          <th>고려 사항</th>
+          <th>대응 제품 예</th>
+        </tr>
+        <tr>
+          <td>고온 환경 (250°C+)</td>
+          <td>고온용 게이지 + 점용접 또는 고온 접착제</td>
+          <td>TML WFLA, MM EP 시리즈</td>
+        </tr>
+        <tr>
+          <td>저온 환경 (극저온)</td>
+          <td>저온용 게이지 선정, 저온 전용 접착제</td>
+          <td>TML WK 시리즈</td>
+        </tr>
+        <tr>
+          <td>수중·옥외 방수</td>
+          <td>밀봉 처리 또는 방수형 게이지</td>
+          <td>방수 코팅 + Nitrile Rubber 실링</td>
+        </tr>
+        <tr>
+          <td>콘크리트·거친 표면</td>
+          <td>그리드 길이 긴 타입 (30mm+)</td>
+          <td>TML PL-90 이상</td>
+        </tr>
+        <tr>
+          <td>고변형 측정 (1% 이상)</td>
+          <td>High-Elongation 타입</td>
+          <td>TML YEFLA, MM EP-xx-350BF</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 6. 스트레인게이지 센서 응용 -->
+    <div class="sg-section fade-in">
+      <h2 class="sg-section-title">스트레인게이지를 이용한 센서</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        스트레인게이지는 단순한 변형률 측정을 넘어 다양한 <strong>파생 센서</strong>의 핵심 부품으로 사용됩니다.
+        탄성체(Elastic Body)에 게이지를 부착해 힘·무게·압력·토크를 전기 신호로 변환합니다.
+      </p>
+      <div class="sg-sensor-list">
+        <div class="sg-sensor-item">
+          <div class="si-icon">⚖️</div>
+          <div>
+            <div class="si-name">로드셀 (Load Cell)</div>
+            <div class="si-desc">무게·힘 측정. 변형체 변형 → 저항 변화 → kg/N 출력. 계량·시험기에 광범위 사용.</div>
+          </div>
+        </div>
+        <div class="sg-sensor-item">
+          <div class="si-icon">🔧</div>
+          <div>
+            <div class="si-name">토크센서 (Torque Sensor)</div>
+            <div class="si-desc">비틀림 측정. 45° 배열 2축 로제트 사용. 회전축·체결 토크 측정에 적용.</div>
+          </div>
+        </div>
+        <div class="sg-sensor-item">
+          <div class="si-icon">💨</div>
+          <div>
+            <div class="si-name">압력센서 (Pressure Sensor)</div>
+            <div class="si-desc">다이어프램 변형을 게이지로 감지. 유압·기압·수압 측정에 사용.</div>
+          </div>
+        </div>
+        <div class="sg-sensor-item">
+          <div class="si-icon">📏</div>
+          <div>
+            <div class="si-name">변위센서 (Displacement)</div>
+            <div class="si-desc">캔틸레버 보에 게이지 부착해 처짐량을 변위로 환산. 소형 고정밀 변위 측정.</div>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:12px; font-size:14px; color:var(--text-dim); line-height:1.7;">
+        <strong>로드셀 측정 원리:</strong> 무게(kg) → 로드셀 바디 변형(μm/m) → 스트레인게이지 저항 변화 → 신호 조절(앰프/인디게이터) → 무게값 출력(kg)
+      </p>
+    </div>
+
+    <!-- 7. 적용 분야 -->
+    <div class="sg-section fade-in">
+      <h2 class="sg-section-title">주요 적용 분야</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:14px;">
+        스트레인게이지는 기계적 응력과 변형 측정이 필요한 거의 모든 산업 분야에 적용됩니다.
+      </p>
+      <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;">
+        <span style="padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim);">구조물·교량</span>
+        <span style="padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim);">항공우주</span>
+        <span style="padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim);">자동차</span>
+        <span style="padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim);">선박·해양</span>
+        <span style="padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim);">철도</span>
+        <span style="padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim);">PCB·전자</span>
+        <span style="padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim);">압력용기</span>
+        <span style="padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim);">원자력</span>
+        <span style="padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim);">잔류응력 측정</span>
+        <span style="padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim);">로드셀·센서 제작</span>
+      </div>
+      <p style="font-size:14px; color:var(--text-mute); margin-bottom:16px;">관련 기술 자료:</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="strain-gauge-bonding.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 스트레인게이지 부착 10단계 가이드</a>
+        <a href="residual-stress.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 홀드릴링 잔류응력 측정 (ASTM E837)</a>
+        <a href="pcb-stress.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ PCB 기판 응력 측정</a>
+      </div>
+    </div>
+
+    <!-- 8. FAQ -->
+    <div class="sg-section fade-in">
+      <h2 class="sg-section-title">자주 묻는 질문 (FAQ)</h2>
+      <div class="sg-faq">
+        <div class="sg-faq-item">
+          <div class="faq-q">스트레인게이지란 무엇인가요?</div>
+          <div class="faq-a">재료의 변형률(Strain)을 전기 저항 변화로 감지하는 센서입니다. 측정 대상물 표면에 접착 부착하면 변형과 함께 게이지 저항이 변하고, Wheatstone 브릿지 회로로 이 변화를 측정해 응력을 계산합니다.</div>
+        </div>
+        <div class="sg-faq-item">
+          <div class="faq-q">120Ω과 350Ω 게이지 중 어떤 것을 선택해야 하나요?</div>
+          <div class="faq-a">일반 구조 시험·실험실 환경에는 120Ω을 사용합니다. 로드셀·토크센서 등 센서 제작 시에는 자가발열이 적고 정밀도가 유리한 350Ω을 선택합니다. 텔레메트리 등 저전력 특수 목적에는 700Ω 이상을 사용합니다.</div>
+        </div>
+        <div class="sg-faq-item">
+          <div class="faq-q">로제트 스트레인게이지는 언제 사용하나요?</div>
+          <div class="faq-a">응력 방향을 미리 알 수 없거나 복잡한 응력 상태를 측정할 때 사용합니다. 2축 로제트(45° 배열)는 전단·토크 측정에, 3축 로제트(0°/45°/90°)는 주응력 방향과 크기를 동시에 구할 때 적합합니다. 잔류응력 홀드릴링 측정(ASTM E837)에도 전용 로제트 게이지가 필요합니다.</div>
+        </div>
+        <div class="sg-faq-item">
+          <div class="faq-q">게이지 팩터(Gauge Factor)란 무엇인가요?</div>
+          <div class="faq-a">GF = (ΔR/R) / ε 로 정의되는 감도 지수입니다. 금속 포일 게이지는 GF ≈ 2.0, 반도체 게이지는 GF = 50~150입니다. GF가 클수록 감도가 높지만 비선형성도 커집니다.</div>
+        </div>
+        <div class="sg-faq-item">
+          <div class="faq-q">부착 전 표면 처리가 왜 중요한가요?</div>
+          <div class="faq-a">이물질·산화층·유분이 남아 있으면 게이지가 피측정물과 함께 정확히 변형되지 않습니다. 연마 → 세척 → 중화 → 건조 순서의 표면 처리가 측정 정밀도를 결정하는 가장 중요한 단계입니다. 자세한 부착 절차는 <a href="strain-gauge-bonding.html" style="color:var(--accent);">10단계 부착 가이드</a>를 참조하세요.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section style="padding:0 0 80px;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in" style="padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius);">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">스트레인게이지 공급·측정 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">TML, Micro-Measurements(Vishay) 전 제품군 공급. 게이지 선정 컨설팅, 부착 용역, 측정 서비스, 운영 교육까지 지원합니다.</p>
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 →</a>
+        <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
         <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+        <a href="mailto:wgjeon@cndtec.co.kr" class="btn btn-ghost">wgjeon@cndtec.co.kr</a>
       </div>
     </div>
   </div>
@@ -157,7 +635,5 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
 </script>
-
-
 </body>
 </html>
