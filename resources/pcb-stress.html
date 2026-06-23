@@ -4,11 +4,13 @@
 <meta charset="UTF-8" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PCB 응력 측정 IPC/JEDEC-9704A | CND TECH 씨앤디테크</title>
-<meta name="description" content="IPC/JEDEC-9704A 규격 기반 PCB 굽힘 응력 측정, 솔더 조인트 신뢰성 평가 서비스. SMT 공정, 낙하·굽힘 시험 계측." />
-<meta property="og:title" content="PCB 응력 측정 IPC/JEDEC-9704A | CND TECH 씨앤디테크" />
-<meta property="og:description" content="IPC/JEDEC-9704A 규격 기반 PCB 굽힘 응력 측정, 솔더 조인트 신뢰성 평가 서비스. SMT 공정, 낙하·굽힘 시험 계측." />
+<title>PCB 스트레인·응력 측정 가이드 (IPC/JEDEC-9704A) | 씨앤디테크</title>
+<meta name="description" content="IPC/JEDEC-9704A 기반 PCB 스트레인·응력 측정 완전 가이드. BGA 솔더 조인트·MLCC 불량 방지를 위한 3축 로젯 스트레인게이지 부착, HBM QuantumX DAQ 시스템, Pass/Fail 분석 소프트웨어까지 씨앤디테크 토탈 솔루션." />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/pcb-stress.html" />
+<meta property="og:title" content="PCB 스트레인·응력 측정 가이드 (IPC/JEDEC-9704A) | 씨앤디테크" />
+<meta property="og:description" content="IPC/JEDEC-9704A 기반 PCB 스트레인·응력 측정. HBK RF91 게이지·HBM QuantumX DAQ·분석 소프트웨어 토탈 솔루션." />
 <meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/pcb-stress.html" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,11 +20,60 @@
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "IPC/JEDEC-9704A PCB 응력 측정 기술 가이드",
-  "description": "IPC/JEDEC-9704A 규격 기반 PCB 굽힘 응력 측정 원리, 셋업, 판정 기준, 솔더 조인트 신뢰성 평가",
+  "headline": "PCB 스트레인·응력 측정 가이드 (IPC/JEDEC-9704A)",
+  "description": "IPC/JEDEC-9704A 기반 PCB 스트레인·응력 측정. 3축 로젯 스트레인게이지 부착, DAQ 시스템, Pass/Fail 분석 소프트웨어 토탈 솔루션",
   "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
   "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
-  "inLanguage": "ko"
+  "inLanguage": "ko",
+  "keywords": "PCB 스트레인 측정, PCB 응력 측정, IPC JEDEC 9704, BGA 솔더 조인트, PCB 변형률, HBK RF91, HBM QuantumX"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "IPC/JEDEC-9704A란 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IPC/JEDEC-9704A(Printed Wiring Board Strain Gage Test Guideline)는 PCB 기판에 스트레인게이지를 부착해 제조 공정 중 발생하는 기계적 응력(변형률)을 측정하는 국제 표준입니다. 3축 로젯 스트레인게이지를 BGA 부품 주변에 부착하고, 최소 2kHz 샘플링·12비트 이상 해상도의 DAQ로 측정하도록 규정합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "PCB 스트레인 측정이 왜 필요한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SMT 라우팅, 하우징 조립, ICT 테스트, 커넥터 체결 등 공정에서 PCB에 굽힘(Bending) 응력이 발생합니다. 이 응력이 과도하면 BGA 솔더 조인트 파손, MLCC 크랙 등 잠재 불량이 발생합니다. 특히 무연(Lead-free) 납 사용으로 솔더 조인트의 기계적 취약성이 커졌기 때문에 IPC/JEDEC-9704A에 따른 정량적 관리가 필수입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "PCB 스트레인 측정에 사용하는 스트레인게이지는 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IPC/JEDEC-9704A에 부합하는 PCB 전용 스트레인게이지로 HBK(구 HBM) RF91 시리즈가 대표적으로 사용됩니다. 직경 5mm의 초소형 3축 로젯 타입으로 저항값 120Ω, 1m 에나멜선 일체형입니다. BGA 부품 주변의 협소한 공간에도 부착할 수 있어 PCB 응력 측정 표준 게이지로 자리잡혀 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "PCB 스트레인 측정에 필요한 DAQ(데이터수집장치) 사양은?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IPC/JEDEC-9704A는 최소 2kHz 이상 샘플링 레이트, 12비트 이상 해상도를 요구합니다. 씨앤디테크는 HBM QuantumX MX1615(16채널, 고정밀 앰프)와 GTDL 모듈형 DAQ를 공급합니다. 단발성 피크 응력 포착이 목적이므로 안티앨리어싱 필터와 저잡음 특성이 중요합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "IPC/JEDEC-9704A 측정 결과 판정 방법은?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "측정된 피크 스트레인을 PCB 두께(Thickness)별로 규정된 IPC 한계 곡선(Limit Strain Curve)과 비교합니다. 피크 스트레인이 한계 곡선 이내에 있으면 합격(Pass), 초과하면 불합격(Fail)으로 판정합니다. 분석 소프트웨어가 3축 로젯 데이터로부터 주응력(Principal Strain)을 자동 연산해 그래프 상에서 직관적으로 판정 결과를 표시합니다."
+      }
+    }
+  ]
 }
 </script>
 <!-- Google tag (gtag.js) -->
@@ -33,6 +84,115 @@
   gtag('js', new Date());
   gtag('config', 'G-B25Y10FQK1');
 </script>
+<style>
+.pcb-section { padding: 44px 0; border-bottom: 1px solid var(--line); }
+.pcb-section:last-child { border-bottom: none; }
+.pcb-section-title {
+  font-family: 'Space Grotesk', 'Pretendard', sans-serif;
+  font-size: 22px; font-weight: 700; color: var(--charcoal);
+  margin-bottom: 18px; display: flex; align-items: center; gap: 10px;
+}
+.pcb-section-title::before {
+  content: ''; display: inline-block;
+  width: 4px; height: 22px;
+  background: var(--accent); border-radius: 2px; flex-shrink: 0;
+}
+
+/* stat cards */
+.pcb-stat-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 28px 0;
+}
+@media (max-width: 640px) { .pcb-stat-grid { grid-template-columns: 1fr; } }
+.pcb-stat-card {
+  padding: 22px 18px; background: var(--bg-card);
+  border: 1px solid var(--line); border-radius: var(--radius); text-align: center;
+}
+.pcb-stat-card .sv { font-family: 'JetBrains Mono',monospace; font-size:26px; font-weight:700; color:var(--accent); line-height:1.1; margin-bottom:6px; }
+.pcb-stat-card .sl { font-size:12px; color:var(--text-mute); line-height:1.4; }
+
+/* 규격 박스 */
+.pcb-spec-box {
+  padding: 20px 22px; background: var(--orange-tint);
+  border: 1px solid var(--orange-line); border-radius: var(--radius); margin: 16px 0;
+}
+.pcb-spec-box .sb-title { font-weight: 700; font-size: 14px; color: var(--accent-deep); margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; }
+.pcb-spec-box ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+.pcb-spec-box ul li { font-size: 14px; color: var(--text-dim); display: flex; gap: 8px; align-items: flex-start; }
+.pcb-spec-box ul li::before { content: '▸'; color: var(--accent); flex-shrink: 0; }
+
+/* 이미지 */
+.pcb-img-wrap {
+  margin: 20px 0; border-radius: var(--radius);
+  overflow: hidden; border: 1px solid var(--line);
+}
+.pcb-img-wrap img { width: 100%; height: auto; display: block; }
+.pcb-img-caption {
+  padding: 10px 16px; font-size: 12px; color: var(--text-mute);
+  background: var(--bg-card); border-top: 1px solid var(--line); text-align: center;
+}
+.pcb-img-duo {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0;
+}
+@media (max-width: 600px) { .pcb-img-duo { grid-template-columns: 1fr; } }
+.pcb-img-duo .pcb-img-wrap { margin: 0; }
+
+/* 공정 테이블 */
+.pcb-table {
+  width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0;
+}
+.pcb-table th, .pcb-table td {
+  padding: 10px 14px; border: 1px solid var(--line); vertical-align: top;
+}
+.pcb-table th {
+  background: var(--orange-tint); font-weight: 600; color: var(--charcoal);
+}
+.pcb-table td { color: var(--text-dim); }
+.pcb-table tr:nth-child(even) td { background: var(--bg-card); }
+
+/* step grid */
+.pcb-step-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 20px 0;
+}
+@media (max-width: 720px) { .pcb-step-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .pcb-step-grid { grid-template-columns: 1fr; } }
+.pcb-step {
+  padding: 18px 14px; background: var(--bg-card);
+  border: 1px solid var(--line); border-radius: var(--radius);
+}
+.pcb-step .sn {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  color: var(--accent); font-weight: 700; margin-bottom: 8px;
+}
+.pcb-step .st { font-weight: 700; font-size: 14px; color: var(--charcoal); margin-bottom: 6px; }
+.pcb-step .sd { font-size: 12px; color: var(--text-mute); line-height: 1.5; }
+
+/* DAQ 비교 카드 */
+.pcb-daq-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0;
+}
+@media (max-width: 600px) { .pcb-daq-grid { grid-template-columns: 1fr; } }
+.pcb-daq-card {
+  padding: 20px; background: var(--bg-card);
+  border: 1px solid var(--line); border-radius: var(--radius);
+}
+.pcb-daq-card.primary { border-color: var(--accent); }
+.pcb-daq-card .dc-name { font-weight: 700; font-size: 15px; color: var(--charcoal); margin-bottom: 4px; }
+.pcb-daq-card .dc-sub { font-size: 12px; color: var(--text-mute); font-family: 'JetBrains Mono',monospace; margin-bottom: 12px; }
+.pcb-daq-card .dc-row {
+  display: flex; justify-content: space-between; font-size: 13px;
+  padding: 5px 0; border-bottom: 1px solid var(--line); gap: 8px;
+}
+.pcb-daq-card .dc-row:last-child { border-bottom: none; }
+.pcb-daq-card .dc-row .dl { color: var(--text-mute); flex-shrink: 0; }
+.pcb-daq-card .dc-row .dv { color: var(--charcoal); font-weight: 500; text-align: right; }
+
+/* FAQ */
+.pcb-faq { display: flex; flex-direction: column; gap: 12px; margin: 16px 0; }
+.pcb-faq-item { padding: 18px 20px; background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius); }
+.pcb-faq-item .fq { font-weight: 700; font-size: 15px; color: var(--charcoal); margin-bottom: 8px; display: flex; gap: 8px; }
+.pcb-faq-item .fq::before { content: 'Q'; color: var(--accent); font-family: 'JetBrains Mono',monospace; flex-shrink: 0; }
+.pcb-faq-item .fa { font-size: 14px; color: var(--text-dim); line-height: 1.7; padding-left: 20px; }
+</style>
 </head>
 <body>
 <div class="bg-grid"></div>
@@ -56,7 +216,7 @@
         <button class="lang-btn active" data-lang="ko">KO</button>
         <button class="lang-btn" data-lang="en">EN</button>
       </div>
-      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <a href="../contact.html" class="btn btn-primary">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
       <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
     </div>
   </div>
@@ -70,43 +230,406 @@
   </div>
 </div>
 
+<!-- ── HERO ── -->
 <section style="padding-top:160px; padding-bottom:20px;">
   <div class="container">
     <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
     <div style="margin-top:20px;">
-      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">IPC/JEDEC-9704A</div>
-      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(32px,5vw,60px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);" data-ko="PCB 응력 측정" data-en="PCB Strain Measurement">PCB 응력 측정</h1>
-      <p style="font-size:17px; color:var(--text-dim); max-width:680px; line-height:1.7; margin-bottom:0;" data-ko="IPC/JEDEC-9704A 규격 기반 PCB 굽힘 응력 측정, 솔더 조인트 신뢰성 평가 서비스. SMT 공정, 낙하·굽힘 시험 계측." data-en="IPC/JEDEC-9704A 규격 기반 PCB 굽힘 응력 측정, 솔더 조인트 신뢰성 평가 서비스. SMT 공정, 낙하·굽힘 시험 계측.">IPC/JEDEC-9704A 규격 기반 PCB 굽힘 응력 측정, 솔더 조인트 신뢰성 평가 서비스. SMT 공정, 낙하·굽힘 시험 계측.</p>
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">IPC/JEDEC-9704A · HBK RF91 · PCB STRAIN</div>
+      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(26px,5vw,52px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">PCB 스트레인·응력 측정 가이드<br><span style="color:var(--accent);">IPC/JEDEC-9704A</span></h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:720px; line-height:1.7; margin-bottom:0;">BGA 솔더 조인트 파손·MLCC 크랙을 유발하는 PCB 기계적 응력(Mechanical Stress)을 정량 관리하기 위한 국제 규격 측정 가이드. 스트레인게이지 선정·부착부터 DAQ 시스템, Pass/Fail 분석까지 씨앤디테크 토탈 솔루션입니다.</p>
+    </div>
+    <div class="pcb-stat-grid fade-in">
+      <div class="pcb-stat-card">
+        <div class="sv">2 kHz+</div>
+        <div class="sl">IPC/JEDEC-9704A 최소 샘플링 레이트<br>피크 응력 정확 포착</div>
+      </div>
+      <div class="pcb-stat-card">
+        <div class="sv">12 bit+</div>
+        <div class="sl">규격 요구 최소 해상도<br>미세 변형률 판별</div>
+      </div>
+      <div class="pcb-stat-card">
+        <div class="sv">3축 로젯</div>
+        <div class="sl">BGA 주변 부착 전용 게이지<br>주응력 방향·크기 동시 측정</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section style="padding:60px 0 100px;">
-  <div class="container">
-    <div style="max-width:800px; display:flex; flex-direction:column; gap:48px;">
-      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="PCB 응력 측정의 목적" data-en="Purpose of PCB Strain Measurement">PCB 응력 측정의 목적</h2>
-        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="PCB(인쇄회로기판)에 가해지는 굽힘 응력은 솔더 조인트, BGA 패키지, 커넥터의 파손 원인이 됩니다. SMT 조립 공정, 나사 체결, 낙하 충격, 진동 시험 시 PCB에 발생하는 변형률을 측정하여 신뢰성 한계를 평가합니다." data-en="PCB bending stress causes solder joint, BGA, and connector failures. Measuring PCB strain during SMT assembly, screw mounting, drop impact, and vibration tests allows reliability limit evaluation.">PCB(인쇄회로기판)에 가해지는 굽힘 응력은 솔더 조인트, BGA 패키지, 커넥터의 파손 원인이 됩니다. SMT 조립 공정, 나사 체결, 낙하 충격, 진동 시험 시 PCB에 발생하는 변형률을 측정하여 신뢰성 한계를 평가합니다.</p>
+<!-- ── 본문 ── -->
+<section style="padding:0 0 100px;">
+  <div class="container" style="max-width:860px;">
+
+    <!-- 1. PCB 스트레인 측정이 왜 필요한가? -->
+    <div class="pcb-section fade-in">
+      <h2 class="pcb-section-title">PCB 스트레인 측정이 왜 필요한가?</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        스마트폰·전기차 전장·반도체 패키징의 고집적화로 PCB 기판에 작용하는 <strong>기계적 응력(Mechanical Stress) 관리</strong>가 품질의 핵심으로 떠오르고 있습니다. 제조 공정 중 발생하는 미세한 굽힘(Bending)이 BGA 솔더 조인트 파손과 MLCC 크랙의 주된 원인입니다.
+      </p>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        특히 무연(Lead-free) 납 사용 증가로 솔더 조인트의 기계적 취약성이 커졌습니다. 육안으로는 발견 불가능한 잠재 불량이 현장에서 발현되기 전에, <strong>공정별 스트레인 정량 측정과 IPC 한계 기준 대비 관리</strong>가 필수입니다.
+      </p>
+      <table class="pcb-table">
+        <tr>
+          <th>공정</th>
+          <th>응력 발생 원인</th>
+          <th>측정 목적</th>
+        </tr>
+        <tr>
+          <td><strong>Mount 공정</strong></td>
+          <td>부품 실장 전 지그 고정, 기판 자중</td>
+          <td>기본 변형 거동 확인, 기준값 설정</td>
+        </tr>
+        <tr>
+          <td><strong>Router 공정</strong></td>
+          <td>Panel 분리·절단 시 굽힘 응력</td>
+          <td>분리 공정의 피크 응력 포착, 라우터 경로 최적화</td>
+        </tr>
+        <tr>
+          <td><strong>FCT / 기능검사</strong></td>
+          <td>프로브·지그 접촉 압력</td>
+          <td>검사 지그 하중 허용 범위 확인</td>
+        </tr>
+        <tr>
+          <td><strong>하우징 조립</strong></td>
+          <td>커넥터 강제 체결, 스크류 체결</td>
+          <td>조립 공정 항복점(Yield Point) 분석</td>
+        </tr>
+        <tr>
+          <td><strong>ICT 테스트</strong></td>
+          <td>핀 접촉 충격, 지그 가압</td>
+          <td>BGA 주변 스트레인이 한계 곡선 이내인지 판정</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 2. IPC/JEDEC-9704A 규격 -->
+    <div class="pcb-section fade-in">
+      <h2 class="pcb-section-title">IPC/JEDEC-9704A 규격 핵심 요구사항</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        <strong>IPC/JEDEC-9704A (Printed Wiring Board Strain Gage Test Guideline)</strong>는 PCB 기판 스트레인 게이지 시험 방법을 규정하는 국제 표준입니다. 전 세계 주요 전자 제품 제조사들이 공급망 신뢰성 요구 규격으로 지정하고 있습니다.
+      </p>
+      <div class="pcb-spec-box">
+        <div class="sb-title">IPC/JEDEC-9704A 주요 요구사항</div>
+        <ul>
+          <li>측정 센서: <strong>3축 로젯(Rosette) 스트레인게이지</strong>를 BGA 부품 주변에 부착</li>
+          <li>게이지 위치: BGA 패드 중심으로부터 규정 거리 이내</li>
+          <li>샘플링 레이트: <strong>최소 2,000 Hz (2 kHz) 이상</strong></li>
+          <li>데이터 해상도: <strong>12 bit 이상</strong></li>
+          <li>판정 기준: 측정된 주응력(Principal Strain)을 PCB 두께별 <strong>한계 변형률 곡선(Limit Strain Curve)</strong>과 비교</li>
+          <li>리포트: 피크 스트레인 값, 변형률 속도(Strain Rate), Pass/Fail 판정 결과 포함</li>
+        </ul>
       </div>
-      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="IPC/JEDEC-9704A 규격 개요" data-en="IPC/JEDEC-9704A Standard Overview">IPC/JEDEC-9704A 규격 개요</h2>
-        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="IPC/JEDEC-9704A는 PCB 조립 공정 중 발생하는 굽힘 응력을 스트레인게이지로 측정하는 방법을 정의한 산업 표준입니다. 게이지 부착 위치(BGA 패키지 인근), 측정 방향(X·Y·45°), 허용 변형률 한계(일반적으로 500~1000 μɛ) 등을 규정합니다." data-en="IPC/JEDEC-9704A defines PCB bending strain measurement during assembly using strain gauges — specifying gauge placement near BGA packages, measurement axes (X, Y, 45°), and allowable strain limits (typically 500–1000 μɛ).">IPC/JEDEC-9704A는 PCB 조립 공정 중 발생하는 굽힘 응력을 스트레인게이지로 측정하는 방법을 정의한 산업 표준입니다. 게이지 부착 위치(BGA 패키지 인근), 측정 방향(X·Y·45°), 허용 변형률 한계(일반적으로 500~1000 μɛ) 등을 규정합니다.</p>
-      </div>
-      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="측정 셋업 및 절차" data-en="Measurement Setup & Procedure">측정 셋업 및 절차</h2>
-        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="BGA·QFP 패키지 인근 지정 위치에 소형 스트레인게이지(게이지 길이 1~3mm)를 부착합니다. 다채널 DAQ 시스템으로 공정 중 실시간 변형률을 수집합니다. 씨앤디테크는 측정 셋업 설계, 게이지 공급, DAQ 시스템 구성, 데이터 분석까지 원스톱 서비스를 제공합니다." data-en="Small gauges (1–3mm) are bonded near BGA/QFP packages. A multi-channel DAQ captures real-time strain during the process. CND TECH provides full service from setup design to data analysis.">BGA·QFP 패키지 인근 지정 위치에 소형 스트레인게이지(게이지 길이 1~3mm)를 부착합니다. 다채널 DAQ 시스템으로 공정 중 실시간 변형률을 수집합니다. 씨앤디테크는 측정 셋업 설계, 게이지 공급, DAQ 시스템 구성, 데이터 분석까지 원스톱 서비스를 제공합니다.</p>
-      </div>
-      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="판정 기준 및 결과 해석" data-en="Pass/Fail Criteria & Analysis">판정 기준 및 결과 해석</h2>
-        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="측정 변형률이 허용 한계를 초과하면 솔더 조인트 파손 위험이 높아집니다. 씨앤디테크는 측정 결과를 IPC/JEDEC-9704A 기준으로 분석하고, 공정 개선 권고안(픽스처 변경, 나사 체결 순서 최적화 등)을 제공합니다." data-en="Strain exceeding the allowable limit indicates solder joint failure risk. CND TECH analyzes results against IPC/JEDEC-9704A criteria and provides process improvement recommendations.">측정 변형률이 허용 한계를 초과하면 솔더 조인트 파손 위험이 높아집니다. 씨앤디테크는 측정 결과를 IPC/JEDEC-9704A 기준으로 분석하고, 공정 개선 권고안(픽스처 변경, 나사 체결 순서 최적화 등)을 제공합니다.</p>
+      <!-- 블로그 /118 규격 이미지 (expires=1782831599 ~June 30) -->
+      <!-- TODO: 로컬 저장 후 ../assets/images/pcb-stress/ipc-spec.png 로 변경 -->
+      <div class="pcb-img-wrap">
+        <img src="https://blog.kakaocdn.net/dna/ceUN0o/btsQOLqeFTd/AAAAAAAAAAAAAAAAAAAAAIk4q5nZ3jL3aTcrwYaGKD1lEOikIbpA2w6Qs_ddjwi9/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=pQLE6zFGnNh9ulHtO%2BxBWoubN0A%3D"
+             alt="IPC/JEDEC-9704A PCB 스트레인 측정 규격 설명" loading="lazy">
+        <div class="pcb-img-caption">IPC/JEDEC-9704A 규격 개요</div>
       </div>
     </div>
-    <div style="margin-top:64px; padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius); max-width:800px;">
-      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;" data-ko="측정 서비스 문의" data-en="Service Inquiry">측정 서비스 문의</h3>
-      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;" data-ko="씨앤디테크는 PCB 응력 측정 장비 공급과 현장 측정 서비스를 제공합니다. 사양과 요구 사항을 알려주시면 최적의 솔루션을 제안드립니다." data-en="CND TECH provides PCB Strain Measurement equipment and on-site services. Share your specs and requirements for a tailored proposal.">씨앤디테크는 PCB 응력 측정 장비 공급과 현장 측정 서비스를 제공합니다. 사양과 요구 사항을 알려주시면 최적의 솔루션을 제안드립니다.</p>
+
+    <!-- 3. 스트레인게이지 선정 및 부착 -->
+    <div class="pcb-section fade-in">
+      <h2 class="pcb-section-title">스트레인게이지 선정 및 부착</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        PCB 응력 측정에는 초소형 면적, BGA 주변 협소 공간 적용, 1미터 연장선 일체형이라는 특수 요구조건이 있습니다. IPC/JEDEC-9704A에 부합하는 표준 게이지로는 <strong>HBK(구 HBM) RF91 시리즈</strong>가 광범위하게 사용됩니다.
+      </p>
+
+      <div style="padding:16px 20px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius); margin-bottom:20px;">
+        <div style="font-weight:700; font-size:14px; color:var(--charcoal); margin-bottom:10px;">HBK RF91 — PCB 응력 측정 전용 스트레인게이지</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; font-size:13px;">
+          <div style="color:var(--text-mute);">타입</div><div style="color:var(--charcoal); font-weight:500;">3축 로젯 (0°/45°/90°)</div>
+          <div style="color:var(--text-mute);">직경</div><div style="color:var(--charcoal); font-weight:500;">약 5 mm (초소형)</div>
+          <div style="color:var(--text-mute);">저항값</div><div style="color:var(--charcoal); font-weight:500;">120 Ω</div>
+          <div style="color:var(--text-mute);">리드선</div><div style="color:var(--charcoal); font-weight:500;">1 m 에나멜선 일체형</div>
+          <div style="color:var(--text-mute);">규격 적합성</div><div style="color:var(--accent); font-weight:700;">IPC/JEDEC-9704A 적합</div>
+        </div>
+      </div>
+
+      <!-- 블로그 /124 RF91 사진들 -->
+      <div class="pcb-img-duo">
+        <div class="pcb-img-wrap">
+          <!-- TODO: 로컬 저장 후 ../assets/images/pcb-stress/rf91-gauge-1.jpg -->
+          <img src="https://blog.kakaocdn.net/dna/GlSEX/dJMcadgmy2P/AAAAAAAAAAAAAAAAAAAAAKRc2GFb0auL63AJE0sxzsm4_bDUPZ36qvlng9eS1kYh/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=yhMLHBuZ57JIsZQG5jSC9537c5A%3D"
+               alt="HBK RF91 PCB 응력측정 스트레인게이지" loading="lazy">
+          <div class="pcb-img-caption">HBK RF91 — PCB 응력 측정 전용 3축 로젯 게이지</div>
+        </div>
+        <div class="pcb-img-wrap">
+          <!-- TODO: 로컬 저장 후 ../assets/images/pcb-stress/rf91-gauge-2.jpg -->
+          <img src="https://blog.kakaocdn.net/dna/rVzry/dJMcabJFLFT/AAAAAAAAAAAAAAAAAAAAAN9HlioQ5l3TeOmPL7xCfk2jLmeGTj1tVyjB-0lM0Q0P/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=%2FnI93b4rts0X86JmyHOT8LUhEys%3D"
+               alt="HBK RF91 스트레인게이지 리드선" loading="lazy">
+          <div class="pcb-img-caption">RF91 — 1m 에나멜선 일체형, BGA 협소 공간 대응</div>
+        </div>
+      </div>
+
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-top:8px;">
+        씨앤디테크는 고객사 PCB를 수령하여 사무실에서 게이지를 부착한 후 납품하거나, 전문 엔지니어가 현장에 직접 방문하여 부착 작업을 수행합니다. Panel 상태 및 개별 PCB 모두 대응 가능합니다.
+      </p>
+
+      <!-- 블로그 /124, /118 부착 사진 -->
+      <div class="pcb-img-duo" style="margin-top:16px;">
+        <div class="pcb-img-wrap">
+          <!-- TODO: 로컬 저장 후 ../assets/images/pcb-stress/pcb-bonding-1.jpg -->
+          <img src="https://blog.kakaocdn.net/dna/dd2r1O/btsQMdokJwM/AAAAAAAAAAAAAAAAAAAAACQWYd53RojQ786OQSxxHScxfoEdvjyqNdsffoyaHqUE/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=%2BMy1EXIO9iBhvCMxcLLwz71QYqo%3D"
+               alt="PCB에 스트레인게이지 부착 작업" loading="lazy">
+          <div class="pcb-img-caption">PCB 스트레인게이지 부착 작업</div>
+        </div>
+        <div class="pcb-img-wrap">
+          <!-- TODO: 로컬 저장 후 ../assets/images/pcb-stress/pcb-bonding-2.jpg -->
+          <img src="https://blog.kakaocdn.net/dna/be2X0T/btsQOAPPQou/AAAAAAAAAAAAAAAAAAAAAL7lKYjVtsi6HNbX19XapTbC6SRQHxJAriJHaOXUXo0P/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=H2zf8F4CiJJ7zi0EMn%2BsLbL7NfE%3D"
+               alt="PCB BGA 주변 스트레인게이지 부착" loading="lazy">
+          <div class="pcb-img-caption">BGA 주변 3축 로젯 게이지 부착 완료</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. 측정 절차 -->
+    <div class="pcb-section fade-in">
+      <h2 class="pcb-section-title">IPC/JEDEC-9704A 측정 절차</h2>
+      <div class="pcb-step-grid">
+        <div class="pcb-step">
+          <div class="sn">STEP 01</div>
+          <div class="st">측정 위치 선정</div>
+          <div class="sd">BGA 부품 위치 파악, IPC 규격에 따른 게이지 부착 좌표 결정</div>
+        </div>
+        <div class="pcb-step">
+          <div class="sn">STEP 02</div>
+          <div class="st">게이지 부착</div>
+          <div class="sd">표면 세척 → RF91 3축 로젯 부착 → 에나멜선 고정 → 결선</div>
+        </div>
+        <div class="pcb-step">
+          <div class="sn">STEP 03</div>
+          <div class="st">DAQ 연결·측정</div>
+          <div class="sd">2kHz+ 샘플링으로 각 공정 실행 — 피크 스트레인 데이터 취득</div>
+        </div>
+        <div class="pcb-step">
+          <div class="sn">STEP 04</div>
+          <div class="st">분석·리포트</div>
+          <div class="sd">주응력 연산 → IPC 한계 곡선 대비 Pass/Fail 판정 → 공식 리포트 출력</div>
+        </div>
+      </div>
+
+      <!-- 현장 측정 사진 -->
+      <div class="pcb-img-duo">
+        <div class="pcb-img-wrap">
+          <!-- TODO: 로컬 저장 후 ../assets/images/pcb-stress/field-measurement-1.jpg -->
+          <img src="https://blog.kakaocdn.net/dna/dJCBMd/dJMcadUXlK0/AAAAAAAAAAAAAAAAAAAAABied7P4JTZgAox7fh4hIgqhbpGUD4QpzwXBZHD2a_A-/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=FEDzN4Bn17Ov71R%2BGsNWfM79t3k%3D"
+               alt="PCB 스트레인게이지 DAQ 연결 측정" loading="lazy">
+          <div class="pcb-img-caption">DAQ 연결 후 공정 중 스트레인 측정</div>
+        </div>
+        <div class="pcb-img-wrap">
+          <!-- TODO: 로컬 저장 후 ../assets/images/pcb-stress/field-measurement-2.jpg -->
+          <img src="https://blog.kakaocdn.net/dna/bu9Vy5/dJMcadgmy2R/AAAAAAAAAAAAAAAAAAAAAGGn34itVXOGY-5ldLjFaLarhoRp7q98tz3Bt2tJxhFf/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=qu87Ffw5Jj%2Bj0osmdmJ6zo5ntd4%3D"
+               alt="PCB 스트레인 측정 시험 현장" loading="lazy">
+          <div class="pcb-img-caption">Router 공정 중 PCB 스트레인 측정 현장</div>
+        </div>
+      </div>
+
+      <!-- 현장 라우팅 측정 사진 /118 -->
+      <div class="pcb-img-duo" style="margin-top:0;">
+        <div class="pcb-img-wrap">
+          <!-- TODO: 로컬 저장 후 ../assets/images/pcb-stress/pcb-overview.png -->
+          <img src="https://blog.kakaocdn.net/dna/GOLmO/dJMcadUXlK4/AAAAAAAAAAAAAAAAAAAAAJZJtHMBbtziG4YxaXQvLfJwSsVRqP1cqjeF8NnFBfuO/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=CgLt0gG4ue9AM3EwX3PEBYMG%2FkA%3D"
+               alt="PCB Panel 스트레인게이지 부착 전체" loading="lazy">
+          <div class="pcb-img-caption">Panel 상태 PCB 스트레인게이지 부착</div>
+        </div>
+        <div class="pcb-img-wrap">
+          <!-- TODO: 로컬 저장 후 ../assets/images/pcb-stress/field-routing.jpg -->
+          <img src="https://blog.kakaocdn.net/dna/YBj30/btsQMRLR2hR/AAAAAAAAAAAAAAAAAAAAAEb3Qxr4GfWaEFvkNFI3g5UtOJNnFTfJTqiK1sXDN8lo/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=sVqn%2Baq9RdHit6M6nj3XaM%2B5lws%3D"
+               alt="PCB 라우팅 공정 현장 측정" loading="lazy">
+          <div class="pcb-img-caption">라우팅 공정 중 현장 측정</div>
+        </div>
+      </div>
+
+      <!-- 측정 그래프 -->
+      <div class="pcb-img-wrap">
+        <!-- TODO: 로컬 저장 후 ../assets/images/pcb-stress/strain-graph.png -->
+        <img src="https://blog.kakaocdn.net/dna/YneIW/dJMcabJFLFQ/AAAAAAAAAAAAAAAAAAAAAOmYFSqAbmtwsqnmHbbovuvAm5VoKYLQWacc0kRN8omu/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=kQionT%2F6Bp6OH3%2FUE2SqZwg82xk%3D"
+             alt="PCB 스트레인 측정 그래프 공정별 변형률" loading="lazy">
+        <div class="pcb-img-caption">공정별 PCB 스트레인(변형률) 측정 그래프 — 피크 응력 포착</div>
+      </div>
+    </div>
+
+    <!-- 5. DAQ 시스템 -->
+    <div class="pcb-section fade-in">
+      <h2 class="pcb-section-title">DAQ 데이터 수집 시스템</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        PCB 공정 중 발생하는 <strong>찰나의 피크 응력(Peak Stress)을 놓치지 않으려면</strong> 노이즈 없는 고속 DAQ가 필수입니다. 씨앤디테크는 현장 환경과 채널 수요에 맞춰 최적 솔루션을 제안합니다.
+      </p>
+      <div class="pcb-daq-grid">
+        <div class="pcb-daq-card primary">
+          <div class="dc-name">HBM QuantumX MX1615</div>
+          <div class="dc-sub">16채널 고정밀 앰프 모듈</div>
+          <div class="dc-row"><span class="dl">채널 수</span><span class="dv">16채널 (확장 가능)</span></div>
+          <div class="dc-row"><span class="dl">입력 형식</span><span class="dv">1/4, 1/2, Full Bridge</span></div>
+          <div class="dc-row"><span class="dl">샘플링</span><span class="dv">고속 (IPC 규격 상회)</span></div>
+          <div class="dc-row"><span class="dl">특징</span><span class="dv">저잡음·강력한 안티앨리어싱</span></div>
+          <div class="dc-row"><span class="dl">적합 환경</span><span class="dv">R&D Lab, 정밀 신뢰성 평가</span></div>
+        </div>
+        <div class="pcb-daq-card">
+          <div class="dc-name">GTDL SYSTEM</div>
+          <div class="dc-sub">모듈형 통합 DAQ</div>
+          <div class="dc-row"><span class="dl">채널 수</span><span class="dv">모듈 조합으로 자유 확장</span></div>
+          <div class="dc-row"><span class="dl">입력 형식</span><span class="dv">스트레인·전압·온도·진동</span></div>
+          <div class="dc-row"><span class="dl">샘플링</span><span class="dv">고속 (IPC 규격 적합)</span></div>
+          <div class="dc-row"><span class="dl">특징</span><span class="dv">복합 다채널 동시 계측</span></div>
+          <div class="dc-row"><span class="dl">적합 환경</span><span class="dv">양산 라인 평가, 경제적 대안</span></div>
+        </div>
+      </div>
+      <p style="font-size:14px; color:var(--text-mute); line-height:1.7; margin-top:4px;">
+        두 시스템 모두 IPC/JEDEC-9704A 요구 사양(2kHz+, 12bit+)을 충족합니다. 채널 수, 예산, 현장 환경에 따라 최적 구성을 제안해 드립니다.
+      </p>
+    </div>
+
+    <!-- 6. 분석 소프트웨어 -->
+    <div class="pcb-section fade-in">
+      <h2 class="pcb-section-title">PCB 스트레인 분석 소프트웨어</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        씨앤디테크는 DAQ에서 취득한 원시 데이터를 IPC/JEDEC-9704A 기준에 따라 자동 분석하는 전용 소프트웨어를 공급합니다.
+      </p>
+      <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;">
+        <div style="display:flex; align-items:flex-start; gap:12px; padding:14px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);">
+          <div style="font-size:20px; flex-shrink:0;">⚡</div>
+          <div>
+            <div style="font-weight:700; font-size:14px; color:var(--charcoal); margin-bottom:3px;">초고속 자동 연산</div>
+            <div style="font-size:13px; color:var(--text-mute); line-height:1.5;">DAQ 출력 파일 로드 즉시 — 최대/최소 주응력(Principal Strain), 변형률 속도(Strain Rate) 자동 계산</div>
+          </div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:12px; padding:14px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);">
+          <div style="font-size:20px; flex-shrink:0;">📊</div>
+          <div>
+            <div style="font-weight:700; font-size:14px; color:var(--charcoal); margin-bottom:3px;">직관적 Pass/Fail 판정</div>
+            <div style="font-size:13px; color:var(--text-mute); line-height:1.5;">PCB 두께별 IPC 한계 변형률 곡선(Limit Strain Curve)과 측정값을 그래프에서 직접 비교. 합불 판정을 한눈에 확인</div>
+          </div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:12px; padding:14px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);">
+          <div style="font-size:20px; flex-shrink:0;">📄</div>
+          <div>
+            <div style="font-weight:700; font-size:14px; color:var(--charcoal); margin-bottom:3px;">규격 리포트 자동 생성</div>
+            <div style="font-size:13px; color:var(--text-mute); line-height:1.5;">고객사·원청 제출용 공식 분석 리포트 즉각 출력. 품질 보증 리드타임 단축</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. 실제 측정 사례 — FPCB -->
+    <div class="pcb-section fade-in">
+      <h2 class="pcb-section-title">실제 측정 사례 — 배터리 모듈 FPCB</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        배터리 모듈에 적용된 <strong>FPCB(연성회로기판) 조립 공정</strong>에서 스트레인게이지로 조립 응력을 측정한 사례입니다. 좁은 틈새로 기판을 끼워넣거나 후크에 강제 체결하는 과정에서 발생하는 기계적 응력을 정량화하고, <strong>구조적 항복점(Structural Yield Point)</strong>을 도출해 지그 설계 개선 가이드를 제공했습니다.
+      </p>
+      <!-- 블로그 /128 사진 -->
+      <div class="pcb-img-wrap">
+        <!-- TODO: 로컬 저장 후 ../assets/images/pcb-stress/fpcb-assembly.jpg -->
+        <img src="https://blog.kakaocdn.net/dna/XniVe/dJMcadO1JvD/AAAAAAAAAAAAAAAAAAAAAN8fx5SEkMqQuUTIkuxQCG6j21gDOhf4-cwmoPLykx8g/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=SgLAQdauGeTEPzUwVN6yKn%2BtJOg%3D"
+             alt="배터리 모듈 FPCB 조립 응력 측정" loading="lazy">
+        <div class="pcb-img-caption">배터리 셀 케리어 FPCB 조립 응력 측정</div>
+      </div>
+      <div class="pcb-img-duo" style="margin-top:0;">
+        <div class="pcb-img-wrap">
+          <!-- TODO: 로컬 저장 후 ../assets/images/pcb-stress/fpcb-graph-1.png -->
+          <img src="https://blog.kakaocdn.net/dna/vNTkA/dJMcaadLXCB/AAAAAAAAAAAAAAAAAAAAAMf-cyrzvnJvgdvFqy-f9JWfTitxEz7FCjm4dUssCqoz/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=XB8qdZXBDBXitiDFnP7qXF2THBw%3D"
+               alt="FPCB 스트레인 측정 그래프" loading="lazy">
+          <div class="pcb-img-caption">FPCB 변형률(με) 측정 결과</div>
+        </div>
+        <div class="pcb-img-wrap">
+          <!-- TODO: 로컬 저장 후 ../assets/images/pcb-stress/fpcb-graph-2.png -->
+          <img src="https://blog.kakaocdn.net/dna/cuDMa0/dJMcabKxtpA/AAAAAAAAAAAAAAAAAAAAAKTVix0FgrkguZ6UMuzJAekAlcMZpMIIpQhb7Se_5aJ7/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=vBtySPOwhTKlUyWAIUD8NOfij%2F4%3D"
+               alt="FPCB 조립 응력 항복점 분석 그래프" loading="lazy">
+          <div class="pcb-img-caption">조립 응력 — 구조적 항복점(Yield Point) 분석</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. 씨앤디테크 토탈 솔루션 -->
+    <div class="pcb-section fade-in">
+      <h2 class="pcb-section-title">씨앤디테크 토탈 솔루션</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        씨앤디테크는 장비 납품에 그치지 않고 실무자가 시스템을 100% 활용할 수 있도록 엔지니어링 교육과 기술 지원을 동반합니다.
+      </p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;">
+        <div style="padding:18px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);">
+          <div style="font-weight:700; font-size:14px; color:var(--charcoal); margin-bottom:8px;">📦 측정 용역 서비스</div>
+          <div style="font-size:13px; color:var(--text-mute); line-height:1.6;">스트레인게이지 부착 → 현장 측정 → IPC/JEDEC-9704A 기준 분석 리포트까지 일괄 수행. R&D 및 양산 라인 불량 원인 분석.</div>
+        </div>
+        <div style="padding:18px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);">
+          <div style="font-weight:700; font-size:14px; color:var(--charcoal); margin-bottom:8px;">🔧 시스템 공급 및 교육</div>
+          <div style="font-size:13px; color:var(--text-mute); line-height:1.6;">스트레인게이지·DAQ·소프트웨어 통합 시스템 공급. 현장 방문 엔지니어링 교육: 게이지 선정·부착·결선·운용·IPC 분석 전 과정.</div>
+        </div>
+        <div style="padding:18px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);">
+          <div style="font-weight:700; font-size:14px; color:var(--charcoal); margin-bottom:8px;">📐 게이지 부착 대행</div>
+          <div style="font-size:13px; color:var(--text-mute); line-height:1.6;">PCB를 수령하여 전문 부착 후 납품. IPC 규격 위치에 정확한 부착 보장.</div>
+        </div>
+        <div style="padding:18px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);">
+          <div style="font-weight:700; font-size:14px; color:var(--charcoal); margin-bottom:8px;">🗂️ 부자재 일체 공급</div>
+          <div style="font-size:13px; color:var(--text-mute); line-height:1.6;">HBK RF91 게이지, 전용 접착제, 특수 코팅제 등 신뢰성 측정에 필요한 부자재 전품목 공급.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. 적용 분야 -->
+    <div class="pcb-section fade-in">
+      <h2 class="pcb-section-title">주요 적용 분야</h2>
+      <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;">
+        <span style="padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim);">스마트폰 제조 공정</span>
+        <span style="padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim);">전기차 전장 부품</span>
+        <span style="padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim);">배터리 모듈 조립</span>
+        <span style="padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim);">반도체 패키지</span>
+        <span style="padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim);">SMT 라우팅 공정</span>
+        <span style="padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim);">ICT 테스트 지그</span>
+        <span style="padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim);">FPCB 조립</span>
+        <span style="padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim);">BGA 신뢰성 평가</span>
+        <span style="padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim);">서버·산업용 보드</span>
+      </div>
+      <p style="font-size:14px; color:var(--text-mute); margin-bottom:16px;">관련 기술 자료:</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="strain-gauge.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 스트레인게이지 원리·종류·선정 가이드</a>
+        <a href="strain-gauge-bonding.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 스트레인게이지 부착 10단계 가이드</a>
+        <a href="residual-stress.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 잔류응력 측정 (ASTM E837)</a>
+      </div>
+    </div>
+
+    <!-- 10. FAQ -->
+    <div class="pcb-section fade-in">
+      <h2 class="pcb-section-title">자주 묻는 질문 (FAQ)</h2>
+      <div class="pcb-faq">
+        <div class="pcb-faq-item">
+          <div class="fq">IPC/JEDEC-9704A란 무엇인가요?</div>
+          <div class="fa">PCB 기판에 스트레인게이지를 부착해 제조 공정 중 발생하는 기계적 응력(변형률)을 측정하는 국제 표준입니다. 3축 로젯 게이지를 BGA 주변에 부착하고 최소 2kHz 샘플링·12bit 이상 해상도의 DAQ로 측정하도록 규정하며, IPC 한계 곡선 대비 Pass/Fail로 판정합니다.</div>
+        </div>
+        <div class="pcb-faq-item">
+          <div class="fq">PCB 스트레인 측정이 왜 필요한가요?</div>
+          <div class="fa">SMT 라우팅·하우징 조립·ICT 테스트 등 공정에서 발생하는 PCB 굽힘 응력이 과도하면 BGA 솔더 조인트 파손, MLCC 크랙 등 잠재 불량이 생깁니다. 무연(Lead-free) 납 도입 이후 이 문제가 더욱 심각해져, IPC/JEDEC-9704A 기반 정량 관리가 글로벌 제조사 필수 요구 사항이 됐습니다.</div>
+        </div>
+        <div class="pcb-faq-item">
+          <div class="fq">PCB 전용 스트레인게이지는 무엇을 사용하나요?</div>
+          <div class="fa">HBK(구 HBM) RF91 시리즈가 IPC/JEDEC-9704A에 부합하는 PCB 전용 게이지로 가장 널리 사용됩니다. 직경 약 5mm의 초소형 3축 로젯, 120Ω, 1m 에나멜선 일체형으로 BGA 주변의 협소한 공간에도 정확하게 부착할 수 있습니다.</div>
+        </div>
+        <div class="pcb-faq-item">
+          <div class="fq">DAQ 최소 사양이 어떻게 되나요?</div>
+          <div class="fa">IPC/JEDEC-9704A는 최소 2kHz 샘플링 레이트, 12bit 이상 해상도를 요구합니다. 씨앤디테크는 HBM QuantumX MX1615(16채널 고정밀, R&D용)와 GTDL 모듈형 DAQ(양산 라인 경제적 대안)를 공급합니다.</div>
+        </div>
+        <div class="pcb-faq-item">
+          <div class="fq">현장 출장 측정 서비스도 가능한가요?</div>
+          <div class="fa">가능합니다. 씨앤디테크 엔지니어가 고객사 현장에 직접 방문하여 스트레인게이지 부착부터 측정, IPC/JEDEC-9704A 기준 분석 리포트 제공까지 전 과정을 수행합니다. PCB를 수령하여 사무소에서 부착 후 납품하는 방식도 가능합니다.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section style="padding:0 0 80px;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in" style="padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius);">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">PCB 스트레인 측정 시스템 도입 및 용역 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">IPC/JEDEC-9704A 측정 용역, 시스템 공급(게이지·DAQ·소프트웨어), 현장 교육까지 — R&D 개발 단계부터 양산 라인 공정 개선까지 지원합니다.</p>
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 →</a>
+        <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
         <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+        <a href="mailto:wgjeon@cndtec.co.kr" class="btn btn-ghost">wgjeon@cndtec.co.kr</a>
       </div>
     </div>
   </div>
@@ -122,7 +645,7 @@
       </div>
       <div class="footer-cols">
         <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
-        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="residual-stress.html">잔류응력 측정</a></li><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="pcb-stress.html">PCB 응력 측정</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="pcb-stress.html">PCB 스트레인 측정</a></li><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="strain-gauge-bonding.html">스트레인게이지 부착법</a></li><li><a href="residual-stress.html">잔류응력 측정</a></li></ul></div>
         <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
       </div>
     </div>
@@ -156,7 +679,5 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
 </script>
-
-
 </body>
 </html>
