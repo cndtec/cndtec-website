@@ -4,11 +4,13 @@
 <meta charset="UTF-8" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>잔류응력 측정 | CND TECH 씨앤디테크</title>
-<meta name="description" content="ASTM E837 구멍뚫기법(Hole-Drilling Method) 기반 잔류응력 측정 원리, 절차, 적용 사례. 씨앤디테크의 현장 측정 서비스 안내." />
-<meta property="og:title" content="잔류응력 측정 | CND TECH 씨앤디테크" />
-<meta property="og:description" content="ASTM E837 구멍뚫기법(Hole-Drilling Method) 기반 잔류응력 측정 원리, 절차, 적용 사례. 씨앤디테크의 현장 측정 서비스 안내." />
+<title>홀드릴링 잔류응력 측정 (ASTM E837) | 씨앤디테크</title>
+<meta name="description" content="ASTM E837-20 국제표준에 따른 홀드릴링 잔류응력 측정. SINT MTS3000-Restan 자동 시스템으로 400,000rpm 고속드릴링, ±5μm 깊이 정밀제어. 금속·플라스틱·유리·고분자 소재 측정 가능. 씨앤디테크 장비 공급 및 측정 용역." />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/residual-stress.html" />
+<meta property="og:title" content="홀드릴링 잔류응력 측정 (ASTM E837) | 씨앤디테크" />
+<meta property="og:description" content="ASTM E837-20 국제표준에 따른 홀드릴링 잔류응력 측정. SINT MTS3000-Restan 자동 시스템으로 400,000rpm 고속드릴링, ±5μm 깊이 정밀제어." />
 <meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/residual-stress.html" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,11 +20,12 @@
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "잔류응력 측정 기술 가이드",
-  "description": "ASTM E837 구멍뚫기법을 이용한 잔류응력 측정의 원리, 절차, 산업 적용 사례",
+  "headline": "홀드릴링 잔류응력 측정 (ASTM E837)",
+  "description": "ASTM E837-20 국제표준에 따른 홀드릴링 잔류응력 측정 원리, SINT MTS3000-Restan 시스템 소개, 측정 절차 및 사례",
   "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
   "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
-  "inLanguage": "ko"
+  "inLanguage": "ko",
+  "keywords": "잔류응력 측정, ASTM E837, 홀드릴링, MTS3000, SINT, hole drilling residual stress"
 }
 </script>
 <!-- Google tag (gtag.js) -->
@@ -33,6 +36,204 @@
   gtag('js', new Date());
   gtag('config', 'G-B25Y10FQK1');
 </script>
+<style>
+/* ── 페이지 전용 스타일 ── */
+.rs-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+@media (max-width: 640px) {
+  .rs-stat-grid { grid-template-columns: 1fr; }
+}
+.rs-stat-card {
+  padding: 24px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+}
+.rs-stat-card .stat-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.rs-stat-card .stat-label {
+  font-size: 13px;
+  color: var(--text-mute);
+  line-height: 1.4;
+}
+
+.rs-section {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--line);
+}
+.rs-section:last-child { border-bottom: none; }
+.rs-section-title {
+  font-family: 'Space Grotesk', 'Pretendard', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rs-section-title::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 22px;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.rs-img-wrap {
+  margin: 24px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+}
+.rs-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.rs-img-caption {
+  padding: 10px 16px;
+  font-size: 12px;
+  color: var(--text-mute);
+  background: var(--bg-card);
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.rs-img-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+@media (max-width: 640px) {
+  .rs-img-duo { grid-template-columns: 1fr; }
+}
+
+.rs-img-quad {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+@media (max-width: 500px) {
+  .rs-img-quad { grid-template-columns: 1fr; }
+}
+
+.rs-feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.rs-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+.rs-feature-list li::before {
+  content: '✔';
+  color: var(--accent);
+  font-size: 14px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.rs-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 20px 0;
+}
+.rs-spec-table th, .rs-spec-table td {
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.rs-spec-table th {
+  background: var(--orange-tint);
+  font-weight: 600;
+  color: var(--charcoal);
+  width: 30%;
+  white-space: nowrap;
+}
+.rs-spec-table td {
+  color: var(--text-dim);
+}
+
+.rs-step-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+@media (max-width: 720px) {
+  .rs-step-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .rs-step-grid { grid-template-columns: 1fr; }
+}
+.rs-step {
+  padding: 20px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.rs-step .step-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+}
+.rs-step .step-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+.rs-step .step-desc {
+  font-size: 13px;
+  color: var(--text-mute);
+  line-height: 1.5;
+}
+
+.rs-app-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+.rs-app-tag {
+  padding: 6px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+</style>
 </head>
 <body>
 <div class="bg-grid"></div>
@@ -70,43 +271,273 @@
   </div>
 </div>
 
+<!-- ── HERO ── -->
 <section style="padding-top:160px; padding-bottom:20px;">
   <div class="container">
     <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
     <div style="margin-top:20px;">
-      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">ASTM E837 · HOLE-DRILLING</div>
-      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(32px,5vw,60px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);" data-ko="잔류응력 측정" data-en="Residual Stress Measurement">잔류응력 측정</h1>
-      <p style="font-size:17px; color:var(--text-dim); max-width:680px; line-height:1.7; margin-bottom:0;" data-ko="ASTM E837 구멍뚫기법(Hole-Drilling Method) 기반 잔류응력 측정 원리, 절차, 적용 사례. 씨앤디테크의 현장 측정 서비스 안내." data-en="ASTM E837 구멍뚫기법(Hole-Drilling Method) 기반 잔류응력 측정 원리, 절차, 적용 사례. 씨앤디테크의 현장 측정 서비스 안내.">ASTM E837 구멍뚫기법(Hole-Drilling Method) 기반 잔류응력 측정 원리, 절차, 적용 사례. 씨앤디테크의 현장 측정 서비스 안내.</p>
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">ASTM E837 · HOLE-DRILLING METHOD</div>
+      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(28px,5vw,56px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);" data-ko="홀드릴링 잔류응력 측정 (ASTM E837)" data-en="Hole-Drilling Residual Stress Measurement (ASTM E837)">홀드릴링 잔류응력 측정 (ASTM E837)</h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:720px; line-height:1.7; margin-bottom:0;" data-ko="SINT MTS3000-Restan 자동 측정 시스템으로 국제표준 ASTM E837-20에 따른 정밀 잔류응력 측정·분석. 금속, 플라스틱, 유리, 고분자소재 등 소재 제한 없이 적용 가능하며 씨앤디테크가 이탈리아 SINT사 한국대리점으로 장비 공급·측정 용역을 모두 지원합니다." data-en="SINT MTS3000-Restan automatic system for precision residual stress measurement per ASTM E837-20. Applicable to metals, plastics, glass, and polymers. CND TECH is SINT's Korea distributor — we provide both equipment sales and on-site measurement services.">SINT MTS3000-Restan 자동 측정 시스템으로 국제표준 ASTM E837-20에 따른 정밀 잔류응력 측정·분석. 금속, 플라스틱, 유리, 고분자소재 등 소재 제한 없이 적용 가능하며 씨앤디테크가 이탈리아 SINT사 한국대리점으로 장비 공급·측정 용역을 모두 지원합니다.</p>
+    </div>
+
+    <!-- 핵심 스펙 카드 -->
+    <div class="rs-stat-grid fade-in">
+      <div class="rs-stat-card">
+        <div class="stat-val">400,000</div>
+        <div class="stat-label">rpm<br>고속 드릴링 — 열응력 영향 최소화</div>
+      </div>
+      <div class="rs-stat-card">
+        <div class="stat-val">±5 μm</div>
+        <div class="stat-label">깊이 단계 정밀 제어<br>오차 최소화</div>
+      </div>
+      <div class="rs-stat-card">
+        <div class="stat-val">E837-20</div>
+        <div class="stat-label">ASTM 최신 규격 완전 대응<br>Integral / HDM / Kockelmann</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section style="padding:60px 0 100px;">
-  <div class="container">
-    <div style="max-width:800px; display:flex; flex-direction:column; gap:48px;">
-      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="잔류응력이란?" data-en="Residual Stress Overview">잔류응력이란?</h2>
-        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="잔류응력(Residual Stress)은 외부 하중이 없는 상태에서 재료 내부에 남아 있는 응력입니다. 용접, 단조, 기계 가공, 열처리 등 제조 공정 중에 발생하며, 피로 파괴, 응력 부식, 변형 등 구조물 신뢰성에 직접 영향을 미칩니다." data-en="Residual stress is stress remaining in a material without external load — generated during welding, forging, machining, and heat treatment. It directly affects fatigue life, stress corrosion, and dimensional stability.">잔류응력(Residual Stress)은 외부 하중이 없는 상태에서 재료 내부에 남아 있는 응력입니다. 용접, 단조, 기계 가공, 열처리 등 제조 공정 중에 발생하며, 피로 파괴, 응력 부식, 변형 등 구조물 신뢰성에 직접 영향을 미칩니다.</p>
-      </div>
-      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="ASTM E837 구멍뚫기법 원리" data-en="ASTM E837 Hole-Drilling Method">ASTM E837 구멍뚫기법 원리</h2>
-        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="ASTM E837은 구멍뚫기법(Hole-Drilling Method)을 이용한 잔류응력 측정의 국제 표준입니다. 측정 대상물 표면에 소형 구멍(직경 1.6~4mm)을 단계적으로 드릴링하면서 로제트 스트레인게이지로 응력 이완량을 측정합니다. 측정된 변형률 데이터를 규격에서 정의한 계수로 계산하면 주응력 방향 및 크기를 얻을 수 있습니다." data-en="ASTM E837 uses incremental hole drilling with a rosette strain gauge to measure stress relaxation. The measured strain data is processed using standard coefficients to calculate principal stress magnitude and direction.">ASTM E837은 구멍뚫기법(Hole-Drilling Method)을 이용한 잔류응력 측정의 국제 표준입니다. 측정 대상물 표면에 소형 구멍(직경 1.6~4mm)을 단계적으로 드릴링하면서 로제트 스트레인게이지로 응력 이완량을 측정합니다. 측정된 변형률 데이터를 규격에서 정의한 계수로 계산하면 주응력 방향 및 크기를 얻을 수 있습니다.</p>
-      </div>
-      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="측정 대상 및 적용 분야" data-en="Applications">측정 대상 및 적용 분야</h2>
-        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="용접 구조물(선박·교량·압력용기), 단조 및 주조 부품, 기계 가공 표면, 항공우주·자동차·국방 분야 구조재에 적용합니다. 씨앤디테크는 조선소, 원자력 발전소, 항공우주 연구기관, 자동차 제조사 현장에서 잔류응력 측정 서비스를 제공해왔습니다." data-en="Applied to welded structures (ships, bridges, pressure vessels), forgings, castings, machined surfaces, and aerospace/automotive/defense structural components.">용접 구조물(선박·교량·압력용기), 단조 및 주조 부품, 기계 가공 표면, 항공우주·자동차·국방 분야 구조재에 적용합니다. 씨앤디테크는 조선소, 원자력 발전소, 항공우주 연구기관, 자동차 제조사 현장에서 잔류응력 측정 서비스를 제공해왔습니다.</p>
-      </div>
-      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="씨앤디테크 측정 서비스" data-en="CND TECH Measurement Service">씨앤디테크 측정 서비스</h2>
-        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="씨앤디테크는 ASTM E837 기반 잔류응력 측정 장비 공급과 현장 측정 용역을 모두 제공합니다. 고객의 시험편 사양, 측정 위치, 요구 정밀도를 검토하여 최적의 측정 방안을 제안합니다. 문의: 031-680-1225 / wgjeon@cndtec.co.kr" data-en="CND TECH provides both equipment supply and on-site measurement services based on ASTM E837. We review specimen specs, measurement locations, and required accuracy to propose the optimal approach.">씨앤디테크는 ASTM E837 기반 잔류응력 측정 장비 공급과 현장 측정 용역을 모두 제공합니다. 고객의 시험편 사양, 측정 위치, 요구 정밀도를 검토하여 최적의 측정 방안을 제안합니다. 문의: 031-680-1225 / wgjeon@cndtec.co.kr</p>
+<!-- ── 본문 ── -->
+<section style="padding:0 0 100px;">
+  <div class="container" style="max-width:860px;">
+
+    <!-- 1. ASTM E837 표준 소개 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">ASTM E837 표준이란?</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        ASTM E837은 <strong>구멍뚫기법(Hole-Drilling Method)</strong>을 이용한 잔류응력 측정의 국제 표준입니다.
+        측정 대상물 표면에 소형 구멍(직경 약 1.6~4mm)을 단계적으로 드릴링하면서 로제트 스트레인게이지로 응력 이완량을 측정합니다.
+        측정된 변형률 데이터를 규격에서 정의한 계수로 계산하면 <strong>깊이별 주응력 방향 및 크기</strong>를 얻을 수 있습니다.
+      </p>
+      <table class="rs-spec-table">
+        <tr>
+          <th>표준 명칭</th>
+          <td>ASTM E837-20 (Standard Test Method for Determining Residual Stresses by the Hole-Drilling Strain-Gage Method)</td>
+        </tr>
+        <tr>
+          <th>측정 방식</th>
+          <td>홀드릴링 + 로제트 스트레인게이지 (3축 변형률 측정)</td>
+        </tr>
+        <tr>
+          <th>적용 소재</th>
+          <td>금속, 플라스틱, 유리, 고분자 소재 등 (균질·등방성 재료)</td>
+        </tr>
+        <tr>
+          <th>측정 깊이</th>
+          <td>표면~최대 0.5D (D: 홀 직경), 일반적으로 0.5~2mm 범위</td>
+        </tr>
+        <tr>
+          <th>분석 방법</th>
+          <td>Uniform Method, Integral Method, Kockelmann, HDM (High-speed Drilling Method)</td>
+        </tr>
+        <tr>
+          <th>잔류응력 기초 개념</th>
+          <td><a href="what-is-residual-stress.html" style="color:var(--accent);">→ 잔류응력이란? 기초 개념 보기</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 2. MTS3000-Restan 시스템 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">SINT MTS3000-Restan 시스템</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:4px;">
+        SINT사의 <strong>MTS3000-Restan</strong>은 스트레인게이지 홀드릴링 방식으로 잔류응력을 측정하는 자동 시스템입니다.
+        광학 기계 장치, 전용 드릴링 장치, 전자 제어 장치, 그리고 드릴링 작동 제어 소프트웨어(RSM)와 잔류응력 평가 소프트웨어(EVAL)로 구성됩니다.
+      </p>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        잔류응력 데이터 취득·평가·함수 적용 등 모든 과정이 자동으로 산출되어 <strong>에러율을 최소화한 가장 정확한 측정 시스템</strong>입니다.
+      </p>
+
+      <!-- 메인 시스템 사진 -->
+      <!-- TODO: 이미지를 로컬로 저장한 경우 src를 "../assets/images/residual-stress/mts3000-system.jpg" 로 변경 -->
+      <div class="rs-img-wrap">
+        <img src="https://blog.kakaocdn.net/dna/zuYbJ/btsFhSgQpUd/AAAAAAAAAAAAAAAAAAAAADqtkYEGm95gFzSscJeMpTaOLuAHkGYi-jtxYEksLIwT/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=%2B3EcjAkB9BXb1MCe7SK%2BAHCuYDI%3D"
+             alt="SINT MTS3000-Restan 잔류응력 측정 시스템" loading="lazy">
+        <div class="rs-img-caption">SINT MTS3000-Restan — ASTM E837 기반 자동 잔류응력 측정 시스템</div>
       </div>
     </div>
-    <div style="margin-top:64px; padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius); max-width:800px;">
-      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;" data-ko="측정 서비스 문의" data-en="Service Inquiry">측정 서비스 문의</h3>
-      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;" data-ko="씨앤디테크는 잔류응력 측정 장비 공급과 현장 측정 서비스를 제공합니다. 사양과 요구 사항을 알려주시면 최적의 솔루션을 제안드립니다." data-en="CND TECH provides Residual Stress Measurement equipment and on-site services. Share your specs and requirements for a tailored proposal.">씨앤디테크는 잔류응력 측정 장비 공급과 현장 측정 서비스를 제공합니다. 사양과 요구 사항을 알려주시면 최적의 솔루션을 제안드립니다.</p>
+
+    <!-- 3. 시스템 구성 다이어그램 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">시스템 구성 다이어그램</h2>
+      <div class="rs-img-duo">
+        <!-- TODO: 로컬 저장 후 "../assets/images/residual-stress/mts3000-diagram1.png" 으로 변경 -->
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="https://blog.kakaocdn.net/dna/mafLI/btsFh42xSJV/AAAAAAAAAAAAAAAAAAAAAI79OdnGkjnFNdXIXN_ySgQFNdlJqsdCrBZcKd8d8hSl/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=BiUvvHqwv6YtSrASlx%2FdxwHaKII%3D"
+               alt="MTS3000 시스템 구성 다이어그램" loading="lazy">
+          <div class="rs-img-caption">시스템 구성 개요</div>
+        </div>
+        <!-- TODO: 로컬 저장 후 "../assets/images/residual-stress/mts3000-diagram2.png" 으로 변경 -->
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="https://blog.kakaocdn.net/dna/cNbG3Y/btsFh9bNsnE/AAAAAAAAAAAAAAAAAAAAALRpwTP0p0BC54yWWheA94vOdsLTRGTw4dBoPHzWOLVI/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=IJhy%2BKW2PaL8uqbQyxy74Uur4xk%3D"
+               alt="MTS3000 측정 원리 다이어그램" loading="lazy">
+          <div class="rs-img-caption">홀드릴링 측정 원리</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. 시스템 특징 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">시스템 특징</h2>
+      <ul class="rs-feature-list">
+        <li><strong>고속 드릴링 기술 (400,000 rpm)</strong> — 드릴링 시 열응력 발생을 최소화하여 측정 정밀도 유지</li>
+        <li><strong>자동화된 측정 프로세스</strong> — 데이터 취득·평가·함수 적용까지 모든 과정 자동 산출, 운용자 에러 최소화</li>
+        <li><strong>공압 구동식 / 전기모터 — 2종 제품</strong> — 현장 측정 및 실험실 애플리케이션 모두 대응</li>
+        <li><strong>깊이별 잔류응력 분포 평가</strong> — 최대 5μm 단계의 정밀 깊이 제어로 표면부터 심부까지 프로파일링</li>
+        <li><strong>±5 μm 깊이 단계 정밀 제어</strong> — 깊이 정밀도 최고 수준, 얇은 코팅·표면처리층 측정 가능</li>
+        <li><strong>다양한 분석 방법 지원</strong> — ASTM E837-13/20, Integral, Kockelmann, HDM(High-speed Drilling Method) 전방식 대응</li>
+        <li><strong>2D / 3D 후처리 분석</strong> — 응력 분포를 시각화하는 2D·3D 후처리 분석으로 보다 상세한 응력 분포 파악 가능</li>
+      </ul>
+    </div>
+
+    <!-- 5. 측정 절차 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">측정 절차</h2>
+      <div class="rs-step-grid">
+        <div class="rs-step">
+          <div class="step-num">STEP 01</div>
+          <div class="step-title">측정 위치 선정</div>
+          <div class="step-desc">측정 목적에 따라 위치 선정 및 표면 처리 (이물질 제거, 필요 시 연마)</div>
+        </div>
+        <div class="rs-step">
+          <div class="step-num">STEP 02</div>
+          <div class="step-title">스트레인게이지 부착</div>
+          <div class="step-desc">ASTM E837 규격에 따른 로제트 게이지 본딩 (접착제 경화 확인)</div>
+        </div>
+        <div class="rs-step">
+          <div class="step-num">STEP 03</div>
+          <div class="step-title">홀드릴링 · 데이터 취득</div>
+          <div class="step-desc">MTS3000으로 단계적 드릴링, 각 깊이에서 변형률 자동 취득</div>
+        </div>
+        <div class="rs-step">
+          <div class="step-num">STEP 04</div>
+          <div class="step-title">응력 계산 · 보고서</div>
+          <div class="step-desc">EVAL 소프트웨어로 주응력·방향 계산, 깊이별 분포 그래프 산출</div>
+        </div>
+      </div>
+
+      <!-- 현장 측정 사진 -->
+      <!-- TODO: 로컬 저장 후 "../assets/images/residual-stress/field-measurement.jpg" 로 변경 -->
+      <div class="rs-img-wrap">
+        <img src="https://blog.kakaocdn.net/dna/bkxu0o/btsFeRRbTce/AAAAAAAAAAAAAAAAAAAAAA4e647lYKgnXJkog2Di3Mz_x4D-UEip5PJSHz9L1g9X/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=%2B5CRExto5FGfI8iWWOPULKkUc5w%3D"
+             alt="MTS3000 현장 잔류응력 측정" loading="lazy">
+        <div class="rs-img-caption">MTS3000-Restan 현장 적용 측정</div>
+      </div>
+
+      <p style="font-size:14px; color:var(--text-mute); margin: 8px 0 20px; font-weight:600;">▸ 스트레인게이지 부착 · 홀드릴링 후 사진</p>
+      <div class="rs-img-duo">
+        <!-- TODO: 로컬 저장 후 "../assets/images/residual-stress/sg-bonding.jpg" 로 변경 -->
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="https://blog.kakaocdn.net/dna/bgUNhz/btsFg3iLyPb/AAAAAAAAAAAAAAAAAAAAAGcGxl8rQOORM0UyMHa2eN8eteN04EseaTHHAJQ-XByV/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=acKxX819%2BDFrdCTdOQamks%2ByDpQ%3D"
+               alt="잔류응력 측정용 스트레인게이지 부착" loading="lazy">
+          <div class="rs-img-caption">로제트 스트레인게이지 부착 완료</div>
+        </div>
+        <!-- TODO: 로컬 저장 후 "../assets/images/residual-stress/after-drilling.jpg" 로 변경 -->
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="https://blog.kakaocdn.net/dna/zri9Y/btsFg4PyyfG/AAAAAAAAAAAAAAAAAAAAACypic6mjQE82hCkOUkt1HNbsLdFH2PkzrrsADfaDEnA/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=N2BZUDQOA6uwkkDntE9TEFOQ8aU%3D"
+               alt="홀드릴링 후 잔류응력 측정 완료" loading="lazy">
+          <div class="rs-img-caption">홀드릴링 완료 후 상태</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. 실제 측정 사례 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">실제 측정 사례 — 표면처리 시편</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        아래 사진들은 표면처리된 시편에 대한 실제 잔류응력 측정 사례입니다. MTS3000-Restan을 이용하여 각 위치에서 스트레인게이지 홀드릴링 측정을 수행하였습니다.
+      </p>
+      <div class="rs-img-quad">
+        <!-- TODO: 로컬 저장 후 "../assets/images/residual-stress/specimen-1.jpg" ~ specimen-4.jpg 로 변경 -->
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="https://blog.kakaocdn.net/dna/A6fN0/btsFgM2HvgW/AAAAAAAAAAAAAAAAAAAAAG_4GLGrthBR443R-7ZRd2IHkKljhkDO5Ut6j0XWWo3d/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=QnJI%2FaWgFL%2B9KKTf4wUQmUvolJg%3D"
+               alt="표면처리 시편 잔류응력 측정 1" loading="lazy">
+          <div class="rs-img-caption">시편 측정 사례 ①</div>
+        </div>
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="https://blog.kakaocdn.net/dna/bTqUFU/btsFgqFn0jo/AAAAAAAAAAAAAAAAAAAAAGvcMvDGoe5vVHfQ9N7-HyfCKh7MrqDji8F6d2WA9yYu/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=SifR%2Bceea4vRGp02lRnm2uxEnBI%3D"
+               alt="표면처리 시편 잔류응력 측정 2" loading="lazy">
+          <div class="rs-img-caption">시편 측정 사례 ②</div>
+        </div>
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="https://blog.kakaocdn.net/dna/eJye1X/btsFhqdISVD/AAAAAAAAAAAAAAAAAAAAALg9vzHAsjc0YV1crIz3sU307PlvccYZjRLuZb68bZWk/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=eaOlQjDQhLgiDlwEKIGw5qoszMc%3D"
+               alt="표면처리 시편 잔류응력 측정 3" loading="lazy">
+          <div class="rs-img-caption">시편 측정 사례 ③</div>
+        </div>
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="https://blog.kakaocdn.net/dna/dr2joL/btsFfdGAWXh/AAAAAAAAAAAAAAAAAAAAACZCgVZMwHtzeNcNQTlBQNXcfSL1vDy5DhDpbrYzqi7n/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=%2F%2BNzZhqaA2PJMv7g1lluwzVHLOs%3D"
+               alt="표면처리 시편 잔류응력 측정 4" loading="lazy">
+          <div class="rs-img-caption">시편 측정 사례 ④</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. 적용 분야 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">적용 분야</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        용접·단조·기계가공·열처리·표면처리 후 잔류응력 평가가 필요한 모든 구조물과 소재에 적용합니다.
+      </p>
+      <div class="rs-app-tags">
+        <span class="rs-app-tag">용접 구조물</span>
+        <span class="rs-app-tag">선박 · 해양 구조물</span>
+        <span class="rs-app-tag">교량 · 철골 구조</span>
+        <span class="rs-app-tag">압력용기 · 배관</span>
+        <span class="rs-app-tag">철도 레일</span>
+        <span class="rs-app-tag">압축기 · 펌프</span>
+        <span class="rs-app-tag">자동차 부품</span>
+        <span class="rs-app-tag">항공우주 구조재</span>
+        <span class="rs-app-tag">H형강 · 강재</span>
+        <span class="rs-app-tag">원자력 발전 부품</span>
+        <span class="rs-app-tag">표면처리 · 코팅 시편</span>
+        <span class="rs-app-tag">플라스틱 · 고분자</span>
+      </div>
+      <p style="margin-top:16px; font-size:14px; color:var(--text-mute); line-height:1.7;">
+        씨앤디테크는 조선소, 원자력발전소, 항공우주 연구기관, 자동차 제조사, 금속 소재 연구소 등 다양한 산업 현장에서 잔류응력 측정 서비스를 제공해왔습니다.
+      </p>
+    </div>
+
+    <!-- 8. 씨앤디테크 서비스 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">씨앤디테크 서비스</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:20px;">
+        씨앤디테크는 이탈리아 SINT사 한국 공식 대리점으로, MTS3000-Restan <strong>시스템 판매·서비스·운영 교육</strong>과 <strong>현장 측정 용역</strong>을 모두 지원합니다.
+        측정 대상 소재, 형상, 위치 조건을 알려주시면 최적의 측정 방안을 제안드립니다.
+      </p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:28px;">
+        <div style="padding:20px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);">
+          <div style="font-size:13px; font-family:'JetBrains Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:8px;">장비 공급</div>
+          <div style="font-size:14px; color:var(--text-dim); line-height:1.6;">MTS3000-Restan 판매<br>소모품 · 스트레인게이지 공급<br>시스템 설치 · 교육</div>
+        </div>
+        <div style="padding:20px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);">
+          <div style="font-size:13px; font-family:'JetBrains Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:8px;">측정 용역</div>
+          <div style="font-size:14px; color:var(--text-dim); line-height:1.6;">현장 방문 측정<br>ASTM E837 기준 성적서 발급<br>데이터 분석 · 결과 보고서</div>
+        </div>
+      </div>
+
+      <p style="font-size:14px; color:var(--text-mute); margin-bottom:16px;">관련 기술 자료 더 보기:</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:32px;">
+        <a href="what-is-residual-stress.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 잔류응력이란? 기초 개념</a>
+        <a href="strain-gauge.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 스트레인게이지 원리</a>
+        <a href="strain-gauge-bonding.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 스트레인게이지 부착 방법</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CTA 박스 ── -->
+<section style="padding:0 0 80px;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in" style="padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius);">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">잔류응력 측정 · 장비 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">측정 대상·소재·형상을 알려주시면 최적 방안을 제안드립니다. 장비 구매, 임대, 용역 측정 모두 가능합니다.</p>
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 →</a>
+        <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
         <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+        <a href="mailto:wgjeon@cndtec.co.kr" class="btn btn-ghost">wgjeon@cndtec.co.kr</a>
       </div>
     </div>
   </div>
@@ -156,7 +587,5 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
 </script>
-
-
 </body>
 </html>
