@@ -98,6 +98,7 @@ resources/custom-sensor.html, field-service.html, sensors.html, vibration.html �
 - 컨텍스트 절약을 위해 불필요한 파일 내용 출력 최소화
 - 작업 완료 후 이 CLAUDE.md 업데이트
 - ⭐ **파일 수정 후에는 사용자가 요청하지 않아도 항상 git add/commit/push 명령어를 안내할 것** (cmd.exe 기준, repo 경로로 cd 포함) — 2026-06-22 사용자 지시
+- ⭐ **홈페이지(cndtec-website) 관련 파일을 수정할 때마다, 작업 완료 후 반드시 명령 프롬프트(cmd.exe)에서 실행할 PUSH 명령어를 구체적으로 알려줄 것** (cd 경로 포함, git add → commit → push 순서 전부) — 2026-06-24 사용자 지시
 
 ## 파일 위치
 - 웹사이트: C:\Users\wgjeo\클로이드 폴더\cndtec-website\

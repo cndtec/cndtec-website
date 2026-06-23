@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>플라스틱·사출물·복합재료 잔류응력 측정 가이드 (ABS·PC·CFRP) | 씨앤디테크</title>
+<meta name="description" content="ABS·PC·HDPE·PP·PA·POM·테프론(PTFE)·CFRP 등 플라스틱·사출물·복합재료 잔류응력 측정 완전 가이드. MTS3000-Restan 특수 고분자 모드로 더미게이지 기술·저속 드릴링 적용. ASTM E837 기준 성적서 발행. 씨앤디테크 장비 공급 및 측정 용역." />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/plastic-residual-stress.html" />
+<meta property="og:title" content="플라스틱·사출물·복합재료 잔류응력 측정 가이드 (ABS·PC·CFRP) | 씨앤디테크" />
+<meta property="og:description" content="ABS·PC·HDPE·PP·PA·POM·테프론(PTFE)·CFRP 등 플라스틱·사출물·복합재료 잔류응력 측정. MTS3000-Restan 고분자 모드, ASTM E837 기준 성적서." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/plastic-residual-stress.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=5">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "플라스틱·사출물·복합재료 잔류응력 측정 가이드 (ABS·PC·CFRP)",
+  "description": "ABS·PC·HDPE·PP·PA·POM·테프론(PTFE)·CFRP 등 플라스틱·사출물·복합재료의 홀드릴링 잔류응력 측정 원리, 더미게이지 기술, MTS3000-Restan 고분자 모드 소개 및 측정 사례",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "inLanguage": "ko",
+  "datePublished": "2026-06-24",
+  "keywords": ["플라스틱 잔류응력 측정", "사출물 잔류응력 측정", "고분자 소재 잔류응력", "복합재료 잔류응력", "ABS 잔류응력", "PC 잔류응력", "CFRP 잔류응력", "MTS3000 고분자", "ASTM E837 플라스틱"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ABS, PC, HDPE, PP 등 일반 플라스틱도 잔류응력 측정이 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가능합니다. ABS(아크릴로니트릴-부타디엔-스티렌), PC(폴리카보네이트), HDPE(고밀도폴리에틸렌), PP(폴리프로필렌), PA(나일론), POM(폴리아세탈) 등 대부분의 엔지니어링 플라스틱은 SINT MTS3000-Restan의 고분자 전용 측정 모드로 잔류응력을 측정할 수 있습니다. 고정밀 스테핑 모터로 1mm 홀을 μm 단위로 드릴링하며, 더미 게이지 기술로 열적 영향을 보상합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "테프론(PTFE)이나 유리섬유 강화 플라스틱(GFRP)도 측정할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가능합니다. 테프론(PTFE)은 열팽창계수가 매우 높아 특별한 온도 보상이 필요하지만, MTS3000-Restan의 더미 게이지 기술과 저속 정밀 드릴링을 조합하면 측정이 가능합니다. 유리섬유 강화 플라스틱(GFRP)은 복합재료 측정 모드를 사용하며, 섬유 방향에 따른 이방성을 고려한 해석 알고리즘이 적용됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "CFRP(탄소섬유강화플라스틱) 복합재료도 잔류응력 측정이 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가능합니다. CFRP는 매트릭스(에폭시)와 탄소섬유 사이의 열팽창계수 불일치로 적층 공정 중 상당한 잔류응력이 발생합니다. MTS3000-Restan 복합재료 모드에서는 저속 드릴링 슬라이드를 사용해 홀 주변 국부 용융을 방지하고, 더미 게이지로 열 영향을 보상합니다. 단, 복합재료는 깊이별 응력 분포가 불균일하므로 Integral Method로 해석합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "플라스틱 측정 시 금속과 다른 점은 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "세 가지 핵심 차이가 있습니다. ①열적 영향: 폴리머는 금속 대비 열팽창계수가 수~수십 배 높아 드릴링 열이 곧바로 측정 오차로 이어집니다. 더미 게이지 기술로 보상합니다. ②크리프: 점탄성 특성 때문에 응력 이완 후에도 서서히 변형이 진행됩니다. 드릴링 직후 빠른 데이터 취득이 필수입니다. ③전용 로제트 게이지 부재: 플라스틱 전용 스트레인게이지 로제트가 시중에 없어 더미 게이지 보상 시편을 별도 구성해야 합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "사출물 잔류응력은 어디서 주로 발생하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "사출 성형 중 잔류응력은 주로 ①게이트 주변(재료 유입구, 높은 전단 응력), ②두꺼운 부분과 얇은 부분의 경계(냉각속도 차이로 인한 온도 구배), ③보스·리브 주변(구조 불연속부), ④금형 접촉면(표면 급냉에 의한 압축 응력)에서 발생합니다. 이 위치들을 중점 측정하면 제품 변형과 파손 위험을 예측할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "복합재료의 잔류응력이 왜 문제가 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "복합재료(CFRP·GFRP)는 적층 경화 과정에서 층간 계면에 잔류응력이 집중됩니다. 이 응력이 임계값을 초과하면 층간 박리(Delamination), 기지 균열(Matrix Cracking), 섬유-기지 계면 파손이 발생합니다. 항공우주·자동차 구조 부품에서는 피로 하중과 잔류응력이 중첩되어 예상보다 빨리 파손이 일어나므로 설계 단계 및 제조 공정 검증에 잔류응력 측정이 필수입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "PC/ABS 블렌드나 나일론+유리섬유 강화재 같은 복합 소재도 측정 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가능합니다. PC/ABS 블렌드, PA+GF(나일론+유리섬유), PP+GF, POM, PEEK 등 복합 소재도 소재의 탄성계수(E)와 포아송비(ν)가 알려져 있으면 잔류응력 계산이 가능합니다. 씨앤디테크는 측정 전 소재 물성 확인 및 측정 조건 최적화를 지원합니다."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+
+<style>
+/* ── 페이지 전용 스타일 ── */
+.pr-section {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--line);
+}
+.pr-section:last-child { border-bottom: none; }
+.pr-section-title {
+  font-family: 'Space Grotesk', 'Pretendard', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+  padding-left: 14px;
+  border-left: 4px solid var(--accent);
+  line-height: 1.3;
+}
+.pr-section-sub {
+  font-size: 13px;
+  color: var(--text-mute);
+  margin-bottom: 24px;
+  padding-left: 18px;
+}
+
+/* 스탯 카드 */
+.pr-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+@media (max-width: 720px) { .pr-stat-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 420px) { .pr-stat-grid { grid-template-columns: 1fr; } }
+.pr-stat-card {
+  padding: 22px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+}
+.pr-stat-card .stat-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.pr-stat-card .stat-label {
+  font-size: 12px;
+  color: var(--text-mute);
+  line-height: 1.5;
+}
+
+/* 소재 그리드 */
+.pr-material-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+@media (max-width: 640px) { .pr-material-grid { grid-template-columns: repeat(2,1fr); } }
+.pr-material-card {
+  padding: 18px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.pr-material-card .mat-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+}
+.pr-material-card .mat-code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.pr-material-card .mat-note {
+  font-size: 12px;
+  color: var(--text-mute);
+  line-height: 1.4;
+}
+
+/* 비교 테이블 */
+.pr-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 20px 0;
+}
+.pr-compare-table th {
+  background: var(--charcoal);
+  color: #fff;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+}
+.pr-compare-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-dim);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.pr-compare-table tr:nth-child(even) td { background: var(--bg-card); }
+.pr-compare-table .badge-ok {
+  display: inline-block;
+  padding: 2px 8px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.pr-compare-table .badge-caution {
+  display: inline-block;
+  padding: 2px 8px;
+  background: #fff3e0;
+  color: #e65100;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* 기술 도전 카드 */
+.pr-challenge-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+@media (max-width: 600px) { .pr-challenge-grid { grid-template-columns: 1fr; } }
+.pr-challenge-card {
+  padding: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.pr-challenge-card .challenge-label {
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: var(--accent-deep);
+  background: var(--orange-tint);
+  border: 1px solid var(--orange-line);
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.pr-challenge-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+.pr-challenge-card p {
+  font-size: 13px;
+  color: var(--text-mute);
+  line-height: 1.6;
+  margin: 0;
+}
+.pr-challenge-card .solution {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--accent-deep);
+  font-weight: 600;
+}
+
+/* 절차 스텝 */
+.pr-step-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+@media (max-width: 720px) { .pr-step-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 420px) { .pr-step-grid { grid-template-columns: 1fr; } }
+.pr-step {
+  padding: 18px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.pr-step .step-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+}
+.pr-step .step-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+.pr-step .step-desc {
+  font-size: 12px;
+  color: var(--text-mute);
+  line-height: 1.5;
+}
+
+/* 이미지 래퍼 */
+.pr-img-wrap {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  margin: 20px 0;
+}
+.pr-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.pr-img-wrap figcaption {
+  font-size: 12px;
+  color: var(--text-mute);
+  padding: 8px 14px;
+  border-top: 1px solid var(--line);
+}
+.pr-img-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0;
+}
+@media (max-width: 560px) { .pr-img-duo { grid-template-columns: 1fr; } }
+
+/* 사례 박스 */
+.pr-case-box {
+  padding: 28px;
+  background: var(--orange-tint);
+  border: 1px solid var(--orange-line);
+  border-radius: var(--radius);
+  margin: 24px 0;
+}
+.pr-case-box .case-tag {
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: var(--accent-deep);
+  margin-bottom: 8px;
+  letter-spacing: 0.08em;
+}
+.pr-case-box h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+.pr-case-box p {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* 스펙 박스 */
+.pr-spec-box {
+  background: var(--orange-tint);
+  border: 1px solid var(--orange-line);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin: 20px 0;
+}
+.pr-spec-box h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 14px;
+}
+.pr-spec-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+  align-items: flex-start;
+  font-size: 13px;
+}
+.pr-spec-row .spec-key {
+  font-weight: 700;
+  color: var(--accent-deep);
+  min-width: 160px;
+  flex-shrink: 0;
+}
+.pr-spec-row .spec-val {
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+@media (max-width: 520px) {
+  .pr-spec-row { flex-direction: column; gap: 2px; }
+  .pr-spec-row .spec-key { min-width: auto; }
+}
+
+/* FAQ */
+.pr-faq details {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.pr-faq summary {
+  cursor: pointer;
+  padding: 18px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--charcoal);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.pr-faq summary .faq-icon {
+  flex-shrink: 0;
+  color: var(--text-mute);
+}
+.pr-faq .faq-body {
+  padding: 0 20px 18px;
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.7;
+  border-top: 1px solid var(--line);
+}
+.pr-faq .faq-body p { margin: 12px 0 0; }
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav-wrap">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:var(--charcoal)">CND TECH</span>
+    </a>
+    <nav class="main-nav">
+      <a href="../about.html">회사소개</a>
+      <a href="../products.html">사업분야·제품</a>
+      <a href="../projects.html">주요실적</a>
+      <a href="index.html" class="active">기술자료</a>
+      <a href="../contact.html">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">PLASTIC · POLYMER · COMPOSITE · ASTM E837</div>
+      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(26px,4.5vw,52px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">플라스틱·사출물·복합재료<br>잔류응력 측정 가이드</h1>
+      <p style="font-size:16px; color:var(--text-dim); max-width:760px; line-height:1.8; margin-bottom:0;">ABS·PC·HDPE·PP·PA(나일론)·POM·테프론(PTFE)·CFRP·GFRP 등 다양한 비금속 소재에 대한 홀드릴링 잔류응력 측정 원리, 측정 기술, 사례를 정리합니다. 씨앤디테크는 SINT MTS3000-Restan 고분자 전용 모드로 ASTM E837 기준 측정 용역 및 장비 공급을 제공합니다.</p>
+    </div>
+
+    <!-- 핵심 스펙 카드 -->
+    <div class="pr-stat-grid fade-in">
+      <div class="pr-stat-card">
+        <div class="stat-val">1 mm</div>
+        <div class="stat-label">드릴 홀 직경<br>μm 단위 정밀 제어</div>
+      </div>
+      <div class="pr-stat-card">
+        <div class="stat-val">더미게이지</div>
+        <div class="stat-label">열적 영향 보상 기술<br>플라스틱 측정 필수</div>
+      </div>
+      <div class="pr-stat-card">
+        <div class="stat-val">저속</div>
+        <div class="stat-label">드릴링 슬라이드<br>국부 용융·연소 방지</div>
+      </div>
+      <div class="pr-stat-card">
+        <div class="stat-val">ASTM</div>
+        <div class="stat-label">E837 기준 해석<br>공식 성적서 발행</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 본문 ── -->
+<section style="padding:0 0 100px;">
+  <div class="container" style="max-width:880px;">
+
+    <!-- Section 1: 왜 플라스틱 잔류응력이 중요한가 -->
+    <div class="pr-section fade-in">
+      <h2 class="pr-section-title">플라스틱·고분자 소재에 잔류응력이 발생하는 이유</h2>
+      <p class="pr-section-sub">사출 성형·경화·압출 공정별 주요 원인</p>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:20px;">
+        플라스틱 산업은 기술 응용 분야에서 철강 산업을 앞질렀을 만큼 광범위하게 사용되고 있습니다. 그러나 제조 공정에서 재료 내부에 유발되는 잔류응력은 <strong>치수 불안정, 환경응력균열(ESC), 피로 파괴</strong>의 주원인이 됩니다. 정확한 기계적 특성화를 위해 잔류응력 측정이 필수적입니다.
+      </p>
+
+      <table class="pr-compare-table">
+        <thead>
+          <tr>
+            <th>제조 공정</th>
+            <th>잔류응력 발생 원인</th>
+            <th>주요 발생 위치</th>
+            <th>대표 소재</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>사출 성형</strong></td>
+            <td>금형 내 냉각 불균일, 게이트 부근 전단 응력, 표면-내부 온도 구배</td>
+            <td>게이트 주변, 두께 변화부, 보스·리브</td>
+            <td>ABS, PC, PP, PA, POM</td>
+          </tr>
+          <tr>
+            <td><strong>복합재 적층 경화</strong></td>
+            <td>매트릭스-섬유 열팽창계수 불일치, 화학적 경화 수축</td>
+            <td>층간 계면, 두께 방향 전체</td>
+            <td>CFRP, GFRP, 에폭시 복합재</td>
+          </tr>
+          <tr>
+            <td><strong>압출 성형</strong></td>
+            <td>다이 출구에서의 급냉, 인발 장력</td>
+            <td>표면층(압축), 내부(인장)</td>
+            <td>HDPE, PTFE, PVC</td>
+          </tr>
+          <tr>
+            <td><strong>열성형·가공</strong></td>
+            <td>불균일 가열·냉각, 절삭 가공 열</td>
+            <td>가공면 근방, 굽힘 가공부</td>
+            <td>PC, PMMA, ABS</td>
+          </tr>
+          <tr>
+            <td><strong>접착·도장·코팅</strong></td>
+            <td>경화 수축, 열팽창계수 불일치</td>
+            <td>코팅층과 기재 계면</td>
+            <td>GF 강화재 포함 소재</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Section 2: 측정 가능 소재 목록 -->
+    <div class="pr-section fade-in">
+      <h2 class="pr-section-title">측정 가능 소재 목록</h2>
+      <p class="pr-section-sub">MTS3000-Restan 고분자·복합재료 모드 대응 소재</p>
+
+      <p style="font-size:14px; color:var(--text-dim); line-height:1.7; margin-bottom:20px;">
+        소재의 <strong>탄성계수(E)와 포아송비(ν)</strong>가 알려진 경우 대부분 측정이 가능합니다. 소재 물성값을 모르는 경우에도 씨앤디테크와 상담을 통해 참조값 적용 여부를 검토합니다.
+      </p>
+
+      <div class="pr-material-grid">
+        <div class="pr-material-card">
+          <div class="mat-code">ABS</div>
+          <div class="mat-name">아크릴로니트릴 부타디엔 스티렌</div>
+          <div class="mat-note">자동차 내장재, 가전 케이스, 전자 하우징</div>
+        </div>
+        <div class="pr-material-card">
+          <div class="mat-code">PC</div>
+          <div class="mat-name">폴리카보네이트</div>
+          <div class="mat-note">광학 렌즈, 헬멧 쉘, 의료기기 투명 파트</div>
+        </div>
+        <div class="pr-material-card">
+          <div class="mat-code">HDPE / PP</div>
+          <div class="mat-name">고밀도폴리에틸렌 / 폴리프로필렌</div>
+          <div class="mat-note">파이프, 탱크, 냉장고 내부 파트</div>
+        </div>
+        <div class="pr-material-card">
+          <div class="mat-code">PA (나일론)</div>
+          <div class="mat-name">폴리아미드 PA6 / PA66</div>
+          <div class="mat-note">기어, 베어링 케이지, 자동차 언더후드</div>
+        </div>
+        <div class="pr-material-card">
+          <div class="mat-code">POM</div>
+          <div class="mat-name">폴리아세탈 (델린)</div>
+          <div class="mat-note">정밀 기구 부품, 슬라이더, 클립</div>
+        </div>
+        <div class="pr-material-card">
+          <div class="mat-code">PC/ABS 블렌드</div>
+          <div class="mat-name">PC+ABS 합금 소재</div>
+          <div class="mat-note">자동차 범퍼, IT 기기 외장재</div>
+        </div>
+        <div class="pr-material-card">
+          <div class="mat-code">PTFE (테프론)</div>
+          <div class="mat-name">폴리테트라플루오로에틸렌</div>
+          <div class="mat-note">씰, 개스킷, 화학 설비 부품 — 고열팽창계수 특별 보상 필요</div>
+        </div>
+        <div class="pr-material-card">
+          <div class="mat-code">PEEK</div>
+          <div class="mat-name">폴리에테르에테르케톤</div>
+          <div class="mat-note">항공우주·의료 고성능 부품</div>
+        </div>
+        <div class="pr-material-card">
+          <div class="mat-code">PMMA</div>
+          <div class="mat-name">폴리메틸메타크릴레이트 (아크릴)</div>
+          <div class="mat-note">광학 부품, 디스플레이 커버</div>
+        </div>
+        <div class="pr-material-card">
+          <div class="mat-code">CFRP</div>
+          <div class="mat-name">탄소섬유 강화 플라스틱</div>
+          <div class="mat-note">항공우주, 자동차 구조 부품, 스포츠 용품 — Integral Method 해석</div>
+        </div>
+        <div class="pr-material-card">
+          <div class="mat-code">GFRP</div>
+          <div class="mat-name">유리섬유 강화 플라스틱</div>
+          <div class="mat-note">선박 구조재, 전기 절연 부품, 풍력 블레이드</div>
+        </div>
+        <div class="pr-material-card">
+          <div class="mat-code">PA+GF / PP+GF</div>
+          <div class="mat-name">유리섬유 강화 나일론·PP</div>
+          <div class="mat-note">자동차 내장 구조부품, 엔지니어링 케이스</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: 플라스틱 측정의 기술적 도전과 해결책 -->
+    <div class="pr-section fade-in">
+      <h2 class="pr-section-title">플라스틱 측정의 기술적 도전과 해결책</h2>
+      <p class="pr-section-sub">금속 대비 3가지 핵심 차이 — MTS3000 특수 버전의 대응 방법</p>
+
+      <div class="pr-challenge-grid">
+        <div class="pr-challenge-card">
+          <div class="challenge-label">CHALLENGE 01</div>
+          <h4>열적 영향 — 높은 열팽창계수</h4>
+          <p>폴리머는 금속 대비 열팽창계수가 수~수십 배 높아(예: ABS ≈ 70 μm/m·K vs 강재 ≈ 12 μm/m·K) 드릴링 시 발생하는 아주 작은 온도 변화도 측정 오차로 이어집니다.</p>
+          <div class="solution">✔ 해결: 더미 게이지(Dummy Gauge) 기술 — 무응력 시편에 동일 게이지를 설치하여 온도 변화를 실시간 보상</div>
+        </div>
+        <div class="pr-challenge-card">
+          <div class="challenge-label">CHALLENGE 02</div>
+          <h4>크리프 — 점탄성 변형</h4>
+          <p>폴리머는 점탄성 재료로, 응력 해방 후에도 시간에 따라 변형이 서서히 진행됩니다(크리프). 이는 측정값의 시간 의존성을 만들어 정확한 잔류응력 계산을 방해합니다.</p>
+          <div class="solution">✔ 해결: 드릴링 직후 고속 데이터 취득 + 드릴링 휴지시간 자동 설정으로 기계적 영향 최소화</div>
+        </div>
+        <div class="pr-challenge-card">
+          <div class="challenge-label">CHALLENGE 03</div>
+          <h4>전용 로제트 게이지 부재</h4>
+          <p>금속용과 달리 플라스틱 전용 스트레인게이지 로제트가 시중에 없습니다. 일반 로제트 사용 시 온도 보상이 불완전하여 측정 오차가 발생합니다.</p>
+          <div class="solution">✔ 해결: 무응력 시편에 더미 게이지를 별도 설치, 테스트 부품과 동일 환경에서 평형 유지</div>
+        </div>
+        <div class="pr-challenge-card">
+          <div class="challenge-label">CHALLENGE 04</div>
+          <h4>복합재료의 불균일 응력장</h4>
+          <p>CFRP·GFRP 복합재료는 깊이별 응력 분포가 균일하지 않습니다. 비균질 거동으로 측정 위치에 따라 잔류응력 편차가 큽니다. 저속 드릴링 없이는 섬유 손상 및 국부 연소가 발생합니다.</p>
+          <div class="solution">✔ 해결: 저속 전용 드릴링 슬라이드 + Integral Method 해석으로 깊이별 불균일 응력 계산</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4: MTS3000 고분자 모드 -->
+    <div class="pr-section fade-in">
+      <h2 class="pr-section-title">SINT MTS3000-Restan 고분자·복합재료 전용 모드</h2>
+      <p class="pr-section-sub">일반 금속 측정 버전과 차별화된 플라스틱 전용 기능</p>
+
+      <!-- TODO: 로컬 저장 후 ../assets/images/plastic-residual-stress/mts3000-polymer-overview.png -->
+      <figure class="pr-img-wrap">
+        <img src="https://blog.kakaocdn.net/dna/pvOWs/btsJL02S5zG/AAAAAAAAAAAAAAAAAAAAAAeetGH67lr-1gNkaYOQwF2OeTDX-p7msyslM81dGeh-/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=lJY4RFPDskxs4T80U9cZ%2BWGBzdg%3D"
+             alt="SINT MTS3000-Restan 고분자 잔류응력 측정 시스템 전용 버전"
+             loading="lazy">
+        <figcaption>MTS3000-Restan 플라스틱·고분자 소재 전용 측정 버전 (출처: 씨앤디테크 블로그)</figcaption>
+      </figure>
+
+      <div class="pr-spec-box">
+        <h4>고분자·복합재료 전용 버전 주요 사양</h4>
+        <div class="pr-spec-row"><span class="spec-key">드릴 홀 직경</span><span class="spec-val">약 1mm (고정밀 스테핑 모터, μm 단위 제어)</span></div>
+        <div class="pr-spec-row"><span class="spec-key">드릴링 방식</span><span class="spec-val">저속 전용 드릴링 슬라이드 — 국부 용융·연소 방지</span></div>
+        <div class="pr-spec-row"><span class="spec-key">열 보상 기술</span><span class="spec-val">더미 게이지(Dummy Gauge) — 무응력 시편과 동일 환경 평형</span></div>
+        <div class="pr-spec-row"><span class="spec-key">크리프 대응</span><span class="spec-val">드릴링 휴지시간 자동 설정 — 열응력·기계 응력 최소화</span></div>
+        <div class="pr-spec-row"><span class="spec-key">제어 방식</span><span class="spec-val">전자 제어 시스템 + 드릴링 제어 소프트웨어 — 완전 자동화</span></div>
+        <div class="pr-spec-row"><span class="spec-key">원격 제어</span><span class="spec-val">원격 작동 — 작업자 외부 영향(체온·진동) 최소화</span></div>
+        <div class="pr-spec-row"><span class="spec-key">규격 대응</span><span class="spec-val">ASTM E837 기준 측정 절차 및 잔류응력 해석</span></div>
+        <div class="pr-spec-row"><span class="spec-key">복합재 해석</span><span class="spec-val">Integral Method — 깊이별 불균일 응력 분포 계산</span></div>
+      </div>
+
+      <div class="pr-img-duo">
+        <!-- TODO: 로컬 저장 후 ../assets/images/plastic-residual-stress/measurement-setup-1.jpg -->
+        <figure class="pr-img-wrap" style="margin:0;">
+          <img src="https://blog.kakaocdn.net/dna/ngux6/btsJMrsayq0/AAAAAAAAAAAAAAAAAAAAAFc5qRAeOR0nHqxmat83K71KbLehQw5uPPPmzZytBfN4/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=YNP5qYklyHaRhqoT2w7ZeVYhYdg%3D"
+               alt="플라스틱 소재 잔류응력 측정 셋업"
+               loading="lazy">
+          <figcaption>고분자 소재 측정 셋업</figcaption>
+        </figure>
+        <!-- TODO: 로컬 저장 후 ../assets/images/plastic-residual-stress/measurement-setup-2.jpg -->
+        <figure class="pr-img-wrap" style="margin:0;">
+          <img src="https://blog.kakaocdn.net/dna/W2vzT/btsJM3j3OUQ/AAAAAAAAAAAAAAAAAAAAAGALtWV_msLRpfOkWEt7nTcHve1oSkCx5m3WS4BgmeQ-/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=FOLGfo86iaDqTN0rKh8x7q%2BBAEY%3D"
+               alt="MTS3000 플라스틱 소재 드릴링 근접 촬영"
+               loading="lazy">
+          <figcaption>μm 단위 정밀 드릴링 진행</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Section 5: 측정 절차 -->
+    <div class="pr-section fade-in">
+      <h2 class="pr-section-title">플라스틱·고분자 소재 측정 절차</h2>
+      <p class="pr-section-sub">사전 준비부터 성적서 발행까지 4단계</p>
+
+      <div class="pr-step-grid">
+        <div class="pr-step">
+          <div class="step-num">STEP 01</div>
+          <div class="step-title">소재 확인 및 게이지 선정</div>
+          <div class="step-desc">소재 탄성계수(E)·포아송비(ν) 확인. 더미 게이지용 무응력 시편 준비. 측정 위치 지정.</div>
+        </div>
+        <div class="pr-step">
+          <div class="step-num">STEP 02</div>
+          <div class="step-title">게이지 부착 및 평형</div>
+          <div class="step-desc">측정 위치와 더미 시편에 로제트 게이지 부착. 동일 환경에서 온도 평형 확인. 열 드리프트 체크.</div>
+        </div>
+        <div class="pr-step">
+          <div class="step-num">STEP 03</div>
+          <div class="step-title">자동 드릴링 및 데이터 취득</div>
+          <div class="step-desc">저속 드릴링 슬라이드로 단계별 드릴링. 더미 게이지로 열 보상하며 변형률 연속 취득. 드릴링 휴지시간 자동 적용.</div>
+        </div>
+        <div class="pr-step">
+          <div class="step-num">STEP 04</div>
+          <div class="step-title">ASTM E837 해석 및 보고서</div>
+          <div class="step-desc">Integral Method로 깊이별 주응력(σ₁, σ₂) 및 방향(θ) 계산. Excel·PDF 공식 보고서 발행.</div>
+        </div>
+      </div>
+
+      <!-- TODO: 로컬 저장 후 ../assets/images/plastic-residual-stress/measurement-photo-3.jpg -->
+      <figure class="pr-img-wrap">
+        <img src="https://blog.kakaocdn.net/dna/mwPnk/btsJMg5ecgs/AAAAAAAAAAAAAAAAAAAAALDoL2SBpr5iO7Jed7u9K1tefqkn5__hp-XPzFJcL7sd/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=noke35fKZnwxRFsVoYPqjYCHPTs%3D"
+             alt="플라스틱 소재 잔류응력 측정 현장 사진"
+             loading="lazy">
+        <figcaption>자동화 드릴링 및 스트레인게이지 신호 취득 과정</figcaption>
+      </figure>
+    </div>
+
+    <!-- Section 6: 측정 사례 -->
+    <div class="pr-section fade-in">
+      <h2 class="pr-section-title">측정 사례</h2>
+      <p class="pr-section-sub">국내 실제 적용 사례</p>
+
+      <!-- 사례 1: 냉장고 칸막이 -->
+      <div class="pr-case-box">
+        <div class="case-tag">CASE 01 · 사출물 잔류응력</div>
+        <h4>냉장고 내부 칸막이 잔류응력 측정</h4>
+        <p>국내 냉장고 내부 칸막이(HDPE 계열 사출품)에 대해 ASTM E837-13 규정에 따라 잔류응력 측정을 수행했습니다. 냉각 불균일로 인한 잔류응력 분포를 정량화하여 치수 변형(뒤틀림) 원인을 규명하는 데 활용되었습니다.</p>
+      </div>
+
+      <div class="pr-img-duo">
+        <!-- TODO: 로컬 저장 후 ../assets/images/plastic-residual-stress/fridge-sample-1.jpg -->
+        <figure class="pr-img-wrap" style="margin:0;">
+          <img src="https://blog.kakaocdn.net/dna/c0mCWT/btspNgefiNd/AAAAAAAAAAAAAAAAAAAAAPDx6jg8zw8xzfHDt_KCWJ5A07FiFm0rlwz6Eu8QTAsF/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=rPkobAdu4ap%2FrNNbd7IvQeUIgac%3D"
+               alt="냉장고 칸막이 플라스틱 잔류응력 측정 시편"
+               loading="lazy">
+          <figcaption>냉장고 내부 칸막이(HDPE) 측정 준비</figcaption>
+        </figure>
+        <!-- TODO: 로컬 저장 후 ../assets/images/plastic-residual-stress/fridge-sample-2.jpg -->
+        <figure class="pr-img-wrap" style="margin:0;">
+          <img src="https://blog.kakaocdn.net/dna/cDr5uO/btspRK7dayY/AAAAAAAAAAAAAAAAAAAAAJ3OWl7-M0xE00iU0KkDSOK14iDX9hGNLhIAtTG3gayU/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=aagE9lVjA7G9%2BAgrQv9H%2FfnB%2FMo%3D"
+               alt="냉장고 칸막이 게이지 부착 측정 사진"
+               loading="lazy">
+          <figcaption>로제트 게이지 부착 후 측정 진행</figcaption>
+        </figure>
+      </div>
+
+      <!-- TODO: 로컬 저장 후 ../assets/images/plastic-residual-stress/fridge-result-graph.jpg -->
+      <figure class="pr-img-wrap">
+        <img src="https://blog.kakaocdn.net/dna/bmYMFI/btspUnQTguC/AAAAAAAAAAAAAAAAAAAAABOoJS1qBpinOwsbh1rF84I1-OkWnZq-H3mdQxjmsD0V/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=TohyrverLQAjZjfoUmYDw2gg%2Fq0%3D"
+             alt="플라스틱 사출물 잔류응력 측정 결과 그래프"
+             loading="lazy">
+        <figcaption>ASTM E837 기준 잔류응력 해석 결과</figcaption>
+      </figure>
+
+      <!-- 사례 2: 복합재료 -->
+      <div class="pr-case-box" style="margin-top:32px;">
+        <div class="case-tag">CASE 02 · 복합재료 잔류응력</div>
+        <h4>CFRP/GFRP 복합재료 층간 잔류응력 측정</h4>
+        <p>복합재료의 잔류응력은 매트릭스와 보강 섬유 사이의 선형 열팽창계수 불일치, 그리고 매트릭스 경화 수축에 의해 발생합니다. MTS3000-Restan 복합재료 모드를 사용하여 적층 방향별 응력 분포를 측정하고, 층간 박리(Delamination) 위험 구간을 정량적으로 평가합니다.</p>
+      </div>
+
+      <div class="pr-img-duo">
+        <!-- TODO: 로컬 저장 후 ../assets/images/plastic-residual-stress/composite-overview.jpg -->
+        <figure class="pr-img-wrap" style="margin:0;">
+          <img src="https://blog.kakaocdn.net/dna/luAOy/btsph8Us4iK/AAAAAAAAAAAAAAAAAAAAAE2BMJuJH8gXfc9TGjo1aNczm4IQ-JMUjspxYl1wvp6S/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=XBVkKpDXRoPSeMZCZgc3FBIpGK8%3D"
+               alt="복합재료 CFRP 잔류응력 측정 개요"
+               loading="lazy">
+          <figcaption>CFRP/GFRP 복합재 잔류응력 측정</figcaption>
+        </figure>
+        <!-- TODO: 로컬 저장 후 ../assets/images/plastic-residual-stress/composite-structure.png -->
+        <figure class="pr-img-wrap" style="margin:0;">
+          <img src="https://blog.kakaocdn.net/dna/cE2aaD/btspl6VELwx/AAAAAAAAAAAAAAAAAAAAADCjQ7HEHFftCdHSx4T3O0KnrgIqa-L40Bub1kM4I_1Z/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=GcRhewb11Xxo00lgfmFYFeb9JW8%3D"
+               alt="복합재료 매트릭스-섬유 구조 및 잔류응력 발생 원리"
+               loading="lazy">
+          <figcaption>복합재료 구조 — 매트릭스+보강섬유 계면 응력</figcaption>
+        </figure>
+      </div>
+
+      <div class="pr-img-duo">
+        <!-- TODO: 로컬 저장 후 ../assets/images/plastic-residual-stress/composite-measurement.jpg -->
+        <figure class="pr-img-wrap" style="margin:0;">
+          <img src="https://blog.kakaocdn.net/dna/bqLVwj/btspflmuQH9/AAAAAAAAAAAAAAAAAAAAADts6EytKsNRdWY_olkzfJv7hJmIK8vGhsV_m6wIHsHO/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=0dkCGQusFL%2B3NGSFpMk0qb93SSw%3D"
+               alt="복합재료 현장 잔류응력 측정"
+               loading="lazy">
+          <figcaption>복합재 표면 측정 셋업</figcaption>
+        </figure>
+        <!-- TODO: 로컬 저장 후 ../assets/images/plastic-residual-stress/composite-result.png -->
+        <figure class="pr-img-wrap" style="margin:0;">
+          <img src="https://blog.kakaocdn.net/dna/xHrye/btspnkTpJ4M/AAAAAAAAAAAAAAAAAAAAAP0LfecAPrZp1uASE8s9dJZX1LzprM5U5Pgs-J9fw2jm/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=b76t4JUVbVWXwUpZQRvocWmUJvM%3D"
+               alt="복합재료 잔류응력 측정 결과 데이터"
+               loading="lazy">
+          <figcaption>Integral Method 잔류응력 해석 결과</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Section 7: 소재별 측정 난이도 비교 -->
+    <div class="pr-section fade-in">
+      <h2 class="pr-section-title">소재별 측정 난이도 및 주의사항</h2>
+      <p class="pr-section-sub">각 소재 특성에 따른 측정 기술 포인트</p>
+
+      <table class="pr-compare-table">
+        <thead>
+          <tr>
+            <th>소재</th>
+            <th>열팽창계수 (μm/m·K)</th>
+            <th>측정 난이도</th>
+            <th>핵심 주의사항</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ABS</strong></td>
+            <td>60~80</td>
+            <td><span class="badge-caution">보통</span></td>
+            <td>더미 게이지 필수, 드릴링 속도 조절</td>
+          </tr>
+          <tr>
+            <td><strong>PC</strong></td>
+            <td>65~70</td>
+            <td><span class="badge-caution">보통</span></td>
+            <td>투명 소재 — 게이지 부착 표면 준비 중요</td>
+          </tr>
+          <tr>
+            <td><strong>HDPE / PP</strong></td>
+            <td>100~200</td>
+            <td><span class="badge-caution">높음</span></td>
+            <td>매우 높은 열팽창계수, 크리프 크므로 빠른 데이터 취득 필수</td>
+          </tr>
+          <tr>
+            <td><strong>PA (나일론)</strong></td>
+            <td>70~110</td>
+            <td><span class="badge-caution">보통</span></td>
+            <td>흡습에 의한 치수 변화 주의, 측정 전 건조 상태 확인</td>
+          </tr>
+          <tr>
+            <td><strong>POM</strong></td>
+            <td>100~150</td>
+            <td><span class="badge-caution">높음</span></td>
+            <td>가공성은 좋으나 높은 열팽창계수로 보상 충분히</td>
+          </tr>
+          <tr>
+            <td><strong>PTFE (테프론)</strong></td>
+            <td>100~250</td>
+            <td><span class="badge-caution">매우 높음</span></td>
+            <td>최고 수준의 열팽창계수, 전용 프로토콜 적용, 사전 상담 필수</td>
+          </tr>
+          <tr>
+            <td><strong>CFRP</strong></td>
+            <td>섬유방향: ~0 / 수직: ~30</td>
+            <td><span class="badge-caution">높음</span></td>
+            <td>이방성 재료, Integral Method 해석, 저속 드릴링 슬라이드 필수</td>
+          </tr>
+          <tr>
+            <td><strong>GFRP</strong></td>
+            <td>섬유방향: ~10 / 수직: ~40</td>
+            <td><span class="badge-ok">보통</span></td>
+            <td>CFRP 대비 이방성 완화, 층간 계면 측정 위치 중요</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Section 8: 씨앤디테크 서비스 -->
+    <div class="pr-section fade-in">
+      <h2 class="pr-section-title">씨앤디테크 측정 솔루션</h2>
+      <p class="pr-section-sub">장비 공급 · 측정 용역 · 교육 모두 지원</p>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:28px;">
+        <div style="padding:20px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);">
+          <div style="font-size:13px; font-family:'JetBrains Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:8px;">장비 공급</div>
+          <div style="font-size:14px; color:var(--text-dim); line-height:1.7;">SINT MTS3000-Restan 판매<br>플라스틱·복합재료 전용 버전<br>소모품·스트레인게이지 공급<br>시스템 설치 · 사용 교육</div>
+        </div>
+        <div style="padding:20px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);">
+          <div style="font-size:13px; font-family:'JetBrains Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:8px;">측정 용역</div>
+          <div style="font-size:14px; color:var(--text-dim); line-height:1.7;">현장 방문 또는 시편 수거 측정<br>ASTM E837 기준 공식 성적서<br>데이터 해석 · 결과 보고서<br>사출물 · 복합재 전문 대응</div>
+        </div>
+      </div>
+
+      <p style="font-size:14px; color:var(--text-mute); margin-bottom:14px;">관련 기술 자료:</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="residual-stress.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 홀드릴링 잔류응력 측정 (ASTM E837)</a>
+        <a href="what-is-residual-stress.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 잔류응력이란? 기초 개념</a>
+        <a href="strain-gauge.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 스트레인게이지 원리</a>
+        <a href="strain-gauge-bonding.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 스트레인게이지 부착 방법</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FAQ 섹션 ── -->
+<section style="padding:48px 0 0;">
+  <div class="container" style="max-width:880px;">
+    <div class="fade-in">
+      <h2 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:8px; padding-left:14px; border-left:4px solid var(--accent);">자주 묻는 질문 (FAQ)</h2>
+      <p style="font-size:13px; color:var(--text-mute); margin-bottom:28px; padding-left:18px;">ABS·PC·HDPE·테프론·CFRP 등 재질별 측정 가능 여부 및 기술 질문</p>
+
+      <div class="pr-faq">
+
+        <details>
+          <summary>
+            <span>ABS, PC, HDPE, PP 등 일반 플라스틱도 잔류응력 측정이 가능한가요?</span>
+            <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-body"><p>가능합니다. <strong>ABS(아크릴로니트릴-부타디엔-스티렌), PC(폴리카보네이트), HDPE(고밀도폴리에틸렌), PP(폴리프로필렌), PA(나일론), POM(폴리아세탈)</strong> 등 대부분의 엔지니어링 플라스틱은 SINT MTS3000-Restan의 고분자 전용 측정 모드로 잔류응력을 측정할 수 있습니다. 고정밀 스테핑 모터로 1mm 홀을 μm 단위로 드릴링하며, 더미 게이지 기술로 열적 영향을 보상합니다.</p></div>
+        </details>
+
+        <details>
+          <summary>
+            <span>테프론(PTFE)이나 유리섬유 강화 플라스틱(GFRP)도 측정할 수 있나요?</span>
+            <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-body"><p>가능합니다. <strong>테프론(PTFE)</strong>은 열팽창계수가 매우 높아(100~250 μm/m·K) 특별한 온도 보상이 필요하지만, MTS3000-Restan의 더미 게이지 기술과 저속 정밀 드릴링을 조합하면 측정이 가능합니다. 사전 상담을 통해 측정 프로토콜을 최적화합니다. <strong>유리섬유 강화 플라스틱(GFRP)</strong>은 복합재료 측정 모드를 사용하며, 섬유 방향에 따른 이방성을 고려한 Integral Method 해석 알고리즘이 적용됩니다.</p></div>
+        </details>
+
+        <details>
+          <summary>
+            <span>CFRP(탄소섬유강화플라스틱) 복합재료도 잔류응력 측정이 가능한가요?</span>
+            <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-body"><p>가능합니다. CFRP는 매트릭스(에폭시)와 탄소섬유 사이의 열팽창계수 불일치로 적층 공정 중 상당한 잔류응력이 발생합니다. MTS3000-Restan 복합재료 모드에서는 <strong>저속 드릴링 슬라이드</strong>를 사용해 홀 주변 국부 용융·연소를 방지하고, 더미 게이지로 열 영향을 보상합니다. 복합재료는 깊이별 응력 분포가 불균일하므로 <strong>Integral Method</strong>로 해석하여 층간 응력을 계산합니다.</p></div>
+        </details>
+
+        <details>
+          <summary>
+            <span>플라스틱 측정 시 금속과 다른 점은 무엇인가요?</span>
+            <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-body"><p>세 가지 핵심 차이가 있습니다. <strong>① 열적 영향</strong>: 폴리머는 금속 대비 열팽창계수가 수~수십 배 높아 드릴링 열이 측정 오차로 이어집니다. 더미 게이지 기술로 보상합니다. <strong>② 크리프</strong>: 점탄성 특성 때문에 응력 이완 후에도 서서히 변형이 진행됩니다. 드릴링 직후 빠른 데이터 취득이 필수입니다. <strong>③ 전용 로제트 게이지 부재</strong>: 플라스틱 전용 스트레인게이지 로제트가 시중에 없어 더미 게이지 보상 시편을 별도로 구성해야 합니다.</p></div>
+        </details>
+
+        <details>
+          <summary>
+            <span>사출물 잔류응력은 어디서 주로 발생하나요?</span>
+            <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-body"><p>주로 <strong>① 게이트 주변</strong>(재료 유입구, 높은 전단 응력), <strong>② 두꺼운 부분과 얇은 부분의 경계</strong>(냉각속도 차이로 인한 온도 구배), <strong>③ 보스·리브 주변</strong>(구조 불연속부), <strong>④ 금형 접촉면</strong>(표면 급냉에 의한 압축 응력)에서 발생합니다. 이 위치들을 중점 측정하면 제품 변형과 파손 위험을 예측할 수 있습니다.</p></div>
+        </details>
+
+        <details>
+          <summary>
+            <span>복합재료의 잔류응력이 왜 문제가 되나요?</span>
+            <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-body"><p>복합재료(CFRP·GFRP)는 적층 경화 과정에서 층간 계면에 잔류응력이 집중됩니다. 이 응력이 임계값을 초과하면 <strong>층간 박리(Delamination), 기지 균열(Matrix Cracking), 섬유-기지 계면 파손</strong>이 발생합니다. 항공우주·자동차 구조 부품에서는 피로 하중과 잔류응력이 중첩되어 예상보다 빨리 파손이 일어나므로 설계 단계 및 제조 공정 검증에 잔류응력 측정이 필수입니다.</p></div>
+        </details>
+
+        <details>
+          <summary>
+            <span>PC/ABS 블렌드나 나일론+유리섬유 강화재 같은 복합 소재도 측정 가능한가요?</span>
+            <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-body"><p>가능합니다. <strong>PC/ABS 블렌드, PA+GF(나일론+유리섬유), PP+GF, POM, PEEK</strong> 등 복합 소재도 소재의 탄성계수(E)와 포아송비(ν)가 알려져 있으면 잔류응력 계산이 가능합니다. 소재 물성값을 모르는 경우에도 씨앤디테크와 사전 상담을 통해 참조값 적용 여부를 검토합니다.</p></div>
+        </details>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA 박스 ── -->
+<section style="padding:40px 0 80px;">
+  <div class="container" style="max-width:880px;">
+    <div class="fade-in" style="padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius);">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">플라스틱·복합재료 잔류응력 측정 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">소재 종류(ABS·PC·HDPE·PTFE·CFRP 등), 형상, 측정 위치를 알려주시면 최적 측정 방안과 견적을 안내해 드립니다. 장비 구매, 임대, 용역 측정 모두 가능합니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+        <a href="mailto:wgjeon@cndtec.co.kr" class="btn btn-ghost">wgjeon@cndtec.co.kr</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark"
+             onerror="this.style.display:'none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="residual-stress.html">잔류응력 측정</a></li><li><a href="plastic-residual-stress.html">플라스틱·복합재 잔류응력</a></li><li><a href="strain-gauge.html">스트레인게이지</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 CND TECH (씨앤디테크) · 대표 전원근</span>
+      <span>경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span>
+    </div>
+  </div>
+</footer>
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+</body>
+</html>
