@@ -63,7 +63,7 @@
     border-radius: var(--radius);
     position: relative; overflow: hidden;
     cursor: pointer; text-decoration: none;
-    background: #FFFFFF;
+    background: var(--bg);
     display: block;
     transition: box-shadow 0.3s;
   }
@@ -131,8 +131,8 @@
     .areas-preview { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
     .hero-visual { gap: 5px; margin-top: 32px; grid-template-columns: 1fr 1fr; }
     .hero-visual .hv-card { height: 120px; }
-    /* 모바일: 레이블 항상 표시 (hover 없음) */
-    .hero-visual .hv-card .hv-label { opacity: 1; transform: translateY(0); font-size: 12px; padding: 4px 10px; bottom: 8px; left: 10px; }
+    /* 모바일: hover 없으므로 레이블 숨김 */
+    .hero-visual .hv-card .hv-label { opacity: 0; pointer-events: none; }
   }
   @media (max-width: 920px) {
     .hero { padding-top: 120px; padding-bottom: 60px; }
