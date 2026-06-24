@@ -4,39 +4,205 @@
 <meta charset="UTF-8" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>진동·소음 측정 | CND TECH 씨앤디테크</title>
-<meta name="description" content="MMF 가속도계, 마이크로폰, 진동 측정 시스템 공급. IEPE/Charge 타입 가속도센서. 씨앤디테크 기술자료." />
-<meta name="robots" content="noindex, follow" />
+<title>휴대용 진동측정기 완전 가이드 — MMF VM 시리즈·ISO 10816·베어링 진단 | 씨앤디테크</title>
+<meta name="description" content="MMF VM 25 휴대용 진동측정 시스템 완전 가이드. 진동 가속도·속도·변위 3대 파라미터 비교, ISO 10816-1/-3/-6/-7 기계 상태 판정 기준, VDI 3832 베어링 진단, FFT 주파수 분석, 적용 분야별 선택 방법." />
+<meta name="keywords" content="휴대용 진동측정기, 진동측정시스템, MMF VM25, ISO 10816, VDI 3832, 기계상태감시, 베어링 진단, 진동 가속도 속도 변위, FFT 분석, 현장 진동측정" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/vibration.html" />
+<meta property="og:title" content="휴대용 진동측정기 완전 가이드 — MMF VM 시리즈·ISO 10816 | 씨앤디테크" />
+<meta property="og:description" content="MMF VM 25 휴대용 진동측정 시스템 상세 가이드. ISO 10816 기계 상태 판정, VDI 3832 베어링 진단, FFT 분석, 적용 분야별 선택 기준." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/vibration.html" />
+<meta property="og:image" content="https://blog.kakaocdn.net/dna/mu9Lq/btsK0LwItwa/AAAAAAAAAAAAAAAAAAAAADQh6BbPqMP5rqxfwMGyPgUkAuUSO_Z1lR5z1NBSXQky/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=DXsqMTbMrenc5jKJvyoPAXhIfWQ%3D" />
+<meta property="og:site_name" content="씨앤디테크 기술자료" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css?v=4">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "휴대용 진동측정기 완전 가이드 — MMF VM 시리즈·ISO 10816·베어링 진단",
+  "description": "MMF VM 25 휴대용 진동측정 시스템 상세 가이드. 진동 가속도·속도·변위 3대 파라미터, ISO 10816 기계 상태 기준, VDI 3832 베어링 진단, FFT 분석, 현장 적용 방법.",
+  "keywords": "휴대용 진동측정기, MMF VM25, ISO 10816, VDI 3832, 기계상태감시, 베어링 진단, FFT 분석",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr", "logo": {"@type": "ImageObject", "url": "https://www.cndtec.co.kr/assets/images/cnd-logo.png"}},
+  "datePublished": "2024-12-02",
+  "dateModified": "2026-06-24",
+  "inLanguage": "ko",
+  "url": "https://www.cndtec.co.kr/resources/vibration.html",
+  "image": "https://blog.kakaocdn.net/dna/mu9Lq/btsK0LwItwa/AAAAAAAAAAAAAAAAAAAAADQh6BbPqMP5rqxfwMGyPgUkAuUSO_Z1lR5z1NBSXQky/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=DXsqMTbMrenc5jKJvyoPAXhIfWQ%3D"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "진동 가속도, 속도, 변위 중 어떤 파라미터를 측정해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "측정 목적에 따라 선택합니다. 고주파 충격·베어링 결함 감지에는 가속도(m/s²), 일반 기계 상태 모니터링(ISO 10816)에는 속도(mm/s RMS)가 가장 널리 사용됩니다. 저주파 변형·불균형이 큰 대형 기계나 구조물에는 변위(mm)를 사용합니다. 대부분의 현장에서는 속도(RMS)를 기준으로 ISO 10816 기준값과 비교하는 것이 일반적입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ISO 10816과 VDI 3832의 차이는 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ISO 10816(현재 ISO 20816으로 업데이트됨)은 기계 하우징 외면에서 측정한 진동 속도를 기준으로 기계 전체 상태를 Zone A~D로 평가하는 국제규격입니다. VDI 3832는 롤러 베어링의 손상 상태를 특화하여 진단하는 독일 산업 규격으로, 베어링 계수 K(t)를 사용하여 베어링 결함을 조기에 감지합니다. 두 규격을 동시에 적용하면 기계 전체 상태와 베어링 상태를 함께 평가할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "FFT 분석은 언제 사용하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FFT(고속 푸리에 변환) 분석은 전체 진동값이 기준 초과 시 원인을 파악할 때 사용합니다. 불균형(Imbalance)은 1× RPM 주파수에서 피크가 나타나고, 미스얼라인먼트(Misalignment)는 2× RPM, 베어링 결함은 BPFI/BPFO/BSF 주파수에서 나타납니다. VM 25의 125라인 FFT 스펙트럼으로 현장에서 빠르게 주파수 분석이 가능합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "VM 25의 비접촉 측정은 어떻게 작동하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VM 25에는 마그네틱 베이스 센서 외에 비접촉 측정 기능이 있습니다. 내장 IR 적외선 온도계로 표면 온도를, 레이저 포인터로 회전 속도(RPM)를 비접촉으로 측정합니다. 센서를 물리적으로 부착할 수 없는 회전체나 고온 표면에서 유용합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "VMID 측정 포인트 자동 감지 기능은 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VM 25는 전자식 VMID(Vibration Measurement ID) 시스템을 지원합니다. 측정 포인트에 VMID 마커를 부착해두면 VM 25가 자동으로 해당 포인트를 인식하고 측정 데이터에 위치 정보를 기록합니다. 다수 기계·포인트를 관리할 때 오측정을 방지하고 PC 소프트웨어 연동 시 자동으로 데이터를 정리합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "씨앤디테크에서 VM 시리즈 데모 측정이 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 가능합니다. 씨앤디테크는 MMF VM 시리즈 취급 대리점으로 현장 데모 측정을 지원합니다. 도입 전 현장 설비에 직접 적용해 측정값과 결과를 확인하실 수 있습니다. 031-680-1225 또는 wgjeon@cndtec.co.kr로 문의해 주십시오."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-B25Y10FQK1');</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+.vb-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;background:var(--orange-tint);border:1px solid var(--orange-line);border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent-deep);font-weight:700;margin-bottom:14px;}
+.vb-h2{font-family:'Space Grotesk','Pretendard',sans-serif;font-size:clamp(20px,3.5vw,28px);font-weight:700;color:var(--charcoal);margin-bottom:8px;letter-spacing:-0.02em;}
+.vb-sub{font-size:15px;color:var(--text-dim);line-height:1.7;max-width:720px;margin-bottom:24px;}
+/* stat grid */
+.vb-stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px;}
+@media(max-width:680px){.vb-stat-grid{grid-template-columns:1fr 1fr;}}
+.vb-stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 16px;text-align:center;}
+.vb-stat-num{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:var(--accent);line-height:1;}
+.vb-stat-sub{font-size:11px;color:var(--text-mute);margin-top:4px;line-height:1.4;}
+/* param grid */
+.vb-param-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px;}
+@media(max-width:640px){.vb-param-grid{grid-template-columns:1fr;}}
+.vb-param{padding:24px 22px;border-radius:var(--radius);border:1px solid var(--line);background:var(--surface);}
+.vb-param .sym{font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:700;color:var(--accent);margin-bottom:8px;}
+.vb-param .pname{font-size:15px;font-weight:700;color:var(--charcoal);margin-bottom:4px;}
+.vb-param .pen{font-size:12px;color:var(--text-mute);margin-bottom:10px;}
+.vb-unit{display:inline-block;padding:3px 10px;background:var(--orange-tint);border:1px solid var(--orange-line);border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent-deep);font-weight:700;margin-bottom:10px;}
+.vb-param .pdesc{font-size:13px;color:var(--text-dim);line-height:1.7;margin:0 0 10px;}
+.vb-param .pwhen{font-size:12px;color:var(--text-dim);background:#f8fafc;border-radius:6px;padding:10px 12px;margin:0;line-height:1.6;}
+/* zone bar */
+.vb-zone-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px;}
+@media(max-width:560px){.vb-zone-bar{grid-template-columns:1fr 1fr;}}
+/* table */
+.vb-wrap{overflow-x:auto;margin-top:0;}
+.vb-table{width:100%;border-collapse:collapse;font-size:13px;min-width:580px;}
+.vb-table th{background:var(--charcoal);color:#fff;padding:11px 13px;text-align:center;font-weight:600;font-size:12px;}
+.vb-table th:first-child,.vb-table th:nth-child(2){text-align:left;}
+.vb-table td{padding:10px 13px;border-bottom:1px solid var(--line);color:var(--text-dim);text-align:center;vertical-align:middle;}
+.vb-table td:first-child,.vb-table td:nth-child(2){text-align:left;}
+.vb-table td:first-child{font-weight:700;color:var(--charcoal);}
+.vb-table tr:last-child td{border-bottom:none;}
+.za{color:#16a34a;font-weight:700;} .zb{color:#2563eb;font-weight:700;} .zc{color:#d97706;font-weight:700;} .zd{color:#dc2626;font-weight:700;}
+/* product layout */
+.vb-prod{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:24px;align-items:start;}
+@media(max-width:700px){.vb-prod{grid-template-columns:1fr;}}
+.vb-prod-imgs{display:flex;flex-direction:column;gap:12px;}
+.vb-prod-imgs img{width:100%;border-radius:var(--radius);display:block;}
+.vb-feat-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;}
+.vb-feat-list li{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--text-dim);line-height:1.6;}
+.vb-feat-list li::before{content:'✔';color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px;}
+.vb-spec{width:100%;border-collapse:collapse;font-size:13px;}
+.vb-spec th{background:var(--charcoal);color:#fff;padding:9px 13px;text-align:left;font-weight:600;font-size:12px;}
+.vb-spec td{padding:9px 13px;border-bottom:1px solid var(--line);color:var(--text-dim);}
+.vb-spec td:first-child{font-weight:600;color:var(--charcoal);background:#fafafa;white-space:nowrap;}
+.vb-spec tr:last-child td{border-bottom:none;}
+/* screen grid */
+.vb-screen{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;}
+@media(max-width:600px){.vb-screen{grid-template-columns:1fr 1fr;}}
+.vb-screen img{width:100%;border-radius:8px;display:block;border:1px solid var(--line);}
+.vb-screen .slabel{font-size:11.5px;color:var(--text-mute);text-align:center;margin-top:6px;}
+/* app grid */
+.vb-app{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+@media(max-width:640px){.vb-app{grid-template-columns:1fr 1fr;}}
+.vb-app-card{padding:18px 16px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);}
+.vb-app-card .aic{font-size:26px;margin-bottom:8px;}
+.vb-app-card .aname{font-size:13.5px;font-weight:700;color:var(--charcoal);margin-bottom:4px;}
+.vb-app-card .astd{font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--accent);font-weight:700;margin-bottom:6px;}
+.vb-app-card .adesc{font-size:12.5px;color:var(--text-dim);line-height:1.6;margin:0;}
+/* compare */
+.vb-cmp{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;}
+@media(max-width:560px){.vb-cmp{grid-template-columns:1fr;}}
+.vb-cmp-card{padding:22px;border-radius:var(--radius);border:1px solid var(--line);background:var(--surface);}
+.vb-cmp-card .cbadge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;margin-bottom:10px;}
+.vb-cmp-card.portable .cbadge{background:#eff6ff;color:#1d4ed8;}
+.vb-cmp-card.fixed .cbadge{background:#f0fdf4;color:#15803d;}
+.vb-cmp-card .ctitle{font-size:15px;font-weight:700;color:var(--charcoal);margin-bottom:10px;}
+.vb-cmp-card ul{margin:0;padding-left:18px;font-size:13px;color:var(--text-dim);line-height:1.8;}
+/* faq */
+.vb-faq{display:flex;flex-direction:column;gap:0;margin-top:24px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+.vb-faq-item{border-bottom:1px solid var(--line);}
+.vb-faq-item:last-child{border-bottom:none;}
+.vb-faq-q{width:100%;text-align:left;padding:18px 22px;background:var(--surface);border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14.5px;font-weight:600;color:var(--charcoal);line-height:1.5;}
+.vb-faq-q:hover{background:var(--orange-tint);}
+.fq-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;transition:transform .25s;}
+.vb-faq-item.open .fq-icon{transform:rotate(45deg);}
+.vb-faq-a{display:none;padding:16px 22px 20px;background:white;font-size:14px;color:var(--text-dim);line-height:1.8;border-top:1px solid var(--line);}
+.vb-faq-item.open .vb-faq-a{display:block;}
+</style>
 </head>
 <body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+
 <header>
   <div class="nav">
     <a href="../index.html" class="brand">
-      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
       <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
     </a>
     <nav class="nav-links">
-      <a href="../about.html">회사소개</a>
-      <a href="../products.html">사업분야·제품</a>
-      <a href="../projects.html">주요실적</a>
-      <a href="index.html" class="page-active">기술자료</a>
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
       <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
-      <a href="../contact.html">문의</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
     </nav>
     <div class="nav-cta">
       <div class="lang-toggle">
         <button class="lang-btn active" data-lang="ko">KO</button>
         <button class="lang-btn" data-lang="en">EN</button>
       </div>
-      <a href="../contact.html" class="btn btn-primary">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
       <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
     </div>
   </div>
@@ -44,53 +210,463 @@
 <div class="mobile-nav" id="mobileNav">
   <div class="mobile-nav-panel">
     <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../index.html#blog">블로그</a><a href="../contact.html">문의</a>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../contact.html">문의</a>
     <div class="nav-divider"></div>
     <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
   </div>
 </div>
-<div class="page-hero">
+
+<!-- ── HERO ───────────────────────────────────────────────────────── -->
+<section style="padding-top:160px; padding-bottom:0;">
   <div class="container">
-    <div class="breadcrumb">
-      <a href="../index.html">Home</a><span class="sep">/</span>
-      <a href="index.html">기술자료</a><span class="sep">/</span>
-      <span>진동·소음 측정</span>
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div class="vb-tag">ISO 10816 · VDI 3832 · FFT 분석</div>
+      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(30px,5vw,54px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal); line-height:1.15;">휴대용 진동측정 시스템<br>완전 가이드</h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:700px; line-height:1.75; margin-bottom:0;">독일 MMF VM 시리즈 휴대용 진동측정기로 현장에서 기계 상태를 즉시 진단합니다. 진동 가속도·속도·변위 3대 파라미터, ISO 10816 기계 상태 판정 기준, VDI 3832 베어링 진단, FFT 주파수 분석 방법을 상세히 안내합니다.</p>
     </div>
-    <div class="page-hero-tag"><span class="dot"></span><span class="mono">TECHNICAL RESOURCES · VIBRATION</span></div>
-    <h1>진동·소음 측정<br><span class="accent">가속도센서 · MMF IEPE/Charge</span></h1>
-    <p class="sub">MMF 가속도계, 마이크로폰, 진동 측정 시스템 공급. IEPE/Charge 타입 가속도센서.</p>
+    <div class="vb-stat-grid">
+      <div class="vb-stat">
+        <div class="vb-stat-num">3가지</div>
+        <div class="vb-stat-sub">측정 파라미터<br>(가속도·속도·변위)</div>
+      </div>
+      <div class="vb-stat">
+        <div class="vb-stat-num">ISO 10816</div>
+        <div class="vb-stat-sub">기계 상태 판정<br>국제규격 내장</div>
+      </div>
+      <div class="vb-stat">
+        <div class="vb-stat-num">16,000</div>
+        <div class="vb-stat-sub">측정값 내장 저장<br>(USB 다운로드)</div>
+      </div>
+      <div class="vb-stat">
+        <div class="vb-stat-num">0.2~10 kHz</div>
+        <div class="vb-stat-sub">측정 주파수 범위<br>(가속도 기준)</div>
+      </div>
+    </div>
+    <img src="https://blog.kakaocdn.net/dna/mu9Lq/btsK0LwItwa/AAAAAAAAAAAAAAAAAAAAADQh6BbPqMP5rqxfwMGyPgUkAuUSO_Z1lR5z1NBSXQky/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=DXsqMTbMrenc5jKJvyoPAXhIfWQ%3D"
+         alt="MMF VM 25 휴대용 진동측정 시스템" style="width:100%; border-radius:var(--radius); margin-top:40px; display:block;" class="fade-in" loading="lazy">
   </div>
-</div>
-<section>
-  <div class="container" style="max-width:800px;padding-top:64px;padding-bottom:80px;">
-    <div style="background:var(--bg-warm);border:1px solid var(--line);border-radius:var(--radius);padding:48px;text-align:center;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-mute);letter-spacing:0.08em;margin-bottom:16px;">// COMING SOON</div>
-      <h2 style="font-size:22px;color:var(--charcoal);margin-bottom:12px;">상세 기술자료 준비 중</h2>
-      <p style="color:var(--text-dim);font-size:14px;line-height:1.7;">MMF 가속도계, 마이크로폰, 진동 측정 시스템 공급. IEPE/Charge 타입 가속도센서 관련 상세 기술 자료를 준비 중입니다.<br>문의사항은 아래 연락처로 문의해 주세요.</p>
-      <a href="../contact.html" class="btn btn-primary" style="display:inline-flex;margin-top:24px;">제품 문의하기</a>
+</section>
+
+<!-- ── SECTION 1: 3대 파라미터 ───────────────────────────────────── -->
+<section style="padding:60px 0 0;">
+  <div class="container">
+    <div class="vb-tag">MEASUREMENT PARAMETERS</div>
+    <h2 class="vb-h2">진동 측정 3대 파라미터 — 가속도·속도·변위</h2>
+    <p class="vb-sub">진동은 가속도(a), 속도(v), 변위(d) 세 가지 물리량으로 표현됩니다. 측정 목적과 주파수 범위에 따라 최적 파라미터를 선택해야 올바른 기계 상태 진단이 가능합니다.</p>
+    <div class="vb-param-grid fade-in">
+      <div class="vb-param">
+        <div class="sym">a</div>
+        <div class="pname">가속도 (Acceleration)</div>
+        <div class="pen">Acceleration</div>
+        <span class="vb-unit">단위: m/s²</span>
+        <p class="pdesc">진동 속도의 변화율. 충격성 이벤트와 고주파 진동에 민감하며, 베어링 결함 초기 신호를 포착하는 데 가장 효과적입니다.</p>
+        <p class="pwhen"><strong>주요 적용:</strong> 롤러 베어링 결함 조기 감지 (VDI 3832), 고주파 충격·마찰 진단, 기어 결함 감지</p>
+      </div>
+      <div class="vb-param">
+        <div class="sym">v</div>
+        <div class="pname">속도 (Velocity)</div>
+        <div class="pen">Velocity RMS</div>
+        <span class="vb-unit">단위: mm/s</span>
+        <p class="pdesc">단위 시간당 이동량. 에너지 기준 진동 강도를 나타내며, 기계 손상 상관관계가 가장 직접적인 중간 주파수 영역에서 사용합니다.</p>
+        <p class="pwhen"><strong>주요 적용:</strong> ISO 10816 기계 상태 모니터링 (2~1,000 Hz), 모터·펌프·팬·기어박스 전반</p>
+      </div>
+      <div class="vb-param">
+        <div class="sym">d</div>
+        <div class="pname">변위 (Displacement)</div>
+        <div class="pen">Displacement peak-peak</div>
+        <span class="vb-unit">단위: mm / µm</span>
+        <p class="pdesc">실제 물리적 이동량(Peak-to-Peak). 저속·저주파 대형 기계에서 중요하며 불균형 변형 정도를 직접 파악할 수 있습니다.</p>
+        <p class="pwhen"><strong>주요 적용:</strong> 저속 대형 기계 (5~200 Hz), 진동 컨베이어·스크린 진폭 확인, 구조물 진동</p>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- ── SECTION 2: ISO 10816 기준 ──────────────────────────────────── -->
+<section style="padding:48px 0 0;">
+  <div class="container">
+    <div class="vb-tag">ISO 10816 · VDI 3832</div>
+    <h2 class="vb-h2">기계 상태 판정 기준 — ISO 10816 시리즈 & VDI 3832</h2>
+    <p class="vb-sub">VM 시리즈는 ISO 10816 4개 파트와 VDI 3832 베어링 진단 규격을 내장합니다. 측정값을 자동으로 기준값과 비교해 4단계(Zone A~D)로 상태를 즉시 판정합니다.</p>
+
+    <div class="vb-zone-bar fade-in">
+      <div style="padding:14px 16px; border-radius:8px; background:#f0fdf4; border:1px solid #86efac; text-align:center;">
+        <div style="font-size:16px; font-weight:800; color:#16a34a; margin-bottom:4px;">Zone A</div>
+        <div style="font-size:11px; color:#15803d; font-weight:600;">신규 기계 허용 범위<br>정상 운전</div>
+      </div>
+      <div style="padding:14px 16px; border-radius:8px; background:#eff6ff; border:1px solid #93c5fd; text-align:center;">
+        <div style="font-size:16px; font-weight:800; color:#1d4ed8; margin-bottom:4px;">Zone B</div>
+        <div style="font-size:11px; color:#1e40af; font-weight:600;">양호 (Satisfactory)<br>장기 운전 가능</div>
+      </div>
+      <div style="padding:14px 16px; border-radius:8px; background:#fffbeb; border:1px solid #fcd34d; text-align:center;">
+        <div style="font-size:16px; font-weight:800; color:#d97706; margin-bottom:4px;">Zone C</div>
+        <div style="font-size:11px; color:#b45309; font-weight:600;">불량 (Unsatisfactory)<br>점검·정비 필요</div>
+      </div>
+      <div style="padding:14px 16px; border-radius:8px; background:#fff1f2; border:1px solid #fca5a5; text-align:center;">
+        <div style="font-size:16px; font-weight:800; color:#dc2626; margin-bottom:4px;">Zone D</div>
+        <div style="font-size:11px; color:#b91c1c; font-weight:600;">불합격 (Unacceptable)<br>즉시 운전 중지</div>
+      </div>
+    </div>
+
+    <div class="vb-wrap fade-in">
+      <table class="vb-table">
+        <thead>
+          <tr>
+            <th>규격</th>
+            <th>적용 기계 유형</th>
+            <th style="color:#86efac">Zone A (정상)</th>
+            <th style="color:#93c5fd">Zone B (양호)</th>
+            <th style="color:#fcd34d">Zone C (주의)</th>
+            <th style="color:#fca5a5">Zone D (위험)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ISO 10816-1</td>
+            <td>일반 기계 (범용)</td>
+            <td class="za">&lt; 2.3 mm/s</td>
+            <td class="zb">2.3 ~ 4.5 mm/s</td>
+            <td class="zc">4.5 ~ 7.1 mm/s</td>
+            <td class="zd">&gt; 7.1 mm/s</td>
+          </tr>
+          <tr>
+            <td>ISO 10816-3</td>
+            <td>산업용 기계 15~300 kW<br>(모터·컴프레서·펌프)</td>
+            <td class="za">&lt; 2.3 mm/s</td>
+            <td class="zb">2.3 ~ 4.5 mm/s</td>
+            <td class="zc">4.5 ~ 7.1 mm/s</td>
+            <td class="zd">&gt; 7.1 mm/s</td>
+          </tr>
+          <tr>
+            <td>ISO 10816-6</td>
+            <td>왕복동 기계<br>(피스톤 컴프레서·엔진)</td>
+            <td class="za">&lt; 3.5 mm/s</td>
+            <td class="zb">3.5 ~ 7.1 mm/s</td>
+            <td class="zc">7.1 ~ 11.2 mm/s</td>
+            <td class="zd">&gt; 11.2 mm/s</td>
+          </tr>
+          <tr>
+            <td>ISO 10816-7</td>
+            <td>산업용 원심 펌프</td>
+            <td class="za">&lt; 1.4 mm/s</td>
+            <td class="zb">1.4 ~ 2.3 mm/s</td>
+            <td class="zc">2.3 ~ 4.5 mm/s</td>
+            <td class="zd">&gt; 4.5 mm/s</td>
+          </tr>
+          <tr>
+            <td>VDI 3832</td>
+            <td>롤러 베어링 손상 진단</td>
+            <td colspan="4" style="text-align:center; color:var(--text-dim);">베어링 계수 K(t) 기반 4단계 분류 — VM 시리즈 내장 알고리즘이 자동 계산·판정</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px; color:var(--text-mute); margin-top:10px; line-height:1.6;">* 기준값은 Class I (강성 기초 소형 기계) 예시. 기계 등급(Class I~IV)에 따라 달라지므로 해당 ISO 규격 원문 확인 필요. ISO 20816은 ISO 10816의 최신 개정판입니다.</p>
+  </div>
+</section>
+
+<!-- ── SECTION 3: VM 25 제품 상세 ─────────────────────────────────── -->
+<section style="padding:48px 0 0;">
+  <div class="container">
+    <div class="vb-tag">PRODUCT · MMF VM 25</div>
+    <h2 class="vb-h2">MMF VM 25 — 제품 특징 및 기술 사양</h2>
+    <p class="vb-sub">독일 MMF(Metra Mess- und Frequenztechnik)의 포켓 사이즈 휴대용 진동 측정 시스템. 교육 없이 현장에서 바로 사용 가능한 직관적 조작성과 ISO 국제규격 자동 판정 기능이 장점입니다.</p>
+    <div class="vb-prod fade-in">
+      <div class="vb-prod-imgs">
+        <img src="https://blog.kakaocdn.net/dna/comqDf/btsK00G7B63/AAAAAAAAAAAAAAAAAAAAAMax_j92qlkidoMop0HvPxWlxJQ7B3o2IgWb59mF83U7/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=73kPj87FQXW0Lj1Qoa38CEjCCV4%3D"
+             alt="MMF VM 25 제품 구성" loading="lazy">
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
+          <img src="https://blog.kakaocdn.net/dna/mvkvO/btsK0qfjwOI/AAAAAAAAAAAAAAAAAAAAACpEo01lX-A_VA6Y4TFyIQiOeUZpwRRLPYJuVwLlFgqv/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=XjWEvSLaSz8PaytCzvWTGVqBtw4%3D"
+               alt="VM 25 본체 정면" loading="lazy" style="width:100%; border-radius:6px;">
+          <img src="https://blog.kakaocdn.net/dna/bAlDLI/btsKZyrxXky/AAAAAAAAAAAAAAAAAAAAAB9jEY9ulexXKK72oy3G3M6ipD6URzdvDuwu4-0jsuh3/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=QSzB7l8g9Q76gPAPdvuEhvsGJCw%3D"
+               alt="VM 25 측면" loading="lazy" style="width:100%; border-radius:6px;">
+          <img src="https://blog.kakaocdn.net/dna/dy7X15/btsKZPzWgYl/AAAAAAAAAAAAAAAAAAAAAHWsv1N4R5oYPqN84Ayx_tLmB91N-8Fe7pQvz0DHQp5q/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=Jskq3ZP52lu%2BQ%2FxXUQHX7TWd21o%3D"
+               alt="VM 25 현장 사용" loading="lazy" style="width:100%; border-radius:6px;">
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div>
+          <div style="font-size:13px; font-weight:700; color:var(--charcoal); margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid var(--line);">주요 특징</div>
+          <ul class="vb-feat-list">
+            <li>가속도·속도·변위 동시 측정 (RMS, Peak, Crest Factor)</li>
+            <li>마그네틱 베이스 접촉식 + IR 온도계·레이저 RPM 비접촉 복합 측정</li>
+            <li>롤러 베어링 계수 K(t) 자동 계산 (VDI 3832)</li>
+            <li>125라인 FFT 스펙트럼 분석 (가속도·속도)</li>
+            <li>VMID 전자식 측정 포인트 자동 인식</li>
+            <li>ISO 10816-1/-3/-6/-7 Zone A~D 자동 판정</li>
+            <li>그래픽 트렌드 표시 (이력 추이 현장 확인)</li>
+            <li>절전형 컬러 OLED 디스플레이</li>
+            <li>포켓 사이즈 / AAA 배터리 경제적 운용</li>
+            <li>USB → PC 소프트웨어 (ISO 13373-1 / MIMOSA, 옵션)</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size:13px; font-weight:700; color:var(--charcoal); margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid var(--line);">Technical Specifications</div>
+          <table class="vb-spec">
+            <thead><tr><th>측정 항목</th><th>사양</th></tr></thead>
+            <tbody>
+              <tr><td>가속도 범위</td><td>0.1 ~ 240 m/s²</td></tr>
+              <tr><td>속도 범위</td><td>0.1 ~ 1,000 mm/s</td></tr>
+              <tr><td>변위 범위</td><td>0.01 ~ 60 mm</td></tr>
+              <tr><td>주파수 (가속도)</td><td>0.2~10,000 Hz / 1,000~10,000 Hz / 3~1,000 Hz</td></tr>
+              <tr><td>주파수 (속도)</td><td>2~1,000 Hz / 10~1,000 Hz</td></tr>
+              <tr><td>주파수 (변위)</td><td>5~200 Hz</td></tr>
+              <tr><td>FFT 분석</td><td>125 Lines</td></tr>
+              <tr><td>베어링 계수</td><td>K(t) 자동 계산 (VDI 3832)</td></tr>
+              <tr><td>측정 메모리</td><td>16,000 측정값</td></tr>
+              <tr><td>인터페이스</td><td>USB</td></tr>
+              <tr><td>헤드폰 출력</td><td>옵션</td></tr>
+              <tr><td>PC 소프트웨어</td><td>옵션 (ISO 13373-1 / MIMOSA)</td></tr>
+              <tr><td>전원</td><td>AAA 배터리</td></tr>
+              <tr><td>디스플레이</td><td>절전형 컬러 OLED</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 4: 디스플레이·화면 ────────────────────────────────── -->
+<section style="padding:48px 0 0;">
+  <div class="container">
+    <div class="vb-tag">DISPLAY · PC SOFTWARE</div>
+    <h2 class="vb-h2">VM 25 측정 화면 및 PC 소프트웨어</h2>
+    <p class="vb-sub">컬러 OLED에서 트렌드·FFT를 현장 즉시 확인하고, PC 소프트웨어로 측정 이력 관리 및 보고서를 출력합니다.</p>
+    <div class="vb-screen fade-in">
+      <div>
+        <img src="https://blog.kakaocdn.net/dna/k77B5/btsKZLRJPcJ/AAAAAAAAAAAAAAAAAAAAAHEbjdfHJFmMvH3ylytO78hmWnFTfVQ7p7ZAnh5DepPl/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=rlDLVnsEqnQ1PxQRWiEKdmRGpbI%3D"
+             alt="VM 25 OLED 디스플레이 측정 화면" loading="lazy">
+        <p class="slabel">본체 OLED 측정 화면</p>
+      </div>
+      <div>
+        <img src="https://blog.kakaocdn.net/dna/sdMrx/btsK01st1aX/AAAAAAAAAAAAAAAAAAAAAGTB6ja2_8TNwO_yKbS8FYN_zjZ-U1G2_b96ij8SVb2O/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=NGcwhDbQVD7zTnDMgEJFuwwMCLo%3D"
+             alt="VM 25 PC 소프트웨어 트렌드 관리 화면" loading="lazy">
+        <p class="slabel">PC 소프트웨어 — 트렌드 관리</p>
+      </div>
+      <div>
+        <img src="https://blog.kakaocdn.net/dna/kBGof/btsKZCHB7y9/AAAAAAAAAAAAAAAAAAAAAPZkcb83Oqk92xhOwnr_HwEylN8Rz0M5rWP00U9bpVlO/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=BC5k82aGnnx6SNkwhM0jzrN1zSI%3D"
+             alt="VM 25 FFT 스펙트럼 분석 화면" loading="lazy">
+        <p class="slabel">FFT 스펙트럼 분석 화면</p>
+      </div>
+    </div>
+    <div style="margin-top:20px; padding:18px 22px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); font-size:13.5px; color:var(--text-dim); line-height:1.7;" class="fade-in">
+      <strong style="color:var(--charcoal);">PC 소프트웨어 (옵션) — ISO 13373-1 / MIMOSA 준수:</strong> 16,000개 측정 이력 저장·관리, 측정 포인트별 트렌드 그래프, 기계 상태 보고서 자동 생성. USB 연결로 VM 25 데이터 자동 다운로드.
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 5: 적용 대상 ───────────────────────────────────────── -->
+<section style="padding:48px 0 0;">
+  <div class="container">
+    <div class="vb-tag">APPLICATIONS</div>
+    <h2 class="vb-h2">측정 대상별 적용 가이드</h2>
+    <p class="vb-sub">VM 시리즈는 공장·플랜트 내 다양한 회전 기계와 진동 설비에 폭넓게 적용됩니다.</p>
+    <div class="vb-app fade-in">
+      <div class="vb-app-card">
+        <div class="aic">⚙️</div>
+        <div class="aname">산업용 모터·감속기</div>
+        <div class="astd">ISO 10816-3</div>
+        <p class="adesc">전동기 하우징 베어링 측정 포인트에서 속도(RMS) 측정. Zone 판정으로 이상 여부 즉시 확인.</p>
+      </div>
+      <div class="vb-app-card">
+        <div class="aic">🔩</div>
+        <div class="aname">롤러 베어링 진단</div>
+        <div class="astd">VDI 3832</div>
+        <p class="adesc">베어링 계수 K(t) 자동 계산으로 박리·균열 등 결함 조기 감지. 예지 정비에 필수.</p>
+      </div>
+      <div class="vb-app-card">
+        <div class="aic">💨</div>
+        <div class="aname">팬·블로워·환풍기</div>
+        <div class="astd">ISO 10816-1</div>
+        <p class="adesc">불균형 진단 시 FFT 1× RPM 피크 확인. 날개 불균형 조기 발견으로 진동 저감.</p>
+      </div>
+      <div class="vb-app-card">
+        <div class="aic">💧</div>
+        <div class="aname">원심 펌프</div>
+        <div class="astd">ISO 10816-7</div>
+        <p class="adesc">축·반경 방향 진동 측정. 캐비테이션·미스얼라인먼트를 FFT 분석으로 원인 특정.</p>
+      </div>
+      <div class="vb-app-card">
+        <div class="aic">📦</div>
+        <div class="aname">진동 컨베이어·스크린</div>
+        <div class="astd">변위 측정</div>
+        <p class="adesc">진동 컨베이어·스크린·세퍼레이터의 진폭(변위) 측정으로 동작 상태 관리.</p>
+      </div>
+      <div class="vb-app-card">
+        <div class="aic">🔄</div>
+        <div class="aname">왕복동 컴프레서·엔진</div>
+        <div class="astd">ISO 10816-6</div>
+        <p class="adesc">피스톤 왕복 운동 충격성 진동 측정. 왕복동 기계 전용 ISO 10816-6 기준으로 판정.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 6: 휴대용 vs 고정식 ───────────────────────────────── -->
+<section style="padding:48px 0 0;">
+  <div class="container">
+    <div class="vb-tag">PORTABLE vs FIXED</div>
+    <h2 class="vb-h2">휴대용 vs 고정식 진동 모니터링 — 선택 기준</h2>
+    <p class="vb-sub">두 방식은 상호 보완적으로 사용합니다. 수십~수백 대 기계를 정기 순회 점검할 때는 휴대용이, 핵심 기계의 24시간 연속 감시에는 고정식이 적합합니다.</p>
+    <div class="vb-cmp fade-in">
+      <div class="vb-cmp-card portable">
+        <span class="cbadge">📱 휴대용 (VM 시리즈)</span>
+        <div class="ctitle">휴대용 진동측정기</div>
+        <ul>
+          <li>현장 어디서나 즉시 측정 — 전원·설치 불필요</li>
+          <li>저비용으로 다수 기계 순회 점검</li>
+          <li>기계 추가·이동 시 유연하게 대응</li>
+          <li>FFT·트렌드로 이상 원인 현장 분석</li>
+          <li>적용: 정기 예방 점검(PM), 트러블슈팅</li>
+        </ul>
+      </div>
+      <div class="vb-cmp-card fixed">
+        <span class="cbadge">🏭 고정식 모니터링 시스템</span>
+        <div class="ctitle">온라인 고정식 진동 모니터링</div>
+        <ul>
+          <li>24시간 365일 연속 자동 감시</li>
+          <li>실시간 알람 → 즉시 운전 정지 가능</li>
+          <li>고비용이나 중요 기계(터빈·압축기)에 필수</li>
+          <li>DAQ 연결로 다채널 통합 모니터링</li>
+          <li>적용: 발전소·플랜트 핵심 설비 연속 감시</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:16px; padding:18px 22px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius); font-size:13.5px; color:var(--text-dim); line-height:1.7;" class="fade-in">
+      <strong style="color:var(--charcoal);">씨앤디테크 통합 솔루션:</strong> 휴대용 VM 시리즈(현장 순회 점검) + 고정식 다채널 진동 모니터링(핵심 기계 24시간 감시) 조합으로 최적 비용·성능 균형을 실현합니다.<br>
+      관련 자료 → <a href="daq-system.html" style="color:var(--accent); text-decoration:none;">DAQ 데이터 수집장치</a> · <a href="telemetry.html" style="color:var(--accent); text-decoration:none;">무선 텔레메트리</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 7: FAQ ──────────────────────────────────────────────── -->
+<section style="padding:48px 0 0;">
+  <div class="container">
+    <div class="vb-tag">FAQ</div>
+    <h2 class="vb-h2">자주 묻는 질문</h2>
+    <div class="vb-faq fade-in">
+      <div class="vb-faq-item">
+        <button class="vb-faq-q"><span>진동 가속도, 속도, 변위 중 어떤 파라미터를 측정해야 하나요?</span><span class="fq-icon">+</span></button>
+        <div class="vb-faq-a">측정 목적에 따라 선택합니다.<br><br>
+          <strong>속도(mm/s RMS)</strong> → 일반 기계 상태 모니터링. ISO 10816 기준값이 속도 기반으로 가장 널리 사용.<br>
+          <strong>가속도(m/s²)</strong> → 베어링 결함·고주파 충격 감지에 유리 (VDI 3832).<br>
+          <strong>변위(mm)</strong> → 저속·대형 기계, 구조물 변형량 측정 시.<br><br>
+          대부분의 현장 점검은 속도 RMS를 측정하고 ISO 10816 기준과 비교하는 것으로 시작합니다.</div>
+      </div>
+      <div class="vb-faq-item">
+        <button class="vb-faq-q"><span>ISO 10816과 VDI 3832의 차이는 무엇인가요?</span><span class="fq-icon">+</span></button>
+        <div class="vb-faq-a"><strong>ISO 10816(ISO 20816)</strong>은 기계 하우징 외면에서 속도(mm/s)를 측정해 기계 전체 상태를 Zone A~D로 판정하는 국제규격입니다.<br><br>
+          <strong>VDI 3832</strong>는 롤러 베어링 손상을 특화 진단하는 독일 규격으로, 베어링 계수 K(t)를 이용해 결함을 조기에 감지합니다.<br><br>
+          두 규격을 동시에 적용하면 기계 전체 상태(ISO 10816)와 베어링 상태(VDI 3832)를 함께 평가할 수 있습니다.</div>
+      </div>
+      <div class="vb-faq-item">
+        <button class="vb-faq-q"><span>FFT 분석으로 어떤 결함을 진단할 수 있나요?</span><span class="fq-icon">+</span></button>
+        <div class="vb-faq-a">전체 진동값이 기준 초과 시 <strong>원인 파악</strong>에 FFT를 사용합니다.<br><br>
+          주요 주파수 특징:<br>
+          • <strong>불균형(Imbalance)</strong>: 1× RPM 주파수에서 피크<br>
+          • <strong>미스얼라인먼트</strong>: 2× RPM, 경우에 따라 3× RPM<br>
+          • <strong>베어링 결함</strong>: BPFI/BPFO/BSF 특정 주파수<br>
+          • <strong>기어 결함</strong>: 기어 맞물림 주파수(GMF) 및 사이드밴드<br><br>
+          VM 25의 125라인 FFT로 현장에서 빠르게 원인을 추정할 수 있습니다.</div>
+      </div>
+      <div class="vb-faq-item">
+        <button class="vb-faq-q"><span>VM 25의 IR 온도계·레이저 RPM 비접촉 측정은 어떻게 활용하나요?</span><span class="fq-icon">+</span></button>
+        <div class="vb-faq-a"><strong>IR 적외선 온도계</strong> → 베어링 하우징·모터 표면 온도를 비접촉으로 측정. 온도 이상과 진동 이상을 동시에 확인하면 진단 정확도가 높아집니다.<br><br>
+          <strong>레이저 타코미터(RPM)</strong> → 반사 테이프를 부착한 회전체에 레이저를 조준하면 회전 속도(RPM)를 비접촉 측정. FFT 주파수와 RPM을 연계하여 불균형/미스얼라인먼트를 정확히 진단합니다.</div>
+      </div>
+      <div class="vb-faq-item">
+        <button class="vb-faq-q"><span>VMID 측정 포인트 자동 감지는 어떻게 설정하나요?</span><span class="fq-icon">+</span></button>
+        <div class="vb-faq-a">전자식 VMID 마커를 각 기계의 측정 포인트에 부착합니다. VM 25가 자동으로 포인트를 인식하고 데이터에 위치 정보를 기록하므로, 다수 기계·포인트 순회 시 <strong>오측정을 방지</strong>하고 PC 소프트웨어에서 자동으로 데이터를 해당 포인트에 매핑합니다.</div>
+      </div>
+      <div class="vb-faq-item">
+        <button class="vb-faq-q"><span>씨앤디테크에서 VM 시리즈 현장 데모 측정이 가능한가요?</span><span class="fq-icon">+</span></button>
+        <div class="vb-faq-a">네, 가능합니다. 씨앤디테크는 MMF VM 시리즈 취급 대리점으로 <strong>현장 데모 측정을 지원</strong>합니다. 도입 전 현장 설비에 직접 적용해 측정값·판정 결과를 확인하실 수 있습니다.<br><br>
+          VM 시리즈 도입 후 현장 사용 교육, PC 소프트웨어 설정, 측정 포인트 계획 수립도 함께 지원합니다.<br>
+          ☎ 031-680-1225 | ✉ wgjeon@cndtec.co.kr</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────────────── -->
+<section style="padding:48px 0 100px;">
+  <div class="container">
+    <div style="padding:40px 48px; background:linear-gradient(135deg, var(--orange-tint) 0%, #fff 100%); border:1px solid var(--orange-line); border-radius:var(--radius); max-width:840px;" class="fade-in">
+      <div class="vb-tag">CONTACT</div>
+      <h3 style="font-size:24px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">현장 진동 측정 문제, 씨앤디테크가 해결합니다</h3>
+      <p style="font-size:14.5px; color:var(--text-dim); line-height:1.75; margin-bottom:24px;">MMF VM 시리즈 도입 상담, 현장 데모 측정, 고정식 진동 모니터링 시스템 구축까지 씨앤디테크가 지원합니다. 설비 종류와 측정 목적을 알려주시면 최적 솔루션을 제안드립니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">진동측정 시스템 문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+      </div>
+      <p style="font-size:12px; color:var(--text-mute); margin-top:16px; margin-bottom:0;">관련 기술자료 →
+        <a href="daq-system.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">DAQ 데이터 수집장치</a> ·
+        <a href="telemetry.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">무선 텔레메트리</a> ·
+        <a href="strain-gauge.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">스트레인게이지</a> ·
+        <a href="bolt-tension.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">볼트 축력 측정</a>
+      </p>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="container">
     <div class="footer-row">
       <div class="footer-brand">
-        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-        <span style="display:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;color:#fff">CND TECH</span>
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display:'none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
         <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
       </div>
       <div class="footer-cols">
         <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
-        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="daq-system.html">DAQ 시스템</a></li><li><a href="residual-stress.html">잔류응력 측정</a></li><li><a href="strain-gauge.html">스트레인게이지</a></li></ul></div>
-        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="residual-stress.html">잔류응력 측정</a></li><li><a href="vibration.html">진동 측정</a></li><li><a href="bolt-tension.html">볼트 축력 측정</a></li><li><a href="daq-system.html">데이터수집장치</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank" rel="noopener">Tistory Blog</a></li></ul></div>
       </div>
     </div>
     <div class="footer-meta">
       <span>© 2026 CND TECH (씨앤디테크) · 대표 전원근</span>
-      <span>경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225</span>
+      <span>경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span>
     </div>
   </div>
 </footer>
-<script src="../js/main.js" defer></script>
+
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = lang => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+
+document.querySelectorAll('.vb-faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.vb-faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.vb-faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
 </body>
 </html>
