@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>토크 측정·축마력 계측 완전 가이드 — 스트레인게이지·텔레메터리 방식 | 씨앤디테크</title>
+<meta name="description" content="스트레인게이지와 텔레메터리 시스템을 이용한 토크 측정·선박 축마력 계측 원리를 설명합니다. 비접촉 방식의 신호 전송, 시스템 구성, 적용 분야를 씨앤디테크의 실적과 함께 소개합니다." />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/torque-measurement.html" />
+<meta property="og:title" content="토크 측정·축마력 계측 완전 가이드 | 씨앤디테크" />
+<meta property="og:description" content="스트레인게이지 + 텔레메터리로 구현하는 비접촉 토크 측정·선박 축마력 계측. 씨앤디테크 현장 적용 사례 포함." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/torque-measurement.html" />
+<meta property="og:image" content="https://blog.kakaocdn.net/dna/zTCJw/btsEKELHujA/AAAAAAAAAAAAAAAAAAAAANCZBAhEho5xuROXhdKkb48pd8RDh7Sizy9qK_EtYSyG/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=WuA1Nfd2CD8nnla6aNHnTeNk9zs%3D" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=4">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "토크 측정·축마력 계측 완전 가이드 — 스트레인게이지·텔레메터리 방식",
+      "description": "스트레인게이지와 텔레메터리 시스템을 이용한 비접촉 토크 측정·선박 축마력 계측 원리, 시스템 구성, 적용 분야.",
+      "url": "https://www.cndtec.co.kr/resources/torque-measurement.html",
+      "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+      "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+      "datePublished": "2024-02-15",
+      "dateModified": "2026-06-24",
+      "inLanguage": "ko"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "토크 측정에 스트레인게이지를 사용하는 이유는 무엇인가요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "토크가 작용하면 축 표면에 전단 변형률이 발생합니다. 45° 방향으로 부착한 스트레인게이지(로제트 게이지)는 이 전단 변형률을 감지하고, 환산 공식 T = (με × E × Ip) / (r × (1+ν))를 통해 토크(Nm)로 변환합니다. 직접 부착 방식이므로 구조 변경 없이 적용 가능하고 높은 정밀도를 유지할 수 있습니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "회전하는 축에서 어떻게 신호를 전송하나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "텔레메터리(Telemetry) 시스템을 사용합니다. 축에 부착된 스트레인게이지 신호를 로터(TX, 송신기)에서 무선 RF 또는 유도 결합 방식으로 스테이터(RX, 수신기)로 전송합니다. 슬립링 방식 대비 마모가 없고 고속 회전 축에도 적용 가능합니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "축마력(Shaft Power)은 어떻게 계산하나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "축마력 = 토크(Nm) × 각속도(rad/s) = T × (2π × N / 60)로 계산합니다. 여기서 N은 RPM입니다. 따라서 스트레인게이지로 토크를 측정하고, 타코미터로 회전수(RPM)를 동시에 취득하면 실시간 축마력을 산출할 수 있습니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "선박 이외에 어떤 곳에 토크 측정이 적용되나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "선박 프로펠러 축 외에도 압축기 구동 축, 펌프 임펠러 축, 감속기·증속기 입출력 축, 풍력발전기 로터 축, 터빈 구동 축, 산업용 로봇 관절 등 동력을 전달하는 모든 회전체에 적용할 수 있습니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "씨앤디테크의 토크·축마력 계측 시스템은 어떤 특징이 있나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "모든 직경의 샤프트에 장착 가능한 모듈화 시스템으로, 낮은 레벨 신호도 정확하게 전송합니다. 마력 계측 프로그램으로 실시간 모니터링을 지원하며, 국내 주요 조선소에 다수 납품 실적이 있습니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "토크 측정 시 캘리브레이션은 어떻게 하나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "텔레메터리 수신기(RX)의 캘리브레이션 데이터(예: 0V = 0Nm, 10V = 3500Nm)를 계측 소프트웨어에 입력하여 전압 신호를 토크(Nm) 물리량으로 변환합니다. 무부하 정지 상태(0 RPM)에서 영점(Zero Offset) 조정을 선행합니다."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+.tq-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px;
+  background: rgba(242,148,0,0.08); border: 1px solid rgba(242,148,0,0.2);
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; color: var(--accent-deep); font-weight: 700;
+  margin-bottom: 12px; letter-spacing: 1px;
+}
+.tq-h2 { font-size: 22px; font-weight: 700; color: var(--charcoal); margin-bottom: 16px; }
+.tq-sub { font-size: 10px; font-weight: 700; color: var(--accent); font-family: 'JetBrains Mono', monospace; letter-spacing: 3px; margin-bottom: 8px; text-transform: uppercase; }
+.tq-divider { border: none; border-top: 1px solid var(--line); margin: 48px 0; }
+
+.tq-stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 32px 0; }
+@media (max-width: 700px) { .tq-stat-grid { grid-template-columns: repeat(2, 1fr); } }
+.tq-stat { background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: var(--radius); padding: 20px 16px; text-align: center; }
+.tq-stat-n { font-family: 'Space Grotesk', monospace; font-size: clamp(26px,4vw,40px); font-weight: 700; color: var(--accent); line-height: 1; }
+.tq-stat-u { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: var(--accent-deep); margin-top: 4px; }
+.tq-stat-l { font-size: 11px; color: var(--text-mute); margin-top: 4px; }
+
+/* 측정 방법 비교 */
+.tq-method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+@media (max-width: 600px) { .tq-method-grid { grid-template-columns: 1fr; } }
+.tq-method-card { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.tq-method-head { padding: 14px 18px; background: var(--bg-soft,#F8F6F4); border-bottom: 2px solid var(--accent); }
+.tq-method-num { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; color: var(--accent); letter-spacing: 2px; margin-bottom: 3px; }
+.tq-method-nm { font-size: 14px; font-weight: 700; color: var(--charcoal); }
+.tq-method-body { padding: 16px 18px; }
+.tq-method-row { display: flex; justify-content: space-between; font-size: 12px; padding: 5px 0; border-bottom: 1px solid var(--line); }
+.tq-method-row:last-child { border: none; }
+.tq-method-lbl { color: var(--text-dim); }
+.tq-method-val { color: var(--charcoal); font-weight: 600; font-size: 11px; text-align: right; max-width: 55%; }
+
+/* 시스템 특징 */
+.tq-feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0; }
+@media (max-width: 600px) { .tq-feat-grid { grid-template-columns: repeat(2, 1fr); } }
+.tq-feat { border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 14px; text-align: center; background: var(--white); }
+.tq-feat-ico { font-size: 22px; display: block; margin-bottom: 8px; }
+.tq-feat-nm { font-size: 12px; font-weight: 700; color: var(--charcoal); margin-bottom: 4px; }
+.tq-feat-ds { font-size: 11px; color: var(--text-mute); line-height: 1.5; }
+
+/* 수식 블록 */
+.tq-formula {
+  background: var(--charcoal); color: #fff;
+  border-radius: var(--radius); padding: 20px 24px;
+  font-family: 'JetBrains Mono', monospace; font-size: 15px;
+  margin: 20px 0; text-align: center; letter-spacing: 0.5px;
+}
+.tq-formula-sub { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 8px; }
+
+/* 이미지 그리드 */
+.tq-img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin: 24px 0; }
+.tq-img-grid img { width: 100%; height: 220px; object-fit: cover; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: block; }
+@media (max-width: 600px) { .tq-img-grid { grid-template-columns: 1fr; } }
+
+/* 적용 분야 */
+.tq-app-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0; }
+@media (max-width: 600px) { .tq-app-grid { grid-template-columns: repeat(2, 1fr); } }
+.tq-app { text-align: center; padding: 20px 10px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
+.tq-app-ico { font-size: 26px; display: block; margin-bottom: 8px; }
+.tq-app-nm { font-size: 12px; font-weight: 700; color: var(--charcoal); margin-bottom: 4px; }
+.tq-app-ds { font-size: 11px; color: var(--text-mute); line-height: 1.5; }
+
+/* FAQ */
+.tq-faq { display: flex; flex-direction: column; gap: 0; margin: 24px 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.tq-faq-item { border-bottom: 1px solid var(--line); }
+.tq-faq-item:last-child { border-bottom: none; }
+.tq-faq-q { width: 100%; text-align: left; background: none; border: none; cursor: pointer; padding: 18px 20px; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.tq-faq-q-txt { font-size: 14px; font-weight: 600; color: var(--charcoal); line-height: 1.5; }
+.tq-faq-ico { color: var(--accent); font-size: 18px; flex-shrink: 0; transition: transform 0.2s; }
+.tq-faq-item.open .tq-faq-ico { transform: rotate(45deg); }
+.tq-faq-a { display: none; padding: 0 20px 18px; font-size: 13.5px; color: var(--text-dim); line-height: 1.8; }
+.tq-faq-item.open .tq-faq-a { display: block; }
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div class="tq-tag">TORQUE · SHAFT POWER · 토크 측정</div>
+      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(28px,5vw,56px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">토크 측정 &amp;<br>축마력 계측 가이드</h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:700px; line-height:1.7;">스트레인게이지와 텔레메터리 시스템을 이용한 비접촉 토크 측정 원리를 설명합니다. 회전하는 축에서 신호를 무선으로 전송하고 토크·마력을 실시간으로 계측하는 방법과 씨앤디테크의 현장 적용 사례를 소개합니다.</p>
+    </div>
+
+    <div style="margin-top:32px; border-radius:var(--radius); overflow:hidden; max-width:880px;">
+      <img src="https://blog.kakaocdn.net/dna/zTCJw/btsEKELHujA/AAAAAAAAAAAAAAAAAAAAANCZBAhEho5xuROXhdKkb48pd8RDh7Sizy9qK_EtYSyG/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=WuA1Nfd2CD8nnla6aNHnTeNk9zs%3D"
+           alt="선박 프로펠러 축 토크·축마력 텔레메터리 계측 시스템 — 씨앤디테크" style="width:100%; display:block;">
+    </div>
+
+    <div class="tq-stat-grid">
+      <div class="tq-stat"><div class="tq-stat-n">45°</div><div class="tq-stat-u">ANGLE</div><div class="tq-stat-l">게이지 부착 각도 (전단 방향)</div></div>
+      <div class="tq-stat"><div class="tq-stat-n">±0.5</div><div class="tq-stat-u">% FS</div><div class="tq-stat-l">텔레메터리 전송 정밀도</div></div>
+      <div class="tq-stat"><div class="tq-stat-n">∞</div><div class="tq-stat-u">RPM</div><div class="tq-stat-l">회전수 제한 없음 (비접촉)</div></div>
+      <div class="tq-stat"><div class="tq-stat-n">ALL</div><div class="tq-stat-u">DIA</div><div class="tq-stat-l">모든 직경 샤프트 적용</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section style="padding:40px 0 100px;">
+  <div class="container" style="max-width:960px;">
+
+    <!-- 01 토크란? -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p class="tq-sub">01 · WHAT IS TORQUE</p>
+      <h2 class="tq-h2">토크(Torque)란?</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">
+        <strong style="color:var(--charcoal);">토크(Torque)</strong>는 회전력으로, 축에 가해지는 비틀림 힘(Torsion)의 크기입니다. 단위는 Nm(뉴턴미터)를 사용합니다. 선박 프로펠러, 압축기, 펌프, 감속기 등 모든 회전 동력 전달 시스템에서 토크는 기계 성능과 구조 안전성을 평가하는 핵심 물리량입니다.
+      </p>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">
+        <strong style="color:var(--charcoal);">선박 축마력(Shaft Power)</strong>은 주 추진 기관에서 생산되어 프로펠러 축으로 전달되는 실제 동력입니다. 선박 건조 후 시운전 시 스트레인게이지로 토크를 측정하고 타코미터로 RPM을 취득해 실시간 마력을 산출합니다.
+      </p>
+
+      <div class="tq-formula">
+        P [kW] = T [Nm] × 2π × N [rpm] / 60,000
+        <div class="tq-formula-sub">P: 축마력(kW) · T: 토크(Nm) · N: 회전수(rpm)</div>
+      </div>
+    </div>
+
+    <hr class="tq-divider">
+
+    <!-- 02 측정 방법 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p class="tq-sub">02 · MEASUREMENT METHOD</p>
+      <h2 class="tq-h2">토크 측정 원리 — 스트레인게이지 × 텔레메터리</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">
+        토크가 작용하는 축 표면에는 축 중심에서 ±45° 방향으로 최대 인장·압축 전단 변형률이 발생합니다. <strong style="color:var(--charcoal);">스트레인게이지를 45° 방향으로 부착</strong>하면 이 전단 변형률을 감지하고, 아래 환산식으로 토크를 계산합니다.
+      </p>
+
+      <div class="tq-formula">
+        T = (με × E × Ip) / (r × (1 + ν))
+        <div class="tq-formula-sub">με: 측정 변형률 · E: 탄성계수 · Ip: 극관성 모멘트 · r: 반경 · ν: 포아송비</div>
+      </div>
+
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin: 20px 0;">
+        <strong style="color:var(--charcoal);">회전하는 축에서 신호 전송</strong>이 핵심 난제입니다. 씨앤디테크는 <strong style="color:var(--charcoal);">텔레메터리(Telemetry)</strong> 시스템으로 이를 해결합니다. 축에 장착한 로터(TX, 송신기)가 게이지 신호를 무선으로 고정부 스테이터(RX, 수신기)에 전송합니다.
+      </p>
+
+      <div class="tq-method-grid">
+        <div class="tq-method-card">
+          <div class="tq-method-head">
+            <div class="tq-method-num">METHOD 01 · 권장</div>
+            <div class="tq-method-nm">스트레인게이지 + 텔레메터리</div>
+          </div>
+          <div class="tq-method-body">
+            <div class="tq-method-row"><span class="tq-method-lbl">접촉 여부</span><span class="tq-method-val">비접촉 (무선 전송)</span></div>
+            <div class="tq-method-row"><span class="tq-method-lbl">RPM 제한</span><span class="tq-method-val">없음</span></div>
+            <div class="tq-method-row"><span class="tq-method-lbl">마모·유지</span><span class="tq-method-val">없음</span></div>
+            <div class="tq-method-row"><span class="tq-method-lbl">정밀도</span><span class="tq-method-val">±0.5% FS</span></div>
+            <div class="tq-method-row"><span class="tq-method-lbl">적용 대상</span><span class="tq-method-val">모든 직경 회전 축</span></div>
+          </div>
+        </div>
+        <div class="tq-method-card">
+          <div class="tq-method-head">
+            <div class="tq-method-num">METHOD 02</div>
+            <div class="tq-method-nm">슬립링(Slip Ring) 방식</div>
+          </div>
+          <div class="tq-method-body">
+            <div class="tq-method-row"><span class="tq-method-lbl">접촉 여부</span><span class="tq-method-val">접촉 (브러시)</span></div>
+            <div class="tq-method-row"><span class="tq-method-lbl">RPM 제한</span><span class="tq-method-val">브러시 마모 고려</span></div>
+            <div class="tq-method-row"><span class="tq-method-lbl">마모·유지</span><span class="tq-method-val">정기 교체 필요</span></div>
+            <div class="tq-method-row"><span class="tq-method-lbl">정밀도</span><span class="tq-method-val">접촉 저항 변동 영향</span></div>
+            <div class="tq-method-row"><span class="tq-method-lbl">적용 대상</span><span class="tq-method-val">저속·소형 축</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="tq-divider">
+
+    <!-- 03 축마력 계측 시스템 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p class="tq-sub">03 · SHAFT POWER SYSTEM</p>
+      <h2 class="tq-h2">씨앤디테크 축마력 계측 시스템</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:24px;">
+        씨앤디테크는 국내 주요 조선소에 축마력 계측 시스템을 다수 납품한 실적을 보유합니다. Shaft에 스트레인게이지를 부착하고 텔레메터리로 신호를 전송·캘리브레이션하여 토크·마력·RPM을 실시간으로 계측합니다.
+      </p>
+
+      <div class="tq-feat-grid">
+        <div class="tq-feat"><span class="tq-feat-ico">🔩</span><div class="tq-feat-nm">모든 직경 샤프트</div><div class="tq-feat-ds">소형 펌프 축부터 대형 선박 프로펠러 축까지 적용 가능</div></div>
+        <div class="tq-feat"><span class="tq-feat-ico">📡</span><div class="tq-feat-nm">비접촉 무선 전송</div><div class="tq-feat-ds">텔레메터리로 회전 중 신호 전송, 슬립링 없이 고속 회전 가능</div></div>
+        <div class="tq-feat"><span class="tq-feat-ico">📊</span><div class="tq-feat-nm">실시간 모니터링</div><div class="tq-feat-ds">마력 계측 프로그램으로 토크·RPM·마력 실시간 표시</div></div>
+        <div class="tq-feat"><span class="tq-feat-ico">⚡</span><div class="tq-feat-nm">낮은 신호 레벨 정밀 전송</div><div class="tq-feat-ds">스트레인게이지의 μV 레벨 신호도 정확히 전달</div></div>
+        <div class="tq-feat"><span class="tq-feat-ico">🧩</span><div class="tq-feat-nm">모듈화 시스템</div><div class="tq-feat-ds">쉽고 빠른 설치·교체, 현장 맞춤 구성</div></div>
+        <div class="tq-feat"><span class="tq-feat-ico">🏭</span><div class="tq-feat-nm">조선소 납품 실적</div><div class="tq-feat-ds">국내 주요 조선소 다수 공급, 현장 검증 완료</div></div>
+      </div>
+
+      <p style="font-size:14px; font-weight:700; color:var(--text-mute); margin: 28px 0 12px; letter-spacing: 1px; text-transform: uppercase; font-family:'JetBrains Mono',monospace;">시스템 구성 및 신호 Flow</p>
+      <div class="tq-img-grid">
+        <img src="https://blog.kakaocdn.net/dna/b6KpVO/btsEQeldpbq/AAAAAAAAAAAAAAAAAAAAAAx3aQUueil8wYywBFMTT5BG7Zr6Bc3Z8Ms79VZsSGM0/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=%2BfQmjvAR%2FHc8TuTH3aKo1sNOzpM%3D"
+             alt="축마력 계측 시스템 구성도" style="object-fit:contain; background:#f8f6f4;">
+        <img src="https://blog.kakaocdn.net/dna/bcw66D/btsEQeMeiHi/AAAAAAAAAAAAAAAAAAAAAEGLZXYL-3joro-YVZ0jOjgnaoQJABmgCkx9lhh22yqc/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=b1jZU22VQn806toxsMIJWY7d2gw%3D"
+             alt="축마력 측정 신호 흐름도" style="object-fit:contain; background:#f8f6f4;">
+      </div>
+      <div style="border-radius:var(--radius); overflow:hidden; margin-top:0; border:1px solid var(--line);">
+        <img src="https://blog.kakaocdn.net/dna/cZXz17/btsESo8r6yG/AAAAAAAAAAAAAAAAAAAAAMbUXMA_ztGLBWFFXuQEO4JULnPx-LAZJXPMoInSma1e/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=9dtoF835sOrFK5BuzUFpza7UxnI%3D"
+             alt="축마력 계측 소프트웨어 모니터링 화면" style="width:100%; display:block; object-fit:contain; background:#f8f6f4; max-height:300px;">
+      </div>
+    </div>
+
+    <hr class="tq-divider">
+
+    <!-- 04 캘리브레이션 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p class="tq-sub">04 · CALIBRATION</p>
+      <h2 class="tq-h2">캘리브레이션 및 영점 조정</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">
+        텔레메터리 수신기(RX)의 출력 전압을 토크(Nm)로 변환하는 캘리브레이션이 필수입니다. 전압-토크 대응값(예: 0V = 0Nm, 10V = 3,500Nm)을 계측 소프트웨어에 입력하면 실시간으로 물리량 표시가 가능합니다.
+      </p>
+      <div style="overflow-x:auto; margin:20px 0;">
+        <table style="width:100%; border-collapse:collapse; font-size:13px; min-width:480px;">
+          <thead>
+            <tr>
+              <th style="background:var(--charcoal); color:#fff; padding:11px 14px; font-family:'JetBrains Mono',monospace; font-size:10px; text-align:left; letter-spacing:1px;">단계</th>
+              <th style="background:var(--charcoal); color:#fff; padding:11px 14px; font-family:'JetBrains Mono',monospace; font-size:10px; text-align:left; letter-spacing:1px;">항목</th>
+              <th style="background:var(--charcoal); color:#fff; padding:11px 14px; font-family:'JetBrains Mono',monospace; font-size:10px; text-align:left; letter-spacing:1px;">내용</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:10px 14px; border-bottom:1px solid var(--line); font-weight:700; color:var(--accent)">01</td><td style="padding:10px 14px; border-bottom:1px solid var(--line);">Scale Factor 입력</td><td style="padding:10px 14px; border-bottom:1px solid var(--line); color:var(--text-dim);">RX 캘리브레이션 데이터(V → Nm)를 소프트웨어 채널에 입력</td></tr>
+            <tr><td style="padding:10px 14px; border-bottom:1px solid var(--line); background:var(--bg-soft); font-weight:700; color:var(--accent)">02</td><td style="padding:10px 14px; border-bottom:1px solid var(--line); background:var(--bg-soft);">영점 조정 (Zero Offset)</td><td style="padding:10px 14px; border-bottom:1px solid var(--line); background:var(--bg-soft); color:var(--text-dim);">무부하 정지(0 RPM) 상태에서 잔류 전압을 '0 Nm' 기준으로 설정</td></tr>
+            <tr><td style="padding:10px 14px; border-bottom:1px solid var(--line); font-weight:700; color:var(--accent)">03</td><td style="padding:10px 14px; border-bottom:1px solid var(--line);">타코미터 연결</td><td style="padding:10px 14px; border-bottom:1px solid var(--line); color:var(--text-dim);">RPM 센서 동기화, 토크 × RPM → 실시간 마력 자동 계산</td></tr>
+            <tr><td style="padding:10px 14px; font-weight:700; color:var(--accent)">04</td><td style="padding:10px 14px;">측정 시작</td><td style="padding:10px 14px; color:var(--text-dim);">실시간 토크(Nm)·RPM·마력(kW) 동시 기록·모니터링</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <hr class="tq-divider">
+
+    <!-- 05 적용 분야 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p class="tq-sub">05 · APPLICATIONS</p>
+      <h2 class="tq-h2">토크 측정 주요 적용 분야</h2>
+      <div class="tq-app-grid">
+        <div class="tq-app"><span class="tq-app-ico">🚢</span><div class="tq-app-nm">선박 축마력</div><div class="tq-app-ds">프로펠러 축 마력 계측, 시운전 성능 검증</div></div>
+        <div class="tq-app"><span class="tq-app-ico">💨</span><div class="tq-app-nm">압축기 구동 축</div><div class="tq-app-ds">VFD 구동 압축기 토크·출력 감시</div></div>
+        <div class="tq-app"><span class="tq-app-ico">🌊</span><div class="tq-app-nm">펌프·임펠러</div><div class="tq-app-ds">펌프 동력 효율 측정, 이상 과부하 감지</div></div>
+        <div class="tq-app"><span class="tq-app-ico">⚙️</span><div class="tq-app-nm">감속기·증속기</div><div class="tq-app-ds">입출력 토크 비교, 전달 효율 평가</div></div>
+        <div class="tq-app"><span class="tq-app-ico">🌬️</span><div class="tq-app-nm">풍력발전기 로터</div><div class="tq-app-ds">로터 축 토크 계측, 발전량 성능 분석</div></div>
+        <div class="tq-app"><span class="tq-app-ico">🔁</span><div class="tq-app-nm">회전기계 일반</div><div class="tq-app-ds">터빈·엔진·모터 구동 계 모든 회전체 적용</div></div>
+      </div>
+
+      <!-- 내부 링크 클러스터 -->
+      <div style="padding:20px 24px; background:var(--bg-soft,#F8F6F4); border:1px solid var(--line); border-radius:var(--radius); margin-top:24px;">
+        <p style="font-size:11px; font-weight:700; color:var(--accent); font-family:'JetBrains Mono',monospace; letter-spacing:2px; margin-bottom:12px;">관련 기술자료</p>
+        <div style="display:flex; flex-wrap:wrap; gap:12px;">
+          <a href="torsional-vibration.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 비틀림 진동 측정·분석</a>
+          <a href="strain-gauge.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 스트레인게이지 원리·종류</a>
+          <a href="telemetry.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 텔레메터리 시스템</a>
+          <a href="daq-system.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 데이터 수집장치(DAQ)</a>
+          <a href="vibration.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 진동 측정 시스템</a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="tq-divider">
+
+    <!-- FAQ -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p class="tq-sub">06 · FAQ</p>
+      <h2 class="tq-h2">자주 묻는 질문</h2>
+      <div class="tq-faq">
+        <div class="tq-faq-item">
+          <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">토크 측정에 스트레인게이지를 사용하는 이유는 무엇인가요?</span><span class="tq-faq-ico">+</span></button>
+          <div class="tq-faq-a">토크가 작용하면 축 표면에 전단 변형률이 발생합니다. 45° 방향으로 부착한 스트레인게이지(로제트 게이지)는 이 전단 변형률을 감지하고, 환산 공식 T = (με × E × Ip) / (r × (1+ν))를 통해 토크(Nm)로 변환합니다. 구조 변경 없이 현장 부착이 가능하고 높은 정밀도를 유지할 수 있습니다.</div>
+        </div>
+        <div class="tq-faq-item">
+          <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">회전하는 축에서 어떻게 신호를 전송하나요?</span><span class="tq-faq-ico">+</span></button>
+          <div class="tq-faq-a">텔레메터리(Telemetry) 시스템을 사용합니다. 축에 부착된 로터(TX, 송신기)에서 스트레인게이지 신호를 무선 RF 또는 유도 결합 방식으로 고정부 스테이터(RX, 수신기)에 전송합니다. 슬립링 방식 대비 마모가 없고 고속 회전 축에도 적용 가능합니다.</div>
+        </div>
+        <div class="tq-faq-item">
+          <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">축마력은 어떻게 계산하나요?</span><span class="tq-faq-ico">+</span></button>
+          <div class="tq-faq-a">축마력 P[kW] = T[Nm] × 2π × N[rpm] / 60,000으로 계산합니다. 스트레인게이지로 토크를 측정하고 타코미터로 RPM을 동시 취득하면 실시간 축마력을 자동 산출할 수 있습니다.</div>
+        </div>
+        <div class="tq-faq-item">
+          <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">선박 이외에 어떤 곳에 토크 측정이 적용되나요?</span><span class="tq-faq-ico">+</span></button>
+          <div class="tq-faq-a">선박 프로펠러 축 외에도 압축기 구동 축, 펌프 임펠러 축, 감속기·증속기 입출력 축, 풍력발전기 로터 축, 터빈 구동 축, 산업용 로봇 관절 등 동력을 전달하는 모든 회전체에 적용할 수 있습니다.</div>
+        </div>
+        <div class="tq-faq-item">
+          <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">씨앤디테크의 토크·축마력 계측 시스템은 어떤 특징이 있나요?</span><span class="tq-faq-ico">+</span></button>
+          <div class="tq-faq-a">모든 직경의 샤프트에 장착 가능한 모듈화 시스템으로, μV 레벨의 낮은 신호도 정확하게 전송합니다. 마력 계측 프로그램으로 실시간 모니터링을 지원하며, 국내 주요 조선소에 다수 납품 실적을 보유합니다.</div>
+        </div>
+        <div class="tq-faq-item">
+          <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">토크 측정 시 캘리브레이션은 어떻게 하나요?</span><span class="tq-faq-ico">+</span></button>
+          <div class="tq-faq-a">텔레메터리 수신기의 캘리브레이션 데이터(예: 0V = 0Nm, 10V = 3500Nm)를 계측 소프트웨어에 입력하여 전압을 토크(Nm)로 변환합니다. 측정 전 무부하 정지(0 RPM) 상태에서 Zero Offset 조정을 반드시 선행합니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="fade-in" style="margin-top:48px; padding:36px; background:rgba(242,148,0,0.05); border:1px solid rgba(242,148,0,0.2); border-radius:var(--radius);">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">토크 측정·축마력 계측 기술 상담</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">선박·압축기·펌프·회전기계 등 적용 환경에 맞는 최적의 토크 계측 시스템을 제안드립니다.<br>축 직경, 토크 범위, 회전수, 측정 목적을 알려주시면 맞춤형 구성을 안내해드립니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+        <a href="mailto:wgjeon@cndtec.co.kr" class="btn btn-ghost">wgjeon@cndtec.co.kr</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="torque-measurement.html">토크 측정</a></li><li><a href="torsional-vibration.html">비틀림 진동</a></li><li><a href="telemetry.html">텔레메터리</a></li><li><a href="daq-system.html">데이터수집장치</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 CND TECH (씨앤디테크) · 대표 전원근</span>
+      <span>경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.tq-faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.tq-faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+</body>
+</html>

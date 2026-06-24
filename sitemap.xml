@@ -113,6 +113,20 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://www.cndtec.co.kr/resources/torque-measurement.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.cndtec.co.kr/resources/torsional-vibration.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- custom-sensor.html, field-service.html, sensors.html은
        "준비 중" 스텁 페이지라 sitemap 제외 (noindex 처리). 콘텐츠 작성 후 추가할 것. -->
 

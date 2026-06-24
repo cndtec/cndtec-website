@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>비틀림 진동(Torsional Vibration) 측정·분석 완전 가이드 — TNF·Waterfall·API 684 | 씨앤디테크</title>
+<meta name="description" content="비틀림 진동(Torsional Vibration) 측정 원리·3가지 운전 모드(Runup·정속·과도)·Waterfall/Campbell 분석·TNF 식별·API 684 분리여유 판정 기준을 씨앤디테크 현장 자료로 설명합니다." />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/torsional-vibration.html" />
+<meta property="og:title" content="비틀림 진동(Torsional Vibration) 측정·분석 완전 가이드 | 씨앤디테크" />
+<meta property="og:description" content="Torsional Vibration 측정·TNF 식별·Waterfall/Campbell 분석·API 684 분리여유. 씨앤디테크 현장 측정 자료 기반 기술 가이드." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/torsional-vibration.html" />
+<meta property="og:image" content="https://blog.kakaocdn.net/dna/cope0I/btsEQgcg77e/AAAAAAAAAAAAAAAAAAAAABfNRLSD7gav3IqKJyQI7uZcSez7tjJPtcsRPLH19R1i/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=emjsJikk9piuZIgY3s9SZ4iTTQg%3D" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=4">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "비틀림 진동(Torsional Vibration) 측정·분석 완전 가이드 — TNF·Waterfall·API 684",
+      "description": "비틀림 진동 측정 원리, 3가지 운전 모드, Waterfall/Campbell 분석, TNF 식별, API 684 분리여유 판정 기준.",
+      "url": "https://www.cndtec.co.kr/resources/torsional-vibration.html",
+      "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+      "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+      "datePublished": "2024-02-15",
+      "dateModified": "2026-06-24",
+      "inLanguage": "ko"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "비틀림 진동(Torsional Vibration)이란 무엇인가요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "비틀림 진동은 회전 축계에서 발생하는 비틀림 방향의 진동입니다. 정상 회전 운동에 추가되는 응력을 유발하여 커플링 파손, 기어 손상, 축 피로 파괴 등의 원인이 됩니다. 선박 추진 축, 압축기 구동 계통, VFD 구동계 등 모든 회전 구동계에서 발생할 수 있습니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "비틀림 고유주파수(TNF)는 어떻게 식별하나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Runup/Coastdown 측정 데이터로 Waterfall(3D) Plot을 작성합니다. 회전수(RPM)와 무관하게 특정 주파수에서 에너지가 집중되는 수평 고정 피크가 TNF입니다. 차수선(Order Line)과 TNF 수평선의 교점 RPM이 가장 위험한 공진 운전 구간(Barred Speed Range)입니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "API 684 분리여유(Separation Margin) 기준은 무엇인가요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "API 684 기준 SM(%) = |f_TNF - f_가진| / f_TNF × 100으로 계산합니다. SM ≥ 15%이면 적합(Acceptable), 10~15%이면 주의(Marginal), SM < 10%이면 부적합(Unacceptable)으로 커플링 강성 변경이나 운전 속도 회피 구간 설정이 필요합니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "VFD(인버터) 구동계에서 비틀림 진동이 특히 위험한 이유는 무엇인가요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "VFD는 넓은 속도 범위에서 운전하므로 다양한 주파수의 가진원이 발생합니다. 1X_Elec(VFD 출력 전기 주파수), 2X_Elec(토크 리플 주가진원) 등이 회전수에 따라 이동하며 TNF와 교차하는 위험 RPM이 여러 지점에 생깁니다. 이 교차점을 사전에 식별하고 운전 회피 구간을 설정해야 합니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "비틀림 진동 측정에 어떤 센서를 사용하나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "두 가지 방식이 있습니다. ① 스트레인게이지 방식: 축에 45° 방향으로 게이지를 부착하고 텔레메터리로 신호를 전송합니다. ② 비접촉 센서 방식: 광학 또는 자기 센서를 이용해 축의 각도·변위를 측정합니다. 각 방식 모두 PULSE, LabVIEW 등 계측 소프트웨어와 연동하여 FFT·차수 분석을 수행합니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "교번 토크와 전달 토크는 어떻게 분리하나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "저장된 Time Waveform 데이터의 수학적 평균값이 전달 토크(DC 성분)입니다. 전체 신호에서 평균값을 차감하면 교번 토크(AC 성분, 순수 진동 성분)를 분리할 수 있습니다. 커플링 정격 비교 시에는 Zero-to-Peak 값((T_max - T_min)/2)을 기준으로 사용합니다."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+.tv-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px;
+  background: rgba(242,148,0,0.08); border: 1px solid rgba(242,148,0,0.2);
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; color: var(--accent-deep); font-weight: 700;
+  margin-bottom: 12px; letter-spacing: 1px;
+}
+.tv-h2 { font-size: 22px; font-weight: 700; color: var(--charcoal); margin-bottom: 16px; }
+.tv-sub { font-size: 10px; font-weight: 700; color: var(--accent); font-family: 'JetBrains Mono', monospace; letter-spacing: 3px; margin-bottom: 8px; text-transform: uppercase; }
+.tv-divider { border: none; border-top: 1px solid var(--line); margin: 48px 0; }
+
+.tv-stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 32px 0; }
+@media (max-width: 700px) { .tv-stat-grid { grid-template-columns: repeat(2, 1fr); } }
+.tv-stat { background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: var(--radius); padding: 20px 16px; text-align: center; }
+.tv-stat-n { font-family: 'Space Grotesk', monospace; font-size: clamp(26px,4vw,40px); font-weight: 700; color: var(--accent); line-height: 1; }
+.tv-stat-u { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: var(--accent-deep); margin-top: 4px; }
+.tv-stat-l { font-size: 11px; color: var(--text-mute); margin-top: 4px; }
+
+/* 수식 */
+.tv-formula {
+  background: var(--charcoal); color: #fff;
+  border-radius: var(--radius); padding: 18px 24px;
+  font-family: 'JetBrains Mono', monospace; font-size: 14px;
+  margin: 20px 0; text-align: center; letter-spacing: 0.5px;
+}
+.tv-formula-sub { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 8px; line-height: 1.6; }
+
+/* 측정 방법 비교 */
+.tv-method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+@media (max-width: 600px) { .tv-method-grid { grid-template-columns: 1fr; } }
+.tv-method-card { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.tv-method-head { padding: 14px 18px; background: var(--bg-soft,#F8F6F4); border-bottom: 2px solid var(--accent); }
+.tv-method-num { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; color: var(--accent); letter-spacing: 2px; margin-bottom: 3px; }
+.tv-method-nm { font-size: 14px; font-weight: 700; color: var(--charcoal); }
+.tv-method-body { padding: 16px 18px; }
+.tv-method-row { display: flex; justify-content: space-between; font-size: 12px; padding: 5px 0; border-bottom: 1px solid var(--line); }
+.tv-method-row:last-child { border: none; }
+.tv-method-lbl { color: var(--text-dim); }
+.tv-method-val { color: var(--charcoal); font-weight: 600; font-size: 11px; text-align: right; max-width: 55%; }
+
+/* 운전 모드 3가지 */
+.tv-mode-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+@media (max-width: 700px) { .tv-mode-grid { grid-template-columns: 1fr; } }
+.tv-mode-card { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--white); }
+.tv-mode-head { padding: 14px 18px; border-bottom: 2px solid var(--accent); background: var(--bg-soft,#F8F6F4); }
+.tv-mode-num { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; color: var(--accent); letter-spacing: 2px; margin-bottom: 3px; }
+.tv-mode-nm { font-size: 14px; font-weight: 700; color: var(--charcoal); margin-bottom: 1px; }
+.tv-mode-en { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-mute); }
+.tv-mode-body { padding: 14px 18px; }
+.tv-mode-desc { font-size: 12px; color: var(--text-dim); line-height: 1.7; margin-bottom: 10px; }
+.tv-mode-row { display: flex; gap: 8px; font-size: 12px; padding: 4px 0; border-bottom: 1px solid var(--line); }
+.tv-mode-row:last-child { border: none; }
+.tv-mode-lbl { color: var(--text-mute); min-width: 60px; flex-shrink: 0; }
+.tv-mode-val { color: var(--charcoal); font-size: 11px; }
+
+/* 샘플링 레이트 표 */
+.tv-tbl-wrap { overflow-x: auto; margin: 20px 0; }
+.tv-tbl { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 500px; }
+.tv-tbl th { background: var(--charcoal); color: #fff; padding: 11px 14px; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-align: left; }
+.tv-tbl td { padding: 10px 14px; border-bottom: 1px solid var(--line); color: var(--text-dim); vertical-align: middle; }
+.tv-tbl tr:last-child td { border-bottom: none; }
+.tv-tbl tr:nth-child(even) td { background: var(--bg-soft,#F8F6F4); }
+.tv-tbl td strong { color: var(--charcoal); }
+.tv-rec { display: inline-block; background: var(--accent); color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 999px; letter-spacing: 1px; white-space: nowrap; }
+.tv-warn { background: #fff3cd; border: 1px solid #ffc107; border-left: 4px solid #ff9800; border-radius: 6px; padding: 14px 18px; margin: 20px 0; }
+.tv-warn-title { font-size: 13px; font-weight: 700; color: #e65100; margin-bottom: 6px; }
+.tv-warn-body { font-size: 13px; color: #7b4800; line-height: 1.7; }
+
+/* API 684 판정 */
+.tv-api-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0; }
+@media (max-width: 600px) { .tv-api-grid { grid-template-columns: 1fr; } }
+.tv-api-card { border-radius: var(--radius); padding: 20px 16px; text-align: center; }
+.tv-api-card.ok { border: 2px solid #22c55e; background: rgba(34,197,94,0.05); }
+.tv-api-card.warn { border: 2px solid #f59e0b; background: rgba(245,158,11,0.05); }
+.tv-api-card.ng { border: 2px solid #ef4444; background: rgba(239,68,68,0.05); }
+.tv-api-sm { font-family: 'Space Grotesk', monospace; font-size: 28px; font-weight: 700; }
+.tv-api-card.ok .tv-api-sm { color: #16a34a; }
+.tv-api-card.warn .tv-api-sm { color: #d97706; }
+.tv-api-card.ng .tv-api-sm { color: #dc2626; }
+.tv-api-judge { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; margin: 6px 0 4px; }
+.tv-api-card.ok .tv-api-judge { color: #16a34a; }
+.tv-api-card.warn .tv-api-judge { color: #d97706; }
+.tv-api-card.ng .tv-api-judge { color: #dc2626; }
+.tv-api-action { font-size: 11px; color: var(--text-dim); line-height: 1.5; }
+
+/* 이미지 그리드 */
+.tv-img2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin: 24px 0; }
+.tv-img2 img { width: 100%; height: 220px; object-fit: cover; border-right: 1px solid var(--line); display: block; }
+.tv-img2 img:last-child { border-right: none; }
+@media (max-width: 600px) { .tv-img2 { grid-template-columns: 1fr; } }
+
+/* 응력 환산 */
+.tv-stress-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+@media (max-width: 600px) { .tv-stress-grid { grid-template-columns: 1fr; } }
+.tv-stress-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; background: var(--white); }
+.tv-stress-nm { font-size: 13px; font-weight: 700; color: var(--charcoal); margin-bottom: 10px; }
+.tv-stress-formula { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent); background: var(--bg-soft,#F8F6F4); padding: 10px 12px; border-radius: 4px; margin-bottom: 8px; }
+.tv-stress-note { font-size: 11px; color: var(--text-mute); line-height: 1.6; }
+
+/* FAQ */
+.tv-faq { display: flex; flex-direction: column; gap: 0; margin: 24px 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.tv-faq-item { border-bottom: 1px solid var(--line); }
+.tv-faq-item:last-child { border-bottom: none; }
+.tv-faq-q { width: 100%; text-align: left; background: none; border: none; cursor: pointer; padding: 18px 20px; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.tv-faq-q-txt { font-size: 14px; font-weight: 600; color: var(--charcoal); line-height: 1.5; }
+.tv-faq-ico { color: var(--accent); font-size: 18px; flex-shrink: 0; transition: transform 0.2s; }
+.tv-faq-item.open .tv-faq-ico { transform: rotate(45deg); }
+.tv-faq-a { display: none; padding: 0 20px 18px; font-size: 13.5px; color: var(--text-dim); line-height: 1.8; }
+.tv-faq-item.open .tv-faq-a { display: block; }
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div class="tv-tag">TORSIONAL VIBRATION · 비틀림 진동 측정·분석</div>
+      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(28px,5vw,56px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">비틀림 진동<br>(Torsional Vibration)<br>측정·분석 가이드</h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:700px; line-height:1.7;">회전 구동계의 비틀림 진동 측정 원리부터 Runup·정속·과도 3가지 운전 모드, Waterfall/Campbell Diagram을 이용한 TNF(비틀림 고유주파수) 식별, API 684 분리여유 판정까지 씨앤디테크 현장 측정 자료를 기반으로 설명합니다.</p>
+    </div>
+
+    <div style="margin-top:32px; border-radius:var(--radius); overflow:hidden; max-width:880px; border:1px solid var(--line);">
+      <img src="https://blog.kakaocdn.net/dna/cope0I/btsEQgcg77e/AAAAAAAAAAAAAAAAAAAAABfNRLSD7gav3IqKJyQI7uZcSez7tjJPtcsRPLH19R1i/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=emjsJikk9piuZIgY3s9SZ4iTTQg%3D"
+           alt="비틀림 진동 측정 시스템 구성 — 씨앤디테크" style="width:100%; display:block; object-fit:contain; background:#f8f6f4; max-height:360px;">
+    </div>
+
+    <div class="tv-stat-grid">
+      <div class="tv-stat"><div class="tv-stat-n">3</div><div class="tv-stat-u">MODES</div><div class="tv-stat-l">운전 측정 모드</div></div>
+      <div class="tv-stat"><div class="tv-stat-n">API</div><div class="tv-stat-u">684</div><div class="tv-stat-l">분리여유 판정 기준</div></div>
+      <div class="tv-stat"><div class="tv-stat-n">TNF</div><div class="tv-stat-u">ID</div><div class="tv-stat-l">Waterfall 고유주파수 식별</div></div>
+      <div class="tv-stat"><div class="tv-stat-n">±15</div><div class="tv-stat-u">% SM</div><div class="tv-stat-l">적합 분리여유 기준</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section style="padding:40px 0 100px;">
+  <div class="container" style="max-width:960px;">
+
+    <!-- 01 개념 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p class="tv-sub">01 · WHAT IS TORSIONAL VIBRATION</p>
+      <h2 class="tv-h2">비틀림 진동이란?</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">
+        <strong style="color:var(--charcoal);">비틀림 진동(Torsional Vibration)</strong>은 회전 구동계에서 발생하는 비틀림(Torsion) 방향의 진동입니다. 정상적인 회전 운동에 추가되는 교번 응력을 유발하며, 방치할 경우 <strong style="color:var(--charcoal);">커플링 반복 파손, 기어 손상, 축 피로 파괴</strong>로 이어질 수 있는 기계 신뢰성의 핵심 진단 항목입니다.
+      </p>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:24px;">
+        선박 추진 축계, 압축기·펌프 구동 계통, VFD(인버터) 구동 전동기, 왕복동 엔진 계통 등 모든 <strong style="color:var(--charcoal);">회전 동력 전달 시스템</strong>에서 발생할 수 있습니다. 비틀림 진동은 일반 가속도 센서로는 측정이 어려우며, 전용 측정 시스템이 필요합니다.
+      </p>
+
+      <div class="tv-img2">
+        <img src="https://blog.kakaocdn.net/dna/lPeWp/btsETkEsgjq/AAAAAAAAAAAAAAAAAAAAAFXHbEhnv0_E8fH4XIAn_wT-R5Ca4aA8BgohrlqLoj_n/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=9KZDfZSyMBlmOOrYAsfvtIOzoEU%3D"
+             alt="비틀림 진동 분석 데이터">
+        <img src="https://blog.kakaocdn.net/dna/c0AV0I/btsEP4Qq0Ha/AAAAAAAAAAAAAAAAAAAAAFtNz5GIeuouEYXbyco6e3UBM4tGymXjKf08-YQcFV7v/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=jtqL5meyohuWAxC8ieVVh95p7QE%3D"
+             alt="비틀림 진동 측정 결과">
+      </div>
+    </div>
+
+    <hr class="tv-divider">
+
+    <!-- 02 측정 방법 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p class="tv-sub">02 · MEASUREMENT METHOD</p>
+      <h2 class="tv-h2">비틀림 진동 측정 방법</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">비틀림 진동 측정에는 두 가지 방식이 사용됩니다.</p>
+
+      <div class="tv-method-grid">
+        <div class="tv-method-card">
+          <div class="tv-method-head">
+            <div class="tv-method-num">METHOD 01 · 정밀</div>
+            <div class="tv-method-nm">스트레인게이지 + 텔레메터리</div>
+          </div>
+          <div class="tv-method-body">
+            <div class="tv-method-row"><span class="tv-method-lbl">측정 대상</span><span class="tv-method-val">비틀림 변형률 → 토크</span></div>
+            <div class="tv-method-row"><span class="tv-method-lbl">게이지 부착</span><span class="tv-method-val">축 표면 45° 방향</span></div>
+            <div class="tv-method-row"><span class="tv-method-lbl">신호 전송</span><span class="tv-method-val">텔레메터리 (무선)</span></div>
+            <div class="tv-method-row"><span class="tv-method-lbl">출력</span><span class="tv-method-val">절대 토크값(Nm) 취득</span></div>
+            <div class="tv-method-row"><span class="tv-method-lbl">특징</span><span class="tv-method-val">DC + AC 성분 동시 분리 가능</span></div>
+          </div>
+        </div>
+        <div class="tv-method-card">
+          <div class="tv-method-head">
+            <div class="tv-method-num">METHOD 02</div>
+            <div class="tv-method-nm">광학·자기 센서 (비접촉)</div>
+          </div>
+          <div class="tv-method-body">
+            <div class="tv-method-row"><span class="tv-method-lbl">측정 대상</span><span class="tv-method-val">각도·각변위</span></div>
+            <div class="tv-method-row"><span class="tv-method-lbl">설치</span><span class="tv-method-val">축 근접 고정 설치</span></div>
+            <div class="tv-method-row"><span class="tv-method-lbl">신호 전송</span><span class="tv-method-val">유선 (비접촉 감지)</span></div>
+            <div class="tv-method-row"><span class="tv-method-lbl">출력</span><span class="tv-method-val">각변위·각속도 파형</span></div>
+            <div class="tv-method-row"><span class="tv-method-lbl">특징</span><span class="tv-method-val">설치 간편, 주파수 특성 우수</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tv-formula">
+        T = (με × E × Ip) / (r × (1 + ν))
+        <div class="tv-formula-sub">με: 측정 변형률 · E: 탄성계수 · Ip: 극관성 모멘트 · r: 반경 · ν: 포아송비<br>캘리브레이션: (예) 0V = 0 Nm, 10V = 3,500 Nm → 소프트웨어 Scale Factor 입력</div>
+      </div>
+
+      <p style="font-size:14px; color:var(--text-dim); line-height:1.8; padding:14px 18px; background:var(--bg-soft,#F8F6F4); border-left:3px solid var(--accent); border-radius:4px; margin-top:20px;">
+        <strong style="color:var(--charcoal);">타코미터(Tachometer) 동기화 필수</strong> — RPM 센서 신호를 토크 데이터와 동일 시간축에 동기화해야 차수(Order) 분석이 가능합니다.<br>
+        사양: TTL input / Trigger level 2~2.5V / Falling Edge / negative pulse / input range 0~10V
+      </p>
+    </div>
+
+    <hr class="tv-divider">
+
+    <!-- 03 측정 운전 모드 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p class="tv-sub">03 · MEASUREMENT MODES</p>
+      <h2 class="tv-h2">3가지 운전 측정 모드</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:24px;">비틀림 진동의 완전한 특성 파악을 위해 세 가지 운전 모드를 병행해 Raw Time Data를 수집합니다.</p>
+
+      <div class="tv-mode-grid">
+        <div class="tv-mode-card">
+          <div class="tv-mode-head">
+            <div class="tv-mode-num">MODE 01</div>
+            <div class="tv-mode-nm">Runup / Coastdown</div>
+            <div class="tv-mode-en">과도 상태 (Transient)</div>
+          </div>
+          <div class="tv-mode-body">
+            <p class="tv-mode-desc">저속 → 최대속도 서행 Sweep 또는 전원 차단 후 타력 감속. TNF 위치 식별에 핵심.</p>
+            <div class="tv-mode-row"><span class="tv-mode-lbl">목적</span><span class="tv-mode-val">TNF 위치 식별, Waterfall Plot 작성</span></div>
+            <div class="tv-mode-row"><span class="tv-mode-lbl">PULSE 설정</span><span class="tv-mode-val">Run-up Mode, RPM Tracking ON</span></div>
+          </div>
+        </div>
+        <div class="tv-mode-card">
+          <div class="tv-mode-head">
+            <div class="tv-mode-num">MODE 02</div>
+            <div class="tv-mode-nm">Steady-State</div>
+            <div class="tv-mode-en">정속 운전</div>
+          </div>
+          <div class="tv-mode-body">
+            <p class="tv-mode-desc">주요 타깃 RPM에서 10~15초 이상 유지. 복수 운전점 반복 측정.</p>
+            <div class="tv-mode-row"><span class="tv-mode-lbl">목적</span><span class="tv-mode-val">평균·교번 토크 정량화, FFT Spectrum 취득</span></div>
+            <div class="tv-mode-row"><span class="tv-mode-lbl">PULSE 설정</span><span class="tv-mode-val">Timed Acquisition, Linear Averaging</span></div>
+          </div>
+        </div>
+        <div class="tv-mode-card">
+          <div class="tv-mode-head">
+            <div class="tv-mode-num">MODE 03</div>
+            <div class="tv-mode-nm">Transient Event</div>
+            <div class="tv-mode-en">과도 이벤트</div>
+          </div>
+          <div class="tv-mode-body">
+            <p class="tv-mode-desc">VFD 기동/정지, 비상 정지(ESD), 동기 전동기 직입 기동 시 측정.</p>
+            <div class="tv-mode-row"><span class="tv-mode-lbl">목적</span><span class="tv-mode-val">피크 토크 확인, 충격 토크 평가</span></div>
+            <div class="tv-mode-row"><span class="tv-mode-lbl">PULSE 설정</span><span class="tv-mode-val">Trigger Recording, Peak Hold</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:14px; font-weight:700; color:var(--text-mute); margin: 28px 0 12px; letter-spacing:1px; text-transform:uppercase; font-family:'JetBrains Mono',monospace;">권장 샘플링 레이트 설정</p>
+      <div class="tv-tbl-wrap">
+        <table class="tv-tbl">
+          <thead>
+            <tr>
+              <th>관심 주파수 대역</th>
+              <th>권장 샘플링 레이트</th>
+              <th>PULSE Block Size</th>
+              <th>적용 대상</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>~200 Hz</td><td>2,000 Hz 이상</td><td>2,048</td><td>일반 회전기계 커플링 진단</td></tr>
+            <tr><td>~500 Hz</td><td>5,000 Hz 이상</td><td><strong>4,096</strong> <span class="tv-rec">권장</span></td><td>VFD 고조파 포함 분석 (표준)</td></tr>
+            <tr><td>~1,000 Hz</td><td>10,000 Hz 이상</td><td>8,192</td><td>왕복동 압축기, 고속 기어계</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12px; color:var(--text-mute); margin-top:8px;">FFT 주파수 해상도 Δf = fs / N (예: 5,000Hz / 4,096 = 1.22 Hz/bin) · FFT Window: 정상 운전 Hanning, 진폭 정밀도 필요 시 Flat Top · Averaging: Linear (RMS), Overlap 50~75%</p>
+    </div>
+
+    <hr class="tv-divider">
+
+    <!-- 04 데이터 분석 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p class="tv-sub">04 · DATA ANALYSIS</p>
+      <h2 class="tv-h2">Waterfall·Campbell Diagram 및 차수 분석</h2>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:24px 0;">
+        <div style="border:1px solid var(--line); border-radius:var(--radius); padding:20px;">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700; color:var(--accent); letter-spacing:2px; margin-bottom:8px;">WATERFALL PLOT</div>
+          <p style="font-size:13px; color:var(--text-dim); line-height:1.7;">X축=주파수, Y축=RPM, Z축=토크 진폭으로 구성. Runup/Coastdown 데이터에서 <strong style="color:var(--charcoal);">회전수와 무관하게 특정 주파수에서 에너지가 집중되는 수평 고정 피크 → TNF 판별.</strong></p>
+        </div>
+        <div style="border:1px solid var(--line); border-radius:var(--radius); padding:20px;">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700; color:var(--accent); letter-spacing:2px; margin-bottom:8px;">CAMPBELL DIAGRAM</div>
+          <p style="font-size:13px; color:var(--text-dim); line-height:1.7;">차수선(1X, 2X, 3X 등)을 오버레이. <strong style="color:var(--charcoal);">TNF 수평선과 차수선의 교점 RPM</strong>이 가장 위험한 운전 속도 — 운전 회피 구간(Barred Speed Range) 설정 기준.</p>
+        </div>
+      </div>
+
+      <div class="tv-warn">
+        <div class="tv-warn-title">⚠ VFD(인버터) 구동계 특별 주의사항</div>
+        <div class="tv-warn-body">
+          1X_Mech (기계 회전 주파수): N[rpm] / 60<br>
+          1X_Elec (VFD 출력 전기 주파수): N[rpm] × 극쌍수 / 60 (예: 6극 모터 → 3쌍 × N/60)<br>
+          2X_Elec: 1X_Elec × 2 — <strong>토크 리플의 주가진원</strong> (PWM VFD에서도 잔존 가능)<br><br>
+          케이스스터디: TNF 58Hz가 VFD 1X_Elec과 1,000~1,200 RPM 구간에서 교차 → <strong>커플링 반복 파손</strong>
+        </div>
+      </div>
+
+      <p style="font-size:14px; font-weight:700; color:var(--text-mute); margin: 20px 0 12px; letter-spacing:1px; text-transform:uppercase; font-family:'JetBrains Mono',monospace;">전달 토크 vs 교번 토크 분리</p>
+      <div style="overflow-x:auto; margin-bottom:20px;">
+        <table class="tv-tbl" style="min-width:420px;">
+          <thead>
+            <tr><th>성분</th><th>계산 방법</th><th>의미</th><th>비교 기준</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>전달 토크 (DC)</strong></td><td>Time Waveform 수학적 평균값</td><td>정적 구동 부하</td><td>커플링 정격 토크</td></tr>
+            <tr><td><strong>교번 토크 (AC)</strong></td><td>전체 신호 - 평균값</td><td>순수 진동 성분</td><td>피로 평가 기준</td></tr>
+            <tr><td>Zero-to-Peak 진폭</td><td>(T_max - T_min) / 2</td><td>교번 토크 진폭</td><td>커플링 정격 비교 기준</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; margin:24px 0;">
+        <img src="https://blog.kakaocdn.net/dna/p4CKE/btsEPKdyu8y/AAAAAAAAAAAAAAAAAAAAAHCODHrZK6iKWW9CpVkAByjdy3XFe_JZNW63_r6U7c6G/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=DTphKp2SQ9eT%2BCYpXX8qhtbehRw%3D"
+             alt="비틀림 진동 FFT 차수 분석 결과" style="width:100%; display:block; object-fit:contain; background:#f8f6f4; max-height:300px;">
+      </div>
+    </div>
+
+    <hr class="tv-divider">
+
+    <!-- 05 전단 응력 환산 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p class="tv-sub">05 · STRESS CONVERSION</p>
+      <h2 class="tv-h2">비틀림 전단 응력(τ) 환산</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">도출된 교번 토크 진폭을 축 내부 응력으로 환산하여 피로 평가에 활용합니다.</p>
+      <div class="tv-stress-grid">
+        <div class="tv-stress-card">
+          <div class="tv-stress-nm">원형 실축 (Solid Shaft)</div>
+          <div class="tv-stress-formula">τ = T × r / Ip</div>
+          <div class="tv-stress-note">Ip = π × d⁴ / 32 &nbsp; r = d / 2</div>
+        </div>
+        <div class="tv-stress-card">
+          <div class="tv-stress-nm">원형 중공축 (Hollow Shaft)</div>
+          <div class="tv-stress-formula">τ = T × r_o / Ip</div>
+          <div class="tv-stress-note">Ip = π(d_o⁴ - d_i⁴) / 32 &nbsp; r_o = d_o / 2</div>
+        </div>
+      </div>
+      <p style="font-size:13px; color:var(--text-mute); margin-top:8px;">T: 교번 토크[Nm] · r: 외경 반경[m] · Ip: 극관성 모멘트[m⁴] · d: 직경[m]</p>
+    </div>
+
+    <hr class="tv-divider">
+
+    <!-- 06 API 684 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p class="tv-sub">06 · API 684 SEPARATION MARGIN</p>
+      <h2 class="tv-h2">분리여유(Separation Margin) — API 684 기준</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">TNF와 가진 주파수 사이의 분리여유(SM)로 운전 안전성을 판정합니다.</p>
+
+      <div class="tv-formula">
+        SM [%] = |f_TNF − f_가진| / f_TNF × 100
+        <div class="tv-formula-sub">f_TNF: 비틀림 고유주파수 · f_가진: 차수 가진 주파수</div>
+      </div>
+
+      <div class="tv-api-grid">
+        <div class="tv-api-card ok">
+          <div class="tv-api-sm">≥ 15%</div>
+          <div class="tv-api-judge">ACCEPTABLE · 적합</div>
+          <div class="tv-api-action">추가 조치 불필요<br>정기 모니터링 유지</div>
+        </div>
+        <div class="tv-api-card warn">
+          <div class="tv-api-sm">10~15%</div>
+          <div class="tv-api-judge">MARGINAL · 주의</div>
+          <div class="tv-api-action">운전 모니터링 강화<br>감쇠 특성 확인</div>
+        </div>
+        <div class="tv-api-card ng">
+          <div class="tv-api-sm">&lt; 10%</div>
+          <div class="tv-api-judge">UNACCEPTABLE · 부적합</div>
+          <div class="tv-api-action">커플링 강성 변경<br>관성 조정 또는 운전 속도 회피 구간 설정</div>
+        </div>
+      </div>
+
+      <p style="font-size:13px; color:var(--text-mute); margin-top:12px;">일반 구동계 SM ≥ 10% / 고위험 VFD 구동계 SM ≥ 15% 권고 (API 684)</p>
+
+      <p style="font-size:14px; font-weight:700; color:var(--text-mute); margin: 28px 0 12px; letter-spacing:1px; text-transform:uppercase; font-family:'JetBrains Mono',monospace;">스펙트럼 및 차수 분석표 (보고서 양식)</p>
+      <div class="tv-tbl-wrap">
+        <table class="tv-tbl">
+          <thead>
+            <tr>
+              <th>운전 RPM</th>
+              <th>차수</th>
+              <th>주파수 [Hz]</th>
+              <th>교번 토크 Zero-Pk [Nm]</th>
+              <th>교번 전단 응력 [MPa]</th>
+              <th>커플링 정격 대비 [%]</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="6" style="text-align:center; color:var(--text-mute); font-style:italic; padding:16px;">측정 데이터 입력 후 작성</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <hr class="tv-divider">
+
+    <!-- 07 적용 분야 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p class="tv-sub">07 · APPLICATIONS</p>
+      <h2 class="tv-h2">비틀림 진동 측정 주요 적용 분야</h2>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:24px 0;">
+        <div style="border:1px solid var(--line); border-radius:var(--radius); padding:20px 14px; text-align:center; background:var(--white);">
+          <span style="font-size:26px; display:block; margin-bottom:8px;">🚢</span>
+          <div style="font-size:12px; font-weight:700; color:var(--charcoal); margin-bottom:4px;">선박 추진 축계</div>
+          <div style="font-size:11px; color:var(--text-mute);">주 추진 기관 ~ 프로펠러 축 비틀림 진동 분석</div>
+        </div>
+        <div style="border:1px solid var(--line); border-radius:var(--radius); padding:20px 14px; text-align:center; background:var(--white);">
+          <span style="font-size:26px; display:block; margin-bottom:8px;">💨</span>
+          <div style="font-size:12px; font-weight:700; color:var(--charcoal); margin-bottom:4px;">VFD 구동 압축기</div>
+          <div style="font-size:11px; color:var(--text-mute);">전기 고조파 가진 교차점 식별, 커플링 파손 예방</div>
+        </div>
+        <div style="border:1px solid var(--line); border-radius:var(--radius); padding:20px 14px; text-align:center; background:var(--white);">
+          <span style="font-size:26px; display:block; margin-bottom:8px;">⚙️</span>
+          <div style="font-size:12px; font-weight:700; color:var(--charcoal); margin-bottom:4px;">왕복동 기계</div>
+          <div style="font-size:11px; color:var(--text-mute);">왕복동 압축기·엔진 폭발 위상 고조파 분석</div>
+        </div>
+        <div style="border:1px solid var(--line); border-radius:var(--radius); padding:20px 14px; text-align:center; background:var(--white);">
+          <span style="font-size:26px; display:block; margin-bottom:8px;">🌬️</span>
+          <div style="font-size:12px; font-weight:700; color:var(--charcoal); margin-bottom:4px;">풍력발전기</div>
+          <div style="font-size:11px; color:var(--text-mute);">로터 ~ 발전기 축 비틀림 공진 평가</div>
+        </div>
+        <div style="border:1px solid var(--line); border-radius:var(--radius); padding:20px 14px; text-align:center; background:var(--white);">
+          <span style="font-size:26px; display:block; margin-bottom:8px;">🔁</span>
+          <div style="font-size:12px; font-weight:700; color:var(--charcoal); margin-bottom:4px;">감속기·커플링</div>
+          <div style="font-size:11px; color:var(--text-mute);">반복 파손 원인 규명, 커플링 정격 검토</div>
+        </div>
+        <div style="border:1px solid var(--line); border-radius:var(--radius); padding:20px 14px; text-align:center; background:var(--white);">
+          <span style="font-size:26px; display:block; margin-bottom:8px;">🏭</span>
+          <div style="font-size:12px; font-weight:700; color:var(--charcoal); margin-bottom:4px;">플랜트 설비 진단</div>
+          <div style="font-size:11px; color:var(--text-mute);">정기 진단·시운전 시 비틀림 진동 측정</div>
+        </div>
+      </div>
+
+      <!-- 내부 링크 클러스터 -->
+      <div style="padding:20px 24px; background:var(--bg-soft,#F8F6F4); border:1px solid var(--line); border-radius:var(--radius); margin-top:24px;">
+        <p style="font-size:11px; font-weight:700; color:var(--accent); font-family:'JetBrains Mono',monospace; letter-spacing:2px; margin-bottom:12px;">관련 기술자료</p>
+        <div style="display:flex; flex-wrap:wrap; gap:12px;">
+          <a href="torque-measurement.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 토크 측정·축마력 계측</a>
+          <a href="telemetry.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 텔레메터리 시스템</a>
+          <a href="strain-gauge.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 스트레인게이지 원리·종류</a>
+          <a href="vibration.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 진동 측정 시스템</a>
+          <a href="daq-system.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 데이터 수집장치(DAQ)</a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="tv-divider">
+
+    <!-- FAQ -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p class="tv-sub">08 · FAQ</p>
+      <h2 class="tv-h2">자주 묻는 질문</h2>
+      <div class="tv-faq">
+        <div class="tv-faq-item">
+          <button class="tv-faq-q" onclick="toggleFaq(this)"><span class="tv-faq-q-txt">비틀림 진동(Torsional Vibration)이란 무엇인가요?</span><span class="tv-faq-ico">+</span></button>
+          <div class="tv-faq-a">비틀림 진동은 회전 구동계에서 발생하는 비틀림 방향의 진동입니다. 정상 회전 운동에 추가되는 응력을 유발하여 커플링 파손, 기어 손상, 축 피로 파괴 등의 원인이 됩니다. 일반 가속도 센서로는 측정이 어렵고 전용 계측 시스템이 필요합니다.</div>
+        </div>
+        <div class="tv-faq-item">
+          <button class="tv-faq-q" onclick="toggleFaq(this)"><span class="tv-faq-q-txt">비틀림 고유주파수(TNF)는 어떻게 식별하나요?</span><span class="tv-faq-ico">+</span></button>
+          <div class="tv-faq-a">Runup/Coastdown 측정 데이터로 Waterfall(3D) Plot을 작성합니다. 회전수(RPM)와 무관하게 특정 주파수에서 에너지가 집중되는 수평 고정 피크가 TNF입니다. Campbell Diagram에서 차수선과의 교점 RPM이 가장 위험한 공진 운전 구간(Barred Speed Range)입니다.</div>
+        </div>
+        <div class="tv-faq-item">
+          <button class="tv-faq-q" onclick="toggleFaq(this)"><span class="tv-faq-q-txt">API 684 분리여유 기준은 무엇인가요?</span><span class="tv-faq-ico">+</span></button>
+          <div class="tv-faq-a">SM(%) = |f_TNF - f_가진| / f_TNF × 100으로 계산합니다. SM ≥ 15%이면 적합(Acceptable), 10~15%이면 주의(Marginal), SM < 10%이면 부적합(Unacceptable)으로 커플링 강성 변경이나 운전 속도 회피 구간 설정이 필요합니다.</div>
+        </div>
+        <div class="tv-faq-item">
+          <button class="tv-faq-q" onclick="toggleFaq(this)"><span class="tv-faq-q-txt">VFD 구동계에서 비틀림 진동이 특히 위험한 이유는 무엇인가요?</span><span class="tv-faq-ico">+</span></button>
+          <div class="tv-faq-a">VFD는 넓은 속도 범위에서 운전하므로 1X_Elec(전기 주파수), 2X_Elec(토크 리플 주가진원) 등이 회전수에 따라 이동합니다. TNF와 교차하는 위험 RPM이 여러 지점에 생기며, 사전에 이를 식별하고 운전 회피 구간을 설정하지 않으면 커플링 반복 파손으로 이어질 수 있습니다.</div>
+        </div>
+        <div class="tv-faq-item">
+          <button class="tv-faq-q" onclick="toggleFaq(this)"><span class="tv-faq-q-txt">교번 토크와 전달 토크는 어떻게 분리하나요?</span><span class="tv-faq-ico">+</span></button>
+          <div class="tv-faq-a">Time Waveform의 수학적 평균값이 전달 토크(DC 성분)입니다. 전체 신호에서 평균값을 차감하면 교번 토크(AC 성분)를 분리할 수 있습니다. 커플링 정격 비교 시에는 Zero-to-Peak 값((T_max - T_min)/2)을 기준으로 사용합니다.</div>
+        </div>
+        <div class="tv-faq-item">
+          <button class="tv-faq-q" onclick="toggleFaq(this)"><span class="tv-faq-q-txt">씨앤디테크에서 비틀림 진동 측정 서비스를 받을 수 있나요?</span><span class="tv-faq-ico">+</span></button>
+          <div class="tv-faq-a">씨앤디테크는 스트레인게이지 부착 및 텔레메터리 시스템 설치, 비틀림 진동 측정 및 데이터 분석, TNF 식별·API 684 판정 보고서 작성까지 현장 계측 용역 서비스를 제공합니다. 선박·압축기·VFD 구동계 등 다양한 현장 적용 경험을 보유하고 있습니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="fade-in" style="margin-top:48px; padding:36px; background:rgba(242,148,0,0.05); border:1px solid rgba(242,148,0,0.2); border-radius:var(--radius);">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">비틀림 진동 측정·분석 기술 상담</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">커플링 반복 파손, VFD 구동계 이상, 선박 축계 진동 문제 등 비틀림 진동이 의심되는 경우 씨앤디테크에 문의하세요.<br>현장 측정부터 TNF 식별·API 684 분석·보고서 작성까지 원스톱으로 지원합니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+        <a href="mailto:wgjeon@cndtec.co.kr" class="btn btn-ghost">wgjeon@cndtec.co.kr</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="torque-measurement.html">토크 측정</a></li><li><a href="torsional-vibration.html">비틀림 진동</a></li><li><a href="telemetry.html">텔레메터리</a></li><li><a href="daq-system.html">데이터수집장치</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 CND TECH (씨앤디테크) · 대표 전원근</span>
+      <span>경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.tv-faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.tv-faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+</body>
+</html>
