@@ -4,11 +4,16 @@
 <meta charset="UTF-8" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>축력 볼트 제작 | CND TECH 씨앤디테크</title>
-<meta name="description" content="풀브릿지 스트레인게이지 기반 축력 측정 볼트 커스텀 제작. 체결력 관리, 볼트 축력 모니터링 시스템 구축." />
-<meta property="og:title" content="축력 볼트 제작 | CND TECH 씨앤디테크" />
-<meta property="og:description" content="풀브릿지 스트레인게이지 기반 축력 측정 볼트 커스텀 제작. 체결력 관리, 볼트 축력 모니터링 시스템 구축." />
+<title>볼트 축력 측정 완전 가이드 — 스트레인게이지 볼트 센서 제작·체결력 계측 | 씨앤디테크</title>
+<meta name="description" content="볼트 축력(Axial Load) 직접 측정 방법 완전 가이드. 풀브릿지 외부 부착형·중심홀 삽입형·와셔형 포스센서 3가지 방식 비교, 제작 4단계 공정, 볼트 규격별 선택 기준, 산업별 적용 사례. 씨앤디테크 커스텀 볼트 센서 제작 문의." />
+<meta name="keywords" content="볼트 축력 측정, 볼트 체결력, 스트레인게이지 볼트, 풀브릿지 볼트 센서, 삽입형 스트레인게이지, 와셔형 포스센서, 축력 볼트 제작, 볼트 하중 측정, Axial load bolt sensor, bolt tension measurement" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/bolt-tension.html" />
+<meta property="og:title" content="볼트 축력 측정 완전 가이드 — 스트레인게이지 볼트 센서 제작 | 씨앤디테크" />
+<meta property="og:description" content="볼트 축력 직접 측정 3가지 방식(풀브릿지·삽입형·와셔형) 비교 및 제작 공정 완전 가이드. 씨앤디테크 커스텀 볼트 센서 제작." />
 <meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/bolt-tension.html" />
+<meta property="og:image" content="https://blog.kakaocdn.net/dna/bCPmgB/dJMcadu7LUs/AAAAAAAAAAAAAAAAAAAAAJ69mWtRM8_5A-ecFQX9dFrDIiICjJJxeqEubp_lwzh2/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=CtH5m5XNuzLjaoc0phaSs%2FTEzdU%3D" />
+<meta property="og:site_name" content="씨앤디테크 기술자료" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,11 +23,86 @@
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "축력 볼트 커스텀 제작 기술 가이드",
-  "description": "풀브릿지 스트레인게이지 기반 볼트 축력 측정 원리, 제작 사양, 산업 적용 가이드",
+  "headline": "볼트 축력 측정 완전 가이드 — 스트레인게이지 볼트 센서 제작·체결력 계측",
+  "description": "볼트 축력(Axial Load)을 직접 측정하는 3가지 방식(풀브릿지 외부 부착형·중심홀 삽입형·와셔형 포스센서) 비교, 제작 4단계 공정, 볼트 규격별 선택 기준, 산업별 적용 사례 완전 가이드",
+  "keywords": "볼트 축력, 볼트 체결력, 스트레인게이지 볼트, 풀브릿지, 삽입형, 와셔형 포스센서, bolt tension, axial load",
   "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
-  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
-  "inLanguage": "ko"
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr", "logo": {"@type": "ImageObject", "url": "https://www.cndtec.co.kr/assets/images/cnd-logo.png"}},
+  "datePublished": "2024-05-22",
+  "dateModified": "2026-06-24",
+  "inLanguage": "ko",
+  "url": "https://www.cndtec.co.kr/resources/bolt-tension.html",
+  "image": "https://blog.kakaocdn.net/dna/bCPmgB/dJMcadu7LUs/AAAAAAAAAAAAAAAAAAAAAJ69mWtRM8_5A-ecFQX9dFrDIiICjJJxeqEubp_lwzh2/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=CtH5m5XNuzLjaoc0phaSs%2FTEzdU%3D",
+  "about": [
+    {"@type": "Thing", "name": "볼트 축력 측정"},
+    {"@type": "Thing", "name": "스트레인게이지"},
+    {"@type": "Thing", "name": "체결력 계측"},
+    {"@type": "Thing", "name": "풀브릿지 회로"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "토크 렌치로 볼트를 조이면 체결력(축력) 관리가 되지 않나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "토크 렌치로 측정하는 '토크'는 체결력의 간접 지표입니다. 볼트-너트 나사산 마찰 계수, 좌면(시트면) 마찰, 윤활 여부, 표면 거칠기에 따라 동일한 토크를 가해도 실제 발생하는 축력은 ±20~30%까지 차이가 납니다. 안전이 중요한 구조물이나 정밀한 체결 관리가 필요한 경우에는 스트레인게이지를 이용한 직접 축력 측정이 공학적으로 가장 정확한 방법입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "3가지 방식(풀브릿지·삽입형·와셔형) 중 어떤 것을 선택해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "볼트 규격, 설치 환경, 비용을 기준으로 선택합니다. M10 이상 중·대형 볼트이고 외부 공간이 있다면 풀브릿지 외부 부착형이 가장 정밀하고 비용 효율적입니다. M8 이하 소형 볼트이거나 외부 공간이 협소하면 중심홀 삽입형을 사용합니다. 원본 볼트를 가공하지 않고 여러 체결부를 교차 측정할 때는 와셔형 포스센서(Load Washer)가 적합합니다. 씨앤디테크에 문의하시면 적용 환경에 맞는 최적 방식을 제안드립니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "볼트 중심에 구멍을 뚫으면 볼트 강도가 떨어지지 않나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "삽입형(중심홀 방식)의 경우, 볼트 중심축을 따라 가공하기 때문에 단면 응력 분포상 중립 위치에 가깝습니다. 규격에 따라 다르지만, 홀 직경이 볼트 직경의 20% 이하이면 볼트 강도는 95% 이상 유지됩니다. 씨앤디테크는 각 볼트 규격에 따라 최소 가공 홀 직경을 설계하여 강도 손실을 최소화합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "볼트 센서 제작 후 교정(캘리브레이션)은 어떻게 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "제작 완료된 볼트 센서는 만능 재료 시험기(UTM) 또는 로드셀 기준 지그를 이용해 교정합니다. 교정 범위 내 여러 하중 포인트에서 인장력(kN)을 가하고 mV/V 출력을 기록하여 교정 곡선(Calibration Curve)을 작성합니다. 씨앤디테크는 제작과 교정을 일괄 제공하며, 교정 성적서를 함께 납품합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "현장에서 데이터 수집은 어떻게 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "볼트 센서 출력은 mV/V 신호입니다. 현장 상황에 따라 ① 포터블 스트레인 인디케이터(단채널, 배터리 구동), ② 다채널 DAQ 장치(동시 다중 볼트 모니터링), ③ 무선 텔레메트리 시스템(회전체나 원격 위치)으로 연결합니다. 씨앤디테크는 DAQ 장치 공급과 현장 설치·측정 서비스도 함께 제공합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "최소 몇 개부터 커스텀 제작이 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1개부터 커스텀 제작이 가능합니다. 씨앤디테크는 단품 시험용 볼트부터 양산용 납품까지 다양한 수량을 수용합니다. 볼트 규격, 재질, 측정 범위, 출력 타입(mV/V, 4~20mA, 디지털), 방수 등급 요구 사항을 알려주시면 견적을 드립니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "고온, 방수 등 가혹 환경에서도 사용 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 가능합니다. 고온 환경에서는 고온용 스트레인게이지와 내열 접착제(최대 250°C 이상)를 사용하고, 방수·방진이 필요한 환경에서는 에폭시 몰딩 처리와 IP67 이상 케이블·커넥터를 적용합니다. 해양, 발전 플랜트, 야외 교량 등 다양한 가혹 환경 적용 경험을 보유하고 있습니다."
+      }
+    }
+  ]
 }
 </script>
 <!-- Google tag (gtag.js) -->
@@ -33,6 +113,139 @@
   gtag('js', new Date());
   gtag('config', 'G-B25Y10FQK1');
 </script>
+<style>
+/* ── 볼트 축력 페이지 전용 스타일 ───────────────────────── */
+.bt-stat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px; }
+@media(max-width:640px){ .bt-stat-grid { grid-template-columns:1fr 1fr; } }
+.bt-stat-card { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:20px; text-align:center; }
+.bt-stat-num  { font-family:'Space Grotesk',sans-serif; font-size:28px; font-weight:700; color:var(--accent); line-height:1; }
+.bt-stat-sub  { font-size:11px; color:var(--text-mute); margin-top:4px; }
+
+.bt-hero-img  { width:100%; border-radius:var(--radius); margin-top:40px; display:block; }
+
+/* 이론 섹션 */
+.bt-theory-box { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:32px 36px; margin-bottom:0; }
+.bt-formula    { background:#0a0a0a; color:#e2e8f0; border-radius:8px; padding:24px 28px; margin:20px 0; font-family:'JetBrains Mono',monospace; font-size:15px; line-height:1.9; }
+.bt-formula .f-label { color:#94a3b8; font-size:12px; display:block; margin-bottom:6px; }
+.bt-formula .f-main  { color:#f59e0b; font-size:19px; font-weight:600; }
+.bt-formula .f-vars  { color:#cbd5e1; font-size:13px; margin-top:8px; }
+.bt-theory-cols { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:20px; }
+@media(max-width:600px){ .bt-theory-cols { grid-template-columns:1fr; } }
+.bt-theory-item { padding:16px 20px; border-radius:8px; border-left:3px solid var(--accent); background:var(--orange-tint); }
+.bt-theory-item h4 { font-size:13px; font-weight:700; color:var(--charcoal); margin-bottom:6px; }
+.bt-theory-item p  { font-size:13px; color:var(--text-dim); line-height:1.6; margin:0; }
+
+/* 토크 vs 축력 비교 */
+.bt-torque-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:20px; }
+@media(max-width:600px){ .bt-torque-grid { grid-template-columns:1fr; } }
+.bt-torque-card { padding:24px; border-radius:var(--radius); border:1px solid var(--line); background:var(--surface); }
+.bt-torque-card.bad  { border-color:#fca5a5; background:#fff1f2; }
+.bt-torque-card.good { border-color:#86efac; background:#f0fdf4; }
+.bt-torque-card .tc-label { font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin-bottom:8px; }
+.bt-torque-card.bad  .tc-label { color:#dc2626; }
+.bt-torque-card.good .tc-label { color:#16a34a; }
+.bt-torque-card h4 { font-size:16px; font-weight:700; color:var(--charcoal); margin-bottom:8px; }
+.bt-torque-card p  { font-size:13px; color:var(--text-dim); line-height:1.7; margin:0; }
+.bt-torque-card ul { margin:8px 0 0; padding-left:18px; font-size:13px; color:var(--text-dim); line-height:1.7; }
+
+/* 3방식 비교표 */
+.bt-compare-wrap { overflow-x:auto; margin-top:24px; }
+.bt-compare-table { width:100%; border-collapse:collapse; font-size:13.5px; min-width:560px; }
+.bt-compare-table th { background:var(--charcoal); color:#fff; padding:12px 14px; text-align:center; font-weight:600; }
+.bt-compare-table th:first-child { text-align:left; }
+.bt-compare-table td { padding:11px 14px; border-bottom:1px solid var(--line); color:var(--text-dim); text-align:center; }
+.bt-compare-table td:first-child { text-align:left; font-weight:600; color:var(--charcoal); background:var(--orange-tint); }
+.bt-compare-table tr:last-child td { border-bottom:none; }
+.bt-compare-table .c-best { color:#16a34a; font-weight:600; }
+.bt-compare-table .c-ok   { color:#d97706; }
+.bt-compare-table .c-lim  { color:#9ca3af; }
+
+/* 방식별 상세 카드 */
+.bt-method-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:0; }
+@media(max-width:700px){ .bt-method-grid { grid-template-columns:1fr; } }
+.bt-method-card { border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--surface); }
+.bt-method-card .mc-head { padding:20px 22px 14px; border-bottom:1px solid var(--line); }
+.bt-method-card .mc-num  { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent); font-weight:600; margin-bottom:4px; }
+.bt-method-card .mc-name { font-size:16px; font-weight:700; color:var(--charcoal); margin-bottom:0; }
+.bt-method-card .mc-sub  { font-size:12px; color:var(--text-mute); margin-top:2px; }
+.bt-method-card .mc-img  { width:100%; height:200px; object-fit:cover; display:block; background:#f1f5f9; }
+.bt-method-card .mc-body { padding:18px 22px 22px; }
+.bt-method-card .mc-tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px; }
+.bt-method-card .mc-tag  { font-size:11px; padding:3px 9px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; color:var(--accent-deep); font-weight:600; }
+.bt-method-card .mc-desc { font-size:13.5px; color:var(--text-dim); line-height:1.7; margin:0 0 14px; }
+.bt-method-card .mc-specs { list-style:none; padding:0; margin:0; }
+.bt-method-card .mc-specs li { font-size:12.5px; color:var(--text-dim); padding:4px 0; border-bottom:1px solid var(--line); display:flex; gap:8px; }
+.bt-method-card .mc-specs li:last-child { border-bottom:none; }
+.bt-method-card .mc-specs li::before { content:'→'; color:var(--accent); flex-shrink:0; }
+.bt-method-card.full-width { grid-column:1/-1; display:grid; grid-template-columns:1fr 1fr; }
+@media(max-width:700px){ .bt-method-card.full-width { grid-template-columns:1fr; } }
+.bt-method-card.full-width .mc-left  { border-right:1px solid var(--line); }
+.bt-method-card.full-width .mc-right { display:flex; flex-direction:column; }
+.bt-method-card.full-width .mc-img   { flex:1; height:auto; min-height:200px; }
+
+/* 제작 공정 */
+.bt-step-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:24px; }
+@media(max-width:600px){ .bt-step-grid { grid-template-columns:1fr; } }
+.bt-step-card { border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--surface); }
+.bt-step-card .sc-img-row { display:grid; grid-template-columns:1fr 1fr; }
+.bt-step-card .sc-img-row img { width:100%; height:150px; object-fit:cover; display:block; }
+.bt-step-card .sc-img-row img:first-child { border-right:1px solid var(--line); }
+.bt-step-card .sc-img-single img { width:100%; height:180px; object-fit:cover; display:block; }
+.bt-step-card .sc-body { padding:16px 18px 18px; }
+.bt-step-card .sc-num  { font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700; color:var(--accent); letter-spacing:.06em; }
+.bt-step-card .sc-title { font-size:15px; font-weight:700; color:var(--charcoal); margin:4px 0 8px; }
+.bt-step-card .sc-desc  { font-size:13px; color:var(--text-dim); line-height:1.7; margin:0; }
+
+/* 볼트 규격 가이드 */
+.bt-size-table { width:100%; border-collapse:collapse; font-size:13.5px; }
+.bt-size-table th { background:var(--charcoal); color:#fff; padding:11px 14px; text-align:center; font-weight:600; }
+.bt-size-table td { padding:10px 14px; border-bottom:1px solid var(--line); text-align:center; color:var(--text-dim); }
+.bt-size-table td:first-child { font-weight:700; color:var(--charcoal); }
+.bt-size-table .rec { color:var(--accent); font-weight:700; }
+.bt-size-table .ok  { color:#64748b; }
+.bt-size-table .dash { color:#d1d5db; }
+
+/* 산업 적용 카드 */
+.bt-industry-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:24px; }
+@media(max-width:700px){ .bt-industry-grid { grid-template-columns:1fr 1fr; } }
+@media(max-width:400px){ .bt-industry-grid { grid-template-columns:1fr; } }
+.bt-industry-card { padding:20px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); }
+.bt-industry-card .ic-icon { font-size:28px; margin-bottom:10px; }
+.bt-industry-card .ic-name { font-size:14px; font-weight:700; color:var(--charcoal); margin-bottom:6px; }
+.bt-industry-card .ic-desc { font-size:12.5px; color:var(--text-dim); line-height:1.6; margin:0; }
+
+/* 통합 솔루션 */
+.bt-solution-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-top:24px; }
+@media(max-width:768px){ .bt-solution-grid { grid-template-columns:1fr 1fr; } }
+@media(max-width:400px){ .bt-solution-grid { grid-template-columns:1fr; } }
+.bt-sol-item { padding:18px 16px; border:1px solid var(--orange-line); border-radius:var(--radius); background:var(--orange-tint); text-align:center; }
+.bt-sol-item .si-step { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:6px; }
+.bt-sol-item .si-name { font-size:13px; font-weight:700; color:var(--charcoal); margin-bottom:4px; }
+.bt-sol-item .si-desc { font-size:11.5px; color:var(--text-dim); line-height:1.5; margin:0; }
+
+/* 사례 photo grid */
+.bt-photo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:16px; }
+@media(max-width:600px){ .bt-photo-grid { grid-template-columns:1fr 1fr; } }
+.bt-photo-grid img { width:100%; border-radius:8px; display:block; object-fit:cover; aspect-ratio:4/3; background:#f1f5f9; }
+.bt-photo-grid.two-col { grid-template-columns:1fr 1fr; }
+
+/* FAQ */
+.bt-faq-list { display:flex; flex-direction:column; gap:0; margin-top:24px; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+.bt-faq-item { border-bottom:1px solid var(--line); }
+.bt-faq-item:last-child { border-bottom:none; }
+.bt-faq-q { width:100%; text-align:left; padding:18px 22px; background:var(--surface); border:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:14.5px; font-weight:600; color:var(--charcoal); line-height:1.5; }
+.bt-faq-q:hover { background:var(--orange-tint); }
+.bt-faq-q .fq-icon { flex-shrink:0; width:20px; height:20px; border-radius:50%; border:1.5px solid var(--accent); color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:13px; transition:transform .25s; }
+.bt-faq-item.open .fq-icon { transform:rotate(45deg); }
+.bt-faq-a { display:none; padding:16px 22px 20px; background:white; font-size:14px; color:var(--text-dim); line-height:1.8; border-top:1px solid var(--line); }
+.bt-faq-item.open .bt-faq-a { display:block; }
+
+/* 섹션 헤더 공통 */
+.bt-section-tag  { display:inline-flex; align-items:center; gap:6px; padding:4px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:14px; }
+.bt-section-h2   { font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(20px,3.5vw,28px); font-weight:700; color:var(--charcoal); margin-bottom:8px; letter-spacing:-0.02em; }
+.bt-section-sub  { font-size:15px; color:var(--text-dim); line-height:1.7; max-width:700px; margin-bottom:24px; }
+.bt-section-div  { border-top:1px solid var(--line); padding-top:48px; margin-top:48px; }
+</style>
 </head>
 <body>
 <div class="bg-grid"></div>
@@ -70,44 +283,600 @@
   </div>
 </div>
 
-<section style="padding-top:160px; padding-bottom:20px;">
+<!-- ── HERO ──────────────────────────────────────────────── -->
+<section style="padding-top:160px; padding-bottom:0;">
   <div class="container">
     <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
     <div style="margin-top:20px;">
-      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">FULL-BRIDGE SG · BOLT LOAD</div>
-      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(32px,5vw,60px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);" data-ko="축력 볼트 제작" data-en="Bolt Tension Measurement">축력 볼트 제작</h1>
-      <p style="font-size:17px; color:var(--text-dim); max-width:680px; line-height:1.7; margin-bottom:0;" data-ko="풀브릿지 스트레인게이지 기반 축력 측정 볼트 커스텀 제작. 체결력 관리, 볼트 축력 모니터링 시스템 구축." data-en="풀브릿지 스트레인게이지 기반 축력 측정 볼트 커스텀 제작. 체결력 관리, 볼트 축력 모니터링 시스템 구축.">풀브릿지 스트레인게이지 기반 축력 측정 볼트 커스텀 제작. 체결력 관리, 볼트 축력 모니터링 시스템 구축.</p>
+      <div class="bt-section-tag">FULL-BRIDGE · INSERT · LOAD WASHER</div>
+      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(30px,5vw,58px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal); line-height:1.15;" data-ko="볼트 축력 측정<br>완전 가이드" data-en="Bolt Axial Load<br>Measurement Guide">볼트 축력 측정<br>완전 가이드</h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:700px; line-height:1.75; margin-bottom:0;" data-ko="토크 렌치로는 해결할 수 없는 볼트 체결력(축력)의 직접 측정 방법을 상세히 설명합니다. 풀브릿지 외부 부착형·중심홀 삽입형·와셔형 포스센서 3가지 방식을 비교하고, 제작 4단계 공정과 볼트 규격별 선택 기준을 제시합니다." data-en="A complete guide to direct measurement of bolt axial load (tension) that torque wrenches cannot reliably provide. Compares three methods: full-bridge external, center-hole insert, and load washer force transducer.">토크 렌치로는 해결할 수 없는 볼트 체결력(축력)의 직접 측정 방법을 상세히 설명합니다. 풀브릿지 외부 부착형·중심홀 삽입형·와셔형 포스센서 3가지 방식을 비교하고, 제작 4단계 공정과 볼트 규격별 선택 기준을 제시합니다.</p>
+    </div>
+    <!-- 통계 카드 -->
+    <div class="bt-stat-grid">
+      <div class="bt-stat-card">
+        <div class="bt-stat-num">±20~30%</div>
+        <div class="bt-stat-sub">토크 관리 시 실제 축력 오차</div>
+      </div>
+      <div class="bt-stat-card">
+        <div class="bt-stat-num">±1~2%</div>
+        <div class="bt-stat-sub">SG 볼트 센서 측정 정밀도 (F.S.)</div>
+      </div>
+      <div class="bt-stat-card">
+        <div class="bt-stat-num">3가지</div>
+        <div class="bt-stat-sub">축력 계측 솔루션 (현장 맞춤 선택)</div>
+      </div>
+    </div>
+    <!-- 메인 이미지 -->
+    <img src="https://blog.kakaocdn.net/dna/bCPmgB/dJMcadu7LUs/AAAAAAAAAAAAAAAAAAAAAJ69mWtRM8_5A-ecFQX9dFrDIiICjJJxeqEubp_lwzh2/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=CtH5m5XNuzLjaoc0phaSs%2FTEzdU%3D"
+         alt="풀브릿지 스트레인게이지를 부착한 볼트 축력 측정 센서" class="bt-hero-img fade-in" loading="lazy">
+  </div>
+</section>
+
+<!-- ── SECTION 1: 축력 이론 ─────────────────────────────── -->
+<section style="padding:60px 0 0;">
+  <div class="container">
+    <div class="bt-section-tag">THEORY · PRINCIPLE</div>
+    <h2 class="bt-section-h2">볼트 축력이란? — 발생 원리와 훅의 법칙</h2>
+    <p class="bt-section-sub">볼트를 조이면 볼트가 신장(Elongation)되고 이 탄성 변형이 인장력, 즉 축력(Axial Load)을 만들어 냅니다. 이 축력이 바로 체결 구조물을 조이고 있는 실질적 힘입니다.</p>
+    <div class="bt-theory-box fade-in">
+      <div style="font-size:14px; font-weight:700; color:var(--charcoal); margin-bottom:12px;">훅의 법칙 적용 — 볼트 축력 계산</div>
+      <div class="bt-formula">
+        <span class="f-label">볼트 축력 (Axial Load)</span>
+        <span class="f-main">F = k × δ</span>
+        <span class="f-vars">
+          k = E × A / L &nbsp;(스프링 상수)<br>
+          δ = 볼트 신장량 (Elongation)<br>
+          E = 탄성계수 (볼트 재질, 예: 강 ≈ 206 GPa)<br>
+          A = 볼트 유효 단면적 (나사 호칭 직경 기준)<br>
+          L = 볼트 유효 클램핑 길이
+        </span>
+      </div>
+      <p style="font-size:13.5px; color:var(--text-dim); line-height:1.7; margin:0 0 16px;">볼트에 스트레인게이지를 부착하면 스트레인(ε = δ/L)을 직접 측정하고, <strong>F = E × A × ε</strong> 공식으로 실시간 축력을 계산할 수 있습니다. 토크와 달리 마찰 계수의 영향을 받지 않아 정확도가 높습니다.</p>
+      <div class="bt-theory-cols">
+        <div class="bt-theory-item">
+          <h4>✔ 축력(Axial Load / Bolt Tension)</h4>
+          <p>볼트를 조였을 때 볼트 축 방향으로 발생하는 인장력 (단위: kN, kgf). 피체결체 간 압축 체결력과 크기가 동일합니다.</p>
+        </div>
+        <div class="bt-theory-item">
+          <h4>✔ 체결력(Clamp Force)</h4>
+          <p>볼트 축력이 피체결체 사이에 전달되는 압축력. 볼트 축력 = 체결력이며, 플랜지 기밀성·마찰력 확보에 직접 영향을 줍니다.</p>
+        </div>
+        <div class="bt-theory-item">
+          <h4>✔ 볼트 피로강도</h4>
+          <p>볼트에 반복 하중이 가해질 때 파단을 일으키는 응력 범위. 동적 하중 환경에서는 실제 축력을 알아야 피로수명 예측이 가능합니다.</p>
+        </div>
+        <div class="bt-theory-item">
+          <h4>✔ 볼트 풀림(Loosening)</h4>
+          <p>진동·충격으로 볼트 축력이 감소하는 현상. 축력 모니터링 시스템으로 일정 수준 이하로 감소 시 알람을 발생시킬 수 있습니다.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section style="padding:60px 0 100px;">
+<!-- ── SECTION 2: 토크 ≠ 축력 ─────────────────────────────── -->
+<section style="padding:48px 0 0;">
   <div class="container">
-    <div style="max-width:800px; display:flex; flex-direction:column; gap:48px;">
-      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="볼트 축력 측정의 필요성" data-en="Why Measure Bolt Tension?">볼트 축력 측정의 필요성</h2>
-        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="볼트 체결력(축력)은 구조물, 기계 장비, 압력 용기의 신뢰성을 결정하는 핵심 요소입니다. 토크 렌치로 체결해도 마찰 계수 변동으로 실제 축력이 20~30% 오차를 가질 수 있습니다. 직접 축력을 측정하면 정확한 체결 관리와 장기 모니터링이 가능합니다." data-en="Bolt tension is critical for structural integrity. Torque-based tightening can have 20–30% error due to friction variation. Direct tension measurement enables accurate clamp load management and long-term monitoring.">볼트 체결력(축력)은 구조물, 기계 장비, 압력 용기의 신뢰성을 결정하는 핵심 요소입니다. 토크 렌치로 체결해도 마찰 계수 변동으로 실제 축력이 20~30% 오차를 가질 수 있습니다. 직접 축력을 측정하면 정확한 체결 관리와 장기 모니터링이 가능합니다.</p>
+    <div class="bt-section-tag">TORQUE ≠ AXIAL LOAD</div>
+    <h2 class="bt-section-h2">왜 토크만으로는 축력 관리가 어려운가</h2>
+    <p class="bt-section-sub">조임 토크(T)의 에너지는 나사산 마찰, 시트면 마찰, 볼트 신장 3가지로 분산됩니다. 이 중 실제 축력으로 전환되는 비율이 현장 조건마다 달라져 ±20~30% 오차가 발생합니다.</p>
+    <div class="bt-torque-grid fade-in">
+      <div class="bt-torque-card bad">
+        <div class="tc-label">⚠ 토크 관리의 한계</div>
+        <h4>동일 토크, 다른 축력</h4>
+        <p>같은 볼트에 같은 토크를 가해도 아래 요인에 따라 축력이 크게 달라집니다:</p>
+        <ul>
+          <li>나사산 마찰 계수 (윤활 여부, 재질)</li>
+          <li>시트면(좌면) 상태 및 거칠기</li>
+          <li>볼트·너트 재질 조합</li>
+          <li>체결 속도 및 반복 체결 횟수</li>
+          <li>온도 변화에 따른 재료 열팽창</li>
+        </ul>
+        <p style="margin-top:10px; font-weight:600; color:#dc2626;">→ 실제 발생 축력 편차: ±20~30%</p>
       </div>
-      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="풀브릿지 스트레인게이지 측정 원리" data-en="Full-Bridge Measurement Principle">풀브릿지 스트레인게이지 측정 원리</h2>
-        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="볼트 내부에 4개의 스트레인게이지를 풀 브릿지로 구성하여 온도 보상과 굽힘 영향을 제거합니다. 볼트에 축하중이 가해지면 게이지가 저항 변화를 감지하고, 이를 전압 출력으로 변환합니다. 교정 곡선을 통해 출력 전압을 실제 축력(kN)으로 환산합니다." data-en="Four gauges in a full-bridge configuration inside the bolt eliminate temperature effects and bending. Axial load causes a resistance change converted to voltage output, calibrated to actual tension (kN).">볼트 내부에 4개의 스트레인게이지를 풀 브릿지로 구성하여 온도 보상과 굽힘 영향을 제거합니다. 볼트에 축하중이 가해지면 게이지가 저항 변화를 감지하고, 이를 전압 출력으로 변환합니다. 교정 곡선을 통해 출력 전압을 실제 축력(kN)으로 환산합니다.</p>
-      </div>
-      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="커스텀 제작 사양" data-en="Custom Fabrication Specs">커스텀 제작 사양</h2>
-        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="고객의 볼트 규격(M8~M100 이상), 재질, 측정 범위, 출력 타입(mV/V, 4~20mA, 디지털)에 맞게 설계·제작합니다. 방수·방진 처리, 고온 환경용 특수 접착제, 무선 텔레메트리 연동도 가능합니다. 씨앤디테크는 설계부터 교정·납품까지 일괄 제공합니다." data-en="Custom-designed to customer bolt specs (M8–M100+), material, measurement range, and output type (mV/V, 4–20mA, digital). Waterproofing, high-temperature adhesive, and wireless telemetry integration available.">고객의 볼트 규격(M8~M100 이상), 재질, 측정 범위, 출력 타입(mV/V, 4~20mA, 디지털)에 맞게 설계·제작합니다. 방수·방진 처리, 고온 환경용 특수 접착제, 무선 텔레메트리 연동도 가능합니다. 씨앤디테크는 설계부터 교정·납품까지 일괄 제공합니다.</p>
-      </div>
-      <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="적용 분야" data-en="Applications">적용 분야</h2>
-        <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="선박·해양 구조물 플랜지 체결 관리, 교량·철도 교각 앵커볼트 모니터링, 원자력 발전소 압력 용기 스터드 볼트, 풍력 타워 기초 볼트, 자동차 엔진·변속기 체결 시험에 적용됩니다." data-en="Applied to flange joint management on ships/offshore, bridge anchor bolt monitoring, nuclear pressure vessel stud bolts, wind tower foundation bolts, and automotive powertrain assembly testing.">선박·해양 구조물 플랜지 체결 관리, 교량·철도 교각 앵커볼트 모니터링, 원자력 발전소 압력 용기 스터드 볼트, 풍력 타워 기초 볼트, 자동차 엔진·변속기 체결 시험에 적용됩니다.</p>
+      <div class="bt-torque-card good">
+        <div class="tc-label">✔ 스트레인게이지 직접 측정</div>
+        <h4>마찰 영향 완전 배제</h4>
+        <p>스트레인게이지는 볼트 자체의 변형(Strain)을 직접 측정하므로 마찰 계수 변동의 영향을 받지 않습니다:</p>
+        <ul>
+          <li>볼트 변형 → 저항 변화 → 전압 출력</li>
+          <li>훅의 법칙으로 축력 직접 환산</li>
+          <li>풀브릿지 구성: 굽힘·온도 영향 제거</li>
+          <li>교정(Calibration) 후 절대값 측정</li>
+          <li>체결 전·후·모니터링 모두 가능</li>
+        </ul>
+        <p style="margin-top:10px; font-weight:600; color:#16a34a;">→ 측정 정밀도: ±1~2% F.S.</p>
       </div>
     </div>
-    <div style="margin-top:64px; padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius); max-width:800px;">
-      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;" data-ko="측정 서비스 문의" data-en="Service Inquiry">측정 서비스 문의</h3>
-      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;" data-ko="씨앤디테크는 축력 볼트 제작 장비 공급과 현장 측정 서비스를 제공합니다. 사양과 요구 사항을 알려주시면 최적의 솔루션을 제안드립니다." data-en="CND TECH provides Bolt Tension Measurement equipment and on-site services. Share your specs and requirements for a tailored proposal.">씨앤디테크는 축력 볼트 제작 장비 공급과 현장 측정 서비스를 제공합니다. 사양과 요구 사항을 알려주시면 최적의 솔루션을 제안드립니다.</p>
+  </div>
+</section>
+
+<!-- ── SECTION 3: 3가지 방식 비교표 ─────────────────────── -->
+<section style="padding:48px 0 0;">
+  <div class="container">
+    <div class="bt-section-tag">METHOD COMPARISON</div>
+    <h2 class="bt-section-h2">씨앤디테크 3가지 볼트 축력 계측 솔루션 비교</h2>
+    <p class="bt-section-sub">현장 볼트의 규격, 설치 공간, 측정 목적에 따라 최적의 방식을 선택합니다. 씨앤디테크는 3가지 방식 모두 커스텀 제작·교정 서비스를 제공합니다.</p>
+    <div class="bt-compare-wrap fade-in">
+      <table class="bt-compare-table">
+        <thead>
+          <tr>
+            <th>비교 항목</th>
+            <th>① 풀브릿지 외부 부착형</th>
+            <th>② 중심홀 삽입형</th>
+            <th>③ 와셔형 포스센서</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>볼트 가공 여부</td>
+            <td>외면 면·홀 가공</td>
+            <td>중심홀 가공</td>
+            <td class="c-best">볼트 무가공</td>
+          </tr>
+          <tr>
+            <td>적합 볼트 규격</td>
+            <td class="c-best">M10 이상 (모든 규격)</td>
+            <td>M8 이하 소형 / 협소 공간</td>
+            <td class="c-ok">M8 이상 (와셔 설치 공간 필요)</td>
+          </tr>
+          <tr>
+            <td>측정 정밀도</td>
+            <td class="c-best">±1~2% F.S.</td>
+            <td class="c-best">±1~3% F.S.</td>
+            <td class="c-ok">±1~5% F.S.</td>
+          </tr>
+          <tr>
+            <td>외부 공간 필요</td>
+            <td>중간 (게이지 부착 면 필요)</td>
+            <td class="c-best">최소 (내부 매립)</td>
+            <td class="c-lim">필요 (와셔 두께 추가)</td>
+          </tr>
+          <tr>
+            <td>볼트 재사용</td>
+            <td class="c-ok">제한적</td>
+            <td class="c-ok">제한적</td>
+            <td class="c-best">탈착 후 재사용 가능</td>
+          </tr>
+          <tr>
+            <td>환경 내구성</td>
+            <td class="c-best">에폭시 몰딩으로 IP67</td>
+            <td class="c-best">내부 매립, 최고 내구성</td>
+            <td class="c-ok">완성품 IP등급 따름</td>
+          </tr>
+          <tr>
+            <td>초기 비용</td>
+            <td class="c-best">낮음</td>
+            <td class="c-ok">중간</td>
+            <td class="c-lim">높음 (HBM 등 완성품)</td>
+          </tr>
+          <tr>
+            <td>다채널 설치 용이성</td>
+            <td class="c-best">우수</td>
+            <td class="c-best">우수</td>
+            <td class="c-ok">중간</td>
+          </tr>
+          <tr>
+            <td>대표 적용</td>
+            <td>교량 앵커볼트, 풍력 기초, 중하중 구조체결</td>
+            <td>소형 기계, 협소 공간, 가혹 환경</td>
+            <td>다부위 교차 계측, 임시 점검</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 4: 방식 상세 ──────────────────────────────── -->
+<section style="padding:48px 0 0;">
+  <div class="container">
+    <div class="bt-section-tag">METHOD DETAIL</div>
+    <h2 class="bt-section-h2">각 방식 상세 — 구조·특징·적용 조건</h2>
+
+    <!-- Method 1 + Method 2 -->
+    <div class="bt-method-grid fade-in" style="margin-top:24px;">
+      <!-- Method 1 -->
+      <div class="bt-method-card">
+        <div class="mc-head">
+          <div class="mc-num">METHOD 01</div>
+          <div class="mc-name">풀브릿지 외부 부착형</div>
+          <div class="mc-sub">Full-Bridge External SG Bolt</div>
+        </div>
+        <img src="https://blog.kakaocdn.net/dna/bCPmgB/dJMcadu7LUs/AAAAAAAAAAAAAAAAAAAAAJ69mWtRM8_5A-ecFQX9dFrDIiICjJJxeqEubp_lwzh2/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=CtH5m5XNuzLjaoc0phaSs%2FTEzdU%3D"
+             alt="풀브릿지 스트레인게이지 부착형 축력 볼트 센서" class="mc-img" loading="lazy">
+        <div class="mc-body">
+          <div class="mc-tags">
+            <span class="mc-tag">M10 이상</span>
+            <span class="mc-tag">±1~2% F.S.</span>
+            <span class="mc-tag">에폭시 몰딩</span>
+          </div>
+          <p class="mc-desc">볼트 외면에 4개의 스트레인게이지를 배치하여 풀 브릿지 회로를 구성합니다. 2축 방향으로 게이지를 배열하면 굽힘 응력(Bending Stress)이 상쇄되어 순수 인장 하중만 정밀하게 계측됩니다. 온도 변화에 의한 영점 드리프트도 브릿지 회로가 자동으로 보상합니다.</p>
+          <ul class="mc-specs">
+            <li>볼트 외면 4면 또는 2면 정밀 가공 후 게이지 부착</li>
+            <li>풀브릿지 구성: 굽힘 상쇄 + 온도 보상 동시 달성</li>
+            <li>에폭시 몰딩 → IP67 방수·방진 처리</li>
+            <li>출력: mV/V (표준) / 4~20mA / 디지털 (옵션)</li>
+            <li>M10~M100 이상 다양한 규격 대응</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Method 2 -->
+      <div class="bt-method-card">
+        <div class="mc-head">
+          <div class="mc-num">METHOD 02</div>
+          <div class="mc-name">중심홀 삽입형</div>
+          <div class="mc-sub">Center-Hole Insert Type</div>
+        </div>
+        <img src="https://blog.kakaocdn.net/dna/F7QA9/dJMcabqDfNn/AAAAAAAAAAAAAAAAAAAAAGKXwL-sa1Hd2LMIJIcXNVnUbWq4LstId9eFfA8e--jF/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=rILdPwS%2B2AF%2BO%2BbDhGlH2mjVKcs%3D"
+             alt="중심홀 삽입형 스트레인게이지 볼트 센서 개념도" class="mc-img" loading="lazy" style="object-fit:contain; background:#f8fafc; padding:12px;">
+        <div class="mc-body">
+          <div class="mc-tags">
+            <span class="mc-tag">M8 이하 소형</span>
+            <span class="mc-tag">협소 공간</span>
+            <span class="mc-tag">내부 매립</span>
+          </div>
+          <p class="mc-desc">볼트 중심축을 따라 미세한 홀을 가공하고 원통형 스트레인게이지를 삽입 후 2액형 특수 접착제로 고정합니다. 센서가 볼트 내부에 완전히 매립되어 외부 충격·오염으로부터 보호됩니다. 외부 공간이 극도로 제한된 환경에서도 적용이 가능합니다.</p>
+          <ul class="mc-specs">
+            <li>볼트 중심 홀 가공 → 삽입형 SG 삽입 → 진공 경화</li>
+            <li>센서 완전 매립 → 물리적 보호 최우수</li>
+            <li>외부에 케이블만 인출 → 설치 공간 최소화</li>
+            <li>소형 볼트(M8 이하) 적용 가능</li>
+            <li>고온 환경용 내열 접착제 선택 가능</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Method 3 - 와셔형 (전체 너비) -->
+    <div class="bt-method-card fade-in" style="margin-top:20px; display:grid; grid-template-columns:2fr 3fr; overflow:hidden; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface);">
+      <div style="overflow:hidden;">
+        <img src="https://blog.kakaocdn.net/dna/dJbHVR/dJMcaaebulS/AAAAAAAAAAAAAAAAAAAAAMfuNxbX6hnQHRjGzL8nuja8hP6B5rBnktIKXVGUrfSK/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=TWItO7tIzdmwh9C8F0B5OuyTfNc%3D"
+             alt="삽입형 스트레인게이지 볼트 단면 상세도" loading="lazy"
+             style="width:100%; height:100%; min-height:220px; object-fit:contain; background:#f8fafc; padding:16px; display:block;">
+      </div>
+      <div style="padding:24px 28px;">
+        <div class="mc-num">METHOD 03</div>
+        <div class="mc-name" style="font-size:18px; font-weight:700; color:var(--charcoal); margin:4px 0 2px;">와셔형 포스센서 (Load Washer)</div>
+        <div class="mc-sub" style="font-size:12px; color:var(--text-mute); margin-bottom:14px;">Force Transducer / Load Washer Type</div>
+        <div class="mc-tags">
+          <span class="mc-tag">볼트 무가공</span>
+          <span class="mc-tag">탈착 가능</span>
+          <span class="mc-tag">다부위 교차 계측</span>
+        </div>
+        <p class="mc-desc" style="font-size:13.5px; color:var(--text-dim); line-height:1.7; margin:0 0 14px;">원본 볼트를 직접 가공하지 않고 와셔 형태의 초정밀 하중 센서를 체결부 사이에 삽입하여 축력을 계측합니다. HBM, Kistler 등 공인된 완성품 Load Washer를 포터블 인디케이터와 연결하여 현장에서 즉시 측정할 수 있습니다.</p>
+        <ul class="mc-specs" style="list-style:none; padding:0; margin:0;">
+          <li style="font-size:12.5px; color:var(--text-dim); padding:4px 0; border-bottom:1px solid var(--line); display:flex; gap:8px;"><span style="color:var(--accent)">→</span>볼트 가공 불필요 → 원본 볼트 보존</li>
+          <li style="font-size:12.5px; color:var(--text-dim); padding:4px 0; border-bottom:1px solid var(--line); display:flex; gap:8px;"><span style="color:var(--accent)">→</span>포터블 인디케이터로 단독 현장 측정 가능</li>
+          <li style="font-size:12.5px; color:var(--text-dim); padding:4px 0; border-bottom:1px solid var(--line); display:flex; gap:8px;"><span style="color:var(--accent)">→</span>여러 체결부 교차 계측에 유리</li>
+          <li style="font-size:12.5px; color:var(--text-dim); padding:4px 0; display:flex; gap:8px;"><span style="color:var(--accent)">→</span>단점: 와셔 두께만큼 설치 높이 증가</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 5: 제작 4단계 공정 ────────────────────────── -->
+<section style="padding:48px 0 0;">
+  <div class="container">
+    <div class="bt-section-tag">MANUFACTURING PROCESS</div>
+    <h2 class="bt-section-h2">볼트 센서 제작 4단계 공정</h2>
+    <p class="bt-section-sub">풀브릿지 외부 부착형 기준 제작 공정입니다. 씨앤디테크는 볼트 가공부터 교정 성적서 납품까지 일괄 처리합니다.</p>
+    <div class="bt-step-grid fade-in">
+      <!-- STEP 1 -->
+      <div class="bt-step-card">
+        <div class="sc-img-row">
+          <img src="https://blog.kakaocdn.net/dna/VJwlR/btsPSPPLcf3/AAAAAAAAAAAAAAAAAAAAACzZk-vVT2jo3coJTxkHDWBsHzAUylzxRkdlLwNf_UQb/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=rW%2FtO5%2FO1n%2F7oQCuybh1zwLYMMs%3D"
+               alt="볼트 표면 면 가공 및 스트레인게이지 부착 준비" loading="lazy">
+          <img src="https://blog.kakaocdn.net/dna/Ed9HE/btsPS91xR1Q/AAAAAAAAAAAAAAAAAAAAAHIkMVGGEKBk7Qn-0VkRJ1KghpX4wADuXqB4VwQKExAz/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=YUnpiRrvWx1FTyhRWl7ROFIfjgA%3D"
+               alt="풀브릿지 스트레인게이지 부착 완료 볼트 센서" loading="lazy">
+        </div>
+        <div class="sc-body">
+          <div class="sc-num">STEP 01</div>
+          <div class="sc-title">스트레인게이지 부착 (Full Bridge)</div>
+          <p class="sc-desc">볼트 외면을 정밀 면 가공하여 부착면을 확보합니다. 4개의 스트레인게이지를 풀브릿지 배열로 부착하고 전용 접착제로 고정 후 양생합니다. 게이지 간격과 각도가 측정 정밀도를 결정합니다.</p>
+        </div>
+      </div>
+      <!-- STEP 2 -->
+      <div class="bt-step-card">
+        <div class="sc-img-row">
+          <img src="https://blog.kakaocdn.net/dna/uTLlO/btsPUPOr0YB/AAAAAAAAAAAAAAAAAAAAAPKqKNTOXw_dffAf_XF4eaTwoOKGBoGvVBqzyS3iaREP/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=Ofwt8JO36alaelesMFSXgBIhqmw%3D"
+               alt="볼트 센서 케이블 납땜 및 신호선 배선" loading="lazy">
+          <img src="https://blog.kakaocdn.net/dna/yn7wI/btsPUQft3C7/AAAAAAAAAAAAAAAAAAAAALdbLwGg2t9yoBOSwD6f__os1Brnl2fEC88fb_JmLdoS/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=0Ae6uwhPzGxYDyt7P8S4EX3EvSI%3D"
+               alt="볼트 센서 케이블 배선 완료" loading="lazy">
+        </div>
+        <div class="sc-body">
+          <div class="sc-num">STEP 02</div>
+          <div class="sc-title">케이블 연결</div>
+          <p class="sc-desc">4개의 게이지 리드선을 풀브릿지 회로로 납땜 결선합니다. 신호 케이블은 4심 또는 6심 차폐 케이블을 사용하며, 고온·방수 환경에 따라 특수 케이블과 커넥터를 적용합니다.</p>
+        </div>
+      </div>
+      <!-- STEP 3 -->
+      <div class="bt-step-card">
+        <div class="sc-img-row">
+          <img src="https://blog.kakaocdn.net/dna/bcIPQ7/btsPURZNdCy/AAAAAAAAAAAAAAAAAAAAAJiIhPAVFNfVi8URgDIlwsMR0_l8hHpmmc1hMfHC_410/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=mp0%2FQJDpYPmSLGh%2FVEZMsrtZU%2B8%3D"
+               alt="볼트 센서 에폭시 몰딩 처리 공정" loading="lazy">
+          <img src="https://blog.kakaocdn.net/dna/cDRAey/btsPUJ8vPAq/AAAAAAAAAAAAAAAAAAAAADxEckDJGh4-nmU0ov4mZCWGrbyA_gO34GYwc8dZ_pcw/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=OVcEeUqP8G9G0qfnOMhSam33Vlc%3D"
+               alt="볼트 센서 몰딩 경화 중" loading="lazy">
+        </div>
+        <div class="sc-body">
+          <div class="sc-num">STEP 03</div>
+          <div class="sc-title">몰딩 처리 (에폭시 몰딩)</div>
+          <p class="sc-desc">스트레인게이지와 결선부 전체를 에폭시 수지로 몰딩합니다. 몰딩은 방수·방진(IP67 이상), 물리적 충격 보호, 전기 절연 기능을 동시에 제공합니다. 경화 후 표면을 마감 처리합니다.</p>
+        </div>
+      </div>
+      <!-- STEP 4 -->
+      <div class="bt-step-card">
+        <div class="sc-img-single">
+          <img src="https://blog.kakaocdn.net/dna/JoPlj/btsPS9tHN19/AAAAAAAAAAAAAAAAAAAAABrWOGqJO2r-fG58cOcqDb2P4QodzHjCfpleqPqo1wwD/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=QEUDbuiVneKjoDlfQXIW6oBnhMU%3D"
+               alt="볼트 축력 센서 몰딩 완료 납품 대기" loading="lazy" style="width:100%; height:180px; object-fit:cover; display:block;">
+        </div>
+        <div class="sc-body">
+          <div class="sc-num">STEP 04</div>
+          <div class="sc-title">교정 (Calibration) 및 납품</div>
+          <p class="sc-desc">만능 재료 시험기(UTM)로 교정 하중을 인가하고 출력/축력 교정 곡선을 작성합니다. 교정 성적서와 함께 최종 납품합니다. 씨앤디테크는 제작부터 교정까지 일괄 제공합니다.</p>
+        </div>
+      </div>
+    </div>
+    <!-- 삽입형 예시 사진 -->
+    <div style="margin-top:32px; padding:24px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);" class="fade-in">
+      <div style="font-size:13px; font-weight:700; color:var(--charcoal); margin-bottom:12px;">삽입형(중심홀) 제작 사례 — M8 소형 볼트</div>
+      <div class="bt-photo-grid two-col">
+        <img src="https://blog.kakaocdn.net/dna/nHy53/btsPUHJ1jzq/AAAAAAAAAAAAAAAAAAAAANPB3JpEFgO2jUIEdB7H4_qvu4FpVvMTq5Ig_ayS21mo/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=bdTp6eoAEu40YMs9hKV4jKsXJbA%3D"
+             alt="M8 볼트 중심홀 삽입형 스트레인게이지 센서 제작 사례 1" loading="lazy">
+        <img src="https://blog.kakaocdn.net/dna/pnIq6/btsPWskEnoG/AAAAAAAAAAAAAAAAAAAAAGZdfR_QWium0Nc6C4AdBB-jpBkQKggLS55PJv9wiAyi/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=Xm3mLZbxIyxJmhFdYMpDJw75ulc%3D"
+             alt="M8 볼트 중심홀 삽입형 스트레인게이지 센서 완성 사례 2" loading="lazy">
+      </div>
+      <p style="font-size:12.5px; color:var(--text-mute); margin:12px 0 0; line-height:1.6;">삽입형은 볼트 중심에 홀을 가공하고 원통형 게이지를 삽입합니다. 외부 공간이 없는 협소 환경, M8 이하 소형 볼트, 회전 기계 적용 시 선택합니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 6: 볼트 규격별 선택 가이드 ─────────────────── -->
+<section style="padding:48px 0 0;">
+  <div class="container">
+    <div class="bt-section-tag">SIZE SELECTION GUIDE</div>
+    <h2 class="bt-section-h2">볼트 규격·환경별 방식 선택 가이드</h2>
+    <p class="bt-section-sub">아래 표를 참고하여 적용 볼트 규격에 맞는 방식을 선택하세요. ◎ = 최적 추천 / ○ = 적용 가능 / — = 비적합.</p>
+    <div class="bt-compare-wrap fade-in">
+      <table class="bt-size-table">
+        <thead>
+          <tr>
+            <th>볼트 규격 / 조건</th>
+            <th>풀브릿지 외부 부착형</th>
+            <th>중심홀 삽입형</th>
+            <th>와셔형 포스센서</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>M5 이하 초소형</td>
+            <td class="dash">—</td>
+            <td class="rec">◎ 최적</td>
+            <td class="dash">—</td>
+          </tr>
+          <tr>
+            <td>M6 ~ M8 소형</td>
+            <td class="ok">○ 가능 (면적 제한)</td>
+            <td class="rec">◎ 최적</td>
+            <td class="ok">○ 가능</td>
+          </tr>
+          <tr>
+            <td>M10 ~ M24 중형</td>
+            <td class="rec">◎ 최적</td>
+            <td class="ok">○ 가능</td>
+            <td class="rec">◎ 최적</td>
+          </tr>
+          <tr>
+            <td>M30 이상 대형</td>
+            <td class="rec">◎ 최적</td>
+            <td class="ok">○ 가능</td>
+            <td class="ok">○ 가능</td>
+          </tr>
+          <tr>
+            <td>외부 공간 협소</td>
+            <td class="ok">○ 제한적</td>
+            <td class="rec">◎ 최적 (내부 매립)</td>
+            <td class="dash">— (공간 필요)</td>
+          </tr>
+          <tr>
+            <td>원본 볼트 보존</td>
+            <td class="dash">—</td>
+            <td class="dash">—</td>
+            <td class="rec">◎ 최적</td>
+          </tr>
+          <tr>
+            <td>다채널 장기 모니터링</td>
+            <td class="rec">◎ 최적</td>
+            <td class="rec">◎ 최적</td>
+            <td class="ok">○ 가능</td>
+          </tr>
+          <tr>
+            <td>고온 환경 (150°C 이상)</td>
+            <td class="ok">○ 고온 SG 선택 시</td>
+            <td class="rec">◎ 최적 (내부 보호)</td>
+            <td class="ok">○ 완성품 온도 사양 확인</td>
+          </tr>
+          <tr>
+            <td>방수 필요 (IP67 이상)</td>
+            <td class="rec">◎ 에폭시 몰딩 처리</td>
+            <td class="rec">◎ 내부 매립 + 케이블 실링</td>
+            <td class="ok">○ 완성품 IP등급 확인</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 7: 산업 적용 분야 ─────────────────────────── -->
+<section style="padding:48px 0 0;">
+  <div class="container">
+    <div class="bt-section-tag">APPLICATIONS</div>
+    <h2 class="bt-section-h2">산업별 볼트 축력 측정 적용 분야</h2>
+    <p class="bt-section-sub">볼트 체결 신뢰성이 구조 안전과 직결되는 모든 분야에 적용됩니다.</p>
+    <div class="bt-industry-grid fade-in">
+      <div class="bt-industry-card">
+        <div class="ic-icon">🌉</div>
+        <div class="ic-name">교량·토목 구조물</div>
+        <p class="ic-desc">교량 앵커볼트, 인장재, 교각 연결부 체결력 장기 모니터링. 볼트 풀림 경보 시스템 구축.</p>
+      </div>
+      <div class="bt-industry-card">
+        <div class="ic-icon">🚢</div>
+        <div class="ic-name">선박·해양 플랜트</div>
+        <p class="ic-desc">플랜지 체결 밀봉력 관리, 선체 구조 볼트 체결력 검증. 진동·충격 환경 내구성 요구.</p>
+      </div>
+      <div class="bt-industry-card">
+        <div class="ic-icon">⚡</div>
+        <div class="ic-name">발전·에너지 설비</div>
+        <p class="ic-desc">원자력 압력용기 스터드볼트, 풍력 타워 기초 앵커볼트, 가스터빈 플랜지 체결.</p>
+      </div>
+      <div class="bt-industry-card">
+        <div class="ic-icon">🚗</div>
+        <div class="ic-name">자동차·중장비</div>
+        <p class="ic-desc">엔진·변속기 체결 시험, 섀시 구조 볼트 피로 평가. 양산 체결 공정 검증.</p>
+      </div>
+      <div class="bt-industry-card">
+        <div class="ic-icon">🏗️</div>
+        <div class="ic-name">철강·중공업</div>
+        <p class="ic-desc">크레인·호이스트 구조 볼트, 압력용기·반응기 플랜지, 고압 배관 연결부.</p>
+      </div>
+      <div class="bt-industry-card">
+        <div class="ic-icon">🤖</div>
+        <div class="ic-name">반도체·정밀기계</div>
+        <p class="ic-desc">반도체 장비 고정 볼트 미소 체결력 관리, 정밀 가공 설비 체결 균일성 검증.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 8: 통합 솔루션 ────────────────────────────── -->
+<section style="padding:48px 0 0;">
+  <div class="container">
+    <div class="bt-section-tag">INTEGRATED SOLUTION</div>
+    <h2 class="bt-section-h2">씨앤디테크 볼트 축력 측정 통합 솔루션</h2>
+    <p class="bt-section-sub">센서 제작에서 현장 분석 보고서까지 — 씨앤디테크는 볼트 체결력 문제를 엔지니어링 관점에서 처음부터 끝까지 해결합니다.</p>
+    <div class="bt-solution-grid fade-in">
+      <div class="bt-sol-item">
+        <div class="si-step">STEP 01</div>
+        <div class="si-name">커스텀 볼트<br>센서 제작</div>
+        <p class="si-desc">고객 볼트 규격 기반 3가지 방식 맞춤 제작</p>
+      </div>
+      <div class="bt-sol-item">
+        <div class="si-step">STEP 02</div>
+        <div class="si-name">교정<br>(Calibration)</div>
+        <p class="si-desc">UTM 기반 교정 곡선 작성, 성적서 제공</p>
+      </div>
+      <div class="bt-sol-item">
+        <div class="si-step">STEP 03</div>
+        <div class="si-name">DAQ 장치<br>공급·구축</div>
+        <p class="si-desc">다채널 데이터로거, 포터블 인디케이터, 무선 텔레메트리</p>
+      </div>
+      <div class="bt-sol-item">
+        <div class="si-step">STEP 04</div>
+        <div class="si-name">현장 출장<br>측정 지원</div>
+        <p class="si-desc">전문 엔지니어 현장 설치·측정·트러블슈팅</p>
+      </div>
+      <div class="bt-sol-item">
+        <div class="si-step">STEP 05</div>
+        <div class="si-name">분석 리포트<br>제공</div>
+        <p class="si-desc">측정 데이터 분석, 체결 상태 판정, 개선 제안</p>
+      </div>
+    </div>
+    <div style="margin-top:20px; padding:20px 24px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius); font-size:14px; color:var(--text-dim); line-height:1.7;" class="fade-in">
+      <strong style="color:var(--charcoal);">참고:</strong> 씨앤디테크는 국내 다수의 교량, 발전 플랜트, 자동차 메이커 체결 시험 프로젝트에 볼트 축력 측정 솔루션을 납품한 경험이 있습니다. 볼트 파손, 풀림, 체결 산포 문제로 어려움을 겪고 계시다면 언제든지 문의해 주십시오.
+      <br><br>
+      관련 기술자료: <a href="strain-gauge.html" style="color:var(--accent); text-decoration:none;">스트레인게이지 원리·종류 가이드</a> · <a href="daq-system.html" style="color:var(--accent); text-decoration:none;">DAQ 시스템 구성</a> · <a href="telemetry.html" style="color:var(--accent); text-decoration:none;">무선 텔레메트리</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 9: FAQ ─────────────────────────────────────── -->
+<section style="padding:48px 0 0;">
+  <div class="container">
+    <div class="bt-section-tag">FAQ</div>
+    <h2 class="bt-section-h2">볼트 축력 측정 자주 묻는 질문</h2>
+    <p class="bt-section-sub">씨앤디테크에 자주 접수되는 볼트 축력 측정 관련 질문을 정리했습니다.</p>
+    <div class="bt-faq-list fade-in">
+      <div class="bt-faq-item">
+        <button class="bt-faq-q">
+          <span>토크 렌치로 볼트를 조이면 체결력(축력) 관리가 되지 않나요?</span>
+          <span class="fq-icon">+</span>
+        </button>
+        <div class="bt-faq-a">토크 렌치로 측정하는 '토크'는 체결력의 <strong>간접 지표</strong>입니다. 볼트-너트 나사산 마찰 계수, 좌면(시트면) 마찰, 윤활 여부, 표면 거칠기에 따라 동일한 토크를 가해도 실제 발생하는 축력은 <strong>±20~30%</strong>까지 차이가 납니다. 안전이 중요한 구조물이나 정밀한 체결 관리가 필요한 경우에는 스트레인게이지를 이용한 직접 축력 측정이 공학적으로 가장 정확한 방법입니다.</div>
+      </div>
+      <div class="bt-faq-item">
+        <button class="bt-faq-q">
+          <span>3가지 방식(풀브릿지·삽입형·와셔형) 중 어떤 것을 선택해야 하나요?</span>
+          <span class="fq-icon">+</span>
+        </button>
+        <div class="bt-faq-a">볼트 규격, 설치 환경, 비용을 기준으로 선택합니다.<br><br>
+          <strong>풀브릿지 외부 부착형</strong> → M10 이상 중·대형 볼트이고 외부 공간이 있을 때. 가장 정밀하고 비용 효율적입니다.<br>
+          <strong>중심홀 삽입형</strong> → M8 이하 소형 볼트이거나 외부 공간이 협소할 때. 센서가 내부에 매립되어 보호됩니다.<br>
+          <strong>와셔형 포스센서</strong> → 원본 볼트를 가공하지 않고 여러 체결부를 교차 측정할 때.<br><br>
+          씨앤디테크에 문의하시면 적용 환경에 맞는 최적 방식을 제안드립니다.</div>
+      </div>
+      <div class="bt-faq-item">
+        <button class="bt-faq-q">
+          <span>볼트 중심에 구멍을 뚫으면 볼트 강도가 떨어지지 않나요?</span>
+          <span class="fq-icon">+</span>
+        </button>
+        <div class="bt-faq-a">삽입형(중심홀 방식)의 경우, 볼트 중심축을 따라 가공하기 때문에 단면 응력 분포상 중립 위치에 가깝습니다. 규격에 따라 다르지만, 홀 직경이 볼트 직경의 20% 이하이면 볼트 강도는 <strong>95% 이상 유지</strong>됩니다. 씨앤디테크는 각 볼트 규격에 따라 최소 가공 홀 직경을 설계하여 강도 손실을 최소화합니다.</div>
+      </div>
+      <div class="bt-faq-item">
+        <button class="bt-faq-q">
+          <span>볼트 센서 제작 후 교정(캘리브레이션)은 어떻게 하나요?</span>
+          <span class="fq-icon">+</span>
+        </button>
+        <div class="bt-faq-a">제작 완료된 볼트 센서는 <strong>만능 재료 시험기(UTM)</strong> 또는 로드셀 기준 지그를 이용해 교정합니다. 교정 범위 내 여러 하중 포인트에서 인장력(kN)을 가하고 mV/V 출력을 기록하여 <strong>교정 곡선(Calibration Curve)</strong>을 작성합니다. 씨앤디테크는 제작과 교정을 일괄 제공하며, 교정 성적서를 함께 납품합니다.</div>
+      </div>
+      <div class="bt-faq-item">
+        <button class="bt-faq-q">
+          <span>현장에서 데이터 수집(DAQ)은 어떻게 하나요?</span>
+          <span class="fq-icon">+</span>
+        </button>
+        <div class="bt-faq-a">볼트 센서 출력은 <strong>mV/V 신호</strong>입니다. 현장 상황에 따라:<br>
+          ① <strong>포터블 스트레인 인디케이터</strong> — 단채널, 배터리 구동, 즉시 현장 측정<br>
+          ② <strong>다채널 DAQ 장치</strong> — 동시 다중 볼트 모니터링, PC 연동 분석<br>
+          ③ <strong>무선 텔레메트리 시스템</strong> — 회전체나 원격 위치 볼트<br><br>
+          씨앤디테크는 DAQ 장치 공급과 현장 설치·측정 서비스도 함께 제공합니다.</div>
+      </div>
+      <div class="bt-faq-item">
+        <button class="bt-faq-q">
+          <span>최소 몇 개부터 커스텀 제작이 가능한가요?</span>
+          <span class="fq-icon">+</span>
+        </button>
+        <div class="bt-faq-a"><strong>1개부터 커스텀 제작</strong>이 가능합니다. 씨앤디테크는 단품 시험용 볼트부터 양산용 납품까지 다양한 수량을 수용합니다. 볼트 규격, 재질, 측정 범위, 출력 타입(mV/V, 4~20mA, 디지털), 방수 등급 요구 사항을 알려주시면 견적을 드립니다.</div>
+      </div>
+      <div class="bt-faq-item">
+        <button class="bt-faq-q">
+          <span>고온, 방수 등 가혹 환경에서도 사용 가능한가요?</span>
+          <span class="fq-icon">+</span>
+        </button>
+        <div class="bt-faq-a">가능합니다. 고온 환경에서는 <strong>고온용 스트레인게이지와 내열 접착제</strong>(최대 250°C 이상)를 사용하고, 방수·방진이 필요한 환경에서는 에폭시 몰딩 처리와 IP67 이상 케이블·커넥터를 적용합니다. 해양, 발전 플랜트, 야외 교량 등 다양한 가혹 환경 적용 경험을 보유하고 있습니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────── -->
+<section style="padding:48px 0 100px;">
+  <div class="container">
+    <div style="padding:40px 48px; background:linear-gradient(135deg, var(--orange-tint) 0%, #fff 100%); border:1px solid var(--orange-line); border-radius:var(--radius); max-width:840px;" class="fade-in">
+      <div class="bt-section-tag">CONTACT</div>
+      <h3 style="font-size:24px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">볼트 축력 측정, 지금 씨앤디테크에 문의하세요</h3>
+      <p style="font-size:14.5px; color:var(--text-dim); line-height:1.75; margin-bottom:24px;">볼트 규격과 적용 환경을 알려주시면, 풀브릿지 부착형·삽입형·와셔형 중 최적의 방식과 예상 견적을 안내해 드립니다. 설계부터 교정·납품·현장 서비스까지 씨앤디테크가 일괄 지원합니다.</p>
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 →</a>
+        <a href="../contact.html" class="btn btn-primary">볼트 센서 제작 문의하기 →</a>
         <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
       </div>
+      <p style="font-size:12px; color:var(--text-mute); margin-top:16px; margin-bottom:0;">관련 기술자료 더 보기 →
+        <a href="strain-gauge.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">스트레인게이지 기초</a> ·
+        <a href="strain-gauge-bonding.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">게이지 부착 기술</a> ·
+        <a href="residual-stress.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">잔류응력 측정</a> ·
+        <a href="daq-system.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">DAQ 시스템</a>
+      </p>
     </div>
   </div>
 </section>
@@ -116,14 +885,14 @@
   <div class="container">
     <div class="footer-row">
       <div class="footer-brand">
-        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display:'none'; this.nextElementSibling.style.display='block'">
         <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
         <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
       </div>
       <div class="footer-cols">
         <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
-        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="residual-stress.html">잔류응력 측정</a></li><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="pcb-stress.html">PCB 응력 측정</a></li></ul></div>
-        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="residual-stress.html">잔류응력 측정</a></li><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="bolt-tension.html">볼트 축력 측정</a></li><li><a href="pcb-stress.html">PCB 응력 측정</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank" rel="noopener">Tistory Blog</a></li></ul></div>
       </div>
     </div>
     <div class="footer-meta">
@@ -132,7 +901,9 @@
     </div>
   </div>
 </footer>
+
 <script>
+// 언어 토글
 const langBtns = document.querySelectorAll('.lang-btn');
 const setLang = (lang) => {
   document.documentElement.setAttribute('lang', lang);
@@ -142,6 +913,8 @@ const setLang = (lang) => {
 };
 langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
 try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+
+// 모바일 메뉴
 const menuBtn = document.getElementById('menuBtn');
 const mobileNav = document.getElementById('mobileNav');
 const navClose = document.getElementById('navClose');
@@ -150,13 +923,25 @@ if (menuBtn && mobileNav) {
   navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
   mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
 }
+
+// Fade-in observer
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-}, { threshold: 0.1 });
+}, { threshold: 0.08 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Header scroll
 window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+
+// FAQ 아코디언
+document.querySelectorAll('.bt-faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.bt-faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.bt-faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
 </script>
-
-
 </body>
 </html>
