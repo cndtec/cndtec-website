@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GTDL DAQ System 데이터수집장치 — 128CH·1000Hz·모듈형 | 씨앤디테크</title>
+<meta name="description" content="GTDL DAQ System 상세 사양: 최대 128채널 동기 수집, 채널당 1,000Hz 고속 샘플링, 브리지 내장 모듈형 구조. GTDL-350 / GTDL-360 모델 비교 및 MultiScan·Multiload 소프트웨어 소개." />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/gtdl.html" />
+<meta property="og:title" content="GTDL DAQ System 데이터수집장치 | 씨앤디테크" />
+<meta property="og:description" content="GTDL DAQ System — 최대 128채널, 1,000Hz 샘플링, 슬롯형 모듈 조합. GTDL-350/360 사양 비교 및 MultiScan 소프트웨어." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/gtdl.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=4">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "GTDL DAQ System 데이터수집장치 — 128CH·1000Hz·모듈형",
+      "description": "스트레인·온도·진동 통합 계측을 위한 고성능 모듈형 DAQ System. 최대 128채널 동기 수집, 채널당 1,000Hz 샘플링. GTDL-350/360 모델 비교.",
+      "url": "https://www.cndtec.co.kr/resources/gtdl.html",
+      "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+      "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+      "datePublished": "2023-07-18",
+      "dateModified": "2026-06-24",
+      "inLanguage": "ko"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "GTDL DAQ System이란 무엇인가요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "GTDL은 씨앤디테크가 취급하는 고성능 모듈형 데이터수집장치(DAQ System)입니다. 스트레인게이지, 온도, 진동, 변위 등 다양한 물리량을 동시에 정밀 계측할 수 있으며, 슬롯형 모듈 조합으로 최대 128채널 동기 수집, 채널당 1,000Hz 고속 샘플링을 지원합니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "GTDL-350과 GTDL-360의 차이는 무엇인가요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "GTDL-350은 기본 최대 16채널, GTDL-360은 기본 최대 32채널 구성입니다. 두 모델 모두 다대(多臺) 연결 시 최대 128채널까지 확장되며, 샘플링 속도(1,000Hz), 내장 브리지(120Ω/350Ω), 인터페이스(USB/LAN)는 동일합니다. 채널 수 요구에 따라 모델을 선택합니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "외장 브리지 박스 없이 스트레인게이지를 연결할 수 있나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "네, GTDL은 120Ω·350Ω 브리지 회로가 장비 내부에 내장되어 있어 외장 브리지 박스 없이 스트레인게이지를 직접 연결할 수 있습니다. 외부 배선이 단순해지고 노이즈 유입도 최소화됩니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "피로·내구시험에 GTDL을 사용할 수 있나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "GTDL의 사이클(Cycle) 모드를 사용하면 각 채널의 min/max 값을 자동 추적·기록합니다. 반복 하중 시험 시 응력 사이클 카운팅과 피로 데이터 수집에 최적화된 모드입니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "GTDL과 함께 제공되는 소프트웨어는 무엇인가요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "MultiScan(실시간 측정 프로그램)과 Multiload(후처리 분석 프로그램) 두 가지가 기본 제공됩니다. MultiScan은 실시간 Time Graph/X-Y Graph 표시 및 CSV 저장, Multiload는 FFT 분석·디지털 필터링·이동평균 등 후처리 기능을 지원합니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "씨앤디테크에서 GTDL 제품을 구입할 수 있나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "씨앤디테크는 GTDL DAQ System의 공급·설치·교육·기술지원을 담당합니다. 측정 목적과 채널 수, 물리량 종류를 알려주시면 최적 모델과 모듈 구성을 제안드립니다. 031-680-1225 또는 wgjeon@cndtec.co.kr로 문의 바랍니다."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+.daq-kpi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:32px 0; }
+.daq-kpi { background:var(--white); border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:var(--radius); padding:20px 16px; text-align:center; }
+.daq-kpi-n { font-family:'Space Grotesk','JetBrains Mono',monospace; font-size:clamp(28px,5vw,42px); font-weight:700; color:var(--accent); line-height:1; }
+.daq-kpi-u { font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent-deep); margin-top:4px; }
+.daq-kpi-l { font-size:11px; color:var(--text-mute); margin-top:4px; }
+.daq-feat-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px; margin:24px 0; }
+.daq-feat-card { background:var(--bg-soft,#F8F6F4); border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:var(--radius); padding:24px 20px; }
+.daq-feat-ico { font-size:22px; display:block; margin-bottom:10px; }
+.daq-feat-tit { font-size:14px; font-weight:700; color:var(--charcoal); margin-bottom:8px; }
+.daq-feat-dsc { font-size:12.5px; color:var(--text-dim); line-height:1.7; }
+.daq-feat-tag { display:inline-block; margin-top:10px; background:rgba(242,148,0,0.08); color:var(--accent-deep); font-family:'JetBrains Mono',monospace; font-size:9px; font-weight:700; letter-spacing:1px; padding:3px 10px; border-radius:999px; border:1px solid rgba(242,148,0,0.2); text-transform:uppercase; }
+.daq-model-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:24px 0; }
+@media (max-width:600px) { .daq-model-grid{grid-template-columns:1fr;} .daq-kpi-grid{grid-template-columns:repeat(3,1fr); gap:10px;} }
+.daq-model-card { background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:24px; position:relative; }
+.daq-model-card.highlight { border-color:var(--accent); background:rgba(242,148,0,0.05); }
+.daq-model-badge { position:absolute; top:-11px; right:14px; background:var(--accent); color:#fff; font-family:'JetBrains Mono',monospace; font-size:9px; font-weight:700; letter-spacing:1.5px; padding:3px 10px; border-radius:999px; text-transform:uppercase; }
+.daq-model-name { font-family:'Space Grotesk','JetBrains Mono',monospace; font-size:24px; font-weight:700; color:var(--accent); letter-spacing:1px; margin-bottom:4px; }
+.daq-model-sub { font-size:11px; color:var(--text-mute); margin-bottom:16px; }
+.daq-model-row { display:flex; justify-content:space-between; font-size:12.5px; padding:7px 0; border-bottom:1px solid var(--line); }
+.daq-model-row:last-child { border:none; }
+.daq-model-lbl { color:var(--text-dim); }
+.daq-model-val { color:var(--charcoal); font-weight:600; font-family:'JetBrains Mono',monospace; font-size:12px; }
+.daq-model-val.hi { color:var(--accent); }
+.daq-spec-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:24px 0; }
+@media (max-width:600px) { .daq-spec-grid{grid-template-columns:1fr;} }
+.daq-spec-tbl { width:100%; border-collapse:collapse; font-size:13px; }
+.daq-spec-tbl caption { font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700; color:var(--accent-deep); letter-spacing:2px; text-transform:uppercase; text-align:left; padding-bottom:8px; border-bottom:2px solid var(--accent); caption-side:top; }
+.daq-spec-tbl tr { border-bottom:1px solid var(--line); }
+.daq-spec-tbl tr:last-child { border:none; }
+.daq-spec-tbl td { padding:9px 10px; }
+.daq-spec-tbl td:first-child { color:var(--text-dim); width:45%; background:var(--bg-soft,#F8F6F4); }
+.daq-spec-tbl td em { font-style:normal; color:var(--accent); font-weight:700; }
+.daq-mod-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:8px; margin:16px 0; }
+.daq-mod-chip { display:flex; align-items:center; gap:8px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:10px 12px; font-size:12px; font-weight:500; color:var(--charcoal); }
+.daq-mod-dot { width:6px; height:6px; background:var(--accent); border-radius:50%; flex-shrink:0; }
+.daq-sw-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:24px 0; }
+@media (max-width:600px) { .daq-sw-grid{grid-template-columns:1fr;} }
+.daq-sw-card { background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:24px; }
+.daq-sw-tit { font-family:'JetBrains Mono',monospace; font-size:16px; font-weight:700; color:var(--accent); margin-bottom:4px; }
+.daq-sw-role { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text-mute); font-weight:500; letter-spacing:1px; text-transform:uppercase; margin-bottom:14px; }
+.daq-sw-ul { list-style:none; display:flex; flex-direction:column; gap:7px; }
+.daq-sw-ul li { font-size:13px; color:var(--text-dim); display:flex; align-items:flex-start; gap:8px; }
+.daq-sw-ul li::before { content:'▸'; color:var(--accent); font-size:10px; flex-shrink:0; margin-top:2px; }
+.daq-app-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:24px 0; }
+@media (max-width:600px) { .daq-app-grid{grid-template-columns:repeat(2,1fr);} }
+.daq-app-item { text-align:center; padding:20px 10px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); }
+.daq-app-ico { font-size:26px; display:block; margin-bottom:8px; }
+.daq-app-nm { font-size:12px; font-weight:700; color:var(--charcoal); margin-bottom:4px; }
+.daq-app-ds { font-size:11px; color:var(--text-mute); line-height:1.5; }
+.daq-sec-label { display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:rgba(242,148,0,0.08); border:1px solid rgba(242,148,0,0.2); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:12px; }
+.daq-divider { border:none; border-top:1px solid var(--line); margin:48px 0; }
+/* FAQ */
+.gtdl-faq { display:flex; flex-direction:column; gap:0; margin:24px 0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+.gtdl-faq-item { border-bottom:1px solid var(--line); }
+.gtdl-faq-item:last-child { border-bottom:none; }
+.gtdl-faq-q { width:100%; text-align:left; background:none; border:none; cursor:pointer; padding:18px 20px; display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
+.gtdl-faq-q-txt { font-size:14px; font-weight:600; color:var(--charcoal); line-height:1.5; }
+.gtdl-faq-ico { color:var(--accent); font-size:18px; flex-shrink:0; transition:transform 0.2s; }
+.gtdl-faq-item.open .gtdl-faq-ico { transform:rotate(45deg); }
+.gtdl-faq-a { display:none; padding:0 20px 18px; font-size:13.5px; color:var(--text-dim); line-height:1.8; }
+.gtdl-faq-item.open .gtdl-faq-a { display:block; }
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div class="daq-sec-label">DAQ SYSTEM · GTDL 데이터수집장치</div>
+      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(32px,5vw,60px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">GTDL DAQ System</h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:680px; line-height:1.7; margin-bottom:0;">스트레인 · 온도 · 진동 통합 계측 솔루션. 모듈형 슬롯 구조로 최대 128채널 동기 수집, 채널당 최대 1,000Hz 고속 샘플링을 지원하는 고성능 산업용 DAQ 시스템입니다.</p>
+    </div>
+
+    <div style="display:flex; align-items:flex-start; gap:48px; margin-top:36px; flex-wrap:wrap;">
+      <div style="flex:0 0 auto; max-width:480px; width:100%;">
+        <img src="../assets/images/daq-gtdl.png"
+             alt="GTDL DAQ System — 모듈형 데이터수집장치"
+             style="width:100%; border-radius:var(--radius); box-shadow:0 8px 40px rgba(0,0,0,0.10);"
+             onerror="this.style.display='none'">
+      </div>
+      <div style="flex:1; min-width:220px;">
+        <div class="daq-kpi-grid" style="margin-top:0;">
+          <div class="daq-kpi">
+            <div class="daq-kpi-n">128</div>
+            <div class="daq-kpi-u">CH</div>
+            <div class="daq-kpi-l">최대 채널 수</div>
+          </div>
+          <div class="daq-kpi">
+            <div class="daq-kpi-n">1k</div>
+            <div class="daq-kpi-u">Hz</div>
+            <div class="daq-kpi-l">채널당 샘플링</div>
+          </div>
+          <div class="daq-kpi">
+            <div class="daq-kpi-n">6+</div>
+            <div class="daq-kpi-u">TYPE</div>
+            <div class="daq-kpi-l">측정 물리량</div>
+          </div>
+        </div>
+        <div style="margin-top:16px; padding:14px 16px; background:var(--bg-soft,#F8F6F4); border:1px solid var(--line); border-radius:var(--radius); font-size:12.5px; color:var(--text-dim); line-height:1.7;">
+          <strong style="color:var(--charcoal); display:block; margin-bottom:6px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1px;">GTM 모듈 구성</strong>
+          GTM-M 메인 유닛 · GTM-DSA 스트레인 모듈 · GTM-OSA 범용 측정 모듈
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section style="padding:40px 0 100px;">
+  <div class="container" style="max-width:960px;">
+
+    <!-- 01 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p style="font-size:10px; font-weight:700; color:var(--accent); font-family:'JetBrains Mono',monospace; letter-spacing:3px; margin-bottom:8px;">01 · OVERVIEW</p>
+      <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:16px;">제품 개요</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:16px;"><strong style="color:var(--charcoal);">GTDL</strong>은 스트레인게이지, 온도, 진동, 변위 등 다양한 물리량을 동시에 정밀 계측하기 위한 <strong style="color:var(--charcoal);">고성능 모듈형 데이터수집장치(DAQ System)</strong>입니다.</p>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:16px;">하나의 메인 유닛에 목적에 맞는 측정 모듈을 슬롯 방식으로 자유롭게 조합하여, 복잡한 계측 환경도 <strong style="color:var(--charcoal);">단일 시스템으로 통합 대응</strong>합니다. 스트레인 브리지 회로가 장비 내부에 내장되어 있어 외장 브리지 박스 없이 즉시 운용이 가능하며, 순간적인 과도 응력도 빠짐없이 포착하는 <strong style="color:var(--charcoal);">채널당 1,000Hz 고속 동기 샘플링</strong>을 지원합니다.</p>
+      <div style="padding:16px 20px; background:rgba(242,148,0,0.05); border:1px solid rgba(242,148,0,0.2); border-left:3px solid var(--accent); border-radius:0 var(--radius) var(--radius) 0; font-size:13.5px; color:var(--text-dim); line-height:1.7;">
+        💡 PCB 응력 측정 · 부품 피로내구시험 · 구조물 모니터링 · 소음진동(NVH) 시험 등 다양한 산업 현장에 즉시 적용 가능
+      </div>
+    </div>
+
+    <hr class="daq-divider">
+
+    <!-- 02 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p style="font-size:10px; font-weight:700; color:var(--accent); font-family:'JetBrains Mono',monospace; letter-spacing:3px; margin-bottom:8px;">02 · FEATURES</p>
+      <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:20px;">핵심 기능</h2>
+      <div class="daq-feat-grid">
+        <div class="daq-feat-card">
+          <span class="daq-feat-ico">🧩</span>
+          <div class="daq-feat-tit">슬롯형 모듈 조합</div>
+          <div class="daq-feat-dsc">스트레인, 온도, 전압, 진동, 엔코더 등 측정 목적에 맞게 모듈을 자유롭게 조합. 현장 요구 변화에 모듈 교체만으로 대응 가능.</div>
+          <span class="daq-feat-tag">Configurable</span>
+        </div>
+        <div class="daq-feat-card">
+          <span class="daq-feat-ico">📡</span>
+          <div class="daq-feat-tit">최대 128채널 동기화</div>
+          <div class="daq-feat-dsc">GTDL-350(16ch) / GTDL-360(32ch) 기본 구성. 시스템 다대 연결로 128채널까지 확장, 전채널 시간 지연 없는 동기 수집.</div>
+          <span class="daq-feat-tag">Scalable</span>
+        </div>
+        <div class="daq-feat-card">
+          <span class="daq-feat-ico">⚡</span>
+          <div class="daq-feat-tit">1,000Hz 고속 샘플링</div>
+          <div class="daq-feat-dsc">채널당 최대 1,000Hz 독립 샘플링. 정적 / 동적 / 사이클 모드 선택. 피로내구시험 시 min/max 자동 추적.</div>
+          <span class="daq-feat-tag">High-speed</span>
+        </div>
+        <div class="daq-feat-card">
+          <span class="daq-feat-ico">🔌</span>
+          <div class="daq-feat-tit">브리지 회로 내장</div>
+          <div class="daq-feat-dsc">120Ω · 350Ω 브리지 회로 장비 내부 탑재. 외장 브리지 박스 불필요, 노이즈 유입 최소화, 배선 단순화.</div>
+          <span class="daq-feat-tag">Built-in Bridge</span>
+        </div>
+        <div class="daq-feat-card">
+          <span class="daq-feat-ico">🔧</span>
+          <div class="daq-feat-tit">산업용 타지미 커넥터</div>
+          <div class="daq-feat-dsc">강진동 환경에서 GTM-DSCA 모듈의 Tajimi M12 커넥터 적용 선택 가능. 장시간 연속 측정 환경에 최적화.</div>
+          <span class="daq-feat-tag">Industrial Grade</span>
+        </div>
+        <div class="daq-feat-card">
+          <span class="daq-feat-ico">⚙️</span>
+          <div class="daq-feat-tit">Custom 제작 대응</div>
+          <div class="daq-feat-dsc">커넥터 타입, 케이스 크기·재질 등 고객 요구에 맞춘 맞춤형 제작 가능. 특수 환경 대응 최적안 제공.</div>
+          <span class="daq-feat-tag">Customizable</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="daq-divider">
+
+    <!-- 03 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p style="font-size:10px; font-weight:700; color:var(--accent); font-family:'JetBrains Mono',monospace; letter-spacing:3px; margin-bottom:8px;">03 · MODELS</p>
+      <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:20px;">모델 사양 비교</h2>
+      <div class="daq-model-grid">
+        <div class="daq-model-card">
+          <div class="daq-model-name">GTDL-350</div>
+          <div class="daq-model-sub">Standard Channel Model</div>
+          <div class="daq-model-row"><span class="daq-model-lbl">기본 채널</span><span class="daq-model-val hi">최대 16 CH</span></div>
+          <div class="daq-model-row"><span class="daq-model-lbl">최대 채널 (다대연결)</span><span class="daq-model-val hi">최대 128 CH</span></div>
+          <div class="daq-model-row"><span class="daq-model-lbl">샘플링 속도</span><span class="daq-model-val">1,000 Hz/CH</span></div>
+          <div class="daq-model-row"><span class="daq-model-lbl">브리지 내장</span><span class="daq-model-val">120Ω / 350Ω</span></div>
+          <div class="daq-model-row"><span class="daq-model-lbl">인터페이스</span><span class="daq-model-val">USB / LAN</span></div>
+        </div>
+        <div class="daq-model-card highlight">
+          <div class="daq-model-badge">High Channel</div>
+          <div class="daq-model-name">GTDL-360</div>
+          <div class="daq-model-sub">High Channel Model</div>
+          <div class="daq-model-row"><span class="daq-model-lbl">기본 채널</span><span class="daq-model-val hi">최대 32 CH</span></div>
+          <div class="daq-model-row"><span class="daq-model-lbl">최대 채널 (다대연결)</span><span class="daq-model-val hi">최대 128 CH</span></div>
+          <div class="daq-model-row"><span class="daq-model-lbl">샘플링 속도</span><span class="daq-model-val">1,000 Hz/CH</span></div>
+          <div class="daq-model-row"><span class="daq-model-lbl">브리지 내장</span><span class="daq-model-val">120Ω / 350Ω</span></div>
+          <div class="daq-model-row"><span class="daq-model-lbl">인터페이스</span><span class="daq-model-val">USB / LAN</span></div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="daq-divider">
+
+    <!-- 04 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p style="font-size:10px; font-weight:700; color:var(--accent); font-family:'JetBrains Mono',monospace; letter-spacing:3px; margin-bottom:8px;">04 · SPECIFICATIONS</p>
+      <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:20px;">상세 사양</h2>
+      <div class="daq-spec-grid">
+        <table class="daq-spec-tbl">
+          <caption>측정 사양</caption>
+          <tr><td>샘플링 속도</td><td>동적 <em>1,000Hz</em> ~ 5Hz / 정적 최소 0.1초</td></tr>
+          <tr><td>동작 모드</td><td>정적 · 동적 · 사이클(피로내구)</td></tr>
+          <tr><td>사이클 모드</td><td>min / max 자동 추적</td></tr>
+          <tr><td>전채널 동기</td><td>채널 간 시간 지연 없음</td></tr>
+          <tr><td>내장 브리지</td><td>120Ω, 350Ω</td></tr>
+        </table>
+        <table class="daq-spec-tbl">
+          <caption>시스템 사양</caption>
+          <tr><td>최대 채널 수</td><td><em>128 CH</em> (다대 연결 시)</td></tr>
+          <tr><td>모듈 방식</td><td>슬롯 방식 자유 조합</td></tr>
+          <tr><td>커넥터 (선택)</td><td>나사단자 / Tajimi M12</td></tr>
+          <tr><td>인터페이스</td><td>USB / LAN (PC 연동)</td></tr>
+          <tr><td>Custom 대응</td><td>커넥터 · 케이스 맞춤 제작</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <hr class="daq-divider">
+
+    <!-- 05 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p style="font-size:10px; font-weight:700; color:var(--accent); font-family:'JetBrains Mono',monospace; letter-spacing:3px; margin-bottom:8px;">05 · MODULES</p>
+      <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:20px;">지원 모듈 라인업</h2>
+      <div class="daq-mod-grid">
+        <div class="daq-mod-chip"><span class="daq-mod-dot"></span>스트레인게이지</div>
+        <div class="daq-mod-chip"><span class="daq-mod-dot"></span>엔코더</div>
+        <div class="daq-mod-chip"><span class="daq-mod-dot"></span>디지털 신호</div>
+        <div class="daq-mod-chip"><span class="daq-mod-dot"></span>써모커플</div>
+        <div class="daq-mod-chip"><span class="daq-mod-dot"></span>아날로그 출력</div>
+        <div class="daq-mod-chip"><span class="daq-mod-dot"></span>접점 출력</div>
+        <div class="daq-mod-chip"><span class="daq-mod-dot"></span>4~20mA 출력</div>
+        <div class="daq-mod-chip"><span class="daq-mod-dot"></span>온습도 센서</div>
+        <div class="daq-mod-chip"><span class="daq-mod-dot"></span>FFT 분석</div>
+        <div class="daq-mod-chip"><span class="daq-mod-dot"></span>전압 측정</div>
+        <div class="daq-mod-chip"><span class="daq-mod-dot"></span>RTD / Pt100</div>
+        <div class="daq-mod-chip"><span class="daq-mod-dot"></span>진동 (IEPE)</div>
+      </div>
+    </div>
+
+    <hr class="daq-divider">
+
+    <!-- 06 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p style="font-size:10px; font-weight:700; color:var(--accent); font-family:'JetBrains Mono',monospace; letter-spacing:3px; margin-bottom:8px;">06 · SOFTWARE</p>
+      <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:20px;">기본 제공 소프트웨어</h2>
+      <div class="daq-sw-grid">
+        <div class="daq-sw-card">
+          <div class="daq-sw-tit">MultiScan</div>
+          <div class="daq-sw-role">실시간 측정 프로그램</div>
+          <ul class="daq-sw-ul">
+            <li>정적 / 동적 / 사이클 모드 운용</li>
+            <li>Time Graph / X-Y Graph 실시간 표시</li>
+            <li>전채널 시트 동시 확인</li>
+            <li>Autozero (전체 / 개별 채널)</li>
+            <li>CSV 저장 / 엑셀 직접 붙여넣기</li>
+          </ul>
+        </div>
+        <div class="daq-sw-card">
+          <div class="daq-sw-tit">Multiload</div>
+          <div class="daq-sw-role">후처리 분석 프로그램</div>
+          <ul class="daq-sw-ul">
+            <li>Time Plot / X-Y Plot / FFT Plot</li>
+            <li>디지털 Low Pass 필터링</li>
+            <li>N점 이동평균 노이즈 제거</li>
+            <li>평균 / 최대 / 최소 / P-P값 자동 산출</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <hr class="daq-divider">
+
+    <!-- 07 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p style="font-size:10px; font-weight:700; color:var(--accent); font-family:'JetBrains Mono',monospace; letter-spacing:3px; margin-bottom:8px;">07 · APPLICATIONS</p>
+      <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:20px;">적용 분야</h2>
+      <div class="daq-app-grid">
+        <div class="daq-app-item">
+          <span class="daq-app-ico">🖥️</span>
+          <div class="daq-app-nm">PCB 응력 측정</div>
+          <div class="daq-app-ds">IPC/JEDEC-9704 기준 보드 조립 응력 평가</div>
+        </div>
+        <div class="daq-app-item">
+          <span class="daq-app-ico">🔄</span>
+          <div class="daq-app-nm">피로·내구시험</div>
+          <div class="daq-app-ds">사이클 모드 min/max 자동 추적</div>
+        </div>
+        <div class="daq-app-item">
+          <span class="daq-app-ico">🏗️</span>
+          <div class="daq-app-nm">구조물 모니터링</div>
+          <div class="daq-app-ds">장기 다채널 실시간 감시</div>
+        </div>
+        <div class="daq-app-item">
+          <span class="daq-app-ico">📳</span>
+          <div class="daq-app-nm">소음진동 (NVH)</div>
+          <div class="daq-app-ds">FFT 분석 · 진동 주파수 특성 평가</div>
+        </div>
+      </div>
+
+      <!-- 내부 링크 클러스터 -->
+      <div style="padding:20px 24px; background:var(--bg-soft,#F8F6F4); border:1px solid var(--line); border-radius:var(--radius); margin-top:24px;">
+        <p style="font-size:11px; font-weight:700; color:var(--accent); font-family:'JetBrains Mono',monospace; letter-spacing:2px; margin-bottom:12px;">관련 기술자료</p>
+        <div style="display:flex; flex-wrap:wrap; gap:12px;">
+          <a href="daq-system.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ DAQ System 종합 가이드 (HBM·Gantner 비교)</a>
+          <a href="strain-gauge.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 스트레인게이지 원리·종류</a>
+          <a href="pcb-stress.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ PCB 응력 측정</a>
+          <a href="vibration.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 진동 측정 시스템</a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="daq-divider">
+
+    <!-- FAQ -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p style="font-size:10px; font-weight:700; color:var(--accent); font-family:'JetBrains Mono',monospace; letter-spacing:3px; margin-bottom:8px;">08 · FAQ</p>
+      <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:20px;">자주 묻는 질문</h2>
+      <div class="gtdl-faq">
+        <div class="gtdl-faq-item">
+          <button class="gtdl-faq-q" onclick="toggleFaq(this)"><span class="gtdl-faq-q-txt">GTDL DAQ System이란 무엇인가요?</span><span class="gtdl-faq-ico">+</span></button>
+          <div class="gtdl-faq-a">GTDL은 씨앤디테크가 취급하는 고성능 모듈형 데이터수집장치(DAQ System)입니다. 스트레인게이지, 온도, 진동, 변위 등 다양한 물리량을 동시에 정밀 계측할 수 있으며, 슬롯형 모듈 조합으로 최대 128채널 동기 수집, 채널당 1,000Hz 고속 샘플링을 지원합니다.</div>
+        </div>
+        <div class="gtdl-faq-item">
+          <button class="gtdl-faq-q" onclick="toggleFaq(this)"><span class="gtdl-faq-q-txt">GTDL-350과 GTDL-360의 차이는 무엇인가요?</span><span class="gtdl-faq-ico">+</span></button>
+          <div class="gtdl-faq-a">GTDL-350은 기본 최대 16채널, GTDL-360은 기본 최대 32채널 구성입니다. 두 모델 모두 다대 연결 시 최대 128채널까지 확장되며, 샘플링 속도(1,000Hz), 내장 브리지(120Ω/350Ω), 인터페이스(USB/LAN)는 동일합니다.</div>
+        </div>
+        <div class="gtdl-faq-item">
+          <button class="gtdl-faq-q" onclick="toggleFaq(this)"><span class="gtdl-faq-q-txt">외장 브리지 박스 없이 스트레인게이지를 연결할 수 있나요?</span><span class="gtdl-faq-ico">+</span></button>
+          <div class="gtdl-faq-a">네, GTDL은 120Ω·350Ω 브리지 회로가 장비 내부에 내장되어 있어 외장 브리지 박스 없이 스트레인게이지를 직접 연결할 수 있습니다. 외부 배선이 단순해지고 노이즈 유입도 최소화됩니다.</div>
+        </div>
+        <div class="gtdl-faq-item">
+          <button class="gtdl-faq-q" onclick="toggleFaq(this)"><span class="gtdl-faq-q-txt">피로·내구시험에 GTDL을 사용할 수 있나요?</span><span class="gtdl-faq-ico">+</span></button>
+          <div class="gtdl-faq-a">GTDL의 사이클(Cycle) 모드를 사용하면 각 채널의 min/max 값을 자동 추적·기록합니다. 반복 하중 시험 시 응력 사이클 카운팅과 피로 데이터 수집에 최적화된 모드입니다.</div>
+        </div>
+        <div class="gtdl-faq-item">
+          <button class="gtdl-faq-q" onclick="toggleFaq(this)"><span class="gtdl-faq-q-txt">제공되는 소프트웨어는 무엇인가요?</span><span class="gtdl-faq-ico">+</span></button>
+          <div class="gtdl-faq-a">MultiScan(실시간 측정)과 Multiload(후처리 분석) 두 가지가 기본 제공됩니다. MultiScan은 실시간 그래프 표시·CSV 저장, Multiload는 FFT 분석·디지털 필터링·이동평균 등 후처리 기능을 지원합니다.</div>
+        </div>
+        <div class="gtdl-faq-item">
+          <button class="gtdl-faq-q" onclick="toggleFaq(this)"><span class="gtdl-faq-q-txt">GTDL과 HBM QuantumX, Gantner Q.Series의 차이는 무엇인가요?</span><span class="gtdl-faq-ico">+</span></button>
+          <div class="gtdl-faq-a">GTDL은 국내 맞춤형 지원과 비용 효율이 강점인 모듈형 DAQ입니다. HBM QuantumX는 자동차·항공 시험 등 고정밀도 독립형 운용에 강점이 있고, Gantner Q.Series X는 IIoT·실시간 제어 통합에 적합합니다. 자세한 비교는 <a href="daq-system.html" style="color:var(--accent);">DAQ System 종합 가이드</a>를 참고하세요.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="fade-in" style="margin-top:48px; padding:36px; background:rgba(242,148,0,0.05); border:1px solid rgba(242,148,0,0.2); border-radius:var(--radius);">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">GTDL 기술 상담 및 견적 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">씨앤디테크는 시험 특성에 맞는 최적 모델과 모듈 구성을 제안드립니다. 측정 물리량과 채널 수를 알려주시면 맞춤 솔루션을 안내드립니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+        <a href="mailto:wgjeon@cndtec.co.kr" class="btn btn-ghost">wgjeon@cndtec.co.kr</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="daq-system.html">DAQ 시스템 가이드</a></li><li><a href="gtdl.html">GTDL DAQ</a></li><li><a href="torque-measurement.html">토크 측정</a></li><li><a href="torsional-vibration.html">비틀림 진동</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 CND TECH (씨앤디테크) · 대표 전원근</span>
+      <span>경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.gtdl-faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.gtdl-faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+</body>
+</html>
