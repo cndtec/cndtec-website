@@ -38,7 +38,7 @@
       "name": "IPC/JEDEC-9704A란 무엇인가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "IPC/JEDEC-9704A(Printed Wiring Board Strain Gage Test Guideline)는 PCB 기판에 스트레인게이지를 부착해 제조 공정 중 발생하는 기계적 응력(변형률)을 측정하는 국제 표준입니다. 3축 로젯 스트레인게이지를 BGA 부품 주변에 부착하고, 최소 2kHz 샘플링·12비트 이상 해상도의 DAQ로 측정하도록 규정합니다."
+        "text": "IPC/JEDEC-9704A(Printed Wiring Board Strain Gage Test Guideline)는 PCB 기판에 스트레인게이지를 부착해 제조 공정 중 발생하는 기계적 응력(변형률)을 측정하는 국제 표준입니다. 3축 로젯 스트레인게이지를 BGA 부품 주변에 부착하고, 최소 1kHz 샘플링·12비트 이상 해상도의 DAQ로 측정하도록 규정합니다."
       }
     },
     {
@@ -62,7 +62,7 @@
       "name": "PCB 스트레인 측정에 필요한 DAQ(데이터수집장치) 사양은?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "IPC/JEDEC-9704A는 최소 2kHz 이상 샘플링 레이트, 12비트 이상 해상도를 요구합니다. 씨앤디테크는 HBM QuantumX MX1615(16채널, 고정밀 앰프)와 GTDL 모듈형 DAQ를 공급합니다. 단발성 피크 응력 포착이 목적이므로 안티앨리어싱 필터와 저잡음 특성이 중요합니다."
+        "text": "IPC/JEDEC-9704A는 최소 1kHz 이상 샘플링 레이트, 12비트 이상 해상도를 요구합니다. 씨앤디테크는 HBM QuantumX MX1615(16채널, 고정밀 앰프)와 GTDL 모듈형 DAQ를 공급합니다. 단발성 피크 응력 포착이 목적이므로 안티앨리어싱 필터와 저잡음 특성이 중요합니다."
       }
     },
     {
@@ -241,7 +241,7 @@
     </div>
     <div class="pcb-stat-grid fade-in">
       <div class="pcb-stat-card">
-        <div class="sv">2 kHz+</div>
+        <div class="sv">1 kHz+</div>
         <div class="sl">IPC/JEDEC-9704A 최소 샘플링 레이트<br>피크 응력 정확 포착</div>
       </div>
       <div class="pcb-stat-card">
@@ -314,18 +314,16 @@
         <ul>
           <li>측정 센서: <strong>3축 로젯(Rosette) 스트레인게이지</strong>를 BGA 부품 주변에 부착</li>
           <li>게이지 위치: BGA 패드 중심으로부터 규정 거리 이내</li>
-          <li>샘플링 레이트: <strong>최소 2,000 Hz (2 kHz) 이상</strong></li>
+          <li>샘플링 레이트: <strong>최소 1,000 Hz (1 kHz) 이상</strong></li>
           <li>데이터 해상도: <strong>12 bit 이상</strong></li>
           <li>판정 기준: 측정된 주응력(Principal Strain)을 PCB 두께별 <strong>한계 변형률 곡선(Limit Strain Curve)</strong>과 비교</li>
           <li>리포트: 피크 스트레인 값, 변형률 속도(Strain Rate), Pass/Fail 판정 결과 포함</li>
         </ul>
       </div>
-      <!-- 블로그 /118 규격 이미지 (expires=1782831599 ~June 30) -->
-      <!-- TODO: 로컬 저장 후 ../assets/images/pcb-stress/ipc-spec.png 로 변경 -->
       <div class="pcb-img-wrap">
-        <img src="https://blog.kakaocdn.net/dna/ceUN0o/btsQOLqeFTd/AAAAAAAAAAAAAAAAAAAAAIk4q5nZ3jL3aTcrwYaGKD1lEOikIbpA2w6Qs_ddjwi9/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=pQLE6zFGnNh9ulHtO%2BxBWoubN0A%3D"
-             alt="IPC/JEDEC-9704A PCB 스트레인 측정 규격 설명" loading="lazy">
-        <div class="pcb-img-caption">IPC/JEDEC-9704A 규격 개요</div>
+        <img src="../assets/images/pcb-stress/pcb-sg-closeup.jpg"
+             alt="IPC/JEDEC-9704A PCB 스트레인게이지 부착 — BGA 주변 3축 로젯" loading="lazy">
+        <div class="pcb-img-caption">PCB에 부착된 HBK RF91 3축 로젯 스트레인게이지 — BGA 주변 협소 공간 다채널 부착</div>
       </div>
     </div>
 
@@ -401,7 +399,7 @@
         <div class="pcb-step">
           <div class="sn">STEP 03</div>
           <div class="st">DAQ 연결·측정</div>
-          <div class="sd">2kHz+ 샘플링으로 각 공정 실행 — 피크 스트레인 데이터 취득</div>
+          <div class="sd">1kHz+ 샘플링으로 각 공정 실행 — 피크 스트레인 데이터 취득</div>
         </div>
         <div class="pcb-step">
           <div class="sn">STEP 04</div>
@@ -442,6 +440,13 @@
         </div>
       </div>
 
+      <!-- PCB 지그 장착 사진 -->
+      <div class="pcb-img-wrap" style="margin-top:0;">
+        <img src="../assets/images/pcb-stress/pcb-sg-fixture.jpg"
+             alt="PCB 측정 지그 장착 후 DAQ 다채널 연결" loading="lazy">
+        <div class="pcb-img-caption">PCB 측정 지그에 장착 후 DAQ 다채널 연결 — 공정 중 스트레인 동시 취득</div>
+      </div>
+
       <!-- 측정 그래프 -->
       <div class="pcb-img-wrap">
         <!-- TODO: 로컬 저장 후 ../assets/images/pcb-stress/strain-graph.png -->
@@ -478,7 +483,7 @@
         </div>
       </div>
       <p style="font-size:14px; color:var(--text-mute); line-height:1.7; margin-top:4px;">
-        두 시스템 모두 IPC/JEDEC-9704A 요구 사양(2kHz+, 12bit+)을 충족합니다. 채널 수, 예산, 현장 환경에 따라 최적 구성을 제안해 드립니다.
+        두 시스템 모두 IPC/JEDEC-9704A 요구 사양(1kHz+, 12bit+)을 충족합니다. 채널 수, 예산, 현장 환경에 따라 최적 구성을 제안해 드립니다.
       </p>
     </div>
 
@@ -509,6 +514,20 @@
             <div style="font-weight:700; font-size:14px; color:var(--charcoal); margin-bottom:3px;">규격 리포트 자동 생성</div>
             <div style="font-size:13px; color:var(--text-mute); line-height:1.5;">고객사·원청 제출용 공식 분석 리포트 즉각 출력. 품질 보증 리드타임 단축</div>
           </div>
+        </div>
+      </div>
+
+      <!-- 분석 소프트웨어 화면 -->
+      <div class="pcb-img-duo" style="margin-top:20px;">
+        <div class="pcb-img-wrap">
+          <img src="../assets/images/pcb-stress/ipc-jedec-analysis-graph.png"
+               alt="IPC/JEDEC-9704A SG1 SG2 SG3 주응력 분석 그래프 Pass/Fail" loading="lazy">
+          <div class="pcb-img-caption">IPC/JEDEC-9704A 분석 결과 — SG1·SG2·SG3 주응력 vs 한계 변형률 곡선 Pass/Fail 판정</div>
+        </div>
+        <div class="pcb-img-wrap">
+          <img src="../assets/images/pcb-stress/jedec-auto-analyzer-v4.png"
+               alt="JEDEC-9704 Auto Analyzer v4.0 소프트웨어 PCB 파라미터 입력 화면" loading="lazy">
+          <div class="pcb-img-caption">JEDEC-9704 Auto Analyzer v4.0 — PCB 파라미터(두께·탄성계수)·솔더 타입 설정 후 CSV 자동 분석</div>
         </div>
       </div>
     </div>
@@ -596,7 +615,7 @@
       <div class="pcb-faq">
         <div class="pcb-faq-item">
           <div class="fq">IPC/JEDEC-9704A란 무엇인가요?</div>
-          <div class="fa">PCB 기판에 스트레인게이지를 부착해 제조 공정 중 발생하는 기계적 응력(변형률)을 측정하는 국제 표준입니다. 3축 로젯 게이지를 BGA 주변에 부착하고 최소 2kHz 샘플링·12bit 이상 해상도의 DAQ로 측정하도록 규정하며, IPC 한계 곡선 대비 Pass/Fail로 판정합니다.</div>
+          <div class="fa">PCB 기판에 스트레인게이지를 부착해 제조 공정 중 발생하는 기계적 응력(변형률)을 측정하는 국제 표준입니다. 3축 로젯 게이지를 BGA 주변에 부착하고 최소 1kHz 샘플링·12bit 이상 해상도의 DAQ로 측정하도록 규정하며, IPC 한계 곡선 대비 Pass/Fail로 판정합니다.</div>
         </div>
         <div class="pcb-faq-item">
           <div class="fq">PCB 스트레인 측정이 왜 필요한가요?</div>
@@ -608,7 +627,7 @@
         </div>
         <div class="pcb-faq-item">
           <div class="fq">DAQ 최소 사양이 어떻게 되나요?</div>
-          <div class="fa">IPC/JEDEC-9704A는 최소 2kHz 샘플링 레이트, 12bit 이상 해상도를 요구합니다. 씨앤디테크는 HBM QuantumX MX1615(16채널 고정밀, R&D용)와 GTDL 모듈형 DAQ(양산 라인 경제적 대안)를 공급합니다.</div>
+          <div class="fa">IPC/JEDEC-9704A는 최소 1kHz 샘플링 레이트, 12bit 이상 해상도를 요구합니다. 씨앤디테크는 HBM QuantumX MX1615(16채널 고정밀, R&D용)와 GTDL 모듈형 DAQ(양산 라인 경제적 대안)를 공급합니다.</div>
         </div>
         <div class="pcb-faq-item">
           <div class="fq">현장 출장 측정 서비스도 가능한가요?</div>
