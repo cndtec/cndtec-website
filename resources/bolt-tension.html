@@ -51,7 +51,7 @@
       "name": "토크 렌치로 볼트를 조이면 체결력(축력) 관리가 되지 않나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "토크 렌치로 측정하는 '토크'는 체결력의 간접 지표입니다. 볼트-너트 나사산 마찰 계수, 좌면(시트면) 마찰, 윤활 여부, 표면 거칠기에 따라 동일한 토크를 가해도 실제 발생하는 축력은 ±20~30%까지 차이가 납니다. 안전이 중요한 구조물이나 정밀한 체결 관리가 필요한 경우에는 스트레인게이지를 이용한 직접 축력 측정이 공학적으로 가장 정확한 방법입니다."
+        "text": "토크 렌치로 측정하는 '토크'는 체결력의 간접 지표입니다. 볼트-너트 나사산 마찰 계수, 좌면(시트면) 마찰, 윤활 여부, 표면 거칠기에 따라 동일한 토크를 가해도 실제 발생하는 축력은 현장 조건마다 달라집니다. 안전이 중요한 구조물이나 정밀한 체결 관리가 필요한 경우에는 스트레인게이지를 이용한 직접 축력 측정이 공학적으로 가장 정확한 방법입니다."
       }
     },
     {
@@ -83,7 +83,7 @@
       "name": "현장에서 데이터 수집은 어떻게 하나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "볼트 센서 출력은 mV/V 신호입니다. 현장 상황에 따라 ① 포터블 스트레인 인디케이터(단채널, 배터리 구동), ② 다채널 DAQ 장치(동시 다중 볼트 모니터링), ③ 무선 텔레메트리 시스템(회전체나 원격 위치)으로 연결합니다. 씨앤디테크는 DAQ 장치 공급과 현장 설치·측정 서비스도 함께 제공합니다."
+        "text": "볼트 센서 출력은 mV/V 신호입니다. 현장 상황에 따라 ① 포터블 스트레인 인디케이터(단채널, 배터리 구동), ② 다채널 DAQ 장치(동시 다중 볼트 모니터링)로 연결합니다. 씨앤디테크는 DAQ 장치 공급과 현장 설치·측정 서비스도 함께 제공합니다."
       }
     },
     {
@@ -295,8 +295,8 @@
     <!-- 통계 카드 -->
     <div class="bt-stat-grid">
       <div class="bt-stat-card">
-        <div class="bt-stat-num">±20~30%</div>
-        <div class="bt-stat-sub">토크 관리 시 실제 축력 오차</div>
+        <div class="bt-stat-num">교정 성적서</div>
+        <div class="bt-stat-sub">UTM 기반 교정 곡선 + 성적서<br>씨앤디테크 일괄 제공</div>
       </div>
       <div class="bt-stat-card">
         <div class="bt-stat-num">±1~2%</div>
@@ -360,7 +360,7 @@
   <div class="container">
     <div class="bt-section-tag">TORQUE ≠ AXIAL LOAD</div>
     <h2 class="bt-section-h2">왜 토크만으로는 축력 관리가 어려운가</h2>
-    <p class="bt-section-sub">조임 토크(T)의 에너지는 나사산 마찰, 시트면 마찰, 볼트 신장 3가지로 분산됩니다. 이 중 실제 축력으로 전환되는 비율이 현장 조건마다 달라져 ±20~30% 오차가 발생합니다.</p>
+    <p class="bt-section-sub">조임 토크(T)의 에너지는 나사산 마찰, 시트면 마찰, 볼트 신장 3가지로 분산됩니다. 이 중 실제 축력으로 전환되는 비율이 윤활 상태·재질·온도 등 현장 조건마다 달라지기 때문에 토크만으로는 정확한 축력 관리가 어렵습니다.</p>
     <div class="bt-torque-grid fade-in">
       <div class="bt-torque-card bad">
         <div class="tc-label">⚠ 토크 관리의 한계</div>
@@ -373,7 +373,6 @@
           <li>체결 속도 및 반복 체결 횟수</li>
           <li>온도 변화에 따른 재료 열팽창</li>
         </ul>
-        <p style="margin-top:10px; font-weight:600; color:#dc2626;">→ 실제 발생 축력 편차: ±20~30%</p>
       </div>
       <div class="bt-torque-card good">
         <div class="tc-label">✔ 스트레인게이지 직접 측정</div>
@@ -509,8 +508,8 @@
           <div class="mc-name">중심홀 삽입형</div>
           <div class="mc-sub">Center-Hole Insert Type</div>
         </div>
-        <img src="https://blog.kakaocdn.net/dna/F7QA9/dJMcabqDfNn/AAAAAAAAAAAAAAAAAAAAAGKXwL-sa1Hd2LMIJIcXNVnUbWq4LstId9eFfA8e--jF/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=rILdPwS%2B2AF%2BO%2BbDhGlH2mjVKcs%3D"
-             alt="중심홀 삽입형 스트레인게이지 볼트 센서 개념도" class="mc-img" loading="lazy" style="object-fit:contain; background:#f8fafc; padding:12px;">
+        <img src="../assets/images/bolt-tension/bolt-insert-sensor.png"
+             alt="중심홀 삽입형 스트레인게이지 볼트 센서 실물 — 케이블 인출 완성품" class="mc-img" loading="lazy" style="object-fit:cover;">
         <div class="mc-body">
           <div class="mc-tags">
             <span class="mc-tag">M8 이하 소형</span>
@@ -532,8 +531,8 @@
     <!-- Method 3 - 와셔형 (전체 너비) -->
     <div class="bt-method-card fade-in" style="margin-top:20px; display:grid; grid-template-columns:2fr 3fr; overflow:hidden; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface);">
       <div style="overflow:hidden;">
-        <img src="https://blog.kakaocdn.net/dna/dJbHVR/dJMcaaebulS/AAAAAAAAAAAAAAAAAAAAAMfuNxbX6hnQHRjGzL8nuja8hP6B5rBnktIKXVGUrfSK/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=TWItO7tIzdmwh9C8F0B5OuyTfNc%3D"
-             alt="삽입형 스트레인게이지 볼트 단면 상세도" loading="lazy"
+        <img src="../assets/images/bolt-tension/load-washer-3d.png"
+             alt="와셔형 포스센서(Load Washer) 3D 렌더링 — 볼트 체결부 삽입 구조" loading="lazy"
              style="width:100%; height:100%; min-height:220px; object-fit:contain; background:#f8fafc; padding:16px; display:block;">
       </div>
       <div style="padding:24px 28px;">
@@ -609,8 +608,8 @@
       <!-- STEP 4 -->
       <div class="bt-step-card">
         <div class="sc-img-single">
-          <img src="https://blog.kakaocdn.net/dna/JoPlj/btsPS9tHN19/AAAAAAAAAAAAAAAAAAAAABrWOGqJO2r-fG58cOcqDb2P4QodzHjCfpleqPqo1wwD/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=QEUDbuiVneKjoDlfQXIW6oBnhMU%3D"
-               alt="볼트 축력 센서 몰딩 완료 납품 대기" loading="lazy" style="width:100%; height:180px; object-fit:cover; display:block;">
+          <img src="../assets/images/bolt-tension/bolt-utm-calibration.png"
+               alt="QMESYS 만능 재료 시험기(UTM)를 이용한 볼트 센서 교정 작업" loading="lazy" style="width:100%; height:180px; object-fit:cover; display:block;">
         </div>
         <div class="sc-body">
           <div class="sc-num">STEP 04</div>
@@ -804,7 +803,7 @@
           <span>토크 렌치로 볼트를 조이면 체결력(축력) 관리가 되지 않나요?</span>
           <span class="fq-icon">+</span>
         </button>
-        <div class="bt-faq-a">토크 렌치로 측정하는 '토크'는 체결력의 <strong>간접 지표</strong>입니다. 볼트-너트 나사산 마찰 계수, 좌면(시트면) 마찰, 윤활 여부, 표면 거칠기에 따라 동일한 토크를 가해도 실제 발생하는 축력은 <strong>±20~30%</strong>까지 차이가 납니다. 안전이 중요한 구조물이나 정밀한 체결 관리가 필요한 경우에는 스트레인게이지를 이용한 직접 축력 측정이 공학적으로 가장 정확한 방법입니다.</div>
+        <div class="bt-faq-a">토크 렌치로 측정하는 '토크'는 체결력의 <strong>간접 지표</strong>입니다. 볼트-너트 나사산 마찰 계수, 좌면(시트면) 마찰, 윤활 여부, 표면 거칠기에 따라 동일한 토크를 가해도 실제 발생하는 축력은 현장 조건마다 달라집니다. 안전이 중요한 구조물이나 정밀한 체결 관리가 필요한 경우에는 스트레인게이지를 이용한 직접 축력 측정이 공학적으로 가장 정확한 방법입니다.</div>
       </div>
       <div class="bt-faq-item">
         <button class="bt-faq-q">
@@ -838,8 +837,7 @@
         </button>
         <div class="bt-faq-a">볼트 센서 출력은 <strong>mV/V 신호</strong>입니다. 현장 상황에 따라:<br>
           ① <strong>포터블 스트레인 인디케이터</strong> — 단채널, 배터리 구동, 즉시 현장 측정<br>
-          ② <strong>다채널 DAQ 장치</strong> — 동시 다중 볼트 모니터링, PC 연동 분석<br>
-          ③ <strong>무선 텔레메트리 시스템</strong> — 회전체나 원격 위치 볼트<br><br>
+          ② <strong>다채널 DAQ 장치</strong> — 동시 다중 볼트 모니터링, PC 연동 분석<br><br>
           씨앤디테크는 DAQ 장치 공급과 현장 설치·측정 서비스도 함께 제공합니다.</div>
       </div>
       <div class="bt-faq-item">
