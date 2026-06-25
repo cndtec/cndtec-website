@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MMF VM100 휴대용 진동측정 시스템 — 9채널·FFT·Third-Octave·인체진동 완전 가이드 | 씨앤디테크</title>
+<meta name="description" content="독일 MMF VM100 휴대용 진동측정 시스템. 9채널 동시 계측, FFT 주파수 분석, Third-Octave, 인체진동(손-팔/전신), 발란싱, 베어링 진단, 런업/코스트다운 분석 — 씨앤디테크가 공급·지원합니다." />
+<meta name="keywords" content="MMF VM100, 휴대용 진동측정기, 9채널 진동계측, FFT 진동분석, Third-Octave, 인체진동측정, 발란싱 측정, 베어링 진단, 런업 코스트다운, VC Nano 진동" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/vm100.html" />
+<meta property="og:title" content="MMF VM100 휴대용 진동측정 시스템 — 9채널·FFT·인체진동 | 씨앤디테크" />
+<meta property="og:description" content="독일 MMF VM100 9채널 휴대용 진동측정 시스템. FFT·Third-Octave·인체진동·발란싱·베어링 진단을 하나의 장비로. 씨앤디테크 공급·기술지원." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/vm100.html" />
+<meta property="og:image" content="https://blog.kakaocdn.net/dna/dsnW1S/btslMmgmjvF/AAAAAAAAAAAAAAAAAAAAANYZGzo5Hy2_FdZgQFT1i1cnZyq_0MaXnrbtZkwQOQyg/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=piThMptdX0Saw6fZYpl54q4twAg%3D" />
+<meta property="og:site_name" content="씨앤디테크 기술자료" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=4">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "MMF VM100 휴대용 진동측정 시스템 — 9채널·FFT·Third-Octave·인체진동 완전 가이드",
+  "description": "독일 MMF VM100 9채널 휴대용 진동측정 시스템의 기능·사양·적용 사례. FFT 주파수 분석, Third-Octave, 인체진동, 발란싱, 베어링 진단 완전 가이드.",
+  "keywords": "MMF VM100, 휴대용 진동측정기, 9채널, FFT, Third-Octave, 인체진동, 발란싱, 베어링 진단",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr", "logo": {"@type": "ImageObject", "url": "https://www.cndtec.co.kr/assets/images/cnd-logo.png"}},
+  "datePublished": "2023-06-29",
+  "dateModified": "2026-06-26",
+  "inLanguage": "ko",
+  "url": "https://www.cndtec.co.kr/resources/vm100.html",
+  "image": "https://blog.kakaocdn.net/dna/dsnW1S/btslMmgmjvF/AAAAAAAAAAAAAAAAAAAAANYZGzo5Hy2_FdZgQFT1i1cnZyq_0MaXnrbtZkwQOQyg/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=piThMptdX0Saw6fZYpl54q4twAg%3D"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "VM100은 VM25와 어떻게 다른가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VM100은 최대 9채널(단축 9개 또는 3축 3개) 동시 계측이 가능한 반면, VM25는 단일 채널 측정기입니다. VM100은 FFT, Third-Octave, 인체진동, 발란싱, 런업/코스트다운 분석, VC/Nano 진동 측정 등 VM25에 없는 고급 기능을 포함합니다. 다수 측정 포인트를 한 번에 기록하거나, 기계 상태를 심층 분석해야 하는 환경에 VM100이 적합합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "인체진동 측정이란 무엇이고 어떤 규격이 적용되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "인체진동은 작업자가 기계·차량에서 받는 진동 노출량을 평가하는 측정입니다. VM100-HA는 ISO 5349 기반 손-팔(Hand-Arm) 진동을, VM100-WB1은 ISO 2631-1 기반 전신(Whole-Body) 진동을 측정합니다. VM100-WB3는 차량·선박의 시트·등받이·발판 3점 동시 측정을 지원합니다. 하루 최대 노출량(A(8)) 및 도달 시까지 남은 시간을 실시간으로 표시합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Third-Octave 분석은 어떤 경우에 사용하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Third-Octave(1/3 옥타브) 분석은 진동 주파수 스펙트럼을 로그 스케일 밴드로 나누어 표시하는 방법으로, 반도체·광학 장비 설치 환경 평가(VC/Nano 기준), 건물·구조물 진동 평가, 음향·소음 분석에 주로 사용됩니다. VM100은 1~160 Hz 범위 21개 밴드를 지원하며 VC 및 Nano 기준선을 내장하고 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "발란싱 측정은 어떻게 작동하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VM100은 1평면(정적 불균형) 또는 2평면(동적 불균형) 발란싱을 지원합니다. 타코미터 입력으로 RPM을 감지하고, 가속도 센서로 진동 진폭과 위상을 측정하여 불균형량 및 교정 무게·위치를 계산합니다. 현장에서 별도 소프트웨어 없이 터치 스크린만으로 발란싱 작업을 완결할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "VC/Nano 진동 측정이란 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VC(Vibration Criteria)는 반도체 제조 장비, 전자현미경(SEM/TEM), 리소그래피 장비 등 진동에 매우 민감한 정밀 장비 설치 환경을 평가하는 기준입니다. Nano 기준은 더 낮은 진동 레벨을 요구하는 나노급 정밀 공정 환경에 적용됩니다. VM100의 Third-Octave 분석 모드에서 VC/Nano 기준선을 직접 화면에 표시하여 현장에서 즉시 적합 여부를 판단할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "VM100의 데이터는 어떻게 저장하고 PC로 전송하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "측정값은 μSD 카드에 CSV 형식으로 저장됩니다. 화면 캡처는 BMP, 원시 신호는 WAV 파일로 기록됩니다. PC 연결은 USB Type-C 케이블을 통해 Mass Storage 모드로 파일을 직접 복사하며 별도 드라이버가 필요 없습니다. 9채널 시간 기록은 최대 10시간 연속 저장이 가능합니다."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+/* ── VM100 페이지 전용 스타일 ── */
+.vm-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;background:var(--orange-tint);border:1px solid var(--orange-line);border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent-deep);font-weight:700;margin-bottom:14px;}
+.vm-h2{font-family:'Space Grotesk','Pretendard',sans-serif;font-size:clamp(20px,3.5vw,28px);font-weight:700;color:var(--charcoal);margin-bottom:8px;letter-spacing:-0.02em;}
+.vm-sub{font-size:15px;color:var(--text-dim);line-height:1.75;max-width:740px;margin-bottom:24px;}
+.vm-section-tag{font-size:11px;font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+/* stat cards */
+.vm-stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px;}
+@media(max-width:700px){.vm-stat-grid{grid-template-columns:1fr 1fr;}}
+.vm-stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 16px;text-align:center;}
+.vm-stat-num{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:var(--accent);line-height:1;}
+.vm-stat-sub{font-size:11px;color:var(--text-mute);margin-top:5px;line-height:1.45;}
+/* feature grid */
+.vm-feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px;}
+@media(max-width:580px){.vm-feat-grid{grid-template-columns:1fr;}}
+.vm-feat-item{display:flex;gap:10px;align-items:flex-start;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;font-size:13.5px;color:var(--text-dim);line-height:1.6;}
+.vm-feat-item .fi{flex-shrink:0;width:28px;height:28px;border-radius:8px;background:var(--orange-tint);border:1px solid var(--orange-line);display:flex;align-items:center;justify-content:center;font-size:14px;margin-top:1px;}
+.vm-feat-item strong{color:var(--charcoal);}
+/* mode cards */
+.vm-mode-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px;}
+@media(max-width:620px){.vm-mode-grid{grid-template-columns:1fr;}}
+.vm-mode-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface);}
+.vm-mode-head{padding:16px 20px;border-bottom:2px solid var(--accent);background:var(--orange-tint);}
+.vm-mode-num{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:3px;}
+.vm-mode-name{font-size:16px;font-weight:700;color:var(--charcoal);}
+.vm-mode-body{padding:16px 20px;}
+.vm-mode-row{display:flex;justify-content:space-between;font-size:12.5px;padding:5px 0;border-bottom:1px solid var(--line);}
+.vm-mode-row:last-child{border:none;}
+.vm-mode-lbl{color:var(--text-dim);}
+.vm-mode-val{color:var(--charcoal);font-weight:600;font-size:12px;text-align:right;max-width:58%;}
+/* screen gallery */
+.vm-screen-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;}
+@media(max-width:560px){.vm-screen-grid{grid-template-columns:1fr;}}
+.vm-screen-item img{width:100%;border-radius:var(--radius);display:block;border:1px solid var(--line);}
+.vm-screen-label{font-size:12px;color:var(--text-mute);text-align:center;margin-top:6px;}
+/* photo grid */
+.vm-photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;}
+@media(max-width:560px){.vm-photo-grid{grid-template-columns:1fr;}}
+.vm-photo-grid img{width:100%;border-radius:var(--radius);display:block;border:1px solid var(--line);object-fit:contain;background:#f8fafc;max-height:260px;}
+/* spec table */
+.vm-wrap{overflow-x:auto;margin-top:20px;}
+.vm-table{width:100%;border-collapse:collapse;font-size:13px;min-width:540px;}
+.vm-table th{background:var(--charcoal);color:#fff;padding:11px 14px;text-align:left;font-weight:600;font-size:12px;}
+.vm-table td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--text-dim);vertical-align:top;}
+.vm-table td:first-child{font-weight:700;color:var(--charcoal);white-space:nowrap;background:#fafafa;width:28%;}
+.vm-table tr:last-child td{border-bottom:none;}
+/* model cards */
+.vm-model-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px;}
+@media(max-width:620px){.vm-model-grid{grid-template-columns:1fr;}}
+.vm-model-card{padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);}
+.vm-model-badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;margin-bottom:10px;background:var(--orange-tint);border:1px solid var(--orange-line);color:var(--accent-deep);font-family:'JetBrains Mono',monospace;}
+.vm-model-name{font-size:16px;font-weight:700;color:var(--charcoal);margin-bottom:6px;}
+.vm-model-desc{font-size:13px;color:var(--text-dim);line-height:1.7;margin:0;}
+/* app cards */
+.vm-app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px;}
+@media(max-width:640px){.vm-app-grid{grid-template-columns:1fr 1fr;}}
+.vm-app-card{padding:18px 16px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);}
+.vm-app-card .aic{font-size:26px;margin-bottom:8px;}
+.vm-app-card .aname{font-size:13.5px;font-weight:700;color:var(--charcoal);margin-bottom:4px;}
+.vm-app-card .adesc{font-size:12.5px;color:var(--text-dim);line-height:1.6;margin:0;}
+/* divider */
+.vm-divider{border:none;border-top:1px solid var(--line);margin:48px 0 0;}
+/* faq */
+.vm-faq-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:24px;}
+.vm-faq-item{border-bottom:1px solid var(--line);}
+.vm-faq-item:last-child{border-bottom:none;}
+.vm-faq-q{width:100%;text-align:left;padding:18px 22px;background:var(--surface);border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14.5px;font-weight:600;color:var(--charcoal);line-height:1.5;}
+.vm-faq-q:hover{background:var(--orange-tint);}
+.vm-fq-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;transition:transform .25s;}
+.vm-faq-item.open .vm-fq-icon{transform:rotate(45deg);}
+.vm-faq-a{display:none;padding:16px 22px 20px;background:#fff;font-size:14px;color:var(--text-dim);line-height:1.8;border-top:1px solid var(--line);}
+.vm-faq-item.open .vm-faq-a{display:block;}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- ── HERO ───────────────────────────────────────────────────────── -->
+<section style="padding-top:160px; padding-bottom:0;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div class="vm-tag">MMF · 독일 · 9CH · FFT · ISO 5349 · ISO 2631</div>
+      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(28px,5vw,54px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal); line-height:1.15;">MMF VM100<br>휴대용 진동측정 시스템</h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:700px; line-height:1.75; margin-bottom:0;">독일 MMF사의 9채널 터치 스크린 진동측정 시스템. FFT 주파수 분석, Third-Octave, 인체진동(손-팔·전신), 발란싱, 롤러 베어링 진단, 런업/코스트다운 분석, VC/Nano 정밀 진동 측정까지 — 하나의 장비로 모든 현장 요구를 해결합니다.</p>
+    </div>
+    <div class="vm-stat-grid">
+      <div class="vm-stat">
+        <div class="vm-stat-num">9 CH</div>
+        <div class="vm-stat-sub">동시 계측<br>단축 9개 / 3축 3개</div>
+      </div>
+      <div class="vm-stat">
+        <div class="vm-stat-num">24 kHz</div>
+        <div class="vm-stat-sub">최대 측정 주파수<br>(1채널 모드)</div>
+      </div>
+      <div class="vm-stat">
+        <div class="vm-stat-num">10 hr</div>
+        <div class="vm-stat-sub">9채널 연속 기록<br>WAV 원시신호 저장</div>
+      </div>
+      <div class="vm-stat">
+        <div class="vm-stat-num">65536 pt</div>
+        <div class="vm-stat-sub">FFT 최대 포인트<br>0.1 Hz 분해능</div>
+      </div>
+    </div>
+    <img src="https://blog.kakaocdn.net/dna/dsnW1S/btslMmgmjvF/AAAAAAAAAAAAAAAAAAAAANYZGzo5Hy2_FdZgQFT1i1cnZyq_0MaXnrbtZkwQOQyg/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=piThMptdX0Saw6fZYpl54q4twAg%3D"
+         alt="MMF VM100 휴대용 진동측정 시스템 전체 구성" style="width:100%; border-radius:var(--radius); margin-top:40px; display:block; border:1px solid var(--line);" class="fade-in" loading="lazy">
+  </div>
+</section>
+
+<!-- ── MAIN CONTENT ────────────────────────────────────────────────── -->
+<section style="padding:48px 0 100px;">
+  <div class="container" style="max-width:960px;">
+
+    <!-- 01 주요 기능 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <div class="vm-section-tag">01 · KEY FEATURES</div>
+      <h2 class="vm-h2">VM100 주요 기능 한눈에</h2>
+      <p class="vm-sub">기존 휴대용 진동측정기의 한계를 넘어선 멀티채널·멀티모드 측정 플랫폼입니다.</p>
+
+      <div class="vm-feat-grid">
+        <div class="vm-feat-item">
+          <div class="fi">📡</div>
+          <div><strong>9채널 동시 계측</strong><br>단축 9개 또는 3축 3개 구성. 하나의 기계에서 여러 포인트를 동시에 기록해 시간을 절약합니다.</div>
+        </div>
+        <div class="vm-feat-item">
+          <div class="fi">📊</div>
+          <div><strong>FFT 주파수 분석</strong><br>최대 65,536포인트, 1Hz~22kHz 범위. 워터폴(50 스펙트럼) 및 스펙트로그램(300 스펙트럼) 모드 지원.</div>
+        </div>
+        <div class="vm-feat-item">
+          <div class="fi">🎚️</div>
+          <div><strong>Third-Octave 분석</strong><br>1~160 Hz, 21개 1/3 옥타브 밴드. VC·Nano 기준선 내장으로 정밀 장비 설치 환경을 현장 즉시 평가.</div>
+        </div>
+        <div class="vm-feat-item">
+          <div class="fi">🧑</div>
+          <div><strong>인체진동 측정</strong><br>ISO 5349 손-팔 진동(VM100-HA), ISO 2631-1 전신 진동(VM100-WB1/WB3). 일일 노출량·잔여 시간 표시.</div>
+        </div>
+        <div class="vm-feat-item">
+          <div class="fi">⚖️</div>
+          <div><strong>발란싱 (1면·2면)</strong><br>타코미터 입력 기반 1면/2면 밸런싱. 불균형량·교정 위치를 현장에서 계산·표시.</div>
+        </div>
+        <div class="vm-feat-item">
+          <div class="fi">🔩</div>
+          <div><strong>롤러 베어링 진단</strong><br>베어링 결함 주파수 기반 조기 이상 감지. 유지보수 계획 수립에 활용.</div>
+        </div>
+        <div class="vm-feat-item">
+          <div class="fi">📈</div>
+          <div><strong>런업/코스트다운 분석</strong><br>기동·정지 과정에서의 공진 주파수 탐색. 차수(Order) 추적으로 회전 기계의 동적 특성 분석.</div>
+        </div>
+        <div class="vm-feat-item">
+          <div class="fi">🔬</div>
+          <div><strong>VC/Nano 정밀 진동</strong><br>반도체 장비·전자현미경 설치 환경의 극미세 진동 평가. Third-Octave 화면에 기준선 직접 표시.</div>
+        </div>
+        <div class="vm-feat-item">
+          <div class="fi">🏷️</div>
+          <div><strong>TEDS 센서 자동 감지</strong><br>TEDS 지원 센서를 연결하면 감도·직렬번호가 자동으로 인식. RFID 태그로 측정 포인트 자동 식별.</div>
+        </div>
+        <div class="vm-feat-item">
+          <div class="fi">🌡️</div>
+          <div><strong>적외선 온도 측정</strong><br>내장 IR 온도계로 측정 대상 표면 온도를 비접촉 측정. 베어링·모터 발열 모니터링에 유용.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="vm-divider">
+
+    <!-- 02 측정 모드 사양 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="vm-section-tag">02 · MEASUREMENT MODES</div>
+      <h2 class="vm-h2">측정 모드별 상세 사양</h2>
+      <p class="vm-sub">VM100은 단일 장비에 6가지 측정 모드를 탑재합니다. 용도에 따라 모드를 전환하여 사용합니다.</p>
+
+      <div class="vm-mode-grid">
+        <div class="vm-mode-card">
+          <div class="vm-mode-head">
+            <div class="vm-mode-num">MODE 01</div>
+            <div class="vm-mode-name">Overall Value (전체값)</div>
+          </div>
+          <div class="vm-mode-body">
+            <div class="vm-mode-row"><span class="vm-mode-lbl">측정 파라미터</span><span class="vm-mode-val">가속도·속도·변위</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">주파수 범위</span><span class="vm-mode-val">0.4 Hz ~ 24 kHz (9ch: ~4 kHz)</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">측정값</span><span class="vm-mode-val">RMS·Peak·VDV·Vector Sum</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">RPM 연동</span><span class="vm-mode-val">회전속도별 진폭 그래프</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">필터</span><span class="vm-mode-val">다양한 고역/저역 통과 필터</span></div>
+          </div>
+        </div>
+        <div class="vm-mode-card">
+          <div class="vm-mode-head">
+            <div class="vm-mode-num">MODE 02</div>
+            <div class="vm-mode-name">FFT 주파수 분석</div>
+          </div>
+          <div class="vm-mode-body">
+            <div class="vm-mode-row"><span class="vm-mode-lbl">주파수 범위</span><span class="vm-mode-val">1 Hz ~ 22 kHz</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">동시 채널</span><span class="vm-mode-val">1~3채널</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">포인트 수</span><span class="vm-mode-val">1,024 ~ 65,536 pt</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">분해능</span><span class="vm-mode-val">0.1 ~ 48 Hz</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">트리거</span><span class="vm-mode-val">Auto / Tacho / Level</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">워터폴/스펙트로그램</span><span class="vm-mode-val">50 / 300 스펙트럼</span></div>
+          </div>
+        </div>
+        <div class="vm-mode-card">
+          <div class="vm-mode-head">
+            <div class="vm-mode-num">MODE 03</div>
+            <div class="vm-mode-name">Third-Octave 분석</div>
+          </div>
+          <div class="vm-mode-body">
+            <div class="vm-mode-row"><span class="vm-mode-lbl">주파수 범위</span><span class="vm-mode-val">1 ~ 160 Hz</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">동시 채널</span><span class="vm-mode-val">1~3채널</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">밴드 수</span><span class="vm-mode-val">21개 1/3 옥타브 밴드</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">기준선</span><span class="vm-mode-val">VC·Nano 기준선 내장</span></div>
+          </div>
+        </div>
+        <div class="vm-mode-card">
+          <div class="vm-mode-head">
+            <div class="vm-mode-num">MODE 04</div>
+            <div class="vm-mode-name">인체진동 (Human Vibration)</div>
+          </div>
+          <div class="vm-mode-body">
+            <div class="vm-mode-row"><span class="vm-mode-lbl">VM100-HA</span><span class="vm-mode-val">손-팔 / ISO 5349</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">VM100-WB1</span><span class="vm-mode-val">전신 건강·편의 / ISO 2631-1</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">VM100-WB3</span><span class="vm-mode-val">시트·등받이·발판 3점</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">표시</span><span class="vm-mode-val">A(8) 노출량·잔여 시간</span></div>
+          </div>
+        </div>
+        <div class="vm-mode-card">
+          <div class="vm-mode-head">
+            <div class="vm-mode-num">MODE 05</div>
+            <div class="vm-mode-name">발란싱 (Balancing)</div>
+          </div>
+          <div class="vm-mode-body">
+            <div class="vm-mode-row"><span class="vm-mode-lbl">평면 구성</span><span class="vm-mode-val">1면 (정적) / 2면 (동적)</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">RPM 검출</span><span class="vm-mode-val">타코미터 입력</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">출력</span><span class="vm-mode-val">불균형량·교정 위치</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">별도 소프트웨어</span><span class="vm-mode-val">불필요 (본체 완결)</span></div>
+          </div>
+        </div>
+        <div class="vm-mode-card">
+          <div class="vm-mode-head">
+            <div class="vm-mode-num">MODE 06</div>
+            <div class="vm-mode-name">런업/코스트다운</div>
+          </div>
+          <div class="vm-mode-body">
+            <div class="vm-mode-row"><span class="vm-mode-lbl">목적</span><span class="vm-mode-val">공진 주파수 탐색</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">분석</span><span class="vm-mode-val">차수(Order) 추적</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">적용</span><span class="vm-mode-val">기동·정지 과도 구간</span></div>
+            <div class="vm-mode-row"><span class="vm-mode-lbl">RPM 연동</span><span class="vm-mode-val">타코미터 동기화</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="vm-divider">
+
+    <!-- 03 화면 & 외관 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="vm-section-tag">03 · SCREEN & APPEARANCE</div>
+      <h2 class="vm-h2">분석 화면 및 제품 외관</h2>
+      <p class="vm-sub">800×480 TFT RGB 터치 스크린으로 복잡한 분석 결과를 현장에서 직관적으로 확인합니다.</p>
+
+      <p style="font-size:13px; font-weight:700; color:var(--text-mute); letter-spacing:1px; text-transform:uppercase; font-family:'JetBrains Mono',monospace; margin-bottom:12px;">FFT · 발란싱 분석 화면</p>
+      <div class="vm-screen-grid">
+        <div class="vm-screen-item">
+          <img src="https://blog.kakaocdn.net/dna/Wmfyv/btslKjruT3R/AAAAAAAAAAAAAAAAAAAAAIxXHqS_bhu0xGfRVAaBEMePONp7OKtjKF9whV-fy7S5/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=BXOvEmcAMe%2FGaet90vQ77Y0O0vU%3D"
+               alt="VM100 FFT 주파수 분석 화면" loading="lazy">
+          <div class="vm-screen-label">FFT 주파수 분석 화면</div>
+        </div>
+        <div class="vm-screen-item">
+          <img src="https://blog.kakaocdn.net/dna/bbuaSj/btslJGtWran/AAAAAAAAAAAAAAAAAAAAAFpdCQWR39o0JZwqkeTKNTDakn4Z7N0VvD3eNUk02-2n/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=l31M8GHS2rjKYr92GpP3WTB6zTA%3D"
+               alt="VM100 발란싱 분석 화면" loading="lazy">
+          <div class="vm-screen-label">발란싱 분석 화면</div>
+        </div>
+        <div class="vm-screen-item">
+          <img src="https://blog.kakaocdn.net/dna/b8JXR4/btslIlwP0N4/AAAAAAAAAAAAAAAAAAAAAIl3R0WJSf5DrkjJsJQqed8i-juxxn2MDnw39WfG7_nv/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=%2B9hUp45sT6BUyV%2FHPChQw8MaLns%3D"
+               alt="VM100 측정 화면 — 진동 전체값" loading="lazy">
+          <div class="vm-screen-label">전체값 측정 화면</div>
+        </div>
+        <div class="vm-screen-item">
+          <img src="https://blog.kakaocdn.net/dna/byweqE/btslFkkGcDu/AAAAAAAAAAAAAAAAAAAAAL-l2uwVmfWq60v77cCvWoN6YGCuLc1Y1EP2E1VLFzq8/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=npqW59%2F%2FoVs3AGyapVB9L8kuCJQ%3D"
+               alt="VM100 스펙트럼 분석 화면" loading="lazy">
+          <div class="vm-screen-label">스펙트럼 분석 화면</div>
+        </div>
+      </div>
+
+      <p style="font-size:13px; font-weight:700; color:var(--text-mute); letter-spacing:1px; text-transform:uppercase; font-family:'JetBrains Mono',monospace; margin:32px 0 12px;">제품 외관</p>
+      <div class="vm-photo-grid">
+        <img src="https://blog.kakaocdn.net/dna/eH5vOR/btslJ0Mot1L/AAAAAAAAAAAAAAAAAAAAAJaxk-5zpqE-SViXCeSfA0ZK0q9N6CSYy_R54fhaA9yr/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=q%2FpyShwSAvITpdGLyjvVvL%2FqQEo%3D"
+             alt="MMF VM100 본체 정면 외관" loading="lazy">
+        <img src="https://blog.kakaocdn.net/dna/c8EUnY/btslJGHuQJc/AAAAAAAAAAAAAAAAAAAAAMHXFA3zFPy4d-vH7Ir_KjEayR6xetGTZNRUnDgpB48x/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=rXBhGAlDObAn1ilsmY5cmL5mA2w%3D"
+             alt="MMF VM100 본체 측면 및 커넥터" loading="lazy">
+        <img src="https://blog.kakaocdn.net/dna/qymfF/btslLBSrFh3/AAAAAAAAAAAAAAAAAAAAACOGLx_Jet-zzmfaUIhjoAE8z5T_LwYxFAVUxDhx5EZt/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=sa0P0RSGiflJ0PKgRh7c67A%2BNbU%3D"
+             alt="MMF VM100 케이스 포함 전체 구성" loading="lazy">
+      </div>
+    </div>
+
+    <hr class="vm-divider">
+
+    <!-- 04 상세 사양 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="vm-section-tag">04 · SPECIFICATIONS</div>
+      <h2 class="vm-h2">VM100 상세 사양</h2>
+      <div class="vm-wrap">
+        <table class="vm-table">
+          <thead>
+            <tr><th>항목</th><th>사양</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>전체값 측정</td>
+              <td>진동 가속도·속도·변위 / RMS(1s·무한), 피크(1s·무한), 벡터 합, 주주파수<br>주파수 범위: 0.4 Hz ~ 24 kHz (9채널: ~4 kHz) / 다양한 고역·저역 통과 필터</td>
+            </tr>
+            <tr>
+              <td>FFT 주파수 분석</td>
+              <td>주파수 범위: 1 Hz ~ 22 kHz / 동시 1~3채널<br>포인트: 1,024 ~ 65,536 pt / 분해능: 0.1 ~ 48 Hz<br>트리거: Auto·Tacho·Level / 엔벨로프 분석<br>워터폴: 50 스펙트럼(1채널) / 스펙트로그램: 300 스펙트럼(1채널)</td>
+            </tr>
+            <tr>
+              <td>Third-Octave 분석</td>
+              <td>주파수 범위: 1 ~ 160 Hz / 동시 1~3채널<br>21개 1/3 옥타브 밴드 / VC·Nano 기준선 내장</td>
+            </tr>
+            <tr>
+              <td>인체진동</td>
+              <td>VM100-HA: 손-팔 1손 또는 양손 측정 (ISO 5349)<br>VM100-WB1: 차량·선박 전신 건강·편의 측정 (ISO 2631-1)<br>VM100-WB3: 시트·등받이·발판 3점 동시 측정 / 진동값 및 최대 일일 노출 도달 시간 표시</td>
+            </tr>
+            <tr>
+              <td>데이터 기록</td>
+              <td>SD 카드 (탈착식, FAT 파일 시스템)<br>CSV (측정값) / BMP (화면 캡처) / WAV (원시 신호)<br>최대 10시간 9채널 시간 기록</td>
+            </tr>
+            <tr>
+              <td>디스플레이</td>
+              <td>TFT RGB 터치 스크린 / 800 × 480 도트</td>
+            </tr>
+            <tr>
+              <td>데이터 인터페이스</td>
+              <td>USB Type-C / Mass Storage 모드</td>
+            </tr>
+            <tr>
+              <td>타코미터 입력</td>
+              <td>RPM 측정용 타코미터 입력 내장</td>
+            </tr>
+            <tr>
+              <td>센서 인식</td>
+              <td>TEDS 지원 센서 자동 감지 / RFID 태그를 통한 측정 포인트 자동 식별</td>
+            </tr>
+            <tr>
+              <td>온도 측정</td>
+              <td>적외선(IR) 비접촉 온도 측정 내장</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <hr class="vm-divider">
+
+    <!-- 05 모델 라인업 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="vm-section-tag">05 · MODEL LINEUP</div>
+      <h2 class="vm-h2">VM100 모델 라인업</h2>
+      <p class="vm-sub">측정 목적에 따라 인체진동 모듈을 선택합니다.</p>
+      <div class="vm-model-grid">
+        <div class="vm-model-card">
+          <div class="vm-model-badge">VM100 BASE</div>
+          <div class="vm-model-name">VM100 기본형</div>
+          <p class="vm-model-desc">전체값·FFT·Third-Octave·발란싱·베어링 진단·런업/코스트다운·VC/Nano. 9채널 산업 진동 측정의 기본 구성.</p>
+        </div>
+        <div class="vm-model-card">
+          <div class="vm-model-badge">VM100-HA</div>
+          <div class="vm-model-name">손-팔 진동</div>
+          <p class="vm-model-desc">ISO 5349 기반 Hand-Arm 진동 측정 모듈 추가. 공구·장비 사용 작업자의 손-팔 진동 노출 평가.</p>
+        </div>
+        <div class="vm-model-card">
+          <div class="vm-model-badge">VM100-WB1/WB3</div>
+          <div class="vm-model-name">전신 진동</div>
+          <p class="vm-model-desc">ISO 2631-1 기반 전신(Whole-Body) 진동 모듈. WB1: 1점 전신, WB3: 시트·등받이·발판 3점 동시 측정.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="vm-divider">
+
+    <!-- 06 적용 분야 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="vm-section-tag">06 · APPLICATIONS</div>
+      <h2 class="vm-h2">적용 분야</h2>
+      <div class="vm-app-grid">
+        <div class="vm-app-card"><div class="aic">🏭</div><div class="aname">회전 기계 상태 감시</div><p class="adesc">펌프·모터·팬·압축기·기어박스의 9채널 동시 상태 모니터링. ISO 10816 기준 판정.</p></div>
+        <div class="vm-app-card"><div class="aic">⚙️</div><div class="aname">현장 발란싱</div><p class="adesc">팬·임펠러·로터 등의 1면/2면 현장 발란싱. 별도 소프트웨어·PC 없이 장비 단독 완결.</p></div>
+        <div class="vm-app-card"><div class="aic">🔬</div><div class="aname">정밀 장비 환경 평가</div><p class="adesc">반도체 장비·전자현미경 설치 바닥의 VC/Nano 기준 적합성을 Third-Octave로 즉시 판단.</p></div>
+        <div class="vm-app-card"><div class="aic">🚗</div><div class="aname">차량·선박 인체진동</div><p class="adesc">차량 시트·선박 조종석의 전신 진동 노출량 평가. 운전자 건강·편의 규정 준수 확인.</p></div>
+        <div class="vm-app-card"><div class="aic">🔨</div><div class="aname">공구 손-팔 진동</div><p class="adesc">전동 공구·착암기 사용 작업자의 일일 손-팔 진동 노출량(A(8)) 측정·관리.</p></div>
+        <div class="vm-app-card"><div class="aic">🏗️</div><div class="aname">건물·구조물 진동</div><p class="adesc">건설 현장·교량·지반의 진동 영향 평가. Third-Octave·전체값으로 기준치 초과 여부 확인.</p></div>
+      </div>
+    </div>
+
+    <hr class="vm-divider">
+
+    <!-- 07 FAQ -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="vm-section-tag">FAQ</div>
+      <h2 class="vm-h2">자주 묻는 질문</h2>
+      <div class="vm-faq-list">
+        <div class="vm-faq-item">
+          <button class="vm-faq-q"><span>VM100은 VM25와 어떻게 다른가요?</span><span class="vm-fq-icon">+</span></button>
+          <div class="vm-faq-a">VM100은 최대 <strong>9채널(단축 9개 또는 3축 3개) 동시 계측</strong>이 가능한 반면, VM25는 단일 채널 측정기입니다. VM100은 FFT, Third-Octave, 인체진동, 발란싱, 런업/코스트다운, VC/Nano 등 VM25에 없는 고급 기능을 포함합니다. 다수 측정 포인트를 한 번에 기록하거나 심층 분석이 필요한 환경에 VM100이 적합합니다.</div>
+        </div>
+        <div class="vm-faq-item">
+          <button class="vm-faq-q"><span>인체진동 측정이란 무엇이고 어떤 규격이 적용되나요?</span><span class="vm-fq-icon">+</span></button>
+          <div class="vm-faq-a">작업자가 기계·차량에서 받는 진동 노출량을 평가합니다. VM100-HA는 <strong>ISO 5349</strong> 기반 손-팔 진동을, VM100-WB1은 <strong>ISO 2631-1</strong> 기반 전신 진동을 측정합니다. VM100-WB3는 차량·선박의 시트·등받이·발판 3점 동시 측정을 지원하며, 하루 최대 노출량(A(8)) 및 잔여 시간을 실시간으로 표시합니다.</div>
+        </div>
+        <div class="vm-faq-item">
+          <button class="vm-faq-q"><span>Third-Octave 분석은 어떤 경우에 사용하나요?</span><span class="vm-fq-icon">+</span></button>
+          <div class="vm-faq-a">1/3 옥타브 분석은 반도체·광학 장비 설치 환경 평가(VC/Nano 기준), 건물·구조물 진동 평가, 음향·소음 분석에 주로 사용됩니다. VM100은 1~160 Hz, 21개 밴드를 지원하며 <strong>VC 및 Nano 기준선을 화면에 직접 표시</strong>하여 현장에서 즉시 적합 여부를 판단할 수 있습니다.</div>
+        </div>
+        <div class="vm-faq-item">
+          <button class="vm-faq-q"><span>발란싱 측정은 어떻게 작동하나요?</span><span class="vm-fq-icon">+</span></button>
+          <div class="vm-faq-a">VM100은 <strong>1평면(정적 불균형) 또는 2평면(동적 불균형)</strong> 발란싱을 지원합니다. 타코미터 입력으로 RPM을 감지하고, 가속도 센서로 진동 진폭과 위상을 측정하여 불균형량 및 교정 무게·위치를 계산합니다. 별도 소프트웨어 없이 터치 스크린만으로 현장 발란싱 작업을 완결합니다.</div>
+        </div>
+        <div class="vm-faq-item">
+          <button class="vm-faq-q"><span>VC/Nano 진동 측정이란 무엇인가요?</span><span class="vm-fq-icon">+</span></button>
+          <div class="vm-faq-a">VC(Vibration Criteria)는 반도체 장비·전자현미경·리소그래피 장비 등 진동에 민감한 정밀 장비 설치 환경 평가 기준입니다. Nano 기준은 나노급 정밀 공정 환경에 적용됩니다. VM100의 <strong>Third-Octave 분석 화면에 기준선을 직접 표시</strong>하여 현장에서 즉시 판단할 수 있습니다.</div>
+        </div>
+        <div class="vm-faq-item">
+          <button class="vm-faq-q"><span>VM100의 데이터는 어떻게 저장하고 PC로 전송하나요?</span><span class="vm-fq-icon">+</span></button>
+          <div class="vm-faq-a">측정값은 <strong>μSD 카드에 CSV</strong>로 저장됩니다. 화면 캡처는 BMP, 원시 신호는 WAV 파일로 기록됩니다. PC 연결은 <strong>USB Type-C(Mass Storage 모드)</strong>로 파일을 직접 복사하며 별도 드라이버가 필요 없습니다. 9채널 시간 기록은 최대 10시간 연속 저장됩니다.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CTA ─────────────────────────────────────────────────────────── -->
+<section style="padding:0 0 100px;">
+  <div class="container">
+    <div style="padding:40px 48px; background:linear-gradient(135deg, var(--orange-tint) 0%, #fff 100%); border:1px solid var(--orange-line); border-radius:var(--radius); max-width:840px;" class="fade-in">
+      <div class="vm-tag">CONTACT</div>
+      <h3 style="font-size:24px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">VM100 도입 상담 및 데모 문의</h3>
+      <p style="font-size:14.5px; color:var(--text-dim); line-height:1.75; margin-bottom:24px;">씨앤디테크는 MMF VM100 공급과 현장 적용 기술지원을 제공합니다. 측정 목적·채널 수·필요 모드(인체진동·발란싱·VC 등)를 알려주시면 최적 구성을 제안드립니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">VM100 문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+      </div>
+      <p style="font-size:12px; color:var(--text-mute); margin-top:16px; margin-bottom:0;">관련 기술자료 →
+        <a href="vibration.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">VM25 휴대용 진동측정기(ISO 10816)</a> ·
+        <a href="vibration-sensor.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">진동센서 원리·설치</a> ·
+        <a href="torsional-vibration.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">비틀림 진동</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="vibration.html">VM25 진동측정기</a></li><li><a href="vm100.html">VM100 진동측정기</a></li><li><a href="vibration-sensor.html">진동센서 원리·설치</a></li><li><a href="torsional-vibration.html">비틀림 진동</a></li><li><a href="daq-system.html">DAQ 시스템</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank" rel="noopener">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 CND TECH (씨앤디테크) · 대표 전원근</span>
+      <span>경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+document.querySelectorAll('.vm-faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.vm-faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.vm-faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
