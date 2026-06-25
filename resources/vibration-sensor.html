@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>진동센서(가속도계) 원리·선택·설치 완전 가이드 — 피에조일렉트릭·주파수 응답·설치법 | 씨앤디테크</title>
+<meta name="description" content="피에조일렉트릭 가속도센서의 원리(PZT·지진 질량)·측정 파라미터(가속도·속도·변위)·주파수 응답 특성부터 진동센서 올바른 설치 방법(스터드·마그네틱·접착제·프로브)까지 씨앤디테크가 정리합니다." />
+<meta name="keywords" content="피에조일렉트릭 가속도센서, 진동센서 원리, 진동 측정, 가속도센서 설치, 진동센서 설치방법, 스터드 마운팅, 마그네틱 베이스, 주파수 응답, 공진주파수, 지진 질량" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/vibration-sensor.html" />
+<meta property="og:title" content="진동센서(가속도계) 원리·선택·설치 완전 가이드 | 씨앤디테크" />
+<meta property="og:description" content="피에조일렉트릭 가속도센서 원리, 측정 파라미터 선택, 올바른 설치 방법까지 — 씨앤디테크 진동 측정 기술자료." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/vibration-sensor.html" />
+<meta property="og:image" content="https://blog.kakaocdn.net/dna/cBSN2L/btslFkSm9g9/AAAAAAAAAAAAAAAAAAAAAIjNdoacbV2oa-kuzfTc5JlvrRsHgsBlR4SnC3XA-SOA/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=GuA5CFvG%2FarBJ2j%2FH7oHZ97D8e8%3D" />
+<meta property="og:site_name" content="씨앤디테크 기술자료" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=4">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "진동센서(가속도계) 원리·선택·설치 완전 가이드",
+  "description": "피에조일렉트릭 가속도센서의 원리(PZT·지진 질량)·측정 파라미터(가속도·속도·변위)·주파수 응답 특성부터 올바른 설치 방법(스터드·마그네틱·접착제·프로브)까지 씨앤디테크가 정리합니다.",
+  "keywords": "피에조일렉트릭 가속도센서, 진동센서 원리, 진동 측정, 가속도센서 설치, 스터드 마운팅, 주파수 응답",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr", "logo": {"@type": "ImageObject", "url": "https://www.cndtec.co.kr/assets/images/cnd-logo.png"}},
+  "datePublished": "2023-06-30",
+  "dateModified": "2026-06-26",
+  "inLanguage": "ko",
+  "url": "https://www.cndtec.co.kr/resources/vibration-sensor.html",
+  "image": "https://blog.kakaocdn.net/dna/cBSN2L/btslFkSm9g9/AAAAAAAAAAAAAAAAAAAAAIjNdoacbV2oa-kuzfTc5JlvrRsHgsBlR4SnC3XA-SOA/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=GuA5CFvG%2FarBJ2j%2FH7oHZ97D8e8%3D"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "가속도, 속도, 변위 중 어떤 파라미터를 측정해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "측정 목적에 따라 선택합니다. 고주파 충격·베어링 결함 감지에는 가속도(m/s² 또는 g), 일반 기계 상태 모니터링(ISO 10816)에는 속도(mm/s RMS)가 가장 널리 사용됩니다. 저주파 변형·불균형이 큰 대형 기계나 구조물에는 변위(µm, mm)를 사용합니다. 속도는 가속도의 단일 적분, 변위는 이중 적분으로 도출할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "피에조일렉트릭 가속도센서의 측정 주파수 범위는 어떻게 결정되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "측정 상한은 공진 주파수의 1/3~1/5로 제한됩니다. 공진 주파수를 높이려면 지진 질량(Seismic mass)을 줄여야 하지만, 그러면 감도가 낮아집니다. 따라서 넓은 주파수 범위가 필요한 충격 계측용은 감도가 낮고 공진주파수가 높은 센서를, 저가속·저주파 지진 계측용은 감도가 높고 공진주파수가 낮은 센서를 사용합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "진동센서 설치 시 가장 중요한 준비 사항은 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "부착면 평탄도 확보가 가장 중요합니다. 특히 고주파 측정에서 최상의 성능을 얻으려면 가속도계 베이스와 측정 대상의 접촉면이 깨끗하고 평평하고 버(Burr)가 없어야 합니다. 래핑 플레이트로 표면을 복원하거나 연삭·밀링 등 가공 후 장착을 권장합니다. 또한 센서 무게는 측정 대상의 10% 이내로 유지해야 오류를 최소화할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "설치 방법에 따라 측정 성능이 달라지나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 특히 고주파 성능에서 차이가 큽니다. 스터드 볼트 직접 체결이 가장 우수하며, 절연 플랜지·접착제·마그네틱 클램프·프로브 순으로 고주파 특성이 떨어집니다. 예를 들어 10kHz 이상의 측정이 필요한 경우 반드시 스터드 마운팅을 사용해야 하며, 마그네틱 베이스는 1~2kHz 이상에서 성능이 저하됩니다. 빠른 현장 점검은 마그네틱·프로브, 정밀 분석은 스터드를 권장합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "마그네틱 베이스 센서는 어떤 경우에 적합한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "마그네틱 베이스는 자성 금속 표면이라면 공구 없이 빠르게 착탈할 수 있어 다수 측정 포인트를 순회하는 현장 점검에 유용합니다. 단, 고주파 성능이 스터드보다 떨어지고 표면 곡률이 클 경우 접촉 불량이 생길 수 있습니다. 일반 기계 상태 모니터링(수백 Hz 이하)이라면 충분히 사용 가능합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "3축 동시 측정이 필요한 경우 어떻게 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "3개의 1축 가속도계를 서로 직교하는 방향으로 장착하거나, 3축 일체형 가속도계를 사용합니다. 마운팅 큐브(Mounting Cube)를 사용하면 3개의 단축 센서를 정확히 X·Y·Z 방향으로 고정할 수 있어 3방향 동시 진동 측정에 적합합니다. 씨앤디테크는 다채널 DAQ와 연동하는 3축 측정 시스템 구성을 지원합니다."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+/* ── 진동센서 페이지 전용 스타일 ── */
+.vs-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;background:var(--orange-tint);border:1px solid var(--orange-line);border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent-deep);font-weight:700;margin-bottom:14px;}
+.vs-h2{font-family:'Space Grotesk','Pretendard',sans-serif;font-size:clamp(20px,3.5vw,28px);font-weight:700;color:var(--charcoal);margin-bottom:8px;letter-spacing:-0.02em;}
+.vs-sub{font-size:15px;color:var(--text-dim);line-height:1.75;max-width:740px;margin-bottom:24px;}
+.vs-section-tag{font-size:11px;font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+/* stat cards */
+.vs-stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;}
+@media(max-width:640px){.vs-stat-grid{grid-template-columns:1fr 1fr;}}
+.vs-stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 16px;text-align:center;}
+.vs-stat-num{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:var(--accent);line-height:1;}
+.vs-stat-sub{font-size:11px;color:var(--text-mute);margin-top:5px;line-height:1.45;}
+/* param cards */
+.vs-param-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;}
+@media(max-width:640px){.vs-param-grid{grid-template-columns:1fr;}}
+.vs-param{padding:22px 20px;border-radius:var(--radius);border:1px solid var(--line);background:var(--surface);}
+.vs-param .sym{font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;color:var(--accent);margin-bottom:8px;}
+.vs-param .pname{font-size:15px;font-weight:700;color:var(--charcoal);margin-bottom:2px;}
+.vs-param .pen{font-size:12px;color:var(--text-mute);margin-bottom:10px;}
+.vs-unit{display:inline-block;padding:3px 10px;background:var(--orange-tint);border:1px solid var(--orange-line);border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent-deep);font-weight:700;margin-bottom:10px;}
+.vs-param .pdesc{font-size:13px;color:var(--text-dim);line-height:1.7;margin:0 0 10px;}
+.vs-param .pwhen{font-size:12px;color:var(--text-dim);background:#f8fafc;border-radius:6px;padding:10px 12px;margin:0;line-height:1.6;}
+/* principle box */
+.vs-principle{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;margin-top:20px;}
+.vs-principle-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;}
+@media(max-width:640px){.vs-principle-grid{grid-template-columns:1fr;}}
+/* advantage list */
+.vs-adv-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;}
+@media(max-width:580px){.vs-adv-grid{grid-template-columns:1fr;}}
+.vs-adv-item{display:flex;gap:10px;align-items:flex-start;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;font-size:13.5px;color:var(--text-dim);line-height:1.6;}
+.vs-adv-item::before{content:'✔';color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px;font-size:14px;}
+/* install methods */
+.vs-method-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:24px;}
+@media(max-width:620px){.vs-method-grid{grid-template-columns:1fr;}}
+.vs-method-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface);}
+.vs-method-card img{width:100%;height:200px;object-fit:contain;background:#f8fafc;display:block;padding:10px;}
+.vs-method-body{padding:18px 18px 20px;}
+.vs-method-badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;margin-bottom:8px;}
+.vs-method-badge.best{background:#f0fdf4;color:#15803d;}
+.vs-method-badge.good{background:#eff6ff;color:#1d4ed8;}
+.vs-method-badge.ok{background:#fef9c3;color:#92400e;}
+.vs-method-badge.probe{background:#fdf2f8;color:#86198f;}
+.vs-method-name{font-size:15px;font-weight:700;color:var(--charcoal);margin-bottom:6px;}
+.vs-method-desc{font-size:13px;color:var(--text-dim);line-height:1.7;margin:0;}
+/* install tips */
+.vs-tip-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:20px;}
+.vs-tip-list li{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--text-dim);line-height:1.65;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;}
+.vs-tip-list li .tip-num{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+/* compare table */
+.vs-wrap{overflow-x:auto;margin-top:20px;}
+.vs-table{width:100%;border-collapse:collapse;font-size:13px;min-width:520px;}
+.vs-table th{background:var(--charcoal);color:#fff;padding:11px 13px;text-align:center;font-weight:600;font-size:12px;}
+.vs-table th:first-child{text-align:left;}
+.vs-table td{padding:10px 13px;border-bottom:1px solid var(--line);color:var(--text-dim);text-align:center;vertical-align:middle;}
+.vs-table td:first-child{text-align:left;font-weight:700;color:var(--charcoal);}
+.vs-table tr:last-child td{border-bottom:none;}
+.tag-best{color:#15803d;font-weight:700;} .tag-good{color:#1d4ed8;font-weight:700;} .tag-ok{color:#d97706;font-weight:700;} .tag-low{color:#dc2626;font-weight:700;}
+/* divider */
+.vs-divider{border:none;border-top:1px solid var(--line);margin:48px 0 0;}
+/* faq */
+.vs-faq-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:24px;}
+.vs-faq-item{border-bottom:1px solid var(--line);}
+.vs-faq-item:last-child{border-bottom:none;}
+.vs-faq-q{width:100%;text-align:left;padding:18px 22px;background:var(--surface);border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14.5px;font-weight:600;color:var(--charcoal);line-height:1.5;}
+.vs-faq-q:hover{background:var(--orange-tint);}
+.vs-fq-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;transition:transform .25s;}
+.vs-faq-item.open .vs-fq-icon{transform:rotate(45deg);}
+.vs-faq-a{display:none;padding:16px 22px 20px;background:#fff;font-size:14px;color:var(--text-dim);line-height:1.8;border-top:1px solid var(--line);}
+.vs-faq-item.open .vs-faq-a{display:block;}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- ── HERO ───────────────────────────────────────────────────────── -->
+<section style="padding-top:160px; padding-bottom:0;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div class="vs-tag">PIEZOELECTRIC · ICP · MOUNTING</div>
+      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(28px,5vw,54px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal); line-height:1.15;">진동센서(가속도계)<br>원리·선택·설치 완전 가이드</h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:700px; line-height:1.75; margin-bottom:0;">피에조일렉트릭 가속도센서가 진동을 어떻게 전기 신호로 변환하는지, 측정 목적에 따라 가속도·속도·변위 중 무엇을 선택해야 하는지, 그리고 스터드·마그네틱·접착제·프로브 각 설치 방법의 특성과 올바른 장착 절차를 씨앤디테크가 정리합니다.</p>
+    </div>
+    <div class="vs-stat-grid">
+      <div class="vs-stat">
+        <div class="vs-stat-num">3가지</div>
+        <div class="vs-stat-sub">진동 측정 파라미터<br>가속도·속도·변위</div>
+      </div>
+      <div class="vs-stat">
+        <div class="vs-stat-num">PZT 세라믹</div>
+        <div class="vs-stat-sub">석영 대비 감도 100배↑<br>피에조 압전 소재</div>
+      </div>
+      <div class="vs-stat">
+        <div class="vs-stat-num">5가지</div>
+        <div class="vs-stat-sub">센서 설치 방법<br>스터드·마그넷·접착제 외</div>
+      </div>
+    </div>
+    <img src="https://blog.kakaocdn.net/dna/cBSN2L/btslFkSm9g9/AAAAAAAAAAAAAAAAAAAAAIjNdoacbV2oa-kuzfTc5JlvrRsHgsBlR4SnC3XA-SOA/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=GuA5CFvG%2FarBJ2j%2FH7oHZ97D8e8%3D"
+         alt="진동측정 적용 분야 — 모터·터빈·교량·기계 공구 피에조 가속도센서" style="width:100%; border-radius:var(--radius); margin-top:40px; display:block;" class="fade-in" loading="lazy">
+  </div>
+</section>
+
+<!-- ── MAIN CONTENT ────────────────────────────────────────────────── -->
+<section style="padding:48px 0 100px;">
+  <div class="container" style="max-width:960px;">
+
+    <!-- 01 진동 측정 파라미터 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <div class="vs-section-tag">01 · MEASUREMENT PARAMETERS</div>
+      <h2 class="vs-h2">가속도·속도·변위 — 무엇을 측정해야 하나요?</h2>
+      <p class="vs-sub">진동을 설명하는 물리량은 가속도(Acceleration)·속도(Velocity)·변위(Displacement) 세 가지입니다. 속도는 가속도의 1회 적분, 변위는 2회 적분으로 도출할 수 있어 하나의 센서로 세 가지를 모두 취득할 수 있습니다.</p>
+
+      <div class="vs-param-grid">
+        <div class="vs-param">
+          <div class="sym">a</div>
+          <div class="pname">가속도 (Acceleration)</div>
+          <div class="pen">Acceleration</div>
+          <div class="vs-unit">m/s² · g</div>
+          <p class="pdesc">진동의 순간 가속도. 피에조 센서가 직접 생성하는 신호. 고주파 충격·베어링 결함 감지에 가장 민감.</p>
+          <p class="pwhen">⚡ 사용 시기: 베어링 진단, 충격 계측, 고주파 성분 분석, ISO 10816 가속도 기준</p>
+        </div>
+        <div class="vs-param">
+          <div class="sym">v</div>
+          <div class="pname">속도 (Velocity)</div>
+          <div class="pen">Velocity</div>
+          <div class="vs-unit">mm/s RMS</div>
+          <p class="pdesc">가속도의 단일 적분. 기계 상태 모니터링의 표준 파라미터. 인체 감각과 유사한 주파수 영역.</p>
+          <p class="pwhen">⚡ 사용 시기: ISO 10816 일반 기계 감시, 펌프·모터·팬 상태 판정</p>
+        </div>
+        <div class="vs-param">
+          <div class="sym">d</div>
+          <div class="pname">변위 (Displacement)</div>
+          <div class="pen">Displacement</div>
+          <div class="vs-unit">µm · mm</div>
+          <p class="pdesc">가속도의 이중 적분. 저주파 영역에서 변형 크기를 직접 표현. 저속 대형 기계에 적합.</p>
+          <p class="pwhen">⚡ 사용 시기: 저주파·저속 대형 기계, 구조물 변형, 불균형량 평가</p>
+        </div>
+      </div>
+
+      <div style="margin-top:20px; padding:16px 20px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius);">
+        <strong style="color:var(--charcoal); font-size:13.5px;">가속도 크기 사례</strong>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px 24px; margin-top:10px; font-size:13px; color:var(--text-dim); line-height:1.7;">
+          <span>지진 조사 미세 진동 &lt; 0.001 m/s²</span>
+          <span>고속 열차 ICE 3 평균 ≈ 0.5 m/s²</span>
+          <span>우주왕복선 발사·재진입 최대 30 m/s²</span>
+          <span>경주용 자동차 운전자 최대 50 m/s²</span>
+          <span>1m 낙하 노트북 충격 최대 20,000 m/s²</span>
+          <span>탄도·폭발 시험 100,000 m/s² 이상</span>
+        </div>
+      </div>
+
+      <img src="https://blog.kakaocdn.net/dna/mY4Fc/btslEsb0wto/AAAAAAAAAAAAAAAAAAAAABTttnBAefJ-WIJDj8bVEolafKHiT1vjZszbaMI8N7Xd/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=D8vp5tgAKYpfmaXRVfu72enIaRU%3D"
+           alt="진동 가속도·속도·변위 파라미터 비교 도표" loading="lazy"
+           style="width:100%; border-radius:var(--radius); border:1px solid var(--line); margin-top:20px; display:block; object-fit:contain; background:#f8fafc; max-height:300px;">
+    </div>
+
+    <hr class="vs-divider">
+
+    <!-- 02 피에조 원리 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="vs-section-tag">02 · PIEZOELECTRIC PRINCIPLE</div>
+      <h2 class="vs-h2">피에조일렉트릭 가속도센서 — 원리와 구조</h2>
+      <p class="vs-sub">"피에조(Piezo)"는 그리스어로 "짜내다"라는 뜻입니다. 압전 재료(PZT 세라믹)는 힘을 받으면 전하를 생성하고, 이 전하가 지진 질량(Seismic mass)과 결합하면 진동 가속도에 비례하는 신호를 만들어냅니다.</p>
+
+      <div class="vs-principle">
+        <div class="vs-principle-grid">
+          <div>
+            <p style="font-size:14px; font-weight:700; color:var(--charcoal); margin:0 0 10px;">감지 요소 구성</p>
+            <p style="font-size:13.5px; color:var(--text-dim); line-height:1.8; margin:0 0 14px;">
+              ① <strong>PZT 압전 세라믹</strong> — 두 전극 사이에 끼워진 커패시터 구조. 수직 방향 힘에 의해 전하를 생성하고 전극에 전압을 발생시킵니다.<br><br>
+              ② <strong>지진 질량 (Seismic mass)</strong> — PZT 위에 결합된 질량체. 가속도계가 진동하면 관성력 F = m×a가 PZT에 작용하고, 이 힘에 비례한 전하 신호를 출력합니다.<br><br>
+              지진 질량이 일정하므로, 전하 출력 신호는 질량의 가속도에 정비례합니다.
+            </p>
+            <div style="padding:14px 16px; background:#f8fafc; border-radius:8px; font-size:13px; color:var(--text-dim); line-height:1.7;">
+              <strong style="color:var(--charcoal);">PZT vs 석영</strong><br>
+              특수 제조된 PZT 세라믹은 석영 대비 감도가 약 100배 높아 저주파·저가속 환경에서 더 유리합니다. 씨앤디테크가 공급하는 HBK(구 B&K/Brüel&amp;Kjær) 센서는 안정적인 PZT 세라믹 소재를 사용합니다.
+            </div>
+          </div>
+          <div>
+            <img src="https://blog.kakaocdn.net/dna/LaKFo/btslLA0awM6/AAAAAAAAAAAAAAAAAAAAACylf6LSSaI4t-TNnR-dsIXB0cd_326L6MHIlQOC2HXM/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=EFHOnSUd64AToqk8MA73gFpVcUs%3D"
+                 alt="피에조일렉트릭 가속도센서 내부 구조 — PZT 세라믹과 지진 질량" loading="lazy"
+                 style="width:100%; border-radius:var(--radius); display:block; border:1px solid var(--line);">
+            <img src="https://blog.kakaocdn.net/dna/q5YxP/btslJ9JgUHT/AAAAAAAAAAAAAAAAAAAAALtObayHtvZ8Mw8tABK0e85R3ccI4o0u-Es8Wh9m3mnq/img.gif?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=YVZ%2FSDkTbO27zIV3N%2FfFjs6T%2BDo%3D"
+                 alt="압전 가속도계 동작 원리 다이어그램 — 지진 질량과 PZT" loading="lazy"
+                 style="width:100%; border-radius:var(--radius); display:block; border:1px solid var(--line); margin-top:12px;">
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:14px; font-weight:700; color:var(--text-mute); margin:32px 0 12px; letter-spacing:1px; text-transform:uppercase; font-family:'JetBrains Mono',monospace;">주파수 응답 특성</p>
+      <p style="font-size:14px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">가속도계는 공진 피크를 가진 기계적 저역통과 필터입니다. 지진 질량과 PZT 세라믹이 스프링-질량 시스템을 형성하여 공진 주파수를 결정합니다.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px; font-size:13px; color:var(--text-dim);">
+        <div style="padding:16px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);">
+          <strong style="color:var(--charcoal);">상한 주파수 기준</strong><br>
+          공진 주파수의 <strong>1/5</strong>에서 오차 5%<br>
+          공진 주파수의 <strong>1/3</strong>에서 오차 10% → 실용 상한<br>
+          공진 주파수의 <strong>1/2</strong>에서 오차 30% (3dB)
+        </div>
+        <div style="padding:16px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);">
+          <strong style="color:var(--charcoal);">감도 vs 주파수 트레이드오프</strong><br>
+          공진 주파수↑ → 지진 질량↓ → <strong style="color:#dc2626;">감도↓</strong><br>
+          공진 주파수↓ → 지진 질량↑ → <strong style="color:#16a34a;">감도↑</strong><br>
+          충격용: 고공진·저감도 / 지진용: 저공진·고감도
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <img src="https://blog.kakaocdn.net/dna/cteWO1/btslJHsLL4H/AAAAAAAAAAAAAAAAAAAAAHm0rocTg3zUYuMOHD0eL4yIGN9DYY3kWqx-UcGqu1rC/img.gif?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=4jvHGeUVdxLYyajfcEZLqMoSdbs%3D"
+             alt="피에조 가속도계 주파수 응답 곡선 — 공진 주파수와 측정 범위" loading="lazy"
+             style="width:100%; border-radius:var(--radius); display:block; border:1px solid var(--line); object-fit:contain; background:#f8fafc; padding:8px;">
+        <img src="https://blog.kakaocdn.net/dna/cXtqhI/btslKHrVJdE/AAAAAAAAAAAAAAAAAAAAALJKfbFlovIbLG4n67ALIeNhQV964zgzD18xnHLoWt_l/img.gif?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=B9tfcEjk6pU37MyVXAYCQFlNH14%3D"
+             alt="가속도계 주파수 응답 — 저주파 한계와 RC 시상수" loading="lazy"
+             style="width:100%; border-radius:var(--radius); display:block; border:1px solid var(--line); object-fit:contain; background:#f8fafc; padding:8px;">
+      </div>
+    </div>
+
+    <hr class="vs-divider">
+
+    <!-- 03 피에조 장점 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="vs-section-tag">03 · ADVANTAGES</div>
+      <h2 class="vs-h2">피에조일렉트릭 가속도계의 장점</h2>
+      <p class="vs-sub">다른 방식의 진동 센서와 비교할 때 압전 가속도계는 아래와 같은 핵심 장점을 갖습니다.</p>
+      <div class="vs-adv-grid">
+        <div class="vs-adv-item">넓은 동적 범위 — 미세 진동부터 강한 충격까지 노이즈 없이 측정</div>
+        <div class="vs-adv-item">넓은 주파수 범위 — 고주파 측정 가능 (센서 모델에 따라 수십 kHz)</div>
+        <div class="vs-adv-item">동적 범위 내 뛰어난 선형성</div>
+        <div class="vs-adv-item">컴팩트하면서도 고감도 — 소형화 설계 용이</div>
+        <div class="vs-adv-item">움직이는 부품 없음 — 마모·노화 없음</div>
+        <div class="vs-adv-item">자가 발전 방식 — 외부 전원 불필요 (전하 출력형)</div>
+        <div class="vs-adv-item">속도·변위 출력 가능 — 내부 적분 회로 또는 소프트웨어로 도출</div>
+        <div class="vs-adv-item">다양한 모델 — 산업용·항공우주·의료 등 거의 모든 용도에 대응</div>
+      </div>
+    </div>
+
+    <hr class="vs-divider">
+
+    <!-- 04 설치 전 준비 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="vs-section-tag">04 · INSTALLATION PREPARATION</div>
+      <h2 class="vs-h2">진동센서 설치 전 준비 사항</h2>
+      <p class="vs-sub">잘못된 설치는 계측 오류의 가장 큰 원인입니다. 특히 고주파에서 최상의 성능을 얻으려면 부착면 준비가 필수입니다.</p>
+
+      <img src="https://blog.kakaocdn.net/dna/b6rCLi/btslR6ZMMA6/AAAAAAAAAAAAAAAAAAAAAGU2wCJvifOn817drfEOqFB9dG2K9BNjq-ly2vFF7lFb/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=uUNC0Mdsw2c7frOibRLQiV9eY20%3D"
+           alt="진동센서 설치 방법 종류 개요 — 스터드·마그네틱·접착·프로브" loading="lazy"
+           style="width:100%; border-radius:var(--radius); border:1px solid var(--line); display:block; object-fit:contain; background:#f8fafc; max-height:300px; margin-bottom:24px;">
+
+      <ul class="vs-tip-list">
+        <li><div class="tip-num">1</div><div><strong style="color:var(--charcoal);">부착면 평탄도 확보</strong> — 가속도계 베이스와 측정 대상 표면이 깨끗하고 평평하며 버(Burr)가 없어야 합니다. 래핑 플레이트로 복원하거나, 래핑이 불가능하면 연삭·페이싱·밀링·터닝 등으로 가공 후 장착합니다.</div></li>
+        <li><div class="tip-num">2</div><div><strong style="color:var(--charcoal);">단단한 기계적 연결</strong> — 센서와 진동원 사이에 물리적으로 견고한 결합이 필요합니다. 판금·플라스틱 등 얇고 유연한 표면은 가속도계 장착에 적합하지 않습니다.</div></li>
+        <li><div class="tip-num">3</div><div><strong style="color:var(--charcoal);">센서 무게 제한</strong> — 장착 구성 요소를 포함한 센서 무게는 측정 대상 무게의 <strong>10% 이내</strong>로 유지해야 측정 오류를 최소화할 수 있습니다.</div></li>
+        <li><div class="tip-num">4</div><div><strong style="color:var(--charcoal);">축 정렬 오정렬 최소화</strong> — 센서 측정 축과 원하는 측정 방향의 오정렬을 최소화합니다. 횡방향 진동 진폭이 클 경우 오정렬이 더 큰 오차를 유발합니다.</div></li>
+        <li><div class="tip-num">5</div><div><strong style="color:var(--charcoal);">나사 및 간극 확인</strong> — 스터드 마운팅 시 나사가 나사 구멍보다 길지 않은지 확인하고, 센서 베이스 아래에 틈이 없어야 합니다.</div></li>
+      </ul>
+
+      <img src="https://blog.kakaocdn.net/dna/brzZC2/btslNmCiWEi/AAAAAAAAAAAAAAAAAAAAAM7CaEBbV0wAohQZSF1kXF5JMjlJfrLJNttkpbiqzzNB/img.gif?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=v9SPrT%2BObIJ8uDzRhSIahTgt%2Ffk%3D"
+           alt="진동센서 설치 면 가공 및 평탄도 복원" loading="lazy"
+           style="width:100%; border-radius:var(--radius); border:1px solid var(--line); display:block; object-fit:contain; background:#f8fafc; max-height:260px; margin-top:20px;">
+    </div>
+
+    <hr class="vs-divider">
+
+    <!-- 05 설치 방법 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="vs-section-tag">05 · MOUNTING METHODS</div>
+      <h2 class="vs-h2">진동센서 설치 방법 5가지</h2>
+      <p class="vs-sub">설치 환경·시험 목적에 따라 적합한 방법을 선택합니다. 방법에 따라 특히 고주파 성능에서 큰 차이가 있습니다.</p>
+
+      <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); margin-bottom:24px;">
+        <img src="https://blog.kakaocdn.net/dna/J22eL/btslNmWBVJs/AAAAAAAAAAAAAAAAAAAAAHO5LlLLqTQJIaE8U5PEMPtj6G0NTrjGnpRzh4yTKQ42/img.gif?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=eeUyS9zBYWK6D02Mhn%2B5eZm5oks%3D"
+             alt="진동센서 설치 방법 5가지 비교 — 스터드·절연 플랜지·마그넷·접착제·프로브" loading="lazy"
+             style="width:100%; display:block; object-fit:contain; background:#f8fafc; max-height:300px; padding:12px;">
+      </div>
+
+      <div class="vs-method-grid">
+        <!-- METHOD 1 -->
+        <div class="vs-method-card">
+          <img src="https://blog.kakaocdn.net/dna/728Md/btslOBzu7tj/AAAAAAAAAAAAAAAAAAAAACtgH0EC1RRbDUzQeY-Irt8bjc62mQqfCo6mzGvsO0C8/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=%2FXog%2FgCwPRg%2BvSHK8A6i40N3TrI%3D"
+               alt="스터드 볼트 마운팅 — 절연 플랜지 포함" loading="lazy">
+          <div class="vs-method-body">
+            <div class="vs-method-badge best">◎ 고주파 최우수</div>
+            <div class="vs-method-name">스터드 볼트 마운팅</div>
+            <p class="vs-method-desc">직접 나사 체결 또는 절연 플랜지를 통한 스터드 마운팅. 가장 단단한 기계적 연결로 고주파 성능이 가장 우수합니다. 영구 또는 반영구 설치 포인트에 적합합니다.</p>
+          </div>
+        </div>
+        <!-- METHOD 2 -->
+        <div class="vs-method-card">
+          <div style="display:grid; grid-template-columns:1fr 1fr; height:200px; overflow:hidden;">
+            <img src="https://blog.kakaocdn.net/dna/02iFm/btslQlQCVzk/AAAAAAAAAAAAAAAAAAAAAJ5PQ5niKo7VKDS83KFEi2H7opvu3L11uC3VPMVXWzpW/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=dVEsoRq2g22%2FPKbplmtccDk3lIk%3D"
+                 alt="마그네틱 베이스 진동센서" loading="lazy"
+                 style="width:100%; height:100%; object-fit:contain; background:#f8fafc; padding:8px;">
+            <img src="https://blog.kakaocdn.net/dna/bboaim/btslMomOPPI/AAAAAAAAAAAAAAAAAAAAAAdEiRhB-h1tty-__kyaK7mYYhxToCPPSIvx4vHeI_Q3/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=BzX2%2BbJlRMDCevjEjHfG%2FbXi8WI%3D"
+                 alt="마그네틱 베이스 진동센서 상세" loading="lazy"
+                 style="width:100%; height:100%; object-fit:contain; background:#f8fafc; padding:8px;">
+          </div>
+          <div class="vs-method-body">
+            <div class="vs-method-badge good">○ 현장 점검 최적</div>
+            <div class="vs-method-name">마그네틱 베이스</div>
+            <p class="vs-method-desc">자성 표면에 공구 없이 빠르게 착탈. 다수 측정 포인트 순회에 유리합니다. 단, 1~2kHz 이상 고주파에서 스터드 대비 성능 저하. 일반 기계 상태 감시(수백 Hz 이하)에 적합합니다.</p>
+          </div>
+        </div>
+        <!-- METHOD 3 -->
+        <div class="vs-method-card">
+          <img src="https://blog.kakaocdn.net/dna/5PBhP/btslS560oVX/AAAAAAAAAAAAAAAAAAAAAPVixRPp1SSglX-dT784QtiueIGBf0OiFaTxeaiNCffn/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=9whpA0kV7soA5gJzBpXuuhm83QE%3D"
+               alt="접착제(Loctite·에폭시·밀랍) 진동센서 설치" loading="lazy">
+          <div class="vs-method-body">
+            <div class="vs-method-badge good">○ 비자성체 가능</div>
+            <div class="vs-method-name">접착제 마운팅</div>
+            <p class="vs-method-desc">밀랍(임시용), 시아노아크릴레이트(Loctite 454 등), 에폭시 접착제 사용. 비자성체·비금속 표면에도 적용 가능. 밀랍은 탈착 용이, 에폭시는 고주파 성능 양호하나 제거가 어렵습니다.</p>
+          </div>
+        </div>
+        <!-- METHOD 4 -->
+        <div class="vs-method-card">
+          <div style="display:grid; grid-template-columns:1fr 1fr; height:200px; overflow:hidden;">
+            <img src="https://blog.kakaocdn.net/dna/c7XIdj/btslUs1Oilc/AAAAAAAAAAAAAAAAAAAAAN4zRePhQ2fj4BKvGI-GUfTmjaVPUYZA8H3ZGbyPJZag/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=qIuUFVmZx4KFGF7cWu228%2BP1jdY%3D"
+                 alt="3축 마운팅 큐브 — 직교 3방향 진동센서" loading="lazy"
+                 style="width:100%; height:100%; object-fit:contain; background:#f8fafc; padding:8px;">
+            <img src="https://blog.kakaocdn.net/dna/nFEu6/btslNlDl4gE/AAAAAAAAAAAAAAAAAAAAACBzjws-MS1-9PX3v250zfSIEWm7WDd-dvbl1G63c0KF/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=kDEO4q%2FaGhSiHcpPHO6yMgLx7Ik%3D"
+                 alt="3축 마운팅 큐브 상세" loading="lazy"
+                 style="width:100%; height:100%; object-fit:contain; background:#f8fafc; padding:8px;">
+          </div>
+          <div class="vs-method-body">
+            <div class="vs-method-badge ok">△ 3축 동시 측정</div>
+            <div class="vs-method-name">마운팅 큐브 (3축)</div>
+            <p class="vs-method-desc">3개의 1축 가속도계를 X·Y·Z 방향으로 정확히 고정하는 큐브. 3방향 동시 진동 측정 및 진동 모드 분석에 사용합니다. 다채널 DAQ와 연동합니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 프로브 방식 별도 -->
+      <div style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:start;">
+        <div class="vs-method-card">
+          <img src="https://blog.kakaocdn.net/dna/E27ir/btslR6Mc75h/AAAAAAAAAAAAAAAAAAAAAIDASXbkHrJMkS9OY-qb7LX-1APedzRMRgz7L3W8HrRd/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=GCeVhp1dRkGWisi7g8POs1PZmDGU5ZkOGDEAOOE%3D"
+               alt="손 압력 가속도계 프로브 — 접근 곤란 부위 진동 측정"
+               onerror="this.src='https://blog.kakaocdn.net/dna/bLl4kx/btslR3aOt3H/AAAAAAAAAAAAAAAAAAAAAOfuk9fyN5XWKRwXldjOfWmmnrXBy6RcGBUvKNPALKqf/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=HaOsei1rkY5ywLPlgHqgVeI7hEs%3D'"
+               loading="lazy">
+          <div class="vs-method-body">
+            <div class="vs-method-badge probe">▲ 접근 곤란 부위</div>
+            <div class="vs-method-name">프로브 (손 압력·팁 타입)</div>
+            <p class="vs-method-desc">영구 장착이 불필요한 점검용. 손으로 누르거나 이동식 팁으로 접촉. 접근이 어려운 좁은 공간에 유용하지만 재현성이 낮고 고주파 성능이 가장 낮습니다.</p>
+          </div>
+        </div>
+        <div style="padding:24px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);">
+          <p style="font-size:13px; font-weight:700; color:var(--charcoal); margin:0 0 10px;">설치 방법 선택 가이드</p>
+          <div style="font-size:13px; color:var(--text-dim); line-height:1.9;">
+            <strong>정밀 분석·고주파 측정 (>2kHz)</strong><br>
+            → 스터드 볼트 마운팅 필수<br><br>
+            <strong>일상 기계 상태 감시 (ISO 10816)</strong><br>
+            → 마그네틱 베이스 또는 접착제<br><br>
+            <strong>비금속·비자성 표면</strong><br>
+            → 에폭시·시아노아크릴레이트 접착<br><br>
+            <strong>다수 포인트 빠른 순회 점검</strong><br>
+            → 마그네틱 베이스 또는 프로브<br><br>
+            <strong>3방향 동시 측정</strong><br>
+            → 3축 마운팅 큐브 + 다채널 DAQ
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="vs-divider">
+
+    <!-- 06 성능 비교 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="vs-section-tag">06 · PERFORMANCE COMPARISON</div>
+      <h2 class="vs-h2">설치 방법별 고주파 성능 비교</h2>
+      <p class="vs-sub">아래 그래프는 질량 증가 및 장착 강성 감소에 따른 각 장착 방법의 고주파 성능을 비교한 것입니다. 주파수가 높을수록 방법 간 차이가 커집니다.</p>
+
+      <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);">
+        <img src="https://blog.kakaocdn.net/dna/TcQPm/btslRl4ecNu/AAAAAAAAAAAAAAAAAAAAANZm2EOi91uRYdCN814quaRcMxZc8ZvBmjzztNmz5ay4/img.gif?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=Q8zjM46HJJAKLeKNZy%2BVTPehwOM%3D"
+             alt="진동센서 설치 방법별 고주파 성능 비교 그래프 — 스터드·마그넷·접착·프로브" loading="lazy"
+             style="width:100%; display:block; object-fit:contain; background:#f8fafc; max-height:340px; padding:16px;">
+      </div>
+      <div style="margin-top:12px; padding:14px 18px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); font-size:13px; color:var(--text-dim); line-height:1.7;">
+        <strong>범례:</strong> A — 스터드 볼트 (최우수) &nbsp;|&nbsp; B — 절연 플랜지 &nbsp;|&nbsp; C — 마그네틱 클램프 &nbsp;|&nbsp; D — 접착제 &nbsp;|&nbsp; E — 프로브 (최저)
+      </div>
+
+      <div class="vs-wrap">
+        <table class="vs-table" style="margin-top:20px;">
+          <thead>
+            <tr>
+              <th>설치 방법</th>
+              <th>고주파 성능</th>
+              <th>착탈 편의성</th>
+              <th>재현성</th>
+              <th>주요 용도</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>스터드 볼트</td>
+              <td class="tag-best">◎ 최우수</td>
+              <td class="tag-low">▲ 고정</td>
+              <td class="tag-best">◎ 최고</td>
+              <td>정밀 분석, 고주파 계측</td>
+            </tr>
+            <tr>
+              <td>절연 플랜지</td>
+              <td class="tag-good">○ 우수</td>
+              <td class="tag-ok">△ 공구 필요</td>
+              <td class="tag-good">○ 우수</td>
+              <td>전기 절연 필요 환경</td>
+            </tr>
+            <tr>
+              <td>마그네틱 베이스</td>
+              <td class="tag-ok">△ 중간</td>
+              <td class="tag-best">◎ 신속</td>
+              <td class="tag-ok">△ 중간</td>
+              <td>현장 순회 점검, 일반 기계 감시</td>
+            </tr>
+            <tr>
+              <td>접착제</td>
+              <td class="tag-good">○ 양호</td>
+              <td class="tag-ok">△ 탈착 제한</td>
+              <td class="tag-good">○ 양호</td>
+              <td>비자성체, 임시~반영구 설치</td>
+            </tr>
+            <tr>
+              <td>프로브 (손 압력)</td>
+              <td class="tag-low">✕ 낮음</td>
+              <td class="tag-best">◎ 최고</td>
+              <td class="tag-low">✕ 낮음</td>
+              <td>접근 곤란 부위 간이 점검</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <hr class="vs-divider">
+
+    <!-- 07 FAQ -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="vs-section-tag">FAQ</div>
+      <h2 class="vs-h2">진동센서 자주 묻는 질문</h2>
+      <p class="vs-sub">씨앤디테크에 자주 접수되는 진동 측정 및 가속도센서 관련 질문입니다.</p>
+      <div class="vs-faq-list">
+        <div class="vs-faq-item">
+          <button class="vs-faq-q">
+            <span>가속도, 속도, 변위 중 어떤 파라미터를 측정해야 하나요?</span>
+            <span class="vs-fq-icon">+</span>
+          </button>
+          <div class="vs-faq-a">측정 목적에 따라 선택합니다. 고주파 충격·베어링 결함 감지에는 <strong>가속도(m/s² 또는 g)</strong>, 일반 기계 상태 모니터링(ISO 10816)에는 <strong>속도(mm/s RMS)</strong>가 가장 널리 사용됩니다. 저주파 변형·불균형이 큰 대형 기계나 구조물에는 <strong>변위(µm, mm)</strong>를 사용합니다. 속도는 가속도의 1회 적분, 변위는 2회 적분으로 도출할 수 있습니다.</div>
+        </div>
+        <div class="vs-faq-item">
+          <button class="vs-faq-q">
+            <span>피에조일렉트릭 가속도센서의 측정 주파수 범위는 어떻게 결정되나요?</span>
+            <span class="vs-fq-icon">+</span>
+          </button>
+          <div class="vs-faq-a">측정 상한은 <strong>공진 주파수의 1/3</strong>로 제한됩니다(오차 10% 기준). 공진 주파수를 높이려면 지진 질량을 줄여야 하지만, 감도가 낮아집니다. 따라서 넓은 주파수 범위가 필요한 충격 계측용은 감도가 낮고 공진주파수가 높은 센서를, 저가속·저주파 지진 계측용은 감도가 높고 공진주파수가 낮은 센서를 선택합니다.</div>
+        </div>
+        <div class="vs-faq-item">
+          <button class="vs-faq-q">
+            <span>진동센서 설치 시 가장 중요한 준비 사항은 무엇인가요?</span>
+            <span class="vs-fq-icon">+</span>
+          </button>
+          <div class="vs-faq-a"><strong>부착면 평탄도 확보</strong>가 가장 중요합니다. 가속도계 베이스와 측정 대상의 접촉면이 깨끗하고 평평하며 버(Burr)가 없어야 합니다. 래핑 플레이트로 표면을 복원하거나 연삭·밀링 등 가공 후 장착을 권장합니다. 또한 센서 무게는 측정 대상의 <strong>10% 이내</strong>로 유지해야 오류를 최소화할 수 있습니다.</div>
+        </div>
+        <div class="vs-faq-item">
+          <button class="vs-faq-q">
+            <span>설치 방법에 따라 측정 성능이 달라지나요?</span>
+            <span class="vs-fq-icon">+</span>
+          </button>
+          <div class="vs-faq-a">네, 특히 <strong>고주파 성능</strong>에서 차이가 큽니다. 스터드 볼트 직접 체결이 가장 우수하며, 절연 플랜지·접착제·마그네틱 클램프·프로브 순으로 고주파 특성이 저하됩니다. 10kHz 이상 측정이 필요한 경우 반드시 스터드 마운팅을 사용해야 하며, 마그네틱 베이스는 1~2kHz 이상에서 성능이 떨어집니다. 빠른 현장 점검은 마그네틱·프로브, 정밀 분석은 스터드를 권장합니다.</div>
+        </div>
+        <div class="vs-faq-item">
+          <button class="vs-faq-q">
+            <span>마그네틱 베이스 센서는 어떤 경우에 적합한가요?</span>
+            <span class="vs-fq-icon">+</span>
+          </button>
+          <div class="vs-faq-a">마그네틱 베이스는 자성 금속 표면이라면 공구 없이 빠르게 착탈할 수 있어 <strong>다수 측정 포인트를 순회하는 현장 점검</strong>에 유용합니다. 단, 고주파 성능이 스터드보다 떨어지고 표면 곡률이 클 경우 접촉 불량이 생길 수 있습니다. 일반 기계 상태 모니터링(수백 Hz 이하)이라면 충분히 사용 가능합니다.</div>
+        </div>
+        <div class="vs-faq-item">
+          <button class="vs-faq-q">
+            <span>3축 동시 측정이 필요한 경우 어떻게 하나요?</span>
+            <span class="vs-fq-icon">+</span>
+          </button>
+          <div class="vs-faq-a">3개의 1축 가속도계를 서로 직교하는 방향으로 장착하거나, 3축 일체형 가속도계를 사용합니다. <strong>마운팅 큐브(Mounting Cube)</strong>를 사용하면 3개의 단축 센서를 정확히 X·Y·Z 방향으로 고정할 수 있어 3방향 동시 진동 측정에 적합합니다. 씨앤디테크는 다채널 DAQ와 연동하는 3축 측정 시스템 구성을 지원합니다.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CTA ─────────────────────────────────────────────────────────── -->
+<section style="padding:0 0 100px;">
+  <div class="container">
+    <div style="padding:40px 48px; background:linear-gradient(135deg, var(--orange-tint) 0%, #fff 100%); border:1px solid var(--orange-line); border-radius:var(--radius); max-width:840px;" class="fade-in">
+      <div class="vs-tag">CONTACT</div>
+      <h3 style="font-size:24px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">진동 측정 시스템 구성, 지금 씨앤디테크에 문의하세요</h3>
+      <p style="font-size:14.5px; color:var(--text-dim); line-height:1.75; margin-bottom:24px;">측정 주파수 범위, 설치 환경, 채널 수 요구 사항을 알려주시면 최적의 가속도센서 모델과 DAQ 시스템 구성을 제안드립니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">진동 측정 시스템 문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+      </div>
+      <p style="font-size:12px; color:var(--text-mute); margin-top:16px; margin-bottom:0;">관련 기술자료 →
+        <a href="vibration.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">휴대용 진동측정기(ISO 10816)</a> ·
+        <a href="torsional-vibration.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">비틀림 진동 측정</a> ·
+        <a href="daq-system.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">DAQ 시스템</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display:'none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="vibration-sensor.html">진동센서 원리·설치</a></li><li><a href="vibration.html">휴대용 진동측정기</a></li><li><a href="torsional-vibration.html">비틀림 진동</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank" rel="noopener">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 CND TECH (씨앤디테크) · 대표 전원근</span>
+      <span>경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// 언어 토글
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+
+// 모바일 메뉴
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+
+// Fade-in
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Header scroll
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+
+// FAQ 아코디언
+document.querySelectorAll('.vs-faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.vs-faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.vs-faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
