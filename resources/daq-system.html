@@ -4,14 +4,15 @@
 <meta charset="UTF-8" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>데이터 수집장치(DAQ System) 완전 가이드 — 종류·선택·HBM QuantumX·Gantner Q.Series | 씨앤디테크</title>
-<meta name="description" content="DAQ(데이터 수집장치)의 개념·구성·ADC 분해능·3가지 유형(데이터로거·DAQ장치·모듈식)을 비교하고 HBM QuantumX·Gantner Q.Series X·Data Translation DT 제품을 소개합니다." />
+<title>DAQ 데이터수집장치 완전 가이드 — 데이터로거·모듈형·스트레인게이지 측정·HBM·Gantner·GTDL | 씨앤디테크</title>
+<meta name="description" content="DAQ(데이터수집장치·데이터로거) 종류·선택 완전 가이드. 데이터로거·DAQ장치·모듈식 3가지 유형 비교, ADC 분해능 원리, 스트레인게이지·센서 다채널 측정, HBM QuantumX·Gantner Q.Series·GTDL 제품 소개. 씨앤디테크." />
+<meta name="keywords" content="DAQ, 데이터수집장치, 데이터로거, 데이터 수집 시스템, 멀티채널 DAQ, 스트레인게이지 측정, 센서 계측, HBM QuantumX, Gantner Q.Series, GTDL, ADC 분해능, 모듈형 DAQ, 계측 장비, 신호 수집, data logger, data acquisition" />
 <link rel="canonical" href="https://www.cndtec.co.kr/resources/daq-system.html" />
-<meta property="og:title" content="데이터 수집장치(DAQ System) 완전 가이드 | 씨앤디테크" />
-<meta property="og:description" content="DAQ 3가지 유형 비교·ADC 분해능 해설·HBM QuantumX·Gantner Q.Series X·Data Translation DT 제품 가이드. 씨앤디테크 계측 전문 기술자료." />
+<meta property="og:title" content="DAQ 데이터수집장치 완전 가이드 — 데이터로거·스트레인게이지 측정·HBM·Gantner | 씨앤디테크" />
+<meta property="og:description" content="데이터로거·DAQ장치·모듈식 3가지 유형 비교, 스트레인게이지 다채널 측정, HBM QuantumX·Gantner Q.Series·GTDL 제품 선택 가이드. 씨앤디테크 계측 전문 기술자료." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.cndtec.co.kr/resources/daq-system.html" />
-<meta property="og:image" content="https://blog.kakaocdn.net/dna/bBxLyJ/btsn09OtQuu/AAAAAAAAAAAAAAAAAAAAAMU5SwkDdcYNJ0KvX2URt-jRW7qBMAxdglwXXZja7lme/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=xoySttjwpx7r5%2FmbyHi0lxV9eno%3D" />
+<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/daq.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -23,8 +24,9 @@
   "@graph": [
     {
       "@type": "TechArticle",
-      "headline": "데이터 수집장치(DAQ System) 완전 가이드 — 종류·선택·HBM QuantumX·Gantner Q.Series",
-      "description": "DAQ 시스템의 개념·구성·ADC 분해능·3가지 유형(데이터로거·DAQ장치·모듈식 시스템) 비교 및 HBM QuantumX, Gantner Q.Series X, Data Translation DT 제품 소개.",
+      "headline": "DAQ 데이터수집장치 완전 가이드 — 데이터로거·모듈형·스트레인게이지 측정·HBM·Gantner·GTDL",
+      "description": "데이터수집장치(DAQ·데이터로거) 종류·선택 가이드. 데이터로거·DAQ장치·모듈식 3유형 비교, ADC 분해능, 스트레인게이지 다채널 측정, HBM QuantumX·Gantner Q.Series·GTDL 제품 소개.",
+      "keywords": "DAQ, 데이터수집장치, 데이터로거, 스트레인게이지 측정, 멀티채널 DAQ, HBM QuantumX, Gantner Q.Series, GTDL, 센서 계측, 모듈형 DAQ",
       "url": "https://www.cndtec.co.kr/resources/daq-system.html",
       "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
       "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
@@ -300,9 +302,9 @@
       <p style="font-size:17px; color:var(--text-dim); max-width:700px; line-height:1.7; margin-bottom:0;">센서 계측의 핵심 인프라, DAQ 시스템의 개념·구성·ADC 분해능 원리를 설명하고, 데이터 로거·DAQ 장치·모듈식 시스템 3가지 유형을 비교합니다. 씨앤디테크가 취급하는 HBM QuantumX, Gantner Q.Series X, Data Translation DT 제품도 함께 소개합니다.</p>
     </div>
 
-    <div style="margin-top:32px; border-radius:var(--radius); overflow:hidden; max-width:880px;">
-      <img src="https://blog.kakaocdn.net/dna/bBxLyJ/btsn09OtQuu/AAAAAAAAAAAAAAAAAAAAAMU5SwkDdcYNJ0KvX2URt-jRW7qBMAxdglwXXZja7lme/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=xoySttjwpx7r5%2FmbyHi0lxV9eno%3D"
-           alt="데이터 수집장치 DAQ 시스템 — 씨앤디테크" style="width:100%; display:block;">
+    <div style="margin-top:32px; border-radius:var(--radius); overflow:hidden; max-width:880px; border:1px solid var(--line);">
+      <img src="../assets/images/daq.png"
+           alt="Gantner Portable DAQ · HBM DAQ · GreenTech GTDL DAQ — 씨앤디테크 취급 데이터수집장치 3종" style="width:100%; display:block; object-fit:contain; background:#f8fafc;">
     </div>
 
     <div class="daq-stat-grid">
