@@ -176,6 +176,8 @@
   color: var(--accent-deep); font-family: 'JetBrains Mono', monospace;
   margin-bottom: 8px;
 }
+.sg-type-card .tc-img { width:100%; border-radius:6px; overflow:hidden; margin-bottom:12px; background:#f8fafc; border:1px solid var(--line); }
+.sg-type-card .tc-img img { width:100%; display:block; object-fit:contain; max-height:160px; }
 .sg-type-card .tc-name { font-weight: 700; font-size: 15px; color: var(--charcoal); margin-bottom: 6px; }
 .sg-type-card .tc-desc { font-size: 13px; color: var(--text-mute); line-height: 1.5; }
 
@@ -389,23 +391,33 @@
       <div class="sg-type-grid">
         <div class="sg-type-card">
           <div class="tc-badge">LINEAR · 1축</div>
-          <div class="tc-name">단축 스트레인게이지</div>
+          <div class="tc-img"><img src="../assets/images/리니어스트레인게이지.png" alt="리니어(단축) 스트레인게이지 — 1방향 인장·압축 측정용" loading="lazy"></div>
+          <div class="tc-name">단축(리니어) 스트레인게이지</div>
           <div class="tc-desc">한 방향으로만 변형이 발생하는 경우에 사용. 보, 로드, 단순 인장·압축 측정에 적합. 가장 기본적인 형태.</div>
         </div>
         <div class="sg-type-card">
           <div class="tc-badge">DOUBLE · 1축 2중</div>
+          <div class="tc-img"><img src="../assets/images/더블 스트레인게이지.png" alt="더블 스트레인게이지 — 동일 축 2게이지 배열, 온도 보상 하프브릿지" loading="lazy"></div>
           <div class="tc-name">더블 스트레인게이지</div>
           <div class="tc-desc">동일 축 2개 게이지 배열. 온도 보상이 필요한 단방향 측정에 사용. 하프 브릿지 구성 시 유리.</div>
         </div>
         <div class="sg-type-card">
-          <div class="tc-badge">ROSETTE · 2축</div>
-          <div class="tc-name">2축 로제트 (45°)</div>
-          <div class="tc-desc">45° 배열 2축 게이지. 전단 응력·토크 측정에 사용. 잔류응력 측정(ASTM E837) 전용 2축 로제트도 있음.</div>
+          <div class="tc-badge">ROSETTE · 2축 (T형)</div>
+          <div class="tc-img"><img src="../assets/images/T로젯 스트레인게이지.png" alt="T형 2축 로제트(티로젯) 스트레인게이지 — 45° 배열 전단·토크 측정용" loading="lazy"></div>
+          <div class="tc-name">T형 2축 로제트 (티로젯)</div>
+          <div class="tc-desc">45° 배열 2축 게이지. 전단 응력·토크 측정에 사용. T자형 배치로 주응력 방향이 알려진 경우에 적합. 잔류응력 측정(ASTM E837) 전용 2축 로제트도 있음.</div>
         </div>
         <div class="sg-type-card">
           <div class="tc-badge">ROSETTE · 3축</div>
+          <div class="tc-img"><img src="../assets/images/로젯스트레인게이지.png" alt="3축 로제트 스트레인게이지 — 0°/45°/90° 배열, 주응력 방향·크기 동시 측정" loading="lazy"></div>
           <div class="tc-name">3축 로제트 (0°/45°/90°)</div>
-          <div class="tc-desc">응력 방향을 모를 때, 복잡한 구조물에서 주응력 방향·크기를 동시에 구할 때 사용. 잔류응력 홀드릴링에도 사용.</div>
+          <div class="tc-desc">응력 방향을 모를 때, 복잡한 구조물에서 주응력 방향·크기를 동시에 구할 때 사용. 잔류응력 홀드릴링(ASTM E837)에도 사용.</div>
+        </div>
+        <div class="sg-type-card">
+          <div class="tc-badge">SHEAR · 전단</div>
+          <div class="tc-img"><img src="../assets/images/shear 스트레인게이지.png" alt="전단(Shear) 스트레인게이지 — ±45° 전단 변형률 직접 측정, 토크·전단력 계측용" loading="lazy"></div>
+          <div class="tc-name">전단 스트레인게이지 (Shear)</div>
+          <div class="tc-desc">±45° 방향으로 배열된 2엘리먼트 게이지. 전단 변형률(γ)을 직접 측정하며, 토크 측정·전단력 계측에 특화. 하프 브릿지 구성으로 온도 자기보상이 가능하고 굽힘·축력 성분을 소거할 수 있어 순수 전단 계측에 유리.</div>
         </div>
       </div>
     </div>
