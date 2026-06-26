@@ -4,10 +4,12 @@
 <meta charset="UTF-8" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>텔레메트리 시스템 | CND TECH 씨앤디테크</title>
-<meta name="description" content="무선 계측 텔레메트리 시스템 설계·구축. 회전체·이동체 응력·토크 무선 측정, 현장 계측 솔루션." />
-<meta property="og:title" content="텔레메트리 시스템 | CND TECH 씨앤디테크" />
-<meta property="og:description" content="무선 계측 텔레메트리 시스템 설계·구축. 회전체·이동체 응력·토크 무선 측정, 현장 계측 솔루션." />
+<title>텔레메트리 시스템 완전 가이드 — 회전체 무선 계측·토크·응력 측정 | 씨앤디테크</title>
+<meta name="description" content="텔레메트리(Telemetry) 시스템의 구성·원리·적용 사례를 설명합니다. 회전체 샤프트·프로펠러·터빈에 스트레인게이지를 부착하고 무선으로 토크·응력을 실시간 측정하는 씨앤디테크의 텔레메트리 계측 솔루션." />
+<meta name="keywords" content="텔레메트리 시스템, telemetry, 무선 계측, 회전체 측정, 토크 무선 측정, 비접촉 계측, 텔레메터리, RF 텔레메트리, 회전체 응력, 샤프트 토크 측정, 텔레메트리 송수신기, 비틀림 측정, 무선 신호 전송" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/telemetry.html" />
+<meta property="og:title" content="텔레메트리 시스템 완전 가이드 — 회전체 무선 계측·토크·응력 측정 | 씨앤디테크" />
+<meta property="og:description" content="회전체 샤프트·프로펠러·터빈의 토크·응력을 무선으로 실시간 측정. 씨앤디테크 텔레메트리 시스템 구성, 원리, 적용 사례 가이드." />
 <meta property="og:type" content="article" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,6 +34,20 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-B25Y10FQK1');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"텔레메트리 시스템이란 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"텔레메트리(Telemetry)는 유선 연결이 불가능한 회전체·이동체에서 계측 데이터를 무선으로 수집·전송하는 기술입니다. 회전 중인 샤프트의 토크, 응력, 온도, 진동 데이터를 슬립링 없이 실시간으로 취득할 수 있으며, RF 무선·유도결합·광텔레메트리 방식 중 용도에 맞게 선택합니다."}},
+    {"@type":"Question","name":"슬립링과 텔레메트리 시스템의 차이점은 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"슬립링은 기계적 접촉을 통해 신호를 전달하므로 마모·노이즈·고속 회전 제한이 발생합니다. 텔레메트리는 비접촉 무선 방식으로 마모가 없고, 고속 회전(수만 RPM)에도 적용 가능하며 설치·유지보수가 간편합니다. 단, 환경에 따라 RF 간섭 차폐가 필요할 수 있습니다."}},
+    {"@type":"Question","name":"텔레메트리 시스템으로 측정할 수 있는 신호는?","acceptedAnswer":{"@type":"Answer","text":"스트레인게이지(응력·토크·굽힘), 열전대·RTD(온도), 가속도계(진동), IEPE 센서, 압력 센서 등 다양한 신호를 전송할 수 있습니다. 다채널(멀티채널) 동시 취득이 가능하며, DAQ 시스템 또는 PC와 연결하여 실시간 모니터링·분석이 가능합니다."}},
+    {"@type":"Question","name":"회전체에 탑재된 송신기의 전원은 어떻게 공급하나요?","acceptedAnswer":{"@type":"Answer","text":"두 가지 방식이 사용됩니다. ① 배터리(1차 전지 또는 충전식) — 소형 리튬 배터리를 회전체에 탑재하며, 측정 시간 기준 수 시간~수십 시간 연속 운용이 가능합니다. ② 비접촉 전력 전송(Inductive Power Transfer, IPT) — 유도 결합으로 고정부에서 회전부로 무선 전원을 공급합니다. 장시간·연속 측정에 적합합니다."}},
+    {"@type":"Question","name":"텔레메트리 시스템의 신호 전송 거리는 얼마나 되나요?","acceptedAnswer":{"@type":"Answer","text":"시스템 종류와 환경에 따라 다르지만, 일반적인 산업용 RF 텔레메트리는 1~10m 내외(회전체 주변 근거리 수신)로 설계됩니다. 안테나 위치 최적화와 안테나 컴바이너(다중 안테나 결합)를 사용하면 안정적인 신호 수신이 가능합니다."}},
+    {"@type":"Question","name":"텔레메트리 시스템 도입에서 현장 설치까지 얼마나 걸리나요?","acceptedAnswer":{"@type":"Answer","text":"씨앤디테크는 시스템 설계·제작·현장 설치·데이터 분석을 일괄 제공합니다. 표준 구성의 경우 사양 협의 후 2~4주 내 공급이 가능하며, 현장 설치는 1~3일 소요됩니다. 특수 환경(고온, 수중, 비폭발성 등)이나 대형 구조물은 별도 협의가 필요합니다. 031-680-1225 또는 문의 페이지로 상담하세요."}}
+  ]
+}
 </script>
 </head>
 <body>
@@ -96,6 +112,11 @@
                alt="텔레메트리 시스템 구성도 — 센서·송신 모듈·수신기·DAQ 연결 다이어그램" loading="lazy"
                style="width:100%; display:block; object-fit:contain; background:#f8fafc; max-height:400px;">
         </div>
+        <div style="border-radius:var(--radius); overflow:hidden; margin-top:12px; border:1px solid var(--line);">
+          <img src="../assets/images/텔레메터리 시스템 구성.png"
+               alt="텔레메터리 시스템 구성 상세도 — 샤프트·트랜스미터·RX 안테나·DAQ·노트북 신호 흐름" loading="lazy"
+               style="width:100%; display:block; object-fit:contain; background:#fff; max-height:480px;">
+        </div>
       </div>
       <div class="fade-in" style="padding-bottom:40px; border-bottom:1px solid var(--line);">
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:12px;" data-ko="회전체 계측 적용" data-en="Rotating Body Measurement">회전체 계측 적용</h2>
@@ -106,7 +127,39 @@
         <p style="font-size:15px; color:var(--text-dim); line-height:1.8;" data-ko="선박 프로펠러 샤프트 토크 계측, 헬리콥터 로터 블레이드 응력 모니터링, 자동차 드라이브샤프트 내구 시험, 풍력 발전기 블레이드 하중 측정에 적용해왔습니다. 씨앤디테크는 시스템 설계·제작, 현장 설치, 데이터 분석까지 일괄 제공합니다." data-en="Applied to ship propeller shaft torque, helicopter rotor blade stress, automotive driveshaft durability, and wind turbine blade load measurement. CND TECH delivers full system design, installation, and data analysis.">선박 프로펠러 샤프트 토크 계측, 헬리콥터 로터 블레이드 응력 모니터링, 자동차 드라이브샤프트 내구 시험, 풍력 발전기 블레이드 하중 측정에 적용해왔습니다. 씨앤디테크는 시스템 설계·제작, 현장 설치, 데이터 분석까지 일괄 제공합니다.</p>
       </div>
     </div>
-    <div style="margin-top:64px; padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius); max-width:800px;">
+      <!-- FAQ -->
+      <div class="fade-in" style="padding-bottom:0;">
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">자주 묻는 질문 (FAQ)</h2>
+        <p style="font-size:14px; color:var(--text-mute); margin-bottom:24px;">텔레메트리 시스템 도입·구성·운용에 관한 현장 Q&amp;A</p>
+        <div style="display:flex; flex-direction:column; gap:0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;">
+          <details style="border-bottom:1px solid var(--line);">
+            <summary style="padding:18px 22px; font-size:14.5px; font-weight:600; color:var(--charcoal); cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">텔레메트리 시스템이란 무엇인가요?<span style="font-size:18px; color:var(--accent); flex-shrink:0; margin-left:12px;">+</span></summary>
+            <div style="padding:16px 22px 20px; font-size:14px; color:var(--text-dim); line-height:1.8; border-top:1px solid var(--line); background:#fff;">유선 연결이 불가능한 <strong>회전체·이동체에서 계측 데이터를 무선으로 수집·전송</strong>하는 기술입니다. 회전 중인 샤프트의 토크, 응력, 온도, 진동 데이터를 슬립링 없이 실시간으로 취득할 수 있습니다. RF 무선·유도결합·광텔레메트리 방식 중 용도에 맞게 선택합니다.</div>
+          </details>
+          <details style="border-bottom:1px solid var(--line);">
+            <summary style="padding:18px 22px; font-size:14.5px; font-weight:600; color:var(--charcoal); cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">슬립링과 텔레메트리의 차이점은 무엇인가요?<span style="font-size:18px; color:var(--accent); flex-shrink:0; margin-left:12px;">+</span></summary>
+            <div style="padding:16px 22px 20px; font-size:14px; color:var(--text-dim); line-height:1.8; border-top:1px solid var(--line); background:#fff;">슬립링은 기계적 접촉 방식으로 <strong>마모·노이즈·고속 회전 제한</strong>이 발생합니다. 텔레메트리는 비접촉 무선 방식이므로 마모가 없고 고속 회전(수만 RPM)에도 적용 가능하며 유지보수가 간편합니다. 환경에 따라 RF 간섭 차폐가 필요할 수 있습니다.</div>
+          </details>
+          <details style="border-bottom:1px solid var(--line);">
+            <summary style="padding:18px 22px; font-size:14.5px; font-weight:600; color:var(--charcoal); cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">어떤 신호를 텔레메트리로 전송할 수 있나요?<span style="font-size:18px; color:var(--accent); flex-shrink:0; margin-left:12px;">+</span></summary>
+            <div style="padding:16px 22px 20px; font-size:14px; color:var(--text-dim); line-height:1.8; border-top:1px solid var(--line); background:#fff;"><strong>스트레인게이지(응력·토크·굽힘), 열전대·RTD(온도), 가속도계(진동), IEPE 센서, 압력 센서</strong> 등 다양한 신호를 전송할 수 있습니다. 다채널 동시 취득이 가능하며 DAQ 시스템과 연결하여 실시간 분석이 가능합니다.</div>
+          </details>
+          <details style="border-bottom:1px solid var(--line);">
+            <summary style="padding:18px 22px; font-size:14.5px; font-weight:600; color:var(--charcoal); cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">회전체 송신기의 전원은 어떻게 공급하나요?<span style="font-size:18px; color:var(--accent); flex-shrink:0; margin-left:12px;">+</span></summary>
+            <div style="padding:16px 22px 20px; font-size:14px; color:var(--text-dim); line-height:1.8; border-top:1px solid var(--line); background:#fff;">① <strong>배터리(리튬 전지)</strong> — 소형으로 수 시간~수십 시간 연속 운용. ② <strong>비접촉 전력 전송(IPT, 유도결합)</strong> — 고정부에서 회전부로 무선 전원 공급, 장시간·연속 측정에 적합합니다.</div>
+          </details>
+          <details style="border-bottom:1px solid var(--line);">
+            <summary style="padding:18px 22px; font-size:14.5px; font-weight:600; color:var(--charcoal); cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">텔레메트리 신호 전송 거리는 얼마나 되나요?<span style="font-size:18px; color:var(--accent); flex-shrink:0; margin-left:12px;">+</span></summary>
+            <div style="padding:16px 22px 20px; font-size:14px; color:var(--text-dim); line-height:1.8; border-top:1px solid var(--line); background:#fff;">산업용 RF 텔레메트리는 일반적으로 <strong>1~10m 근거리 수신</strong>으로 설계됩니다. 안테나 컴바이너(다중 안테나 결합)와 위치 최적화를 통해 안정적인 신호 수신이 가능하며, 환경 조건에 따라 맞춤 설계를 제공합니다.</div>
+          </details>
+          <details>
+            <summary style="padding:18px 22px; font-size:14.5px; font-weight:600; color:var(--charcoal); cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">텔레메트리 시스템 도입에서 현장 설치까지 얼마나 걸리나요?<span style="font-size:18px; color:var(--accent); flex-shrink:0; margin-left:12px;">+</span></summary>
+            <div style="padding:16px 22px 20px; font-size:14px; color:var(--text-dim); line-height:1.8; border-top:1px solid var(--line); background:#fff;">표준 구성의 경우 사양 협의 후 <strong>2~4주 내 공급</strong>, 현장 설치 1~3일 소요됩니다. 씨앤디테크는 설계·제작·설치·데이터 분석을 일괄 제공합니다. 특수 환경(고온·수중·폭발위험구역 등)은 별도 협의 — <a href="../contact.html" style="color:var(--accent);">문의하기</a> 또는 031-680-1225.</div>
+          </details>
+        </div>
+      </div>
+
+        <div style="margin-top:64px; padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius); max-width:800px;">
       <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;" data-ko="측정 서비스 문의" data-en="Service Inquiry">측정 서비스 문의</h3>
       <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;" data-ko="씨앤디테크는 텔레메트리 시스템 장비 공급과 현장 측정 서비스를 제공합니다. 사양과 요구 사항을 알려주시면 최적의 솔루션을 제안드립니다." data-en="CND TECH provides Telemetry System equipment and on-site services. Share your specs and requirements for a tailored proposal.">씨앤디테크는 텔레메트리 시스템 장비 공급과 현장 측정 서비스를 제공합니다. 사양과 요구 사항을 알려주시면 최적의 솔루션을 제안드립니다.</p>
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
