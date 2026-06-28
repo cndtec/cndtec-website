@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>씨앤디테크 서체 비교 — 쿨-인더스트리얼</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0a0a0a; font-family: sans-serif; }
+
+/* 탭 */
+.tab-nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #0a0a0a; border-bottom: 1px solid #1e1e1e;
+  display: flex;
+}
+.tab-btn {
+  flex: 1; padding: 14px 8px; background: none; border: none; cursor: pointer;
+  color: #555; font-size: 11.5px; font-weight: 500;
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  border-bottom: 2px solid transparent; transition: all 0.2s;
+}
+.tab-btn .font-name { display: block; font-size: 13px; color: #888; margin-bottom: 3px; }
+.tab-btn .font-desc { display: block; font-size: 9.5px; color: #444; letter-spacing: 0.08em; }
+.tab-btn.active .font-name { color: #fff; }
+.tab-btn.active .font-desc { color: #E8880A; }
+.tab-btn.active { border-bottom-color: #E8880A; }
+.tab-btn:hover .font-name { color: #ccc; }
+
+.panel { display: none; }
+.panel.active { display: block; }
+
+/* 공통 히어로 레이아웃 — 쿨-인더스트리얼 */
+.hero {
+  min-height: 100vh;
+  background: #F2F4F7;
+  padding: 96px 64px 80px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(20,32,56,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20,32,56,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 6px 14px;
+  border: 1px solid rgba(20,32,56,0.15);
+  border-radius: 4px;
+  font-size: 10px; color: #3A5070;
+  font-family: 'IBM Plex Mono', monospace;
+  margin-bottom: 44px; background: rgba(255,255,255,0.75);
+  font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+  position: relative; z-index: 2;
+}
+.dot { width: 5px; height: 5px; border-radius: 50%; background: #E8880A; }
+
+.stats {
+  display: flex; gap: 0;
+  position: relative; z-index: 2;
+  border: 1px solid rgba(20,32,56,0.1);
+  border-radius: 6px; background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(8px); overflow: hidden; max-width: 680px;
+}
+.stat { flex: 1; padding: 22px 28px; border-right: 1px solid rgba(20,32,56,0.08); }
+.stat:last-child { border-right: none; }
+.stat .lbl { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: #718096; margin-top: 6px; letter-spacing: 0.12em; text-transform: uppercase; }
+
+.actions { display: flex; gap: 12px; margin-bottom: 64px; position: relative; z-index: 2; }
+.btn-p { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 4px; font-size: 13px; font-weight: 600; background: #141E30; color: #fff; cursor: default; }
+.btn-g { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 4px; font-size: 13px; font-weight: 500; border: 1px solid rgba(20,32,56,0.2); color: #2D3748; background: rgba(255,255,255,0.8); cursor: default; }
+
+/* 서체 레이블 배너 */
+.font-banner {
+  background: #141414; padding: 12px 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid #222;
+}
+.font-banner .fn { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #fff; }
+.font-banner .fd { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #555; }
+.font-banner .fb { font-family: 'IBM Plex Mono', monospace; font-size: 10px; padding: 3px 10px; border-radius: 3px; background: rgba(232,136,10,0.12); color: #E8880A; border: 1px solid rgba(232,136,10,0.25); letter-spacing: 0.08em; }
+
+/* ===================== 각 서체별 ===================== */
+
+/* A. IBM Plex Sans — 엔지니어링 */
+#tab-a .hero h1 {
+  font-family: 'IBM Plex Sans', 'Noto Sans KR', sans-serif;
+  font-size: 64px; font-weight: 600;
+  line-height: 1.1; letter-spacing: -0.02em;
+  margin-bottom: 24px; color: #141E30;
+  position: relative; z-index: 2;
+}
+#tab-a .hero h1 .acc { color: #E8880A; }
+#tab-a .hero .lead {
+  font-family: 'IBM Plex Sans', 'Noto Sans KR', sans-serif;
+  font-size: 16px; color: #4A5568; max-width: 600px; line-height: 1.8;
+  margin-bottom: 48px; position: relative; z-index: 2; font-weight: 400;
+}
+#tab-a .hero .lead em { font-style: italic; color: #3A5070; }
+#tab-a .stat .num { font-family: 'IBM Plex Sans', sans-serif; font-size: 34px; font-weight: 700; color: #141E30; line-height: 1; }
+#tab-a .stat .num .plus { color: #E8880A; font-size: 20px; }
+#tab-a .btn-p, #tab-a .btn-g { font-family: 'IBM Plex Sans', 'Noto Sans KR', sans-serif; }
+
+/* B. Barlow — 산업·군사 느낌 */
+#tab-b .hero h1 {
+  font-family: 'Barlow', 'Noto Sans KR', sans-serif;
+  font-size: 72px; font-weight: 700;
+  line-height: 1.0; letter-spacing: -0.01em;
+  margin-bottom: 24px; color: #141E30;
+  position: relative; z-index: 2;
+  text-transform: uppercase;
+}
+#tab-b .hero h1 .acc { color: #E8880A; }
+#tab-b .hero .lead {
+  font-family: 'Barlow', 'Noto Sans KR', sans-serif;
+  font-size: 17px; color: #4A5568; max-width: 580px; line-height: 1.7;
+  margin-bottom: 48px; position: relative; z-index: 2; font-weight: 400;
+}
+#tab-b .stat .num { font-family: 'Barlow Condensed', sans-serif; font-size: 40px; font-weight: 700; color: #141E30; line-height: 1; letter-spacing: 0.02em; }
+#tab-b .stat .num .plus { color: #E8880A; font-size: 24px; }
+#tab-b .btn-p, #tab-b .btn-g { font-family: 'Barlow', sans-serif; letter-spacing: 0.06em; text-transform: uppercase; font-size: 12px; }
+
+/* C. Plus Jakarta Sans — 현대 전문직 */
+#tab-c .hero h1 {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+  font-size: 66px; font-weight: 700;
+  line-height: 1.08; letter-spacing: -0.025em;
+  margin-bottom: 24px; color: #141E30;
+  position: relative; z-index: 2;
+}
+#tab-c .hero h1 .acc { color: #E8880A; }
+#tab-c .hero h1 .sub { font-weight: 400; color: #4A5568; }
+#tab-c .hero .lead {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+  font-size: 16px; color: #4A5568; max-width: 600px; line-height: 1.85;
+  margin-bottom: 48px; position: relative; z-index: 2; font-weight: 400;
+}
+#tab-c .stat .num { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 36px; font-weight: 700; color: #141E30; line-height: 1; }
+#tab-c .stat .num .plus { color: #E8880A; font-size: 22px; }
+#tab-c .btn-p, #tab-c .btn-g { font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif; }
+
+/* D. Manrope — 기하학적 정밀 */
+#tab-d .hero h1 {
+  font-family: 'Manrope', 'Noto Sans KR', sans-serif;
+  font-size: 64px; font-weight: 800;
+  line-height: 1.08; letter-spacing: -0.035em;
+  margin-bottom: 24px; color: #141E30;
+  position: relative; z-index: 2;
+}
+#tab-d .hero h1 .acc { color: #E8880A; }
+#tab-d .hero h1 .light { font-weight: 300; }
+#tab-d .hero .lead {
+  font-family: 'Manrope', 'Noto Sans KR', sans-serif;
+  font-size: 15.5px; color: #4A5568; max-width: 600px; line-height: 1.85;
+  margin-bottom: 48px; position: relative; z-index: 2; font-weight: 400;
+}
+#tab-d .stat .num { font-family: 'Manrope', sans-serif; font-size: 36px; font-weight: 800; color: #141E30; line-height: 1; }
+#tab-d .stat .num .plus { color: #E8880A; font-size: 22px; font-weight: 600; }
+#tab-d .btn-p, #tab-d .btn-g { font-family: 'Manrope', 'Noto Sans KR', sans-serif; font-weight: 600; }
+
+/* E. DM Sans — 미니멀 클린 */
+#tab-e .hero h1 {
+  font-family: 'DM Sans', 'Noto Sans KR', sans-serif;
+  font-size: 66px; font-weight: 700;
+  line-height: 1.08; letter-spacing: -0.03em;
+  margin-bottom: 24px; color: #141E30;
+  position: relative; z-index: 2;
+}
+#tab-e .hero h1 .acc { color: #E8880A; }
+#tab-e .hero .lead {
+  font-family: 'DM Sans', 'Noto Sans KR', sans-serif;
+  font-size: 16px; color: #4A5568; max-width: 600px; line-height: 1.8;
+  margin-bottom: 48px; position: relative; z-index: 2; font-weight: 300;
+}
+#tab-e .stat .num { font-family: 'DM Sans', sans-serif; font-size: 36px; font-weight: 700; color: #141E30; line-height: 1; }
+#tab-e .stat .num .plus { color: #E8880A; font-size: 22px; }
+#tab-e .btn-p, #tab-e .btn-g { font-family: 'DM Sans', 'Noto Sans KR', sans-serif; }
+</style>
+</head>
+<body>
+
+<div class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('a', this)">
+    <span class="font-name">IBM Plex Sans</span>
+    <span class="font-desc">엔지니어링 · 이성적</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('b', this)">
+    <span class="font-name">Barlow</span>
+    <span class="font-desc">산업 · 강직함</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('c', this)">
+    <span class="font-name">Plus Jakarta Sans</span>
+    <span class="font-desc">현대 전문직 · 균형</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('d', this)">
+    <span class="font-name">Manrope</span>
+    <span class="font-desc">기하학적 · 정밀</span>
+  </button>
+  <button class="tab-btn" onclick="showTab('e', this)">
+    <span class="font-name">DM Sans</span>
+    <span class="font-desc">미니멀 · 클린</span>
+  </button>
+</div>
+
+<!-- A. IBM Plex Sans -->
+<div class="panel active" id="tab-a">
+  <div class="font-banner">
+    <span class="fn">IBM Plex Sans</span>
+    <span class="fd">IBM이 개발한 엔지니어링 DNA 서체 · 이성적이고 정제된 느낌</span>
+    <span class="fb">현재 ① 시안</span>
+  </div>
+  <div class="hero">
+    <div class="tag"><span class="dot"></span> MEASURE WHAT MATTERS · 정확한 데이터가 신뢰를 만듭니다</div>
+    <h1>정밀 계측의 모든 것을,<br><span class="acc">데이터로 증명합니다.</span></h1>
+    <p class="lead">씨앤디테크는 구조 진동·응력·잔류응력 분석, 하중·토크 계측, DAQ 시스템 설계·구축을 아우르는 시험계측 전문 기업입니다. 검증된 기술과 현장 경험을 바탕으로 산업 자산의 안전성·내구성·성능을 수치로 증명합니다.</p>
+    <div class="actions">
+      <span class="btn-p">솔루션 문의 →</span>
+      <span class="btn-g">제품 둘러보기</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">25<span class="plus">+</span></div><div class="lbl">YEARS</div></div>
+      <div class="stat"><div class="num">500<span class="plus">+</span></div><div class="lbl">PROJECTS</div></div>
+      <div class="stat"><div class="num">300<span class="plus">+</span></div><div class="lbl">CLIENTS</div></div>
+      <div class="stat"><div class="num">5</div><div class="lbl">DOMAINS</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- B. Barlow -->
+<div class="panel" id="tab-b">
+  <div class="font-banner">
+    <span class="fn">Barlow</span>
+    <span class="fd">산업·항공우주·군사에서 쓰이는 강직하고 단단한 서체 · 대문자 활용 강점</span>
+    <span class="fb">산업 강직형</span>
+  </div>
+  <div class="hero">
+    <div class="tag"><span class="dot"></span> MEASURE WHAT MATTERS · 정확한 데이터가 신뢰를 만듭니다</div>
+    <h1>정밀 계측의<br>모든 것을, <span class="acc">데이터로<br>증명합니다.</span></h1>
+    <p class="lead">씨앤디테크는 구조 진동·응력·잔류응력 분석, 하중·토크 계측, DAQ 시스템 설계·구축을 아우르는 시험계측 전문 기업입니다. 검증된 기술과 현장 경험을 바탕으로 산업 자산의 안전성·내구성·성능을 수치로 증명합니다.</p>
+    <div class="actions">
+      <span class="btn-p">솔루션 문의 →</span>
+      <span class="btn-g">제품 둘러보기</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">25<span class="plus">+</span></div><div class="lbl">YEARS</div></div>
+      <div class="stat"><div class="num">500<span class="plus">+</span></div><div class="lbl">PROJECTS</div></div>
+      <div class="stat"><div class="num">300<span class="plus">+</span></div><div class="lbl">CLIENTS</div></div>
+      <div class="stat"><div class="num">5</div><div class="lbl">DOMAINS</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- C. Plus Jakarta Sans -->
+<div class="panel" id="tab-c">
+  <div class="font-banner">
+    <span class="fn">Plus Jakarta Sans</span>
+    <span class="fd">현대적이고 균형 잡힌 전문직 서체 · 너무 차갑지도 너무 부드럽지도 않음</span>
+    <span class="fb">현대 전문직형</span>
+  </div>
+  <div class="hero">
+    <div class="tag"><span class="dot"></span> MEASURE WHAT MATTERS · 정확한 데이터가 신뢰를 만듭니다</div>
+    <h1>정밀 계측의 모든 것을,<br><span class="acc">데이터로 증명합니다.</span></h1>
+    <p class="lead">씨앤디테크는 구조 진동·응력·잔류응력 분석, 하중·토크 계측, DAQ 시스템 설계·구축을 아우르는 시험계측 전문 기업입니다. 검증된 기술과 현장 경험을 바탕으로 산업 자산의 안전성·내구성·성능을 수치로 증명합니다.</p>
+    <div class="actions">
+      <span class="btn-p">솔루션 문의 →</span>
+      <span class="btn-g">제품 둘러보기</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">25<span class="plus">+</span></div><div class="lbl">YEARS</div></div>
+      <div class="stat"><div class="num">500<span class="plus">+</span></div><div class="lbl">PROJECTS</div></div>
+      <div class="stat"><div class="num">300<span class="plus">+</span></div><div class="lbl">CLIENTS</div></div>
+      <div class="stat"><div class="num">5</div><div class="lbl">DOMAINS</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- D. Manrope -->
+<div class="panel" id="tab-d">
+  <div class="font-banner">
+    <span class="fn">Manrope</span>
+    <span class="fd">기하학적 그로테스크 · 굵기 대비가 강하고 정밀한 인상 · 유럽 테크 회사 느낌</span>
+    <span class="fb">기하학 정밀형</span>
+  </div>
+  <div class="hero">
+    <div class="tag"><span class="dot"></span> MEASURE WHAT MATTERS · 정확한 데이터가 신뢰를 만듭니다</div>
+    <h1><span class="light">정밀 계측의 모든 것을,</span><br><span class="acc">데이터로 증명합니다.</span></h1>
+    <p class="lead">씨앤디테크는 구조 진동·응력·잔류응력 분석, 하중·토크 계측, DAQ 시스템 설계·구축을 아우르는 시험계측 전문 기업입니다. 검증된 기술과 현장 경험을 바탕으로 산업 자산의 안전성·내구성·성능을 수치로 증명합니다.</p>
+    <div class="actions">
+      <span class="btn-p">솔루션 문의 →</span>
+      <span class="btn-g">제품 둘러보기</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">25<span class="plus">+</span></div><div class="lbl">YEARS</div></div>
+      <div class="stat"><div class="num">500<span class="plus">+</span></div><div class="lbl">PROJECTS</div></div>
+      <div class="stat"><div class="num">300<span class="plus">+</span></div><div class="lbl">CLIENTS</div></div>
+      <div class="stat"><div class="num">5</div><div class="lbl">DOMAINS</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- E. DM Sans -->
+<div class="panel" id="tab-e">
+  <div class="font-banner">
+    <span class="fn">DM Sans</span>
+    <span class="fd">DeepMind 계열 · 미니멀하고 클린한 현대적 산세리프 · 군더더기 없는 느낌</span>
+    <span class="fb">미니멀 클린형</span>
+  </div>
+  <div class="hero">
+    <div class="tag"><span class="dot"></span> MEASURE WHAT MATTERS · 정확한 데이터가 신뢰를 만듭니다</div>
+    <h1>정밀 계측의 모든 것을,<br><span class="acc">데이터로 증명합니다.</span></h1>
+    <p class="lead">씨앤디테크는 구조 진동·응력·잔류응력 분석, 하중·토크 계측, DAQ 시스템 설계·구축을 아우르는 시험계측 전문 기업입니다. 검증된 기술과 현장 경험을 바탕으로 산업 자산의 안전성·내구성·성능을 수치로 증명합니다.</p>
+    <div class="actions">
+      <span class="btn-p">솔루션 문의 →</span>
+      <span class="btn-g">제품 둘러보기</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">25<span class="plus">+</span></div><div class="lbl">YEARS</div></div>
+      <div class="stat"><div class="num">500<span class="plus">+</span></div><div class="lbl">PROJECTS</div></div>
+      <div class="stat"><div class="num">300<span class="plus">+</span></div><div class="lbl">CLIENTS</div></div>
+      <div class="stat"><div class="num">5</div><div class="lbl">DOMAINS</div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
