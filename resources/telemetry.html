@@ -118,6 +118,9 @@
 .tl-faq-item summary::after { content:'+'; font-size:20px; color:var(--accent); flex-shrink:0; }
 .tl-faq-item[open] summary::after { content:'−'; }
 .tl-faq-body { padding:4px 4px 20px; font-size:14px; color:var(--text-dim); line-height:1.8; }
+
+.tl-overview-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:32px; align-items:start; }
+@media(max-width:700px){ .tl-overview-grid { grid-template-columns:1fr; gap:28px; } }
 </style>
 </head>
 <body>
@@ -193,7 +196,7 @@
   <div class="container" style="max-width:960px;">
     <div class="section-label">OVERVIEW</div>
     <h2 class="section-title">텔레메터리 시스템이란?</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:32px;align-items:start;">
+    <div class="tl-overview-grid">
       <div>
         <p style="font-size:15px;color:var(--text-dim);line-height:1.85;margin-bottom:20px;">
           텔레메터리(Telemetry)는 유선 연결이 불가능한 <strong style="color:var(--charcoal);">회전체·이동체</strong>에서 계측 데이터를
@@ -220,7 +223,6 @@
         </p>
       </div>
     </div>
-    @media(max-width:700px){ display:grid-template-columns:1fr; }
   </div>
 </section>
 
