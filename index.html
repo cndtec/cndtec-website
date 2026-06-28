@@ -25,8 +25,7 @@
 <meta name="twitter:image" content="https://www.cndtec.co.kr/assets/images/cnd-logo-400.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css?v=5">
 <style>
   /* === index 전용: Hero === */
@@ -36,15 +35,15 @@
   }
   .hero-tag {
     display: inline-flex; align-items: center; gap: 8px;
-    padding: 7px 14px; border: 1px solid var(--orange-line); border-radius: 999px;
-    font-size: 11px; color: var(--orange-deep); font-family: 'JetBrains Mono', monospace;
-    margin-bottom: 32px; background: var(--orange-tint); font-weight: 600;
+    padding: 6px 14px; border: 1px solid var(--orange-line); border-radius: 4px;
+    font-size: 10.5px; color: var(--orange-deep); font-family: 'IBM Plex Mono', monospace;
+    margin-bottom: 36px; background: var(--orange-tint); font-weight: 500; letter-spacing: 0.08em;
   }
-  .hero-tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(242,148,0,0.18); }
+  .hero-tag .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(232,136,10,0.18); }
   .hero h1 {
-    font-family: 'Space Grotesk', 'Pretendard', sans-serif;
-    font-size: clamp(40px, 6vw, 80px); font-weight: 700;
-    line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 28px; color: var(--charcoal);
+    font-family: 'Manrope', 'Noto Sans KR', sans-serif;
+    font-size: clamp(38px, 6vw, 76px); font-weight: 800;
+    line-height: 1.06; letter-spacing: -0.035em; margin-bottom: 28px; color: var(--charcoal);
   }
   .hero h1 .accent { color: var(--accent); }
   .hero p.lead { font-size: 18px; color: var(--text-dim); max-width: 680px; line-height: 1.7; margin-bottom: 48px; }
@@ -102,7 +101,7 @@
   .ripple-circle {
     position: absolute; border-radius: 50%; pointer-events: none;
     width: 80px; height: 80px; z-index: 20;
-    background: rgba(242, 148, 0, 0.38);
+    background: rgba(232, 136, 10, 0.38);
     animation: ripple-out 0.55s ease-out forwards;
   }
 
@@ -120,7 +119,7 @@
     display: grid; place-items: center; color: var(--accent-deep); margin-bottom: 20px;
   }
   .area-prev-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 4px; color: var(--charcoal); }
-  .area-prev-card .sub { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-mute); text-transform: uppercase; font-weight: 600; margin-bottom: 16px; }
+  .area-prev-card .sub { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--text-mute); text-transform: uppercase; font-weight: 500; letter-spacing: 0.1em; margin-bottom: 16px; }
   .area-prev-card p { font-size: 14px; color: var(--text-dim); line-height: 1.7; }
   .area-prev-card .more-link {
     display: inline-flex; align-items: center; gap: 6px;
