@@ -49,6 +49,12 @@ body {
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+h1, h2, h3, h4, h5, h6 {
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 .mono { font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.02em; }
 .display { font-family: 'Manrope', 'Noto Sans KR', sans-serif; letter-spacing: -0.03em; font-weight: 800; }
