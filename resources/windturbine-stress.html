@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>풀브릿지 구성 응력 측정 — 풍력터빈 시험 모형 스트레인 측정 시스템 제작 납품 | 씨앤디테크</title>
+<meta name="description" content="씨앤디테크 현장 계측 사례 — 풍력터빈 시험 모형에 스트레인게이지 부착·풀브릿지 구성·이동식 스트레인 측정 시스템 제작·납품까지 일괄 지원. 제품 센서화·응력 측정·측정 지원 서비스." />
+<meta name="keywords" content="풀브릿지 구성, 풀브릿지 스트레인게이지, 응력 측정, 스트레인 측정 시스템, 제품 센서화, 측정 지원, 스트레인게이지 부착, 스트레인게이지 응력측정, 풍력터빈 응력 측정, 윈드터빈 시험, 스트레인 앰프, 이동식 측정 박스, 스트레인게이지 풀브릿지, 센서 제작, 응력 계측, 풀브릿지 구성 방법, strain gauge full bridge, 현장 측정 지원" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/windturbine-stress.html" />
+<meta property="og:title" content="풀브릿지 구성 응력 측정 — 풍력터빈 시험 모형 스트레인 측정 시스템 | 씨앤디테크" />
+<meta property="og:description" content="스트레인게이지 부착 → 풀브릿지 구성 → 이동식 스트레인 측정 시스템 제작 → 납품. 제품 센서화·응력 측정·측정 지원 씨앤디테크가 일괄 담당합니다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/windturbine-stress.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=4">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "풀브릿지(Full Bridge) 구성이란 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "풀브릿지는 스트레인게이지 4장을 휘트스톤 브릿지 4개 암(arm) 모두에 배치하는 구성입니다. 하프브릿지(2장) 대비 출력 감도가 2배이고 온도보상과 굽힘·축력 분리가 우수합니다. 구조체 응력 측정에 가장 정확한 브릿지 구성입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "제품 센서화란 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "제품 센서화는 기존 구조물·부품에 스트레인게이지를 직접 부착하여 하중, 응력, 토크 등을 측정하는 센서 시스템으로 만드는 것입니다. 별도 로드셀을 추가하지 않고 구조체 자체를 센서로 활용합니다. 씨앤디테크는 게이지 선정·부착·브릿지 구성·앰프 제작·교정까지 일괄 지원합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "스트레인 측정 시스템은 어떻게 구성되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "스트레인 측정 시스템은 스트레인게이지(센서)·앰프(신호 증폭)·DAQ(데이터 수집)·소프트웨어(분석)로 구성됩니다. 씨앤디테크는 현장 환경에 맞는 이동식 앰프 박스 제작과 DAQ 구성을 포함한 완성형 시스템으로 납품합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "스트레인게이지 응력 측정 지원 서비스 범위는?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "씨앤디테크의 응력 측정 지원 서비스는 스트레인게이지 선정·구매·부착·풀브릿지 구성·케이블 작업·신호 검증·앰프 설정·데이터 취득·결과 해석까지 전 과정을 담당합니다. 납품형(시스템 제작 후 인도) 또는 현장 출장 측정 서비스 두 가지로 제공합니다."
+      }
+    }
+  ]
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+/* 페이지 고유 스타일 */
+.wt-process { display:flex; flex-direction:column; gap:0; margin-top:28px; counter-reset:step; }
+.wt-step { display:grid; grid-template-columns:80px 1fr; gap:24px; padding:28px 0; border-bottom:1px solid var(--line); align-items:start; }
+.wt-step:last-child { border-bottom:none; }
+.wt-step-num { width:56px; height:56px; background:var(--orange-tint); border:2px solid var(--orange-line); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:18px; font-weight:700; color:var(--accent); flex-shrink:0; }
+.wt-step-title { font-size:17px; font-weight:700; color:var(--charcoal); margin-bottom:8px; }
+.wt-step-desc { font-size:14px; color:var(--text-dim); line-height:1.85; margin:0; }
+.wt-step-tags { display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
+.wt-tag { font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:600; color:var(--accent); background:var(--orange-tint); border:1px solid var(--orange-line); padding:3px 8px; border-radius:4px; }
+
+.wt-photo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:24px; }
+@media(max-width:700px){ .wt-photo-grid { grid-template-columns:1fr 1fr; } }
+@media(max-width:440px){ .wt-photo-grid { grid-template-columns:1fr; } }
+.wt-photo-card { border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:var(--bg-soft); }
+.wt-photo-card img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
+.wt-photo-cap { padding:10px 14px; font-size:12px; font-weight:600; color:var(--charcoal); }
+.wt-photo-cap span { display:block; font-size:11px; font-weight:400; color:var(--text-mute); margin-top:2px; }
+
+.wt-spec-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:24px; }
+@media(max-width:640px){ .wt-spec-grid { grid-template-columns:1fr; } }
+.wt-spec-box { background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:22px; }
+.wt-spec-tag { font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:700; color:var(--accent); letter-spacing:.08em; margin-bottom:10px; }
+.wt-spec-title { font-size:15px; font-weight:700; color:var(--charcoal); margin-bottom:12px; }
+.wt-spec-row { display:flex; justify-content:space-between; font-size:13px; padding:6px 0; border-bottom:1px solid var(--line); }
+.wt-spec-row:last-child { border-bottom:none; }
+.wt-spec-key { color:var(--text-mute); }
+.wt-spec-val { font-weight:600; color:var(--charcoal); }
+
+.wt-service-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:24px; }
+@media(max-width:600px){ .wt-service-grid { grid-template-columns:1fr; } }
+.wt-service-item { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:var(--radius); padding:16px 18px; display:flex; gap:12px; align-items:flex-start; }
+.wt-check { width:22px; height:22px; background:var(--accent); border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:900; color:#fff; }
+.wt-service-text { font-size:13.5px; color:rgba(255,255,255,0.82); line-height:1.6; margin:0; }
+
+.wt-faq-item { border-bottom:1px solid var(--line); }
+.wt-faq-item summary { padding:18px 4px; font-size:14.5px; font-weight:600; color:var(--charcoal); cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.wt-faq-item summary::after { content:'+'; font-size:20px; color:var(--accent); flex-shrink:0; }
+.wt-faq-item[open] summary::after { content:'−'; }
+.wt-faq-body { padding:4px 4px 20px; font-size:14px; color:var(--text-dim); line-height:1.85; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Manrope',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html">회사소개</a>
+      <a href="../products.html">사업분야·제품</a>
+      <a href="../projects.html">주요실적</a>
+      <a href="index.html" class="page-active">기술자료</a>
+      <a href="../contact.html">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--accent); font-weight:700; margin-bottom:20px;">현장 계측 사례 · STRAIN MEASUREMENT CASE</div>
+      <h1 style="font-size:clamp(26px,4.5vw,50px); font-weight:800; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal); max-width:840px; line-height:1.3;">풀브릿지 구성·응력 측정·<span style="color:var(--accent);">스트레인 측정 시스템</span> 제작까지<br>씨앤디테크가 일괄 지원합니다</h1>
+      <p style="font-size:16px; color:var(--text-dim); max-width:760px; line-height:1.8; margin-bottom:28px;">풍력터빈 시험 모형의 응력 측정 의뢰를 수행한 사례입니다. 스트레인게이지 부착 → 풀브릿지 구성 → 신호 점검 → 이동식 스트레인 앰프 박스 제작 → 납품까지 전 과정을 씨앤디테크가 담당하였습니다.</p>
+      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+        <div style="padding:12px 18px; background:var(--bg-soft); border:1px solid var(--line); border-radius:var(--radius); text-align:center; min-width:120px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:18px; font-weight:700; color:var(--charcoal);">Full Bridge</div>
+          <div style="font-size:11px; color:var(--text-mute); margin-top:3px;">풀브릿지 구성</div>
+        </div>
+        <div style="padding:12px 18px; background:var(--bg-soft); border:1px solid var(--line); border-radius:var(--radius); text-align:center; min-width:120px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:18px; font-weight:700; color:var(--charcoal);">4 Gauges</div>
+          <div style="font-size:11px; color:var(--text-mute); margin-top:3px;">게이지 4장 구성</div>
+        </div>
+        <div style="padding:12px 18px; background:var(--bg-soft); border:1px solid var(--line); border-radius:var(--radius); text-align:center; min-width:120px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:18px; font-weight:700; color:var(--charcoal);">Turnkey</div>
+          <div style="font-size:11px; color:var(--text-mute); margin-top:3px;">시스템 납품</div>
+        </div>
+        <div style="padding:12px 18px; background:var(--bg-soft); border:1px solid var(--line); border-radius:var(--radius); text-align:center; min-width:120px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:18px; font-weight:700; color:var(--charcoal);">μɛ</div>
+          <div style="font-size:11px; color:var(--text-mute); margin-top:3px;">변형률·응력 측정</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 프로젝트 개요 -->
+<section style="padding:60px 0; border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">PROJECT OVERVIEW</div>
+    <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">프로젝트 개요</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; margin-top:20px;">
+      <div>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:16px;">
+          풍력터빈(Wind Turbine) 시험 모형에 대한 구조 응력 측정 의뢰 사례입니다. 고객사는 터빈 모형 시험 중 실제 작용하는 응력 데이터를 실시간으로 취득해야 했습니다.
+        </p>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:16px;">
+          씨앤디테크는 <strong style="color:var(--charcoal);">제품 센서화</strong> 방식으로 접근하여, 터빈 모형의 구조체에 직접 스트레인게이지를 부착하고 풀브릿지로 구성한 후, 현장에서 바로 운용 가능한 <strong style="color:var(--charcoal);">이동식 스트레인 측정 시스템</strong>을 제작해 납품하였습니다.
+        </p>
+        <p style="font-size:15px; color:var(--text-dim); line-height:1.85;">
+          스트레인게이지 선정부터 완성형 시스템 납품까지 씨앤디테크가 원스톱으로 진행하는 <strong style="color:var(--charcoal);">측정 지원 서비스</strong>의 대표적인 사례입니다.
+        </p>
+      </div>
+      <div class="wt-spec-grid" style="margin-top:0;">
+        <div class="wt-spec-box">
+          <div class="wt-spec-tag">MEASUREMENT</div>
+          <div class="wt-spec-title">측정 개요</div>
+          <div class="wt-spec-row"><span class="wt-spec-key">대상</span><span class="wt-spec-val">풍력터빈 시험 모형</span></div>
+          <div class="wt-spec-row"><span class="wt-spec-key">측정량</span><span class="wt-spec-val">구조 응력 (μɛ)</span></div>
+          <div class="wt-spec-row"><span class="wt-spec-key">브릿지</span><span class="wt-spec-val">풀브릿지 (4장)</span></div>
+          <div class="wt-spec-row"><span class="wt-spec-key">납품 형태</span><span class="wt-spec-val">이동식 앰프 박스</span></div>
+        </div>
+        <div class="wt-spec-box">
+          <div class="wt-spec-tag">SCOPE OF WORK</div>
+          <div class="wt-spec-title">지원 범위</div>
+          <div class="wt-spec-row"><span class="wt-spec-key">게이지 부착</span><span class="wt-spec-val">✓</span></div>
+          <div class="wt-spec-row"><span class="wt-spec-key">풀브릿지 구성</span><span class="wt-spec-val">✓</span></div>
+          <div class="wt-spec-row"><span class="wt-spec-key">앰프 박스 제작</span><span class="wt-spec-val">✓</span></div>
+          <div class="wt-spec-row"><span class="wt-spec-key">신호 검증·납품</span><span class="wt-spec-val">✓</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 제작 과정 -->
+<section style="padding:60px 0; background:var(--bg-soft); border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">PROCESS</div>
+    <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">제작·지원 과정 5단계</h2>
+    <p style="font-size:14px; color:var(--text-mute);">스트레인게이지 부착부터 완성형 스트레인 측정 시스템 납품까지</p>
+
+    <div class="wt-process">
+      <div class="wt-step">
+        <div class="wt-step-num">01</div>
+        <div>
+          <div class="wt-step-title">스트레인게이지 부착</div>
+          <p class="wt-step-desc">
+            터빈 모형 구조체의 측정 위치를 선정하고 표면을 연마·세척한 후, 목적에 적합한 스트레인게이지를 선정하여 정밀 부착합니다. 접착제 선택(CA·에폭시)부터 경화, 외관 검사까지 표준 부착 절차를 준수합니다.
+          </p>
+          <div class="wt-step-tags"><span class="wt-tag">BONDING</span><span class="wt-tag">표면 처리</span><span class="wt-tag">접착제</span></div>
+        </div>
+      </div>
+      <div class="wt-step">
+        <div class="wt-step-num">02</div>
+        <div>
+          <div class="wt-step-title">풀브릿지 구성 &amp; 케이블 작업</div>
+          <p class="wt-step-desc">
+            게이지 4장을 휘트스톤 브릿지 4개 암(arm)에 배치하는 <strong>풀브릿지(Full Bridge)</strong> 회로로 구성합니다. 풀브릿지는 하프브릿지 대비 감도 2배, 온도 자동 보상, 굽힘·축력 분리 효과가 있어 응력 측정 정확도가 가장 높은 구성입니다. 브릿지 결선 후 케이블을 정리하여 앰프 연결 준비를 완료합니다.
+          </p>
+          <div class="wt-step-tags"><span class="wt-tag">FULL BRIDGE</span><span class="wt-tag">4-Wire</span><span class="wt-tag">온도보상</span></div>
+        </div>
+      </div>
+      <div class="wt-step">
+        <div class="wt-step-num">03</div>
+        <div>
+          <div class="wt-step-title">신호 점검 &amp; 검증</div>
+          <p class="wt-step-desc">
+            브릿지 저항 균형(밸런스), 절연저항, 출력 선형성을 확인합니다. 알려진 하중을 가해 측정값과 이론값을 비교하는 간이 교정(Calibration)을 수행하여 측정 신뢰성을 검증합니다.
+          </p>
+          <div class="wt-step-tags"><span class="wt-tag">CALIBRATION</span><span class="wt-tag">신호 검증</span><span class="wt-tag">선형성</span></div>
+        </div>
+      </div>
+      <div class="wt-step">
+        <div class="wt-step-num">04</div>
+        <div>
+          <div class="wt-step-title">이동식 스트레인 앰프 박스 제작</div>
+          <p class="wt-step-desc">
+            현장에서 즉시 운용 가능한 <strong>이동식 스트레인 측정 시스템</strong>을 제작합니다. 스트레인 앰프(증폭기)·전원부·커넥터·출력 단자를 하나의 케이스에 통합하여, 케이블 연결 후 바로 측정이 가능한 완성형 박스로 제작합니다.
+          </p>
+          <div class="wt-step-tags"><span class="wt-tag">AMPLIFIER</span><span class="wt-tag">이동식 박스</span><span class="wt-tag">제품 센서화</span></div>
+        </div>
+      </div>
+      <div class="wt-step">
+        <div class="wt-step-num">05</div>
+        <div>
+          <div class="wt-step-title">최종 검증 &amp; 납품</div>
+          <p class="wt-step-desc">
+            완성된 스트레인 측정 시스템의 전체 동작을 최종 확인하고 고객사에 납품합니다. 운용 매뉴얼, 교정 성적서, 게이지 사양서를 포함하여 인도합니다. 납품 후 현장 적용 초기 기술 지원도 제공합니다.
+          </p>
+          <div class="wt-step-tags"><span class="wt-tag">TURNKEY</span><span class="wt-tag">납품</span><span class="wt-tag">기술 지원</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 현장 사진 -->
+<section style="padding:60px 0; border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">FIELD PHOTOS</div>
+    <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">제작 현장 사진</h2>
+    <p style="font-size:14px; color:var(--text-mute); margin-bottom:24px;">스트레인게이지 부착·풀브릿지 구성·이동식 앰프 박스 제작 실제 사진</p>
+    <div class="wt-photo-grid">
+
+      <div class="wt-photo-card">
+        <img src="../assets/images/windturbine-stress/sg-bonding.jpg"
+             alt="풍력터빈 시험모형 스트레인게이지 부착 현장 사진"
+             loading="lazy">
+        <div class="wt-photo-cap">스트레인게이지 부착<span>터빈 모형 구조체 게이지 부착 완료</span></div>
+      </div>
+
+      <div class="wt-photo-card">
+        <img src="../assets/images/windturbine-stress/full-bridge-wiring.jpg"
+             alt="풀브릿지 구성 브릿지 결선 케이블 작업 사진"
+             loading="lazy">
+        <div class="wt-photo-cap">풀브릿지 구성 &amp; 케이블<span>4장 브릿지 결선 및 케이블 정리</span></div>
+      </div>
+
+      <div class="wt-photo-card">
+        <img src="../assets/images/windturbine-stress/amp-box.jpg"
+             alt="이동식 스트레인 앰프 박스 제작 완성 사진"
+             loading="lazy">
+        <div class="wt-photo-cap">이동식 앰프 박스 완성<span>스트레인 측정 시스템 납품 완료</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 동영상 섹션 -->
+<section style="padding:60px 0; background:var(--bg-soft); border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">VIDEO</div>
+    <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">제작 과정 동영상</h2>
+    <p style="font-size:14px; color:var(--text-mute); margin-bottom:24px;">스트레인게이지 부착 → 풀브릿지 구성 → 이동식 앰프 박스 제작 전 과정</p>
+    <!-- 유튜브 영상 embed. src에 유튜브 영상 ID를 입력하세요. 예) https://www.youtube.com/embed/VIDEO_ID -->
+    <div style="position:relative; width:100%; padding-bottom:56.25%; border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:var(--bg-warm);">
+      <iframe
+        id="ytEmbed"
+        style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+        src="about:blank"
+        data-src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+        title="풍력터빈 시험 모형 스트레인게이지 풀브릿지 구성 응력 측정 동영상"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+      <!-- 동영상 미설정 시 표시되는 플레이스홀더 -->
+      <div id="ytPlaceholder" style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--text-mute)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        <p style="font-size:13px; color:var(--text-mute); text-align:center; margin:0;">동영상 준비 중입니다.<br>유튜브 업로드 후 자동으로 표시됩니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 측정 지원 서비스 -->
+<section style="padding:60px 0; border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div style="background:var(--charcoal); border-radius:var(--radius); padding:48px 44px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:rgba(232,134,42,0.2); border:1px solid rgba(232,134,42,0.4); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:18px;">SERVICE CAPABILITY</div>
+      <h2 style="font-size:24px; font-weight:800; color:#fff; margin-bottom:10px; letter-spacing:-0.02em;">스트레인게이지 부착·측정 지원·스트레인 측정 시스템 제작</h2>
+      <p style="font-size:15px; color:rgba(255,255,255,0.65); max-width:700px; line-height:1.8; margin-bottom:28px;">
+        씨앤디테크는 <strong style="color:#fff;">제품 센서화</strong>부터 완성형 <strong style="color:#fff;">스트레인 측정 시스템</strong> 납품까지 단일 창구로 진행합니다. 응력 측정이 필요한 모든 구조체에 적용 가능합니다.
+      </p>
+      <div class="wt-service-grid">
+        <div class="wt-service-item">
+          <span class="wt-check">✓</span>
+          <p class="wt-service-text">스트레인게이지 선정·부착·풀브릿지/하프브릿지 구성</p>
+        </div>
+        <div class="wt-service-item">
+          <span class="wt-check">✓</span>
+          <p class="wt-service-text">제품·구조물 센서화 — 로드셀 없이 구조체를 센서로</p>
+        </div>
+        <div class="wt-service-item">
+          <span class="wt-check">✓</span>
+          <p class="wt-service-text">이동식 스트레인 앰프 박스 제작·납품</p>
+        </div>
+        <div class="wt-service-item">
+          <span class="wt-check">✓</span>
+          <p class="wt-service-text">응력 측정·데이터 취득·결과 분석 리포트</p>
+        </div>
+        <div class="wt-service-item">
+          <span class="wt-check">✓</span>
+          <p class="wt-service-text">현장 출장 측정 지원 서비스</p>
+        </div>
+        <div class="wt-service-item">
+          <span class="wt-check">✓</span>
+          <p class="wt-service-text">잔류응력(ASTM E837), PCB 응력, 토크·진동 전 분야</p>
+        </div>
+      </div>
+      <div style="margin-top:32px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.12);">
+        <p style="font-size:14px; color:rgba(255,255,255,0.5); margin-bottom:16px;">측정 목적, 구조물 형태, 운영 환경을 알려주시면 최적 구성과 견적을 제안드립니다.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="../contact.html" class="btn btn-primary">측정 지원 의뢰하기 →</a>
+          <a href="tel:031-680-1225" style="display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border:1px solid rgba(255,255,255,0.25); border-radius:var(--radius-sm); font-size:14px; font-weight:600; color:rgba(255,255,255,0.8); text-decoration:none;">031-680-1225</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding:60px 0 100px;">
+  <div class="container">
+    <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">자주 묻는 질문 (FAQ)</h2>
+    <p style="font-size:14px; color:var(--text-mute); margin-bottom:24px;">풀브릿지 구성·제품 센서화·스트레인 측정 시스템에 관한 Q&amp;A</p>
+    <div style="border-top:1px solid var(--line);">
+      <details class="wt-faq-item">
+        <summary>풀브릿지(Full Bridge) 구성이란 무엇인가요?</summary>
+        <p class="wt-faq-body">풀브릿지는 스트레인게이지 <strong>4장</strong>을 휘트스톤 브릿지 4개 암(arm) 모두에 배치하는 구성입니다. 하프브릿지(2장) 대비 <strong>출력 감도 2배</strong>, 온도 자동 보상, 굽힘·축력 성분 분리가 가능하여 구조 응력 측정에 가장 정확한 방법입니다. 시험 모형 응력, 토크, 하중 측정에 주로 사용합니다.</p>
+      </details>
+      <details class="wt-faq-item">
+        <summary>제품 센서화란 무엇이고, 어떤 경우에 유리한가요?</summary>
+        <p class="wt-faq-body">제품 센서화는 측정 대상 구조물에 직접 스트레인게이지를 부착하여 하중·응력·토크를 측정하는 방식입니다. <strong>별도 로드셀 없이 구조체 자체가 센서</strong>가 됩니다. 기존 구조물을 훼손하지 않고 적용 가능하며, 특수한 형상이나 복잡한 하중 조건에도 대응할 수 있습니다.</p>
+      </details>
+      <details class="wt-faq-item">
+        <summary>스트레인 측정 시스템은 어떻게 구성되나요?</summary>
+        <p class="wt-faq-body">스트레인 측정 시스템은 <strong>①스트레인게이지(센서) → ②앰프(신호 증폭) → ③DAQ(데이터 수집) → ④소프트웨어(분석)</strong>로 구성됩니다. 씨앤디테크는 현장 환경에 맞는 이동식 앰프 박스 제작과 DAQ 구성을 포함한 완성형 턴키 시스템으로 납품합니다.</p>
+      </details>
+      <details class="wt-faq-item">
+        <summary>스트레인게이지 응력 측정 지원 서비스 범위는 어디까지인가요?</summary>
+        <p class="wt-faq-body">씨앤디테크는 스트레인게이지 선정·구매·부착·풀브릿지 구성·케이블 작업·신호 검증·앰프 설정·데이터 취득·결과 해석까지 <strong>전 과정을 원스톱으로 담당</strong>합니다. 납품형(시스템 제작 후 인도)과 현장 출장 측정 서비스 두 가지 방식으로 제공됩니다.</p>
+      </details>
+    </div>
+
+    <!-- 관련 기술자료 링크 -->
+    <div style="margin-top:64px; border-top:1px solid var(--line); padding-top:40px;">
+      <h3 style="font-size:16px; font-weight:700; color:var(--charcoal); margin-bottom:16px;">관련 기술자료</h3>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;">
+        <a href="strain-gauge.html" style="padding:18px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); text-decoration:none; display:block;">
+          <div style="font-size:10px; font-family:'IBM Plex Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:6px;">FUNDAMENTALS</div>
+          <div style="font-size:14px; font-weight:700; color:var(--charcoal); margin-bottom:4px;">스트레인게이지 원리·선정 가이드</div>
+          <span style="font-size:12px; color:var(--accent);">보기 →</span>
+        </a>
+        <a href="strain-gauge-bonding.html" style="padding:18px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); text-decoration:none; display:block;">
+          <div style="font-size:10px; font-family:'IBM Plex Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:6px;">INSTALLATION</div>
+          <div style="font-size:14px; font-weight:700; color:var(--charcoal); margin-bottom:4px;">스트레인게이지 부착 방법 가이드</div>
+          <span style="font-size:12px; color:var(--accent);">보기 →</span>
+        </a>
+        <a href="pzt-tube-gauge.html" style="padding:18px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); text-decoration:none; display:block;">
+          <div style="font-size:10px; font-family:'IBM Plex Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:6px;">FIELD CASE</div>
+          <div style="font-size:14px; font-weight:700; color:var(--charcoal); margin-bottom:4px;">PZT 튜브 고전압 현장 계측 사례</div>
+          <span style="font-size:12px; color:var(--accent);">보기 →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Manrope',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="strain-gauge-bonding.html">게이지 부착 방법</a></li><li><a href="windturbine-stress.html">풀브릿지 응력 측정</a></li><li><a href="pzt-tube-gauge.html">PZT 튜브 현장 계측</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 CND TECH (씨앤디테크) · 대표 전원근</span>
+      <span>경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+/* 유튜브 영상 ID가 설정된 경우에만 iframe 활성화 */
+(function(){
+  const el = document.getElementById('ytEmbed');
+  const ph = document.getElementById('ytPlaceholder');
+  const src = el && el.getAttribute('data-src');
+  if (src && src.indexOf('YOUR_VIDEO_ID') === -1) {
+    el.src = src;
+    if (ph) ph.style.display = 'none';
+  }
+})();
+</script>
+</body>
+</html>
