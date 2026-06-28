@@ -75,7 +75,7 @@
 .wt-tag { font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:600; color:var(--accent); background:var(--orange-tint); border:1px solid var(--orange-line); padding:3px 8px; border-radius:4px; }
 
 .wt-photo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:24px; }
-@media(max-width:700px){ .wt-photo-grid { grid-template-columns:1fr 1fr; } }
+@media(max-width:720px){ .wt-photo-grid { grid-template-columns:1fr 1fr; } }
 @media(max-width:440px){ .wt-photo-grid { grid-template-columns:1fr; } }
 .wt-photo-card { border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:var(--bg-soft); }
 .wt-photo-card img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
@@ -279,24 +279,38 @@
     <div class="wt-photo-grid">
 
       <div class="wt-photo-card">
-        <img src="../assets/images/windturbine-stress/sg-bonding.jpg"
-             alt="풍력터빈 시험모형 스트레인게이지 부착 현장 사진"
+        <img src="../assets/images/windturbine-stress/sg-install-01.jpg"
+             alt="풍력터빈 시험모형 스트레인게이지 부착 1단계 현장 사진"
              loading="lazy">
-        <div class="wt-photo-cap">스트레인게이지 부착<span>터빈 모형 구조체 게이지 부착 완료</span></div>
+        <div class="wt-photo-cap">스트레인게이지 부착 ①<span>측정 위치 선정 및 게이지 부착</span></div>
       </div>
 
       <div class="wt-photo-card">
-        <img src="../assets/images/windturbine-stress/full-bridge-wiring.jpg"
+        <img src="../assets/images/windturbine-stress/sg-install-02.jpg"
              alt="풀브릿지 구성 브릿지 결선 케이블 작업 사진"
              loading="lazy">
-        <div class="wt-photo-cap">풀브릿지 구성 &amp; 케이블<span>4장 브릿지 결선 및 케이블 정리</span></div>
+        <div class="wt-photo-cap">스트레인게이지 부착 ②<span>풀브릿지 구성 및 케이블 정리</span></div>
       </div>
 
       <div class="wt-photo-card">
         <img src="../assets/images/windturbine-stress/amp-box.jpg"
-             alt="이동식 스트레인 앰프 박스 제작 완성 사진"
+             alt="이동식 스트레인 앰프 박스 제작 중 사진"
              loading="lazy">
-        <div class="wt-photo-cap">이동식 앰프 박스 완성<span>스트레인 측정 시스템 납품 완료</span></div>
+        <div class="wt-photo-cap">이동식 앰프 박스 제작<span>스트레인 앰프·전원·커넥터 통합</span></div>
+      </div>
+
+      <div class="wt-photo-card">
+        <img src="../assets/images/windturbine-stress/amp-box-complete.jpg"
+             alt="이동식 스트레인 앰프 박스 완성 사진"
+             loading="lazy">
+        <div class="wt-photo-cap">앰프 박스 완성<span>현장 즉시 운용 가능한 완성형 박스</span></div>
+      </div>
+
+      <div class="wt-photo-card">
+        <img src="../assets/images/windturbine-stress/Complete.jpg"
+             alt="스트레인 측정 시스템 최종 완성 납품 사진"
+             loading="lazy">
+        <div class="wt-photo-cap">최종 완성 &amp; 납품<span>스트레인 측정 시스템 납품 완료</span></div>
       </div>
 
     </div>
@@ -309,24 +323,17 @@
     <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">VIDEO</div>
     <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">제작 과정 동영상</h2>
     <p style="font-size:14px; color:var(--text-mute); margin-bottom:24px;">스트레인게이지 부착 → 풀브릿지 구성 → 이동식 앰프 박스 제작 전 과정</p>
-    <!-- 유튜브 영상 embed. src에 유튜브 영상 ID를 입력하세요. 예) https://www.youtube.com/embed/VIDEO_ID -->
-    <div style="position:relative; width:100%; padding-bottom:56.25%; border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:var(--bg-warm);">
-      <iframe
-        id="ytEmbed"
-        style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
-        src="about:blank"
-        data-src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-        title="풍력터빈 시험 모형 스트레인게이지 풀브릿지 구성 응력 측정 동영상"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        loading="lazy">
-      </iframe>
-      <!-- 동영상 미설정 시 표시되는 플레이스홀더 -->
-      <div id="ytPlaceholder" style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;">
-        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--text-mute)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-        <p style="font-size:13px; color:var(--text-mute); text-align:center; margin:0;">동영상 준비 중입니다.<br>유튜브 업로드 후 자동으로 표시됩니다.</p>
-      </div>
+    <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:#000;">
+      <video
+        controls
+        preload="metadata"
+        style="width:100%; display:block; max-height:600px;"
+        title="풍력터빈 시험 모형 스트레인게이지 풀브릿지 구성 응력 측정 신호">
+        <source src="../assets/images/windturbine-stress/fullbridge-signal.mp4" type="video/mp4">
+        동영상을 재생할 수 없습니다. 브라우저가 MP4 형식을 지원하지 않습니다.
+      </video>
     </div>
+    <p style="margin-top:10px; font-size:13px; color:var(--text-mute);">풀브릿지 구성 완료 후 스트레인 앰프 신호 확인 영상</p>
   </div>
 </section>
 
