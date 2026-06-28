@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PZT 튜브 스캐너 스트레인게이지 부착 현장 사례 — 외경 6mm·고전압 절연 계측 | 씨앤디테크</title>
+<meta name="description" content="씨앤디테크 현장 계측 사례 — 외경 6mm PZT 피에조 튜브 스캐너(TB4006-N)에 스트레인게이지 4장 부착, ±260V 고전압 절연 설계, 2채널 풀브릿지 구성으로 51μm 미세 변위 측정 성공." />
+<meta name="keywords" content="PZT 튜브 스캐너 스트레인게이지, 피에조 튜브 게이지 부착, 고전압 절연 스트레인게이지, 초소형 게이지 부착, 6mm 곡면 게이지, AFM STM 나노포지셔너 계측, 현장 계측 서비스, 스트레인게이지 부착 지원" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/pzt-tube-gauge.html" />
+<meta property="og:title" content="PZT 튜브 스캐너 스트레인게이지 부착 사례 — 외경 6mm·±260V 고전압 | 씨앤디테크" />
+<meta property="og:description" content="외경 6mm 곡면, ±260V 고전압 환경 PZT 피에조 튜브에 스트레인게이지 4장 부착 + 절연 설계 + 51μm 변위 측정 완료. 현장 계측·출장 지원 가능." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/pzt-tube-gauge.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=4">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"PZT 피에조 튜브 스캐너에 스트레인게이지 부착이 어려운 이유는?",
+     "acceptedAnswer":{"@type":"Answer","text":"외경 6mm 수준의 극소 곡면 부착, 튜브 외면이 전극으로 작동하는 고전압(±260V) 구조, 역압전 효과 보정 등 세 가지 기술적 난제가 동시에 존재합니다."}},
+    {"@type":"Question","name":"고전압 환경에서 스트레인게이지 절연은 어떻게 하나요?",
+     "acceptedAnswer":{"@type":"Answer","text":"게이지 부착 전 우레탄 절연 하도층 코팅, 부착 후 보호 코팅을 2단계로 적용하여 절연저항 100MΩ 이상을 유지합니다."}},
+    {"@type":"Question","name":"씨앤디테크 스트레인게이지 현장 부착 지원 서비스란?",
+     "acceptedAnswer":{"@type":"Answer","text":"고객사 현장 출장으로 스트레인게이지 선정·부착·결선·신호 검증·캘리브레이션·데이터 취득까지 일괄 수행하는 서비스입니다. 초소형 부품, 고온, 고전압, 진동 환경 등 특수 조건 대응 가능합니다."}}
+  ]
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+/* 페이지 고유 커스텀 CSS */
+.pzt-spec-table { width:100%; border-collapse:collapse; font-size:14px; margin:20px 0; }
+.pzt-spec-table th { background:var(--charcoal); color:#fff; text-align:left; padding:10px 16px; font-size:12px; font-weight:700; letter-spacing:.04em; }
+.pzt-spec-table td { padding:10px 16px; border-bottom:1px solid var(--line); }
+.pzt-spec-table tr:last-child td { border-bottom:none; }
+.pzt-spec-table tr:nth-child(even) td { background:var(--bg-soft); }
+
+.pzt-challenge-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px; }
+@media(max-width:640px){ .pzt-challenge-grid { grid-template-columns:1fr; } }
+.pzt-challenge-card { background:var(--white); border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:var(--radius); padding:22px; }
+.pzt-challenge-num { font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:700; color:var(--accent); letter-spacing:.1em; margin-bottom:8px; }
+.pzt-challenge-title { font-size:15px; font-weight:700; color:var(--charcoal); margin-bottom:8px; }
+.pzt-challenge-desc { font-size:13.5px; color:var(--text-dim); margin:0; }
+
+.pzt-step-list { margin-top:24px; }
+.pzt-step { display:grid; grid-template-columns:56px 1fr; gap:20px; padding:24px 0; border-bottom:1px solid var(--line); }
+.pzt-step:first-child { padding-top:0; }
+.pzt-step-num { font-family:'IBM Plex Mono',monospace; font-size:32px; font-weight:700; color:var(--accent); line-height:1; }
+.pzt-step-title { font-size:16px; font-weight:700; color:var(--charcoal); margin-bottom:8px; }
+.pzt-step-desc { font-size:14px; color:var(--text-dim); line-height:1.8; margin:0; }
+
+.pzt-bridge-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:20px 0; }
+@media(max-width:600px){ .pzt-bridge-grid { grid-template-columns:1fr; } }
+.pzt-bridge-box { background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:20px; }
+.pzt-ch-tag { display:inline-flex; align-items:center; font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; color:#fff; background:var(--charcoal); padding:3px 10px; border-radius:4px; margin-bottom:12px; }
+.pzt-bridge-list { padding-left:16px; font-size:13.5px; color:var(--text-dim); }
+.pzt-bridge-list li { margin-bottom:4px; }
+
+.pzt-warn-box { background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius); padding:18px 22px; font-size:14px; color:var(--text-dim); margin:24px 0; }
+.pzt-warn-box strong { color:var(--charcoal); display:block; margin-bottom:4px; }
+
+.pzt-result-box { border:1px solid var(--line); border-radius:var(--radius); margin-top:20px; overflow:hidden; }
+.pzt-result-row { display:flex; justify-content:space-between; align-items:center; padding:12px 20px; border-bottom:1px solid var(--line); font-size:14px; }
+.pzt-result-row:last-child { border-bottom:none; }
+.pzt-result-ok { color:#1d8a5f; font-weight:700; font-family:'IBM Plex Mono',monospace; font-size:12px; }
+
+.pzt-service-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:20px; }
+@media(max-width:640px){ .pzt-service-grid { grid-template-columns:1fr; } }
+.pzt-service-item { background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.13); border-radius:var(--radius); padding:16px 18px; display:flex; gap:12px; align-items:flex-start; }
+.pzt-service-check { width:22px; height:22px; background:var(--accent); border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:900; color:#fff; }
+.pzt-service-text { font-size:13.5px; color:rgba(255,255,255,0.82); line-height:1.6; margin:0; }
+
+.spec-pill-row { display:flex; gap:14px; flex-wrap:wrap; margin-top:24px; }
+.spec-pill { background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.15); border-radius:8px; padding:12px 16px; min-width:110px; }
+.spec-pill-val { font-size:18px; font-weight:700; color:#fff; display:block; }
+.spec-pill-label { font-size:11px; color:rgba(255,255,255,0.55); margin-top:2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Manrope',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html">회사소개</a>
+      <a href="../products.html">사업분야·제품</a>
+      <a href="../projects.html">주요실적</a>
+      <a href="index.html" class="page-active">기술자료</a>
+      <a href="../contact.html">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--accent); font-weight:700; margin-bottom:20px;">현장 계측 사례 · FIELD MEASUREMENT CASE</div>
+      <h1 style="font-size:clamp(26px,4.5vw,50px); font-weight:800; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal); max-width:800px; line-height:1.3;">외경 6mm, ±260V 고전압 환경에서도<br>스트레인게이지 부착이 가능합니다</h1>
+      <p style="font-size:16px; color:var(--text-dim); max-width:720px; line-height:1.8; margin-bottom:0;">PZT 피에조 튜브 스캐너(Ø 6mm)에 초소형 스트레인게이지 4장을 정밀 부착하고, 고전압 절연 설계를 통해 51μm 미세 변위를 성공적으로 계측한 현장 사례입니다.</p>
+      <div class="spec-pill-row">
+        <div class="spec-pill" style="background:var(--bg-soft); border-color:var(--line);">
+          <span class="spec-pill-val" style="color:var(--charcoal);">Ø 6.0 mm</span>
+          <span class="spec-pill-label" style="color:var(--text-mute);">부착 곡면 직경</span>
+        </div>
+        <div class="spec-pill" style="background:var(--bg-soft); border-color:var(--line);">
+          <span class="spec-pill-val" style="color:var(--charcoal);">±260 V</span>
+          <span class="spec-pill-label" style="color:var(--text-mute);">최대 인가 전압</span>
+        </div>
+        <div class="spec-pill" style="background:var(--bg-soft); border-color:var(--line);">
+          <span class="spec-pill-val" style="color:var(--charcoal);">51 μm</span>
+          <span class="spec-pill-label" style="color:var(--text-mute);">측정 변위 범위</span>
+        </div>
+        <div class="spec-pill" style="background:var(--bg-soft); border-color:var(--line);">
+          <span class="spec-pill-val" style="color:var(--charcoal);">100 MΩ↑</span>
+          <span class="spec-pill-label" style="color:var(--text-mute);">절연저항 관리 기준</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 측정 배경 -->
+<section style="padding:60px 0; border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">BACKGROUND</div>
+    <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">측정 대상 및 기술적 과제</h2>
+    <p style="font-size:15px; color:var(--text-dim); max-width:760px; line-height:1.85; margin-bottom:20px;">
+      대상은 PiezoDrive社 <strong style="color:var(--charcoal);">TB4006-N 피에조 튜브 스캐너(PZT Tube Scanner)</strong>로, AFM·STM 등 정밀 계측 장비의 나노포지셔닝 구동기로 사용되는 부품입니다. 전압 인가 시 발생하는 51μm 수준의 미세 변위를 스트레인게이지로 측정하는 작업을 수행했습니다.
+    </p>
+
+    <table class="pzt-spec-table">
+      <tr><th>항목</th><th>규격</th></tr>
+      <tr><td>대상 장비</td><td>PiezoDrive TB4006-N Tube Scanner</td></tr>
+      <tr><td>외경 / 길이</td><td>Ø 6.0 mm / 40.0 mm</td></tr>
+      <tr><td>최대 인가전압</td><td>±260 V</td></tr>
+      <tr><td>스캔 범위</td><td>51 μm</td></tr>
+      <tr><td>사용 게이지</td><td>TML FLKB-1-11 (120Ω, Base 4.5×1.4mm)</td></tr>
+      <tr><td>계측 장비</td><td>HBM MX1615B (2채널)</td></tr>
+    </table>
+
+    <h3 style="font-size:16px; font-weight:700; color:var(--charcoal); margin:28px 0 12px;">해결해야 할 기술적 난제</h3>
+    <div class="pzt-challenge-grid">
+      <div class="pzt-challenge-card">
+        <div class="pzt-challenge-num">CHALLENGE 01</div>
+        <div class="pzt-challenge-title">극도로 좁은 부착 공간</div>
+        <p class="pzt-challenge-desc">직경 6mm 곡면에 여러 장의 게이지를 정확한 위치·간격으로 부착해야 하는 조건. 베이스 들뜸 없는 완전 밀착이 필수.</p>
+      </div>
+      <div class="pzt-challenge-card">
+        <div class="pzt-challenge-num">CHALLENGE 02</div>
+        <div class="pzt-challenge-title">고전압 구조체 절연</div>
+        <p class="pzt-challenge-desc">튜브 외면 자체가 전극으로 작동 — 절연 미흡 시 신호 간섭 및 계측기 손상 위험. 100MΩ 이상 절연저항 유지 필수.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 적용 기술 -->
+<section style="padding:60px 0; background:var(--bg-soft); border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">TECHNICAL SOLUTION</div>
+    <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">적용 기술 4단계</h2>
+    <p style="font-size:14px; color:var(--text-mute); margin-bottom:0;">공간·전압·소재 세 가지 제약을 모두 해결하기 위해 단계별로 적용한 기술 요소입니다.</p>
+
+    <div class="pzt-step-list">
+      <div class="pzt-step">
+        <div class="pzt-step-num">01</div>
+        <div>
+          <div class="pzt-step-title">초소형 게이지 정밀 선정 및 배치</div>
+          <p class="pzt-step-desc">튜브 외면을 <strong>90° 간격 4개 섹션(Sec1~Sec4)</strong>으로 구분하고, 베이스 4.5×1.4mm급 초소형 리니어게이지(TML FLKB-1-11)를 각 섹션 중앙부에 부착하여 곡면 들뜸 없는 밀착을 확보하였습니다.</p>
+        </div>
+      </div>
+      <div class="pzt-step">
+        <div class="pzt-step-num">02</div>
+        <div>
+          <div class="pzt-step-title">2채널 독립 하프브릿지 구성</div>
+          <p class="pzt-step-desc">마주보는 섹션(Sec1↔Sec3, Sec2↔Sec4)을 각각 <strong>액티브 하프브릿지</strong>로 구성하여, 두 방향의 휨 변형을 서로 간섭 없이 독립 측정하도록 설계하였습니다. HBM MX1615B 2채널 동시 수집.</p>
+        </div>
+      </div>
+      <div class="pzt-step">
+        <div class="pzt-step-num">03</div>
+        <div>
+          <div class="pzt-step-title">고전압 환경 전용 절연 설계</div>
+          <p class="pzt-step-desc">게이지 부착 전 우레탄 절연 코팅으로 <strong>하도층</strong> 형성, 부착 후 동일 소재 <strong>보호 코팅층</strong>을 추가하는 2단계 절연 공정 적용. 절연저항 100MΩ 이상 유지 확인 후 ±260V 환경 측정 진행.</p>
+        </div>
+      </div>
+      <div class="pzt-step">
+        <div class="pzt-step-num">04</div>
+        <div>
+          <div class="pzt-step-title">역압전 효과 보정</div>
+          <p class="pzt-step-desc">전압 인가 시 발생하는 <strong>역압전(Converse Piezoelectric) 효과</strong>를 별도 캘리브레이션하여 순수 굽힘 변형 성분만 분리하는 보정 로직 적용. 전압-변형 선형성 검증 완료.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-size:16px; font-weight:700; color:var(--charcoal); margin:32px 0 12px;">채널 구성</h3>
+    <div class="pzt-bridge-grid">
+      <div class="pzt-bridge-box">
+        <div class="pzt-ch-tag">CH 1</div>
+        <ul class="pzt-bridge-list">
+          <li>측정 방향: Sec1 ↔ Sec3 횡방향 휨</li>
+          <li>구성: 실 게이지 2장, 액티브 하프브릿지</li>
+          <li>계측기: HBM MX1615B</li>
+        </ul>
+      </div>
+      <div class="pzt-bridge-box">
+        <div class="pzt-ch-tag">CH 2</div>
+        <ul class="pzt-bridge-list">
+          <li>측정 방향: Sec2 ↔ Sec4 횡방향 휨</li>
+          <li>구성: 실 게이지 2장, 액티브 하프브릿지</li>
+          <li>계측기: HBM MX1615B</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pzt-warn-box">
+      <strong>일반 부착 업체가 놓치기 쉬운 부분</strong>
+      절연 설계, 전원 계통 분리, 그라운드 단일 접지, 압전 소재 보정까지 — 이 네 가지를 모두 고려하지 않으면 신호는 나오더라도 정확한 변위값으로 신뢰하기 어렵습니다.
+    </div>
+  </div>
+</section>
+
+<!-- 검증 결과 -->
+<section style="padding:60px 0; border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">VERIFICATION</div>
+    <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">검증 결과</h2>
+    <p style="font-size:14px; color:var(--text-mute); margin-bottom:0;">부착 완료 후 모든 항목에서 정상 신호 확인</p>
+    <div class="pzt-result-box">
+      <div class="pzt-result-row"><span>게이지 부착 외관 상태</span><span class="pzt-result-ok">✓ PASS</span></div>
+      <div class="pzt-result-row"><span>절연저항 (부착 전 / 보호코팅 후)</span><span class="pzt-result-ok">✓ 100MΩ 이상 유지</span></div>
+      <div class="pzt-result-row"><span>CH1 신호 선형성 (±10V ~ ±260V)</span><span class="pzt-result-ok">✓ 정상 확인</span></div>
+      <div class="pzt-result-row"><span>CH2 신호 선형성 (±10V ~ ±260V)</span><span class="pzt-result-ok">✓ 정상 확인</span></div>
+      <div class="pzt-result-row"><span>채널 간 크로스토크</span><span class="pzt-result-ok">✓ 정상 범위</span></div>
+      <div class="pzt-result-row"><span>역압전 효과 보정 후 변위 선형성</span><span class="pzt-result-ok">✓ 정상 확인</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 스트레인게이지 부착·측정 지원 서비스 -->
+<section style="padding:60px 0 100px;">
+  <div class="container">
+    <div style="background:var(--charcoal); border-radius:var(--radius); padding:48px 44px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:rgba(232,134,42,0.2); border:1px solid rgba(232,134,42,0.4); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:18px;">SERVICE CAPABILITY</div>
+      <h2 style="font-size:24px; font-weight:800; color:#fff; margin-bottom:10px; letter-spacing:-0.02em;">스트레인게이지 부착·측정 지원 서비스</h2>
+      <p style="font-size:15px; color:rgba(255,255,255,0.65); max-width:680px; line-height:1.8; margin-bottom:28px;">본 사례에서 확인된 기술력을 바탕으로, 씨앤디테크는 다음과 같은 까다로운 조건의 스트레인게이지 부착·계측 의뢰를 현장 출장 지원과 함께 진행합니다.</p>
+      <div class="pzt-service-grid">
+        <div class="pzt-service-item">
+          <span class="pzt-service-check">✓</span>
+          <p class="pzt-service-text">5mm 이하 초소형 부품, 곡면, 좁은 틈새 부착</p>
+        </div>
+        <div class="pzt-service-item">
+          <span class="pzt-service-check">✓</span>
+          <p class="pzt-service-text">고전압·고온·진동 등 특수 환경 절연 설계</p>
+        </div>
+        <div class="pzt-service-item">
+          <span class="pzt-service-check">✓</span>
+          <p class="pzt-service-text">풀브릿지·하프브릿지 목적별 브릿지 구성 설계</p>
+        </div>
+        <div class="pzt-service-item">
+          <span class="pzt-service-check">✓</span>
+          <p class="pzt-service-text">게이지 부착 → 결선 → 신호 검증 현장 출장 지원</p>
+        </div>
+        <div class="pzt-service-item">
+          <span class="pzt-service-check">✓</span>
+          <p class="pzt-service-text">데이터 취득(DAQ) 및 결과 해석까지 일괄 진행</p>
+        </div>
+        <div class="pzt-service-item">
+          <span class="pzt-service-check">✓</span>
+          <p class="pzt-service-text">잔류응력측정(ASTM E837), PCB 응력, 토크·진동 전 분야 대응</p>
+        </div>
+      </div>
+      <div style="margin-top:32px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.12);">
+        <p style="font-size:14px; color:rgba(255,255,255,0.5); margin-bottom:16px;">평판 구조물부터 압전 액추에이터, 정밀 구동기, 특수 환경 부품까지 — 부착이 어렵다고 포기하지 마세요.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="../contact.html" class="btn btn-primary">부착 의뢰 문의하기 →</a>
+          <a href="tel:031-680-1225" style="display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border:1px solid rgba(255,255,255,0.25); border-radius:var(--radius-sm); font-size:14px; font-weight:600; color:rgba(255,255,255,0.8); text-decoration:none;">031-680-1225</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Manrope',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="residual-stress.html">잔류응력 측정</a></li><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="strain-gauge-bonding.html">게이지 부착 방법</a></li><li><a href="pzt-tube-gauge.html">PZT 튜브 현장 계측</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 CND TECH (씨앤디테크) · 대표 전원근</span>
+      <span>경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+</body>
+</html>
