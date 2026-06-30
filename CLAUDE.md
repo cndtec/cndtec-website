@@ -100,6 +100,21 @@ resources/custom-sensor.html, field-service.html, sensors.html, vibration.html �
 - ⭐ **파일 수정 후에는 사용자가 요청하지 않아도 항상 git add/commit/push 명령어를 안내할 것** (cmd.exe 기준, repo 경로로 cd 포함) — 2026-06-22 사용자 지시
 - ⭐ **홈페이지(cndtec-website) 관련 파일을 수정할 때마다, 작업 완료 후 반드시 명령 프롬프트(cmd.exe)에서 실행할 PUSH 명령어를 구체적으로 알려줄 것** (cd 경로 포함, git add → commit → push 순서 전부) — 2026-06-24 사용자 지시
 
+## ⭐ 푸터 문구 (모든 페이지 필수 — 절대 변경 금지)
+모든 HTML 페이지 하단에는 아래 문구를 **정확히** 삽입할 것 (사업자번호·대표자명 제외):
+
+```html
+<div class="footer-meta">
+  <span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span>
+</div>
+```
+
+- 클래스명은 반드시 `footer-meta` 사용 (footer-bottom, footer-text 등 다른 이름 사용 금지)
+- "CND TECH" 아님 → "CNDTECH" (붙여쓰기)
+- 사업자등록번호, 대표자명 삽입 금지
+- CSS 서체: Noto Sans KR, font-size: 13.5px (style.css .footer-meta 따름)
+— 2026-07-01 사용자 지시
+
 ## 파일 위치
 - 웹사이트: C:\Users\wgjeo\클로이드 폴더\cndtec-website\
 - bash 경로: /sessions/lucid-zealous-goldberg/mnt/클로이드 폴더/cndtec-website/
