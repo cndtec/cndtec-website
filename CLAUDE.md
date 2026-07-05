@@ -99,6 +99,8 @@ resources/custom-sensor.html, field-service.html, sensors.html, vibration.html �
 - 작업 완료 후 이 CLAUDE.md 업데이트
 - ⭐ **파일 수정 후에는 사용자가 요청하지 않아도 항상 git add/commit/push 명령어를 안내할 것** (cmd.exe 기준, repo 경로로 cd 포함) — 2026-06-22 사용자 지시
 - ⭐ **홈페이지(cndtec-website) 관련 파일을 수정할 때마다, 작업 완료 후 반드시 명령 프롬프트(cmd.exe)에서 실행할 PUSH 명령어를 구체적으로 알려줄 것** (cd 경로 포함, git add → commit → push 순서 전부) — 2026-06-24 사용자 지시
+- ⛔ **sandbox(bash)에서 git 명령어(add/commit/push) 절대 실행 금지** → `.git/index.lock` 파일이 생성되어 사용자 터미널의 모든 git 작업이 차단됨. 발생 시 해결: `del "C:\Users\wgjeo\클로이드 폴더\cndtec-website\.git\index.lock"`. git 명령어는 반드시 사용자에게 cmd.exe 명령어로 전달할 것 — 2026-07-05 반복 실수 기록
+- ⭐ **새 이미지 파일 추가할 때 반드시 HTML + 이미지 폴더를 git add에 함께 포함** — HTML만 커밋하고 이미지 누락 시 사이트에서 이미지 깨짐. 반드시 아래 형태로 한 줄 명령어 제공: `git add resources/파일.html "assets/images/새폴더/" && git commit -m "메시지" && git push origin main` — 2026-07-05 반복 실수 기록
 
 ## ⭐ 푸터 문구 (모든 페이지 필수 — 절대 변경 금지)
 모든 HTML 페이지 하단에는 아래 문구를 **정확히** 삽입할 것 (사업자번호·대표자명 제외):
@@ -117,7 +119,7 @@ resources/custom-sensor.html, field-service.html, sensors.html, vibration.html �
 
 ## 파일 위치
 - 웹사이트: C:\Users\wgjeo\클로이드 폴더\cndtec-website\
-- bash 경로: /sessions/lucid-zealous-goldberg/mnt/클로이드 폴더/cndtec-website/
+- bash 경로: /sessions/practical-eloquent-darwin/mnt/클로이드 폴더/cndtec-website/
 
 ## ⚠️ 실제 도메인: https://www.cndtec.co.kr (canonical, www 포함!)
 - 2026-06-22 확인: Google Search Console DNS 인증 화면에서 실제 운영 도메인이 cndtec.co.kr임을 확인
