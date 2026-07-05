@@ -99,8 +99,9 @@
 .rb-hero img {
   width: 100%;
   display: block;
-  object-fit: cover;
-  aspect-ratio: 4/3;
+  object-fit: contain;
+  aspect-ratio: 16/9;
+  background: #0a0a14;
 }
 @media (max-width: 600px) {
   .rb-hero { grid-template-columns: 1fr; }
@@ -156,9 +157,9 @@ hr.rb-line {
 .rb-ub-img {
   width: 100%;
   display: block;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  background: var(--bg-soft);
+  aspect-ratio: 16/9;
+  object-fit: contain;
+  background: #0a0a14;
 }
 .rb-ub-body {
   padding: 14px 16px 16px;
@@ -344,8 +345,9 @@ hr.rb-line {
 .rb-photo-strip img {
   width: 100%;
   display: block;
-  aspect-ratio: 4/3;
-  object-fit: cover;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+  background: #0a0a14;
 }
 .rb-photo-strip figcaption {
   font-size: 11px;
