@@ -91,6 +91,10 @@ resources/custom-sensor.html, field-service.html, sensors.html, vibration.html �
 4. 이미지 파일명·alt 텍스트는 영문 키워드로 (예: hbm-mx1615b-strain-gauge-setup.webp) — 사진 운영 규칙 섹션 참고
 5. **sitemap.xml에 `<url>` 블록 자동 추가** (loc, lastmod=작업일, changefreq=monthly, priority=0.7) — 사용자가 요청하지 않아도 항상 추가
 6. CLAUDE.md "완료된 작업 전체" 목록에 로그 한 줄 추가
+7. ⭐ **FAQ 섹션 필수 포함** — `<details class="faq-item">` 패턴(global style.css 활용), 최소 5개 항목, CTA 섹션(문의하기 버튼) 앞에 삽입 (2026-07-05 추가)
+   - 이미 FAQPage JSON-LD schema가 있어도 UI 섹션이 없으면 별도로 삽입
+   - FAQ 없이 페이지를 만들면 안 됨 — 검색 노출·AI 검색 대응에 필수
+8. ⭐ **CTA(문의하기) 섹션 필수 포함** — 페이지 최하단, FAQ 다음에 배치. 연락처(031-680-1225, wgjeon@cndtec.co.kr) 또는 contact.html 링크 버튼 포함 (2026-07-05 추가)
 
 ## 작업 지침 (세션 공통)
 - 파일 전체 Read 금지 → grep으로 필요 라인만 찾고, Read는 offset/limit으로 해당 부분만
