@@ -120,7 +120,7 @@
 .bt-stat-num  { font-family:'Space Grotesk',sans-serif; font-size:28px; font-weight:700; color:var(--accent); line-height:1; }
 .bt-stat-sub  { font-size:11px; color:var(--text-mute); margin-top:4px; }
 
-.bt-hero-img  { width:100%; border-radius:var(--radius); margin-top:40px; display:block; }
+.bt-hero-img  { width:100%; max-width:640px; border-radius:var(--radius); margin-top:40px; display:block; margin-left:auto; margin-right:auto; }
 
 /* 이론 섹션 */
 .bt-theory-box { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:32px 36px; margin-bottom:0; }
@@ -507,13 +507,28 @@
             <li>출력: mV/V (표준) / 4~20mA / 디지털 (옵션)</li>
             <li>M10~M100 이상 다양한 규격 대응</li>
           </ul>
-          <figure style="margin:14px 0 0;">
-            <img src="../assets/images/bolt-tension/bolt axis.png"
-                 alt="풀브릿지 볼트 센서 구성도 — 스트레인게이지 배치 및 축력 측정 원리"
-                 loading="lazy"
-                 style="width:100%; height:auto; object-fit:contain; display:block; background:#f8fafc; border:1px solid #e5e7eb; border-radius:6px; padding:8px;">
-            <figcaption style="font-size:11.5px; color:var(--text-mute); text-align:center; margin-top:6px;">풀브릿지 볼트 센서 구성도 — 스트레인게이지 배치</figcaption>
-          </figure>
+          <!-- 삽입형 스트레인 축력 측정 원리 설명 -->
+          <div style="margin:14px 0 0; padding:18px 20px; background:#f8fafc; border:1px solid #e5e7eb; border-radius:8px;">
+            <div style="font-size:12.5px; font-weight:700; color:var(--charcoal); margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid var(--line);">참고 — 삽입형(중심홀) 스트레인게이지 축력 측정 원리</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <div style="padding:12px 14px; background:#fff; border:1px solid #e5e7eb; border-radius:6px;">
+                <div style="font-size:11.5px; font-weight:700; color:var(--accent); margin-bottom:6px; text-transform:uppercase; letter-spacing:.04em;">① 중심홀 가공</div>
+                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.7; margin:0;">볼트 중심축(중립면)을 따라 최소 직경(볼트 직경의 20% 이하)으로 정밀 드릴링. 중심은 굽힘 응력이 0에 수렴해 순수 인장(축력)만 감지합니다.</p>
+              </div>
+              <div style="padding:12px 14px; background:#fff; border:1px solid #e5e7eb; border-radius:6px;">
+                <div style="font-size:11.5px; font-weight:700; color:var(--accent); margin-bottom:6px; text-transform:uppercase; letter-spacing:.04em;">② 원통형 SG 삽입</div>
+                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.7; margin:0;">원통형(Cylindrical) 스트레인게이지를 홀에 삽입 후 2액형 특수 접착제로 진공 경화. 센서가 볼트 내부에 완전 매립되어 외부 충격·진동에서 보호됩니다.</p>
+              </div>
+              <div style="padding:12px 14px; background:#fff; border:1px solid #e5e7eb; border-radius:6px;">
+                <div style="font-size:11.5px; font-weight:700; color:var(--accent); margin-bottom:6px; text-transform:uppercase; letter-spacing:.04em;">③ 출력 원리</div>
+                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.7; margin:0;">체결 시 볼트 신장 → 홀 내 SG 동일 신장 → 저항 변화 → mV/V 출력. <strong>F = E × A × ε</strong> 공식으로 실시간 축력 환산.</p>
+              </div>
+              <div style="padding:12px 14px; background:#fff; border:1px solid #e5e7eb; border-radius:6px;">
+                <div style="font-size:11.5px; font-weight:700; color:var(--accent); margin-bottom:6px; text-transform:uppercase; letter-spacing:.04em;">④ 강도 유지</div>
+                <p style="font-size:12.5px; color:var(--text-dim); line-height:1.7; margin:0;">홀 직경 ≤ 볼트 직경 × 20%이면 볼트 강도 95% 이상 유지. 중심 가공은 단면 응력 집중을 최소화하는 설계 기준을 준수합니다.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- Method 2 -->
