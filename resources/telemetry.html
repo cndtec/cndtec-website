@@ -89,6 +89,13 @@
 .tl-faq-item summary::after { content:'+'; font-size:20px; color:var(--accent); flex-shrink:0; }
 .tl-faq-item[open] summary::after { content:'−'; }
 .tl-faq-body { padding:4px 4px 20px; font-size:14px; color:var(--text-dim); line-height:1.8; }
+
+.tl-case-grid2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:28px; }
+.tl-case-grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+@media(max-width:700px){
+  .tl-case-grid2,
+  .tl-case-grid3 { grid-template-columns:1fr; }
+}
 </style>
 </head>
 <body>
@@ -198,7 +205,7 @@
       </div>
     </div>
     <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);">
-      <img src="../assets/images/Telemetry system diagram.png"
+      <img src="../assets/images/telemetry/텔레메터리 시스템 구성.png"
            alt="텔레메터리 시스템 구성도 — 트랜스미터·안테나·리시버·DAQ 신호 흐름 다이어그램"
            style="width:100%; display:block; object-fit:contain; background:var(--white); max-height:420px;" loading="lazy">
     </div>
@@ -301,6 +308,68 @@
         <div class="tl-app-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/></svg></div>
         <div class="tl-app-title">항공·방위</div>
         <p class="tl-app-desc">헬리콥터 로터, 항공 엔진 블레이드 동응력·온도 측정.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 현장 적용 사례 -->
+<section style="padding:60px 0; background:var(--bg-soft); border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:12px;">FIELD APPLICATIONS</div>
+    <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:8px;" data-ko="현장 적용 사례" data-en="Application Examples">현장 적용 사례</h2>
+    <p style="font-size:14px; color:var(--text-mute); margin-bottom:0;">실제 산업 현장 텔레메터리 시스템 설치 사례 — 피스톤, 터보차저, 압연 공정</p>
+
+    <!-- 피스톤 / 터보차저 2열 -->
+    <div class="tl-case-grid2">
+      <figure style="margin:0;">
+        <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:var(--white);">
+          <img src="../assets/images/telemetry/TELEMETRY SYSTEM_PISTON.png"
+               alt="피스톤 엔진 커넥팅로드 텔레메터리 시스템 설치 사례"
+               style="width:100%; display:block; object-fit:contain; aspect-ratio:4/3; background:var(--white);" loading="lazy">
+        </div>
+        <figcaption style="font-size:12px; color:var(--text-mute); margin-top:8px; text-align:center;">피스톤 / 커넥팅로드 — 텔레메터리 시스템 적용</figcaption>
+      </figure>
+      <figure style="margin:0;">
+        <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:var(--white);">
+          <img src="../assets/images/telemetry/TELEMETRY SYSTEM_TURBO CHARGER.png"
+               alt="터보차저 고속 회전체 텔레메터리 시스템 설치 사례"
+               style="width:100%; display:block; object-fit:contain; aspect-ratio:4/3; background:var(--white);" loading="lazy">
+        </div>
+        <figcaption style="font-size:12px; color:var(--text-mute); margin-top:8px; text-align:center;">터보차저 고속 회전체 — 텔레메터리 시스템 적용</figcaption>
+      </figure>
+    </div>
+
+    <!-- 압연 공정 3열 -->
+    <div style="margin-top:52px;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:700; color:var(--accent); letter-spacing:.1em; margin-bottom:8px;">ROLLING MILL · TORQUE MONITORING</div>
+      <h3 style="font-size:18px; font-weight:700; color:var(--charcoal); margin-bottom:6px;">압연 공정 토크 모니터링 — 트랜스미터 &amp; 파워서플라이</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">제철소 압연 롤러 구동축 토크를 텔레메터리로 실시간 모니터링. 인덕티브 방식 파워서플라이 일체형으로 장시간 연속 계측.</p>
+      <div class="tl-case-grid3">
+        <figure style="margin:0;">
+          <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);">
+            <img src="../assets/images/telemetry/압연 공정 토크 모니터링 트랜스미터_power supply.JPG"
+                 alt="압연 공정 토크 모니터링 트랜스미터 및 파워서플라이 전체 구성"
+                 style="width:100%; display:block; object-fit:cover; aspect-ratio:4/3;" loading="lazy">
+          </div>
+          <figcaption style="font-size:12px; color:var(--text-mute); margin-top:8px; text-align:center;">트랜스미터 &amp; 파워서플라이 전체 구성</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);">
+            <img src="../assets/images/telemetry/압연 공정 토크 모니터링 트랜스미터_power supply 02.jpg"
+                 alt="압연 공정 토크 모니터링 트랜스미터 설치 클로즈업"
+                 style="width:100%; display:block; object-fit:cover; aspect-ratio:4/3;" loading="lazy">
+          </div>
+          <figcaption style="font-size:12px; color:var(--text-mute); margin-top:8px; text-align:center;">트랜스미터 설치 클로즈업</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);">
+            <img src="../assets/images/telemetry/압연 공정 토크 모니터링 트랜스미터_power supply 03.JPG"
+                 alt="압연 공정 토크 모니터링 파워서플라이 클로즈업"
+                 style="width:100%; display:block; object-fit:cover; aspect-ratio:4/3;" loading="lazy">
+          </div>
+          <figcaption style="font-size:12px; color:var(--text-mute); margin-top:8px; text-align:center;">파워서플라이 클로즈업</figcaption>
+        </figure>
       </div>
     </div>
   </div>
