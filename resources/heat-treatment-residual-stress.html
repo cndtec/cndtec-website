@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>열처리 부품 잔류응력 측정 (퀜칭·템퍼링·침탄·질화) | 씨앤디테크</title>
+<meta name="description" content="퀜칭·템퍼링·침탄·질화 등 열처리 공정 후 잔류응력 측정·분석. ASTM E837 홀드릴링 방식으로 깊이별 잔류응력 분포 파악. 치수변형·균열·SCC 원인 분석 및 공정 최적화. 씨앤디테크 측정 용역 및 장비 공급." />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/heat-treatment-residual-stress.html" />
+<meta property="og:title" content="열처리 부품 잔류응력 측정 | 씨앤디테크" />
+<meta property="og:description" content="퀜칭·템퍼링·침탄·질화 공정 후 잔류응력 분포 측정. ASTM E837 홀드릴링 방식. 조건별 비교 분석 및 성적서 제공." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/heat-treatment-residual-stress.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=6">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "열처리 부품 잔류응력 측정 — 퀜칭·템퍼링·침탄·질화",
+  "description": "ASTM E837 홀드릴링법으로 열처리 공정 후 잔류응력 분포 측정·분석. 치수변형, 균열, SCC 원인 파악 및 공정 최적화.",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "inLanguage": "ko",
+  "keywords": "열처리 잔류응력, 퀜칭 잔류응력, 템퍼링 잔류응력, 침탄 잔류응력, 질화 잔류응력, ASTM E837, 홀드릴링, 잔류응력 측정"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "어떤 열처리 공정에서 잔류응력 측정이 필요한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "퀜칭(Quenching), 템퍼링(Tempering), 침탄(Carburizing), 질화(Nitriding), 고주파 열처리(Induction Hardening) 등 대부분의 열처리 공정 후 잔류응력 측정이 권장됩니다. 특히 급격한 온도 변화가 수반되는 퀜칭 공정에서는 표면과 심부의 냉각 속도 차이로 인해 큰 잔류응력이 발생하므로, 치수 안정성과 피로 수명 관리를 위해 측정이 중요합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "퀜칭 후 잔류응력은 왜 위험한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "퀜칭 시 표면은 빠르게 냉각·수축하고 내부는 상대적으로 느리게 냉각됩니다. 이 온도 구배로 인해 표면에 인장, 내부에 압축 잔류응력이 형성되는 경우가 있습니다. 표면 인장 잔류응력이 과도하면 퀜칭 균열(Quench Crack), 사용 중 피로파단, 응력부식균열(SCC) 등의 결함으로 이어집니다. 반대로 쇼트피닝 등 압축 잔류응력을 부여하면 피로 수명이 향상됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "열처리 전후 잔류응력 비교 측정도 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가능합니다. 열처리 전(소재 단계) 및 각 공정 단계별로 동일 시편 또는 동일 형상의 시편을 측정하면, 공정 조건(온도, 냉각 속도, 매체)이 잔류응력 분포에 미치는 영향을 정량적으로 비교할 수 있습니다. 이 데이터는 최적 공정 조건 도출 및 불량 원인 분석에 직접 활용됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "측정 성적서는 어떤 형태로 제공되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ASTM E837 기준에 따른 측정 성적서를 제공합니다. 내용에는 최대·최소 주응력(σ₁, σ₂) 및 방향각(β), 깊이별 응력 분포 그래프, 측정 조건(게이지 타입, 홀 직경, 소재 물성), 불확도 분석이 포함됩니다. Excel 및 PDF 형식으로 제공되며 연구보고서, 품질인증, 규격 심사용으로 활용 가능합니다."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+/* ── 페이지 전용 스타일 ── */
+.rs-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+@media (max-width: 640px) {
+  .rs-stat-grid { grid-template-columns: 1fr; }
+}
+.rs-stat-card {
+  padding: 24px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+}
+.rs-stat-card .stat-val {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.rs-stat-card .stat-label {
+  font-size: 13px;
+  color: var(--text-mute);
+  line-height: 1.4;
+}
+
+.rs-section {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--line);
+}
+.rs-section:last-child { border-bottom: none; }
+.rs-section-title {
+  font-family: 'Manrope', 'Pretendard', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rs-section-title::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 22px;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.rs-img-wrap {
+  margin: 24px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+}
+.rs-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.rs-img-caption {
+  padding: 10px 16px;
+  font-size: 12px;
+  color: var(--text-mute);
+  background: var(--bg-card);
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.rs-img-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+@media (max-width: 640px) {
+  .rs-img-duo { grid-template-columns: 1fr; }
+}
+
+.rs-feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.rs-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+.rs-feature-list li::before {
+  content: '✔';
+  color: var(--accent);
+  font-size: 14px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.rs-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 20px 0;
+}
+.rs-spec-table th, .rs-spec-table td {
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.rs-spec-table th {
+  background: var(--orange-tint);
+  font-weight: 600;
+  color: var(--charcoal);
+  width: 30%;
+  white-space: nowrap;
+}
+.rs-spec-table td {
+  color: var(--text-dim);
+}
+
+.rs-step-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+@media (max-width: 720px) {
+  .rs-step-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .rs-step-grid { grid-template-columns: 1fr; }
+}
+.rs-step {
+  padding: 20px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.rs-step .step-num {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+}
+.rs-step .step-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+.rs-step .step-desc {
+  font-size: 13px;
+  color: var(--text-mute);
+  line-height: 1.5;
+}
+
+.rs-app-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+.rs-app-tag {
+  padding: 6px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+/* 결함 카드 3분할 */
+.ht-defect-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+@media (max-width: 680px) {
+  .ht-defect-grid { grid-template-columns: 1fr; }
+}
+.ht-defect-card {
+  padding: 24px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  border-top: 3px solid var(--accent);
+}
+.ht-defect-card .defect-tag {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent-deep);
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+.ht-defect-card .defect-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+.ht-defect-card .defect-desc {
+  font-size: 13px;
+  color: var(--text-mute);
+  line-height: 1.6;
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Manrope',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../index.html#blog">블로그</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono','JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">ASTM E837 · HEAT TREATMENT</div>
+      <h1 style="font-family:'Manrope','Pretendard',sans-serif; font-size:clamp(28px,5vw,52px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">열처리 부품 잔류응력 측정</h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:720px; line-height:1.7; margin-bottom:0;">퀜칭·템퍼링·침탄·질화 등 열처리 공정 후 잔류응력 분포를 ASTM E837 홀드릴링 방식으로 깊이별 정량 측정합니다. 공정 조건별 비교 분석, 불량 원인 규명, 공정 최적화까지 씨앤디테크가 지원합니다.</p>
+    </div>
+
+    <!-- 핵심 스펙 카드 -->
+    <div class="rs-stat-grid fade-in">
+      <div class="rs-stat-card">
+        <div class="stat-val">4+</div>
+        <div class="stat-label">열처리 공정<br>퀜칭 · 템퍼링 · 침탄 · 질화</div>
+      </div>
+      <div class="rs-stat-card">
+        <div class="stat-val">3대</div>
+        <div class="stat-label">주요 결함 유발 인자<br>변형 · 균열 · SCC</div>
+      </div>
+      <div class="rs-stat-card">
+        <div class="stat-val">E837</div>
+        <div class="stat-label">ASTM 국제표준 적용<br>깊이별 분포 프로파일링</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 본문 ── -->
+<section style="padding:0 0 100px;">
+  <div class="container" style="max-width:860px;">
+
+    <!-- 1. 왜 측정하는가 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">열처리 후 잔류응력이 중요한 이유</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:24px;">
+        열처리 공정에서는 급격한 가열·냉각 사이클로 인해 부품 내부에 불균일한 잔류응력이 형성됩니다.
+        이 잔류응력이 적절히 관리되지 않으면 제품 수명·품질·안전성에 직접적인 영향을 미칩니다.
+      </p>
+      <div class="ht-defect-grid">
+        <div class="ht-defect-card">
+          <div class="defect-tag">DEFECT 01</div>
+          <div class="defect-title">치수 변형 (Distortion)</div>
+          <div class="defect-desc">퀜칭 시 급격한 온도 구배로 부품이 뒤틀리거나 휩니다. 정밀 가공 후 열처리하는 금형·기어·축류 부품에서 치수 불량의 주요 원인입니다.</div>
+        </div>
+        <div class="ht-defect-card">
+          <div class="defect-tag">DEFECT 02</div>
+          <div class="defect-title">균열 · 파손 (Crack)</div>
+          <div class="defect-desc">표면 인장 잔류응력이 임계 수준을 초과하면 퀜칭 균열이 발생합니다. 피로 하중 환경에서는 균열 전파를 가속시켜 조기 파단으로 이어집니다.</div>
+        </div>
+        <div class="ht-defect-card">
+          <div class="defect-tag">DEFECT 03</div>
+          <div class="defect-title">응력부식균열 (SCC)</div>
+          <div class="defect-desc">인장 잔류응력이 존재하는 부위에 부식 환경이 더해지면 SCC가 급격히 진행됩니다. 해양·화학·발전 설비 등 가혹 환경에서 특히 위험합니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. 측정 방법 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">측정 방법 — ASTM E837 홀드릴링</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:20px;">
+        ASTM E837 홀드릴링법은 <strong>반파괴적(Semi-destructive)</strong> 방식으로, 직경 1.6~2mm의 소형 홀을 단계적으로 드릴링하면서 로제트 스트레인게이지로 응력 이완량을 측정합니다.
+        1µm 단위 스테핑모터 제어로 깊이별(depth profile) 잔류응력 분포를 정밀하게 파악합니다.
+      </p>
+      <div class="rs-step-grid">
+        <div class="rs-step">
+          <div class="step-num">STEP 01</div>
+          <div class="step-title">로제트 게이지 부착</div>
+          <div class="step-desc">측정 위치 표면 처리 후 ASTM E837 규격 로제트 스트레인게이지 본딩</div>
+        </div>
+        <div class="rs-step">
+          <div class="step-num">STEP 02</div>
+          <div class="step-title">스테핑모터 드릴링</div>
+          <div class="step-desc">1µm 단위 정밀 제어 드릴링 — 각 깊이 단계에서 변형률 자동 취득</div>
+        </div>
+        <div class="rs-step">
+          <div class="step-num">STEP 03</div>
+          <div class="step-title">깊이별 분포 분석</div>
+          <div class="step-desc">EVAL 소프트웨어로 주응력(σ₁, σ₂), 방향각(β), 깊이 프로파일 자동 산출</div>
+        </div>
+        <div class="rs-step">
+          <div class="step-num">STEP 04</div>
+          <div class="step-title">성적서 제공</div>
+          <div class="step-desc">ASTM E837 기준 정량 보고서 — Excel · PDF 형식, 공식 인증용 발행 가능</div>
+        </div>
+      </div>
+
+      <div class="rs-img-wrap" style="margin-top:28px;">
+        <img src="../assets/images/residual-stress/mts3000-system.jpg"
+             alt="SINT MTS3000-Restan 열처리 부품 잔류응력 측정 시스템" loading="lazy"
+             style="width:100%; height:auto; max-height:420px; object-fit:contain; background:#f8f8f8;">
+        <div class="rs-img-caption">SINT MTS3000-Restan — 열처리 부품 잔류응력 측정 설정</div>
+      </div>
+    </div>
+
+    <!-- 3. 측정 사례 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">측정 사례 — 열처리 조건별 비교 분석</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:20px;">
+        동일 소재·형상의 시편에 대해 퀜칭 온도, 냉각 매체(수냉·유냉·공냉), 템퍼링 온도 등 공정 조건을 달리하여 측정하면 <strong>조건별 잔류응력 분포 차이를 정량 비교</strong>할 수 있습니다.
+        이 데이터를 통해 최적 열처리 조건을 도출하거나 불량 발생 원인을 특정합니다.
+      </p>
+      <div class="rs-img-duo">
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/residual-stress/EVAl-graphic.jpg"
+               alt="열처리 조건별 잔류응력 EVAL 분석 결과 — 깊이별 분포 그래프 ①" loading="lazy"
+               style="width:100%; height:auto;">
+          <div class="rs-img-caption">EVAL 결과 — 조건 A 잔류응력 분포 (깊이별)</div>
+        </div>
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/residual-stress/EVAl-graphic2.jpg"
+               alt="열처리 조건별 잔류응력 EVAL 분석 결과 — 깊이별 분포 그래프 ②" loading="lazy"
+               style="width:100%; height:auto;">
+          <div class="rs-img-caption">EVAL 결과 — 조건 B 잔류응력 분포 (깊이별)</div>
+        </div>
+      </div>
+      <div class="rs-img-wrap">
+        <img src="../assets/images/residual-stress/RSM SETTING.jpg"
+             alt="MTS3000-Restan RSM 소프트웨어 — DATABASE vs ACTUAL 비교 화면" loading="lazy"
+             style="width:100%; height:auto; max-height:360px; object-fit:contain; background:#f8f8f8;">
+        <div class="rs-img-caption">RSM 소프트웨어 — DATABASE ↔ ACTUAL 비교 (측정 파라미터 설정)</div>
+      </div>
+      <table class="rs-spec-table" style="margin-top:8px;">
+        <tr>
+          <th>비교 가능 조건</th>
+          <td>퀜칭 온도(800~950℃), 냉각 매체(수냉·유냉·공냉), 템퍼링 온도(150~600℃), 침탄 깊이</td>
+        </tr>
+        <tr>
+          <th>측정 결과</th>
+          <td>깊이별 주응력(σ₁, σ₂) 분포 그래프, 방향각(β), 표면~심부 응력 프로파일</td>
+        </tr>
+        <tr>
+          <th>활용</th>
+          <td>공정 최적화, 불량 원인 규명, 품질 인증 데이터, 연구·개발 보고서</td>
+        </tr>
+        <tr>
+          <th>관련 기술자료</th>
+          <td><a href="residual-stress.html" style="color:var(--accent);">→ ASTM E837 홀드릴링 측정 원리 보기</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 4. 적용 공정 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">적용 열처리 공정 및 부품</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        아래 열처리 공정을 거친 모든 금속 부품에 적용 가능합니다. 소재 탄성계수(E)와 포아송비(ν)를 알면 대부분의 합금강에 측정이 가능합니다.
+      </p>
+      <div class="rs-app-tags">
+        <span class="rs-app-tag">퀜칭 (Quenching)</span>
+        <span class="rs-app-tag">템퍼링 (Tempering)</span>
+        <span class="rs-app-tag">침탄 (Carburizing)</span>
+        <span class="rs-app-tag">질화 (Nitriding)</span>
+        <span class="rs-app-tag">고주파 열처리</span>
+        <span class="rs-app-tag">쇼트피닝 후 검증</span>
+        <span class="rs-app-tag">기어 · 샤프트</span>
+        <span class="rs-app-tag">베어링 레이스</span>
+        <span class="rs-app-tag">금형 · 다이</span>
+        <span class="rs-app-tag">자동차 구동계</span>
+        <span class="rs-app-tag">항공우주 구조재</span>
+        <span class="rs-app-tag">압력용기 · 배관</span>
+      </div>
+    </div>
+
+    <!-- 5. 씨앤디테크 서비스 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">씨앤디테크 서비스</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:20px;">
+        씨앤디테크는 SINT MTS3000-Restan 시스템을 활용한 <strong>열처리 부품 잔류응력 측정 용역</strong>과 <strong>장비 공급</strong>을 모두 지원합니다.
+        시편 사양, 측정 위치, 공정 조건을 알려주시면 최적 측정 방안을 제안드립니다.
+      </p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:28px;">
+        <div style="padding:20px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);">
+          <div style="font-size:13px; font-family:'IBM Plex Mono','JetBrains Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:8px;">측정 용역</div>
+          <div style="font-size:14px; color:var(--text-dim); line-height:1.6;">시편 수령 또는 현장 방문 측정<br>공정 조건별 비교 분석<br>ASTM E837 기준 성적서 발행</div>
+        </div>
+        <div style="padding:20px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);">
+          <div style="font-size:13px; font-family:'IBM Plex Mono','JetBrains Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:8px;">장비 공급</div>
+          <div style="font-size:14px; color:var(--text-dim); line-height:1.6;">MTS3000-Restan 시스템 판매<br>로제트 게이지 · 소모품 공급<br>설치 · 교육 · 기술지원</div>
+        </div>
+      </div>
+
+      <p style="font-size:14px; color:var(--text-mute); margin-bottom:16px;">관련 기술 자료 더 보기:</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:32px;">
+        <a href="residual-stress.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ ASTM E837 측정 원리</a>
+        <a href="what-is-residual-stress.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 잔류응력이란? 기초 개념</a>
+        <a href="plastic-residual-stress.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 플라스틱·복합재료 잔류응력</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section style="padding:48px 0 0;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in">
+      <h2 style="font-family:'Manrope','Pretendard',sans-serif; font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:8px; padding-left:14px; border-left:4px solid var(--accent);">자주 묻는 질문 (FAQ)</h2>
+      <p style="font-size:13px; color:var(--text-mute); margin-bottom:28px; padding-left:18px;">열처리 잔류응력 측정 — 공정·적용·서비스 관련 질문</p>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>어떤 열처리 공정에서 잔류응력 측정이 필요한가요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">퀜칭(Quenching), 템퍼링(Tempering), 침탄(Carburizing), 질화(Nitriding), 고주파 열처리(Induction Hardening) 등 대부분의 열처리 공정 후 잔류응력 측정이 권장됩니다. 특히 급격한 온도 변화가 수반되는 퀜칭 공정에서는 표면과 심부의 냉각 속도 차이로 인해 큰 잔류응력이 발생하므로, 치수 안정성과 피로 수명 관리를 위해 측정이 중요합니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>퀜칭 후 잔류응력은 왜 위험한가요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">퀜칭 시 표면은 빠르게 냉각·수축하고 내부는 상대적으로 느리게 냉각됩니다. 이 온도 구배로 인해 표면에 인장 잔류응력이 형성될 수 있으며, 과도하면 퀜칭 균열(Quench Crack), 사용 중 피로파단, 응력부식균열(SCC) 등의 결함으로 이어집니다. 반대로 쇼트피닝 등으로 압축 잔류응력을 부여하면 피로 수명이 향상되며, 이를 측정으로 검증합니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>열처리 전후 잔류응력 비교 측정도 가능한가요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">가능합니다. 열처리 전(소재 단계) 및 각 공정 단계별로 동일 시편 또는 동일 형상의 시편을 측정하면, 공정 조건(온도, 냉각 속도, 매체)이 잔류응력 분포에 미치는 영향을 정량적으로 비교할 수 있습니다. 이 데이터는 최적 공정 조건 도출 및 불량 원인 분석에 직접 활용됩니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:0; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>측정 성적서는 어떤 형태로 제공되나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">ASTM E837 기준에 따른 측정 성적서를 제공합니다. 내용에는 최대·최소 주응력(σ₁, σ₂) 및 방향각(β), 깊이별 응력 분포 그래프, 측정 조건(게이지 타입, 홀 직경, 소재 물성), 불확도 분석이 포함됩니다. Excel 및 PDF 형식으로 제공되며, 연구보고서·품질인증·규격 심사용으로 활용 가능합니다.</p>
+        </div>
+      </details>
+
+    </div><!-- /FAQ -->
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section style="padding:40px 0 80px;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in" style="padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius);">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">열처리 부품 잔류응력 측정 · 장비 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">시편 소재·형상·공정 조건을 알려주시면 최적 측정 방안과 비용을 안내해 드립니다. 용역 측정 · 장비 구매 · 공정 컨설팅 모두 가능합니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+        <a href="mailto:wgjeon@cndtec.co.kr" class="btn btn-ghost">wgjeon@cndtec.co.kr</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display:'none'; this.nextElementSibling.style.display:'block'">
+        <span style="display:none; font-family:'Manrope',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="residual-stress.html">잔류응력 측정</a></li><li><a href="heat-treatment-residual-stress.html">열처리 잔류응력</a></li><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="pcb-stress.html">PCB 응력 측정</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta"><span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span></div>
+  </div>
+</footer>
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+</body>
+</html>
