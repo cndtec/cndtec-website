@@ -80,6 +80,13 @@ cndtec-website/
 - 도메인 전파 확인 (GitHub Pages Custom domain은 CNAME 파일로 이미 설정 완료)
 - GitHub Pages 배포 확인 후 Google Search Console / 네이버 서치어드바이저에 sitemap.xml 제출 필요 (아직 미제출)
 
+## ⭐ 2026-07-11 Search Console 오류 수정: products.html Product 스니펫 오류
+- Google Search Console URL 검사에서 products.html이 "제품 스니펫 잘못된 항목 3개", "판매자 목록 잘못된 항목 3개"로 감지됨.
+- 원인: JSON-LD ItemList의 상위 3개 항목이 `"@type": "Product"` + `offers`(가격·통화·재고 없음)로 되어 있어 Google 쇼핑 리치 리절트 검증 요건(price/priceCurrency/availability 등) 미충족.
+- CND TECH는 정가 판매가 아닌 견적 기반 B2B이므로, 가짜 가격을 넣는 대신 4개 항목 전부(DAQ 시스템/스트레인게이지/로드셀·토크센서·압력센서 + 기존 잔류응력측정)를 `"@type": "Service"` + `provider`로 통일하여 Product/Merchant 리스팅 검증 대상에서 제외. `offers` 필드 전체 삭제.
+- 다른 페이지에는 `"@type": "Product"` 스키마 사용된 곳 없음 (grep 확인 완료, products.html이 유일).
+- 커밋/푸시 후 Search Console에서 "다시 요청"으로 재검사 필요.
+
 ## ⭐ 2026-07-11 SEO 전수 감사 후 정정: custom-sensor.html은 스텁 아님
 - custom-sensor.html은 실제 콘텐츠(title/desc/canonical/FAQ/footer 전부 완비)가 이미 작성되어 있었는데 resources/index.html·sitemap.xml에 누락되어 있던 것을 발견 → 2026-07-11 카드 추가 + sitemap 등록 완료. 아래 "다음 기술자료 후보" 목록에서 제거.
 - vibration.html도 실제 콘텐츠 완비 상태(스텁 아님, sitemap에도 이미 등록되어 있었음).
