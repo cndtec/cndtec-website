@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>강관(파이프) 잔류응력 측정 — LSAW 축관 교정율별 비교 | 씨앤디테크</title>
+<meta name="description" content="LSAW 강관 축관(Expanding) 교정율에 따른 용접부·모재 잔류응력 변화를 ASTM E837-13 홀드릴링으로 정밀 측정. API 5L X65M PSL2 강관 실측 사례, 16채널 다중 포인트 측정, CALC1/2/3 3중 해석. 씨앤디테크 측정 용역." />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/pipe-residual-stress.html" />
+<meta property="og:title" content="강관(파이프) 잔류응력 측정 | 씨앤디테크" />
+<meta property="og:description" content="LSAW 강관 축관 교정율별 잔류응력 변화. ASTM E837-13 홀드릴링으로 용접부·모재 16채널 실측. API 5L X65M PSL2 강관 성적서 사례." />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/cnd-logo-400.png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:alt" content="CND TECH 씨앤디테크 로고" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/pipe-residual-stress.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=6">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "강관(파이프) 잔류응력 측정 — LSAW 축관 교정율별 비교",
+  "description": "LSAW 강관 축관(Expanding) 교정율에 따른 용접부·모재 잔류응력 변화를 ASTM E837-13 홀드릴링으로 정밀 측정. API 5L X65M PSL2 강관 실측 사례.",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "inLanguage": "ko",
+  "keywords": "강관 잔류응력, 파이프 잔류응력 측정, LSAW 파이프, 축관 잔류응력, API 5L X65M, 용접부 잔류응력, ASTM E837, 홀드릴링, 잔류응력 측정, SINT MTS3000"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "강관(파이프)에서 잔류응력 측정이 왜 필요한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LSAW·ERW·SSAW 등 성형·용접 강관은 판재를 말아 용접하는 공정 특성상 용접부와 모재에 큰 잔류응력이 남습니다. 여기에 축관(Expanding, 진원도 교정) 공정이 더해지면 잔류응력 분포가 추가로 변화합니다. 잔류응력이 과도하면 SCC(응력부식균열), 피로균열, 사용 중 변형의 원인이 되므로 배관·플랜트·해양구조물용 강관은 잔류응력 관리가 중요합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "축관(Expanding) 교정율이 잔류응력에 어떤 영향을 주나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "축관 교정율이 높아질수록(관이 더 크게 확관될수록) 표면 잔류응력이 소성 변형을 거치며 재분배됩니다. 씨앤디테크가 API 5L X65M PSL2 LSAW 파이프에서 실측한 결과, 미교정 구간 대비 교정율 0.27% 구간에서 용접부(0° Weld) 표면 압축·인장 응력의 절대값이 뚜렷하게 감소하는 경향이 확인되었습니다. 이는 축관이 용접 잔류응력을 완화하는 방향으로 작용할 수 있음을 시사하며, 개별 라인·소재별로 정량 측정을 통한 확인이 필요합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "강관의 어느 위치를 측정해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "일반적으로 용접부 비드 중심(0° Weld), 용접부 인근 열영향부(HAZ), 그리고 용접부와 무관한 모재 2개 지점(예: 90°, 180°)을 함께 측정하여 비교합니다. 여기에 파이프 길이 방향으로 공정 조건이 다른 구간(예: 축관 교정율별 구간)을 나누어 측정하면, 원주 방향(위치)과 길이 방향(공정 조건) 두 축에서 잔류응력 분포를 입체적으로 파악할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "파이프처럼 곡률이 있는 표면도 홀드릴링 측정이 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가능합니다. SINT MTS3000 시스템은 자석식·벨트식 고정 지그를 사용해 곡면에 드릴링 헤드를 수직으로 정렬할 수 있어, 배관·압력용기·환봉 등 곡률이 있는 부재에도 ASTM E837-13 기준 측정이 적용됩니다. 다만 곡률 반경이 작을수록 게이지 부착 및 얼라인먼트에 숙련도가 필요하므로, 파이프 외경과 두께 사양을 사전에 확인해 측정 지그를 준비합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "측정 성적서에는 어떤 내용이 포함되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ASTM E837-13 기준 3가지 해석 방식(CALC1 균일분포법, CALC2 Tikhonov 비균일분포법, CALC3 적분법)의 채널별 주응력(Smax/Smin)·방향각(Beta)·상당응력(Von Mises/Tresca)을 깊이별로 제공합니다. 다채널(예: 16채널) 측정 시 위치별·조건별 비교표와 원본 계측 그래프도 함께 수록되며, PDF 성적서로 발행되어 품질 인증·연구보고서 자료로 활용할 수 있습니다."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+.rs-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+@media (max-width: 640px) {
+  .rs-stat-grid { grid-template-columns: 1fr; }
+}
+.rs-stat-card {
+  padding: 24px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+}
+.rs-stat-card .stat-val {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.rs-stat-card .stat-label {
+  font-size: 13px;
+  color: var(--text-mute);
+  line-height: 1.4;
+}
+
+.rs-section {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--line);
+}
+.rs-section:last-child { border-bottom: none; }
+.rs-section-title {
+  font-family: 'Manrope', 'Pretendard', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rs-section-title::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 22px;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.rs-img-wrap {
+  margin: 24px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+}
+.rs-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.rs-img-caption {
+  padding: 10px 16px;
+  font-size: 12px;
+  color: var(--text-mute);
+  background: var(--bg-card);
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.rs-img-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+@media (max-width: 640px) {
+  .rs-img-duo { grid-template-columns: 1fr; }
+}
+
+.rs-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 20px 0;
+}
+.rs-spec-table th, .rs-spec-table td {
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.rs-spec-table th {
+  background: var(--orange-tint);
+  font-weight: 600;
+  color: var(--charcoal);
+  width: 30%;
+  white-space: nowrap;
+}
+.rs-spec-table td {
+  color: var(--text-dim);
+}
+
+.rs-step-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+@media (max-width: 720px) {
+  .rs-step-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .rs-step-grid { grid-template-columns: 1fr; }
+}
+.rs-step {
+  padding: 20px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.rs-step .step-num {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+}
+.rs-step .step-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+.rs-step .step-desc {
+  font-size: 13px;
+  color: var(--text-mute);
+  line-height: 1.5;
+}
+
+.rs-app-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+.rs-app-tag {
+  padding: 6px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+/* 위치별 결과 미니 카드 */
+.pipe-pos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 24px 0;
+}
+@media (max-width: 720px) {
+  .pipe-pos-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .pipe-pos-grid { grid-template-columns: 1fr; }
+}
+.pipe-pos-card {
+  padding: 18px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  border-top: 3px solid var(--accent);
+}
+.pipe-pos-card .pos-tag {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-deep);
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+.pipe-pos-card .pos-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+.pipe-pos-card .pos-desc {
+  font-size: 12.5px;
+  color: var(--text-mute);
+  line-height: 1.6;
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Manrope',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../index.html#blog">블로그</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono','JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">ASTM E837-13 · LSAW PIPE · EXPANDING</div>
+      <h1 style="font-family:'Manrope','Pretendard',sans-serif; font-size:clamp(28px,5vw,52px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">강관(파이프) 잔류응력 측정</h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:720px; line-height:1.7; margin-bottom:0;">LSAW·ERW 강관은 성형·용접·축관(Expanding) 공정을 거치며 용접부와 모재에 서로 다른 잔류응력이 남습니다. ASTM E837-13 홀드릴링법으로 원주 방향 위치별·축관 교정율별 잔류응력 분포를 다채널로 정밀 측정합니다.</p>
+    </div>
+
+    <div class="rs-stat-grid fade-in">
+      <div class="rs-stat-card">
+        <div class="stat-val">16CH</div>
+        <div class="stat-label">다중 포인트 측정<br>위치 4곳 × 교정 조건 4구간</div>
+      </div>
+      <div class="rs-stat-card">
+        <div class="stat-val">CALC 1/2/3</div>
+        <div class="stat-label">3중 해석 방식 병행<br>균일·비균일·적분법</div>
+      </div>
+      <div class="rs-stat-card">
+        <div class="stat-val">E837-13</div>
+        <div class="stat-label">ASTM 국제표준 적용<br>곡면(파이프) 측정 지그</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 본문 ── -->
+<section style="padding:0 0 100px;">
+  <div class="container" style="max-width:860px;">
+
+    <!-- 1. 왜 측정하는가 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">강관 잔류응력이 중요한 이유</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:24px;">
+        LSAW(Longitudinal Submerged Arc Welded) 강관은 평판을 원형으로 성형한 뒤 길이 방향으로 용접하여 제작됩니다.
+        이 과정에서 용접 열영향과 냉각 수축으로 용접부 인근에 큰 잔류응력이 형성되며, 진원도 교정을 위한 축관(Expanding) 공정이 추가되면
+        잔류응력 분포가 한 번 더 재편됩니다. 배관·라이저·해양구조물용 강관은 사용 중 내압·굽힘 하중과 잔류응력이 중첩되므로,
+        <strong>SCC(응력부식균열)·피로균열·진원도 재변형</strong>을 예방하려면 공정별 잔류응력을 정량 관리하는 것이 중요합니다.
+      </p>
+      <p style="font-size:14px; color:var(--text-mute); line-height:1.7;">
+        씨앤디테크는 강관 제조사·플랜트 배관 공급사를 대상으로 용접부·모재 다중 포인트 잔류응력 측정, 축관 교정율별 비교 측정 용역을 제공합니다.
+      </p>
+    </div>
+
+    <!-- 2. 측정 방법 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">측정 방법 — ASTM E837-13 홀드릴링</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:20px;">
+        ASTM E837-13 홀드릴링법은 <strong>반파괴적(Semi-destructive)</strong> 방식으로, 곡면 고정 지그를 이용해 로제트 스트레인게이지를
+        파이프 표면에 정밀 부착한 뒤 소형 홀을 단계적으로 드릴링하며 변형률 이완량을 측정합니다. SINT MTS3000 + HBM MX1615B 조합으로
+        1채널당 20스텝(완화 깊이 1.2mm)의 깊이별 응력 프로파일을 얻습니다.
+      </p>
+      <div class="rs-step-grid">
+        <div class="rs-step">
+          <div class="step-num">STEP 01</div>
+          <div class="step-title">위치·구간 설정</div>
+          <div class="step-desc">원주 방향 위치(용접부·HAZ·모재)와 길이 방향 공정 조건 구간을 매트릭스로 설계</div>
+        </div>
+        <div class="rs-step">
+          <div class="step-num">STEP 02</div>
+          <div class="step-title">로제트 게이지 부착</div>
+          <div class="step-desc">FRS-2 로제트(반경 5.14mm) 부착 — 곡면 고정 지그로 홀 얼라인먼트 확보</div>
+        </div>
+        <div class="rs-step">
+          <div class="step-num">STEP 03</div>
+          <div class="step-title">단계별 홀드릴링</div>
+          <div class="step-desc">공칭 홀 직경 1.80mm, 완화 깊이 1.20mm(20 steps) 정밀 제어 드릴링</div>
+        </div>
+        <div class="rs-step">
+          <div class="step-num">STEP 04</div>
+          <div class="step-title">CALC 1/2/3 해석</div>
+          <div class="step-desc">균일분포·Tikhonov 비균일분포·적분법 3가지 방식을 병행 산출, 성적서 발행</div>
+        </div>
+      </div>
+
+      <div class="rs-img-wrap" style="margin-top:28px;">
+        <img src="../assets/images/파이프 잔류응력측정/잔류응력측정 파이프.jpg"
+             alt="LSAW 강관 잔류응력 측정 현장 — API 5L X65M PSL2 파이프" loading="lazy"
+             style="width:100%; height:auto; max-height:420px; object-fit:contain; background:#f8f8f8;"
+             onerror="this.closest('.rs-img-wrap').style.display='none'">
+        <div class="rs-img-caption">잔류응력측정 — 12M LSAW 강관, 외경 711mm × 두께 15.8t</div>
+      </div>
+    </div>
+
+    <!-- 3. 실측 사례 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">피닝 조건별 잔류응력측정</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:8px;">
+        씨앤디테크가 현대스틸파이프 LSAW 축관 라인에서 수행한 실측 사례입니다. <strong>API 5L Gr. X65M PSL2 파이프(외경 711mm × 두께 15.8t × 길이 12M)</strong>를 대상으로,
+        파이프 정면도 기준 4개 원주 위치(A: 0° 용접부, B: 0° 부근 HAZ, C: 90° 모재, D: 180° 모재)와 길이 방향 4개 축관 교정율 구간(미교정, 0.04%, 0.18%, 0.27%)을 조합해
+        총 16채널을 측정하였습니다.
+      </p>
+      <p style="font-size:14px; color:var(--text-mute); line-height:1.7; margin-bottom:28px;">
+        측정 목적은 축관(Expanding) 교정율에 따른 잔류응력 변화를 정량 확인하는 것이었으며, ASTM E837-13 기준으로 CALC1(균일분포)·CALC2(Tikhonov 비균일분포)·CALC3(적분법) 3가지 해석 방식을 병행하여 신뢰도를 교차 확인하였습니다.
+      </p>
+
+      <p style="font-size:12px; font-family:'IBM Plex Mono','JetBrains Mono',monospace; font-weight:700; color:var(--accent); letter-spacing:0.08em; margin-bottom:10px;">GAUGE — 로제트 스트레인게이지 부착</p>
+      <div class="rs-img-duo">
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/파이프 잔류응력측정/잔류응력측정 스트레인게이지 부착_01.jpg"
+               alt="강관 용접부 잔류응력 측정 스트레인게이지 부착 ①" loading="lazy"
+               onerror="this.closest('.rs-img-wrap').style.display='none'">
+          <div class="rs-img-caption">잔류응력 측정 시편 1 — 용접부(A) 로제트 게이지 부착</div>
+        </div>
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/파이프 잔류응력측정/잔류응력측정 스트레인게이지 부착_02.jpg"
+               alt="강관 모재 잔류응력 측정 스트레인게이지 부착 ②" loading="lazy"
+               onerror="this.closest('.rs-img-wrap').style.display='none'">
+          <div class="rs-img-caption">잔류응력 측정 시편 2 — 채널별 로제트 게이지 배치(A/B/C/D)</div>
+        </div>
+      </div>
+
+      <p style="font-size:12px; font-family:'IBM Plex Mono','JetBrains Mono',monospace; font-weight:700; color:var(--accent); letter-spacing:0.08em; margin:28px 0 10px;">MEASUREMENT — 잔류응력 측정 진행</p>
+      <div class="rs-img-duo">
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/파이프 잔류응력측정/잔류응력측정_01.jpg"
+               alt="SINT MTS3000 강관 잔류응력 홀드릴링 측정 진행 ①" loading="lazy"
+               onerror="this.closest('.rs-img-wrap').style.display='none'">
+          <div class="rs-img-caption">피닝 조건별 잔류응력 측정 — SINT MTS3000 홀드릴링 진행 ①</div>
+        </div>
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/파이프 잔류응력측정/잔류응력측정_02.jpg"
+               alt="SINT MTS3000 강관 잔류응력 홀드릴링 측정 진행 ②" loading="lazy"
+               onerror="this.closest('.rs-img-wrap').style.display='none'">
+          <div class="rs-img-caption">피닝 조건별 잔류응력 측정 — SINT MTS3000 홀드릴링 진행 ②</div>
+        </div>
+      </div>
+
+      <table class="rs-spec-table" style="margin-top:24px;">
+        <tr><th>의뢰 기관</th><td>현대스틸파이프 (Hyundai Steel Pipe Co., Ltd.)</td></tr>
+        <tr><th>시험명</th><td>LSAW 축관 잔류응력 TEST (Hole-Drilling)</td></tr>
+        <tr><th>시험 방법</th><td>ASTM E837-13 (Hole-Drilling Method)</td></tr>
+        <tr><th>측정 설비</th><td>SINT MTS3000 + HBM MX1615B, 사용 게이지 FRS-2 (반경 5.14mm)</td></tr>
+        <tr><th>시료 사양</th><td>API 5L Gr. X65M PSL2 · 외경 711mm × 두께 15.8t × 길이 12M · YP 565.3 MPa · TS 654.2 MPa</td></tr>
+        <tr><th>측정 매트릭스</th><td>원주 위치 4곳(A 용접부·B HAZ·C/D 모재) × 축관 교정율 4구간(미교정·0.04%·0.18%·0.27%) = 16채널</td></tr>
+        <tr><th>측정 결과 범위</th><td>16채널 CALC3 표면 Smax −0.2 MPa(#3-D) ~ +311.0 MPa(#1-A), Von Mises 상당응력은 항복강도 대비 2.2%~47.9%</td></tr>
+        <tr><th>공통 경향</th><td>4개 위치 모두 교정율이 높아지는 구간일수록 표면 Smax가 낮게 측정됨. 위치별로는 A(용접부) &gt; B(HAZ) &gt; C(모재) &gt; D(반대편 모재) 순으로 표면 응력값이 낮아짐</td></tr>
+      </table>
+
+      <p style="font-size:13px; color:var(--text-mute); line-height:1.7; margin-top:16px;">
+        ※ 위 결과는 해당 성적서(CND-26-27)에서 측정된 데이터 수치의 비교이며, 재료의 사용 적합성이나 안전 여부에 대한 판정을 포함하지 않습니다. 개별 라인·소재별로는 별도 측정이 필요합니다.
+      </p>
+
+      <p style="font-size:12px; font-family:'IBM Plex Mono','JetBrains Mono',monospace; font-weight:700; color:var(--accent); letter-spacing:0.08em; margin:28px 0 10px;">POSITION — 원주 위치별 표면 Smax 경향(CALC3, 미교정→최대교정)</p>
+      <div class="pipe-pos-grid">
+        <div class="pipe-pos-card">
+          <div class="pos-tag">A · 0° WELD</div>
+          <div class="pos-title">용접부 비드 중심</div>
+          <div class="pos-desc">+311 → +147 → +109 → +95 MPa<br>4위치 중 가장 큰 변화폭(약 216 MPa 감소)</div>
+        </div>
+        <div class="pipe-pos-card">
+          <div class="pos-tag">B · 0° HAZ</div>
+          <div class="pos-title">비드 인근 열영향부</div>
+          <div class="pos-desc">+130 → +102 → +105 → +84 MPa<br>대체로 감소, #3 구간에서 소폭 상승</div>
+        </div>
+        <div class="pipe-pos-card">
+          <div class="pos-tag">C · 90° BASE</div>
+          <div class="pos-title">모재(용접부 인접 반대편 90°)</div>
+          <div class="pos-desc">+90 → +118 → +68 → +40 MPa<br>#2 구간에서 일시 상승 후 감소</div>
+        </div>
+        <div class="pipe-pos-card">
+          <div class="pos-tag">D · 180° BASE</div>
+          <div class="pos-title">모재(용접부 정반대편)</div>
+          <div class="pos-desc">+41 → +23 → −0.2 → +1 MPa<br>4위치 중 가장 낮은 값, #3·#4에서 0 MPa 근접</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. 적용 대상 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">적용 대상 강관·부재</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        용접·성형 공정을 거치는 모든 강관·환형 부재에 적용 가능합니다. 곡률 반경과 소재 물성(탄성계수 E, 포아송비 ν)을 확인하면 측정 지그를 사전에 준비할 수 있습니다.
+      </p>
+      <div class="rs-app-tags">
+        <span class="rs-app-tag">LSAW 강관</span>
+        <span class="rs-app-tag">ERW 강관</span>
+        <span class="rs-app-tag">SSAW(스파이럴) 강관</span>
+        <span class="rs-app-tag">축관(Expanding) 공정</span>
+        <span class="rs-app-tag">배관 라인파이프</span>
+        <span class="rs-app-tag">해양구조물 강관</span>
+        <span class="rs-app-tag">압력용기 노즐</span>
+        <span class="rs-app-tag">원형 용접 부재</span>
+      </div>
+    </div>
+
+    <!-- 5. 씨앤디테크 서비스 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">씨앤디테크 서비스</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:20px;">
+        씨앤디테크는 SINT MTS3000 시스템을 활용한 <strong>강관·배관 잔류응력 측정 용역</strong>을 현장 출장 또는 시편 수령 방식으로 지원합니다.
+        파이프 사양(외경·두께·소재), 측정 위치, 비교하고자 하는 공정 조건을 알려주시면 채널 매트릭스를 설계해 드립니다.
+      </p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:28px;">
+        <div style="padding:20px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);">
+          <div style="font-size:13px; font-family:'IBM Plex Mono','JetBrains Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:8px;">측정 용역</div>
+          <div style="font-size:14px; color:var(--text-dim); line-height:1.6;">제조 라인 현장 출장 측정<br>원주 위치 × 공정 조건 다채널 매트릭스 설계<br>ASTM E837-13 기준 성적서 발행</div>
+        </div>
+        <div style="padding:20px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);">
+          <div style="font-size:13px; font-family:'IBM Plex Mono','JetBrains Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:8px;">장비 공급</div>
+          <div style="font-size:14px; color:var(--text-dim); line-height:1.6;">MTS3000 시스템 판매<br>곡면 고정 지그 · 로제트 게이지 공급<br>설치 · 교육 · 기술지원</div>
+        </div>
+      </div>
+
+      <p style="font-size:14px; color:var(--text-mute); margin-bottom:16px;">관련 기술 자료 더 보기:</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:32px;">
+        <a href="residual-stress.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ ASTM E837 측정 원리</a>
+        <a href="welding-residual-stress.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 용접부 잔류응력 측정</a>
+        <a href="what-is-residual-stress.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 잔류응력이란? 기초 개념</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section style="padding:48px 0 0;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in">
+      <h2 style="font-family:'Manrope','Pretendard',sans-serif; font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:8px; padding-left:14px; border-left:4px solid var(--accent);">자주 묻는 질문 (FAQ)</h2>
+      <p style="font-size:13px; color:var(--text-mute); margin-bottom:28px; padding-left:18px;">강관 잔류응력 측정 — 원리·적용·서비스 관련 질문</p>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>강관(파이프)에서 잔류응력 측정이 왜 필요한가요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">LSAW·ERW·SSAW 등 성형·용접 강관은 판재를 말아 용접하는 공정 특성상 용접부와 모재에 큰 잔류응력이 남습니다. 여기에 축관(Expanding, 진원도 교정) 공정이 더해지면 잔류응력 분포가 추가로 변화합니다. 잔류응력이 과도하면 SCC(응력부식균열), 피로균열, 사용 중 변형의 원인이 되므로 배관·플랜트·해양구조물용 강관은 잔류응력 관리가 중요합니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>축관(Expanding) 교정율이 잔류응력에 어떤 영향을 주나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">축관 교정율이 높아질수록(관이 더 크게 확관될수록) 표면 잔류응력이 소성 변형을 거치며 재분배됩니다. 씨앤디테크가 API 5L X65M PSL2 LSAW 파이프에서 실측한 결과, 미교정 구간 대비 교정율 0.27% 구간에서 용접부(0° Weld) 표면 응력의 절대값이 뚜렷하게 감소하는 경향이 확인되었습니다. 이는 축관이 용접 잔류응력을 완화하는 방향으로 작용할 수 있음을 시사하며, 개별 라인·소재별로 정량 측정을 통한 확인이 필요합니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>강관의 어느 위치를 측정해야 하나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">일반적으로 용접부 비드 중심(0° Weld), 용접부 인근 열영향부(HAZ), 그리고 용접부와 무관한 모재 2개 지점(예: 90°, 180°)을 함께 측정하여 비교합니다. 여기에 파이프 길이 방향으로 공정 조건이 다른 구간(예: 축관 교정율별 구간)을 나누어 측정하면, 원주 방향(위치)과 길이 방향(공정 조건) 두 축에서 잔류응력 분포를 입체적으로 파악할 수 있습니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>파이프처럼 곡률이 있는 표면도 홀드릴링 측정이 가능한가요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">가능합니다. SINT MTS3000 시스템은 자석식·벨트식 고정 지그를 사용해 곡면에 드릴링 헤드를 수직으로 정렬할 수 있어, 배관·압력용기·환봉 등 곡률이 있는 부재에도 ASTM E837-13 기준 측정이 적용됩니다. 다만 곡률 반경이 작을수록 게이지 부착 및 얼라인먼트에 숙련도가 필요하므로, 파이프 외경과 두께 사양을 사전에 확인해 측정 지그를 준비합니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:0; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>측정 성적서에는 어떤 내용이 포함되나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">ASTM E837-13 기준 3가지 해석 방식(CALC1 균일분포법, CALC2 Tikhonov 비균일분포법, CALC3 적분법)의 채널별 주응력(Smax/Smin)·방향각(Beta)·상당응력(Von Mises/Tresca)을 깊이별로 제공합니다. 다채널(예: 16채널) 측정 시 위치별·조건별 비교표와 원본 계측 그래프도 함께 수록되며, PDF 성적서로 발행되어 품질 인증·연구보고서 자료로 활용할 수 있습니다.</p>
+        </div>
+      </details>
+
+    </div><!-- /FAQ -->
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section style="padding:40px 0 80px;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in" style="padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius);">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">강관·배관 잔류응력 측정 · 장비 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">파이프 사양·측정 위치·비교 조건을 알려주시면 최적 측정 방안과 비용을 안내해 드립니다. 현장 출장 측정 · 시편 수령 측정 · 장비 구매 모두 가능합니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+        <a href="mailto:wgjeon@cndtec.co.kr" class="btn btn-ghost">wgjeon@cndtec.co.kr</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display:'none'; this.nextElementSibling.style.display:'block'">
+        <span style="display:none; font-family:'Manrope',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="residual-stress.html">잔류응력 측정</a></li><li><a href="welding-residual-stress.html">용접부 잔류응력</a></li><li><a href="pipe-residual-stress.html">강관 잔류응력</a></li><li><a href="heat-treatment-residual-stress.html">열처리 잔류응력</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta"><span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span></div>
+  </div>
+</footer>
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+</body>
+</html>

@@ -93,6 +93,12 @@ resources/field-service.html, sensors.html — 2개만 "// COMING SOON" 상태�
 ## ⭐ 신규 기술자료 페이지 만들 때마다 sitemap.xml 등록 여부 반드시 재확인할 것
 - 2026-07-11 감사에서 실제 콘텐츠가 완성된 페이지 7개(custom-sensor, heat-treatment-residual-stress, peening-residual-stress, welding-residual-stress, pzt-tube-gauge, rotor-balancing, windturbine-stress)가 sitemap.xml에서 누락된 채 방치되어 있었음을 발견·수정. resources/index.html에 카드를 추가하는 체크리스트 항목(5번)만으로는 부족했던 것 — 카드 추가와 sitemap 추가를 별개 체크로 취급해 매번 둘 다 확인할 것.
 
+## ⭐ 2026-07-11 신규 기술자료: 강관(파이프) 잔류응력 측정
+- resources/pipe-residual-stress.html 신규 생성. 현대스틸파이프 LSAW 축관 잔류응력 성적서(CND-26-27, ASTM E837-13, API 5L X65M PSL2, 16채널 A/B/C/D × 미교정/0.04%/0.18%/0.27%)의 실측 데이터를 참조해 작성.
+- 이미지는 assets/images/파이프 잔류응력측정/ 폴더 사용 (잔류응력측정 파이프.jpg, 잔류응력측정 스트레인게이지 부착_01·02.jpg, 잔류응력측정_01·02.jpg). 표준 헤더/모바일메뉴/footer 템플릿 적용 완료.
+- resources/index.html에 카드 추가(용접부 잔류응력 카드 다음), sitemap.xml에 <url> 등록 완료.
+- git add 시 신규 이미지 폴더(assets/images/파이프 잔류응력측정/) 반드시 함께 포함할 것.
+
 ## sitemap.xml / robots.txt ✅ (2026-06-22 생성)
 - 루트에 sitemap.xml(실제 콘텐츠 있는 13페이지만 등록), robots.txt(sitemap 경로 포함) 생성 완료 — 커밋/푸시 필요
 - 위 4개 스텁 페이지는 콘텐츠 작성 전까지 sitemap 제외
