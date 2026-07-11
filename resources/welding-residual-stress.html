@@ -370,20 +370,18 @@
         <button class="lang-btn" data-lang="en">EN</button>
       </div>
       <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
     </div>
-    <button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="../about.html">회사소개</a>
-    <a href="../products.html">사업분야·제품</a>
-    <a href="../projects.html">주요실적</a>
-    <a href="index.html">기술자료</a>
-    <a href="../index.html#blog">블로그</a>
-    <a href="../contact.html">문의</a>
   </div>
 </header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../index.html#blog">블로그</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
 
 <main style="max-width:860px; margin:0 auto; padding:100px 24px 80px;">
 
@@ -650,42 +648,50 @@
 </main>
 
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="../assets/images/cnd-logo.png" alt="CND TECH" style="height:32px; filter:brightness(0) invert(1); opacity:0.8;"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-      <span style="display:none; font-weight:700; font-size:16px;"><span style="color:var(--accent)">CND</span> TECH</span>
-      <p style="font-size:13px; color:rgba(255,255,255,0.5); margin-top:8px;">계측 솔루션 전문 기업</p>
-    </div>
-    <div class="footer-links">
-      <div>
-        <h4>Resources</h4>
-        <a href="residual-stress.html">잔류응력 측정</a>
-        <a href="peening-residual-stress.html">피닝 잔류응력 측정</a>
-        <a href="welding-residual-stress.html">용접 잔류응력 측정</a>
-        <a href="heat-treatment-residual-stress.html">열처리 잔류응력 측정</a>
-        <a href="strain-gauge.html">스트레인게이지</a>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
       </div>
-      <div>
-        <h4>Company</h4>
-        <a href="../about.html">회사소개</a>
-        <a href="../products.html">사업분야·제품</a>
-        <a href="../projects.html">주요실적</a>
-        <a href="../contact.html">문의</a>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <a href="tel:031-680-1225">031-680-1225</a>
-        <a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a>
-        <p style="font-size:12px; color:rgba(255,255,255,0.35); margin-top:8px; line-height:1.5;">경기도 화성시 동탄영천로 131<br>코너원스마트타워 1018호</p>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="residual-stress.html">잔류응력 측정</a></li><li><a href="peening-residual-stress.html">피닝 잔류응력 측정</a></li><li><a href="welding-residual-stress.html">용접 잔류응력 측정</a></li><li><a href="heat-treatment-residual-stress.html">열처리 잔류응력 측정</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank" rel="noopener">Tistory Blog</a></li></ul></div>
       </div>
     </div>
-  </div>
-  <div class="footer-meta">
-    <span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span>
+    <div class="footer-meta"><span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span></div>
   </div>
 </footer>
 
-<script src="../js/main.js"></script>
+<script>
+// 언어 토글
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+
+// 모바일 메뉴
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+
+// Fade-in observer
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
