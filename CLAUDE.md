@@ -9,7 +9,7 @@
 - contact.html ✅
 - JSON-LD 구조화 데이터 ✅
 - FAQ 섹션 ✅
-- Netlify 설정 ✅ (netlify.toml, _redirects)
+- ⚠️ netlify.toml, _redirects — 실사용 안 함 (레거시 파일, 삭제 검토 대상. 실제 배포는 GitHub Pages)
 - SVG 로고 제작 및 HTML 교체 ✅
 - 파비콘 교체 ✅
 - 커스텀 도메인 Cloudflare 설정 ✅
@@ -22,7 +22,7 @@
 - 기술자료 섹션 추가 ✅ (resources/ 6개 페이지)
 - Google Analytics 삽입 ✅ (G-B25Y10FQK1)
 - 스트레인게이지 부착 가이드 페이지 추가 ✅ (resources/strain-gauge-bonding.html, 사진 10장 포함)
-- 전체 사이트 콘텐츠 업데이트 커밋 & GitHub 푸시 완료 ✅ (2026-06-15, GitHub Desktop 사용 → Netlify 자동 배포)
+- 전체 사이트 콘텐츠 업데이트 커밋 & GitHub 푸시 완료 ✅ (2026-06-15, GitHub Desktop 사용 → GitHub Pages 자동 배포)
 - strain-gauge-bonding.html STEP06/07 콘텐츠 수정 및 SEO 타이틀 변경 ✅ (2026-06-15, "스트레인게이지 부착법 (Strain Gauge Installation)"로 title/meta/JSON-LD/H1 통일, STEP07을 "표면 세정"으로 개명)
 - strain-gauge-bonding.html 설명 글씨 크기 확대 ✅ (2026-06-15, STEP01~10 설명 문단 font-size 15px→16px)
 - daq-system.html 제품명 "CND GTDL" → "GTDL"로 전체 수정 ✅ (2026-06-15, title/meta/JSON-LD/H1/alt/본문/모델명 10곳, "CND TECH" 회사명은 그대로 유지)
@@ -61,15 +61,23 @@ cndtec-website/
 │   └── strain-gauge-bonding.html
 ├── css/style.css
 ├── assets/images/
-├── netlify.toml
-└── _redirects
+├── CNAME                    ← GitHub Pages 커스텀 도메인 설정 (www.cndtec.co.kr)
+├── netlify.toml             ← 미사용 레거시 파일
+└── _redirects                ← 미사용 레거시 파일
 ```
+
+## ⭐ 배포 방식: GitHub Pages (Netlify 아님 — 2026-07-11 정정)
+- 배포 경로: GitHub 저장소 `cndtec/cndtec-website` main 브랜치 → GitHub Pages 자동 배포
+- 커스텀 도메인: 루트의 `CNAME` 파일에 `www.cndtec.co.kr` 지정 → GitHub Pages가 이 값으로 서빙
+- DNS/리다이렉트(비-www→www)는 Cloudflare에서 처리
+- netlify.toml, _redirects 파일은 과거 검토 흔적이 남은 미사용 파일 — 실제 배포에 아무 영향 없음. 신뢰하지 말 것
+- git remote: https://github.com/cndtec/cndtec-website.git (origin, main)
 
 ## 남은 작업
 - 사진 실제 삽입 (assets/images/사진_배치_가이드.txt 참고)
 - 기술자료 페이지 세부 내용 다듬기
-- 도메인 전파 확인 후 GitHub Pages Custom domain 설정
-- Netlify 배포 후 Google Search Console / 네이버 서치어드바이저에 sitemap.xml 제출 필요 (아직 미제출)
+- 도메인 전파 확인 (GitHub Pages Custom domain은 CNAME 파일로 이미 설정 완료)
+- GitHub Pages 배포 확인 후 Google Search Console / 네이버 서치어드바이저에 sitemap.xml 제출 필요 (아직 미제출)
 
 ## 다음 기술자료 후보 (제목·키워드 이미 세팅된 빈 스텁 페이지)
 resources/custom-sensor.html, field-service.html, sensors.html, vibration.html — 4개 모두 "// COMING SOON" 상태로 실제 콘텐츠 없음. 그래서 resources/index.html 목록에는 의도적으로 미노출, sitemap.xml에서도 제외, <meta name="robots" content="noindex, follow"> 추가해 둠 (저품질·중복 콘텐츠로 색인되는 것 방지).
@@ -123,7 +131,7 @@ resources/custom-sensor.html, field-service.html, sensors.html, vibration.html �
 
 ## 파일 위치
 - 웹사이트: C:\Users\wgjeo\클로이드 폴더\cndtec-website\
-- bash 경로: /sessions/practical-eloquent-darwin/mnt/클로이드 폴더/cndtec-website/
+- bash 경로: /sessions/epic-zen-euler/mnt/클로이드 폴더/cndtec-website/ (세션마다 mount 이름이 바뀌므로 매 세션 시작 시 재확인 필요)
 
 ## ⚠️ 실제 도메인: https://www.cndtec.co.kr (canonical, www 포함!)
 - 2026-06-22 확인: Google Search Console DNS 인증 화면에서 실제 운영 도메인이 cndtec.co.kr임을 확인
@@ -147,7 +155,7 @@ resources/custom-sensor.html, field-service.html, sensors.html, vibration.html �
   공식 웹사이트 우선 노출로 알고리즘 변화 중
 
 ### 2. 홈페이지 전략 (최우선)
-현재 상태: 90% 완성, Netlify 배포 예정
+현재 상태: 90% 완성, GitHub Pages 배포 완료 (main 브랜치 자동 배포)
 추가 작업 목록:
 - /services/residual-stress
 - /services/noise-measurement
