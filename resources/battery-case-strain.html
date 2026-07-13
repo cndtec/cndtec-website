@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>차량용 배터리 케이스 스트레인게이지 부착 — 충전 팽창 응력 측정 | 씨앤디테크</title>
+<meta name="description" content="차량용 배터리 케이스·셀에 스트레인게이지를 부착해 충전 시 발생하는 팽창 변형을 측정한 현장 계측 사례. DAQ 시스템 연동 신호 확인부터 데이터 취득까지 씨앤디테크가 지원했습니다." />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/battery-case-strain.html" />
+<meta property="og:title" content="차량용 배터리 케이스 스트레인게이지 부착 — 충전 팽창 응력 측정 | 씨앤디테크" />
+<meta property="og:description" content="배터리 충전 시 팽창 현상을 스트레인게이지로 측정한 현장 계측 사례. 셀 부착부터 DAQ 신호 확인까지 지원." />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/cnd-logo-400.png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:alt" content="CND TECH 씨앤디테크 로고" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/battery-case-strain.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=6">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "차량용 배터리 케이스 스트레인게이지 부착 — 충전 팽창 응력 측정",
+  "description": "차량용 배터리 케이스·셀에 스트레인게이지를 부착해 충전 시 발생하는 팽창 변형을 측정한 현장 계측 사례. DAQ 시스템 연동 신호 확인부터 데이터 취득까지 지원.",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "inLanguage": "ko",
+  "keywords": "배터리 스트레인게이지 설치, 배터리 충전 팽창 응력, 배터리 변형 측정, 배터리 충전 팽창 계측, EV 배터리 셀 응력측정, 스트레인게이지 부착, DAQ 신호 확인"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "배터리 충전 시 팽창 현상을 왜 스트레인게이지로 측정하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "리튬이온 배터리 셀은 충·방전 과정에서 전극 소재의 부피 변화로 인해 미세하게 팽창·수축합니다. 이 팽창이 반복되면 배터리 케이스와 셀 고정 구조에 지속적인 응력이 가해져 케이스 변형, 실링 손상, 내부 셀 압박 등 안전·수명 문제로 이어질 수 있습니다. 스트레인게이지는 이 팽창량을 변형률(strain) 데이터로 직접 정량화할 수 있어 배터리 케이스 구조 설계와 안전성 검증에 핵심적인 측정 수단으로 사용됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "배터리 셀·케이스에 스트레인게이지를 부착할 때 어떤 점이 까다로운가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "배터리 셀 표면은 파우치·캔 재질의 곡면이거나 협소한 내부 공간에 위치하는 경우가 많아 표준 평면 부착보다 정밀한 위치 선정과 접착 공정이 요구됩니다. 또한 배터리 시험 특성상 충·방전 사이클이 반복되므로 접착 내구성과 리드선 배선의 안정성이 중요하며, 셀 간 간섭 없이 배선을 정리하는 노하우가 필요합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "배터리 팽창 측정 시 DAQ 시스템은 어떻게 구성하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "부착된 스트레인게이지를 브릿지 회로로 결선한 뒤 DAQ(데이터 수집장치)에 연결해 신호를 확인합니다. 충·방전 사이클 전 구간에서 변형률 데이터를 연속으로 취득하며, 채널 수는 측정 포인트(셀 개수·위치)에 따라 다채널로 구성합니다. 씨앤디테크는 게이지 부착부터 DAQ 연동 신호 확인, 데이터 취득까지 일괄 지원합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "이 측정은 어떤 분야의 시험에 활용되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "전기차(EV)·ESS용 배터리 팩 및 셀의 구조 안전성 검증, 배터리 케이스 설계 최적화, 충·방전 사이클에 따른 장기 변형 추이 분석 등에 활용됩니다. 자동차부품 연구기관, 배터리 제조사, 완성차 업체의 배터리 안전 시험에서 실제로 적용된 측정 방식입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "씨앤디테크의 스트레인게이지 부착 지원 역량은 어느 정도인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "씨앤디테크의 현장 지원 인원은 모두 20년 이상의 계측 현장 경험을 보유하고 있으며, 독일 현지에서 스트레인게이지 부착 관련 교육을 이수했습니다. 국내에서 스트레인게이지 이론·부착 세미나를 다수 진행한 이력도 있으며, 연간 500포인트 이상의 스트레인게이지 설치 및 시험 지원을 수행하고 있습니다."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+.rs-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+@media (max-width: 640px) {
+  .rs-stat-grid { grid-template-columns: 1fr; }
+}
+.rs-stat-card {
+  padding: 24px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+}
+.rs-stat-card .stat-val {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.rs-stat-card .stat-label {
+  font-size: 13px;
+  color: var(--text-mute);
+  line-height: 1.4;
+}
+
+.rs-section {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--line);
+}
+.rs-section:last-child { border-bottom: none; }
+.rs-section-title {
+  font-family: 'Manrope', 'Pretendard', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rs-section-title::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 22px;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.rs-img-wrap {
+  margin: 24px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+}
+.rs-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.rs-img-caption {
+  padding: 10px 16px;
+  font-size: 12px;
+  color: var(--text-mute);
+  background: var(--bg-card);
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.rs-img-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+@media (max-width: 640px) {
+  .rs-img-duo { grid-template-columns: 1fr; }
+}
+
+.rs-step-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+@media (max-width: 720px) {
+  .rs-step-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .rs-step-grid { grid-template-columns: 1fr; }
+}
+.rs-step {
+  padding: 20px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.rs-step .step-num {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+}
+.rs-step .step-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+.rs-step .step-desc {
+  font-size: 13px;
+  color: var(--text-mute);
+  line-height: 1.5;
+}
+
+.rs-app-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+.rs-app-tag {
+  padding: 6px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Manrope',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+<nav class="mobile-subnav" aria-label="모바일 카테고리 메뉴">
+  <a href="../about.html">회사소개</a>
+  <a href="../products.html">사업분야·제품</a>
+  <a href="../projects.html">주요실적</a>
+  <a href="index.html" class="pill-active">기술자료</a>
+  <a href="../index.html#blog">블로그</a>
+  <a href="../contact.html">문의</a>
+</nav>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../index.html#blog">블로그</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono','JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">현장 계측 사례 · EV BATTERY STRAIN</div>
+      <h1 style="font-family:'Manrope','Pretendard',sans-serif; font-size:clamp(28px,5vw,52px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">차량용 배터리 케이스<br><span class="accent">스트레인게이지 부착 — 충전 팽창 응력 측정</span></h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:720px; line-height:1.7; margin-bottom:0;">차량용 배터리는 충전 시 셀 내부 전극 소재의 부피 변화로 미세하게 팽창합니다. 씨앤디테크는 배터리 셀·케이스에 스트레인게이지를 부착하고 DAQ 시스템으로 신호를 확인해, 충전 중 발생하는 팽창 변형을 데이터로 정량화하는 현장 계측을 지원했습니다.</p>
+    </div>
+
+    <div class="rs-stat-grid fade-in">
+      <div class="rs-stat-card">
+        <div class="stat-val">배터리 셀</div>
+        <div class="stat-label">셀 표면 스트레인게이지 부착<br>충전 팽창 변형 측정</div>
+      </div>
+      <div class="rs-stat-card">
+        <div class="stat-val">DAQ 연동</div>
+        <div class="stat-label">신호 확인부터 측정까지<br>DAQ 시스템 일괄 지원</div>
+      </div>
+      <div class="rs-stat-card">
+        <div class="stat-val">연 500pt+</div>
+        <div class="stat-label">연간 500포인트 이상<br>스트레인게이지 설치·시험 지원</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 본문 ── -->
+<section style="padding:0 0 100px;">
+  <div class="container" style="max-width:860px;">
+
+    <!-- 1. 개요 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">배터리 충전 팽창을 측정하는 이유</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:24px;">
+        리튬이온 배터리 셀은 충·방전 과정에서 전극 소재의 부피 변화로 인해 미세하게 팽창·수축합니다.
+        이 팽창이 반복되면 배터리 <strong>케이스와 셀 고정 구조에 지속적인 응력</strong>이 가해져 케이스 변형,
+        실링부 손상, 내부 셀 압박 등 안전·수명 문제로 이어질 수 있습니다.
+      </p>
+      <p style="font-size:14px; color:var(--text-mute); line-height:1.7;">
+        씨앤디테크는 배터리 케이스에 스트레인게이지 부착 작업을 진행하여, 차량용 배터리 충전 시 팽창되는
+        현상을 스트레인게이지를 이용해 정량적으로 측정하는 시험을 지원했습니다. 배터리 셀에 게이지를 부착한 뒤
+        DAQ 시스템을 통해 신호 확인, 데이터 측정까지 전 과정을 담당했습니다.
+      </p>
+
+      <div class="rs-img-wrap" style="margin-top:28px;">
+        <img src="../assets/images/battery-case-strain/battery-strain-gauge-01.jpg"
+             alt="차량용 배터리 케이스 스트레인게이지 부착 현장" loading="lazy"
+             style="width:100%; height:auto; max-height:420px; object-fit:contain; background:#f8f8f8;"
+             onerror="this.closest('.rs-img-wrap').style.display='none'">
+        <div class="rs-img-caption">배터리 셀 스트레인게이지 부착 현장</div>
+      </div>
+    </div>
+
+    <!-- 2. 측정 방법 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">배터리 셀·케이스 스트레인게이지 측정 절차</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:20px;">
+        배터리 셀 표면은 파우치·캔 재질의 곡면이거나 협소한 내부 공간에 위치하는 경우가 많아, 표준 평면 부착보다
+        정밀한 위치 선정과 접착 공정, 배선 정리가 요구됩니다.
+      </p>
+      <div class="rs-step-grid">
+        <div class="rs-step">
+          <div class="step-num">01</div>
+          <div class="step-title">측정 위치 선정</div>
+          <div class="step-desc">배터리 케이스·셀 표면에서 팽창 변형이 집중되는 지점을 선정</div>
+        </div>
+        <div class="rs-step">
+          <div class="step-num">02</div>
+          <div class="step-title">표면 처리·게이지 부착</div>
+          <div class="step-desc">곡면·협소 공간에 맞춘 표면 연마·세척 후 스트레인게이지 정밀 부착</div>
+        </div>
+        <div class="rs-step">
+          <div class="step-num">03</div>
+          <div class="step-title">배선·브릿지 결선</div>
+          <div class="step-desc">셀 간 간섭 없이 리드선을 정리하고 브릿지 회로로 결선</div>
+        </div>
+        <div class="rs-step">
+          <div class="step-num">04</div>
+          <div class="step-title">DAQ 연동 신호 확인</div>
+          <div class="step-desc">DAQ 시스템에 연결해 채널별 신호를 확인하고 이상 유무 점검</div>
+        </div>
+        <div class="rs-step">
+          <div class="step-num">05</div>
+          <div class="step-title">충·방전 사이클 측정</div>
+          <div class="step-desc">충전 전 구간 동안 변형률 데이터를 연속으로 취득</div>
+        </div>
+        <div class="rs-step">
+          <div class="step-num">06</div>
+          <div class="step-title">데이터 정리·지원</div>
+          <div class="step-desc">취득된 팽창 변형 데이터를 정리해 고객사 분석에 활용할 수 있도록 지원</div>
+        </div>
+      </div>
+
+      <div class="rs-img-duo" style="margin-top:28px;">
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/battery-case-strain/battery-strain-gauge-02.jpg"
+               alt="배터리 셀 스트레인게이지 부착 클로즈업" loading="lazy"
+               style="width:100%; height:auto; max-height:340px; object-fit:contain; background:#f8f8f8;"
+               onerror="this.closest('.rs-img-wrap').style.display='none'">
+          <div class="rs-img-caption">배터리 셀 게이지 부착 클로즈업</div>
+        </div>
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/battery-case-strain/battery-strain-gauge-03.jpg"
+               alt="배터리 스트레인게이지 DAQ 신호 확인 현장" loading="lazy"
+               style="width:100%; height:auto; max-height:340px; object-fit:contain; background:#f8f8f8;"
+               onerror="this.closest('.rs-img-wrap').style.display='none'">
+          <div class="rs-img-caption">DAQ 시스템 연동 신호 확인</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. 지원 역량 및 서비스 범위 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">지원 역량 및 서비스 범위</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:20px;">
+        씨앤디테크의 현장 지원 인원은 모두 20년 이상의 계측 현장 경험을 보유하고 있으며, 독일 현지에서
+        스트레인게이지 부착 관련 교육을 이수했습니다. 국내에서 스트레인게이지 이론·부착 세미나를 다수 진행한
+        이력도 있으며, 연간 500포인트 이상의 스트레인게이지 설치 및 시험 지원을 수행하고 있습니다.
+      </p>
+
+      <div class="rs-app-tags">
+        <span class="rs-app-tag">EV·ESS 배터리 팩 안전성 검증</span>
+        <span class="rs-app-tag">배터리 케이스 구조 설계 최적화</span>
+        <span class="rs-app-tag">충·방전 사이클 장기 변형 분석</span>
+        <span class="rs-app-tag">자동차부품 연구기관·완성차 시험</span>
+        <span class="rs-app-tag">현장 출장 계측</span>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;">
+        <div style="padding:20px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);">
+          <div style="font-size:13px; font-family:'IBM Plex Mono','JetBrains Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:8px;">현장 계측 용역</div>
+          <div style="font-size:14px; color:var(--text-dim); line-height:1.6;">배터리 셀·케이스 스트레인게이지 부착<br>DAQ 시스템 연동 신호 확인·데이터 측정<br>충·방전 사이클 변형 데이터 취득</div>
+        </div>
+        <div style="padding:20px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);">
+          <div style="font-size:13px; font-family:'IBM Plex Mono','JetBrains Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:8px;">교육·이력</div>
+          <div style="font-size:14px; color:var(--text-dim); line-height:1.6;">20년 이상 경력의 지원 인원<br>독일 스트레인게이지 부착 교육 수료<br>국내 스트레인게이지 이론·부착 세미나 진행</div>
+        </div>
+      </div>
+
+      <p style="font-size:14px; color:var(--text-mute); margin-top:24px; margin-bottom:16px;">관련 기술 자료 더 보기:</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="strain-gauge.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 스트레인게이지 원리·선정</a>
+        <a href="strain-gauge-bonding.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 스트레인게이지 부착법 가이드</a>
+        <a href="daq-system.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ DAQ 데이터 수집장치</a>
+        <a href="field-service.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 현장 계측 용역</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section style="padding:48px 0 0;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in">
+      <h2 style="font-family:'Manrope','Pretendard',sans-serif; font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:8px; padding-left:14px; border-left:4px solid var(--accent);">자주 묻는 질문 (FAQ)</h2>
+      <p style="font-size:13px; color:var(--text-mute); margin-bottom:28px; padding-left:18px;">차량용 배터리 케이스 스트레인게이지 측정 관련 질문</p>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>배터리 충전 시 팽창 현상을 왜 스트레인게이지로 측정하나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">리튬이온 배터리 셀은 충·방전 과정에서 전극 소재의 부피 변화로 인해 미세하게 팽창·수축합니다. 이 팽창이 반복되면 배터리 케이스와 셀 고정 구조에 지속적인 응력이 가해져 케이스 변형, 실링 손상, 내부 셀 압박 등 안전·수명 문제로 이어질 수 있습니다. 스트레인게이지는 이 팽창량을 변형률(strain) 데이터로 직접 정량화할 수 있어 배터리 케이스 구조 설계와 안전성 검증에 핵심적인 측정 수단으로 사용됩니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>배터리 셀·케이스에 스트레인게이지를 부착할 때 어떤 점이 까다로운가요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">배터리 셀 표면은 파우치·캔 재질의 곡면이거나 협소한 내부 공간에 위치하는 경우가 많아 표준 평면 부착보다 정밀한 위치 선정과 접착 공정이 요구됩니다. 또한 배터리 시험 특성상 충·방전 사이클이 반복되므로 접착 내구성과 리드선 배선의 안정성이 중요하며, 셀 간 간섭 없이 배선을 정리하는 노하우가 필요합니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>배터리 팽창 측정 시 DAQ 시스템은 어떻게 구성하나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">부착된 스트레인게이지를 브릿지 회로로 결선한 뒤 DAQ(데이터 수집장치)에 연결해 신호를 확인합니다. 충·방전 사이클 전 구간에서 변형률 데이터를 연속으로 취득하며, 채널 수는 측정 포인트(셀 개수·위치)에 따라 다채널로 구성합니다. 씨앤디테크는 게이지 부착부터 DAQ 연동 신호 확인, 데이터 취득까지 일괄 지원합니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>이 측정은 어떤 분야의 시험에 활용되나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">전기차(EV)·ESS용 배터리 팩 및 셀의 구조 안전성 검증, 배터리 케이스 설계 최적화, 충·방전 사이클에 따른 장기 변형 추이 분석 등에 활용됩니다. 자동차부품 연구기관, 배터리 제조사, 완성차 업체의 배터리 안전 시험에서 실제로 적용된 측정 방식입니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:0; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>씨앤디테크의 스트레인게이지 부착 지원 역량은 어느 정도인가요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">씨앤디테크의 현장 지원 인원은 모두 20년 이상의 계측 현장 경험을 보유하고 있으며, 독일 현지에서 스트레인게이지 부착 관련 교육을 이수했습니다. 국내에서 스트레인게이지 이론·부착 세미나를 다수 진행한 이력도 있으며, 연간 500포인트 이상의 스트레인게이지 설치 및 시험 지원을 수행하고 있습니다.</p>
+        </div>
+      </details>
+
+    </div><!-- /FAQ -->
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section style="padding:40px 0 80px;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in" style="padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius);">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">배터리 응력 측정 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">배터리 셀·케이스 형태, 측정 목적(안전성 검증·설계 최적화 등), 충·방전 조건을 알려주시면 최적 게이지 구성과 DAQ 시스템을 안내해 드립니다. 현장 출장 측정도 가능합니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+        <a href="mailto:wgjeon@cndtec.co.kr" class="btn btn-ghost">wgjeon@cndtec.co.kr</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Manrope',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="strain-gauge-bonding.html">스트레인게이지 부착법</a></li><li><a href="daq-system.html">DAQ 시스템</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta"><span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span></div>
+  </div>
+</footer>
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+</body>
+</html>
