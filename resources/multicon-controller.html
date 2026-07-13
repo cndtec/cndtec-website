@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>산업용 컨트롤러 SIMEX MultiCon — 계측기·컨트롤러·HMI·SCADA 통합 시스템 | 씨앤디테크</title>
+<meta name="description" content="SIMEX MultiCon CMC-141 산업용 다채널 데이터 레코더·컨트롤러 소개. 계측기+컨트롤러+HMI+SCADA 통합, 최대 41개 입출력 모듈·90개 논리채널, 전압·전류·압력·온도·변위·Force 등 다양한 신호 계측 및 실시간 모니터링." />
+<meta property="og:title" content="산업용 컨트롤러 SIMEX MultiCon | 씨앤디테크" />
+<meta property="og:description" content="계측기+컨트롤러+HMI+SCADA가 하나로 통합된 SIMEX MultiCon CMC-141 산업용 데이터 레코더 소개" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/cnd-logo-400.png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:alt" content="CND TECH 씨앤디테크 로고" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/multicon-controller.html" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/multicon-controller.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=6">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "산업용 컨트롤러 SIMEX MultiCon — 계측기·컨트롤러·HMI·SCADA 통합 시스템",
+  "description": "SIMEX MultiCon CMC-141 산업용 다채널 데이터 레코더·컨트롤러 소개. 계측기+컨트롤러+HMI+SCADA 통합, 최대 41개 입출력 모듈·90개 논리채널, 전압·전류·압력·온도·변위·Force 등 다양한 신호 계측 및 실시간 모니터링.",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "inLanguage": "ko",
+  "keywords": "SIMEX MultiCon, 산업용 컨트롤러, 다채널 데이터 레코더, 데이터 로거, MultiCon CMC-141, SCADA, HMI, Modbus RTU"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "SIMEX MultiCon은 어떤 장비인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SIMEX MultiCon은 계측기, 컨트롤러, HMI, SCADA의 기능이 하나로 통합된 산업용 다채널 데이터 레코더·데이터 로거입니다. 전압, 전류, 압력, 온도, 변위, Force 등 다양한 신호 및 센서 신호를 계측해 실시간 모니터링과 제어를 동시에 수행할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "MultiCon CMC-141의 주요 사양은 어떻게 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Linux 기반의 안정적인 펌웨어, 최대 41개의 입력/출력 모듈, 90개의 논리 채널을 지원합니다. 5.7인치 TFT 컬러 LCD 터치스크린 디스플레이를 탑재했으며, 최대 10Hz(초당 10개 샘플) 속도로 데이터를 기록하고 4GB 내부 데이터 메모리를 갖추고 있습니다. RS-485(Modbus RTU), USB 호스트, 이더넷 통신을 지원합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "MultiCon은 어떤 입력 신호를 지원하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아날로그 신호(0/4~20mA, 0/1~5V, 0/2~10V 절연형, 최대 15채널 유니버설), 열전대(J, K, S, T, N, R, B, E), 저항(0~300Ω, 0~3kΩ), RTD/PT(Pt100, Pt500, Pt1000 등), 카운터·플로우미터·레이트미터(최대 12개), 디지털 입력(최대 73개) 등 폭넓은 신호를 하나의 장비에서 계측할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "MultiCon은 어떤 출력과 통신 인터페이스를 지원하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "출력으로는 최대 24채널의 절연형 아날로그(4-20mA), 최대 36개의 1A/250V 릴레이, 최대 18개의 5A/250V 릴레이, 최대 72개의 SSR을 지원합니다. 통신은 기본형 RS-485와 USB 호스트를 지원하며, ETU 버전은 이더넷(10Mb/s)까지, ACM 버전은 2xRS-485, RS-485/232, 이더넷까지 확장됩니다. Modbus RTU(Master/Slave), Modbus TCP Server, HTTP 프로토콜을 지원합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "MultiCon은 어떤 산업 현장에 적합한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MultiCon은 산업 자동 제어의 고급 애플리케이션을 위한 제품으로, 슬롯형 입력 채널로 원하는 신호 측정 조합을 자유롭게 구성할 수 있고 가상 채널로 수학 함수·타이머·프로필 생성 등 부가 기능도 지원합니다. RS-485·이더넷 통신으로 원격 모니터링이 가능해 플랜트, 제조 설비, 유틸리티 등 다양한 산업 현장의 다채널 계측·제어·SCADA 용도에 적합합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "씨앤디테크에서 어떤 지원을 받을 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "씨앤디테크는 SIMEX MultiCon을 포함해 현장의 측정 채널 수, 신호 종류, 통신 프로토콜 요구사항에 맞는 최적의 산업용 컨트롤러·데이터 레코더 구성을 상담해 드립니다. PC 소프트웨어 연동 및 SCADA 통합 관련 문의도 가능합니다."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+.rs-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+@media (max-width: 640px) {
+  .rs-stat-grid { grid-template-columns: 1fr; }
+}
+.rs-stat-card {
+  padding: 24px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+}
+.rs-stat-card .stat-val {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.rs-stat-card .stat-label {
+  font-size: 13px;
+  color: var(--text-mute);
+  line-height: 1.4;
+}
+
+.rs-section {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--line);
+}
+.rs-section:last-child { border-bottom: none; }
+.rs-section-title {
+  font-family: 'Manrope', 'Pretendard', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rs-section-title::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 22px;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.rs-img-wrap {
+  margin: 24px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+}
+.rs-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.rs-img-caption {
+  padding: 10px 16px;
+  font-size: 12px;
+  color: var(--text-mute);
+  background: var(--bg-card);
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.rs-img-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+@media (max-width: 640px) {
+  .rs-img-duo { grid-template-columns: 1fr; }
+}
+
+.rs-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+.rs-checklist li {
+  position: relative;
+  padding: 8px 0 8px 26px;
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+.rs-checklist li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.rs-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 13.5px;
+}
+.rs-spec-table th, .rs-spec-table td {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  text-align: left;
+}
+.rs-spec-table th {
+  background: var(--bg-card);
+  font-weight: 700;
+  color: var(--charcoal);
+  width: 32%;
+}
+.rs-spec-table td { color: var(--text-dim); }
+
+.rs-app-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+.rs-app-tag {
+  padding: 6px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Manrope',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+<nav class="mobile-subnav" aria-label="모바일 카테고리 메뉴">
+  <a href="../about.html">회사소개</a>
+  <a href="../products.html">사업분야·제품</a>
+  <a href="../projects.html">주요실적</a>
+  <a href="index.html" class="pill-active">기술자료</a>
+  <a href="../index.html#blog">블로그</a>
+  <a href="../contact.html">문의</a>
+</nav>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../index.html#blog">블로그</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono','JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">산업용 컨트롤러 · SIMEX MULTICON</div>
+      <h1 style="font-family:'Manrope','Pretendard',sans-serif; font-size:clamp(28px,5vw,50px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">산업용 컨트롤러<br><span class="accent">SIMEX MultiCon 완전 가이드</span></h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:720px; line-height:1.7; margin-bottom:0;">계측기 + 컨트롤러 + HMI + SCADA의 기능이 하나로 통합된 SIMEX사의 다채널 데이터 레코더 MultiCon. 전압·전류·압력·온도·변위·Force 등 다양한 신호를 계측해 실시간 모니터링과 제어를 동시에 지원합니다.</p>
+    </div>
+
+    <div class="rs-stat-grid fade-in">
+      <div class="rs-stat-card">
+        <div class="stat-val">41개 I/O</div>
+        <div class="stat-label">입력/출력 모듈<br>90개 논리 채널</div>
+      </div>
+      <div class="rs-stat-card">
+        <div class="stat-val">10Hz</div>
+        <div class="stat-label">최대 기록 속도<br>4GB 내부 메모리</div>
+      </div>
+      <div class="rs-stat-card">
+        <div class="stat-val">계측+제어+SCADA</div>
+        <div class="stat-label">HMI 터치스크린 통합<br>Modbus·이더넷 통신</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 본문 ── -->
+<section style="padding:0 0 100px;">
+  <div class="container" style="max-width:860px;">
+
+    <!-- 1. 개요 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">SIMEX MultiCon이란</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        SIMEX사의 다채널 데이터 레코더·데이터 로거인 MultiCon은 <strong>계측기 + 컨트롤러 + HMI + SCADA</strong>의
+        기능이 하나로 통합된 시스템입니다. 전압, 전류, 압력, 온도, 변위, Force 등 다양한 신호 및 센서 신호를
+        계측하여 실시간 모니터링을 지원하며, 산업 자동 제어의 고급 애플리케이션에 활용됩니다.
+      </p>
+      <p style="font-size:14px; color:var(--text-mute); line-height:1.7;">
+        RS-485 통신과 이더넷 인터페이스를 지원해 인터넷을 통한 원격 장치 모니터링이 가능하며, 슬롯형 입력
+        채널로 원하는 신호 측정 조합을 자유롭게 구성할 수 있습니다.
+      </p>
+
+      <div class="rs-img-wrap">
+        <img src="../assets/images/multicon/multicon-main.jpg" alt="SIMEX MultiCon 산업용 컨트롤러 데이터 레코더" loading="lazy" style="width:100%; height:auto; max-height:380px; object-fit:contain; background:#f8f8f8;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        <div class="rs-img-caption">SIMEX MultiCon 산업용 컨트롤러·데이터 레코더</div>
+      </div>
+    </div>
+
+    <!-- 2. CMC-141 특징 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">MultiCon CMC-141 특징</h2>
+      <ul class="rs-checklist">
+        <li>Linux 기반의 안정적인 펌웨어</li>
+        <li>41개의 사용 가능한 입력/출력 모듈</li>
+        <li>90개의 논리 채널</li>
+        <li>컬러 LCD 디스플레이 5.7" TFT, 터치스크린 지원</li>
+        <li>최대 속도 10Hz(초당 10개의 샘플)로 데이터 기록</li>
+        <li>4GB 내부 데이터 메모리</li>
+        <li>RS-485(Modbus RTU), USB 호스트, 이더넷 통신</li>
+      </ul>
+
+      <div class="rs-img-wrap">
+        <img src="../assets/images/multicon/multicon-product.jpg" alt="MultiCon CMC-141 제품 사진" loading="lazy" style="width:100%; height:auto; max-height:380px; object-fit:contain; background:#f8f8f8;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        <div class="rs-img-caption">MultiCon CMC-141 — 5.7인치 TFT 터치스크린 디스플레이</div>
+      </div>
+
+      <p style="font-size:14px; color:var(--text-dim); line-height:1.7; margin-top:16px;">
+        MultiCon 라인은 하나의 소형 장치에서 많은 수의 내장 입력/출력을 지원합니다. 슬롯형 입력 채널을 지원하기
+        때문에 원하는 신호 측정 조합이 용이하며, 가상 채널을 지원하여 직접 측정 판독, 수학 함수, 타이머, 프로필
+        생성이 가능하고 손쉽게 채널을 확장할 수 있습니다.
+      </p>
+
+      <div class="rs-img-wrap">
+        <img src="../assets/images/multicon/multicon-panel.jpg" alt="MultiCon 산업 현장 패널 설치 사진" loading="lazy" style="width:100%; height:auto; max-height:380px; object-fit:contain; background:#f8f8f8;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        <div class="rs-img-caption">산업 자동 제어 현장 적용 사례</div>
+      </div>
+    </div>
+
+    <!-- 3. 지원 신호 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">MultiCon 지원 입력·출력 신호</h2>
+
+      <h3 style="font-size:16px; font-weight:700; color:var(--charcoal); margin-bottom:12px;">▶ 지원 입력 신호</h3>
+      <table class="rs-spec-table">
+        <tr><th>아날로그 신호</th><td>최대 15채널 유니버설, 절연형: 0/4~20mA, 0/1~5V, 0/2~10V</td></tr>
+        <tr><th>써모커플</th><td>J, K, S, T, N, R, B, E</td></tr>
+        <tr><th>저항</th><td>0~300Ω, 0~3kΩ</td></tr>
+        <tr><th>RTD, PT</th><td>Pt100, Pt500, Pt1000(PN-EN); Pt'50, Pt'100, Pt'500(GOST)</td></tr>
+        <tr><th>카운터·플로우미터</th><td>최대 12개(counter / flowmeter / ratemeter)</td></tr>
+        <tr><th>디지털 입력</th><td>최대 73개</td></tr>
+      </table>
+
+      <h3 style="font-size:16px; font-weight:700; color:var(--charcoal); margin:24px 0 12px;">▶ 지원 출력 신호</h3>
+      <table class="rs-spec-table">
+        <tr><th>아날로그 출력</th><td>최대 24채널, 절연형 4-20mA</td></tr>
+        <tr><th>릴레이</th><td>최대 36개(1A/250V), 최대 18개(5A/250V)</td></tr>
+        <tr><th>SSR</th><td>최대 72개</td></tr>
+        <tr><th>전원</th><td>1 x 24V DC ±5%, 최대 200mA</td></tr>
+      </table>
+
+      <div class="rs-img-duo">
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/multicon/multicon-io-diagram-01.jpg" alt="MultiCon 입출력 모듈 구성도 1" loading="lazy" style="width:100%; height:220px; object-fit:cover;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        </div>
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/multicon/multicon-io-diagram-02.jpg" alt="MultiCon 입출력 모듈 구성도 2" loading="lazy" style="width:100%; height:220px; object-fit:cover;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        </div>
+      </div>
+      <p style="font-size:12px; color:var(--text-mute); text-align:center; margin-top:-8px;">MultiCon 슬롯형 입출력 모듈 구성</p>
+    </div>
+
+    <!-- 4. 통신·소프트웨어 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">외부 통신·PC 소프트웨어</h2>
+      <table class="rs-spec-table">
+        <tr><th>Basic version</th><td>RS-485, 1 x USB Host(전면 또는 후면)</td></tr>
+        <tr><th>ETU</th><td>1 또는 2 x USB Host, 1 x Ethernet 10Mb/s</td></tr>
+        <tr><th>ACM</th><td>2 x RS-485, 1 x RS-485/232, 1 또는 2 x USB Host, 1 x Ethernet 10Mb/s</td></tr>
+        <tr><th>지원 프로토콜</th><td>Modbus RTU(Master/Slave), Modbus TCP Server, HTTP</td></tr>
+      </table>
+
+      <p style="font-size:14px; color:var(--text-dim); line-height:1.7; margin:16px 0;">
+        이더넷·USB 지원으로 PC 소프트웨어를 통한 데이터 확인, 설정, 원격 모니터링이 가능합니다.
+      </p>
+      <div class="rs-img-wrap">
+        <img src="../assets/images/multicon/multicon-software.jpg" alt="MultiCon PC 소프트웨어 화면" loading="lazy" style="width:100%; height:auto; max-height:380px; object-fit:contain; background:#f8f8f8;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        <div class="rs-img-caption">MultiCon PC 소프트웨어 — 이더넷·USB 연동</div>
+      </div>
+    </div>
+
+    <!-- 5. 적용 분야 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">적용 분야</h2>
+      <p style="font-size:14px; color:var(--text-dim); line-height:1.7; margin-bottom:16px;">
+        SIMEX MultiCon은 산업 현장에서 컨트롤러와 데이터 레코더 기능을 동시에 지원하는 강력한 시스템이며,
+        합리적인 금액의 다채널 데이터 로거로 다양한 산업 자동화·모니터링 애플리케이션에 활용됩니다.
+      </p>
+      <div class="rs-app-tags">
+        <span class="rs-app-tag">플랜트 다채널 계측·제어</span>
+        <span class="rs-app-tag">SCADA 통합 모니터링</span>
+        <span class="rs-app-tag">온도·압력·유량 통합 관리</span>
+        <span class="rs-app-tag">원격 이더넷 모니터링</span>
+        <span class="rs-app-tag">산업 자동 제어</span>
+      </div>
+
+      <p style="font-size:14px; color:var(--text-mute); margin-top:20px; margin-bottom:16px;">관련 기술 자료 더 보기:</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="daq-system.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ DAQ 데이터 수집장치 완전 가이드</a>
+        <a href="gtdl.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ GTDL DAQ System</a>
+        <a href="dt9837-daq.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ DT9837·DT9857E 데이터수집장치</a>
+        <a href="pressure-sensor.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ BD센서 압력센서</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section style="padding:48px 0 0;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in">
+      <h2 style="font-family:'Manrope','Pretendard',sans-serif; font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:8px; padding-left:14px; border-left:4px solid var(--accent);">자주 묻는 질문 (FAQ)</h2>
+      <p style="font-size:13px; color:var(--text-mute); margin-bottom:28px; padding-left:18px;">SIMEX MultiCon 산업용 컨트롤러 관련 질문</p>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>SIMEX MultiCon은 어떤 장비인가요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">SIMEX MultiCon은 계측기, 컨트롤러, HMI, SCADA의 기능이 하나로 통합된 산업용 다채널 데이터 레코더·데이터 로거입니다. 전압, 전류, 압력, 온도, 변위, Force 등 다양한 신호 및 센서 신호를 계측해 실시간 모니터링과 제어를 동시에 수행할 수 있습니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>MultiCon CMC-141의 주요 사양은 어떻게 되나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">Linux 기반의 안정적인 펌웨어, 최대 41개의 입력/출력 모듈, 90개의 논리 채널을 지원합니다. 5.7인치 TFT 컬러 LCD 터치스크린 디스플레이를 탑재했으며, 최대 10Hz(초당 10개 샘플) 속도로 데이터를 기록하고 4GB 내부 데이터 메모리를 갖추고 있습니다. RS-485(Modbus RTU), USB 호스트, 이더넷 통신을 지원합니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>MultiCon은 어떤 입력 신호를 지원하나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">아날로그 신호(0/4~20mA, 0/1~5V, 0/2~10V 절연형, 최대 15채널 유니버설), 열전대(J, K, S, T, N, R, B, E), 저항(0~300Ω, 0~3kΩ), RTD/PT(Pt100, Pt500, Pt1000 등), 카운터·플로우미터·레이트미터(최대 12개), 디지털 입력(최대 73개) 등 폭넓은 신호를 하나의 장비에서 계측할 수 있습니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>MultiCon은 어떤 출력과 통신 인터페이스를 지원하나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">출력으로는 최대 24채널의 절연형 아날로그(4-20mA), 최대 36개의 1A/250V 릴레이, 최대 18개의 5A/250V 릴레이, 최대 72개의 SSR을 지원합니다. 통신은 기본형 RS-485와 USB 호스트를 지원하며, ETU 버전은 이더넷(10Mb/s)까지, ACM 버전은 2xRS-485, RS-485/232, 이더넷까지 확장됩니다. Modbus RTU(Master/Slave), Modbus TCP Server, HTTP 프로토콜을 지원합니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:0; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>MultiCon은 어떤 산업 현장에 적합한가요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">MultiCon은 산업 자동 제어의 고급 애플리케이션을 위한 제품으로, 슬롯형 입력 채널로 원하는 신호 측정 조합을 자유롭게 구성할 수 있고 가상 채널로 수학 함수·타이머·프로필 생성 등 부가 기능도 지원합니다. RS-485·이더넷 통신으로 원격 모니터링이 가능해 플랜트, 제조 설비, 유틸리티 등 다양한 산업 현장의 다채널 계측·제어·SCADA 용도에 적합합니다.</p>
+        </div>
+      </details>
+
+    </div><!-- /FAQ -->
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section style="padding:40px 0 80px;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in" style="padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius);">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">SIMEX MultiCon 도입 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">필요 입출력 채널 수, 계측 신호 종류, 통신 프로토콜(Modbus·이더넷 등)을 알려주시면 최적의 MultiCon 구성을 제안해 드립니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+        <a href="mailto:wgjeon@cndtec.co.kr" class="btn btn-ghost">wgjeon@cndtec.co.kr</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Manrope',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="daq-system.html">DAQ 데이터 수집장치</a></li><li><a href="gtdl.html">GTDL DAQ System</a></li><li><a href="dt9837-daq.html">DT9837·DT9857E</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta"><span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span></div>
+  </div>
+</footer>
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+</body>
+</html>
