@@ -225,6 +225,13 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://www.cndtec.co.kr/resources/dt9837-daq.html</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- sensors.html은 "준비 중" 스텁 페이지라 sitemap 제외 (noindex 처리). 콘텐츠 작성 후 추가할 것. -->
 
 </urlset>

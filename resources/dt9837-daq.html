@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DT9837·DT9857E 진동·소음 데이터수집장치 완전 가이드 — 4채널 기본형부터 64채널 확장형까지 | 씨앤디테크</title>
+<meta name="description" content="Data Translation DT9837 4채널 USB 진동 데이터수집장치와 DT9857E 8·16채널(최대 64채널 확장) 소음·진동 측정 시스템 비교 가이드. IEPE 센서 입력, 동기화 회전속도계, QuickDAQ 소프트웨어 소개." />
+<meta property="og:title" content="DT9837·DT9857E 진동·소음 데이터수집장치 완전 가이드 | 씨앤디테크" />
+<meta property="og:description" content="4채널 기본형 DT9837부터 최대 64채널 확장형 DT9857E까지, 진동·소음 측정용 데이터수집장치 라인업 비교" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/cnd-logo-400.png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:alt" content="CND TECH 씨앤디테크 로고" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/dt9837-daq.html" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/dt9837-daq.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=6">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "DT9837·DT9857E 진동·소음 데이터수집장치 완전 가이드 — 4채널 기본형부터 64채널 확장형까지",
+  "description": "Data Translation DT9837 4채널 USB 진동 데이터수집장치와 DT9857E 8·16채널(최대 64채널 확장) 소음·진동 측정 시스템 비교. IEPE 센서 입력, 동기화 회전속도계, QuickDAQ 소프트웨어 소개.",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "inLanguage": "ko",
+  "keywords": "DT9837, DT9857E, 진동 데이터수집장치, 소음 진동 측정 시스템, IEPE 데이터수집장치, 다채널 진동 DAQ, QuickDAQ, USB 진동 데이터수집장치"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "DT9837과 DT9857E의 가장 큰 차이는 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DT9837은 4채널 IEPE 입력을 지원하는 소형 USB 진동 데이터수집장치로, USB 케이블 하나로 PC 연결과 전원 공급이 동시에 가능해 휴대성과 간편한 셋업이 강점입니다. DT9857E는 기본 8채널 또는 16채널 구성이며 마스터/슬레이브 연결로 최대 4대까지 연동해 최대 64채널의 동시 IEPE 입력을 지원하는 확장형 시스템입니다. 소규모 현장 측정에는 DT9837, 다채널 동시 계측이 필요한 정밀 시험에는 DT9857E가 적합합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "DT9857E는 몇 채널까지 확장할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DT9857E는 기본 8채널 또는 16채널 모델로 시작하며, 마스터/슬레이브 연결을 통해 최대 4대까지 연동할 수 있습니다. 이 경우 최대 64채널의 IEPE 입력 채널과 최대 8채널의 아날로그 출력까지 확장되며, 모든 채널의 데이터를 시간 동기화된 하나의 스트림으로 취득할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "IEPE 센서 입력이란 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IEPE(ICP®)는 가속도계 등 압전형 센서에 정전류를 공급해 신호를 컨디셔닝하는 표준 인터페이스입니다. DT9837·DT9857E 모두 IEPE 센서 입력을 지원하여 별도의 외부 신호 컨디셔너 없이 가속도센서, 마이크로폰 등을 바로 연결해 진동·소음 신호를 측정할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "회전속도계(타코미터) 동기화는 왜 중요한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "회전기계의 진동 분석에서는 회전 속도(RPM)와 진동 신호를 동시에 취득해야 오더 분석(Order Analysis), 런업/코스트다운 분석, 공진 회피 설계 등이 가능합니다. DT9857E는 타코미터 입력이 IEPE 센서 입력과 시간 동기화되어 회전 속도 변화에 따른 진동 특성을 정확히 매칭할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "QuickDAQ 외 다른 프로그래밍 환경에서도 사용할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, DT9837·DT9857E 모두 자체 애플리케이션인 QuickDAQ(데이터 로깅·저장·분석·신호 생성, FFT 분석 옵션) 외에도 Visual C++®, Visual C#®, Visual Basic®.NET, DASYLab®, LabVIEW™, MATLAB® 등 널리 쓰이는 프로그래밍 환경용 드라이버를 지원합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "씨앤디테크에서 어떤 지원을 받을 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "씨앤디테크는 DT9837·DT9857E를 포함해 휴대용 측정 시스템, 웹 기반 시스템, 고정밀 초고속 데이터수집장치까지 폭넓게 취급하며, 측정 목적과 채널 수, 예산에 맞는 최적의 시스템을 제안해 드립니다. 채널 구성, OEM(보드·스틸케이스) 옵션, 소프트웨어 연동까지 상담 가능합니다."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+.rs-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+@media (max-width: 640px) {
+  .rs-stat-grid { grid-template-columns: 1fr; }
+}
+.rs-stat-card {
+  padding: 24px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+}
+.rs-stat-card .stat-val {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.rs-stat-card .stat-label {
+  font-size: 13px;
+  color: var(--text-mute);
+  line-height: 1.4;
+}
+
+.rs-section {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--line);
+}
+.rs-section:last-child { border-bottom: none; }
+.rs-section-title {
+  font-family: 'Manrope', 'Pretendard', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rs-section-title::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 22px;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.rs-img-wrap {
+  margin: 24px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+}
+.rs-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.rs-img-caption {
+  padding: 10px 16px;
+  font-size: 12px;
+  color: var(--text-mute);
+  background: var(--bg-card);
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.rs-img-trio {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+@media (max-width: 760px) {
+  .rs-img-trio { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .rs-img-trio { grid-template-columns: 1fr; }
+}
+
+.rs-img-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+@media (max-width: 640px) {
+  .rs-img-duo { grid-template-columns: 1fr; }
+}
+
+.rs-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 13.5px;
+}
+.rs-spec-table th, .rs-spec-table td {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  text-align: left;
+}
+.rs-spec-table th {
+  background: var(--bg-card);
+  font-weight: 700;
+  color: var(--charcoal);
+  width: 30%;
+}
+.rs-spec-table td { color: var(--text-dim); }
+
+.rs-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 13.5px;
+}
+.rs-compare-table th, .rs-compare-table td {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  text-align: center;
+}
+.rs-compare-table th {
+  background: var(--charcoal);
+  color: #fff;
+  font-weight: 700;
+}
+.rs-compare-table td:first-child {
+  text-align: left;
+  background: var(--bg-card);
+  font-weight: 600;
+  color: var(--charcoal);
+}
+.rs-compare-table td { color: var(--text-dim); }
+
+.rs-app-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+.rs-app-tag {
+  padding: 6px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Manrope',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+<nav class="mobile-subnav" aria-label="모바일 카테고리 메뉴">
+  <a href="../about.html">회사소개</a>
+  <a href="../products.html">사업분야·제품</a>
+  <a href="../projects.html">주요실적</a>
+  <a href="index.html" class="pill-active">기술자료</a>
+  <a href="../index.html#blog">블로그</a>
+  <a href="../contact.html">문의</a>
+</nav>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../index.html#blog">블로그</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono','JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">DATA ACQUISITION · DT9837 · DT9857E</div>
+      <h1 style="font-family:'Manrope','Pretendard',sans-serif; font-size:clamp(28px,5vw,50px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">DT9837·DT9857E<br><span class="accent">진동·소음 데이터수집장치 완전 가이드</span></h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:720px; line-height:1.7; margin-bottom:0;">4채널 USB 기본형 DT9837부터, 8·16채널 구성에서 마스터/슬레이브 연동으로 최대 64채널까지 확장되는 DT9857E까지 — 씨앤디테크가 소개하는 진동·소음 측정용 데이터수집장치 라인업입니다.</p>
+    </div>
+
+    <div class="rs-stat-grid fade-in">
+      <div class="rs-stat-card">
+        <div class="stat-val">DT9837</div>
+        <div class="stat-label">4채널 USB 기본형<br>PC 연결·전원 공급 동시 지원</div>
+      </div>
+      <div class="rs-stat-card">
+        <div class="stat-val">DT9857E</div>
+        <div class="stat-label">기본 8·16채널<br>최대 64채널 확장형</div>
+      </div>
+      <div class="rs-stat-card">
+        <div class="stat-val">24bit IEPE</div>
+        <div class="stat-label">최대 105.4kS/s/ch<br>동기화 타코미터 입력</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 본문 ── -->
+<section style="padding:0 0 100px;">
+  <div class="container" style="max-width:860px;">
+
+    <!-- 1. 개요 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">DT9837·DT9857E 시리즈란</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        DT9837·DT9857E는 IEPE(ICP®) 센서를 직접 연결해 진동·소음 신호를 취득하는 데이터수집장치(DAQ) 라인업입니다.
+        회전기계 상태 모니터링, 소음·진동 시험, 구조물 계측 등 채널 수와 현장 상황에 따라 <strong>휴대성 중심의 소형 기본형</strong>과
+        <strong>다채널 동시 계측이 가능한 확장형</strong> 중에서 선택할 수 있습니다.
+      </p>
+      <p style="font-size:14px; color:var(--text-mute); line-height:1.7;">
+        씨앤디테크는 두 라인업 모두 공급하며, 측정 채널 수·샘플링 속도·소프트웨어 연동 환경에 맞는 최적의 구성을 상담해 드립니다.
+      </p>
+
+      <div class="rs-compare-table" style="overflow-x:auto;">
+        <table class="rs-compare-table">
+          <tr><th>구분</th><th>DT9837 (기본형)</th><th>DT9857E (확장형)</th></tr>
+          <tr><td>채널 구성</td><td>4채널</td><td>기본 8채널 / 16채널</td></tr>
+          <tr><td>최대 확장</td><td>단일 유닛</td><td>마스터/슬레이브 최대 4대 → 64채널</td></tr>
+          <tr><td>연결·전원</td><td>USB 1개로 연결+전원 동시 지원</td><td>USB 연결, OEM 보드·스틸케이스 제공</td></tr>
+          <tr><td>타코미터 입력</td><td>모델별 상이</td><td>1개(기본) / 32비트 회전속도계 지원</td></tr>
+          <tr><td>적합 용도</td><td>휴대용·소규모 현장 진동 측정</td><td>다채널 동시 계측, 정밀 시험·연구</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- 2. DT9837 기본형 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">DT9837 — 4채널 USB 기본형</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        DT9837은 4채널 IEPE 입력을 지원하는 소형 USB 진동 데이터수집장치입니다. USB 케이블 하나로 PC와의 데이터 통신과
+        전원 공급이 동시에 이루어져 별도의 전원 공급 장치 없이 바로 사용할 수 있습니다. 휴대성이 뛰어나 현장 출장 측정,
+        소규모 진동 진단, 간이 소음 측정 등에 적합합니다.
+      </p>
+      <div class="rs-app-tags">
+        <span class="rs-app-tag">4채널 IEPE 입력</span>
+        <span class="rs-app-tag">USB 버스 파워</span>
+        <span class="rs-app-tag">별도 전원 불필요</span>
+        <span class="rs-app-tag">휴대용 현장 측정</span>
+      </div>
+
+      <div class="rs-img-trio">
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/dt9837/dt9837-basic-01.jpg" alt="DT9837 4채널 USB 진동 데이터수집장치 실물 사진" loading="lazy" style="width:100%; height:220px; object-fit:cover;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        </div>
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/dt9837/dt9837-basic-02.jpg" alt="DT9837 데이터수집장치 가속도센서 연결 사진" loading="lazy" style="width:100%; height:220px; object-fit:cover;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        </div>
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/dt9837/dt9837-basic-03.jpg" alt="DT9837 데이터수집장치 제작 보관 박스 사진" loading="lazy" style="width:100%; height:220px; object-fit:cover;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        </div>
+      </div>
+      <p style="font-size:12px; color:var(--text-mute); text-align:center; margin-top:-8px;">DT9837 4채널 USB 진동 데이터수집장치 — 센서 연결 및 제작 보관 박스 사진</p>
+    </div>
+
+    <!-- 3. DT9857E 확장형 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">DT9857E — 8·16채널부터 최대 64채널 확장형</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        DT9857E는 기본 8채널 또는 16채널로 구성된 소음·진동 측정 전용 데이터수집장치입니다. 동시 24비트 IEPE 센서 입력,
+        최대 105.4kS/s/ch 샘플 속도, 1개의 타코미터 입력, 16개의 디지털 I/O를 지원합니다. 소음·진동 측정에 특화된
+        고정밀 다이나믹 IEPE 신호 컨디셔닝 기능을 갖추고 있으며, 센서 입력이 회전속도계 입력과 동기화되어 시간축이
+        일치하는 데이터 스트림을 얻을 수 있습니다.
+      </p>
+
+      <div class="rs-img-wrap">
+        <img src="../assets/images/dt9837/dt9857e-main.jpg" alt="DT9857E 소음 진동 측정 데이터수집장치" loading="lazy" style="width:100%; height:auto; max-height:400px; object-fit:contain; background:#f8f8f8;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        <div class="rs-img-caption">DT9857E 소음·진동 측정 데이터수집장치</div>
+      </div>
+
+      <table class="rs-spec-table">
+        <tr><th>센서 입력</th><td>8채널 또는 16채널, 동시 24비트 IEPE(ICP®)</td></tr>
+        <tr><th>샘플 속도</th><td>최대 105.4kS/s/ch</td></tr>
+        <tr><th>타코미터 입력</th><td>1개, 32비트 회전속도계 지원, 센서 입력과 동기화</td></tr>
+        <tr><th>디지털 I/O</th><td>16개</td></tr>
+        <tr><th>D/A 출력</th><td>최대 2개, 32비트</td></tr>
+        <tr><th>카운터/타이머</th><td>2개의 측정 카운터 및 범용 카운터/타이머, 전 채널 시간 동기화</td></tr>
+        <tr><th>연결 방식</th><td>USB, OEM 제공 가능(보드 또는 스틸 케이스 모듈)</td></tr>
+      </table>
+
+      <h3 style="font-size:16px; font-weight:700; color:var(--charcoal); margin:28px 0 12px;">🔸 채널 확장 — 최대 64채널까지</h3>
+      <p style="font-size:14px; color:var(--text-dim); line-height:1.7; margin-bottom:16px;">
+        마스터/슬레이브 연결로 최대 4대의 DT9857E를 연동할 수 있어, 최대 64채널의 IEPE 입력 채널과
+        최대 8채널의 아날로그 출력까지 확장이 가능합니다. 모든 데이터를 입력에 시간 동기화할 수 있는
+        하나의 데이터 스트림으로 취득합니다.
+      </p>
+      <div class="rs-img-wrap">
+        <img src="../assets/images/dt9837/dt9857e-expansion-diagram.png" alt="DT9857E 마스터 슬레이브 채널 확장 구성도" loading="lazy" style="width:100%; height:auto; max-height:360px; object-fit:contain; background:#f8f8f8;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        <div class="rs-img-caption">마스터/슬레이브 연동 채널 확장 구성 (최대 64채널)</div>
+      </div>
+
+      <h3 style="font-size:16px; font-weight:700; color:var(--charcoal); margin:28px 0 12px;">🔸 소프트웨어·프로그래밍 환경</h3>
+      <p style="font-size:14px; color:var(--text-dim); line-height:1.7; margin-bottom:16px;">
+        데이터 처리를 위한 기본 애플리케이션으로 데이터 로깅, 저장, 분석 및 신호 생성이 가능한 <strong>QuickDAQ</strong>가
+        포함되며, 업그레이드 시 FFT 분석 기능이 추가됩니다. 이 외에도 Visual C++®, Visual C#®, Visual Basic®.NET,
+        DASYLab®, LabVIEW™, MATLAB® 등 널리 사용되는 프로그래밍 환경용 드라이버를 지원합니다.
+      </p>
+
+      <div class="rs-img-duo">
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/dt9837/dt9857e-product-01.jpg" alt="DT9857E 제품 사진 1" loading="lazy" style="width:100%; height:260px; object-fit:cover;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        </div>
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/dt9837/dt9857e-product-02.jpg" alt="DT9857E 제품 사진 2" loading="lazy" style="width:100%; height:260px; object-fit:cover;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        </div>
+      </div>
+      <p style="font-size:12px; color:var(--text-mute); text-align:center; margin-top:-8px;">DT9857E 제품 사진</p>
+    </div>
+
+    <!-- 4. 적용 분야 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">적용 분야 및 지원 범위</h2>
+      <div class="rs-app-tags">
+        <span class="rs-app-tag">회전기계 상태 모니터링</span>
+        <span class="rs-app-tag">다채널 소음·진동 시험</span>
+        <span class="rs-app-tag">구조물 진동 계측</span>
+        <span class="rs-app-tag">런업·코스트다운 오더 분석</span>
+        <span class="rs-app-tag">현장 출장 계측</span>
+      </div>
+      <p style="font-size:14px; color:var(--text-dim); line-height:1.7; margin-top:20px; margin-bottom:16px;">
+        씨앤디테크는 DT9837·DT9857E 외에도 휴대용 진동측정 시스템, 웹 기반 데이터수집장치, 고정밀 초고속
+        데이터수집장치까지 폭넓게 취급하고 있어, 측정 목적·채널 수·예산에 맞는 최적의 시스템을 제안해 드립니다.
+      </p>
+
+      <p style="font-size:14px; color:var(--text-mute); margin-top:8px; margin-bottom:16px;">관련 기술 자료 더 보기:</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="daq-system.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ DAQ 데이터 수집장치 완전 가이드</a>
+        <a href="gtdl.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ GTDL DAQ System</a>
+        <a href="vibration-sensor.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 진동센서(가속도계) 원리·선택</a>
+        <a href="vibration.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 휴대용 진동측정 시스템</a>
+        <a href="torsional-vibration.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 비틀림 진동 측정·분석</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section style="padding:48px 0 0;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in">
+      <h2 style="font-family:'Manrope','Pretendard',sans-serif; font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:8px; padding-left:14px; border-left:4px solid var(--accent);">자주 묻는 질문 (FAQ)</h2>
+      <p style="font-size:13px; color:var(--text-mute); margin-bottom:28px; padding-left:18px;">DT9837·DT9857E 진동·소음 데이터수집장치 관련 질문</p>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>DT9837과 DT9857E의 가장 큰 차이는 무엇인가요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">DT9837은 4채널 IEPE 입력을 지원하는 소형 USB 진동 데이터수집장치로, USB 케이블 하나로 PC 연결과 전원 공급이 동시에 가능해 휴대성과 간편한 셋업이 강점입니다. DT9857E는 기본 8채널 또는 16채널 구성이며 마스터/슬레이브 연결로 최대 4대까지 연동해 최대 64채널의 동시 IEPE 입력을 지원하는 확장형 시스템입니다. 소규모 현장 측정에는 DT9837, 다채널 동시 계측이 필요한 정밀 시험에는 DT9857E가 적합합니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>DT9857E는 몇 채널까지 확장할 수 있나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">DT9857E는 기본 8채널 또는 16채널 모델로 시작하며, 마스터/슬레이브 연결을 통해 최대 4대까지 연동할 수 있습니다. 이 경우 최대 64채널의 IEPE 입력 채널과 최대 8채널의 아날로그 출력까지 확장되며, 모든 채널의 데이터를 시간 동기화된 하나의 스트림으로 취득할 수 있습니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>IEPE 센서 입력이란 무엇인가요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">IEPE(ICP®)는 가속도계 등 압전형 센서에 정전류를 공급해 신호를 컨디셔닝하는 표준 인터페이스입니다. DT9837·DT9857E 모두 IEPE 센서 입력을 지원하여 별도의 외부 신호 컨디셔너 없이 가속도센서, 마이크로폰 등을 바로 연결해 진동·소음 신호를 측정할 수 있습니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>회전속도계(타코미터) 동기화는 왜 중요한가요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">회전기계의 진동 분석에서는 회전 속도(RPM)와 진동 신호를 동시에 취득해야 오더 분석(Order Analysis), 런업/코스트다운 분석, 공진 회피 설계 등이 가능합니다. DT9857E는 타코미터 입력이 IEPE 센서 입력과 시간 동기화되어 회전 속도 변화에 따른 진동 특성을 정확히 매칭할 수 있습니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>QuickDAQ 외 다른 프로그래밍 환경에서도 사용할 수 있나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">네, DT9837·DT9857E 모두 자체 애플리케이션인 QuickDAQ(데이터 로깅·저장·분석·신호 생성, FFT 분석 옵션) 외에도 Visual C++®, Visual C#®, Visual Basic®.NET, DASYLab®, LabVIEW™, MATLAB® 등 널리 쓰이는 프로그래밍 환경용 드라이버를 지원합니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:0; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>씨앤디테크에서 어떤 지원을 받을 수 있나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">씨앤디테크는 DT9837·DT9857E를 포함해 휴대용 측정 시스템, 웹 기반 시스템, 고정밀 초고속 데이터수집장치까지 폭넓게 취급하며, 측정 목적과 채널 수, 예산에 맞는 최적의 시스템을 제안해 드립니다. 채널 구성, OEM(보드·스틸케이스) 옵션, 소프트웨어 연동까지 상담 가능합니다.</p>
+        </div>
+      </details>
+
+    </div><!-- /FAQ -->
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section style="padding:40px 0 80px;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in" style="padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius);">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">DT9837·DT9857E 도입 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">필요 채널 수, 측정 대상(회전기계·구조물·소음원 등), 소프트웨어 연동 환경을 알려주시면 최적의 DAQ 구성을 제안해 드립니다. OEM(보드·스틸케이스) 옵션 및 채널 확장 상담도 가능합니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+        <a href="mailto:wgjeon@cndtec.co.kr" class="btn btn-ghost">wgjeon@cndtec.co.kr</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Manrope',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="daq-system.html">DAQ 데이터 수집장치</a></li><li><a href="gtdl.html">GTDL DAQ System</a></li><li><a href="vibration-sensor.html">진동센서</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta"><span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span></div>
+  </div>
+</footer>
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+</body>
+</html>
