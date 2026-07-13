@@ -624,6 +624,24 @@ footer { background: var(--charcoal); color: #d6d2cb; padding: 64px 0 32px; }
   .footer-cols { gap: 32px; }
   .stat-cards { grid-template-columns: repeat(2, 1fr); }
   .photo-grid { grid-template-columns: 1fr 1fr; }
+  body { padding-bottom: 58px; }
+}
+
+/* ── 모바일 하단 탭바 ── */
+.mobile-tabbar { display: none; }
+@media (max-width: 920px) {
+  .mobile-tabbar {
+    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 150;
+    background: var(--white); border-top: 1px solid var(--line);
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  .mobile-tabbar a {
+    flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 3px; padding: 8px 0 6px; color: var(--text-mute); font-size: 10px; font-weight: 600;
+    transition: color 0.2s;
+  }
+  .mobile-tabbar a svg { width: 20px; height: 20px; }
+  .mobile-tabbar a.tab-active { color: var(--accent); }
 }
 
 @media (max-width: 600px) {
