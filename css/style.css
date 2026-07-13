@@ -624,25 +624,35 @@ footer { background: var(--charcoal); color: #d6d2cb; padding: 64px 0 32px; }
   .footer-cols { gap: 32px; }
   .stat-cards { grid-template-columns: repeat(2, 1fr); }
   .photo-grid { grid-template-columns: 1fr 1fr; }
-  body { padding-bottom: 58px; }
+  .page-hero { padding-top: 200px; }
 }
 
-/* ── 모바일 하단 탭바 ── */
-.mobile-tabbar { display: none; }
+/* ── 모바일 카테고리 서브내비 (로고 바로 아래) ── */
+.mobile-subnav { display: none; }
 @media (max-width: 920px) {
-  .mobile-tabbar {
-    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 150;
-    background: var(--white); border-top: 1px solid var(--line);
-    padding-bottom: env(safe-area-inset-bottom, 0);
+  .mobile-subnav {
+    display: flex; gap: 8px; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    padding: 0 16px 12px; scrollbar-width: none;
   }
-  .mobile-tabbar a {
-    flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 3px; padding: 8px 0 6px; color: var(--text-mute); font-size: 10px; font-weight: 600;
-    transition: color 0.2s;
+  .mobile-subnav::-webkit-scrollbar { display: none; }
+  .mobile-subnav a {
+    flex: 0 0 auto; padding: 7px 14px; border-radius: 999px;
+    font-size: 13px; font-weight: 600; white-space: nowrap;
+    background: var(--gray-100); color: var(--text-dim); border: 1px solid transparent;
+    transition: all 0.2s;
   }
-  .mobile-tabbar a svg { width: 20px; height: 20px; }
-  .mobile-tabbar a.tab-active { color: var(--accent); }
+  .mobile-subnav a.pill-active {
+    background: var(--orange-tint); color: var(--accent-deep); border-color: var(--orange-line);
+  }
+  /* 기술자료 상세 페이지 인라인 hero padding 보정 (서브내비 높이만큼 여유 확보) */
+  section[style*="padding-top:160px"] { padding-top: 200px !important; }
+  section[style*="padding-top: 160px"] { padding-top: 200px !important; }
+  main[style*="padding-top: 120px"] { padding-top: 160px !important; }
+  main[style*="padding-top:120px"] { padding-top: 160px !important; }
 }
+
+/* ── 기술자료 카드 hover 시 테두리 강조 (사업분야 카드와 동일) ── */
+.res-card:hover { border-color: var(--orange-line) !important; box-shadow: var(--shadow-md); transform: translateY(-4px); }
 
 @media (max-width: 600px) {
   .stat-cards, .photo-grid { grid-template-columns: 1fr; }
