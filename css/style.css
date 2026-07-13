@@ -407,7 +407,7 @@ header {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(242,148,0,0.16), transparent 70%);
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(242,148,0,0.32), transparent 70%);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;

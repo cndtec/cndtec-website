@@ -1,5 +1,14 @@
 # CND TECH 웹사이트 — 작업 현황
 
+## ⭐ 2026-07-13 완료: 홈페이지 hover 효과(스포트라이트) 전체 페이지 확대 + 파일 손상 2건 발견/복구
+- 커서 스포트라이트(fx-spotlight) 색 강도 2배 진하게 조정(opacity 0.16→0.32, css/style.css).
+- 테두리 드로잉(fx-border) 효과는 사용자 피드백으로 완전 제거(클래스+CSS 모두 삭제).
+- 스포트라이트 효과를 index.html 외 about.html(stat-card/about-item/strength-card), products.html(area-card/prod-img-card), projects.html(proj-col), contact.html(contact-detail-card), resources/index.html(res-card)로 확대 적용. 각 페이지 하단 인라인 스크립트에 동일한 mousemove 핸들러 추가.
+- 이미지 위주 갤러리 카드(about.html g-item)는 기존 zoom 효과와 중복되어 의도적으로 제외.
+- ⚠️ **중요 발견**: resources/index.html이 `<footer>` 중간에서 파일이 통째로 잘려있었음(git HEAD에도 이미 커밋되어 라이브 상태로 배포되어 있던 버그 — footer 닫는 태그·모바일메뉴/언어전환/fade-in JS 스크립트 블록 전체가 없어서 이 페이지에서 모바일 메뉴·언어 전환이 작동하지 않고 있었음). 과거에도 동일 증상으로 "397d384 fix: resources/index.html footer 손상 복원" 커밋이 있었던 것으로 보아 재발한 것 — 신규 카드 추가 편집 중 파일 끝부분이 잘리는 사고가 반복되는 것으로 추정. footer·표준 스크립트 블록 전체 복원 완료.
+- ⚠️ **추가 발견**: resources/strain-gauge-bonding.html의 마지막 줄이 `</html>`이 아니라 `</htm`(l자 하나 누락)으로 잘려있었음 — 수정 완료.
+- **재발 방지**: 앞으로 파일 편집 후에는 `grep -c "</html>"` 등으로 파일이 정상적으로 닫혔는지 확인하는 습관 필요. 특히 리소스 카드 추가처럼 파일 끝부분(footer/script) 근처를 반복 편집하는 작업에서 이 사고가 발생하기 쉬움.
+
 ## ⭐ 2026-07-12 완료: 현장계측용역(고온 스트레인게이지) 기술자료
 - resources/field-service.html을 티스토리 포스팅(candj.tistory.com/126, "고온용 스트레인게이지 부착,측정, 해석") 참조하여 "준비 중" 스텁에서 정식 콘텐츠로 전환 완료. noindex 메타 제거, title/desc/canonical/og/JSON-LD(TechArticle+FAQPage 6문항)/FAQ UI 섹션/CTA 모두 반영.
 - resources/index.html에 카드 추가(풍력터빈 카드 다음, "LINE ICON 현장계측.png" 아이콘 재사용), sitemap.xml에 <url> 등록 완료(field-service.html을 스텁 제외 주석에서 제거).
