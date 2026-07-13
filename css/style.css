@@ -607,7 +607,7 @@ footer { background: var(--charcoal); color: #d6d2cb; padding: 64px 0 32px; }
   .nav-cta .lang-toggle { display: none; }
   .nav-cta a.btn { display: none; }
   .nav { padding: 10px 16px; }
-  .brand-logo { height: 60px; max-width: 200px; }
+  .brand-logo { height: 76px; max-width: 230px; }
   .areas, .blog-grid, .contact-wrap, .achievement-tabs { grid-template-columns: 1fr; gap: 20px; }
   .product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .idx-strength-grid { gap: 12px; }
