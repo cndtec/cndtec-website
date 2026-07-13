@@ -753,4 +753,64 @@ const setLang = (lang) => {
   try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
 };
 langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
-try { const saved = localStorag
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+
+// Mobile nav
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+
+// Fade-in
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Scroll header
+window.addEventListener('scroll', () => {
+  document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Ripple 클릭 효과
+document.querySelectorAll('.ripple-host').forEach(el => {
+  el.addEventListener('click', function(e) {
+    const rect = el.getBoundingClientRect();
+    const circle = document.createElement('span');
+    circle.className = 'ripple-circle';
+    circle.style.left = (e.clientX - rect.left) + 'px';
+    circle.style.top = (e.clientY - rect.top) + 'px';
+    el.appendChild(circle);
+    setTimeout(() => circle.remove(), 600);
+  });
+});
+
+// 커서 스포트라이트 (fx-spotlight)
+document.querySelectorAll('.fx-spotlight').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+    card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+  });
+});
+
+// 마그네틱 버튼 (btn-magnetic) — 마우스 있는 기기에서만 동작
+if (window.matchMedia('(pointer: fine)').matches) {
+  const MAG_STRENGTH = 14;
+  document.querySelectorAll('.btn-magnetic').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const r = btn.getBoundingClientRect();
+      const relX = (e.clientX - r.left - r.width / 2) / (r.width / 2);
+      const relY = (e.clientY - r.top - r.height / 2) / (r.height / 2);
+      btn.style.transform = `translate(${relX * MAG_STRENGTH}px, ${relY * MAG_STRENGTH}px)`;
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+  });
+}
+</script>
+</body>
+</html>

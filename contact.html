@@ -388,4 +388,43 @@ if (form) {
     btn.disabled = true;
     btn.innerHTML = '전송 중...';
     try {
-      const res = await fetch('https://forms
+      const res = await fetch('https://formspree.io/f/mrednazk', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.reset();
+        if (successMsg) successMsg.style.display = 'block';
+        btn.innerHTML = '✓ 전송 완료';
+      } else {
+        alert('전송 중 오류가 발생했습니다. 031-680-1225로 연락주세요.');
+        btn.disabled = false;
+        btn.innerHTML = origText;
+      }
+    } catch {
+      alert('네트워크 오류입니다. 031-680-1225로 연락주세요.');
+      btn.disabled = false;
+      btn.innerHTML = origText;
+    }
+  });
+}
+
+// Scroll header
+window.addEventListener('scroll', () => {
+  document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// 커서 스포트라이트 (fx-spotlight)
+document.querySelectorAll('.fx-spotlight').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+    card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+  });
+});
+</script>
+
+
+</body>
+</html>
