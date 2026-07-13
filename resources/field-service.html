@@ -4,38 +4,283 @@
 <meta charset="UTF-8" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>현장 계측 용역 | CND TECH 씨앤디테크</title>
-<meta name="description" content="시험 설계, 센서 설치, 데이터 수집, 분석 보고서 제공 원스톱 현장 서비스. 씨앤디테크 기술자료." />
-<meta name="robots" content="noindex, follow" />
+<title>현장 계측 용역 — 고온 환경 스트레인게이지 부착·측정 | 씨앤디테크</title>
+<meta name="description" content="발전소·플랜트 등 고온 설비 현장에서의 스트레인게이지 부착·응력 측정 노하우. 내열 접착제·특수 케이블·온도 보상까지 현장 계측 용역 전 과정을 소개합니다. 씨앤디테크." />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/field-service.html" />
+<meta property="og:title" content="현장 계측 용역 — 고온 환경 스트레인게이지 측정 | 씨앤디테크" />
+<meta property="og:description" content="발전소·플랜트 등 고온 설비 현장 응력 측정. 내열 접착제·특수 케이블·온도 보상 등 고온용 스트레인게이지 시공 노하우." />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/cnd-logo-400.png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:alt" content="CND TECH 씨앤디테크 로고" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/field-service.html" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css?v=6">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "현장 계측 용역 — 고온 환경 스트레인게이지 부착·측정",
+  "description": "발전소·플랜트 등 고온 설비 현장에서의 스트레인게이지 부착·응력 측정 노하우. 내열 접착제·특수 케이블·온도 보상 등 현장 계측 용역 전 과정.",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "inLanguage": "ko",
+  "keywords": "현장계측용역, 고온 스트레인게이지, 고온 응력측정, 로제트 스트레인게이지, 내열 접착제, 온도보상, 발전소 계측, HBM 데이터로거"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "고온 환경에서 스트레인게이지 측정이 어려운 이유는 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "고온에서는 접착제가 열화되어 게이지가 모재에서 들뜨거나 박리될 수 있고, 열 출력(Thermal Output)에 의해 실제 변형이 아닌 온도 변화가 신호로 섞여 데이터가 왜곡됩니다. 또한 일반 케이블의 절연이 파괴되며 노이즈가 유입되고, 납땜부가 고온에서 탈락하는 등 상온 조건과는 다른 재료·시공 기준이 요구됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "고온용 스트레인게이지 부착에는 어떤 접착제를 사용하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "일반 상온용 접착제는 고온에서 강도가 급격히 저하되므로, 모재와의 일체화와 열전달 특성을 고려한 열경화성 고온용 접착제를 사용합니다. 이러한 접착제는 통상 부착 후 일정한 물리적 압력과 고온 조건에서 큐어링(Curing) 공정을 거쳐야 설계된 접착 강도가 확보됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "고온 환경에서는 왜 특수 케이블과 납을 사용해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "일반 PVC 피복 케이블은 고온 구간에서 절연이 파괴되어 데이터 노이즈의 원인이 되므로, 테플론(PTFE)이나 유리섬유로 피복된 내열 케이블을 사용합니다. 결선부 역시 일반 주석-납(Sn-Pb) 합금은 융점이 낮아 열과 진동이 겹치면 탈락 위험이 있어, 은(Silver)이 함유된 고온용 특수 납으로 전기적 연결을 보장합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "고온 환경 측정에서 온도 보상은 어떻게 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "열팽창계수가 측정 대상 소재와 일치하는 게이지를 선정하는 것이 기본이며, 리드선 저항이 온도에 따라 변화하며 발생하는 오차를 상쇄하기 위해 3-Wire 또는 4-Wire 브리지 회로를 구성합니다. 여기에 써모커플·RTD 등 온도 센서를 별도 채널로 함께 측정하여 소프트웨어적으로 온도 영향을 추가 보정합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "현장 계측 용역은 어떤 절차로 진행되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "측정 대상의 환경 조건(온도·진동·방수 여부 등)과 목적을 파악하는 시험 설계 단계, 이에 맞는 센서·접착제·케이블을 선정해 현장에서 부착하는 시공 단계, DAQ 장비로 데이터를 취득하는 계측 단계, 그리고 취득 데이터를 해석해 보고서로 정리하는 분석 단계로 진행됩니다. 씨앤디테크는 이 전 과정을 원스톱으로 지원합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "고온 외에 극저온·수중 등 특수 환경 측정도 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가능합니다. 고온 환경과 마찬가지로 극저온·수중·고습·고진동 등 특수 환경에서도 환경 조건에 맞는 센서·접착제·방수 처리·케이블 사양을 선정하여 시공하며, 환경별로 검증된 자재와 노하우를 바탕으로 현장 측정을 지원합니다."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-B25Y10FQK1');</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+.rs-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+@media (max-width: 640px) {
+  .rs-stat-grid { grid-template-columns: 1fr; }
+}
+.rs-stat-card {
+  padding: 24px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+}
+.rs-stat-card .stat-val {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.rs-stat-card .stat-label {
+  font-size: 13px;
+  color: var(--text-mute);
+  line-height: 1.4;
+}
+
+.rs-section {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--line);
+}
+.rs-section:last-child { border-bottom: none; }
+.rs-section-title {
+  font-family: 'Manrope', 'Pretendard', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rs-section-title::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 22px;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.rs-img-wrap {
+  margin: 24px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+}
+.rs-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.rs-img-caption {
+  padding: 10px 16px;
+  font-size: 12px;
+  color: var(--text-mute);
+  background: var(--bg-card);
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.rs-img-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+@media (max-width: 640px) {
+  .rs-img-duo { grid-template-columns: 1fr; }
+}
+
+.rs-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 20px 0;
+}
+.rs-spec-table th, .rs-spec-table td {
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.rs-spec-table th {
+  background: var(--orange-tint);
+  font-weight: 600;
+  color: var(--charcoal);
+  width: 30%;
+  white-space: nowrap;
+}
+.rs-spec-table td {
+  color: var(--text-dim);
+}
+
+.rs-step-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+@media (max-width: 720px) {
+  .rs-step-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .rs-step-grid { grid-template-columns: 1fr; }
+}
+.rs-step {
+  padding: 20px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.rs-step .step-num {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+}
+.rs-step .step-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+.rs-step .step-desc {
+  font-size: 13px;
+  color: var(--text-mute);
+  line-height: 1.5;
+}
+
+.rs-app-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+.rs-app-tag {
+  padding: 6px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+</style>
 </head>
 <body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
 <header>
   <div class="nav">
     <a href="../index.html" class="brand">
-      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Manrope',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
     </a>
     <nav class="nav-links">
-      <a href="../about.html">회사소개</a>
-      <a href="../products.html">사업분야·제품</a>
-      <a href="../projects.html">주요실적</a>
-      <a href="index.html" class="page-active">기술자료</a>
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
       <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
-      <a href="../contact.html">문의</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
     </nav>
     <div class="nav-cta">
       <div class="lang-toggle">
         <button class="lang-btn active" data-lang="ko">KO</button>
         <button class="lang-btn" data-lang="en">EN</button>
       </div>
-      <a href="../contact.html" class="btn btn-primary">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
       <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
     </div>
   </div>
@@ -48,45 +293,284 @@
     <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
   </div>
 </div>
-<div class="page-hero">
+
+<!-- ── HERO ── -->
+<section style="padding-top:160px; padding-bottom:20px;">
   <div class="container">
-    <div class="breadcrumb">
-      <a href="../index.html">Home</a><span class="sep">/</span>
-      <a href="index.html">기술자료</a><span class="sep">/</span>
-      <span>현장 계측 용역</span>
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono','JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">FIELD SERVICE · HIGH-TEMP STRAIN GAUGE</div>
+      <h1 style="font-family:'Manrope','Pretendard',sans-serif; font-size:clamp(28px,5vw,52px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">현장 계측 용역<br><span class="accent">고온 환경 스트레인게이지 부착·측정</span></h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:720px; line-height:1.7; margin-bottom:0;">발전소·플랜트 등 고온 설비 현장은 접착제 열화, 열 출력에 의한 데이터 왜곡, 케이블 절연 파괴 등 상온 측정과는 다른 변수가 많습니다. 씨앤디테크는 고온 환경에 맞는 자재 선정과 시공 노하우로 현장 응력 측정을 지원합니다.</p>
     </div>
-    <div class="page-hero-tag"><span class="dot"></span><span class="mono">TECHNICAL RESOURCES · FIELD SERVICE</span></div>
-    <h1>현장 계측 용역<br><span class="accent">시험 설계 · 설치 · 분석 원스톱</span></h1>
-    <p class="sub">시험 설계, 센서 설치, 데이터 수집, 분석 보고서 제공 원스톱 현장 서비스.</p>
-  </div>
-</div>
-<section>
-  <div class="container" style="max-width:800px;padding-top:64px;padding-bottom:80px;">
-    <div style="background:var(--bg-warm);border:1px solid var(--line);border-radius:var(--radius);padding:48px;text-align:center;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-mute);letter-spacing:0.08em;margin-bottom:16px;">// COMING SOON</div>
-      <h2 style="font-size:22px;color:var(--charcoal);margin-bottom:12px;">상세 기술자료 준비 중</h2>
-      <p style="color:var(--text-dim);font-size:14px;line-height:1.7;">시험 설계, 센서 설치, 데이터 수집, 분석 보고서 제공 원스톱 현장 서비스 관련 상세 기술 자료를 준비 중입니다.<br>문의사항은 아래 연락처로 문의해 주세요.</p>
-      <a href="../contact.html" class="btn btn-primary" style="display:inline-flex;margin-top:24px;">제품 문의하기</a>
+
+    <div class="rs-stat-grid fade-in">
+      <div class="rs-stat-card">
+        <div class="stat-val">다채널</div>
+        <div class="stat-label">3축 로제트 게이지<br>다중 포인트 동시 측정</div>
+      </div>
+      <div class="rs-stat-card">
+        <div class="stat-val">500Hz</div>
+        <div class="stat-label">고속 샘플링<br>지연 없는 실시간 취득</div>
+      </div>
+      <div class="rs-stat-card">
+        <div class="stat-val">원스톱</div>
+        <div class="stat-label">시험 설계 · 설치 · 계측 · 분석<br>보고서까지 통합 지원</div>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- ── 본문 ── -->
+<section style="padding:0 0 100px;">
+  <div class="container" style="max-width:860px;">
+
+    <!-- 1. 개요 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">고온 환경 측정이 어려운 이유</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:24px;">
+        발전소·플랜트 배관·연소 설비 등 <strong>고온 설비 현장</strong>에서는 상온과는 전혀 다른 접근이 필요합니다.
+        고온에 노출되면 접착제가 열화되어 게이지가 들뜨거나 박리될 수 있고, 열 출력(Thermal Output)으로 인해
+        실제 변형이 아닌 온도 변화가 신호에 섞여 데이터가 왜곡됩니다. 여기에 케이블 절연 파괴, 결선부 탈락 등의
+        위험까지 더해지므로, 고온 환경에 적합한 자재 선정과 시공이 정확한 응력 계측의 전제 조건입니다.
+      </p>
+      <p style="font-size:14px; color:var(--text-mute); line-height:1.7;">
+        씨앤디테크는 고온 설비를 대상으로 한 응력 계측 경험을 바탕으로, 복합 응력 상태를 정밀하게 분석하기 위해
+        3축 로제트 스트레인게이지(Rosette Strain Gauge)를 다중 포인트에 부착하고, 고성능 데이터로거로
+        고속·다채널 데이터를 지연 없이 취득하는 현장 계측 용역을 제공합니다.
+      </p>
+
+      <div class="rs-img-wrap" style="margin-top:28px;">
+        <img src="../assets/images/현장계측용역 고온스트레인게이지/고온스트레인게이지_부착.jpg"
+             alt="고온 환경 스트레인게이지 부착 현장" loading="lazy"
+             style="width:100%; height:auto; max-height:420px; object-fit:contain; background:#f8f8f8;"
+             onerror="this.closest('.rs-img-wrap').style.display='none'">
+        <div class="rs-img-caption">고온용 스트레인게이지 부착 현장</div>
+      </div>
+    </div>
+
+    <!-- 2. 고온 환경 적용 시 고려사항 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">고온 환경 스트레인게이지 적용 시 고려사항</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:20px;">
+        고온 환경에서 신뢰할 수 있는 데이터를 얻으려면 센서 자체의 사양뿐 아니라, 부속 자재·시공 공정·회로 구성까지
+        전체 시스템을 고온 조건에 맞춰 설계해야 합니다.
+      </p>
+      <div class="rs-step-grid">
+        <div class="rs-step">
+          <div class="step-num">01</div>
+          <div class="step-title">한계 온도 교차 검증</div>
+          <div class="step-desc">게이지 포일뿐 아니라 리드 케이블·솔더 터미널 등 부속 자재의 한계 온도까지 함께 확인</div>
+        </div>
+        <div class="rs-step">
+          <div class="step-num">02</div>
+          <div class="step-title">열경화성 접착제 · 큐어링</div>
+          <div class="step-desc">모재와의 일체화·열전달을 위한 고온용 접착제 적용, 규정된 압력·온도 조건에서 큐어링 공정 수행</div>
+        </div>
+        <div class="rs-step">
+          <div class="step-num">03</div>
+          <div class="step-title">고온용 특수 납(Solder)</div>
+          <div class="step-desc">일반 Sn-Pb 합금 대비 융점이 높은 은(Silver) 함유 특수 납으로 결선부 탈락 방지</div>
+        </div>
+        <div class="rs-step">
+          <div class="step-num">04</div>
+          <div class="step-title">내열성 특수 케이블</div>
+          <div class="step-desc">테플론(PTFE) 또는 유리섬유 피복 케이블 사용 — 일반 PVC 피복은 고온에서 절연 파괴·노이즈 유발</div>
+        </div>
+        <div class="rs-step">
+          <div class="step-num">05</div>
+          <div class="step-title">다중 커버링(Coating)</div>
+          <div class="step-desc">센서·결선부 부식 및 기계적 손상 방지를 위해 내열 실리콘 1차 도포 후 내열 테이프로 2차 보호</div>
+        </div>
+        <div class="rs-step">
+          <div class="step-num">06</div>
+          <div class="step-title">하드웨어·소프트웨어 온도 보상</div>
+          <div class="step-desc">열팽창계수가 일치하는 게이지 선정, 3/4-Wire 브리지 구성, 온도 센서 병행 측정으로 오차 보정</div>
+        </div>
+      </div>
+
+      <div class="rs-img-wrap" style="margin-top:28px;">
+        <img src="../assets/images/현장계측용역 고온스트레인게이지/고온스트레인게이지_30채널측정.jpg"
+             alt="고온 환경 다채널 스트레인 측정" loading="lazy"
+             style="width:100%; height:auto; max-height:420px; object-fit:contain; background:#f8f8f8;"
+             onerror="this.closest('.rs-img-wrap').style.display='none'">
+        <div class="rs-img-caption">다채널 스트레인 측정 — 고성능 데이터로거 운용</div>
+      </div>
+    </div>
+
+    <!-- 3. 측정 결과물 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">계측 결과 및 서비스 범위</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:20px;">
+        고온 환경 응력 측정은 시험 설계 → 센서·자재 선정 → 현장 부착 시공 → 데이터 취득 → 분석 및 보고서 작성의
+        전 과정으로 진행됩니다. 씨앤디테크는 오랜 현장 경험을 바탕으로 이 과정을 원스톱으로 지원합니다.
+      </p>
+
+      <div class="rs-img-wrap">
+        <img src="../assets/images/현장계측용역 고온스트레인게이지/고온스트레인게이지_응력측정.jpg"
+             alt="고온 환경 응력 측정 현장" loading="lazy"
+             style="width:100%; height:auto; max-height:420px; object-fit:contain; background:#f8f8f8;"
+             onerror="this.closest('.rs-img-wrap').style.display='none'">
+        <div class="rs-img-caption">고온 환경 응력 측정 현장</div>
+      </div>
+
+      <div class="rs-app-tags">
+        <span class="rs-app-tag">발전소 배관·설비</span>
+        <span class="rs-app-tag">플랜트 고온 구조물</span>
+        <span class="rs-app-tag">연소·열교환 설비</span>
+        <span class="rs-app-tag">극저온·수중 환경 측정</span>
+        <span class="rs-app-tag">현장 출장 계측</span>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;">
+        <div style="padding:20px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);">
+          <div style="font-size:13px; font-family:'IBM Plex Mono','JetBrains Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:8px;">현장 계측 용역</div>
+          <div style="font-size:14px; color:var(--text-dim); line-height:1.6;">시험 설계 · 센서 부착 시공<br>고온·저온·수중 등 특수 환경 대응<br>데이터 취득 및 분석 보고서 발행</div>
+        </div>
+        <div style="padding:20px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);">
+          <div style="font-size:13px; font-family:'IBM Plex Mono','JetBrains Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:8px;">장비·자재 공급</div>
+          <div style="font-size:14px; color:var(--text-dim); line-height:1.6;">로제트 스트레인게이지 · 고온용 접착제<br>내열 케이블 · 고온용 납 공급<br>DAQ 데이터로거 설치 · 기술지원</div>
+        </div>
+      </div>
+
+      <p style="font-size:14px; color:var(--text-mute); margin-top:24px; margin-bottom:16px;">관련 기술 자료 더 보기:</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="strain-gauge.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 스트레인게이지 원리·선정</a>
+        <a href="strain-gauge-bonding.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 스트레인게이지 부착법 가이드</a>
+        <a href="daq-system.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ DAQ 데이터 수집장치</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section style="padding:48px 0 0;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in">
+      <h2 style="font-family:'Manrope','Pretendard',sans-serif; font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:8px; padding-left:14px; border-left:4px solid var(--accent);">자주 묻는 질문 (FAQ)</h2>
+      <p style="font-size:13px; color:var(--text-mute); margin-bottom:28px; padding-left:18px;">현장 계측 용역 — 고온 환경 스트레인게이지 관련 질문</p>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>고온 환경에서 스트레인게이지 측정이 어려운 이유는 무엇인가요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">고온에서는 접착제가 열화되어 게이지가 모재에서 들뜨거나 박리될 수 있고, 열 출력(Thermal Output)에 의해 실제 변형이 아닌 온도 변화가 신호로 섞여 데이터가 왜곡됩니다. 또한 일반 케이블의 절연이 파괴되며 노이즈가 유입되고, 납땜부가 고온에서 탈락하는 등 상온 조건과는 다른 재료·시공 기준이 요구됩니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>고온용 스트레인게이지 부착에는 어떤 접착제를 사용하나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">일반 상온용 접착제는 고온에서 강도가 급격히 저하되므로, 모재와의 일체화와 열전달 특성을 고려한 열경화성 고온용 접착제를 사용합니다. 이러한 접착제는 통상 부착 후 일정한 물리적 압력과 고온 조건에서 큐어링(Curing) 공정을 거쳐야 설계된 접착 강도가 확보됩니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>고온 환경에서는 왜 특수 케이블과 납을 사용해야 하나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">일반 PVC 피복 케이블은 고온 구간에서 절연이 파괴되어 데이터 노이즈의 원인이 되므로, 테플론(PTFE)이나 유리섬유로 피복된 내열 케이블을 사용합니다. 결선부 역시 일반 주석-납(Sn-Pb) 합금은 융점이 낮아 열과 진동이 겹치면 탈락 위험이 있어, 은(Silver)이 함유된 고온용 특수 납으로 전기적 연결을 보장합니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>고온 환경 측정에서 온도 보상은 어떻게 하나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">열팽창계수가 측정 대상 소재와 일치하는 게이지를 선정하는 것이 기본이며, 리드선 저항이 온도에 따라 변화하며 발생하는 오차를 상쇄하기 위해 3-Wire 또는 4-Wire 브리지 회로를 구성합니다. 여기에 써모커플·RTD 등 온도 센서를 별도 채널로 함께 측정하여 소프트웨어적으로 온도 영향을 추가 보정합니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>현장 계측 용역은 어떤 절차로 진행되나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">측정 대상의 환경 조건(온도·진동·방수 여부 등)과 목적을 파악하는 시험 설계 단계, 이에 맞는 센서·접착제·케이블을 선정해 현장에서 부착하는 시공 단계, DAQ 장비로 데이터를 취득하는 계측 단계, 그리고 취득 데이터를 해석해 보고서로 정리하는 분석 단계로 진행됩니다. 씨앤디테크는 이 전 과정을 원스톱으로 지원합니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:0; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>고온 외에 극저온·수중 등 특수 환경 측정도 가능한가요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">가능합니다. 고온 환경과 마찬가지로 극저온·수중·고습·고진동 등 특수 환경에서도 환경 조건에 맞는 센서·접착제·방수 처리·케이블 사양을 선정하여 시공하며, 환경별로 검증된 자재와 노하우를 바탕으로 현장 측정을 지원합니다.</p>
+        </div>
+      </details>
+
+    </div><!-- /FAQ -->
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section style="padding:40px 0 80px;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in" style="padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius);">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">현장 계측 용역 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">측정 대상의 환경 조건(온도·진동·방수 여부)과 목적을 알려주시면 최적 센서·자재 구성과 비용을 안내해 드립니다. 고온·극저온·수중 등 특수 환경 현장 출장 측정이 가능합니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+        <a href="mailto:wgjeon@cndtec.co.kr" class="btn btn-ghost">wgjeon@cndtec.co.kr</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="container">
     <div class="footer-row">
       <div class="footer-brand">
-        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-        <span style="display:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;color:#fff">CND TECH</span>
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Manrope',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
         <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
       </div>
       <div class="footer-cols">
         <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
-        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="daq-system.html">DAQ 시스템</a></li><li><a href="residual-stress.html">잔류응력 측정</a></li><li><a href="strain-gauge.html">스트레인게이지</a></li></ul></div>
-        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="strain-gauge-bonding.html">스트레인게이지 부착법</a></li><li><a href="daq-system.html">DAQ 시스템</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
       </div>
     </div>
     <div class="footer-meta"><span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span></div>
   </div>
 </footer>
 <script src="../js/main.js" defer></script>
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
 </body>
 </html>

@@ -1,5 +1,12 @@
 # CND TECH 웹사이트 — 작업 현황
 
+## ⭐ 2026-07-12 완료: 현장계측용역(고온 스트레인게이지) 기술자료
+- resources/field-service.html을 티스토리 포스팅(candj.tistory.com/126, "고온용 스트레인게이지 부착,측정, 해석") 참조하여 "준비 중" 스텁에서 정식 콘텐츠로 전환 완료. noindex 메타 제거, title/desc/canonical/og/JSON-LD(TechArticle+FAQPage 6문항)/FAQ UI 섹션/CTA 모두 반영.
+- resources/index.html에 카드 추가(풍력터빈 카드 다음, "LINE ICON 현장계측.png" 아이콘 재사용), sitemap.xml에 <url> 등록 완료(field-service.html을 스텁 제외 주석에서 제거).
+- 원문에 고객사명·특정 프로젝트 식별 정보가 없어(방법론 소개 글) 별도 익명화 불필요했음 — 단 "해외 발전소 프로젝트"라는 특정 사례 지칭 표현은 일반화하여 "발전소·플랜트 등 고온 설비 현장" 식으로 표현.
+- 이미지 3장(고온스트레인게이지_부착.jpg, _30채널측정.jpg, _응력측정.jpg)은 카카오CDN(blog.kakaocdn.net)이 샌드박스 네트워크 allowlist에 없어 자동 다운로드 불가 → 사용자가 직접 저장 완료. assets/images/현장계측용역 고온스트레인게이지/ 폴더에 정상 저장 확인(3000x4000 JPEG).
+- ⚠️ 참고: 티스토리(candj.tistory.com)/카카오CDN(blog.kakaocdn.net) 도메인은 샌드박스 bash·web_fetch 모두 접근 불가. 향후 티스토리 포스팅 참조 작업 시 이미지는 사용자에게 직접 저장 요청할 것.
+
 ## 완료된 작업 전체
 - style.css ✅
 - index.html ✅
