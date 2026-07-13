@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>건축물(빌딩) 진동 모니터링 시스템 — DIN 4150-3 상시 계측 가이드 | 씨앤디테크</title>
+<meta name="description" content="건축물·빌딩 진동 상시 모니터링 완전 가이드. 진동 발생 원인, 측정 목표·매개변수, DIN 4150-3·BS 7385 등 국제 표준, 독일 MMF사 진동 모니터링 시스템(3축 가속도계, IoT 원격 모니터링, SMS 알람) 소개." />
+<meta property="og:title" content="건축물(빌딩) 진동 모니터링 시스템 — DIN 4150-3 상시 계측 가이드 | 씨앤디테크" />
+<meta property="og:description" content="건물 진동 상시 모니터링이 필요한 이유, 국제 표준, MMF 진동 모니터링 시스템(IoT 원격 감시) 소개" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/cnd-logo-400.png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:alt" content="CND TECH 씨앤디테크 로고" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/building-vibration-monitoring.html" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/building-vibration-monitoring.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=6">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "건축물(빌딩) 진동 모니터링 시스템 — DIN 4150-3 상시 계측 가이드",
+  "description": "건축물·빌딩 진동 상시 모니터링 완전 가이드. 진동 발생 원인, 측정 목표·매개변수, DIN 4150-3·BS 7385 등 국제 표준, 독일 MMF사 진동 모니터링 시스템(3축 가속도계, IoT 원격 모니터링, SMS 알람) 소개.",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "inLanguage": "ko",
+  "keywords": "건물 진동 측정, 건축물 진동 모니터링, 빌딩 진동 모니터링, DIN 4150-3, BS 7385, ISO 4866, 구조물 진동 측정, MMF 진동 모니터링 시스템, 진동 상시모니터링"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "건축물 진동 상시 모니터링이 왜 필요한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "건물, 교량, 터널, 파이프라인과 같은 대형 구조물은 지진 외에도 건설 활동·산업 기계·도로 교통·철도 노선·폭발 등 다양한 요인으로 진동에 지속적으로 노출됩니다. 이러한 진동이 누적되면 구조적 무결성과 지지력에 영향을 줄 수 있어, 문제 발생 전에 상시 계측을 통해 진동 수준을 관리하는 것이 중요합니다. 특히 역사적인 건물은 더욱 세심한 주의가 필요합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "건물 진동 측정 시 어떤 매개변수를 측정하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "건물 진동 측정에서는 진폭(가속도·속도), 주파수, 지속 시간, 방향(X·Y·Z 3축)의 네 가지 매개변수를 측정합니다. 이 데이터를 국제 표준의 가이드 값과 비교해 손상 가능성을 평가합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "과도 진동과 지속적인 진동은 어떻게 다른가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "과도 진동은 재료의 피로를 유발할 만큼 강하지 않고, 공진에 의해 증가하기에는 너무 짧고 드물게 발생합니다. 반면 지속적인 진동은 재료 피로를 유발할 수 있으며, 공진으로 인해 진동 크기가 시간이 지날수록 증가할 수 있어 더 주의 깊은 모니터링이 필요합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "건물 진동 측정과 관련된 국제 표준은 무엇이 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "대표적으로 독일 DIN 4150-3(건물 진동이 구조물에 미치는 영향), 영국 BS 7385(지반 전달 진동에 의한 손상 수준 평가), 스위스 SN 640312a, ISO 4866(고정 구조물의 진동 측정 및 평가 가이드라인), 프랑스 Circulaire du 23/07/86 등이 있으며, 국내에서도 이를 준용해 건축물 진동 평가에 활용합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "MMF 진동 모니터링 시스템의 주요 특징은 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "독일 MMF사의 건축물 진동 모니터링 시스템은 DIN 4150-3, BS 7385, SN 640312a, Circulaire du 23/07/86 등 국제 표준에 따른 측정을 지원하며, 고감도 3축 가속도계와 데이터 수집 전자장치, 충전식 배터리를 내장합니다. FFT로 주 주파수를 계산하고 최대 10만 회 측정에 대한 시간·이벤트 기록이 가능하며, AskSensors·ThingSpeak IoT 플랫폼과 연동해 웹 브라우저·휴대폰으로 원격 상시 모니터링이 가능합니다. 알람 이벤트 발생 시 SMS 전송 기능도 지원하며, 현장 사용을 위한 IP67 알루미늄 케이스로 제작됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "씨앤디테크에서 어떤 지원을 받을 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "씨앤디테크는 건축물·구조물 진동 모니터링 시스템 공급뿐 아니라 측정 목적과 현장 조건에 맞는 표준 선정, 센서·데이터로거 구성, IoT 원격 모니터링 셋업까지 상담해 드립니다. 문의 시 최적의 솔루션을 제안해 드립니다."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+.rs-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+@media (max-width: 640px) {
+  .rs-stat-grid { grid-template-columns: 1fr; }
+}
+.rs-stat-card {
+  padding: 24px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+}
+.rs-stat-card .stat-val {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.rs-stat-card .stat-label {
+  font-size: 13px;
+  color: var(--text-mute);
+  line-height: 1.4;
+}
+
+.rs-section {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--line);
+}
+.rs-section:last-child { border-bottom: none; }
+.rs-section-title {
+  font-family: 'Manrope', 'Pretendard', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rs-section-title::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 22px;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.rs-img-wrap {
+  margin: 24px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+}
+.rs-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.rs-img-caption {
+  padding: 10px 16px;
+  font-size: 12px;
+  color: var(--text-mute);
+  background: var(--bg-card);
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.rs-img-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+@media (max-width: 640px) {
+  .rs-img-duo { grid-template-columns: 1fr; }
+}
+
+.rs-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+.rs-checklist li {
+  position: relative;
+  padding: 8px 0 8px 26px;
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+.rs-checklist li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.rs-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 13.5px;
+}
+.rs-compare-table th, .rs-compare-table td {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  text-align: center;
+}
+.rs-compare-table th {
+  background: var(--charcoal);
+  color: #fff;
+  font-weight: 700;
+}
+.rs-compare-table td:first-child {
+  text-align: left;
+  background: var(--bg-card);
+  font-weight: 600;
+  color: var(--charcoal);
+}
+.rs-compare-table td { color: var(--text-dim); }
+
+.rs-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 13.5px;
+}
+.rs-spec-table th, .rs-spec-table td {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  text-align: left;
+}
+.rs-spec-table th {
+  background: var(--bg-card);
+  font-weight: 700;
+  color: var(--charcoal);
+  width: 34%;
+}
+.rs-spec-table td { color: var(--text-dim); }
+
+.rs-app-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+.rs-app-tag {
+  padding: 6px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Manrope',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+<nav class="mobile-subnav" aria-label="모바일 카테고리 메뉴">
+  <a href="../about.html">회사소개</a>
+  <a href="../products.html">사업분야·제품</a>
+  <a href="../projects.html">주요실적</a>
+  <a href="index.html" class="pill-active">기술자료</a>
+  <a href="../index.html#blog">블로그</a>
+  <a href="../contact.html">문의</a>
+</nav>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../index.html#blog">블로그</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono','JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">구조물 진동 모니터링 · DIN 4150-3</div>
+      <h1 style="font-family:'Manrope','Pretendard',sans-serif; font-size:clamp(28px,5vw,50px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">건축물(빌딩) 진동<br><span class="accent">상시 모니터링 시스템 가이드</span></h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:720px; line-height:1.7; margin-bottom:0;">건물은 지진 외에도 건설 활동·산업 기계·도로 교통·철도 진동 등 다양한 요인으로 누적 피로에 노출됩니다. 씨앤디테크가 국제 표준 기반 건축물 진동 상시 모니터링과 독일 MMF사 진동 모니터링 시스템을 소개합니다.</p>
+    </div>
+
+    <div class="rs-stat-grid fade-in">
+      <div class="rs-stat-card">
+        <div class="stat-val">DIN 4150-3</div>
+        <div class="stat-label">BS 7385 · ISO 4866 등<br>국제 표준 기반 평가</div>
+      </div>
+      <div class="rs-stat-card">
+        <div class="stat-val">3축 가속도계</div>
+        <div class="stat-label">고감도 진동 측정<br>FFT 주 주파수 계산</div>
+      </div>
+      <div class="rs-stat-card">
+        <div class="stat-val">IoT 원격 감시</div>
+        <div class="stat-label">웹·휴대폰 상시 모니터링<br>알람 이벤트 SMS 전송</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 본문 ── -->
+<section style="padding:0 0 100px;">
+  <div class="container" style="max-width:860px;">
+
+    <!-- 1. 필요성 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">구조물 진동 측정 모니터링이 왜 필요할까요?</h2>
+      <ul class="rs-checklist">
+        <li>건물과 교량, 터널 또는 파이프라인과 같은 대형 구조물은 진동에 지속적으로 노출됩니다.</li>
+        <li>건물은 진동에도 불구하고 구조적 무결성과 지지력을 유지해야 합니다.</li>
+        <li>천장 및 기타 구성 요소의 지지력이 보장되어야 합니다.</li>
+        <li>역사적인 건물은 특별한 주의가 필요합니다.</li>
+        <li>진동은 거주성 및 근무 환경에 영향을 미칠 수 있습니다.</li>
+      </ul>
+
+      <div class="rs-img-wrap">
+        <img src="../assets/images/building-vibration/building-vibration-main.jpg" alt="건축물 빌딩 진동 측정 모니터링 개요" loading="lazy" style="width:100%; height:auto; max-height:380px; object-fit:contain; background:#f8f8f8;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        <div class="rs-img-caption">건축물 진동 상시 모니터링 개요</div>
+      </div>
+
+      <p style="font-size:14px; color:var(--text-dim); line-height:1.7; margin-top:8px;">건물 진동은 지진 이외에도 아래와 같은 요인에서 발생할 수 있습니다.</p>
+      <div class="rs-app-tags">
+        <span class="rs-app-tag">건설 활동</span>
+        <span class="rs-app-tag">산업 기계</span>
+        <span class="rs-app-tag">도로 교통</span>
+        <span class="rs-app-tag">철도 노선</span>
+        <span class="rs-app-tag">폭발</span>
+      </div>
+    </div>
+
+    <!-- 2. 목표 및 매개변수 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">건물 진동 측정의 목표와 매개변수</h2>
+      <table class="rs-spec-table">
+        <tr><th>문제 인식</th><td>건물 거주자가 진동을 체감해 측정 업체가 구조적 무결성 위험을 평가</td></tr>
+        <tr><th>제어 모니터링</th><td>최대 허용 진동 값을 설정하고 해당 값을 지속적으로 측정</td></tr>
+        <tr><th>문서화</th><td>건물 설계의 반응 예측을 검증하기 위해 측정 수행</td></tr>
+        <tr><th>진단</th><td>보다 심층적인 조사 수준에서 측정, 완화 절차를 위한 정보 제공</td></tr>
+      </table>
+
+      <p style="font-size:14px; color:var(--text-dim); line-height:1.7; margin:20px 0 8px;">진동 측정의 매개변수는 다음 네 가지입니다.</p>
+      <div class="rs-app-tags">
+        <span class="rs-app-tag">진폭</span>
+        <span class="rs-app-tag">주파수</span>
+        <span class="rs-app-tag">지속 시간</span>
+        <span class="rs-app-tag">방향(X·Y·Z)</span>
+      </div>
+
+      <p style="font-size:14px; color:var(--text-dim); line-height:1.7; margin-top:20px;">
+        독일 DIN 4150-3과 같은 표준은 수많은 실제 측정 경험을 바탕으로 기준값(가이드 값)을 제공합니다.
+        이 기준값 이하의 진동 진폭에서는 손상이 발생할 가능성이 거의 없으며, 결과가 가이드 값보다 높으면
+        더 심층적인 분석을 수행해야 합니다.
+      </p>
+    </div>
+
+    <!-- 3. 진동 유형 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">구조적 진동의 유형 — 과도 진동 vs 지속적인 진동</h2>
+      <table class="rs-compare-table">
+        <tr><th>구분</th><th>과도 진동</th><th>지속적인 진동</th></tr>
+        <tr><td>재료 피로</td><td>유발할 만큼 강하지 않음</td><td>재료 피로를 유발할 수 있음</td></tr>
+        <tr><td>공진 영향</td><td>증가하기엔 너무 짧고 드물게 발생</td><td>공진으로 진동 크기가 증가할 수 있음</td></tr>
+      </table>
+    </div>
+
+    <!-- 4. 국제 표준 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">건축물 진동 표준 (Standards for Building Vibration)</h2>
+      <p style="font-size:14px; color:var(--text-dim); line-height:1.7; margin-bottom:16px;">건물 진동 규격으로는 DIN 4150-2, ISO 2631-1, ISO 4866, ISO-10137 등이 있으며, 대표적인 유럽 진동 표준은 다음과 같습니다.</p>
+      <table class="rs-spec-table">
+        <tr><th>German DIN 4150-3</th><td>Vibration in buildings — Part 3: Effects on structures (각국 파생 규격 다수)</td></tr>
+        <tr><th>British BS 7385</th><td>Evaluation and measurement for vibration in buildings. Guide to damage levels from ground borne vibration</td></tr>
+        <tr><th>Swiss SN 640312a</th><td>Vibration immission in buildings</td></tr>
+        <tr><th>ISO 4866</th><td>Mechanical vibration and shock — Vibration of fixed structures — Guidelines for measurement and evaluation</td></tr>
+        <tr><th>French Circulaire du 23/07/86</th><td>프랑스 건물 진동 관련 규정</td></tr>
+      </table>
+    </div>
+
+    <!-- 5. MMF 시스템 소개 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">독일 MMF사 건축물 진동 모니터링 시스템</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        건축물 진동 모니터링 측정 전용 시스템인 독일 MMF사의 진동 모니터링 시스템을 소개합니다.
+      </p>
+
+      <div class="rs-img-wrap">
+        <img src="../assets/images/building-vibration/mmf-system-main.jpg" alt="독일 MMF사 건축물 진동 모니터링 시스템" loading="lazy" style="width:100%; height:auto; max-height:400px; object-fit:contain; background:#f8f8f8;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        <div class="rs-img-caption">독일 MMF사의 건축물 진동 모니터링 시스템</div>
+      </div>
+
+      <h3 style="font-size:16px; font-weight:700; color:var(--charcoal); margin:24px 0 12px;">🔸 시스템의 특징</h3>
+      <ul class="rs-checklist">
+        <li>국제 표준에 따른 건물 진동 측정 (DIN 4150-3, BS 7385, SN 640312a, Circulaire du 23/07/86)</li>
+        <li>고감도 3축 가속도계, 데이터 수집 전자장치 및 충전식 배터리 내장</li>
+        <li>FFT를 실행하여 주 주파수 계산</li>
+        <li>최대 10만 회 측정에 대한 시간 및 이벤트 제어 기록</li>
+        <li>웹 브라우저 기반 원격 모니터링 — IoT 센서 데이터 플랫폼 AskSensors·ThingSpeak 연동, 휴대폰 상시 모니터링 지원</li>
+        <li>알람 이벤트 발생 시 SMS 전송</li>
+        <li>현장 사용을 위한 견고한 IP67 알루미늄 케이스</li>
+      </ul>
+
+      <div class="rs-img-duo">
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/building-vibration/mmf-system-photo-01.jpg" alt="MMF 진동 모니터링 시스템 제품 사진 1" loading="lazy" style="width:100%; height:240px; object-fit:cover;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        </div>
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/building-vibration/mmf-system-photo-02.jpg" alt="MMF 진동 모니터링 시스템 제품 사진 2" loading="lazy" style="width:100%; height:240px; object-fit:cover;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        </div>
+      </div>
+
+      <h3 style="font-size:16px; font-weight:700; color:var(--charcoal); margin:28px 0 12px;">🔸 시스템 사양</h3>
+      <table class="rs-spec-table">
+        <tr><th>지원 표준</th><td>BS 7385, Circulaire du 23/07/86, DIN 4150-3, SN 640312A</td></tr>
+        <tr><th>측정 대상</th><td>Peak of acceleration, Peak of velocity</td></tr>
+        <tr><th>가속도 측정 범위</th><td>0.01 ~ 15 m/s²</td></tr>
+        <tr><th>속도 측정 범위</th><td>0.1 ~ 2400 mm/s</td></tr>
+        <tr><th>주파수 범위(-3dB)</th><td>0.8~100Hz, 0.8~395Hz, 5~150Hz</td></tr>
+        <tr><th>출력</th><td>Relay, Serial</td></tr>
+        <tr><th>전원 공급</th><td>5V(USB), 충전식 배터리</td></tr>
+      </table>
+      <p style="font-size:13px; color:var(--text-mute); margin-top:12px;">프린터·경광등을 옵션으로 제공해 손쉽게 진동 알람 및 데이터를 확인할 수 있습니다.</p>
+    </div>
+
+    <!-- 6. IoT 원격 모니터링 -->
+    <div class="rs-section fade-in">
+      <h2 class="rs-section-title">IoT 연동 원격 상시 모니터링</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:16px;">
+        IoT 커넥션 지원으로 웹 상에서 상시 모니터링이 가능합니다. 현장에 설치된 시스템의 진동 데이터를
+        AskSensors·ThingSpeak 플랫폼을 통해 원격에서 실시간으로 확인할 수 있어, 관리자가 현장에 상주하지
+        않아도 이상 진동 발생 시 즉시 SMS 알람으로 파악할 수 있습니다.
+      </p>
+      <div class="rs-img-wrap">
+        <img src="../assets/images/building-vibration/mmf-iot-monitoring.jpg" alt="MMF 진동 모니터링 시스템 IoT 원격 웹 모니터링 화면" loading="lazy" style="width:100%; height:auto; max-height:380px; object-fit:contain; background:#f8f8f8;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        <div class="rs-img-caption">IoT 연동 웹 기반 원격 상시 모니터링</div>
+      </div>
+
+      <p style="font-size:14px; color:var(--text-mute); margin-top:20px; margin-bottom:16px;">관련 기술 자료 더 보기:</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="vibration-sensor.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 진동센서(가속도계) 원리·선택</a>
+        <a href="vibration.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 휴대용 진동측정 시스템</a>
+        <a href="vm100.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ MMF VM100 진동측정 시스템</a>
+        <a href="dt9837-daq.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ DT9837·DT9857E 데이터수집장치</a>
+        <a href="torsional-vibration.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 비틀림 진동 측정·분석</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section style="padding:48px 0 0;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in">
+      <h2 style="font-family:'Manrope','Pretendard',sans-serif; font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:8px; padding-left:14px; border-left:4px solid var(--accent);">자주 묻는 질문 (FAQ)</h2>
+      <p style="font-size:13px; color:var(--text-mute); margin-bottom:28px; padding-left:18px;">건축물(빌딩) 진동 모니터링 관련 질문</p>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>건축물 진동 상시 모니터링이 왜 필요한가요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">건물, 교량, 터널, 파이프라인과 같은 대형 구조물은 지진 외에도 건설 활동·산업 기계·도로 교통·철도 노선·폭발 등 다양한 요인으로 진동에 지속적으로 노출됩니다. 이러한 진동이 누적되면 구조적 무결성과 지지력에 영향을 줄 수 있어, 문제 발생 전에 상시 계측을 통해 진동 수준을 관리하는 것이 중요합니다. 특히 역사적인 건물은 더욱 세심한 주의가 필요합니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>건물 진동 측정 시 어떤 매개변수를 측정하나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">건물 진동 측정에서는 진폭(가속도·속도), 주파수, 지속 시간, 방향(X·Y·Z 3축)의 네 가지 매개변수를 측정합니다. 이 데이터를 국제 표준의 가이드 값과 비교해 손상 가능성을 평가합니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>과도 진동과 지속적인 진동은 어떻게 다른가요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">과도 진동은 재료의 피로를 유발할 만큼 강하지 않고, 공진에 의해 증가하기에는 너무 짧고 드물게 발생합니다. 반면 지속적인 진동은 재료 피로를 유발할 수 있으며, 공진으로 인해 진동 크기가 시간이 지날수록 증가할 수 있어 더 주의 깊은 모니터링이 필요합니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>건물 진동 측정과 관련된 국제 표준은 무엇이 있나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">대표적으로 독일 DIN 4150-3(건물 진동이 구조물에 미치는 영향), 영국 BS 7385(지반 전달 진동에 의한 손상 수준 평가), 스위스 SN 640312a, ISO 4866(고정 구조물의 진동 측정 및 평가 가이드라인), 프랑스 Circulaire du 23/07/86 등이 있으며, 국내에서도 이를 준용해 건축물 진동 평가에 활용합니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:8px; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>MMF 진동 모니터링 시스템의 주요 특징은 무엇인가요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">독일 MMF사의 건축물 진동 모니터링 시스템은 DIN 4150-3, BS 7385, SN 640312a, Circulaire du 23/07/86 등 국제 표준에 따른 측정을 지원하며, 고감도 3축 가속도계와 데이터 수집 전자장치, 충전식 배터리를 내장합니다. FFT로 주 주파수를 계산하고 최대 10만 회 측정에 대한 시간·이벤트 기록이 가능하며, AskSensors·ThingSpeak IoT 플랫폼과 연동해 웹 브라우저·휴대폰으로 원격 상시 모니터링이 가능합니다. 알람 이벤트 발생 시 SMS 전송 기능도 지원하며, 현장 사용을 위한 IP67 알루미늄 케이스로 제작됩니다.</p>
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--line); border-radius:var(--radius); background:var(--bg-card); margin-bottom:0; overflow:hidden;">
+        <summary style="cursor:pointer; padding:18px 20px; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <span>씨앤디테크에서 어떤 지원을 받을 수 있나요?</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; color:var(--text-mute);"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div style="padding:0 20px 18px; font-size:14px; color:var(--text-dim); line-height:1.7; border-top:1px solid var(--line);">
+          <p style="margin:12px 0 0;">씨앤디테크는 건축물·구조물 진동 모니터링 시스템 공급뿐 아니라 측정 목적과 현장 조건에 맞는 표준 선정, 센서·데이터로거 구성, IoT 원격 모니터링 셋업까지 상담해 드립니다. 문의 시 최적의 솔루션을 제안해 드립니다.</p>
+        </div>
+      </details>
+
+    </div><!-- /FAQ -->
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section style="padding:40px 0 80px;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in" style="padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius);">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">건축물 진동 모니터링 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">건물 용도, 인접 진동원(공사장·철도·도로 등), 적용 표준(DIN 4150-3 등)을 알려주시면 최적의 진동 모니터링 시스템 구성과 IoT 원격 감시 셋업을 안내해 드립니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+        <a href="mailto:wgjeon@cndtec.co.kr" class="btn btn-ghost">wgjeon@cndtec.co.kr</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Manrope',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="vibration.html">진동측정 시스템</a></li><li><a href="vibration-sensor.html">진동센서</a></li><li><a href="vm100.html">MMF VM100</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta"><span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span></div>
+  </div>
+</footer>
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+</body>
+</html>
