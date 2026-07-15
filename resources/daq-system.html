@@ -13,9 +13,8 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.cndtec.co.kr/resources/daq-system.html" />
 <meta property="og:image" content="https://www.cndtec.co.kr/assets/images/daq.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="../css/style.css?v=6">
 <script type="application/ld+json">
 {
@@ -81,21 +80,24 @@
 </script>
 <style>
 /* ── DAQ 페이지 전용 스타일 ── */
+body, .container, p, h1, h2, h3, h4, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
 .daq-tag {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 5px 12px;
   background: var(--orange-tint, rgba(242,148,0,0.08));
   border: 1px solid var(--orange-line, rgba(242,148,0,0.2));
   border-radius: 999px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pretendard', sans-serif;
   font-size: 10px; color: var(--accent-deep); font-weight: 700;
   margin-bottom: 12px; letter-spacing: 1px;
 }
 .daq-h2 { font-size: 22px; font-weight: 700; color: var(--charcoal); margin-bottom: 16px; }
 .daq-sub {
   font-size: 10px; font-weight: 700; color: var(--accent);
-  font-family: 'JetBrains Mono', monospace; letter-spacing: 3px;
-  margin-bottom: 8px; text-transform: uppercase;
+  font-family: 'Pretendard', sans-serif; letter-spacing: 0.5px;
+  margin-bottom: 8px;
 }
 .daq-divider { border: none; border-top: 1px solid var(--line); margin: 48px 0; }
 
@@ -110,10 +112,10 @@
   padding: 20px 16px; text-align: center;
 }
 .daq-stat-n {
-  font-family: 'Space Grotesk', 'JetBrains Mono', monospace;
+  font-family: 'Pretendard', sans-serif;
   font-size: clamp(26px, 4vw, 40px); font-weight: 700; color: var(--accent); line-height: 1;
 }
-.daq-stat-u { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: var(--accent-deep); margin-top: 4px; }
+.daq-stat-u { font-family: 'Pretendard', sans-serif; font-size: 10px; font-weight: 700; color: var(--accent-deep); margin-top: 4px; }
 .daq-stat-l { font-size: 11px; color: var(--text-mute); margin-top: 4px; }
 
 /* 구성요소 흐름 */
@@ -147,15 +149,15 @@
   border-radius: var(--radius); padding: 20px 14px; text-align: center;
 }
 .daq-adc-card.best { border-color: var(--accent); background: var(--orange-tint, rgba(242,148,0,0.05)); }
-.daq-adc-bit { font-family: 'Space Grotesk', monospace; font-size: 30px; font-weight: 700; color: var(--accent); }
+.daq-adc-bit { font-family: 'Pretendard', sans-serif; font-size: 30px; font-weight: 700; color: var(--accent); }
 .daq-adc-bit-u { font-size: 13px; color: var(--text-mute); }
-.daq-adc-steps { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: var(--charcoal); margin: 8px 0 4px; }
+.daq-adc-steps { font-family: 'Pretendard', sans-serif; font-size: 11px; font-weight: 700; color: var(--charcoal); margin: 8px 0 4px; }
 .daq-adc-res { font-size: 11px; color: var(--text-mute); }
 .daq-adc-use { font-size: 11px; color: var(--text-dim); margin-top: 8px; line-height: 1.5; }
 .daq-adc-badge {
   display: inline-block; margin-top: 8px;
   background: var(--accent); color: #fff;
-  font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 700;
+  font-family: 'Pretendard', sans-serif; font-size: 8px; font-weight: 700;
   padding: 2px 8px; border-radius: 999px; letter-spacing: 1px; text-transform: uppercase;
 }
 
@@ -172,9 +174,9 @@
   padding: 14px 18px; background: var(--bg-soft, #F8F6F4);
   border-bottom: 2px solid var(--accent);
 }
-.daq-type-num { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; color: var(--accent); letter-spacing: 2px; margin-bottom: 3px; }
+.daq-type-num { font-family: 'Pretendard', sans-serif; font-size: 9px; font-weight: 700; color: var(--accent); letter-spacing: 0.5px; margin-bottom: 3px; }
 .daq-type-nm { font-size: 14px; font-weight: 700; color: var(--charcoal); margin-bottom: 1px; }
-.daq-type-en { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-mute); }
+.daq-type-en { font-family: 'Pretendard', sans-serif; font-size: 10px; color: var(--text-mute); }
 .daq-type-body { padding: 14px 18px; }
 .daq-type-desc { font-size: 12px; color: var(--text-dim); line-height: 1.7; margin-bottom: 12px; }
 .daq-type-row {
@@ -199,7 +201,7 @@
 }
 .daq-prod-img-wrap img { max-width: 100%; max-height: 200px; object-fit: contain; }
 .daq-prod-info { flex: 1; padding: 24px; }
-.daq-prod-maker { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+.daq-prod-maker { font-family: 'Pretendard', sans-serif; font-size: 9px; font-weight: 700; color: var(--accent); letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 4px; }
 .daq-prod-name { font-size: 22px; font-weight: 700; color: var(--charcoal); margin-bottom: 4px; }
 .daq-prod-sub { font-size: 12px; color: var(--text-mute); margin-bottom: 16px; }
 .daq-prod-feats { list-style: none; display: flex; flex-direction: column; gap: 7px; }
@@ -210,8 +212,8 @@
   border-top: 1px solid var(--orange-line, rgba(242,148,0,0.2));
   display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
 }
-.daq-prod-sw-lbl { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: var(--accent-deep); text-transform: uppercase; letter-spacing: 1px; }
-.daq-prod-sw-nm { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: var(--accent); }
+.daq-prod-sw-lbl { font-family: 'Pretendard', sans-serif; font-size: 10px; font-weight: 700; color: var(--accent-deep); text-transform: uppercase; letter-spacing: 1px; }
+.daq-prod-sw-nm { font-family: 'Pretendard', sans-serif; font-size: 13px; font-weight: 700; color: var(--accent); }
 .daq-prod-imgs { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0; border-top: 1px solid var(--line); }
 .daq-prod-imgs img { width: 100%; height: 180px; object-fit: cover; border-right: 1px solid var(--line); display: block; }
 .daq-prod-imgs img:last-child { border-right: none; }
@@ -221,7 +223,7 @@
 .daq-guide-tbl { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 600px; }
 .daq-guide-tbl th {
   background: var(--charcoal); color: #fff; padding: 12px 14px;
-  font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700;
+  font-family: 'Pretendard', sans-serif; font-size: 10px; font-weight: 700;
   letter-spacing: 1px; text-transform: uppercase; text-align: left;
 }
 .daq-guide-tbl td { padding: 11px 14px; border-bottom: 1px solid var(--line); color: var(--text-dim); vertical-align: middle; }
@@ -231,7 +233,7 @@
 .rec {
   display: inline-block;
   background: var(--accent); color: #fff;
-  font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700;
+  font-family: 'Pretendard', sans-serif; font-size: 9px; font-weight: 700;
   padding: 2px 8px; border-radius: 999px; letter-spacing: 1px; white-space: nowrap;
 }
 
@@ -262,7 +264,7 @@
   <div class="nav">
     <a href="../index.html" class="brand">
       <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
     </a>
     <nav class="nav-links">
       <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
@@ -305,7 +307,7 @@
     <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
     <div style="margin-top:20px;">
       <div class="daq-tag">DAQ SYSTEM · 데이터 수집장치</div>
-      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(28px,5vw,56px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">데이터 수집장치(DAQ)<br>완전 가이드</h1>
+      <h1 style="font-family:'Pretendard',sans-serif; font-size:clamp(28px,5vw,56px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">데이터 수집장치(DAQ)<br>완전 가이드</h1>
       <p style="font-size:17px; color:var(--text-dim); max-width:700px; line-height:1.7; margin-bottom:0;">센서 계측의 핵심 인프라, DAQ 시스템의 개념·구성·ADC 분해능 원리를 설명하고, 데이터 로거·DAQ 장치·모듈식 시스템 3가지 유형을 비교합니다. 씨앤디테크가 취급하는 HBM QuantumX, Gantner Q.Series X, Data Translation DT 제품도 함께 소개합니다.</p>
     </div>
 
@@ -723,7 +725,7 @@
 
       <!-- 내부 링크 클러스터 -->
       <div style="padding:20px 24px; background:var(--bg-soft,#F8F6F4); border:1px solid var(--line); border-radius:var(--radius); margin-top:24px;">
-        <p style="font-size:11px; font-weight:700; color:var(--accent); font-family:'JetBrains Mono',monospace; letter-spacing:2px; margin-bottom:12px;">관련 기술자료</p>
+        <p style="font-size:11px; font-weight:700; color:var(--accent); font-family:'Pretendard',sans-serif; letter-spacing:0.5px; margin-bottom:12px;">관련 기술자료</p>
         <div style="display:flex; flex-wrap:wrap; gap:12px;">
           <a href="strain-gauge.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 스트레인게이지 원리·종류</a>
           <a href="strain-gauge-bonding.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 스트레인게이지 부착 방법</a>
@@ -812,7 +814,7 @@
     <div class="footer-row">
       <div class="footer-brand">
         <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
         <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
       </div>
       <div class="footer-cols">
