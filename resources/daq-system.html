@@ -213,9 +213,9 @@ body, .container, p, h1, h2, h3, h4, span, div, li, td, th, button, a {
 .daq-prod-sw-lbl { font-family: 'Pretendard', sans-serif; font-size: 10px; font-weight: 700; color: var(--accent-deep); text-transform: uppercase; letter-spacing: 1px; }
 .daq-prod-sw-nm { font-family: 'Pretendard', sans-serif; font-size: 13px; font-weight: 700; color: var(--accent); }
 .daq-prod-imgs { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0; border-top: 1px solid var(--line); background: #f8fafc; }
-.daq-prod-imgs img { width: 100%; height: 380px; object-fit: contain; background: #f8fafc; border-right: 1px solid var(--line); display: block; }
-.daq-prod-imgs img:last-child { border-right: none; }
-@media (max-width: 700px) { .daq-prod-imgs img { height: 260px; } }
+.daq-prod-imgs img, .daq-prod-imgs video { width: 100%; height: 380px; object-fit: contain; background: #f8fafc; border-right: 1px solid var(--line); display: block; }
+.daq-prod-imgs img:last-child, .daq-prod-imgs video:last-child { border-right: none; }
+@media (max-width: 700px) { .daq-prod-imgs img, .daq-prod-imgs video { height: 260px; } }
 
 /* 선택 가이드 테이블 */
 .daq-guide-wrap { overflow-x: auto; margin: 24px 0; }
@@ -585,8 +585,10 @@ body, .container, p, h1, h2, h3, h4, span, div, li, td, th, button, a {
             <span style="font-size:12px; color:var(--text-dim);">— 구성·측정·분석 통합 플랫폼</span>
           </div>
           <div class="daq-prod-imgs">
-            <img src="../assets/images/DAQ/Gantner GI BENCH.gif"
-                 alt="Gantner GI.BENCH 소프트웨어 화면">
+            <video src="../assets/images/DAQ/Gantner GI BENCH.mp4"
+                   poster="../assets/images/DAQ/Gantner GI BENCH-poster.jpg"
+                   autoplay loop muted playsinline
+                   aria-label="Gantner GI.BENCH 소프트웨어 화면"></video>
           </div>
         </div>
 
