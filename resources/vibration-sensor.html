@@ -12,7 +12,7 @@
 <meta property="og:description" content="피에조일렉트릭 가속도센서 원리, 측정 파라미터 선택, 올바른 설치 방법까지 — 씨앤디테크 진동 측정 기술자료." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.cndtec.co.kr/resources/vibration-sensor.html" />
-<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/vibration sensor/가속도센서 설치01.png" />
+<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/vibration sensor/3축가속도센서_01.png" />
 <meta property="og:site_name" content="씨앤디테크 기술자료" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
@@ -35,7 +35,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
   "dateModified": "2026-06-26",
   "inLanguage": "ko",
   "url": "https://www.cndtec.co.kr/resources/vibration-sensor.html",
-  "image": "https://www.cndtec.co.kr/assets/images/vibration sensor/가속도센서 설치01.png"
+  "image": "https://www.cndtec.co.kr/assets/images/vibration sensor/3축가속도센서_01.png"
 }
 </script>
 <script type="application/ld+json">
@@ -111,6 +111,9 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 /* stat cards */
 .vs-stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;}
 @media(max-width:640px){.vs-stat-grid{grid-template-columns:1fr 1fr;}}
+.vs-hero-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px;}
+.vs-hero-gallery img{width:100%;height:220px;object-fit:contain;background:#f8fafc;border-radius:var(--radius);border:1px solid var(--line);display:block;}
+@media(max-width:640px){.vs-hero-gallery{grid-template-columns:1fr 1fr;}.vs-hero-gallery img{height:180px;}}
 .vs-stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 16px;text-align:center;}
 .vs-stat-num{font-family:'Pretendard',sans-serif;font-size:20px;font-weight:700;color:var(--accent);line-height:1;}
 .vs-stat-sub{font-size:11px;color:var(--text-mute);margin-top:5px;line-height:1.45;}
@@ -241,8 +244,14 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <div class="vs-stat-sub">센서 설치 방법<br>스터드·마그넷·접착제 외</div>
       </div>
     </div>
-    <img src="../assets/images/vibration sensor/가속도센서 설치01.png"
-         alt="진동측정 적용 분야 — 모터·터빈·교량·기계 공구 피에조 가속도센서" style="width:100%; border-radius:var(--radius); margin-top:40px; display:block;" class="fade-in" loading="lazy">
+    <div class="vs-hero-gallery fade-in">
+      <img src="../assets/images/vibration sensor/3축가속도센서_01.png"
+           alt="3축 가속도센서 — MMF KS943L 타입" loading="lazy">
+      <img src="../assets/images/vibration sensor/3축가속도센서_02.png"
+           alt="3축 가속도센서 — 커넥터 각도형 타입" loading="lazy">
+      <img src="../assets/images/vibration sensor/가속도센서_02.png"
+           alt="단축 가속도센서 — MMF KS57 타입" loading="lazy">
+    </div>
   </div>
 </section>
 
@@ -396,10 +405,6 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <li><div class="tip-num">4</div><div><strong style="color:var(--charcoal);">축 정렬 오정렬 최소화</strong> — 센서 측정 축과 원하는 측정 방향의 오정렬을 최소화합니다. 횡방향 진동 진폭이 클 경우 오정렬이 더 큰 오차를 유발합니다.</div></li>
         <li><div class="tip-num">5</div><div><strong style="color:var(--charcoal);">나사 및 간극 확인</strong> — 스터드 마운팅 시 나사가 나사 구멍보다 길지 않은지 확인하고, 센서 베이스 아래에 틈이 없어야 합니다.</div></li>
       </ul>
-
-      <img src="../assets/images/vibration sensor/가속도센서 설치01.png"
-           alt="진동센서 설치 면 가공 및 평탄도 복원" loading="lazy"
-           style="width:100%; border-radius:var(--radius); border:1px solid var(--line); display:block; object-fit:contain; background:#f8fafc; max-height:260px; margin-top:20px;">
     </div>
 
     <hr class="vs-divider">
