@@ -173,6 +173,10 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
   gap: 16px;
   margin: 24px 0;
 }
+.rs-img-trio { grid-template-columns: 1fr 1fr 1fr; }
+@media (max-width: 780px) {
+  .rs-img-trio { grid-template-columns: 1fr 1fr; }
+}
 @media (max-width: 640px) {
   .rs-img-duo { grid-template-columns: 1fr; }
 }
@@ -369,7 +373,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         </div>
       </div>
 
-      <div class="rs-img-duo" style="margin-top:28px;">
+      <div class="rs-img-duo rs-img-trio" style="margin-top:28px;">
         <div class="rs-img-wrap" style="margin:0;">
           <img src="../assets/images/battery-case-strain/battery-strain-gauge-02.jpg"
                alt="배터리 셀 스트레인게이지 부착 클로즈업" loading="lazy"
@@ -383,6 +387,13 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
                style="width:100%; height:auto; max-height:340px; object-fit:contain; background:#f8f8f8;"
                onerror="this.closest('.rs-img-wrap').style.display='none'">
           <div class="rs-img-caption">DAQ 시스템 연동 신호 확인</div>
+        </div>
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/battery-case-strain/battery-strain-install.jpg"
+               alt="배터리 케이스 스트레인게이지 리드선 보호 테이핑 작업" loading="lazy"
+               style="width:100%; height:auto; max-height:340px; object-fit:contain; background:#f8f8f8;"
+               onerror="this.closest('.rs-img-wrap').style.display='none'">
+          <div class="rs-img-caption">리드선 보호 테이핑 작업</div>
         </div>
       </div>
     </div>
