@@ -14,10 +14,14 @@
 <meta property="og:image:width" content="400" />
 <meta property="og:image:alt" content="CND TECH 씨앤디테크 로고" />
 <meta property="og:url" content="https://www.cndtec.co.kr/resources/peening-residual-stress.html" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="../css/style.css?v=6">
+<style>
+body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -97,7 +101,7 @@
   text-align: center;
 }
 .rs-stat-card .stat-val {
-  font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  font-family: 'Pretendard', sans-serif;
   font-size: 26px;
   font-weight: 700;
   color: var(--accent);
@@ -120,7 +124,7 @@
   border-bottom: 2px solid var(--line);
 }
 .rs-section-title span {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Pretendard', sans-serif;
   font-size: 11px;
   color: var(--accent);
   font-weight: 700;
@@ -145,7 +149,7 @@
   position: relative;
 }
 .rs-step .step-num {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Pretendard', sans-serif;
   font-size: 11px;
   font-weight: 700;
   color: var(--accent);
@@ -234,7 +238,7 @@
 }
 .rs-spec-table td {
   color: var(--text-dim);
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Pretendard', sans-serif;
   font-size: 13px;
 }
 .rs-app-tags {
@@ -283,7 +287,7 @@
 }
 .rs-faq-q::before {
   content: "Q";
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Pretendard', sans-serif;
   font-size: 11px;
   font-weight: 700;
   color: var(--accent);
@@ -317,7 +321,7 @@
   border-radius: var(--radius);
 }
 .rs-reason-card .reason-num {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Pretendard', sans-serif;
   font-size: 28px;
   font-weight: 700;
   color: var(--accent);
@@ -347,7 +351,7 @@
     <a href="../index.html" class="brand">
       <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo"
            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
     </a>
     <nav class="nav-links">
       <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
@@ -397,7 +401,7 @@
 
   <!-- Hero -->
   <div style="margin-bottom:48px;">
-    <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px; letter-spacing:0.06em;">PEENING · ASTM E837</div>
+    <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px; letter-spacing:0.06em;">PEENING · ASTM E837</div>
     <h1 style="font-size:clamp(28px,5vw,42px); font-weight:800; color:var(--charcoal); line-height:1.2; margin-bottom:20px;">피닝 공정별 잔류응력 측정<br><span style="color:var(--accent);">레이저 피닝 · 쇼트피닝</span></h1>
     <p style="font-size:17px; color:var(--text-dim); line-height:1.75; max-width:700px;">피닝 공정이 부여하는 압축 잔류응력을 ASTM E837 홀드릴링법으로 정량 평가합니다. 피닝 횟수·강도·열처리 이력별 깊이 분포를 비교 분석해 피로수명 향상 효과를 수치로 검증합니다.</p>
   </div>
@@ -570,11 +574,11 @@
     <h2 class="rs-section-title"><span>SERVICE</span>측정 용역 및 장비 공급</h2>
     <div class="rs-service-grid">
       <div class="rs-service-card">
-        <div style="font-size:13px; font-family:'IBM Plex Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:8px;">측정 용역</div>
+        <div style="font-size:13px; font-family:'Pretendard',sans-serif; color:var(--accent); font-weight:700; margin-bottom:8px;">측정 용역</div>
         <div style="font-size:14px; color:var(--text-dim); line-height:1.6;">현장 방문 측정 또는 시편 수령 측정<br>ASTM E837 기준 성적서 발급<br>피닝 조건별 비교 분석 보고서<br>사진·영상 촬영 포함</div>
       </div>
       <div class="rs-service-card">
-        <div style="font-size:13px; font-family:'IBM Plex Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:8px;">장비 공급</div>
+        <div style="font-size:13px; font-family:'Pretendard',sans-serif; color:var(--accent); font-weight:700; margin-bottom:8px;">장비 공급</div>
         <div style="font-size:14px; color:var(--text-dim); line-height:1.6;">SINT MTS3000 잔류응력 측정 시스템<br>HBM DAQ 시스템<br>TML 잔류응력 전용 게이지<br>설치·교육·유지보수 지원</div>
       </div>
     </div>
@@ -614,7 +618,7 @@
 
   <!-- CTA -->
   <div style="padding:48px 40px; background:linear-gradient(135deg,var(--orange-tint) 0%,var(--white) 60%); border:1px solid var(--orange-line); border-radius:var(--radius); text-align:center;">
-    <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; color:var(--accent); letter-spacing:0.1em; margin-bottom:12px;">CONTACT US</div>
+    <div style="font-family:'Pretendard',sans-serif; font-size:11px; font-weight:700; color:var(--accent); letter-spacing:0.1em; margin-bottom:12px;">CONTACT US</div>
     <h3 style="font-size:24px; font-weight:800; color:var(--charcoal); margin-bottom:12px;">피닝 잔류응력 측정 문의</h3>
     <p style="font-size:15px; color:var(--text-dim); margin-bottom:28px; max-width:500px; margin-left:auto; margin-right:auto;">레이저 피닝·쇼트피닝 후 잔류응력 평가, 피닝 조건별 비교 분석이 필요하시면 언제든지 문의해 주세요. 측정 용역 및 장비 공급 모두 지원합니다.</p>
     <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
@@ -630,7 +634,7 @@
     <div class="footer-row">
       <div class="footer-brand">
         <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
         <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
       </div>
       <div class="footer-cols">

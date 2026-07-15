@@ -13,10 +13,14 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.cndtec.co.kr/resources/telemetry.html" />
 <meta property="og:image" content="https://www.cndtec.co.kr/assets/images/SG_telemetry system.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="../css/style.css?v=6">
+<style>
+body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -48,7 +52,7 @@
 .tl-flow-step:not(:last-child)::after { content:'→'; position:absolute; right:-13px; top:50%; transform:translateY(-50%); font-size:15px; color:var(--accent); font-weight:700; z-index:2; background:var(--bg); padding:0 2px; }
 .tl-flow-step:first-child { border-radius:var(--radius) 0 0 var(--radius); }
 .tl-flow-step:last-child  { border-radius:0 var(--radius) var(--radius) 0; }
-.tl-flow-num   { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); letter-spacing:.08em; margin-bottom:5px; }
+.tl-flow-num   { font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent); letter-spacing:.08em; margin-bottom:5px; }
 .tl-flow-label { font-size:13px; font-weight:700; color:var(--charcoal); margin-bottom:3px; }
 .tl-flow-sub   { font-size:11px; color:var(--text-mute); line-height:1.4; }
 @media(max-width:600px){
@@ -62,7 +66,7 @@
 .tl-comp-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:28px; }
 @media(max-width:720px){ .tl-comp-grid { grid-template-columns:1fr; } }
 .tl-comp-card { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:26px 22px; }
-.tl-comp-tag  { font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:600; color:var(--accent); letter-spacing:.1em; margin-bottom:10px; }
+.tl-comp-tag  { font-family:'Pretendard',sans-serif; font-size:10px; font-weight:600; color:var(--accent); letter-spacing:.1em; margin-bottom:10px; }
 .tl-comp-title{ font-size:16px; font-weight:800; color:var(--charcoal); margin-bottom:8px; }
 .tl-comp-desc { font-size:13px; color:var(--text-dim); line-height:1.7; margin-bottom:14px; }
 .tl-spec-row  { display:flex; justify-content:space-between; font-size:12.5px; padding:6px 0; border-bottom:1px solid var(--line); }
@@ -104,7 +108,7 @@
   <div class="nav">
     <a href="../index.html" class="brand">
       <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-      <span style="display:none; align-items:center; gap:6px; font-family:'Manrope',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
     </a>
     <nav class="nav-links">
       <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
@@ -145,7 +149,7 @@
   <div class="container">
     <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
     <div style="margin-top:20px;">
-      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--accent); font-weight:700; margin-bottom:20px;">WIRELESS · TELEMETRY</div>
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:11px; color:var(--accent); font-weight:700; margin-bottom:20px;">WIRELESS · TELEMETRY</div>
       <h1 style="font-size:clamp(28px,5vw,56px); font-weight:800; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);" data-ko="텔레메터리 시스템" data-en="Telemetry System">텔레메터리 시스템</h1>
       <p style="font-size:17px; color:var(--text-dim); max-width:720px; line-height:1.7; margin-bottom:0;" data-ko="RF 무선 방식으로 회전체·이동체의 스트레인게이지 신호를 실시간 취득·분석합니다. 토크, 응력, 온도, 진동을 슬립링 없이 비접촉으로 측정. 배터리·인덕티브 두 가지 전원 방식 지원." data-en="Wireless RF telemetry for real-time torque, stress, temperature, and vibration data from rotating structures — no slip rings required.">RF 무선 방식으로 회전체·이동체의 스트레인게이지 신호를 실시간 취득·분석합니다. 토크, 응력, 온도, 진동을 슬립링 없이 비접촉으로 측정. 배터리·인덕티브 두 가지 전원 방식 지원.</p>
     </div>
@@ -339,7 +343,7 @@
 <!-- 현장 적용 사례 -->
 <section style="padding:60px 0; background:var(--bg-soft); border-bottom:1px solid var(--line);">
   <div class="container">
-    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:12px;">FIELD APPLICATIONS</div>
+    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:12px;">FIELD APPLICATIONS</div>
     <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:8px;" data-ko="현장 적용 사례" data-en="Application Examples">현장 적용 사례</h2>
     <p style="font-size:14px; color:var(--text-mute); margin-bottom:0;">실제 산업 현장 텔레메터리 시스템 설치 사례 — 피스톤, 터보차저, 압연 공정</p>
 
@@ -365,7 +369,7 @@
 
     <!-- 압연 공정 3열 -->
     <div style="margin-top:52px;">
-      <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:700; color:var(--accent); letter-spacing:.1em; margin-bottom:8px;">ROLLING MILL · TORQUE MONITORING</div>
+      <div style="font-family:'Pretendard',sans-serif; font-size:10px; font-weight:700; color:var(--accent); letter-spacing:.1em; margin-bottom:8px;">ROLLING MILL · TORQUE MONITORING</div>
       <h3 style="font-size:18px; font-weight:700; color:var(--charcoal); margin-bottom:6px;">압연 공정 토크 모니터링 — 트랜스미터 &amp; 파워서플라이</h3>
       <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">제철소 압연 롤러 구동축 토크를 텔레메터리로 실시간 모니터링. 인덕티브 방식 파워서플라이 일체형으로 장시간 연속 계측.</p>
       <div class="tl-case-grid3">
@@ -403,7 +407,7 @@
   <div class="container">
     <div class="tl-partner-grid">
       <div>
-        <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:16px;">SYSTEM SUPPLY · SERVICE</div>
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:16px;">SYSTEM SUPPLY · SERVICE</div>
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:14px;">텔레메터리 시스템 공급 및 측정 · 기술지원</h2>
         <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:18px;">
           씨앤디테크는 측정 목적과 시험 환경을 분석해 <strong style="color:var(--charcoal);">최적의 텔레메터리 시스템을 제안·설계</strong>하고, 장비 공급부터 현장 계측 용역, 시스템 운용 교육까지 원스톱으로 지원합니다.
@@ -539,7 +543,7 @@
     <div class="footer-row">
       <div class="footer-brand">
         <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-        <span style="display:none; font-family:'Manrope',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
         <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
       </div>
       <div class="footer-cols">

@@ -12,10 +12,14 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.cndtec.co.kr/resources/torque-measurement.html" />
 <meta property="og:image" content="https://blog.kakaocdn.net/dna/zTCJw/btsEKELHujA/AAAAAAAAAAAAAAAAAAAAANCZBAhEho5xuROXhdKkb48pd8RDh7Sizy9qK_EtYSyG/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=WuA1Nfd2CD8nnla6aNHnTeNk9zs%3D" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="../css/style.css?v=6">
+<style>
+body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -83,19 +87,19 @@
   padding: 5px 12px;
   background: rgba(242,148,0,0.08); border: 1px solid rgba(242,148,0,0.2);
   border-radius: 999px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pretendard', sans-serif;
   font-size: 10px; color: var(--accent-deep); font-weight: 700;
   margin-bottom: 12px; letter-spacing: 1px;
 }
 .tq-h2 { font-size: 22px; font-weight: 700; color: var(--charcoal); margin-bottom: 16px; }
-.tq-sub { font-size: 10px; font-weight: 700; color: var(--accent); font-family: 'JetBrains Mono', monospace; letter-spacing: 3px; margin-bottom: 8px; text-transform: uppercase; }
+.tq-sub { font-size: 10px; font-weight: 700; color: var(--accent); font-family: 'Pretendard', sans-serif; letter-spacing: 3px; margin-bottom: 8px; text-transform: uppercase; }
 .tq-divider { border: none; border-top: 1px solid var(--line); margin: 48px 0; }
 
 .tq-stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 32px 0; }
 @media (max-width: 700px) { .tq-stat-grid { grid-template-columns: repeat(2, 1fr); } }
 .tq-stat { background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: var(--radius); padding: 20px 16px; text-align: center; }
-.tq-stat-n { font-family: 'Space Grotesk', monospace; font-size: clamp(26px,4vw,40px); font-weight: 700; color: var(--accent); line-height: 1; }
-.tq-stat-u { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: var(--accent-deep); margin-top: 4px; }
+.tq-stat-n { font-family: 'Pretendard', sans-serif; font-size: clamp(26px,4vw,40px); font-weight: 700; color: var(--accent); line-height: 1; }
+.tq-stat-u { font-family: 'Pretendard', sans-serif; font-size: 10px; font-weight: 700; color: var(--accent-deep); margin-top: 4px; }
 .tq-stat-l { font-size: 11px; color: var(--text-mute); margin-top: 4px; }
 
 /* 측정 방법 비교 */
@@ -103,7 +107,7 @@
 @media (max-width: 600px) { .tq-method-grid { grid-template-columns: 1fr; } }
 .tq-method-card { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 .tq-method-head { padding: 14px 18px; background: var(--bg-soft,#F8F6F4); border-bottom: 2px solid var(--accent); }
-.tq-method-num { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; color: var(--accent); letter-spacing: 2px; margin-bottom: 3px; }
+.tq-method-num { font-family: 'Pretendard', sans-serif; font-size: 9px; font-weight: 700; color: var(--accent); letter-spacing: 2px; margin-bottom: 3px; }
 .tq-method-nm { font-size: 14px; font-weight: 700; color: var(--charcoal); }
 .tq-method-body { padding: 16px 18px; }
 .tq-method-row { display: flex; justify-content: space-between; font-size: 12px; padding: 5px 0; border-bottom: 1px solid var(--line); }
@@ -123,7 +127,7 @@
 .tq-formula {
   background: var(--charcoal); color: #fff;
   border-radius: var(--radius); padding: 20px 24px;
-  font-family: 'JetBrains Mono', monospace; font-size: 15px;
+  font-family: 'Pretendard', sans-serif; font-size: 15px;
   margin: 20px 0; text-align: center; letter-spacing: 0.5px;
 }
 .tq-formula-sub { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 8px; }
@@ -160,7 +164,7 @@
   <div class="nav">
     <a href="../index.html" class="brand">
       <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
     </a>
     <nav class="nav-links">
       <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
@@ -310,7 +314,7 @@
         <div class="tq-feat"><span class="tq-feat-ico">🏭</span><div class="tq-feat-nm">조선소 납품 실적</div><div class="tq-feat-ds">국내 주요 조선소 다수 공급, 현장 검증 완료</div></div>
       </div>
 
-      <p style="font-size:14px; font-weight:700; color:var(--text-mute); margin: 28px 0 12px; letter-spacing: 1px; text-transform: uppercase; font-family:'JetBrains Mono',monospace;">시스템 구성 및 신호 Flow</p>
+      <p style="font-size:14px; font-weight:700; color:var(--text-mute); margin: 28px 0 12px; letter-spacing: 1px; text-transform: uppercase; font-family:'Pretendard',sans-serif;">시스템 구성 및 신호 Flow</p>
       <div class="tq-img-grid">
         <img src="https://blog.kakaocdn.net/dna/b6KpVO/btsEQeldpbq/AAAAAAAAAAAAAAAAAAAAAAx3aQUueil8wYywBFMTT5BG7Zr6Bc3Z8Ms79VZsSGM0/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=%2BfQmjvAR%2FHc8TuTH3aKo1sNOzpM%3D"
              alt="축마력 계측 시스템 구성도" style="object-fit:contain; background:#f8f6f4;">
@@ -346,9 +350,9 @@
         <table style="width:100%; border-collapse:collapse; font-size:13px; min-width:480px;">
           <thead>
             <tr>
-              <th style="background:var(--charcoal); color:#fff; padding:11px 14px; font-family:'JetBrains Mono',monospace; font-size:10px; text-align:left; letter-spacing:1px;">단계</th>
-              <th style="background:var(--charcoal); color:#fff; padding:11px 14px; font-family:'JetBrains Mono',monospace; font-size:10px; text-align:left; letter-spacing:1px;">항목</th>
-              <th style="background:var(--charcoal); color:#fff; padding:11px 14px; font-family:'JetBrains Mono',monospace; font-size:10px; text-align:left; letter-spacing:1px;">내용</th>
+              <th style="background:var(--charcoal); color:#fff; padding:11px 14px; font-family:'Pretendard',sans-serif; font-size:10px; text-align:left; letter-spacing:1px;">단계</th>
+              <th style="background:var(--charcoal); color:#fff; padding:11px 14px; font-family:'Pretendard',sans-serif; font-size:10px; text-align:left; letter-spacing:1px;">항목</th>
+              <th style="background:var(--charcoal); color:#fff; padding:11px 14px; font-family:'Pretendard',sans-serif; font-size:10px; text-align:left; letter-spacing:1px;">내용</th>
             </tr>
           </thead>
           <tbody>
@@ -378,7 +382,7 @@
 
       <!-- 내부 링크 클러스터 -->
       <div style="padding:20px 24px; background:var(--bg-soft,#F8F6F4); border:1px solid var(--line); border-radius:var(--radius); margin-top:24px;">
-        <p style="font-size:11px; font-weight:700; color:var(--accent); font-family:'JetBrains Mono',monospace; letter-spacing:2px; margin-bottom:12px;">관련 기술자료</p>
+        <p style="font-size:11px; font-weight:700; color:var(--accent); font-family:'Pretendard',sans-serif; letter-spacing:2px; margin-bottom:12px;">관련 기술자료</p>
         <div style="display:flex; flex-wrap:wrap; gap:12px;">
           <a href="torsional-vibration.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 비틀림 진동 측정·분석</a>
           <a href="strain-gauge.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 스트레인게이지 원리·종류</a>
@@ -442,7 +446,7 @@
     <div class="footer-row">
       <div class="footer-brand">
         <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
         <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
       </div>
       <div class="footer-cols">

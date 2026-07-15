@@ -12,10 +12,14 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.cndtec.co.kr/resources/torsional-vibration.html" />
 <meta property="og:image" content="https://blog.kakaocdn.net/dna/cope0I/btsEQgcg77e/AAAAAAAAAAAAAAAAAAAAABfNRLSD7gav3IqKJyQI7uZcSez7tjJPtcsRPLH19R1i/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=emjsJikk9piuZIgY3s9SZ4iTTQg%3D" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="../css/style.css?v=6">
+<style>
+body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -83,26 +87,26 @@
   padding: 5px 12px;
   background: rgba(242,148,0,0.08); border: 1px solid rgba(242,148,0,0.2);
   border-radius: 999px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pretendard', sans-serif;
   font-size: 10px; color: var(--accent-deep); font-weight: 700;
   margin-bottom: 12px; letter-spacing: 1px;
 }
 .tv-h2 { font-size: 22px; font-weight: 700; color: var(--charcoal); margin-bottom: 16px; }
-.tv-sub { font-size: 10px; font-weight: 700; color: var(--accent); font-family: 'JetBrains Mono', monospace; letter-spacing: 3px; margin-bottom: 8px; text-transform: uppercase; }
+.tv-sub { font-size: 10px; font-weight: 700; color: var(--accent); font-family: 'Pretendard', sans-serif; letter-spacing: 3px; margin-bottom: 8px; text-transform: uppercase; }
 .tv-divider { border: none; border-top: 1px solid var(--line); margin: 48px 0; }
 
 .tv-stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 32px 0; }
 @media (max-width: 700px) { .tv-stat-grid { grid-template-columns: repeat(2, 1fr); } }
 .tv-stat { background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: var(--radius); padding: 20px 16px; text-align: center; }
-.tv-stat-n { font-family: 'Space Grotesk', monospace; font-size: clamp(26px,4vw,40px); font-weight: 700; color: var(--accent); line-height: 1; }
-.tv-stat-u { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: var(--accent-deep); margin-top: 4px; }
+.tv-stat-n { font-family: 'Pretendard', sans-serif; font-size: clamp(26px,4vw,40px); font-weight: 700; color: var(--accent); line-height: 1; }
+.tv-stat-u { font-family: 'Pretendard', sans-serif; font-size: 10px; font-weight: 700; color: var(--accent-deep); margin-top: 4px; }
 .tv-stat-l { font-size: 11px; color: var(--text-mute); margin-top: 4px; }
 
 /* 수식 */
 .tv-formula {
   background: var(--charcoal); color: #fff;
   border-radius: var(--radius); padding: 18px 24px;
-  font-family: 'JetBrains Mono', monospace; font-size: 14px;
+  font-family: 'Pretendard', sans-serif; font-size: 14px;
   margin: 20px 0; text-align: center; letter-spacing: 0.5px;
 }
 .tv-formula-sub { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 8px; line-height: 1.6; }
@@ -112,7 +116,7 @@
 @media (max-width: 600px) { .tv-method-grid { grid-template-columns: 1fr; } }
 .tv-method-card { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 .tv-method-head { padding: 14px 18px; background: var(--bg-soft,#F8F6F4); border-bottom: 2px solid var(--accent); }
-.tv-method-num { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; color: var(--accent); letter-spacing: 2px; margin-bottom: 3px; }
+.tv-method-num { font-family: 'Pretendard', sans-serif; font-size: 9px; font-weight: 700; color: var(--accent); letter-spacing: 2px; margin-bottom: 3px; }
 .tv-method-nm { font-size: 14px; font-weight: 700; color: var(--charcoal); }
 .tv-method-body { padding: 16px 18px; }
 .tv-method-row { display: flex; justify-content: space-between; font-size: 12px; padding: 5px 0; border-bottom: 1px solid var(--line); }
@@ -125,9 +129,9 @@
 @media (max-width: 700px) { .tv-mode-grid { grid-template-columns: 1fr; } }
 .tv-mode-card { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--white); }
 .tv-mode-head { padding: 14px 18px; border-bottom: 2px solid var(--accent); background: var(--bg-soft,#F8F6F4); }
-.tv-mode-num { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; color: var(--accent); letter-spacing: 2px; margin-bottom: 3px; }
+.tv-mode-num { font-family: 'Pretendard', sans-serif; font-size: 9px; font-weight: 700; color: var(--accent); letter-spacing: 2px; margin-bottom: 3px; }
 .tv-mode-nm { font-size: 14px; font-weight: 700; color: var(--charcoal); margin-bottom: 1px; }
-.tv-mode-en { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-mute); }
+.tv-mode-en { font-family: 'Pretendard', sans-serif; font-size: 10px; color: var(--text-mute); }
 .tv-mode-body { padding: 14px 18px; }
 .tv-mode-desc { font-size: 12px; color: var(--text-dim); line-height: 1.7; margin-bottom: 10px; }
 .tv-mode-row { display: flex; gap: 8px; font-size: 12px; padding: 4px 0; border-bottom: 1px solid var(--line); }
@@ -138,12 +142,12 @@
 /* 샘플링 레이트 표 */
 .tv-tbl-wrap { overflow-x: auto; margin: 20px 0; }
 .tv-tbl { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 500px; }
-.tv-tbl th { background: var(--charcoal); color: #fff; padding: 11px 14px; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-align: left; }
+.tv-tbl th { background: var(--charcoal); color: #fff; padding: 11px 14px; font-family: 'Pretendard', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-align: left; }
 .tv-tbl td { padding: 10px 14px; border-bottom: 1px solid var(--line); color: var(--text-dim); vertical-align: middle; }
 .tv-tbl tr:last-child td { border-bottom: none; }
 .tv-tbl tr:nth-child(even) td { background: var(--bg-soft,#F8F6F4); }
 .tv-tbl td strong { color: var(--charcoal); }
-.tv-rec { display: inline-block; background: var(--accent); color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 999px; letter-spacing: 1px; white-space: nowrap; }
+.tv-rec { display: inline-block; background: var(--accent); color: #fff; font-family: 'Pretendard', sans-serif; font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 999px; letter-spacing: 1px; white-space: nowrap; }
 .tv-warn { background: #fff3cd; border: 1px solid #ffc107; border-left: 4px solid #ff9800; border-radius: 6px; padding: 14px 18px; margin: 20px 0; }
 .tv-warn-title { font-size: 13px; font-weight: 700; color: #e65100; margin-bottom: 6px; }
 .tv-warn-body { font-size: 13px; color: #7b4800; line-height: 1.7; }
@@ -155,11 +159,11 @@
 .tv-api-card.ok { border: 2px solid #22c55e; background: rgba(34,197,94,0.05); }
 .tv-api-card.warn { border: 2px solid #f59e0b; background: rgba(245,158,11,0.05); }
 .tv-api-card.ng { border: 2px solid #ef4444; background: rgba(239,68,68,0.05); }
-.tv-api-sm { font-family: 'Space Grotesk', monospace; font-size: 28px; font-weight: 700; }
+.tv-api-sm { font-family: 'Pretendard', sans-serif; font-size: 28px; font-weight: 700; }
 .tv-api-card.ok .tv-api-sm { color: #16a34a; }
 .tv-api-card.warn .tv-api-sm { color: #d97706; }
 .tv-api-card.ng .tv-api-sm { color: #dc2626; }
-.tv-api-judge { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; margin: 6px 0 4px; }
+.tv-api-judge { font-family: 'Pretendard', sans-serif; font-size: 11px; font-weight: 700; margin: 6px 0 4px; }
 .tv-api-card.ok .tv-api-judge { color: #16a34a; }
 .tv-api-card.warn .tv-api-judge { color: #d97706; }
 .tv-api-card.ng .tv-api-judge { color: #dc2626; }
@@ -176,7 +180,7 @@
 @media (max-width: 600px) { .tv-stress-grid { grid-template-columns: 1fr; } }
 .tv-stress-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; background: var(--white); }
 .tv-stress-nm { font-size: 13px; font-weight: 700; color: var(--charcoal); margin-bottom: 10px; }
-.tv-stress-formula { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent); background: var(--bg-soft,#F8F6F4); padding: 10px 12px; border-radius: 4px; margin-bottom: 8px; }
+.tv-stress-formula { font-family: 'Pretendard', sans-serif; font-size: 13px; color: var(--accent); background: var(--bg-soft,#F8F6F4); padding: 10px 12px; border-radius: 4px; margin-bottom: 8px; }
 .tv-stress-note { font-size: 11px; color: var(--text-mute); line-height: 1.6; }
 
 /* FAQ */
@@ -198,7 +202,7 @@
   <div class="nav">
     <a href="../index.html" class="brand">
       <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
     </a>
     <nav class="nav-links">
       <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
@@ -382,7 +386,7 @@
         </div>
       </div>
 
-      <p style="font-size:14px; font-weight:700; color:var(--text-mute); margin: 28px 0 12px; letter-spacing:1px; text-transform:uppercase; font-family:'JetBrains Mono',monospace;">권장 샘플링 레이트 설정</p>
+      <p style="font-size:14px; font-weight:700; color:var(--text-mute); margin: 28px 0 12px; letter-spacing:1px; text-transform:uppercase; font-family:'Pretendard',sans-serif;">권장 샘플링 레이트 설정</p>
       <div class="tv-tbl-wrap">
         <table class="tv-tbl">
           <thead>
@@ -412,11 +416,11 @@
 
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:24px 0;">
         <div style="border:1px solid var(--line); border-radius:var(--radius); padding:20px;">
-          <div style="font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700; color:var(--accent); letter-spacing:2px; margin-bottom:8px;">WATERFALL PLOT</div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:10px; font-weight:700; color:var(--accent); letter-spacing:2px; margin-bottom:8px;">WATERFALL PLOT</div>
           <p style="font-size:13px; color:var(--text-dim); line-height:1.7;">X축=주파수, Y축=RPM, Z축=토크 진폭으로 구성. Runup/Coastdown 데이터에서 <strong style="color:var(--charcoal);">회전수와 무관하게 특정 주파수에서 에너지가 집중되는 수평 고정 피크 → TNF 판별.</strong></p>
         </div>
         <div style="border:1px solid var(--line); border-radius:var(--radius); padding:20px;">
-          <div style="font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700; color:var(--accent); letter-spacing:2px; margin-bottom:8px;">CAMPBELL DIAGRAM</div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:10px; font-weight:700; color:var(--accent); letter-spacing:2px; margin-bottom:8px;">CAMPBELL DIAGRAM</div>
           <p style="font-size:13px; color:var(--text-dim); line-height:1.7;">차수선(1X, 2X, 3X 등)을 오버레이. <strong style="color:var(--charcoal);">TNF 수평선과 차수선의 교점 RPM</strong>이 가장 위험한 운전 속도 — 운전 회피 구간(Barred Speed Range) 설정 기준.</p>
         </div>
       </div>
@@ -431,7 +435,7 @@
         </div>
       </div>
 
-      <p style="font-size:14px; font-weight:700; color:var(--text-mute); margin: 20px 0 12px; letter-spacing:1px; text-transform:uppercase; font-family:'JetBrains Mono',monospace;">전달 토크 vs 교번 토크 분리</p>
+      <p style="font-size:14px; font-weight:700; color:var(--text-mute); margin: 20px 0 12px; letter-spacing:1px; text-transform:uppercase; font-family:'Pretendard',sans-serif;">전달 토크 vs 교번 토크 분리</p>
       <div style="overflow-x:auto; margin-bottom:20px;">
         <table class="tv-tbl" style="min-width:420px;">
           <thead>
@@ -506,7 +510,7 @@
 
       <p style="font-size:13px; color:var(--text-mute); margin-top:12px;">일반 구동계 SM ≥ 10% / 고위험 VFD 구동계 SM ≥ 15% 권고 (API 684)</p>
 
-      <p style="font-size:14px; font-weight:700; color:var(--text-mute); margin: 28px 0 12px; letter-spacing:1px; text-transform:uppercase; font-family:'JetBrains Mono',monospace;">스펙트럼 및 차수 분석표 (보고서 양식)</p>
+      <p style="font-size:14px; font-weight:700; color:var(--text-mute); margin: 28px 0 12px; letter-spacing:1px; text-transform:uppercase; font-family:'Pretendard',sans-serif;">스펙트럼 및 차수 분석표 (보고서 양식)</p>
       <div class="tv-tbl-wrap">
         <table class="tv-tbl">
           <thead>
@@ -569,7 +573,7 @@
 
       <!-- 내부 링크 클러스터 -->
       <div style="padding:20px 24px; background:var(--bg-soft,#F8F6F4); border:1px solid var(--line); border-radius:var(--radius); margin-top:24px;">
-        <p style="font-size:11px; font-weight:700; color:var(--accent); font-family:'JetBrains Mono',monospace; letter-spacing:2px; margin-bottom:12px;">관련 기술자료</p>
+        <p style="font-size:11px; font-weight:700; color:var(--accent); font-family:'Pretendard',sans-serif; letter-spacing:2px; margin-bottom:12px;">관련 기술자료</p>
         <div style="display:flex; flex-wrap:wrap; gap:12px;">
           <a href="torque-measurement.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 토크 측정·축마력 계측</a>
           <a href="telemetry.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 텔레메터리 시스템</a>
@@ -633,7 +637,7 @@
     <div class="footer-row">
       <div class="footer-brand">
         <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
         <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
       </div>
       <div class="footer-cols">

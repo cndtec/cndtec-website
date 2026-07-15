@@ -14,10 +14,14 @@
 <meta property="og:url" content="https://www.cndtec.co.kr/resources/bolt-tension.html" />
 <meta property="og:image" content="../assets/images/bolt-tension/Full bridge SG bolt.png" />
 <meta property="og:site_name" content="씨앤디테크 기술자료" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="../css/style.css?v=6">
+<style>
+body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -117,14 +121,14 @@
 .bt-stat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px; }
 @media(max-width:640px){ .bt-stat-grid { grid-template-columns:1fr 1fr; } }
 .bt-stat-card { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:20px; text-align:center; }
-.bt-stat-num  { font-family:'Space Grotesk',sans-serif; font-size:28px; font-weight:700; color:var(--accent); line-height:1; }
+.bt-stat-num  { font-family:'Pretendard',sans-serif; font-size:28px; font-weight:700; color:var(--accent); line-height:1; }
 .bt-stat-sub  { font-size:11px; color:var(--text-mute); margin-top:4px; }
 
 .bt-hero-img  { width:100%; max-width:640px; border-radius:var(--radius); margin-top:40px; display:block; margin-left:auto; margin-right:auto; }
 
 /* 이론 섹션 */
 .bt-theory-box { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:32px 36px; margin-bottom:0; }
-.bt-formula    { background:#0a0a0a; color:#e2e8f0; border-radius:8px; padding:24px 28px; margin:20px 0; font-family:'JetBrains Mono',monospace; font-size:15px; line-height:1.9; }
+.bt-formula    { background:#0a0a0a; color:#e2e8f0; border-radius:8px; padding:24px 28px; margin:20px 0; font-family:'Pretendard',sans-serif; font-size:15px; line-height:1.9; }
 .bt-formula .f-label { color:#94a3b8; font-size:12px; display:block; margin-bottom:6px; }
 .bt-formula .f-main  { color:#f59e0b; font-size:19px; font-weight:600; }
 .bt-formula .f-vars  { color:#cbd5e1; font-size:13px; margin-top:8px; }
@@ -164,7 +168,7 @@
 @media(max-width:700px){ .bt-method-grid { grid-template-columns:1fr; } }
 .bt-method-card { border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--surface); }
 .bt-method-card .mc-head { padding:20px 22px 14px; border-bottom:1px solid var(--line); }
-.bt-method-card .mc-num  { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent); font-weight:600; margin-bottom:4px; }
+.bt-method-card .mc-num  { font-family:'Pretendard',sans-serif; font-size:11px; color:var(--accent); font-weight:600; margin-bottom:4px; }
 .bt-method-card .mc-name { font-size:16px; font-weight:700; color:var(--charcoal); margin-bottom:0; }
 .bt-method-card .mc-sub  { font-size:12px; color:var(--text-mute); margin-top:2px; }
 .bt-method-card .mc-img  { width:100%; height:200px; object-fit:cover; display:block; background:#f1f5f9; }
@@ -191,7 +195,7 @@
 .bt-step-card .sc-img-row img:first-child { border-right:1px solid var(--line); }
 .bt-step-card .sc-img-single img { width:100%; height:180px; object-fit:cover; display:block; }
 .bt-step-card .sc-body { padding:16px 18px 18px; }
-.bt-step-card .sc-num  { font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700; color:var(--accent); letter-spacing:.06em; }
+.bt-step-card .sc-num  { font-family:'Pretendard',sans-serif; font-size:10px; font-weight:700; color:var(--accent); letter-spacing:.06em; }
 .bt-step-card .sc-title { font-size:15px; font-weight:700; color:var(--charcoal); margin:4px 0 8px; }
 .bt-step-card .sc-desc  { font-size:13px; color:var(--text-dim); line-height:1.7; margin:0; }
 
@@ -218,7 +222,7 @@
 @media(max-width:768px){ .bt-solution-grid { grid-template-columns:1fr 1fr; } }
 @media(max-width:400px){ .bt-solution-grid { grid-template-columns:1fr; } }
 .bt-sol-item { padding:18px 16px; border:1px solid var(--orange-line); border-radius:var(--radius); background:var(--orange-tint); text-align:center; }
-.bt-sol-item .si-step { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:6px; }
+.bt-sol-item .si-step { font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:6px; }
 .bt-sol-item .si-name { font-size:13px; font-weight:700; color:var(--charcoal); margin-bottom:4px; }
 .bt-sol-item .si-desc { font-size:11.5px; color:var(--text-dim); line-height:1.5; margin:0; }
 
@@ -240,7 +244,7 @@
 .bt-faq-item.open .bt-faq-a { display:block; }
 
 /* 섹션 헤더 공통 */
-.bt-section-tag  { display:inline-flex; align-items:center; gap:6px; padding:4px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:14px; }
+.bt-section-tag  { display:inline-flex; align-items:center; gap:6px; padding:4px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:14px; }
 .bt-section-h2   { font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(20px,3.5vw,28px); font-weight:700; color:var(--charcoal); margin-bottom:8px; letter-spacing:-0.02em; }
 .bt-section-sub  { font-size:15px; color:var(--text-dim); line-height:1.7; max-width:700px; margin-bottom:24px; }
 .bt-section-div  { border-top:1px solid var(--line); padding-top:48px; margin-top:48px; }
@@ -253,7 +257,7 @@
   <div class="nav">
     <a href="../index.html" class="brand">
       <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
     </a>
     <nav class="nav-links">
       <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
@@ -940,7 +944,7 @@
     <div class="footer-row">
       <div class="footer-brand">
         <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display:'none'; this.nextElementSibling.style.display='block'">
-        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
         <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
       </div>
       <div class="footer-cols">

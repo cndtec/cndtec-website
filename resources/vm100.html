@@ -14,10 +14,14 @@
 <meta property="og:url" content="https://www.cndtec.co.kr/resources/vm100.html" />
 <meta property="og:image" content="https://blog.kakaocdn.net/dna/dsnW1S/btslMmgmjvF/AAAAAAAAAAAAAAAAAAAAANYZGzo5Hy2_FdZgQFT1i1cnZyq_0MaXnrbtZkwQOQyg/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=piThMptdX0Saw6fZYpl54q4twAg%3D" />
 <meta property="og:site_name" content="씨앤디테크 기술자료" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="../css/style.css?v=6">
+<style>
+body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -100,15 +104,15 @@
 </script>
 <style>
 /* ── VM100 페이지 전용 스타일 ── */
-.vm-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;background:var(--orange-tint);border:1px solid var(--orange-line);border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent-deep);font-weight:700;margin-bottom:14px;}
+.vm-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;background:var(--orange-tint);border:1px solid var(--orange-line);border-radius:999px;font-family:'Pretendard',sans-serif;font-size:11px;color:var(--accent-deep);font-weight:700;margin-bottom:14px;}
 .vm-h2{font-family:'Space Grotesk','Pretendard',sans-serif;font-size:clamp(20px,3.5vw,28px);font-weight:700;color:var(--charcoal);margin-bottom:8px;letter-spacing:-0.02em;}
 .vm-sub{font-size:15px;color:var(--text-dim);line-height:1.75;max-width:740px;margin-bottom:24px;}
-.vm-section-tag{font-size:11px;font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+.vm-section-tag{font-size:11px;font-family:'Pretendard',sans-serif;font-weight:700;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
 /* stat cards */
 .vm-stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px;}
 @media(max-width:700px){.vm-stat-grid{grid-template-columns:1fr 1fr;}}
 .vm-stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 16px;text-align:center;}
-.vm-stat-num{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:var(--accent);line-height:1;}
+.vm-stat-num{font-family:'Pretendard',sans-serif;font-size:22px;font-weight:700;color:var(--accent);line-height:1;}
 .vm-stat-sub{font-size:11px;color:var(--text-mute);margin-top:5px;line-height:1.45;}
 /* feature grid */
 .vm-feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px;}
@@ -121,7 +125,7 @@
 @media(max-width:620px){.vm-mode-grid{grid-template-columns:1fr;}}
 .vm-mode-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface);}
 .vm-mode-head{padding:16px 20px;border-bottom:2px solid var(--accent);background:var(--orange-tint);}
-.vm-mode-num{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:3px;}
+.vm-mode-num{font-family:'Pretendard',sans-serif;font-size:10px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:3px;}
 .vm-mode-name{font-size:16px;font-weight:700;color:var(--charcoal);}
 .vm-mode-body{padding:16px 20px;}
 .vm-mode-row{display:flex;justify-content:space-between;font-size:12.5px;padding:5px 0;border-bottom:1px solid var(--line);}
@@ -131,7 +135,8 @@
 /* screen gallery */
 .vm-screen-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;}
 @media(max-width:560px){.vm-screen-grid{grid-template-columns:1fr;}}
-.vm-screen-item img{width:100%;border-radius:var(--radius);display:block;border:1px solid var(--line);}
+.vm-screen-item img{width:100%;height:200px;object-fit:contain;background:#f8fafc;border-radius:var(--radius);display:block;border:1px solid var(--line);}
+@media(max-width:560px){.vm-screen-item img{height:180px;}}
 .vm-screen-label{font-size:12px;color:var(--text-mute);text-align:center;margin-top:6px;}
 /* photo grid */
 .vm-photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;}
@@ -148,7 +153,7 @@
 .vm-model-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px;}
 @media(max-width:620px){.vm-model-grid{grid-template-columns:1fr;}}
 .vm-model-card{padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);}
-.vm-model-badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;margin-bottom:10px;background:var(--orange-tint);border:1px solid var(--orange-line);color:var(--accent-deep);font-family:'JetBrains Mono',monospace;}
+.vm-model-badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;margin-bottom:10px;background:var(--orange-tint);border:1px solid var(--orange-line);color:var(--accent-deep);font-family:'Pretendard',sans-serif;}
 .vm-model-name{font-size:16px;font-weight:700;color:var(--charcoal);margin-bottom:6px;}
 .vm-model-desc{font-size:13px;color:var(--text-dim);line-height:1.7;margin:0;}
 /* app cards */
@@ -180,7 +185,7 @@
   <div class="nav">
     <a href="../index.html" class="brand">
       <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
     </a>
     <nav class="nav-links">
       <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
@@ -245,7 +250,7 @@
       </div>
     </div>
     <img src="https://blog.kakaocdn.net/dna/dsnW1S/btslMmgmjvF/AAAAAAAAAAAAAAAAAAAAANYZGzo5Hy2_FdZgQFT1i1cnZyq_0MaXnrbtZkwQOQyg/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=piThMptdX0Saw6fZYpl54q4twAg%3D"
-         alt="MMF VM100 휴대용 진동측정 시스템 전체 구성" style="width:100%; max-width:600px; border-radius:var(--radius); margin:40px auto 0; display:block; border:1px solid var(--line);" class="fade-in" loading="lazy">
+         alt="MMF VM100 휴대용 진동측정 시스템 전체 구성" style="width:100%; max-width:400px; border-radius:var(--radius); margin:40px auto 0; display:block; border:1px solid var(--line);" class="fade-in" loading="lazy">
   </div>
 </section>
 
@@ -398,7 +403,7 @@
       <h2 class="vm-h2">분석 화면 및 제품 외관</h2>
       <p class="vm-sub">800×480 TFT RGB 터치 스크린으로 복잡한 분석 결과를 현장에서 직관적으로 확인합니다.</p>
 
-      <p style="font-size:13px; font-weight:700; color:var(--text-mute); letter-spacing:1px; text-transform:uppercase; font-family:'JetBrains Mono',monospace; margin-bottom:12px;">FFT · 발란싱 분석 화면</p>
+      <p style="font-size:13px; font-weight:700; color:var(--text-mute); letter-spacing:1px; text-transform:uppercase; font-family:'Pretendard',sans-serif; margin-bottom:12px;">FFT · 발란싱 분석 화면</p>
       <div class="vm-screen-grid">
         <div class="vm-screen-item">
           <img src="https://blog.kakaocdn.net/dna/Wmfyv/btslKjruT3R/AAAAAAAAAAAAAAAAAAAAAIxXHqS_bhu0xGfRVAaBEMePONp7OKtjKF9whV-fy7S5/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=BXOvEmcAMe%2FGaet90vQ77Y0O0vU%3D"
@@ -422,7 +427,7 @@
         </div>
       </div>
 
-      <p style="font-size:13px; font-weight:700; color:var(--text-mute); letter-spacing:1px; text-transform:uppercase; font-family:'JetBrains Mono',monospace; margin:32px 0 12px;">제품 외관</p>
+      <p style="font-size:13px; font-weight:700; color:var(--text-mute); letter-spacing:1px; text-transform:uppercase; font-family:'Pretendard',sans-serif; margin:32px 0 12px;">제품 외관</p>
       <div class="vm-photo-grid">
         <img src="https://blog.kakaocdn.net/dna/eH5vOR/btslJ0Mot1L/AAAAAAAAAAAAAAAAAAAAAJaxk-5zpqE-SViXCeSfA0ZK0q9N6CSYy_R54fhaA9yr/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=q%2FpyShwSAvITpdGLyjvVvL%2FqQEo%3D"
              alt="MMF VM100 본체 정면 외관" loading="lazy">
@@ -594,7 +599,7 @@
     <div class="footer-row">
       <div class="footer-brand">
         <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
         <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
       </div>
       <div class="footer-cols">

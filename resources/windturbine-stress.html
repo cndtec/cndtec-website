@@ -15,10 +15,14 @@
 <meta property="og:image:width" content="400" />
 <meta property="og:image:alt" content="CND TECH 씨앤디테크 로고" />
 <meta property="og:url" content="https://www.cndtec.co.kr/resources/windturbine-stress.html" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="../css/style.css?v=6">
+<style>
+body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -71,11 +75,11 @@
 .wt-process { display:flex; flex-direction:column; gap:0; margin-top:28px; counter-reset:step; }
 .wt-step { display:grid; grid-template-columns:80px 1fr; gap:24px; padding:28px 0; border-bottom:1px solid var(--line); align-items:start; }
 .wt-step:last-child { border-bottom:none; }
-.wt-step-num { width:56px; height:56px; background:var(--orange-tint); border:2px solid var(--orange-line); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:18px; font-weight:700; color:var(--accent); flex-shrink:0; }
+.wt-step-num { width:56px; height:56px; background:var(--orange-tint); border:2px solid var(--orange-line); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Pretendard',sans-serif; font-size:18px; font-weight:700; color:var(--accent); flex-shrink:0; }
 .wt-step-title { font-size:17px; font-weight:700; color:var(--charcoal); margin-bottom:8px; }
 .wt-step-desc { font-size:14px; color:var(--text-dim); line-height:1.85; margin:0; }
 .wt-step-tags { display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
-.wt-tag { font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:600; color:var(--accent); background:var(--orange-tint); border:1px solid var(--orange-line); padding:3px 8px; border-radius:4px; }
+.wt-tag { font-family:'Pretendard',sans-serif; font-size:10px; font-weight:600; color:var(--accent); background:var(--orange-tint); border:1px solid var(--orange-line); padding:3px 8px; border-radius:4px; }
 
 .wt-photo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:24px; }
 @media(max-width:720px){ .wt-photo-grid { grid-template-columns:1fr 1fr; } }
@@ -88,7 +92,7 @@
 .wt-spec-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:24px; }
 @media(max-width:640px){ .wt-spec-grid { grid-template-columns:1fr; } }
 .wt-spec-box { background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:22px; }
-.wt-spec-tag { font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:700; color:var(--accent); letter-spacing:.08em; margin-bottom:10px; }
+.wt-spec-tag { font-family:'Pretendard',sans-serif; font-size:10px; font-weight:700; color:var(--accent); letter-spacing:.08em; margin-bottom:10px; }
 .wt-spec-title { font-size:15px; font-weight:700; color:var(--charcoal); margin-bottom:12px; }
 .wt-spec-row { display:flex; justify-content:space-between; font-size:13px; padding:6px 0; border-bottom:1px solid var(--line); }
 .wt-spec-row:last-child { border-bottom:none; }
@@ -114,7 +118,7 @@
   <div class="nav">
     <a href="../index.html" class="brand">
       <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-      <span style="display:none; align-items:center; gap:6px; font-family:'Manrope',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
     </a>
     <nav class="nav-links">
       <a href="../about.html">회사소개</a>
@@ -155,24 +159,24 @@
   <div class="container">
     <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
     <div style="margin-top:20px;">
-      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--accent); font-weight:700; margin-bottom:20px;">현장 계측 사례 · STRAIN MEASUREMENT CASE</div>
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:11px; color:var(--accent); font-weight:700; margin-bottom:20px;">현장 계측 사례 · STRAIN MEASUREMENT CASE</div>
       <h1 style="font-size:clamp(26px,4.5vw,50px); font-weight:800; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal); max-width:840px; line-height:1.3;">풀브릿지 구성·응력 측정<br><span style="color:var(--accent);">스트레인 측정 시스템</span> 제작 — 씨앤디테크 일괄 지원</h1>
       <p style="font-size:16px; color:var(--text-dim); max-width:760px; line-height:1.8; margin-bottom:28px;">풍력터빈 시험 모형의 응력 측정 의뢰를 수행한 사례입니다. 스트레인게이지 부착 → 풀브릿지 구성 → 신호 점검 → 이동식 스트레인 앰프 박스 제작 → 납품까지 전 과정을 씨앤디테크가 담당하였습니다.</p>
       <div style="display:flex; gap:14px; flex-wrap:wrap;">
         <div style="padding:12px 18px; background:var(--bg-soft); border:1px solid var(--line); border-radius:var(--radius); text-align:center; min-width:120px;">
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:18px; font-weight:700; color:var(--charcoal);">Full Bridge</div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:18px; font-weight:700; color:var(--charcoal);">Full Bridge</div>
           <div style="font-size:11px; color:var(--text-mute); margin-top:3px;">풀브릿지 구성</div>
         </div>
         <div style="padding:12px 18px; background:var(--bg-soft); border:1px solid var(--line); border-radius:var(--radius); text-align:center; min-width:120px;">
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:18px; font-weight:700; color:var(--charcoal);">4 Gauges</div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:18px; font-weight:700; color:var(--charcoal);">4 Gauges</div>
           <div style="font-size:11px; color:var(--text-mute); margin-top:3px;">게이지 4장 구성</div>
         </div>
         <div style="padding:12px 18px; background:var(--bg-soft); border:1px solid var(--line); border-radius:var(--radius); text-align:center; min-width:120px;">
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:18px; font-weight:700; color:var(--charcoal);">Turnkey</div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:18px; font-weight:700; color:var(--charcoal);">Turnkey</div>
           <div style="font-size:11px; color:var(--text-mute); margin-top:3px;">시스템 납품</div>
         </div>
         <div style="padding:12px 18px; background:var(--bg-soft); border:1px solid var(--line); border-radius:var(--radius); text-align:center; min-width:120px;">
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:18px; font-weight:700; color:var(--charcoal);">μɛ</div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:18px; font-weight:700; color:var(--charcoal);">μɛ</div>
           <div style="font-size:11px; color:var(--text-mute); margin-top:3px;">변형률·응력 측정</div>
         </div>
       </div>
@@ -183,7 +187,7 @@
 <!-- 프로젝트 개요 -->
 <section style="padding:60px 0; border-bottom:1px solid var(--line);">
   <div class="container">
-    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">PROJECT OVERVIEW</div>
+    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">PROJECT OVERVIEW</div>
     <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">프로젝트 개요</h2>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; margin-top:20px;">
       <div>
@@ -222,7 +226,7 @@
 <!-- 제작 과정 -->
 <section style="padding:60px 0; background:var(--bg-soft); border-bottom:1px solid var(--line);">
   <div class="container">
-    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">PROCESS</div>
+    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">PROCESS</div>
     <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">제작·지원 과정 5단계</h2>
     <p style="font-size:14px; color:var(--text-mute);">스트레인게이지 부착부터 완성형 스트레인 측정 시스템 납품까지</p>
 
@@ -284,7 +288,7 @@
 <!-- 현장 사진 -->
 <section style="padding:60px 0; border-bottom:1px solid var(--line);">
   <div class="container">
-    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">FIELD PHOTOS</div>
+    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">FIELD PHOTOS</div>
     <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">제작 현장 사진</h2>
     <p style="font-size:14px; color:var(--text-mute); margin-bottom:24px;">스트레인게이지 부착·풀브릿지 구성·이동식 앰프 박스 제작 실제 사진</p>
     <div class="wt-photo-grid">
@@ -331,7 +335,7 @@
 <!-- 동영상 섹션 -->
 <section style="padding:60px 0; background:var(--bg-soft); border-bottom:1px solid var(--line);">
   <div class="container">
-    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">VIDEO</div>
+    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">VIDEO</div>
     <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">제작 과정 동영상</h2>
     <p style="font-size:14px; color:var(--text-mute); margin-bottom:24px;">스트레인게이지 부착 → 풀브릿지 구성 → 이동식 앰프 박스 제작 전 과정</p>
     <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:#000;">
@@ -352,7 +356,7 @@
 <section style="padding:60px 0; border-bottom:1px solid var(--line);">
   <div class="container">
     <div style="background:var(--charcoal); border-radius:var(--radius); padding:48px 44px;">
-      <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:rgba(232,134,42,0.2); border:1px solid rgba(232,134,42,0.4); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:18px;">SERVICE CAPABILITY</div>
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:rgba(232,134,42,0.2); border:1px solid rgba(232,134,42,0.4); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:18px;">SERVICE CAPABILITY</div>
       <h2 style="font-size:24px; font-weight:800; color:#fff; margin-bottom:10px; letter-spacing:-0.02em;">스트레인게이지 부착·측정 지원·스트레인 측정 시스템 제작</h2>
       <p style="font-size:15px; color:rgba(255,255,255,0.65); max-width:700px; line-height:1.8; margin-bottom:28px;">
         씨앤디테크는 <strong style="color:#fff;">제품 센서화</strong>부터 완성형 <strong style="color:#fff;">스트레인 측정 시스템</strong> 납품까지 단일 창구로 진행합니다. 응력 측정이 필요한 모든 구조체에 적용 가능합니다.
@@ -423,17 +427,17 @@
       <h3 style="font-size:16px; font-weight:700; color:var(--charcoal); margin-bottom:16px;">관련 기술자료</h3>
       <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;">
         <a href="strain-gauge.html" style="padding:18px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); text-decoration:none; display:block;">
-          <div style="font-size:10px; font-family:'IBM Plex Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:6px;">FUNDAMENTALS</div>
+          <div style="font-size:10px; font-family:'Pretendard',sans-serif; color:var(--accent); font-weight:700; margin-bottom:6px;">FUNDAMENTALS</div>
           <div style="font-size:14px; font-weight:700; color:var(--charcoal); margin-bottom:4px;">스트레인게이지 원리·선정 가이드</div>
           <span style="font-size:12px; color:var(--accent);">보기 →</span>
         </a>
         <a href="strain-gauge-bonding.html" style="padding:18px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); text-decoration:none; display:block;">
-          <div style="font-size:10px; font-family:'IBM Plex Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:6px;">INSTALLATION</div>
+          <div style="font-size:10px; font-family:'Pretendard',sans-serif; color:var(--accent); font-weight:700; margin-bottom:6px;">INSTALLATION</div>
           <div style="font-size:14px; font-weight:700; color:var(--charcoal); margin-bottom:4px;">스트레인게이지 부착 방법 가이드</div>
           <span style="font-size:12px; color:var(--accent);">보기 →</span>
         </a>
         <a href="pzt-tube-gauge.html" style="padding:18px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); text-decoration:none; display:block;">
-          <div style="font-size:10px; font-family:'IBM Plex Mono',monospace; color:var(--accent); font-weight:700; margin-bottom:6px;">FIELD CASE</div>
+          <div style="font-size:10px; font-family:'Pretendard',sans-serif; color:var(--accent); font-weight:700; margin-bottom:6px;">FIELD CASE</div>
           <div style="font-size:14px; font-weight:700; color:var(--charcoal); margin-bottom:4px;">PZT 튜브 고전압 현장 계측 사례</div>
           <span style="font-size:12px; color:var(--accent);">보기 →</span>
         </a>
@@ -447,7 +451,7 @@
     <div class="footer-row">
       <div class="footer-brand">
         <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-        <span style="display:none; font-family:'Manrope',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
         <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
       </div>
       <div class="footer-cols">

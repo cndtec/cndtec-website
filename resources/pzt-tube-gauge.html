@@ -15,10 +15,14 @@
 <meta property="og:image:width" content="400" />
 <meta property="og:image:alt" content="CND TECH 씨앤디테크 로고" />
 <meta property="og:url" content="https://www.cndtec.co.kr/resources/pzt-tube-gauge.html" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="../css/style.css?v=6">
+<style>
+body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -53,21 +57,21 @@
 .pzt-challenge-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px; }
 @media(max-width:640px){ .pzt-challenge-grid { grid-template-columns:1fr; } }
 .pzt-challenge-card { background:var(--white); border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:var(--radius); padding:22px; }
-.pzt-challenge-num { font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:700; color:var(--accent); letter-spacing:.1em; margin-bottom:8px; }
+.pzt-challenge-num { font-family:'Pretendard',sans-serif; font-size:10px; font-weight:700; color:var(--accent); letter-spacing:.1em; margin-bottom:8px; }
 .pzt-challenge-title { font-size:15px; font-weight:700; color:var(--charcoal); margin-bottom:8px; }
 .pzt-challenge-desc { font-size:13.5px; color:var(--text-dim); margin:0; }
 
 .pzt-step-list { margin-top:24px; }
 .pzt-step { display:grid; grid-template-columns:56px 1fr; gap:20px; padding:24px 0; border-bottom:1px solid var(--line); }
 .pzt-step:first-child { padding-top:0; }
-.pzt-step-num { font-family:'IBM Plex Mono',monospace; font-size:32px; font-weight:700; color:var(--accent); line-height:1; }
+.pzt-step-num { font-family:'Pretendard',sans-serif; font-size:32px; font-weight:700; color:var(--accent); line-height:1; }
 .pzt-step-title { font-size:16px; font-weight:700; color:var(--charcoal); margin-bottom:8px; }
 .pzt-step-desc { font-size:14px; color:var(--text-dim); line-height:1.8; margin:0; }
 
 .pzt-bridge-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:20px 0; }
 @media(max-width:600px){ .pzt-bridge-grid { grid-template-columns:1fr; } }
 .pzt-bridge-box { background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:20px; }
-.pzt-ch-tag { display:inline-flex; align-items:center; font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; color:#fff; background:var(--charcoal); padding:3px 10px; border-radius:4px; margin-bottom:12px; }
+.pzt-ch-tag { display:inline-flex; align-items:center; font-family:'Pretendard',sans-serif; font-size:11px; font-weight:700; color:#fff; background:var(--charcoal); padding:3px 10px; border-radius:4px; margin-bottom:12px; }
 .pzt-bridge-list { padding-left:16px; font-size:13.5px; color:var(--text-dim); }
 .pzt-bridge-list li { margin-bottom:4px; }
 
@@ -77,7 +81,7 @@
 .pzt-result-box { border:1px solid var(--line); border-radius:var(--radius); margin-top:20px; overflow:hidden; }
 .pzt-result-row { display:flex; justify-content:space-between; align-items:center; padding:12px 20px; border-bottom:1px solid var(--line); font-size:14px; }
 .pzt-result-row:last-child { border-bottom:none; }
-.pzt-result-ok { color:#1d8a5f; font-weight:700; font-family:'IBM Plex Mono',monospace; font-size:12px; }
+.pzt-result-ok { color:#1d8a5f; font-weight:700; font-family:'Pretendard',sans-serif; font-size:12px; }
 
 .pzt-service-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:20px; }
 @media(max-width:640px){ .pzt-service-grid { grid-template-columns:1fr; } }
@@ -97,7 +101,7 @@
   <div class="nav">
     <a href="../index.html" class="brand">
       <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-      <span style="display:none; align-items:center; gap:6px; font-family:'Manrope',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
     </a>
     <nav class="nav-links">
       <a href="../about.html">회사소개</a>
@@ -138,7 +142,7 @@
   <div class="container">
     <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
     <div style="margin-top:20px;">
-      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--accent); font-weight:700; margin-bottom:20px;">현장 계측 사례 · FIELD MEASUREMENT CASE</div>
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:11px; color:var(--accent); font-weight:700; margin-bottom:20px;">현장 계측 사례 · FIELD MEASUREMENT CASE</div>
       <h1 style="font-size:clamp(26px,4.5vw,50px); font-weight:800; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal); max-width:800px; line-height:1.3;">스트레인게이지 부착·브릿지 구성<br>현장 측정<br><span style="color:var(--accent);">어려운 조건일수록<br>씨앤디테크에 의뢰하세요</span></h1>
       <p style="font-size:16px; color:var(--text-dim); max-width:720px; line-height:1.8; margin-bottom:0;">외경 6mm PZT 피에조 튜브 스캐너에 초소형 스트레인게이지 4장 부착 → 하프브릿지 2채널 구성 → ±260V 고전압 절연 설계 → 현장 측정까지 일괄 수행한 실제 지원 사례입니다.</p>
       <div class="spec-pill-row">
@@ -166,7 +170,7 @@
 <!-- 측정 배경 -->
 <section style="padding:60px 0; border-bottom:1px solid var(--line);">
   <div class="container">
-    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">BACKGROUND</div>
+    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">BACKGROUND</div>
     <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">측정 대상 및 기술적 과제</h2>
     <p style="font-size:15px; color:var(--text-dim); max-width:760px; line-height:1.85; margin-bottom:20px;">
       대상은 PiezoDrive社 <strong style="color:var(--charcoal);">TB4006-N 피에조 튜브 스캐너(PZT Tube Scanner)</strong>로, AFM·STM 등 정밀 계측 장비의 나노포지셔닝 구동기로 사용되는 부품입니다. 전압 인가 시 발생하는 51μm 수준의 미세 변위를 스트레인게이지로 측정하는 작업을 수행했습니다.
@@ -201,7 +205,7 @@
 <!-- 적용 기술 -->
 <section style="padding:60px 0; background:var(--bg-soft); border-bottom:1px solid var(--line);">
   <div class="container">
-    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">TECHNICAL SOLUTION</div>
+    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">TECHNICAL SOLUTION</div>
     <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">적용 기술 4단계</h2>
     <p style="font-size:14px; color:var(--text-mute); margin-bottom:0;">공간·전압·소재 세 가지 제약을 모두 해결하기 위해 단계별로 적용한 기술 요소입니다.</p>
 
@@ -266,7 +270,7 @@
 <!-- 현장 사진 -->
 <section style="padding:60px 0; border-bottom:1px solid var(--line);">
   <div class="container">
-    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">FIELD PHOTOS</div>
+    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">FIELD PHOTOS</div>
     <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">현장 사진</h2>
     <p style="font-size:14px; color:var(--text-mute); margin-bottom:24px;">PZT 튜브 스트레인게이지 부착 및 계측 현장 실제 사진</p>
     <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
@@ -308,7 +312,7 @@
 <!-- 검증 결과 -->
 <section style="padding:60px 0; border-bottom:1px solid var(--line);">
   <div class="container">
-    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">VERIFICATION</div>
+    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:14px;">VERIFICATION</div>
     <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">검증 결과</h2>
     <p style="font-size:14px; color:var(--text-mute); margin-bottom:0;">부착 완료 후 모든 항목에서 정상 신호 확인</p>
     <div class="pzt-result-box">
@@ -325,7 +329,7 @@
 <!-- FAQ -->
 <section style="padding:60px 0; border-bottom:1px solid var(--line);">
   <div class="container">
-    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:16px;">FAQ</div>
+    <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:16px;">FAQ</div>
     <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:24px;">자주 묻는 질문</h2>
     <div class="faq-list">
       <details class="faq-item">
@@ -356,7 +360,7 @@
 <section style="padding:60px 0 100px;">
   <div class="container">
     <div style="background:var(--charcoal); border-radius:var(--radius); padding:48px 44px;">
-      <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:rgba(232,134,42,0.2); border:1px solid rgba(232,134,42,0.4); border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:18px;">SERVICE CAPABILITY</div>
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 10px; background:rgba(232,134,42,0.2); border:1px solid rgba(232,134,42,0.4); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent); font-weight:700; margin-bottom:18px;">SERVICE CAPABILITY</div>
       <h2 style="font-size:24px; font-weight:800; color:#fff; margin-bottom:10px; letter-spacing:-0.02em;">스트레인게이지 부착·측정 지원 서비스</h2>
       <p style="font-size:15px; color:rgba(255,255,255,0.65); max-width:680px; line-height:1.8; margin-bottom:28px;">본 사례에서 확인된 기술력을 바탕으로, 씨앤디테크는 다음과 같은 까다로운 조건의 스트레인게이지 부착·계측 의뢰를 현장 출장 지원과 함께 진행합니다.</p>
       <div class="pzt-service-grid">
@@ -401,7 +405,7 @@
     <div class="footer-row">
       <div class="footer-brand">
         <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-        <span style="display:none; font-family:'Manrope',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
         <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
       </div>
       <div class="footer-cols">

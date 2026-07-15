@@ -14,10 +14,14 @@
 <meta property="og:image:width" content="400" />
 <meta property="og:image:alt" content="CND TECH 씨앤디테크 로고" />
 <meta property="og:url" content="https://www.cndtec.co.kr/resources/strain-gauge.html" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="../css/style.css?v=6">
+<style>
+body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -109,7 +113,7 @@
   border: 1px solid var(--line);
   border-left: 3px solid var(--accent);
   border-radius: var(--radius);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pretendard', sans-serif;
   font-size: 16px;
   color: var(--charcoal);
   margin: 12px 0;
@@ -136,7 +140,7 @@
 }
 .sg-compare-card .cc-sub {
   font-size: 12px; color: var(--text-mute); margin-bottom: 12px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pretendard', sans-serif;
 }
 .sg-compare-card .cc-row {
   display: flex; justify-content: space-between;
@@ -175,7 +179,7 @@
   display: inline-block; padding: 2px 8px;
   background: var(--orange-tint); border: 1px solid var(--orange-line);
   border-radius: 4px; font-size: 11px; font-weight: 700;
-  color: var(--accent-deep); font-family: 'JetBrains Mono', monospace;
+  color: var(--accent-deep); font-family: 'Pretendard', sans-serif;
   margin-bottom: 8px;
 }
 .sg-type-card .tc-img { width:100%; border-radius:6px; overflow:hidden; margin-bottom:12px; background:#f8fafc; border:1px solid var(--line); }
@@ -218,7 +222,7 @@
 .sg-faq { display: flex; flex-direction: column; gap: 12px; margin: 16px 0; }
 .sg-faq-item { padding: 18px 20px; background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius); }
 .sg-faq-item .faq-q { font-weight: 700; font-size: 15px; color: var(--charcoal); margin-bottom: 8px; display: flex; gap: 8px; }
-.sg-faq-item .faq-q::before { content: 'Q'; color: var(--accent); font-family: 'JetBrains Mono',monospace; flex-shrink: 0; }
+.sg-faq-item .faq-q::before { content: 'Q'; color: var(--accent); font-family: 'Pretendard',sans-serif; flex-shrink: 0; }
 .sg-faq-item .faq-a { font-size: 14px; color: var(--text-dim); line-height: 1.7; padding-left: 20px; }
 </style>
 </head>
@@ -229,7 +233,7 @@
   <div class="nav">
     <a href="../index.html" class="brand">
       <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-      <span style="display:none; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
     </a>
     <nav class="nav-links">
       <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
@@ -271,7 +275,7 @@
   <div class="container">
     <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
     <div style="margin-top:20px;">
-      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">STRAIN GAUGE</div>
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">STRAIN GAUGE</div>
       <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(28px,5vw,56px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">스트레인게이지 원리·종류·선정 가이드</h1>
       <p style="font-size:17px; color:var(--text-dim); max-width:720px; line-height:1.7; margin-bottom:0;">스트레인(변형률) 정의부터 금속포일·반도체·광섬유 종류 비교, 저항값·형태별 선정 기준, Wheatstone 브릿지 회로 구성까지 — 씨앤디테크의 스트레인게이지 기술 가이드입니다.</p>
     </div>
@@ -600,7 +604,7 @@
     <div class="footer-row">
       <div class="footer-brand">
         <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-        <span style="display:none; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
         <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
       </div>
       <div class="footer-cols">
