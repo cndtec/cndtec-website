@@ -44,7 +44,7 @@
         {
           "@type": "Question",
           "name": "데이터 로거와 DAQ 장치는 어떻게 다른가요?",
-          "acceptedAnswer": {"@type": "Answer", "text": "데이터 로거는 PC 없이 단독으로 동작하는 독립형 장치로, 배터리로 구동되고 SD 카드 등 로컬 저장소에 데이터를 기록합니다. 이동형 현장 측정에 적합합니다. DAQ 장치(USB·Ethernet 타입)는 PC에 연결해야 작동하지만, Python·MATLAB·LabVIEW 등 다양한 소프트웨어와 연동이 가능하고 실시간 처리와 다채널 동시 수집에 유리합니다."}
+          "acceptedAnswer": {"@type": "Answer", "text": "데이터 로거는 자체 임베디드 프로세서(컨트롤러)로 동작하는 독립형 장치로, 노트북·PC를 상시 연결하지 않아도 단독 실행되며 배터리 또는 자체 전원으로 구동되어 SD 카드 등 로컬 저장소에 데이터를 기록합니다. 이동형 현장 측정에 적합합니다. DAQ 장치(USB·Ethernet 타입)는 PC에 연결해야 작동하지만, Python·MATLAB·LabVIEW 등 다양한 소프트웨어와 연동이 가능하고 실시간 처리와 다채널 동시 수집에 유리합니다."}
         },
         {
           "@type": "Question",
@@ -382,10 +382,10 @@
         </div>
       </div>
 
-      <div style="margin-top:24px; border-radius:var(--radius); overflow:hidden; max-width:800px;">
-        <img src="https://blog.kakaocdn.net/dna/bZ7SxX/btsn6Hp3IHv/AAAAAAAAAAAAAAAAAAAAAMk34f_shYjtuSHWgcLkc_MIhukOvZwRUv9Zt8vVYEBI/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=EoQXoH7a7ZFG6%2Bfznq572B2FZ70%3D"
-             alt="DAQ 시스템 구성 요소 — 소프트웨어·컨트롤러·DAQ 모듈·센서"
-             style="width:100%; display:block; border:1px solid var(--line);">
+      <div style="margin-top:24px; border-radius:var(--radius); overflow:hidden; max-width:800px; border:1px solid var(--line);">
+        <img src="../assets/images/DAQ/데이터수집장치 FLOW.png"
+             alt="DAQ 시스템 구성 요소 — 센서·신호 컨디셔닝·ADC"
+             style="width:100%; display:block;" onerror="this.closest('div').style.display='none'">
       </div>
       <p style="font-size:12px; color:var(--text-mute); text-align:center; margin-top:8px;">컨트롤러는 수집된 데이터를 처리·저장하며, 데이터 스트림을 필터링·병합·트리거할 수 있습니다.</p>
     </div>
@@ -428,10 +428,10 @@
         </div>
       </div>
 
-      <div style="margin-top:20px; border-radius:var(--radius); overflow:hidden; max-width:800px;">
-        <img src="https://blog.kakaocdn.net/dna/I7UXY/btsn0e3uu4A/AAAAAAAAAAAAAAAAAAAAACJbt-6VHwUTAsnJ12JnmZBHPN_vqe3EyXIc_H9UcyEd/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=VymkWCawv9TMWO4F0IAENZxfeqM%3D"
+      <div style="margin-top:20px; border-radius:var(--radius); overflow:hidden; max-width:800px; border:1px solid var(--line);">
+        <img src="../assets/images/DAQ/adc-resolution-diagram.png"
              alt="ADC 아날로그-디지털 변환기 분해능 개념 설명"
-             style="width:100%; display:block; border:1px solid var(--line);">
+             style="width:100%; display:block;" onerror="this.closest('div').style.display='none'">
       </div>
     </div>
 
@@ -445,25 +445,25 @@
 
       <div class="daq-type-grid">
         <div class="daq-type-card">
-          <img src="https://blog.kakaocdn.net/dna/mobwV/btsnZ1b15he/AAAAAAAAAAAAAAAAAAAAAHcb8s479VTqIATBj0u4t52Jv6bYSo7jG3SfSN3-j0yU/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=Q%2B18ypuz%2B9V6LG%2FFiwEs9q8kJkk%3D"
-               alt="데이터 로거 Data Logger — 독립형 이동형 DAQ" class="daq-type-img">
+          <img src="../assets/images/DAQ/DATALOGGER.jpg"
+               alt="데이터 로거 Data Logger — 임베디드 프로세서 기반 독립형 DAQ 보드" class="daq-type-img">
           <div class="daq-type-head">
             <div class="daq-type-num">TYPE 01</div>
             <div class="daq-type-nm">데이터 로거</div>
             <div class="daq-type-en">Data Logger</div>
           </div>
           <div class="daq-type-body">
-            <p class="daq-type-desc">프로세서와 소프트웨어가 내장된 독립형(Stand-alone) 시스템. PC 없이 단독 실행 가능하며 SD 카드 등 로컬 스토리지에 저장합니다.</p>
-            <div class="daq-type-row"><span class="daq-type-lbl">PC 연결</span><span class="daq-type-val">불필요 (독립 실행)</span></div>
-            <div class="daq-type-row"><span class="daq-type-lbl">전원</span><span class="daq-type-val">배터리 구동 가능</span></div>
+            <p class="daq-type-desc">자체 임베디드 프로세서(컨트롤러)로 동작하는 독립형(Stand-alone) 시스템. 노트북·PC를 상시 연결하지 않아도 단독 실행되며 SD 카드 등 로컬 스토리지에 데이터를 기록합니다.</p>
+            <div class="daq-type-row"><span class="daq-type-lbl">PC 연결</span><span class="daq-type-val">상시 연결 불필요 (자체 컨트롤러로 단독 실행)</span></div>
+            <div class="daq-type-row"><span class="daq-type-lbl">전원</span><span class="daq-type-val">배터리 또는 자체 전원 공급</span></div>
             <div class="daq-type-row"><span class="daq-type-lbl">이동성</span><span class="daq-type-val">우수 (휴대형)</span></div>
             <div class="daq-type-row"><span class="daq-type-lbl">주요 용도</span><span class="daq-type-val">현장 이동 측정</span></div>
           </div>
         </div>
 
         <div class="daq-type-card">
-          <img src="https://blog.kakaocdn.net/dna/LYONU/btsn6GYYkug/AAAAAAAAAAAAAAAAAAAAAFWLsfbSqvdiIf7Xl4jvSO47xAhKj5QxiKBmRpd5sA8G/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=Kw6vZWsieFLg6fvYI%2BXDDe05KbA%3D"
-               alt="DAQ 장치 Data Acquisition Devices — USB Ethernet 타입" class="daq-type-img">
+          <img src="../assets/images/DAQ/USB DT9837.jpg"
+               alt="DAQ 장치 Data Acquisition Devices — USB 타입 Data Translation DT9837" class="daq-type-img">
           <div class="daq-type-head">
             <div class="daq-type-num">TYPE 02</div>
             <div class="daq-type-nm">DAQ 장치</div>
@@ -479,8 +479,8 @@
         </div>
 
         <div class="daq-type-card">
-          <img src="https://blog.kakaocdn.net/dna/dc4lEd/btsn13HeGDt/AAAAAAAAAAAAAAAAAAAAAIPrpC2moQPhzm_kYxWxHcA80MbL7FiidphBfraIkEd8/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=YW56zzGBJF1nJWq6ucALP6TVezk%3D"
-               alt="모듈식 DAQ 시스템 — 다채널 복합 센서 통합 계측" class="daq-type-img" style="object-position:top;">
+          <img src="../assets/images/DAQ/DAQ 시스템_quantum X.png"
+               alt="모듈식 DAQ 시스템 — 다채널 복합 센서 통합 계측" class="daq-type-img" style="object-position:top; object-fit:contain; background:#f8fafc;">
           <div class="daq-type-head">
             <div class="daq-type-num">TYPE 03</div>
             <div class="daq-type-nm">모듈식 DAQ 시스템</div>
@@ -511,7 +511,7 @@
         <div class="daq-prod">
           <div class="daq-prod-top">
             <div class="daq-prod-img-wrap">
-              <img src="https://blog.kakaocdn.net/dna/bdSrr9/btsn87HY6qJ/AAAAAAAAAAAAAAAAAAAAAE2owAIuDISnCa16xwDzIz6vbRbD56mNU5m3abcUyfgD/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=PoLiulQ4GP4hO25xNVqtz9cokCs%3D"
+              <img src="../assets/images/DAQ/HBM Quantum X.png"
                    alt="HBM QuantumX 데이터 수집장치">
             </div>
             <div class="daq-prod-info">
@@ -533,8 +533,8 @@
             <span style="font-size:12px; color:var(--text-dim);">— 실시간 데이터 수집·시각화·분석·리포팅</span>
           </div>
           <div class="daq-prod-imgs">
-            <img src="https://blog.kakaocdn.net/dna/kyCrc/btsn7vpmbLR/AAAAAAAAAAAAAAAAAAAAAPs_YCzqBoyT33QmxGfWcIHukg3g1-3cDIqqyg_WZM0Z/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=qN1zlF9Cp%2BCDNUsNN0CDuJ5xAAs%3D"
-                 alt="HBM QuantumX 센서 연결 구성">
+            <img src="../assets/images/DAQ/CATMAN AP SOFTWARE.png"
+                 alt="HBM CATMAN AP 소프트웨어 실시간 시각화 화면">
           </div>
         </div>
 
@@ -542,8 +542,8 @@
         <div class="daq-prod">
           <div class="daq-prod-top">
             <div class="daq-prod-img-wrap">
-              <img src="https://blog.kakaocdn.net/dna/cRnEgi/btsn7wPj2zM/AAAAAAAAAAAAAAAAAAAAANDqUotX0aW5fufNJvuyagjA3Fed5gWfhdB51EZZnDV7/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=Q376mW6dOGBrWoijVp4EecDIuNI%3D"
-                   alt="Gantner Q.Series X 모듈식 DAQ 시스템">
+              <img src="../assets/images/DAQ/Gantner system.png"
+                   alt="Gantner Q.Series X 모듈식 DAQ 시스템 — Portable·Rail·19인치 랙 폼팩터">
             </div>
             <div class="daq-prod-info">
               <div class="daq-prod-maker">Gantner Instruments</div>
@@ -564,8 +564,8 @@
             <span style="font-size:12px; color:var(--text-dim);">— 구성·측정·분석 통합 플랫폼</span>
           </div>
           <div class="daq-prod-imgs">
-            <img src="https://blog.kakaocdn.net/dna/ddQXNL/btsn6HDy0s3/AAAAAAAAAAAAAAAAAAAAAN1d50wAgnW6y6_Dlrmg6gsuAWdHjMALg3-_x3HlXfy7/img.gif?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=BNKSe9Q1%2FxyzmyetDFWQ0XGh6dg%3D"
-                 alt="Gantner Q.Series X 모듈 조합">
+            <img src="../assets/images/DAQ/Gantner GI BENCH.gif"
+                 alt="Gantner GI.BENCH 소프트웨어 화면">
           </div>
         </div>
 
@@ -573,8 +573,8 @@
         <div class="daq-prod">
           <div class="daq-prod-top">
             <div class="daq-prod-img-wrap">
-              <img src="https://blog.kakaocdn.net/dna/s2Vmc/btsn8pB5UAJ/AAAAAAAAAAAAAAAAAAAAAOhCFP7AhB9AKpQGeBikBSvT9xxibqwN-5u7051ubakl/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=5PPsK6%2FXtkyzhQh7gbom5LJhUXA%3D"
-                   alt="Data Translation DT USB 타입 DAQ">
+              <img src="../assets/images/DAQ/USB DT9837.jpg"
+                   alt="Data Translation DT9837 USB 타입 진동·소음 측정 DAQ">
             </div>
             <div class="daq-prod-info">
               <div class="daq-prod-maker">Data Translation (Measurement Computing)</div>
@@ -593,12 +593,6 @@
             <span class="daq-prod-sw-lbl">전용 소프트웨어</span>
             <span class="daq-prod-sw-nm">QUICK DAQ</span>
             <span style="font-size:12px; color:var(--text-dim);">— 직관적 측정·분석 전용 프로그램</span>
-          </div>
-          <div class="daq-prod-imgs" style="grid-template-columns:1fr 1fr;">
-            <img src="https://blog.kakaocdn.net/dna/bRVKw0/btsn8rfBwIO/AAAAAAAAAAAAAAAAAAAAAKfUqMr2OXFf8EcrIw0eoto5yVxgcDN6tBeWhxpNRgc/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=CXpgw%2B4Hrl9NcBIX9m3qogkxEvg%3D"
-                 alt="Data Translation DT 상세 구성">
-            <img src="https://blog.kakaocdn.net/dna/C4Zpu/btsn6HDy0nu/AAAAAAAAAAAAAAAAAAAAAKOK52tSZAWI6Elv1SAjWZ6LeXowoPmCCbJQW4gri6dk/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=VmLT6MzXyPw3fyYhOgRuxW7%2FE0s%3D"
-                 alt="Data Translation DT 적용 예시">
           </div>
         </div>
 
@@ -743,7 +737,7 @@
             <span class="daq-faq-q-txt">데이터 로거와 DAQ 장치는 어떻게 다른가요?</span>
             <span class="daq-faq-ico">+</span>
           </button>
-          <div class="daq-faq-a">데이터 로거는 PC 없이 단독으로 동작하는 독립형 장치로, 배터리로 구동되고 SD 카드 등 로컬 저장소에 데이터를 기록합니다. 이동형 현장 측정에 적합합니다. DAQ 장치(USB·Ethernet 타입)는 PC에 연결해야 작동하지만, Python·MATLAB·LabVIEW 등 다양한 소프트웨어와 연동이 가능하고 실시간 처리와 다채널 동시 수집에 유리합니다.</div>
+          <div class="daq-faq-a">데이터 로거는 자체 임베디드 프로세서(컨트롤러)로 동작하는 독립형 장치입니다. 노트북·PC를 상시 연결하지 않아도 단독 실행되며, 배터리 또는 자체 전원 공급으로 구동되어 SD 카드 등 로컬 저장소에 데이터를 기록합니다. 이동형 현장 측정에 적합합니다. DAQ 장치(USB·Ethernet 타입)는 PC에 연결해야 작동하지만, Python·MATLAB·LabVIEW 등 다양한 소프트웨어와 연동이 가능하고 실시간 처리와 다채널 동시 수집에 유리합니다.</div>
         </div>
 
         <div class="daq-faq-item">
