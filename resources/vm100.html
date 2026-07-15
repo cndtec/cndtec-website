@@ -306,6 +306,17 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
           <div><strong>적외선 온도 측정</strong><br>내장 IR 온도계로 측정 대상 표면 온도를 비접촉 측정. 베어링·모터 발열 모니터링에 유용.</div>
         </div>
       </div>
+
+      <div style="margin-top:32px; padding:24px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);">
+        <p style="font-size:13px; font-weight:700; color:var(--charcoal); margin:0 0 6px;">센서 장착 방법이 고주파 측정 정확도를 좌우합니다</p>
+        <p style="font-size:13px; color:var(--text-dim); line-height:1.8; margin:0 0 16px;">VM100의 FFT 분석은 최대 22kHz까지 측정하지만, 센서 장착 시 질량 증가와 장착 강성 저하가 겹치면 고주파 영역에서 실제 감도가 크게 떨어집니다. 스터드 마운팅이 가장 우수하고, 마그네틱·접착제·프로브 순으로 고주파 성능이 낮아집니다.</p>
+        <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);">
+          <img src="../assets/images/vibration sensor/질량증가 및 장착 감성 감소에 따른 고주파 성능 비교 그래프.png"
+               alt="질량 증가 및 장착 방식에 따른 고주파 감도 저하 비교 그래프" loading="lazy"
+               style="width:100%; display:block; object-fit:contain; background:#f8fafc; max-height:340px; padding:16px;">
+        </div>
+        <p style="font-size:12px; color:var(--text-mute); margin:10px 0 0;">장착 방법별 상세 비교는 <a href="vibration-sensor.html" style="color:var(--accent); text-decoration:none;">진동센서 원리·설치 가이드</a>에서 확인할 수 있습니다.</p>
+      </div>
     </div>
 
     <hr class="vm-divider">
