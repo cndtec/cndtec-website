@@ -56,7 +56,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         {
           "@type": "Question",
           "name": "Shaft형과 Flange형 토크센서는 어떻게 다른가요?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Shaft형은 센서 양 끝단에 축이 나와 있는 형태로, 저용량·낮은 정밀도 용도에 많이 사용되며 Flange형 대비 가격이 저렴합니다. Flange형은 비접촉식으로 스테이터(Stator)·로터(Rotor)로 구성되며, 0.01~0.05%의 Accuracy Class를 가지고 높은 회전속도, 대용량 토크(최대 2MN·m급)까지 측정할 수 있습니다."}
+          "acceptedAnswer": {"@type": "Answer", "text": "Shaft형은 센서 양 끝단에 축이 나와 있는 형태로, 저용량·낮은 정밀도 용도에 많이 사용되며 Flange형 대비 가격이 저렴합니다. Flange형은 비접촉식으로 스테이터(Stator)·로터(Rotor)로 구성되며, 0.01~0.05%의 Accuracy Class를 가지고 높은 회전속도와 대용량 토크까지 측정할 수 있습니다."}
         },
         {
           "@type": "Question",
@@ -248,7 +248,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
       <div class="tq-stat"><div class="tq-stat-n">5</div><div class="tq-stat-u">METHODS</div><div class="tq-stat-l">토크 측정 방식 종류</div></div>
       <div class="tq-stat"><div class="tq-stat-n">0.01~0.05</div><div class="tq-stat-u">% FS</div><div class="tq-stat-l">Flange형 센서 정밀도</div></div>
       <div class="tq-stat"><div class="tq-stat-n">2</div><div class="tq-stat-u">TYPES</div><div class="tq-stat-l">Shaft형 · Flange형</div></div>
-      <div class="tq-stat"><div class="tq-stat-n">2MN·m</div><div class="tq-stat-u">MAX</div><div class="tq-stat-l">대용량 토크 측정 한계</div></div>
+      <div class="tq-stat"><div class="tq-stat-n">45°</div><div class="tq-stat-u">ANGLE</div><div class="tq-stat-l">게이지 부착 각도 (전단 방향)</div></div>
     </div>
   </div>
 </section>
@@ -404,7 +404,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
           <div class="tq-method-body">
             <div class="tq-method-row"><span class="tq-method-lbl">형태</span><span class="tq-method-val">비접촉식, 스테이터(Stator)+로터(Rotor)</span></div>
             <div class="tq-method-row"><span class="tq-method-lbl">정밀도</span><span class="tq-method-val">Accuracy Class 0.01~0.05%</span></div>
-            <div class="tq-method-row"><span class="tq-method-lbl">회전속도·용량</span><span class="tq-method-val">고속 회전, 대용량(최대 2MN·m급)까지 적용</span></div>
+            <div class="tq-method-row"><span class="tq-method-lbl">회전속도·용량</span><span class="tq-method-val">고속 회전, 대용량 계측에 적합</span></div>
             <div class="tq-method-row"><span class="tq-method-lbl">적용</span><span class="tq-method-val">정밀 시험·연구, 대용량 회전기계</span></div>
           </div>
         </div>
@@ -412,9 +412,9 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 
       <div style="border-radius:var(--radius); overflow:hidden; margin-top:20px; border:1px solid var(--line);">
         <img src="../assets/images/Torque/TORQUE BASIC.png"
-             alt="토크센서 구조 원리 — 상단: Shaft형(실축·중공축·케이지형), 하단: Flange형(스포크·원형·플랜지 결합)" loading="lazy"
+             alt="토크 측정원리 — Shaft형·Flange형 모두 축 표면 45° 방향 스트레인게이지로 비틀림 변형률 감지" loading="lazy"
              style="width:100%; display:block; object-fit:contain; background:#fff; max-height:480px;">
-        <div style="padding:10px 16px; font-size:12px; color:var(--text-mute); background:var(--bg-soft,#F8F6F4); border-top:1px solid var(--line); text-align:center;">위: Shaft형 토크센서 구조 · 아래: Flange형 토크센서 구조 — 스트레인게이지(45°) 부착 위치</div>
+        <div style="padding:10px 16px; font-size:12px; color:var(--text-mute); background:var(--bg-soft,#F8F6F4); border-top:1px solid var(--line); text-align:center;">토크 측정원리 — 축 표면에 45° 방향으로 부착된 스트레인게이지가 비틀림 변형률을 감지해 토크값으로 환산 (위: Shaft형 · 아래: Flange형)</div>
       </div>
 
       <div class="tq-img-grid" style="margin-top:20px;">
@@ -536,7 +536,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         </div>
         <div class="tq-faq-item">
           <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">Shaft형과 Flange형 토크센서는 어떻게 다른가요?</span><span class="tq-faq-ico">+</span></button>
-          <div class="tq-faq-a">Shaft형은 센서 양 끝단에 축이 나와 있는 형태로, 저용량·낮은 정밀도 용도에 많이 사용되며 Flange형 대비 가격이 저렴합니다. Flange형은 비접촉식으로 스테이터(Stator)·로터(Rotor)로 구성되며, 0.01~0.05%의 Accuracy Class를 가지고 높은 회전속도, 대용량 토크(최대 2MN·m급)까지 측정할 수 있습니다.</div>
+          <div class="tq-faq-a">Shaft형은 센서 양 끝단에 축이 나와 있는 형태로, 저용량·낮은 정밀도 용도에 많이 사용되며 Flange형 대비 가격이 저렴합니다. Flange형은 비접촉식으로 스테이터(Stator)·로터(Rotor)로 구성되며, 0.01~0.05%의 Accuracy Class를 가지고 높은 회전속도와 대용량 토크까지 측정할 수 있습니다.</div>
         </div>
         <div class="tq-faq-item">
           <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">스트레인게이지 무선(텔레메터리) 방식은 언제 사용하나요?</span><span class="tq-faq-ico">+</span></button>
