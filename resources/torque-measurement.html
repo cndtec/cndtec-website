@@ -4,14 +4,14 @@
 <meta charset="UTF-8" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>토크 측정·축마력 계측 완전 가이드 — 스트레인게이지·텔레메터리 방식 | 씨앤디테크</title>
-<meta name="description" content="스트레인게이지와 텔레메터리 시스템을 이용한 토크 측정·선박 축마력 계측 원리를 설명합니다. 비접촉 방식의 신호 전송, 시스템 구성, 적용 분야를 씨앤디테크의 실적과 함께 소개합니다." />
+<title>토크 측정 방법 완전 가이드 — SAW·EMD·광학·토크센서·스트레인게이지 5가지 방식 비교 | 씨앤디테크</title>
+<meta name="description" content="토크를 측정하는 5가지 방식(SAW·EMD·광학·토크센서·스트레인게이지 무선)을 비교하고, 가장 정밀한 토크센서(Torque Transducer)의 선정 기준과 Shaft형·Flange형 종류를 씨앤디테크가 설명합니다." />
 <link rel="canonical" href="https://www.cndtec.co.kr/resources/torque-measurement.html" />
-<meta property="og:title" content="토크 측정·축마력 계측 완전 가이드 | 씨앤디테크" />
-<meta property="og:description" content="스트레인게이지 + 텔레메터리로 구현하는 비접촉 토크 측정·선박 축마력 계측. 씨앤디테크 현장 적용 사례 포함." />
+<meta property="og:title" content="토크 측정 방법 완전 가이드 — 5가지 방식·토크센서 선정 | 씨앤디테크" />
+<meta property="og:description" content="SAW·EMD·광학·토크센서·스트레인게이지 무선 측정까지 토크 계측 5가지 방식 비교와 토크센서 선정·추천 가이드." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.cndtec.co.kr/resources/torque-measurement.html" />
-<meta property="og:image" content="https://blog.kakaocdn.net/dna/zTCJw/btsEKELHujA/AAAAAAAAAAAAAAAAAAAAANCZBAhEho5xuROXhdKkb48pd8RDh7Sizy9qK_EtYSyG/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=WuA1Nfd2CD8nnla6aNHnTeNk9zs%3D" />
+<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/Torque/Torque sensor.png" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="../css/style.css?v=6">
@@ -26,13 +26,13 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
   "@graph": [
     {
       "@type": "TechArticle",
-      "headline": "토크 측정·축마력 계측 완전 가이드 — 스트레인게이지·텔레메터리 방식",
-      "description": "스트레인게이지와 텔레메터리 시스템을 이용한 비접촉 토크 측정·선박 축마력 계측 원리, 시스템 구성, 적용 분야.",
+      "headline": "토크 측정 방법 완전 가이드 — SAW·EMD·광학·토크센서·스트레인게이지 5가지 방식 비교",
+      "description": "토크 측정 5가지 방식 비교, 토크센서(Torque Transducer) 선정 기준, Shaft형·Flange형 종류, 스트레인게이지 무선(텔레메터리) 측정 방식과 적용 분야.",
       "url": "https://www.cndtec.co.kr/resources/torque-measurement.html",
       "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
       "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
       "datePublished": "2024-02-15",
-      "dateModified": "2026-06-24",
+      "dateModified": "2026-07-20",
       "inLanguage": "ko"
     },
     {
@@ -40,33 +40,33 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "토크 측정에 스트레인게이지를 사용하는 이유는 무엇인가요?",
-          "acceptedAnswer": {"@type": "Answer", "text": "토크가 작용하면 축 표면에 전단 변형률이 발생합니다. 45° 방향으로 부착한 스트레인게이지(로제트 게이지)는 이 전단 변형률을 감지하고, 환산 공식 T = (με × E × Ip) / (r × (1+ν))를 통해 토크(Nm)로 변환합니다. 직접 부착 방식이므로 구조 변경 없이 적용 가능하고 높은 정밀도를 유지할 수 있습니다."}
+          "name": "토크를 측정하는 방법에는 어떤 것들이 있나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "표면의 파장을 이용하는 SAW(Surface Acoustic Wave) 기술, 자장을 이용하는 EMD(Embedded Magnetic Domain) 기술, 옵틱센서로 비틀림을 측정하는 광학(Optic) 기술, 토크 트랜스듀서(토크센서)를 이용한 직접 계측, 스트레인게이지를 축에 부착해 무선으로 측정하는 텔레메터리 방식 등이 있습니다. 이 중 가장 정밀한 계측이 가능한 방식은 토크센서입니다."}
         },
         {
           "@type": "Question",
-          "name": "회전하는 축에서 어떻게 신호를 전송하나요?",
-          "acceptedAnswer": {"@type": "Answer", "text": "텔레메터리(Telemetry) 시스템을 사용합니다. 축에 부착된 스트레인게이지 신호를 로터(TX, 송신기)에서 무선 RF 또는 유도 결합 방식으로 스테이터(RX, 수신기)로 전송합니다. 슬립링 방식 대비 마모가 없고 고속 회전 축에도 적용 가능합니다."}
+          "name": "토크센서는 어떤 원리로 동작하나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "토크센서는 스트레인게이지 센서를 기반으로 합니다. 센서를 측정하고자 하는 샤프트에 직접 연결하면, 토크가 가해질 때 발생하는 샤프트의 미세한 비틀림(전단 변형률)을 감지해 토크값으로 환산합니다. 모터·엔진·터빈 등 다양한 회전기계의 효율 시험, 성능 평가에 사용됩니다."}
         },
         {
           "@type": "Question",
-          "name": "축마력(Shaft Power)은 어떻게 계산하나요?",
-          "acceptedAnswer": {"@type": "Answer", "text": "축마력 = 토크(Nm) × 각속도(rad/s) = T × (2π × N / 60)로 계산합니다. 여기서 N은 RPM입니다. 따라서 스트레인게이지로 토크를 측정하고, 타코미터로 회전수(RPM)를 동시에 취득하면 실시간 축마력을 산출할 수 있습니다."}
+          "name": "토크센서는 어떻게 선정하나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "다른 센서와 마찬가지로 ① 측정하고자 하는 토크의 용량(Nominal Torque), ② 회전체의 RPM, ③ 요구되는 정밀도(Accuracy) 순으로 우선 센서를 선정합니다. 이후 데이터 처리 방식에 맞는 앰프나 데이터 취득 시스템(DAQ)을 선정합니다. 회전체 축계 구성상 커플링·토크리미터가 필요한 경우가 많아 축계 설계도 함께 검토해야 합니다."}
         },
         {
           "@type": "Question",
-          "name": "선박 이외에 어떤 곳에 토크 측정이 적용되나요?",
-          "acceptedAnswer": {"@type": "Answer", "text": "선박 프로펠러 축 외에도 압축기 구동 축, 펌프 임펠러 축, 감속기·증속기 입출력 축, 풍력발전기 로터 축, 터빈 구동 축, 산업용 로봇 관절 등 동력을 전달하는 모든 회전체에 적용할 수 있습니다."}
+          "name": "Shaft형과 Flange형 토크센서는 어떻게 다른가요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Shaft형은 센서 양 끝단에 축이 나와 있는 형태로, 저용량·낮은 정밀도 용도에 많이 사용되며 Flange형 대비 가격이 저렴합니다. Flange형은 비접촉식으로 스테이터(Stator)·로터(Rotor)로 구성되며, 0.01~0.05%의 Accuracy Class를 가지고 높은 회전속도, 대용량 토크(최대 2MN·m급)까지 측정할 수 있습니다."}
         },
         {
           "@type": "Question",
-          "name": "씨앤디테크의 토크·축마력 계측 시스템은 어떤 특징이 있나요?",
-          "acceptedAnswer": {"@type": "Answer", "text": "모든 직경의 샤프트에 장착 가능한 모듈화 시스템으로, 낮은 레벨 신호도 정확하게 전송합니다. 마력 계측 프로그램으로 실시간 모니터링을 지원하며, 국내 주요 조선소에 다수 납품 실적이 있습니다."}
+          "name": "스트레인게이지 무선(텔레메터리) 방식은 언제 사용하나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "기존 회전축에 스트레인게이지를 직접 부착하고 무선으로 신호를 송수신하는 방식으로, 고가의 대형 토크센서를 별도 구매할 필요 없이 기존 축을 그대로 활용할 수 있어 경제적입니다. 건설기계·대형 산업 설비처럼 형상이나 크기에 구애받지 않고 적용 가능하며, 선박 축마력(SHP) 계측, 압연 롤러 모터 모니터링, 대형 펌프·팬 부하 테스트 등에 표준적으로 사용됩니다."}
         },
         {
           "@type": "Question",
-          "name": "토크 측정 시 캘리브레이션은 어떻게 하나요?",
-          "acceptedAnswer": {"@type": "Answer", "text": "텔레메터리 수신기(RX)의 캘리브레이션 데이터(예: 0V = 0Nm, 10V = 3500Nm)를 계측 소프트웨어에 입력하여 전압 신호를 토크(Nm) 물리량으로 변환합니다. 무부하 정지 상태(0 RPM)에서 영점(Zero Offset) 조정을 선행합니다."}
+          "name": "씨앤디테크는 토크 측정에 어떤 지원을 제공하나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "씨앤디테크는 다양한 종류의 토크센서 공급뿐 아니라, 고객사의 환경(RPM, 토크 용량, 설치 공간)을 분석해 축계 구성 컨설팅부터 시스템 구축, 현장 측정 지원까지 원스톱 솔루션을 제공합니다. 어떤 방식을 선택해야 할지 고민이라면 언제든지 문의할 수 있습니다."}
         }
       ]
     }
@@ -98,7 +98,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 .tq-stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 32px 0; }
 @media (max-width: 700px) { .tq-stat-grid { grid-template-columns: repeat(2, 1fr); } }
 .tq-stat { background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: var(--radius); padding: 20px 16px; text-align: center; }
-.tq-stat-n { font-family: 'Pretendard', sans-serif; font-size: clamp(26px,4vw,40px); font-weight: 700; color: var(--accent); line-height: 1; }
+.tq-stat-n { font-family: 'Pretendard', sans-serif; font-size: clamp(22px,4vw,34px); font-weight: 700; color: var(--accent); line-height: 1; }
 .tq-stat-u { font-family: 'Pretendard', sans-serif; font-size: 10px; font-weight: 700; color: var(--accent-deep); margin-top: 4px; }
 .tq-stat-l { font-size: 11px; color: var(--text-mute); margin-top: 4px; }
 
@@ -114,6 +114,17 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 .tq-method-row:last-child { border: none; }
 .tq-method-lbl { color: var(--text-dim); }
 .tq-method-val { color: var(--charcoal); font-weight: 600; font-size: 11px; text-align: right; max-width: 55%; }
+
+/* 5가지 방식 개요 카드 */
+.tq-way-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 24px 0; }
+@media (max-width: 900px) { .tq-way-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px) { .tq-way-grid { grid-template-columns: repeat(2, 1fr); } }
+.tq-way { border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 12px; text-align: center; background: var(--white); position: relative; }
+.tq-way.best { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.tq-way-badge { position: absolute; top: -9px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.tq-way-ico { font-size: 20px; display: block; margin-bottom: 6px; }
+.tq-way-nm { font-size: 12px; font-weight: 700; color: var(--charcoal); margin-bottom: 4px; line-height: 1.3; }
+.tq-way-ds { font-size: 10.5px; color: var(--text-mute); line-height: 1.5; }
 
 /* 시스템 특징 */
 .tq-feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0; }
@@ -134,7 +145,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 
 /* 이미지 그리드 */
 .tq-img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin: 24px 0; }
-.tq-img-grid img { width: 100%; height: 220px; object-fit: cover; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: block; }
+.tq-img-grid img { width: 100%; height: 220px; object-fit: cover; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: block; background:#f8f6f4; }
 @media (max-width: 600px) { .tq-img-grid { grid-template-columns: 1fr; } }
 
 /* 적용 분야 */
@@ -144,6 +155,23 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 .tq-app-ico { font-size: 26px; display: block; margin-bottom: 8px; }
 .tq-app-nm { font-size: 12px; font-weight: 700; color: var(--charcoal); margin-bottom: 4px; }
 .tq-app-ds { font-size: 11px; color: var(--text-mute); line-height: 1.5; }
+
+/* 선정 기준 */
+.tq-sel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0; }
+@media (max-width: 700px) { .tq-sel-grid { grid-template-columns: 1fr; } }
+.tq-sel-card { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--white); }
+.tq-sel-num { font-family: 'Pretendard', sans-serif; font-size: 22px; font-weight: 700; color: var(--accent); padding: 16px 18px 0; }
+.tq-sel-nm { font-size: 14px; font-weight: 700; color: var(--charcoal); padding: 4px 18px 10px; border-bottom: 1px solid var(--line); }
+.tq-sel-ds { font-size: 12px; color: var(--text-dim); line-height: 1.7; padding: 14px 18px; }
+
+/* 스펙 표 */
+.tq-tbl-wrap { overflow-x: auto; margin: 20px 0; }
+.tq-tbl { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 480px; }
+.tq-tbl th { background: var(--charcoal); color: #fff; padding: 11px 14px; font-family: 'Pretendard', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-align: left; }
+.tq-tbl td { padding: 10px 14px; border-bottom: 1px solid var(--line); color: var(--text-dim); vertical-align: middle; }
+.tq-tbl tr:last-child td { border-bottom: none; }
+.tq-tbl tr:nth-child(even) td { background: var(--bg-soft,#F8F6F4); }
+.tq-tbl td strong { color: var(--charcoal); }
 
 /* FAQ */
 .tq-faq { display: flex; flex-direction: column; gap: 0; margin: 24px 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
@@ -206,21 +234,21 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
   <div class="container">
     <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
     <div style="margin-top:20px;">
-      <div class="tq-tag">TORQUE · SHAFT POWER · 토크 측정</div>
-      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(28px,5vw,56px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">토크 측정 &amp;<br>축마력 계측 가이드</h1>
-      <p style="font-size:17px; color:var(--text-dim); max-width:700px; line-height:1.7;">스트레인게이지와 텔레메터리 시스템을 이용한 비접촉 토크 측정 원리를 설명합니다. 회전하는 축에서 신호를 무선으로 전송하고 토크·마력을 실시간으로 계측하는 방법과 씨앤디테크의 현장 적용 사례를 소개합니다.</p>
+      <div class="tq-tag">TORQUE MEASUREMENT · 토크 측정</div>
+      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(28px,5vw,56px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">토크 측정 방법<br>완전 가이드</h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:700px; line-height:1.7;">SAW·EMD·광학·토크센서·스트레인게이지 무선(텔레메터리)까지, 토크를 측정하는 5가지 방식을 비교하고 가장 정밀한 계측이 가능한 토크센서(Torque Transducer)의 선정 기준과 Shaft형·Flange형 종류를 설명합니다.</p>
     </div>
 
-    <div style="margin-top:32px; border-radius:var(--radius); overflow:hidden; max-width:880px;">
-      <img src="https://blog.kakaocdn.net/dna/zTCJw/btsEKELHujA/AAAAAAAAAAAAAAAAAAAAANCZBAhEho5xuROXhdKkb48pd8RDh7Sizy9qK_EtYSyG/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=WuA1Nfd2CD8nnla6aNHnTeNk9zs%3D"
-           alt="선박 프로펠러 축 토크·축마력 텔레메터리 계측 시스템 — 씨앤디테크" style="width:100%; display:block;">
+    <div style="margin-top:32px; border-radius:var(--radius); overflow:hidden; max-width:880px; border:1px solid var(--line);">
+      <img src="../assets/images/Torque/Torque sensor.png"
+           alt="토크센서를 이용한 회전기계 토크 측정 시스템 구성 — 씨앤디테크" style="width:100%; display:block; object-fit:contain; background:#f8f6f4; max-height:420px;">
     </div>
 
     <div class="tq-stat-grid">
-      <div class="tq-stat"><div class="tq-stat-n">45°</div><div class="tq-stat-u">ANGLE</div><div class="tq-stat-l">게이지 부착 각도 (전단 방향)</div></div>
-      <div class="tq-stat"><div class="tq-stat-n">±0.5</div><div class="tq-stat-u">% FS</div><div class="tq-stat-l">텔레메터리 전송 정밀도</div></div>
-      <div class="tq-stat"><div class="tq-stat-n">∞</div><div class="tq-stat-u">RPM</div><div class="tq-stat-l">회전수 제한 없음 (비접촉)</div></div>
-      <div class="tq-stat"><div class="tq-stat-n">ALL</div><div class="tq-stat-u">DIA</div><div class="tq-stat-l">모든 직경 샤프트 적용</div></div>
+      <div class="tq-stat"><div class="tq-stat-n">5</div><div class="tq-stat-u">METHODS</div><div class="tq-stat-l">토크 측정 방식 종류</div></div>
+      <div class="tq-stat"><div class="tq-stat-n">0.01~0.05</div><div class="tq-stat-u">% FS</div><div class="tq-stat-l">Flange형 센서 정밀도</div></div>
+      <div class="tq-stat"><div class="tq-stat-n">2</div><div class="tq-stat-u">TYPES</div><div class="tq-stat-l">Shaft형 · Flange형</div></div>
+      <div class="tq-stat"><div class="tq-stat-n">2MN·m</div><div class="tq-stat-u">MAX</div><div class="tq-stat-l">대용량 토크 측정 한계</div></div>
     </div>
   </div>
 </section>
@@ -231,135 +259,213 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 
     <!-- 01 토크란? -->
     <div class="fade-in" style="padding-bottom:40px;">
-      <p class="tq-sub">01 · WHAT IS TORQUE</p>
-      <h2 class="tq-h2">토크(Torque)란?</h2>
+      <p class="tq-sub">01 · WHY MEASURE TORQUE</p>
+      <h2 class="tq-h2">토크(Torque) 측정, 왜 필요한가</h2>
       <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">
-        <strong style="color:var(--charcoal);">토크(Torque)</strong>는 회전력으로, 축에 가해지는 비틀림 힘(Torsion)의 크기입니다. 단위는 Nm(뉴턴미터)를 사용합니다. 선박 프로펠러, 압축기, 펌프, 감속기 등 모든 회전 동력 전달 시스템에서 토크는 기계 성능과 구조 안전성을 평가하는 핵심 물리량입니다.
+        <strong style="color:var(--charcoal);">토크(Torque)</strong>는 회전축에 가해지는 회전력으로, 단위는 Nm(뉴턴미터)를 사용합니다. 모터·엔진·터빈 등 동력을 생산하거나 전달하는 모든 회전기계에서, 토크는 <strong style="color:var(--charcoal);">효율 시험·성능 평가·부하 모니터링</strong>의 핵심 물리량입니다.
       </p>
-      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">
-        <strong style="color:var(--charcoal);">선박 축마력(Shaft Power)</strong>은 주 추진 기관에서 생산되어 프로펠러 축으로 전달되는 실제 동력입니다. 선박 건조 후 시운전 시 스트레인게이지로 토크를 측정하고 타코미터로 RPM을 취득해 실시간 마력을 산출합니다.
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85;">
+        토크 계측에는 표면의 파장을 이용하는 <strong style="color:var(--charcoal);">SAW(Surface Acoustic Wave)</strong> 기술, 자장을 이용하는 <strong style="color:var(--charcoal);">EMD(Embedded Magnetic Domain)</strong> 기술, 옵틱센서로 비틀림을 측정하는 <strong style="color:var(--charcoal);">광학(Optic)</strong> 기술, <strong style="color:var(--charcoal);">토크 트랜스듀서(토크센서)</strong>를 이용한 직접 계측, 스트레인게이지를 이용해 무선으로 측정하는 <strong style="color:var(--charcoal);">텔레메터리</strong> 방식 등 다양한 방식이 있습니다. 이 중 가장 정밀한 토크 계측이 가능한 방식은 <strong style="color:var(--charcoal);">토크센서(Torque Transducer)</strong>를 사용하는 것입니다.
       </p>
+    </div>
 
-      <div class="tq-formula">
-        P [kW] = T [Nm] × 2π × N [rpm] / 60,000
-        <div class="tq-formula-sub">P: 축마력(kW) · T: 토크(Nm) · N: 회전수(rpm)</div>
+    <hr class="tq-divider">
+
+    <!-- 02 측정 방법 5가지 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p class="tq-sub">02 · 5 MEASUREMENT METHODS</p>
+      <h2 class="tq-h2">토크 측정 5가지 방식 비교</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">측정 목적, 정밀도 요구 수준, 설치 환경에 따라 아래 5가지 방식 중 최적의 방법을 선택합니다.</p>
+
+      <div class="tq-way-grid">
+        <div class="tq-way">
+          <span class="tq-way-ico">🌊</span>
+          <div class="tq-way-nm">SAW</div>
+          <div class="tq-way-ds">표면 파장(Surface Acoustic Wave) 이용</div>
+        </div>
+        <div class="tq-way">
+          <span class="tq-way-ico">🧲</span>
+          <div class="tq-way-nm">EMD</div>
+          <div class="tq-way-ds">자장(Embedded Magnetic Domain) 이용</div>
+        </div>
+        <div class="tq-way">
+          <span class="tq-way-ico">💡</span>
+          <div class="tq-way-nm">광학(Optic)</div>
+          <div class="tq-way-ds">옵틱센서로 비틀림 각도 측정</div>
+        </div>
+        <div class="tq-way best">
+          <span class="tq-way-badge">최고 정밀도</span>
+          <span class="tq-way-ico">⚙️</span>
+          <div class="tq-way-nm">토크센서</div>
+          <div class="tq-way-ds">Torque Transducer 직접 계측</div>
+        </div>
+        <div class="tq-way">
+          <span class="tq-way-ico">📡</span>
+          <div class="tq-way-nm">SG 무선</div>
+          <div class="tq-way-ds">스트레인게이지 + 텔레메터리</div>
+        </div>
+      </div>
+
+      <div style="border-radius:var(--radius); overflow:hidden; margin-top:24px; border:1px solid var(--line);">
+        <img src="../assets/images/Torque/Optical torque.png"
+             alt="광학(Optic) 방식 토크 측정 원리 — 옵틱 게이트와 회전속도 신호 처리" loading="lazy"
+             style="width:100%; display:block; object-fit:contain; background:#fff; max-height:360px;">
+        <div style="padding:10px 16px; font-size:12px; color:var(--text-mute); background:var(--bg-soft,#F8F6F4); border-top:1px solid var(--line); text-align:center;">광학(Optic) 방식 — 옵틱 게이트로 회전 신호를 검출해 비틀림·속도로 환산</div>
+      </div>
+
+      <p style="font-size:14px; color:var(--text-dim); line-height:1.8; padding:14px 18px; background:var(--bg-soft,#F8F6F4); border-left:3px solid var(--accent); border-radius:4px; margin-top:20px;">
+        <strong style="color:var(--charcoal);">가장 많이 사용하는 방식</strong>은 ① 토크센서를 이용하는 직접 계측 방식과 ② 텔레메터리 시스템을 이용한 무선 토크 측정 방식입니다. 이하 두 방식을 중심으로 자세히 설명합니다.
+      </p>
+    </div>
+
+    <hr class="tq-divider">
+
+    <!-- 03 토크센서란 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p class="tq-sub">03 · TORQUE TRANSDUCER</p>
+      <h2 class="tq-h2">토크센서(Torque Transducer)란?</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">
+        토크센서는 <strong style="color:var(--charcoal);">스트레인게이지 센서를 기반</strong>으로 하는 센서입니다. 토크를 측정하기 위해서는 토크센서를 직접 샤프트에 연결해 샤프트의 비틀림을 측정하는 방식으로, <strong style="color:var(--charcoal);">모터, 엔진, 터빈</strong> 등 다양한 제품의 효율·성능 시험에 사용되고 있습니다.
+      </p>
+      <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);">
+        <img src="../assets/images/Torque/HBM Torque sensor.png"
+             alt="HBM 토크센서 제품 라인업 — Shaft형·Flange형 다양한 용량 구성" loading="lazy"
+             style="width:100%; display:block; object-fit:contain; background:#f8f6f4; max-height:380px;">
+        <div style="padding:10px 16px; font-size:12px; color:var(--text-mute); background:var(--bg-soft,#F8F6F4); border-top:1px solid var(--line); text-align:center;">토크센서 제품 라인업 — 용량·형태별 다양한 구성 (HBM)</div>
       </div>
     </div>
 
     <hr class="tq-divider">
 
-    <!-- 02 측정 방법 -->
+    <!-- 04 선정 기준 -->
     <div class="fade-in" style="padding-bottom:40px;">
-      <p class="tq-sub">02 · MEASUREMENT METHOD</p>
-      <h2 class="tq-h2">토크 측정 원리 — 스트레인게이지 × 텔레메터리</h2>
+      <p class="tq-sub">04 · SELECTION CRITERIA</p>
+      <h2 class="tq-h2">토크센서의 선정</h2>
       <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">
-        토크가 작용하는 축 표면에는 축 중심에서 ±45° 방향으로 최대 인장·압축 전단 변형률이 발생합니다. <strong style="color:var(--charcoal);">스트레인게이지를 45° 방향으로 부착</strong>하면 이 전단 변형률을 감지하고, 아래 환산식으로 토크를 계산합니다.
+        토크센서 선정에는 다른 센서와 비슷하게 우선 <strong style="color:var(--charcoal);">측정하고자 하는 토크의 용량(Nominal Torque), 회전체의 RPM, 센서의 정밀도</strong> 순서로 센서를 선정하며, 데이터 처리 방식에 따라 그에 맞는 앰프나 데이터 취득 시스템(DAQ)을 선정하면 됩니다.
       </p>
 
-      <div class="tq-formula">
-        T = (με × E × Ip) / (r × (1 + ν))
-        <div class="tq-formula-sub">με: 측정 변형률 · E: 탄성계수 · Ip: 극관성 모멘트 · r: 반경 · ν: 포아송비</div>
+      <div class="tq-sel-grid">
+        <div class="tq-sel-card">
+          <div class="tq-sel-num">01</div>
+          <div class="tq-sel-nm">토크 용량 (Nominal Torque)</div>
+          <div class="tq-sel-ds">측정 대상의 예상 최대 토크를 산정하고, 여유율을 고려해 정격 용량을 결정합니다.</div>
+        </div>
+        <div class="tq-sel-card">
+          <div class="tq-sel-num">02</div>
+          <div class="tq-sel-nm">회전체 RPM</div>
+          <div class="tq-sel-ds">고속 회전체는 비접촉(Flange형)이 유리하며, 회전속도 한계 사양을 확인해야 합니다.</div>
+        </div>
+        <div class="tq-sel-card">
+          <div class="tq-sel-num">03</div>
+          <div class="tq-sel-nm">요구 정밀도 (Accuracy)</div>
+          <div class="tq-sel-ds">시험 목적에 맞는 Accuracy Class를 선택하고, 이에 맞는 앰프·DAQ를 함께 구성합니다.</div>
+        </div>
       </div>
 
-      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin: 20px 0;">
-        <strong style="color:var(--charcoal);">회전하는 축에서 신호 전송</strong>이 핵심 난제입니다. 씨앤디테크는 <strong style="color:var(--charcoal);">텔레메터리(Telemetry)</strong> 시스템으로 이를 해결합니다. 축에 장착한 로터(TX, 송신기)가 게이지 신호를 무선으로 고정부 스테이터(RX, 수신기)에 전송합니다.
+      <p style="font-size:14px; color:var(--text-dim); line-height:1.8; padding:14px 18px; background:var(--bg-soft,#F8F6F4); border-left:3px solid var(--accent); border-radius:4px; margin-top:8px;">
+        회전체를 구성해 토크 측정이 이루어지기 때문에 <strong style="color:var(--charcoal);">커플링이나 토크리미터</strong> 등이 필요하며, 축계에 대한 계측 설계가 반드시 선행되어야 합니다. 씨앤디테크는 다양한 토크센서 공급 외에도 해당 애플리케이션에 대한 축계 구성 컨설팅을 함께 지원합니다.
       </p>
+
+      <div style="border-radius:var(--radius); overflow:hidden; margin-top:20px; border:1px solid var(--line);">
+        <img src="../assets/images/Torque/다이나모.png"
+             alt="토크센서를 포함한 동력계(다이나모미터) 축계 구성 예시 — 모터·토크센서·감속기·커플링·시험체" loading="lazy"
+             style="width:100%; display:block; object-fit:contain; background:#fff; max-height:400px;">
+        <div style="padding:10px 16px; font-size:12px; color:var(--text-mute); background:var(--bg-soft,#F8F6F4); border-top:1px solid var(--line); text-align:center;">동력계(다이나모미터) 축계 구성 예시 — 모터·토크센서·감속기·커플링·시험체 연결</div>
+      </div>
+    </div>
+
+    <hr class="tq-divider">
+
+    <!-- 05 종류 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p class="tq-sub">05 · SENSOR TYPES</p>
+      <h2 class="tq-h2">토크센서의 종류 — Shaft형 vs Flange형</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">토크센서는 크게 <strong style="color:var(--charcoal);">Shaft 타입</strong>과 <strong style="color:var(--charcoal);">Flange 타입</strong>으로 나뉩니다.</p>
 
       <div class="tq-method-grid">
         <div class="tq-method-card">
           <div class="tq-method-head">
-            <div class="tq-method-num">METHOD 01 · 권장</div>
-            <div class="tq-method-nm">스트레인게이지 + 텔레메터리</div>
+            <div class="tq-method-num">TYPE 01</div>
+            <div class="tq-method-nm">Shaft형 토크센서</div>
           </div>
           <div class="tq-method-body">
-            <div class="tq-method-row"><span class="tq-method-lbl">접촉 여부</span><span class="tq-method-val">비접촉 (무선 전송)</span></div>
-            <div class="tq-method-row"><span class="tq-method-lbl">RPM 제한</span><span class="tq-method-val">없음</span></div>
-            <div class="tq-method-row"><span class="tq-method-lbl">마모·유지</span><span class="tq-method-val">없음</span></div>
-            <div class="tq-method-row"><span class="tq-method-lbl">정밀도</span><span class="tq-method-val">±0.5% FS</span></div>
-            <div class="tq-method-row"><span class="tq-method-lbl">적용 대상</span><span class="tq-method-val">모든 직경 회전 축</span></div>
+            <div class="tq-method-row"><span class="tq-method-lbl">형태</span><span class="tq-method-val">센서 양 끝단에 축이 나와 있는 형태</span></div>
+            <div class="tq-method-row"><span class="tq-method-lbl">용량·정밀도</span><span class="tq-method-val">저용량, 낮은 정밀도 위주</span></div>
+            <div class="tq-method-row"><span class="tq-method-lbl">가격</span><span class="tq-method-val">Flange형 대비 저렴</span></div>
+            <div class="tq-method-row"><span class="tq-method-lbl">적용</span><span class="tq-method-val">소형 시험 장비, 일반 산업 현장</span></div>
           </div>
         </div>
         <div class="tq-method-card">
           <div class="tq-method-head">
-            <div class="tq-method-num">METHOD 02</div>
-            <div class="tq-method-nm">슬립링(Slip Ring) 방식</div>
+            <div class="tq-method-num">TYPE 02 · 고정밀</div>
+            <div class="tq-method-nm">Flange형 토크센서</div>
           </div>
           <div class="tq-method-body">
-            <div class="tq-method-row"><span class="tq-method-lbl">접촉 여부</span><span class="tq-method-val">접촉 (브러시)</span></div>
-            <div class="tq-method-row"><span class="tq-method-lbl">RPM 제한</span><span class="tq-method-val">브러시 마모 고려</span></div>
-            <div class="tq-method-row"><span class="tq-method-lbl">마모·유지</span><span class="tq-method-val">정기 교체 필요</span></div>
-            <div class="tq-method-row"><span class="tq-method-lbl">정밀도</span><span class="tq-method-val">접촉 저항 변동 영향</span></div>
-            <div class="tq-method-row"><span class="tq-method-lbl">적용 대상</span><span class="tq-method-val">저속·소형 축</span></div>
+            <div class="tq-method-row"><span class="tq-method-lbl">형태</span><span class="tq-method-val">비접촉식, 스테이터(Stator)+로터(Rotor)</span></div>
+            <div class="tq-method-row"><span class="tq-method-lbl">정밀도</span><span class="tq-method-val">Accuracy Class 0.01~0.05%</span></div>
+            <div class="tq-method-row"><span class="tq-method-lbl">회전속도·용량</span><span class="tq-method-val">고속 회전, 대용량(최대 2MN·m급)까지 적용</span></div>
+            <div class="tq-method-row"><span class="tq-method-lbl">적용</span><span class="tq-method-val">정밀 시험·연구, 대용량 회전기계</span></div>
           </div>
         </div>
       </div>
+
+      <div style="border-radius:var(--radius); overflow:hidden; margin-top:20px; border:1px solid var(--line);">
+        <img src="../assets/images/Torque/TORQUE BASIC.png"
+             alt="토크센서 구조 원리 — 상단: Shaft형(실축·중공축·케이지형), 하단: Flange형(스포크·원형·플랜지 결합)" loading="lazy"
+             style="width:100%; display:block; object-fit:contain; background:#fff; max-height:480px;">
+        <div style="padding:10px 16px; font-size:12px; color:var(--text-mute); background:var(--bg-soft,#F8F6F4); border-top:1px solid var(--line); text-align:center;">위: Shaft형 토크센서 구조 · 아래: Flange형 토크센서 구조 — 스트레인게이지(45°) 부착 위치</div>
+      </div>
+
+      <div class="tq-img-grid" style="margin-top:20px;">
+        <img src="../assets/images/Torque/HBM SHAFT TORQUE SENSOR.png" alt="HBM T20WN Shaft형 토크센서 제품 사진" loading="lazy">
+        <img src="../assets/images/Torque/HBM T12.jpg" alt="HBM Flange형 토크센서 제품 사진" loading="lazy">
+      </div>
+      <p style="font-size:12px; color:var(--text-mute); text-align:center; margin-top:-8px;">HBM Shaft형 T20WN 토크센서(좌) · HBM Flange형 토크센서(우)</p>
     </div>
 
     <hr class="tq-divider">
 
-    <!-- 03 축마력 계측 시스템 -->
+    <!-- 06 텔레메트리 무선 측정 -->
     <div class="fade-in" style="padding-bottom:40px;">
-      <p class="tq-sub">03 · SHAFT POWER SYSTEM</p>
-      <h2 class="tq-h2">씨앤디테크 축마력 계측 시스템</h2>
-      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:24px;">
-        씨앤디테크는 국내 주요 조선소에 축마력 계측 시스템을 다수 납품한 실적을 보유합니다. Shaft에 스트레인게이지를 부착하고 텔레메터리로 신호를 전송·캘리브레이션하여 토크·마력·RPM을 실시간으로 계측합니다.
+      <p class="tq-sub">06 · WIRELESS STRAIN GAUGE</p>
+      <h2 class="tq-h2">스트레인게이지 무선(텔레메터리) 측정 방식</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">
+        회전축에 <strong style="color:var(--charcoal);">스트레인게이지를 직접 부착</strong>하고, 무선으로 데이터를 송·수신해 토크를 측정하는 방식입니다. 별도의 토크센서를 구매하지 않고 <strong style="color:var(--charcoal);">기존 축을 그대로 활용</strong>할 수 있어, 대용량 축이나 이미 설치된 회전체에 적용하기에 특히 경제적입니다.
       </p>
 
       <div class="tq-feat-grid">
-        <div class="tq-feat"><span class="tq-feat-ico">🔩</span><div class="tq-feat-nm">모든 직경 샤프트</div><div class="tq-feat-ds">소형 펌프 축부터 대형 선박 프로펠러 축까지 적용 가능</div></div>
-        <div class="tq-feat"><span class="tq-feat-ico">📡</span><div class="tq-feat-nm">비접촉 무선 전송</div><div class="tq-feat-ds">텔레메터리로 회전 중 신호 전송, 슬립링 없이 고속 회전 가능</div></div>
-        <div class="tq-feat"><span class="tq-feat-ico">📊</span><div class="tq-feat-nm">실시간 모니터링</div><div class="tq-feat-ds">마력 계측 프로그램으로 토크·RPM·마력 실시간 표시</div></div>
-        <div class="tq-feat"><span class="tq-feat-ico">⚡</span><div class="tq-feat-nm">낮은 신호 레벨 정밀 전송</div><div class="tq-feat-ds">스트레인게이지의 μV 레벨 신호도 정확히 전달</div></div>
-        <div class="tq-feat"><span class="tq-feat-ico">🧩</span><div class="tq-feat-nm">모듈화 시스템</div><div class="tq-feat-ds">쉽고 빠른 설치·교체, 현장 맞춤 구성</div></div>
-        <div class="tq-feat"><span class="tq-feat-ico">🏭</span><div class="tq-feat-nm">조선소 납품 실적</div><div class="tq-feat-ds">국내 주요 조선소 다수 공급, 현장 검증 완료</div></div>
+        <div class="tq-feat"><span class="tq-feat-ico">🏭</span><div class="tq-feat-nm">높은 범용성</div><div class="tq-feat-ds">건설기계·대형 산업 설비·구조물 등 형상·크기에 구애받지 않음</div></div>
+        <div class="tq-feat"><span class="tq-feat-ico">📐</span><div class="tq-feat-nm">공간 활용</div><div class="tq-feat-ds">센서 자체가 작고 얇아 협소한 공간에도 설치 가능</div></div>
+        <div class="tq-feat"><span class="tq-feat-ico">💰</span><div class="tq-feat-nm">경제성</div><div class="tq-feat-ds">대용량 토크 측정 시 고가의 대형 센서 구매 없이 기존 축 활용, 비용 절감</div></div>
       </div>
 
-      <p style="font-size:14px; font-weight:700; color:var(--text-mute); margin: 28px 0 12px; letter-spacing: 1px; text-transform: uppercase; font-family:'Pretendard',sans-serif;">시스템 구성 및 신호 Flow</p>
       <div class="tq-img-grid">
-        <img src="https://blog.kakaocdn.net/dna/b6KpVO/btsEQeldpbq/AAAAAAAAAAAAAAAAAAAAAAx3aQUueil8wYywBFMTT5BG7Zr6Bc3Z8Ms79VZsSGM0/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=%2BfQmjvAR%2FHc8TuTH3aKo1sNOzpM%3D"
-             alt="축마력 계측 시스템 구성도" style="object-fit:contain; background:#f8f6f4;">
-        <img src="https://blog.kakaocdn.net/dna/bcw66D/btsEQeMeiHi/AAAAAAAAAAAAAAAAAAAAAEGLZXYL-3joro-YVZ0jOjgnaoQJABmgCkx9lhh22yqc/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=b1jZU22VQn806toxsMIJWY7d2gw%3D"
-             alt="축마력 측정 신호 흐름도" style="object-fit:contain; background:#f8f6f4;">
+        <img src="../assets/images/Torque/SG ON SHAFT FOR TELEMETRY.jpg" alt="회전축에 부착된 스트레인게이지 로제트 — 텔레메터리 무선 전송용" loading="lazy">
+        <img src="../assets/images/Torque/STRAIN GAGE TELEMETRY.jpg" alt="대형 로터 축에 부착된 풀브리지 스트레인게이지 — 텔레메터리 측정" loading="lazy">
       </div>
-      <div style="border-radius:var(--radius); overflow:hidden; margin-top:16px; border:1px solid var(--line);">
-        <img src="../assets/images/SG_telemetry system.png"
-             alt="스트레인게이지 텔레메터리 시스템 — SG 송수신 모듈 구성" loading="lazy"
-             style="width:100%; display:block; object-fit:contain; background:#f8f6f4; max-height:320px;">
+      <div class="tq-img-grid">
+        <img src="../assets/images/Torque/Full bridge SG on shaft.png" alt="풀브리지 스트레인게이지 축 부착 클로즈업 1" loading="lazy">
+        <img src="../assets/images/Torque/Full bridge SG on shaft_02.png" alt="풀브리지 스트레인게이지 축 부착 클로즈업 2 — 커플링 인접 설치" loading="lazy">
       </div>
-      <div style="border-radius:var(--radius); overflow:hidden; margin-top:12px; border:1px solid var(--line);">
+
+      <div style="border-radius:var(--radius); overflow:hidden; margin-top:20px; border:1px solid var(--line);">
         <img src="../assets/images/텔레메터리 시스템 구성.png"
-             alt="텔레메터리 시스템 구성 상세도 — 샤프트 트랜스미터·RX 안테나·DAQ·노트북 신호 흐름 (토크 측정 적용)" loading="lazy"
-             style="width:100%; display:block; object-fit:contain; background:#fff; max-height:480px;">
+             alt="텔레메터리 시스템 구성도 — 샤프트 트랜스미터·RX 안테나·DAQ·노트북 신호 흐름" loading="lazy"
+             style="width:100%; display:block; object-fit:contain; background:#fff; max-height:440px;">
+        <div style="padding:10px 16px; font-size:12px; color:var(--text-mute); background:var(--bg-soft,#F8F6F4); border-top:1px solid var(--line); text-align:center;">텔레메터리 시스템 구성 — 회전부 트랜스미터(TX)에서 고정부 수신기(RX)로 무선 전송</div>
       </div>
-      <div style="border-radius:var(--radius); overflow:hidden; margin-top:16px; border:1px solid var(--line);">
-        <img src="https://blog.kakaocdn.net/dna/cZXz17/btsESo8r6yG/AAAAAAAAAAAAAAAAAAAAAMbUXMA_ztGLBWFFXuQEO4JULnPx-LAZJXPMoInSma1e/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=9dtoF835sOrFK5BuzUFpza7UxnI%3D"
-             alt="축마력 계측 소프트웨어 모니터링 화면" style="width:100%; display:block; object-fit:contain; background:#f8f6f4; max-height:300px;">
-      </div>
-    </div>
 
-    <hr class="tq-divider">
-
-    <!-- 04 캘리브레이션 -->
-    <div class="fade-in" style="padding-bottom:40px;">
-      <p class="tq-sub">04 · CALIBRATION</p>
-      <h2 class="tq-h2">캘리브레이션 및 영점 조정</h2>
-      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">
-        텔레메터리 수신기(RX)의 출력 전압을 토크(Nm)로 변환하는 캘리브레이션이 필수입니다. 전압-토크 대응값(예: 0V = 0Nm, 10V = 3,500Nm)을 계측 소프트웨어에 입력하면 실시간으로 물리량 표시가 가능합니다.
-      </p>
-      <div style="overflow-x:auto; margin:20px 0;">
-        <table style="width:100%; border-collapse:collapse; font-size:13px; min-width:480px;">
+      <p style="font-size:14px; font-weight:700; color:var(--text-mute); margin: 28px 0 12px; letter-spacing:1px; text-transform:uppercase; font-family:'Pretendard',sans-serif;">핵심 적용 분야</p>
+      <div class="tq-tbl-wrap">
+        <table class="tq-tbl">
           <thead>
-            <tr>
-              <th style="background:var(--charcoal); color:#fff; padding:11px 14px; font-family:'Pretendard',sans-serif; font-size:10px; text-align:left; letter-spacing:1px;">단계</th>
-              <th style="background:var(--charcoal); color:#fff; padding:11px 14px; font-family:'Pretendard',sans-serif; font-size:10px; text-align:left; letter-spacing:1px;">항목</th>
-              <th style="background:var(--charcoal); color:#fff; padding:11px 14px; font-family:'Pretendard',sans-serif; font-size:10px; text-align:left; letter-spacing:1px;">내용</th>
-            </tr>
+            <tr><th>적용 대상</th><th>설명</th></tr>
           </thead>
           <tbody>
-            <tr><td style="padding:10px 14px; border-bottom:1px solid var(--line); font-weight:700; color:var(--accent)">01</td><td style="padding:10px 14px; border-bottom:1px solid var(--line);">Scale Factor 입력</td><td style="padding:10px 14px; border-bottom:1px solid var(--line); color:var(--text-dim);">RX 캘리브레이션 데이터(V → Nm)를 소프트웨어 채널에 입력</td></tr>
-            <tr><td style="padding:10px 14px; border-bottom:1px solid var(--line); background:var(--bg-soft); font-weight:700; color:var(--accent)">02</td><td style="padding:10px 14px; border-bottom:1px solid var(--line); background:var(--bg-soft);">영점 조정 (Zero Offset)</td><td style="padding:10px 14px; border-bottom:1px solid var(--line); background:var(--bg-soft); color:var(--text-dim);">무부하 정지(0 RPM) 상태에서 잔류 전압을 '0 Nm' 기준으로 설정</td></tr>
-            <tr><td style="padding:10px 14px; border-bottom:1px solid var(--line); font-weight:700; color:var(--accent)">03</td><td style="padding:10px 14px; border-bottom:1px solid var(--line);">타코미터 연결</td><td style="padding:10px 14px; border-bottom:1px solid var(--line); color:var(--text-dim);">RPM 센서 동기화, 토크 × RPM → 실시간 마력 자동 계산</td></tr>
-            <tr><td style="padding:10px 14px; font-weight:700; color:var(--accent)">04</td><td style="padding:10px 14px;">측정 시작</td><td style="padding:10px 14px; color:var(--text-dim);">실시간 토크(Nm)·RPM·마력(kW) 동시 기록·모니터링</td></tr>
+            <tr><td><strong>선박 축마력(SHP) 계측</strong></td><td>엔진과 프로펠러를 잇는 대형 추진축의 마력을 측정할 때 표준적으로 사용 — 자세히: <a href="torsional-vibration.html" style="color:var(--accent);">비틀림 진동·축마력 계측 가이드</a></td></tr>
+            <tr><td>압연 롤러 모터 모니터링</td><td>대용량 토크 측정 모니터링 시스템으로 압연 설비 부하 감시</td></tr>
+            <tr><td>대형 펌프·팬 부하 테스트</td><td>기존 축을 활용한 저비용 부하 시험</td></tr>
           </tbody>
         </table>
       </div>
@@ -367,24 +473,24 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 
     <hr class="tq-divider">
 
-    <!-- 05 적용 분야 -->
+    <!-- 07 적용 분야 -->
     <div class="fade-in" style="padding-bottom:40px;">
-      <p class="tq-sub">05 · APPLICATIONS</p>
+      <p class="tq-sub">07 · APPLICATIONS</p>
       <h2 class="tq-h2">토크 측정 주요 적용 분야</h2>
       <div class="tq-app-grid">
+        <div class="tq-app"><span class="tq-app-ico">⚙️</span><div class="tq-app-nm">모터 성능 시험기</div><div class="tq-app-ds">Dynamometer를 이용한 모터·전동기 효율 시험</div></div>
+        <div class="tq-app"><span class="tq-app-ico">🔥</span><div class="tq-app-nm">엔진 테스트 벤치</div><div class="tq-app-ds">고정밀 실험실 환경의 엔진 출력·효율 평가</div></div>
+        <div class="tq-app"><span class="tq-app-ico">🏭</span><div class="tq-app-nm">압연 롤러 모터</div><div class="tq-app-ds">대용량 토크 모니터링, 부하 이상 감지</div></div>
+        <div class="tq-app"><span class="tq-app-ico">🌊</span><div class="tq-app-nm">대형 펌프·팬</div><div class="tq-app-ds">부하 테스트, 동력 효율 측정</div></div>
         <div class="tq-app"><span class="tq-app-ico">🚢</span><div class="tq-app-nm">선박 축마력</div><div class="tq-app-ds">프로펠러 축 마력 계측, 시운전 성능 검증</div></div>
-        <div class="tq-app"><span class="tq-app-ico">💨</span><div class="tq-app-nm">압축기 구동 축</div><div class="tq-app-ds">VFD 구동 압축기 토크·출력 감시</div></div>
-        <div class="tq-app"><span class="tq-app-ico">🌊</span><div class="tq-app-nm">펌프·임펠러</div><div class="tq-app-ds">펌프 동력 효율 측정, 이상 과부하 감지</div></div>
-        <div class="tq-app"><span class="tq-app-ico">⚙️</span><div class="tq-app-nm">감속기·증속기</div><div class="tq-app-ds">입출력 토크 비교, 전달 효율 평가</div></div>
-        <div class="tq-app"><span class="tq-app-ico">🌬️</span><div class="tq-app-nm">풍력발전기 로터</div><div class="tq-app-ds">로터 축 토크 계측, 발전량 성능 분석</div></div>
-        <div class="tq-app"><span class="tq-app-ico">🔁</span><div class="tq-app-nm">회전기계 일반</div><div class="tq-app-ds">터빈·엔진·모터 구동 계 모든 회전체 적용</div></div>
+        <div class="tq-app"><span class="tq-app-ico">🔁</span><div class="tq-app-nm">회전기계 일반</div><div class="tq-app-ds">감속기·터빈 등 모든 회전 동력 전달 시스템</div></div>
       </div>
 
       <!-- 내부 링크 클러스터 -->
       <div style="padding:20px 24px; background:var(--bg-soft,#F8F6F4); border:1px solid var(--line); border-radius:var(--radius); margin-top:24px;">
         <p style="font-size:11px; font-weight:700; color:var(--accent); font-family:'Pretendard',sans-serif; letter-spacing:2px; margin-bottom:12px;">관련 기술자료</p>
         <div style="display:flex; flex-wrap:wrap; gap:12px;">
-          <a href="torsional-vibration.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 비틀림 진동 측정·분석</a>
+          <a href="torsional-vibration.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 비틀림 진동·축마력(SHP) 계측</a>
           <a href="strain-gauge.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 스트레인게이지 원리·종류</a>
           <a href="telemetry.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 텔레메터리 시스템</a>
           <a href="daq-system.html" style="font-size:13px; color:var(--accent); text-decoration:none;">↗ 데이터 수집장치(DAQ)</a>
@@ -395,42 +501,58 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 
     <hr class="tq-divider">
 
+    <!-- 08 씨앤디테크 솔루션 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <p class="tq-sub">08 · OUR SOLUTION</p>
+      <h2 class="tq-h2">씨앤디테크의 토크 측정 솔루션</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.85; margin-bottom:20px;">
+        어떤 방식을 선택해야 할지 고민되시나요? 씨앤디테크는 단순히 센서만 납품하는 것이 아니라, 고객사의 환경(RPM, 토크 용량, 설치 공간)을 분석하여 <strong style="color:var(--charcoal);">축계 구성 컨설팅부터 시스템 구축, 현장 측정 지원까지 원스톱 솔루션</strong>을 제공합니다.
+      </p>
+      <div class="tq-feat-grid">
+        <div class="tq-feat"><span class="tq-feat-ico">🧭</span><div class="tq-feat-nm">방식 선정 컨설팅</div><div class="tq-feat-ds">용량·RPM·정밀도·설치 환경에 맞는 최적의 측정 방식 제안</div></div>
+        <div class="tq-feat"><span class="tq-feat-ico">🔧</span><div class="tq-feat-nm">축계 구성 설계</div><div class="tq-feat-ds">커플링·토크리미터 포함 축계 구성 컨설팅 지원</div></div>
+        <div class="tq-feat"><span class="tq-feat-ico">📍</span><div class="tq-feat-nm">현장 측정 지원</div><div class="tq-feat-ds">센서 설치부터 데이터 취득·분석까지 현장 계측 용역 제공</div></div>
+      </div>
+    </div>
+
+    <hr class="tq-divider">
+
     <!-- FAQ -->
     <div class="fade-in" style="padding-bottom:40px;">
-      <p class="tq-sub">06 · FAQ</p>
+      <p class="tq-sub">09 · FAQ</p>
       <h2 class="tq-h2">자주 묻는 질문</h2>
       <div class="tq-faq">
         <div class="tq-faq-item">
-          <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">토크 측정에 스트레인게이지를 사용하는 이유는 무엇인가요?</span><span class="tq-faq-ico">+</span></button>
-          <div class="tq-faq-a">토크가 작용하면 축 표면에 전단 변형률이 발생합니다. 45° 방향으로 부착한 스트레인게이지(로제트 게이지)는 이 전단 변형률을 감지하고, 환산 공식 T = (με × E × Ip) / (r × (1+ν))를 통해 토크(Nm)로 변환합니다. 구조 변경 없이 현장 부착이 가능하고 높은 정밀도를 유지할 수 있습니다.</div>
+          <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">토크를 측정하는 방법에는 어떤 것들이 있나요?</span><span class="tq-faq-ico">+</span></button>
+          <div class="tq-faq-a">표면의 파장을 이용하는 SAW(Surface Acoustic Wave) 기술, 자장을 이용하는 EMD(Embedded Magnetic Domain) 기술, 옵틱센서로 비틀림을 측정하는 광학(Optic) 기술, 토크 트랜스듀서(토크센서)를 이용한 직접 계측, 스트레인게이지를 축에 부착해 무선으로 측정하는 텔레메터리 방식 등이 있습니다. 이 중 가장 정밀한 계측이 가능한 방식은 토크센서입니다.</div>
         </div>
         <div class="tq-faq-item">
-          <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">회전하는 축에서 어떻게 신호를 전송하나요?</span><span class="tq-faq-ico">+</span></button>
-          <div class="tq-faq-a">텔레메터리(Telemetry) 시스템을 사용합니다. 축에 부착된 로터(TX, 송신기)에서 스트레인게이지 신호를 무선 RF 또는 유도 결합 방식으로 고정부 스테이터(RX, 수신기)에 전송합니다. 슬립링 방식 대비 마모가 없고 고속 회전 축에도 적용 가능합니다.</div>
+          <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">토크센서는 어떤 원리로 동작하나요?</span><span class="tq-faq-ico">+</span></button>
+          <div class="tq-faq-a">토크센서는 스트레인게이지 센서를 기반으로 합니다. 센서를 측정하고자 하는 샤프트에 직접 연결하면, 토크가 가해질 때 발생하는 샤프트의 미세한 비틀림(전단 변형률)을 감지해 토크값으로 환산합니다. 모터·엔진·터빈 등 다양한 회전기계의 효율 시험, 성능 평가에 사용됩니다.</div>
         </div>
         <div class="tq-faq-item">
-          <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">축마력은 어떻게 계산하나요?</span><span class="tq-faq-ico">+</span></button>
-          <div class="tq-faq-a">축마력 P[kW] = T[Nm] × 2π × N[rpm] / 60,000으로 계산합니다. 스트레인게이지로 토크를 측정하고 타코미터로 RPM을 동시 취득하면 실시간 축마력을 자동 산출할 수 있습니다.</div>
+          <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">토크센서는 어떻게 선정하나요?</span><span class="tq-faq-ico">+</span></button>
+          <div class="tq-faq-a">다른 센서와 마찬가지로 ① 측정하고자 하는 토크의 용량(Nominal Torque), ② 회전체의 RPM, ③ 요구되는 정밀도(Accuracy) 순으로 우선 센서를 선정합니다. 이후 데이터 처리 방식에 맞는 앰프나 데이터 취득 시스템(DAQ)을 선정합니다. 회전체 축계 구성상 커플링·토크리미터가 필요한 경우가 많아 축계 설계도 함께 검토해야 합니다.</div>
         </div>
         <div class="tq-faq-item">
-          <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">선박 이외에 어떤 곳에 토크 측정이 적용되나요?</span><span class="tq-faq-ico">+</span></button>
-          <div class="tq-faq-a">선박 프로펠러 축 외에도 압축기 구동 축, 펌프 임펠러 축, 감속기·증속기 입출력 축, 풍력발전기 로터 축, 터빈 구동 축, 산업용 로봇 관절 등 동력을 전달하는 모든 회전체에 적용할 수 있습니다.</div>
+          <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">Shaft형과 Flange형 토크센서는 어떻게 다른가요?</span><span class="tq-faq-ico">+</span></button>
+          <div class="tq-faq-a">Shaft형은 센서 양 끝단에 축이 나와 있는 형태로, 저용량·낮은 정밀도 용도에 많이 사용되며 Flange형 대비 가격이 저렴합니다. Flange형은 비접촉식으로 스테이터(Stator)·로터(Rotor)로 구성되며, 0.01~0.05%의 Accuracy Class를 가지고 높은 회전속도, 대용량 토크(최대 2MN·m급)까지 측정할 수 있습니다.</div>
         </div>
         <div class="tq-faq-item">
-          <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">씨앤디테크의 토크·축마력 계측 시스템은 어떤 특징이 있나요?</span><span class="tq-faq-ico">+</span></button>
-          <div class="tq-faq-a">모든 직경의 샤프트에 장착 가능한 모듈화 시스템으로, μV 레벨의 낮은 신호도 정확하게 전송합니다. 마력 계측 프로그램으로 실시간 모니터링을 지원하며, 국내 주요 조선소에 다수 납품 실적을 보유합니다.</div>
+          <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">스트레인게이지 무선(텔레메터리) 방식은 언제 사용하나요?</span><span class="tq-faq-ico">+</span></button>
+          <div class="tq-faq-a">기존 회전축에 스트레인게이지를 직접 부착하고 무선으로 신호를 송수신하는 방식으로, 고가의 대형 토크센서를 별도 구매할 필요 없이 기존 축을 그대로 활용할 수 있어 경제적입니다. 건설기계·대형 산업 설비처럼 형상이나 크기에 구애받지 않고 적용 가능하며, 선박 축마력(SHP) 계측, 압연 롤러 모터 모니터링, 대형 펌프·팬 부하 테스트 등에 표준적으로 사용됩니다.</div>
         </div>
         <div class="tq-faq-item">
-          <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">토크 측정 시 캘리브레이션은 어떻게 하나요?</span><span class="tq-faq-ico">+</span></button>
-          <div class="tq-faq-a">텔레메터리 수신기의 캘리브레이션 데이터(예: 0V = 0Nm, 10V = 3500Nm)를 계측 소프트웨어에 입력하여 전압을 토크(Nm)로 변환합니다. 측정 전 무부하 정지(0 RPM) 상태에서 Zero Offset 조정을 반드시 선행합니다.</div>
+          <button class="tq-faq-q" onclick="toggleFaq(this)"><span class="tq-faq-q-txt">씨앤디테크는 토크 측정에 어떤 지원을 제공하나요?</span><span class="tq-faq-ico">+</span></button>
+          <div class="tq-faq-a">씨앤디테크는 다양한 종류의 토크센서 공급뿐 아니라, 고객사의 환경(RPM, 토크 용량, 설치 공간)을 분석해 축계 구성 컨설팅부터 시스템 구축, 현장 측정 지원까지 원스톱 솔루션을 제공합니다. 어떤 방식을 선택해야 할지 고민이라면 언제든지 문의할 수 있습니다.</div>
         </div>
       </div>
     </div>
 
     <!-- CTA -->
     <div class="fade-in" style="margin-top:48px; padding:36px; background:rgba(242,148,0,0.05); border:1px solid rgba(242,148,0,0.2); border-radius:var(--radius);">
-      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">토크 측정·축마력 계측 기술 상담</h3>
-      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">선박·압축기·펌프·회전기계 등 적용 환경에 맞는 최적의 토크 계측 시스템을 제안드립니다.<br>축 직경, 토크 범위, 회전수, 측정 목적을 알려주시면 맞춤형 구성을 안내해드립니다.</p>
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">토크 측정 기술 상담</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">모터·엔진·터빈 효율 시험부터 선박·압연·펌프 등 산업 현장까지, 적용 환경에 맞는 최적의 토크 계측 시스템을 제안드립니다.<br>축 직경, 토크 범위, 회전수, 측정 목적을 알려주시면 맞춤형 구성을 안내해드립니다.</p>
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
         <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
         <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
@@ -451,7 +573,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
       </div>
       <div class="footer-cols">
         <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
-        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="torque-measurement.html">토크 측정</a></li><li><a href="torsional-vibration.html">비틀림 진동</a></li><li><a href="telemetry.html">텔레메터리</a></li><li><a href="daq-system.html">데이터수집장치</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="torque-measurement.html">토크 측정</a></li><li><a href="torsional-vibration.html">비틀림 진동·축마력</a></li><li><a href="telemetry.html">텔레메터리</a></li><li><a href="daq-system.html">데이터수집장치</a></li></ul></div>
         <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
       </div>
     </div>
