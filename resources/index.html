@@ -21,14 +21,14 @@
 body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
 }
-.res-filter-bar { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:40px; }
-.res-filter-btn { font-family:'Pretendard',sans-serif; font-size:13px; font-weight:600; padding:9px 18px; border-radius:999px; border:1px solid var(--line); background:var(--white); color:var(--text-dim); cursor:pointer; transition:all 0.2s; }
+.res-filter-bar { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:40px; }
+.res-filter-btn { font-family:'Pretendard',sans-serif; font-size:16px; font-weight:600; padding:12px 22px; border-radius:999px; border:1px solid var(--line); background:var(--white); color:var(--text-dim); cursor:pointer; transition:all 0.2s; }
 .res-filter-btn:hover { border-color:var(--accent); color:var(--accent-deep); }
 .res-filter-btn.active { background:var(--charcoal); border-color:var(--charcoal); color:#fff; }
-.res-cat-heading { grid-column:1/-1; font-family:'Pretendard',sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--accent-deep); margin:32px 0 -4px; padding-bottom:12px; border-bottom:1px solid var(--line); }
+.res-cat-heading { grid-column:1/-1; font-family:'Pretendard',sans-serif; font-size:14px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--accent-deep); margin:32px 0 -4px; padding-bottom:12px; border-bottom:1px solid var(--line); }
 .res-cat-heading:first-of-type { margin-top:0; }
 .res-card.res-hide { display:none !important; }
-@media (max-width: 700px) { .res-filter-bar { gap:8px; } .res-filter-btn { font-size:12px; padding:8px 14px; } }
+@media (max-width: 700px) { .res-filter-bar { gap:9px; } .res-filter-btn { font-size:14px; padding:10px 16px; } }
 </style>
 <script type="application/ld+json">
 {
@@ -119,7 +119,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
       <button class="res-filter-btn" data-filter="stress">잔류응력 측정</button>
       <button class="res-filter-btn" data-filter="strain">스트레인게이지·힘 측정</button>
       <button class="res-filter-btn" data-filter="torque">토크·축마력·비틀림진동</button>
-      <button class="res-filter-btn" data-filter="vibration">진동 측정</button>
+      <button class="res-filter-btn" data-filter="vibration">소음·진동 측정</button>
       <button class="res-filter-btn" data-filter="daq">DAQ·계측 시스템</button>
       <button class="res-filter-btn" data-filter="field">현장 계측 사례</button>
     </div>
@@ -244,7 +244,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <h3 class="res-cat-heading" data-cat-heading="vibration">진동 측정</h3>
+      <h3 class="res-cat-heading" data-cat-heading="vibration">소음·진동 측정</h3>
 
       <a href="vibration.html" data-cat="vibration" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON DAQ.png" alt="휴대용 진동측정기 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
@@ -432,22 +432,20 @@ if (menuBtn && mobileNav) {
   mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
 }
 
-// Category filter
+// Category filter — jump to section, keep all cards visible
 const resFilterBtns = document.querySelectorAll('.res-filter-btn');
-const resCards = document.querySelectorAll('.res-card[data-cat]');
 const resHeadings = document.querySelectorAll('.res-cat-heading');
 resFilterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     resFilterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const f = btn.dataset.filter;
-    resCards.forEach(card => {
-      card.classList.toggle('res-hide', f !== 'all' && card.dataset.cat !== f);
-    });
-    resHeadings.forEach(h => {
-      h.style.display = (f === 'all' || h.dataset.catHeading === f) ? '' : 'none';
-    });
-    window.scrollTo({ top: document.querySelector('.res-filter-bar').getBoundingClientRect().top + window.scrollY - 140, behavior: 'smooth' });
+    let scrollTarget = document.querySelector('.res-filter-bar');
+    if (f !== 'all') {
+      const heading = Array.from(resHeadings).find(h => h.dataset.catHeading === f);
+      if (heading) scrollTarget = heading;
+    }
+    window.scrollTo({ top: scrollTarget.getBoundingClientRect().top + window.scrollY - 140, behavior: 'smooth' });
   });
 });
 
