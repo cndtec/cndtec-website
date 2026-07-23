@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>진동 센서 교정기 - 가속도계·속도계 현장 캘리브레이터 (MMF VC20·VC21·VC120) | 씨앤디테크</title>
+<meta name="description" content="가속도계·속도계·변위 센서의 감도를 현장에서 즉시 검증하는 진동 교정기(Vibration Calibrator) 완전 가이드. 고정주파수 VC20, 다중주파수 VC21·근접센서 겸용 VC21D, 광대역 주파수응답 VC120까지 독일 MMF 진동 교정기 라인업과 선정 기준을 소개합니다. 씨앤디테크 공급·기술지원." />
+<meta name="keywords" content="진동 교정기, 가속도계 교정, 진동센서 캘리브레이터, 진동 캘리브레이션, 근접센서 교정, 주파수응답 측정, MMF VC20, MMF VC21, MMF VC120, 현장교정, 진동 트랜스듀서 교정" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/vibration-calibrator.html" />
+<meta property="og:title" content="진동 센서 교정기 - 가속도계·속도계 현장 캘리브레이터 (MMF VC 시리즈) | 씨앤디테크" />
+<meta property="og:description" content="가속도계·속도계·변위 센서 감도를 현장에서 검증하는 진동 교정기. 고정주파수 VC20, 다중주파수 VC21/VC21D, 광대역 VC120. 독일 MMF, 씨앤디테크 공급·기술지원." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/vibration-calibrator.html" />
+<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/vibratoin calibrator/vc21_vorn_rechts.png" />
+<meta property="og:site_name" content="씨앤디테크 기술자료" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="../css/style.css?v=6">
+<style>
+body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "진동 센서 교정기 — 가속도계·속도계 현장 캘리브레이터 (MMF VC20·VC21·VC120)",
+  "description": "진동 교정기(Vibration Calibrator)의 원리·모델별 사양·선정 기준 완전 가이드. 고정주파수 VC20, 다중주파수 VC21, 근접센서 겸용 VC21D, 광대역 주파수응답 VC120.",
+  "keywords": "진동 교정기, 가속도계 교정, 진동센서 캘리브레이터, 근접센서 교정, 주파수응답 측정, MMF VC20, VC21, VC120",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr", "logo": {"@type": "ImageObject", "url": "https://www.cndtec.co.kr/assets/images/cnd-logo.png"}},
+  "datePublished": "2026-07-23",
+  "dateModified": "2026-07-23",
+  "inLanguage": "ko",
+  "url": "https://www.cndtec.co.kr/resources/vibration-calibrator.html",
+  "image": "https://www.cndtec.co.kr/assets/images/vibratoin calibrator/vc21_vorn_rechts.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "진동 교정기(Vibration Calibrator)는 왜 필요한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가속도계·속도계 등 진동 센서는 시간이 지나거나 충격을 받으면 감도가 변할 수 있습니다. 진동 교정기는 알려진 정확한 진폭·주파수의 기계적 진동을 발생시켜, 센서와 측정계통 전체(케이블·앰프·데이터로거 포함)가 올바른 값을 출력하는지 현장에서 즉시 검증합니다. 정기 교정은 측정 데이터의 신뢰성을 담보하는 필수 절차입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "VC20, VC21, VC120 중 어떤 모델을 선택해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VC20은 159.2 Hz·10 m/s² 고정 1점 교정으로 빠른 현장 점검에 적합합니다. VC21은 15.92 Hz~1280 Hz, 1~20 m/s² 사이 다중 주파수·진폭을 전환할 수 있어 다양한 센서와 저주파(휘체 진동계 ISO 8041 등) 교정에 유리합니다. VC120은 70~10,000 Hz 전 대역에서 연속 가변 주파수응답을 측정하는 정밀 시스템으로, PC 소프트웨어를 이용한 상세 분석·보고서 작성이 필요할 때 선택합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "근접(Eddy Current, 비접촉 변위) 센서도 교정할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VC21D 모델은 VC21의 개조형으로, 159.2 Hz에서 근접 센서(프록시미티/Eddy Current 프로브)를 동적으로 교정할 수 있는 탈착식 클램핑 지그를 제공합니다. 지그에는 진동 절연 슬라이더가 있어 기준 강판(2CrMo4) 위 프로브 높이를 조절할 수 있고, M6x0.5부터 1/2\"-20까지 다양한 나사 어댑터를 지원합니다. 지그를 제거하면 VC21과 동일하게 일반 가속도계·속도계 교정에도 사용할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "교정증명서는 공인(국가공인) 성적서인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VC 시리즈에는 제조사(MMF) 발행 교정증명서(Factory Calibration Certificate)가 기본 포함됩니다. 다만 이는 인정기구 공인 성적서가 아니며 EA MLA(유럽인정기구 다자간상호인정협정) 적용 대상이 아닙니다. 국가공인 성적서가 필요한 경우 DKD(독일 교정기관) 공인 교정을 별도로 요청할 수 있습니다. 씨앤디테크에서 필요 사양에 맞는 교정 옵션을 안내해 드립니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "무거운 센서나 대형 시험체도 교정할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VC20은 최대 600 g, VC21·VC21D는 주파수·진폭 조합에 따라 최대 500 g, VC120은 최대 400 g의 시험체까지 가진할 수 있습니다. 전동식 셰이커 방식으로 부하와 무관하게 설정된 진동 레벨을 유지하는 것이 특징입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "VC120의 PC 소프트웨어는 어떤 기능을 제공하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VC120 전용 소프트웨어 VC1xxCDB는 센서 정보와 교정 결과를 관리하는 데이터베이스입니다. 개별 주파수 점검은 물론 70~10,000 Hz 전 대역 주파수 스윕(Sweep)을 실행해 트랜스듀서의 주파수 응답 곡선을 측정·저장하고, 이전 교정 결과와 비교하며, 결과를 보고서로 출력할 수 있습니다."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+/* ── VIBRATION CALIBRATOR 페이지 전용 스타일 ── */
+.vc-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;background:var(--orange-tint);border:1px solid var(--orange-line);border-radius:999px;font-family:'Pretendard',sans-serif;font-size:11px;color:var(--accent-deep);font-weight:700;margin-bottom:14px;}
+.vc-h2{font-family:'Space Grotesk','Pretendard',sans-serif;font-size:clamp(20px,3.5vw,28px);font-weight:700;color:var(--charcoal);margin-bottom:8px;letter-spacing:-0.02em;}
+.vc-sub{font-size:15px;color:var(--text-dim);line-height:1.75;max-width:740px;margin-bottom:24px;}
+.vc-section-tag{font-size:11px;font-family:'Pretendard',sans-serif;font-weight:700;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+/* stat cards */
+.vc-stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px;}
+@media(max-width:700px){.vc-stat-grid{grid-template-columns:1fr 1fr;}}
+.vc-stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 16px;text-align:center;}
+.vc-stat-num{font-family:'Pretendard',sans-serif;font-size:22px;font-weight:700;color:var(--accent);line-height:1;}
+.vc-stat-sub{font-size:11px;color:var(--text-mute);margin-top:5px;line-height:1.45;}
+/* feature grid */
+.vc-feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px;}
+@media(max-width:580px){.vc-feat-grid{grid-template-columns:1fr;}}
+.vc-feat-item{display:flex;gap:10px;align-items:flex-start;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;font-size:13.5px;color:var(--text-dim);line-height:1.6;}
+.vc-feat-item .fi{flex-shrink:0;width:28px;height:28px;border-radius:8px;background:var(--orange-tint);border:1px solid var(--orange-line);display:flex;align-items:center;justify-content:center;font-size:14px;margin-top:1px;}
+.vc-feat-item strong{color:var(--charcoal);}
+/* mode cards (모델별 카드) */
+.vc-mode-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px;}
+@media(max-width:620px){.vc-mode-grid{grid-template-columns:1fr;}}
+.vc-mode-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface);}
+.vc-mode-head{padding:16px 20px;border-bottom:2px solid var(--accent);background:var(--orange-tint);}
+.vc-mode-num{font-family:'Pretendard',sans-serif;font-size:10px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:3px;}
+.vc-mode-name{font-size:16px;font-weight:700;color:var(--charcoal);}
+.vc-mode-body{padding:16px 20px;}
+.vc-mode-row{display:flex;justify-content:space-between;font-size:12.5px;padding:5px 0;border-bottom:1px solid var(--line);gap:10px;}
+.vc-mode-row:last-child{border:none;}
+.vc-mode-lbl{color:var(--text-dim);flex-shrink:0;}
+.vc-mode-val{color:var(--charcoal);font-weight:600;font-size:12px;text-align:right;}
+/* screen / photo gallery */
+.vc-screen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px;}
+@media(max-width:760px){.vc-screen-grid{grid-template-columns:1fr 1fr;}}
+.vc-screen-item img{width:100%;height:180px;object-fit:contain;background:#f8fafc;border-radius:var(--radius);display:block;border:1px solid var(--line);}
+.vc-screen-label{font-size:12px;color:var(--text-mute);text-align:center;margin-top:6px;}
+/* spec table */
+.vc-wrap{overflow-x:auto;margin-top:20px;}
+.vc-table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px;}
+.vc-table th{background:var(--charcoal);color:#fff;padding:11px 14px;text-align:left;font-weight:600;font-size:12px;}
+.vc-table td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--text-dim);vertical-align:top;}
+.vc-table td:first-child{font-weight:700;color:var(--charcoal);white-space:nowrap;background:#fafafa;width:18%;}
+.vc-table tr:last-child td{border-bottom:none;}
+/* app cards */
+.vc-app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px;}
+@media(max-width:640px){.vc-app-grid{grid-template-columns:1fr 1fr;}}
+.vc-app-card{padding:18px 16px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);}
+.vc-app-card .aic{font-size:26px;margin-bottom:8px;}
+.vc-app-card .aname{font-size:13.5px;font-weight:700;color:var(--charcoal);margin-bottom:4px;}
+.vc-app-card .adesc{font-size:12.5px;color:var(--text-dim);line-height:1.6;margin:0;}
+/* divider */
+.vc-divider{border:none;border-top:1px solid var(--line);margin:48px 0 0;}
+/* faq */
+.vc-faq-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:24px;}
+.vc-faq-item{border-bottom:1px solid var(--line);}
+.vc-faq-item:last-child{border-bottom:none;}
+.vc-faq-q{width:100%;text-align:left;padding:18px 22px;background:var(--surface);border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14.5px;font-weight:600;color:var(--charcoal);line-height:1.5;}
+.vc-faq-q:hover{background:var(--orange-tint);}
+.vc-fq-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;transition:transform .25s;}
+.vc-faq-item.open .vc-fq-icon{transform:rotate(45deg);}
+.vc-faq-a{display:none;padding:16px 22px 20px;background:#fff;font-size:14px;color:var(--text-dim);line-height:1.8;border-top:1px solid var(--line);}
+.vc-faq-item.open .vc-faq-a{display:block;}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+<nav class="mobile-subnav" aria-label="모바일 카테고리 메뉴">
+  <a href="../about.html">회사소개</a>
+  <a href="../products.html">사업분야·제품</a>
+  <a href="../projects.html">주요실적</a>
+  <a href="index.html" class="pill-active">기술자료</a>
+  <a href="../index.html#blog">블로그</a>
+  <a href="../contact.html">문의</a>
+</nav>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../index.html#blog">블로그</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- ── HERO ───────────────────────────────────────────────────────── -->
+<section style="padding-top:160px; padding-bottom:0;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div class="vc-tag">MMF VC 시리즈 · 독일 · 현장교정 · 정밀 가진기</div>
+      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(28px,5vw,54px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal); line-height:1.15;">진동 센서 교정기 — 가속도계·속도계·변위 현장 캘리브레이션</h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:700px; line-height:1.75; margin-bottom:0;">가속도계·속도계·근접(변위) 센서의 감도를 현장에서 즉시 검증하는 진동 교정기(Vibration Calibrator). 고정주파수 1점 교정 VC20, 다중주파수·다중진폭 VC21, 근접센서 겸용 VC21D, 광대역 주파수응답 시스템 VC120까지 — 독일 MMF의 진동 교정기 라인업을 소개합니다.</p>
+    </div>
+    <div class="vc-stat-grid">
+      <div class="vc-stat">
+        <div class="vc-stat-num">159.2 Hz</div>
+        <div class="vc-stat-sub">VC20 고정 교정점<br>10 m/s² (RMS)</div>
+      </div>
+      <div class="vc-stat">
+        <div class="vc-stat-num">1~20 m/s²</div>
+        <div class="vc-stat-sub">VC21 다중 진폭<br>7단계 주파수 전환</div>
+      </div>
+      <div class="vc-stat">
+        <div class="vc-stat-num">70~10,000 Hz</div>
+        <div class="vc-stat-sub">VC120 연속 가변<br>주파수응답 측정</div>
+      </div>
+      <div class="vc-stat">
+        <div class="vc-stat-num">600 g</div>
+        <div class="vc-stat-sub">최대 시험체 중량<br>(VC20 기준)</div>
+      </div>
+    </div>
+    <img src="../assets/images/vibratoin calibrator/vc21_vorn_rechts.png"
+         alt="MMF VC21 진동 교정기 — OLED 디스플레이 및 조작 버튼" style="width:100%; max-width:420px; border-radius:var(--radius); margin:40px auto 0; display:block;" class="fade-in" loading="lazy">
+  </div>
+</section>
+
+<!-- ── MAIN CONTENT ────────────────────────────────────────────────── -->
+<section style="padding:48px 0 100px;">
+  <div class="container" style="max-width:960px;">
+
+    <!-- 01 진동 교정기란 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <div class="vc-section-tag">01 · WHAT IS A VIBRATION CALIBRATOR</div>
+      <h2 class="vc-h2">진동 교정기란 무엇인가</h2>
+      <p class="vc-sub">진동 교정기는 일정한 주파수·진폭의 정현파(sine wave) 기계적 진동을 발생시키는 가진기(exciter)입니다. 이를 이용해 가속도계·속도계 등 진동 센서와 측정계통 전체의 감도를 현장에서 검증합니다.</p>
+
+      <div class="vc-feat-grid">
+        <div class="vc-feat-item">
+          <div class="fi">🎯</div>
+          <div><strong>센서 감도 측정·검증</strong><br>가속도계·속도계 트랜스듀서가 규격대로 출력하는지 알려진 기준 진동으로 확인합니다.</div>
+        </div>
+        <div class="vc-feat-item">
+          <div class="fi">🔌</div>
+          <div><strong>측정계통 전체 기능점검</strong><br>센서뿐 아니라 케이블·앰프·데이터로거까지 이어지는 전체 계통의 단선·오결선·이상 유무를 빠르게 확인합니다.</div>
+        </div>
+        <div class="vc-feat-item">
+          <div class="fi">📏</div>
+          <div><strong>근접(Eddy Current) 센서 교정</strong><br>VC21D는 접촉식 센서뿐 아니라 비접촉 변위(프록시미티) 센서의 동적 교정까지 지원합니다.</div>
+        </div>
+        <div class="vc-feat-item">
+          <div class="fi">📈</div>
+          <div><strong>주파수 응답 측정</strong><br>VC120은 70~10,000 Hz 전 대역을 스윕(Sweep)하여 트랜스듀서의 주파수 응답 곡선을 그립니다.</div>
+        </div>
+        <div class="vc-feat-item">
+          <div class="fi">🧲</div>
+          <div><strong>간편한 시험체 장착</strong><br>M5 나사 체결, 마그네틱 부착, 접착식 등 다양한 방식으로 센서·시험체를 고정할 수 있습니다.</div>
+        </div>
+        <div class="vc-feat-item">
+          <div class="fi">🔋</div>
+          <div><strong>배터리 기반 현장 운용</strong><br>충전식 배터리로 동작해 전원이 없는 현장에서도 즉시 교정 작업이 가능합니다.</div>
+        </div>
+        <div class="vc-feat-item">
+          <div class="fi">📜</div>
+          <div><strong>교정증명서 기본 포함</strong><br>모든 모델에 제조사 발행 교정증명서가 기본 제공되며, 필요 시 DKD 공인교정도 요청할 수 있습니다.</div>
+        </div>
+        <div class="vc-feat-item">
+          <div class="fi">🛡️</div>
+          <div><strong>강건한 현장용 설계</strong><br>알루미늄 다이캐스팅 케이스로 낙하·충격이 잦은 산업 현장에서도 안정적으로 사용할 수 있습니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="vc-divider">
+
+    <!-- 02 모델 라인업 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="vc-section-tag">02 · MODEL LINEUP</div>
+      <h2 class="vc-h2">VC 시리즈 모델별 사양</h2>
+      <p class="vc-sub">측정 목적과 필요 정밀도에 따라 4가지 모델 중 선택합니다.</p>
+
+      <div class="vc-mode-grid">
+        <div class="vc-mode-card">
+          <div class="vc-mode-head">
+            <div class="vc-mode-num">MODEL</div>
+            <div class="vc-mode-name">VC20 — 고정주파수 기본형</div>
+          </div>
+          <div class="vc-mode-body">
+            <div class="vc-mode-row"><span class="vc-mode-lbl">진동 진폭</span><span class="vc-mode-val">10 m/s² (RMS) 고정</span></div>
+            <div class="vc-mode-row"><span class="vc-mode-lbl">진동 주파수</span><span class="vc-mode-val">159.2 Hz 고정 (ω = 1000 s⁻¹)</span></div>
+            <div class="vc-mode-row"><span class="vc-mode-lbl">최대 시험체</span><span class="vc-mode-val">600 g</span></div>
+            <div class="vc-mode-row"><span class="vc-mode-lbl">조작</span><span class="vc-mode-val">On/Off 버튼 1개, OLED 디스플레이</span></div>
+          </div>
+        </div>
+        <div class="vc-mode-card">
+          <div class="vc-mode-head">
+            <div class="vc-mode-num">MODEL</div>
+            <div class="vc-mode-name">VC21 — 다중주파수·다중진폭</div>
+          </div>
+          <div class="vc-mode-body">
+            <div class="vc-mode-row"><span class="vc-mode-lbl">진동 진폭</span><span class="vc-mode-val">1 / 2 / 5 / 10 / 20 m/s²</span></div>
+            <div class="vc-mode-row"><span class="vc-mode-lbl">진동 주파수</span><span class="vc-mode-val">15.92·40·80·159.2·320·640·1280 Hz</span></div>
+            <div class="vc-mode-row"><span class="vc-mode-lbl">최대 시험체</span><span class="vc-mode-val">50~500 g (주파수·진폭별 상이)</span></div>
+            <div class="vc-mode-row"><span class="vc-mode-lbl">특징</span><span class="vc-mode-val">저주파 15.92 Hz — ISO 8041 전신진동계 교정 적합</span></div>
+          </div>
+        </div>
+        <div class="vc-mode-card">
+          <div class="vc-mode-head">
+            <div class="vc-mode-num">MODEL</div>
+            <div class="vc-mode-name">VC21D — 근접센서 겸용</div>
+          </div>
+          <div class="vc-mode-body">
+            <div class="vc-mode-row"><span class="vc-mode-lbl">기본 사양</span><span class="vc-mode-val">VC21과 동일 (주파수·진폭)</span></div>
+            <div class="vc-mode-row"><span class="vc-mode-lbl">추가 기능</span><span class="vc-mode-val">Eddy Current(근접) 센서 동적 교정</span></div>
+            <div class="vc-mode-row"><span class="vc-mode-lbl">전용 지그</span><span class="vc-mode-val">탈착식 클램핑 지그, 높이조절 슬라이더</span></div>
+            <div class="vc-mode-row"><span class="vc-mode-lbl">출력</span><span class="vc-mode-val">BNC TTL 클록 (Keyphasor 신호 모사)</span></div>
+          </div>
+        </div>
+        <div class="vc-mode-card">
+          <div class="vc-mode-head">
+            <div class="vc-mode-num">MODEL</div>
+            <div class="vc-mode-name">VC120 — 광대역 주파수응답 시스템</div>
+          </div>
+          <div class="vc-mode-body">
+            <div class="vc-mode-row"><span class="vc-mode-lbl">진동 진폭</span><span class="vc-mode-val">1 m/s² (RMS) 고정</span></div>
+            <div class="vc-mode-row"><span class="vc-mode-lbl">진동 주파수</span><span class="vc-mode-val">70 ~ 10,000 Hz 연속 가변</span></div>
+            <div class="vc-mode-row"><span class="vc-mode-lbl">입력 지원</span><span class="vc-mode-val">Charge · IEPE · 전압(AC) 센서</span></div>
+            <div class="vc-mode-row"><span class="vc-mode-lbl">연동</span><span class="vc-mode-val">USB + PC 소프트웨어(VC1xxCDB)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="vc-divider">
+
+    <!-- 03 제품 사진 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="vc-section-tag">03 · PRODUCT PHOTOS</div>
+      <h2 class="vc-h2">실제 제품 사진</h2>
+      <p class="vc-sub">MMF 공식 제품 사진입니다. 각 모델의 외관과 휴대용 케이스, 센서 장착 예시를 확인할 수 있습니다.</p>
+
+      <div class="vc-screen-grid">
+        <div class="vc-screen-item">
+          <img src="../assets/images/vibratoin calibrator/vc20_vorn_rechts.png" alt="MMF VC20 진동 교정기 정면 사진">
+          <div class="vc-screen-label">VC20</div>
+        </div>
+        <div class="vc-screen-item">
+          <img src="../assets/images/vibratoin calibrator/vc21_vorn_rechts.png" alt="MMF VC21 진동 교정기 정면 사진">
+          <div class="vc-screen-label">VC21</div>
+        </div>
+        <div class="vc-screen-item">
+          <img src="../assets/images/vibratoin calibrator/vc21d_vorn_rechts.png" alt="MMF VC21D 진동 교정기 — 근접센서 클램핑 지그 장착">
+          <div class="vc-screen-label">VC21D (근접센서 지그)</div>
+        </div>
+        <div class="vc-screen-item">
+          <img src="../assets/images/vibratoin calibrator/vc120_vorn_rechts.png" alt="MMF VC120 진동 교정 시스템 정면 사진">
+          <div class="vc-screen-label">VC120</div>
+        </div>
+        <div class="vc-screen-item">
+          <img src="../assets/images/vibratoin calibrator/vc20_koffer.png" alt="MMF VC20 휴대용 운반 케이스">
+          <div class="vc-screen-label">VC20 휴대 케이스</div>
+        </div>
+        <div class="vc-screen-item">
+          <img src="../assets/images/vibratoin calibrator/vc120_koffer.png" alt="MMF VC120 휴대용 운반 케이스 및 구성품">
+          <div class="vc-screen-label">VC120 휴대 케이스</div>
+        </div>
+        <div class="vc-screen-item">
+          <img src="../assets/images/vibratoin calibrator/vc120_kst94.png" alt="MMF VC120에 기준 가속도계 KS94 장착 및 교정 예시">
+          <div class="vc-screen-label">VC120 + 기준 가속도계</div>
+        </div>
+        <div class="vc-screen-item">
+          <img src="../assets/images/vibratoin calibrator/kst94ca.png" alt="MMF KS94 계열 기준 가속도계">
+          <div class="vc-screen-label">기준 가속도계 예시</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="vc-divider">
+
+    <!-- 04 상세 사양 비교 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="vc-section-tag">04 · SPECIFICATIONS</div>
+      <h2 class="vc-h2">모델별 상세 사양 비교</h2>
+      <div class="vc-wrap">
+        <table class="vc-table">
+          <thead>
+            <tr><th>항목</th><th>VC20</th><th>VC21 / VC21D</th><th>VC120</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>진동 진폭</td>
+              <td>10 m/s² (RMS) 고정</td>
+              <td>1 / 2 / 5 / 10 / 20 m/s²</td>
+              <td>1 m/s² (RMS) 고정</td>
+            </tr>
+            <tr>
+              <td>진동 주파수</td>
+              <td>159.2 Hz 고정</td>
+              <td>15.92 · 40 · 80 · 159.2 · 320 · 640 · 1280 Hz</td>
+              <td>70 ~ 10,000 Hz 연속 가변</td>
+            </tr>
+            <tr>
+              <td>최대 시험체 중량</td>
+              <td>600 g</td>
+              <td>50 ~ 500 g (주파수·진폭별 상이)</td>
+              <td>400 g</td>
+            </tr>
+            <tr>
+              <td>진폭 오차</td>
+              <td>±3% (0~40℃) / ±5% (-10~55℃)</td>
+              <td>±3% (0~40℃) / ±5% (-10~55℃)</td>
+              <td>±2% 교정 대역 / ±5~10% typical</td>
+            </tr>
+            <tr>
+              <td>왜율(Distortion)</td>
+              <td>&lt;1%</td>
+              <td>&lt;1% (159.2 Hz 기준, 15.92 Hz는 &lt;5%)</td>
+              <td>&lt;2% (70~3,000 Hz)</td>
+            </tr>
+            <tr>
+              <td>입력 신호 지원</td>
+              <td>—</td>
+              <td>VC21D: 근접(Eddy Current) 프로브 + BNC TTL 클록</td>
+              <td>Charge(BNC) · IEPE(BNC, 100 MΩ) · 전압</td>
+            </tr>
+            <tr>
+              <td>센서 감도 범위</td>
+              <td>—</td>
+              <td>—</td>
+              <td>0.12 ~ 1200 mV/(m/s²), 0.12 ~ 1200 pC/(m/s²)</td>
+            </tr>
+            <tr>
+              <td>디스플레이</td>
+              <td>OLED (주파수·진폭·오차·배터리)</td>
+              <td>OLED (주파수·진폭·오차·배터리)</td>
+              <td>백라이트 LCD (미터법 / 야드파운드법)</td>
+            </tr>
+            <tr>
+              <td>인터페이스</td>
+              <td>—</td>
+              <td>VC21D: BNC 클록 출력</td>
+              <td>USB (PC 소프트웨어 VC1xxCDB, Win Vista~10)</td>
+            </tr>
+            <tr>
+              <td>센서 장착</td>
+              <td>M5 나사, 마그네틱</td>
+              <td>M5 나사, 마그네틱 (VC21D: 전용 클램핑 지그)</td>
+              <td>M5 나사, 마그네틱</td>
+            </tr>
+            <tr>
+              <td>동작 온도</td>
+              <td>-10 ~ 55℃</td>
+              <td>-10 ~ 55℃</td>
+              <td>-10 ~ 55℃</td>
+            </tr>
+            <tr>
+              <td>배터리 사용시간</td>
+              <td>약 5시간 (NiMH 내장)</td>
+              <td>약 5시간 (NiMH 내장)</td>
+              <td>2~4시간 (NiMH 내장)</td>
+            </tr>
+            <tr>
+              <td>크기 / 무게</td>
+              <td>100×100×120 mm³ / 2.2 kg</td>
+              <td>100×100×120 mm³ / 2.2 kg</td>
+              <td>205×105×90 mm³ / 3 kg</td>
+            </tr>
+            <tr>
+              <td>기본 구성품</td>
+              <td>운반 케이스, 전원 어댑터, 나사 어댑터 4종</td>
+              <td>운반 케이스, 전원 어댑터, 나사 어댑터 4종 (VC21D: 지그 포함)</td>
+              <td>운반 케이스, 전원 어댑터, PC 소프트웨어, USB 케이블, 나사·BNC 어댑터</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12px; color:var(--text-mute); margin-top:12px;">※ 모든 모델은 제조사(MMF) 발행 교정증명서를 기본 포함하며, 국가공인(DKD) 교정은 별도 요청 가능합니다. (공인성적서는 EA MLA 적용 대상 아님)</p>
+    </div>
+
+    <hr class="vc-divider">
+
+    <!-- 05 적용 분야 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="vc-section-tag">05 · APPLICATIONS</div>
+      <h2 class="vc-h2">적용 분야</h2>
+      <div class="vc-app-grid">
+        <div class="vc-app-card"><div class="aic">🎯</div><div class="aname">센서 감도 측정·교정</div><p class="adesc">가속도계·속도계 트랜스듀서의 감도를 알려진 기준 진동으로 검증·교정합니다.</p></div>
+        <div class="vc-app-card"><div class="aic">🔌</div><div class="aname">측정계통 기능점검</div><p class="adesc">센서 케이블 단선·오결선 등 계측 시스템 전체의 이상 유무를 현장에서 빠르게 확인합니다.</p></div>
+        <div class="vc-app-card"><div class="aic">📏</div><div class="aname">근접센서 동적 교정</div><p class="adesc">VC21D로 회전기계 모니터링에 쓰이는 Eddy Current 변위 센서를 동적으로 교정합니다.</p></div>
+        <div class="vc-app-card"><div class="aic">📈</div><div class="aname">주파수 응답 측정</div><p class="adesc">VC120으로 70~10,000 Hz 스윕을 실행해 트랜스듀서의 주파수 특성 곡선을 얻습니다.</p></div>
+        <div class="vc-app-card"><div class="aic">🔗</div><div class="aname">센서 커플링 부품 평가</div><p class="adesc">마운팅 방식(나사·마그네틱·접착)에 따른 센서 결합 특성 변화를 평가합니다.</p></div>
+        <div class="vc-app-card"><div class="aic">🏭</div><div class="aname">정기 검교정 관리</div><p class="adesc">공장·현장에 보유한 다수의 진동 센서를 정기적으로 순회 점검·교정 이력 관리합니다.</p></div>
+      </div>
+    </div>
+
+    <hr class="vc-divider">
+
+    <!-- 06 FAQ -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="vc-section-tag">FAQ</div>
+      <h2 class="vc-h2">자주 묻는 질문</h2>
+      <div class="vc-faq-list">
+        <div class="vc-faq-item">
+          <button class="vc-faq-q"><span>진동 교정기(Vibration Calibrator)는 왜 필요한가요?</span><span class="vc-fq-icon">+</span></button>
+          <div class="vc-faq-a">가속도계·속도계 등 진동 센서는 시간이 지나거나 충격을 받으면 감도가 변할 수 있습니다. 진동 교정기는 알려진 정확한 진폭·주파수의 기계적 진동을 발생시켜, <strong>센서와 측정계통 전체(케이블·앰프·데이터로거 포함)</strong>가 올바른 값을 출력하는지 현장에서 즉시 검증합니다. 정기 교정은 측정 데이터의 신뢰성을 담보하는 필수 절차입니다.</div>
+        </div>
+        <div class="vc-faq-item">
+          <button class="vc-faq-q"><span>VC20, VC21, VC120 중 어떤 모델을 선택해야 하나요?</span><span class="vc-fq-icon">+</span></button>
+          <div class="vc-faq-a"><strong>VC20</strong>은 159.2 Hz·10 m/s² 고정 1점 교정으로 빠른 현장 점검에 적합합니다. <strong>VC21</strong>은 15.92~1280 Hz, 1~20 m/s² 사이 다중 주파수·진폭을 전환할 수 있어 다양한 센서와 저주파(전신진동계 ISO 8041 등) 교정에 유리합니다. <strong>VC120</strong>은 70~10,000 Hz 전 대역에서 연속 가변 주파수응답을 측정하는 정밀 시스템으로, PC 소프트웨어를 이용한 상세 분석·보고서 작성이 필요할 때 선택합니다.</div>
+        </div>
+        <div class="vc-faq-item">
+          <button class="vc-faq-q"><span>근접(Eddy Current, 비접촉 변위) 센서도 교정할 수 있나요?</span><span class="vc-fq-icon">+</span></button>
+          <div class="vc-faq-a"><strong>VC21D</strong> 모델은 VC21의 개조형으로, 159.2 Hz에서 근접 센서(프록시미티/Eddy Current 프로브)를 동적으로 교정할 수 있는 탈착식 클램핑 지그를 제공합니다. 지그에는 진동 절연 슬라이더가 있어 기준 강판(2CrMo4) 위 프로브 높이를 조절할 수 있고, M6x0.5부터 1/2"-20까지 다양한 나사 어댑터를 지원합니다. 지그를 제거하면 VC21과 동일하게 일반 가속도계·속도계 교정에도 사용할 수 있습니다.</div>
+        </div>
+        <div class="vc-faq-item">
+          <button class="vc-faq-q"><span>교정증명서는 공인(국가공인) 성적서인가요?</span><span class="vc-fq-icon">+</span></button>
+          <div class="vc-faq-a">VC 시리즈에는 제조사(MMF) 발행 <strong>교정증명서(Factory Calibration Certificate)</strong>가 기본 포함됩니다. 다만 이는 인정기구 공인 성적서가 아니며 <strong>EA MLA</strong>(유럽인정기구 다자간상호인정협정) 적용 대상이 아닙니다. 국가공인 성적서가 필요한 경우 <strong>DKD</strong>(독일 교정기관) 공인교정을 별도로 요청할 수 있습니다. 씨앤디테크에서 필요 사양에 맞는 교정 옵션을 안내해 드립니다.</div>
+        </div>
+        <div class="vc-faq-item">
+          <button class="vc-faq-q"><span>무거운 센서나 대형 시험체도 교정할 수 있나요?</span><span class="vc-fq-icon">+</span></button>
+          <div class="vc-faq-a">VC20은 최대 <strong>600 g</strong>, VC21·VC21D는 주파수·진폭 조합에 따라 최대 <strong>500 g</strong>, VC120은 최대 <strong>400 g</strong>의 시험체까지 가진할 수 있습니다. 전동식 셰이커 방식으로 부하와 무관하게 설정된 진동 레벨을 유지하는 것이 특징입니다.</div>
+        </div>
+        <div class="vc-faq-item">
+          <button class="vc-faq-q"><span>VC120의 PC 소프트웨어는 어떤 기능을 제공하나요?</span><span class="vc-fq-icon">+</span></button>
+          <div class="vc-faq-a">VC120 전용 소프트웨어 <strong>VC1xxCDB</strong>는 센서 정보와 교정 결과를 관리하는 데이터베이스입니다. 개별 주파수 점검은 물론 70~10,000 Hz 전 대역 주파수 스윕(Sweep)을 실행해 트랜스듀서의 주파수 응답 곡선을 측정·저장하고, 이전 교정 결과와 비교하며, 결과를 보고서로 출력할 수 있습니다.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CTA ─────────────────────────────────────────────────────────── -->
+<section style="padding:0 0 100px;">
+  <div class="container">
+    <div style="padding:40px 48px; background:linear-gradient(135deg, var(--orange-tint) 0%, #fff 100%); border:1px solid var(--orange-line); border-radius:var(--radius); max-width:840px;" class="fade-in">
+      <div class="vc-tag">CONTACT</div>
+      <h3 style="font-size:24px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">진동 교정기 도입·정기교정 상담</h3>
+      <p style="font-size:14.5px; color:var(--text-dim); line-height:1.75; margin-bottom:24px;">씨앤디테크는 MMF 진동 교정기(VC20·VC21·VC21D·VC120) 공급과 현장 적용 기술지원을 제공합니다. 보유 센서 종류·필요 주파수 대역·공인교정 필요 여부를 알려주시면 최적 모델을 제안드립니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">진동 교정기 문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+      </div>
+      <p style="font-size:12px; color:var(--text-mute); margin-top:16px; margin-bottom:0;">관련 기술자료 →
+        <a href="vibration-sensor.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">진동센서 원리·설치</a> ·
+        <a href="vm100.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">MMF VM100 다채널 진동측정기</a> ·
+        <a href="vibration.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">VM25 휴대용 진동측정기</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="vibration-calibrator.html">진동 교정기</a></li><li><a href="vibration.html">VM25 진동측정기</a></li><li><a href="vm100.html">VM100 진동측정기</a></li><li><a href="vibration-sensor.html">진동센서 원리·설치</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank" rel="noopener">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta"><span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span></div>
+  </div>
+</footer>
+
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+document.querySelectorAll('.vc-faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.vc-faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.vc-faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
