@@ -21,6 +21,14 @@
 body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
 }
+.res-filter-bar { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:40px; }
+.res-filter-btn { font-family:'Pretendard',sans-serif; font-size:13px; font-weight:600; padding:9px 18px; border-radius:999px; border:1px solid var(--line); background:var(--white); color:var(--text-dim); cursor:pointer; transition:all 0.2s; }
+.res-filter-btn:hover { border-color:var(--accent); color:var(--accent-deep); }
+.res-filter-btn.active { background:var(--charcoal); border-color:var(--charcoal); color:#fff; }
+.res-cat-heading { grid-column:1/-1; font-family:'Pretendard',sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--accent-deep); margin:32px 0 -4px; padding-bottom:12px; border-bottom:1px solid var(--line); }
+.res-cat-heading:first-of-type { margin-top:0; }
+.res-card.res-hide { display:none !important; }
+@media (max-width: 700px) { .res-filter-bar { gap:8px; } .res-filter-btn { font-size:12px; padding:8px 14px; } }
 </style>
 <script type="application/ld+json">
 {
@@ -105,9 +113,22 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 
 <section style="padding-bottom:100px;">
   <div class="container">
+
+    <div class="res-filter-bar" role="tablist" aria-label="기술자료 카테고리 필터">
+      <button class="res-filter-btn active" data-filter="all">전체</button>
+      <button class="res-filter-btn" data-filter="stress">잔류응력 측정</button>
+      <button class="res-filter-btn" data-filter="strain">스트레인게이지·힘 측정</button>
+      <button class="res-filter-btn" data-filter="torque">토크·축마력·비틀림진동</button>
+      <button class="res-filter-btn" data-filter="vibration">진동 측정</button>
+      <button class="res-filter-btn" data-filter="daq">DAQ·계측 시스템</button>
+      <button class="res-filter-btn" data-filter="field">현장 계측 사례</button>
+    </div>
+
     <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:24px;">
 
-      <a href="what-is-residual-stress.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <h3 class="res-cat-heading" data-cat-heading="stress">잔류응력 측정</h3>
+
+      <a href="what-is-residual-stress.html" data-cat="stress" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON 잔류응력측정.png" alt="잔류응력이란 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">기초 개념 · 영상 포함</div>
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">잔류응력이란? (What is Residual Stress?)</h2>
@@ -115,7 +136,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <a href="residual-stress.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <a href="residual-stress.html" data-cat="stress" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON 잔류응력측정.png" alt="잔류응력측정 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">ASTM E837</div>
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">잔류응력측정 (Residual Stress Analysis)</h2>
@@ -123,7 +144,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <a href="plastic-residual-stress.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <a href="plastic-residual-stress.html" data-cat="stress" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON 잔류응력측정.png" alt="플라스틱 복합재료 잔류응력 측정 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">PLASTIC · COMPOSITE</div>
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">플라스틱·사출물·복합재료 잔류응력 측정</h2>
@@ -131,7 +152,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <a href="heat-treatment-residual-stress.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <a href="heat-treatment-residual-stress.html" data-cat="stress" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON 잔류응력측정.png" alt="열처리 부품 잔류응력 측정 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">HEAT TREATMENT · ASTM E837</div>
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">열처리 부품 잔류응력 측정</h2>
@@ -139,7 +160,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <a href="peening-residual-stress.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <a href="peening-residual-stress.html" data-cat="stress" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON 잔류응력측정.png" alt="피닝 공정별 잔류응력 측정 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">PEENING · ASTM E837</div>
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">피닝 공정별 잔류응력 측정</h2>
@@ -147,7 +168,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <a href="welding-residual-stress.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <a href="welding-residual-stress.html" data-cat="stress" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON 잔류응력측정.png" alt="용접부 잔류응력 측정 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">WELDING · ASTM E837</div>
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">용접부 잔류응력 측정</h2>
@@ -155,7 +176,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <a href="pipe-residual-stress.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <a href="pipe-residual-stress.html" data-cat="stress" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON 잔류응력측정.png" alt="강관 파이프 잔류응력 측정 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">PIPE · ASTM E837-13</div>
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">강관(파이프) 잔류응력 측정</h2>
@@ -163,7 +184,9 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <a href="strain-gauge.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <h3 class="res-cat-heading" data-cat-heading="strain">스트레인게이지 · 힘 측정</h3>
+
+      <a href="strain-gauge.html" data-cat="strain" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON 스트레인게이지.png" alt="스트레인게이지 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">HBM · TML</div>
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">스트레인게이지 (Strain Gauge)</h2>
@@ -171,7 +194,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <a href="strain-gauge-bonding.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <a href="strain-gauge-bonding.html" data-cat="strain" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON 스트레인게이지.png" alt="스트레인게이지 부착 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">STEP-BY-STEP GUIDE</div>
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">스트레인게이지 부착 방법 (Strain Gauge Installation)</h2>
@@ -179,7 +202,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <a href="bolt-tension.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <a href="bolt-tension.html" data-cat="strain" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON 커스텀센서.png" alt="축력 볼트 센서 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">FULL-BRIDGE · INSERT · LOAD WASHER</div>
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">볼트 축력 측정 완전 가이드</h2>
@@ -187,7 +210,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <a href="custom-sensor.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <a href="custom-sensor.html" data-cat="strain" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON 커스텀센서.png" alt="커스텀 센서 제작 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">CUSTOM MADE</div>
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">커스텀 센서 제작</h2>
@@ -195,7 +218,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <a href="pcb-stress.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <a href="pcb-stress.html" data-cat="strain" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON  PCB STRAIN.png" alt="PCB 응력 측정 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">IPC/JEDEC-9704A</div>
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">PCB 스트레인·응력 측정 (IPC/JEDEC-9704A)</h2>
@@ -203,39 +226,9 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <a href="telemetry.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
-        <img src="../assets/images/LINE ICON TELEMETRY SYSTEM.png" alt="텔레메터리 시스템 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
-        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">WIRELESS DAQ</div>
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">텔레메터리 시스템 (Telemetry System)</h2>
-        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">무선 계측 시스템 구성, 회전체·이동체 계측 적용, 데이터 수집·전송 방식 및 구축 사례.</p>
-        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
-      </a>
+      <h3 class="res-cat-heading" data-cat-heading="torque">토크 · 축마력 · 비틀림진동</h3>
 
-      <a href="daq-system.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
-        <img src="../assets/images/LINE ICON DAQ.png" alt="DAQ 데이터 수집장치 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
-        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">DATA ACQUISITION</div>
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">데이터 수집장치 완전 가이드 (DAQ System)</h2>
-        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">DAQ 3가지 유형(데이터로거·DAQ장치·모듈식) 비교, ADC 분해능 해설, HBM QuantumX·Gantner Q.Series X·GTDL 제품 선택 가이드.</p>
-        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
-      </a>
-
-      <a href="gtdl.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
-        <img src="../assets/images/LINE ICON DAQ.png" alt="GTDL DAQ 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
-        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">GTDL-350 · GTDL-360</div>
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">GTDL DAQ System</h2>
-        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">최대 128채널 동기 수집, 채널당 1,000Hz 고속 샘플링, 브리지 회로 내장 모듈형 DAQ. GTDL-350/360 사양 비교, MultiScan·Multiload 소프트웨어 소개.</p>
-        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
-      </a>
-
-      <a href="pressure-sensor.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
-        <img src="../assets/images/LINE ICON 압력측정.png" alt="BD센서 압력센서 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
-        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">BD SENSOR · 압력·수위</div>
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">BD센서 압력센서 기술자료</h2>
-        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">독일 BD SENSOR 압력센서 전 라인업 — DMP320 고정밀, LMP308 수위레벨, DCL531 RS485 Modbus, DS401 압력스위치, LMK858 낙뢰보호 세라믹센서 사양 비교 및 적용 사례.</p>
-        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
-      </a>
-
-      <a href="torque-measurement.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <a href="torque-measurement.html" data-cat="torque" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON TELEMETRY SYSTEM.png" alt="토크 측정 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">TORQUE MEASUREMENT · 5가지 방식</div>
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">토크 측정 방법 완전 가이드</h2>
@@ -243,7 +236,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <a href="torsional-vibration.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <a href="torsional-vibration.html" data-cat="torque" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON TELEMETRY SYSTEM.png" alt="비틀림 진동 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">SHAFT POWER · TORSIONAL VIBRATION</div>
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">축마력·비틀림 진동(Torsional Vibration) 측정·분석 가이드</h2>
@@ -251,7 +244,9 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <a href="vibration.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <h3 class="res-cat-heading" data-cat-heading="vibration">진동 측정</h3>
+
+      <a href="vibration.html" data-cat="vibration" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON DAQ.png" alt="휴대용 진동측정기 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">ISO 10816 · VDI 3832 · FFT</div>
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">휴대용 진동측정 시스템 완전 가이드</h2>
@@ -259,7 +254,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <a href="vibration-sensor.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <a href="vibration-sensor.html" data-cat="vibration" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON 진동측정.png" alt="피에조 가속도센서 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">PIEZOELECTRIC · ICP · MOUNTING</div>
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">진동센서(가속도계) 원리·선택·설치 가이드</h2>
@@ -267,7 +262,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <a href="vm100.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <a href="vm100.html" data-cat="vibration" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON 진동측정.png" alt="MMF VM100 9채널 진동측정 시스템 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">9CH · FFT · THIRD-OCTAVE · 인체진동</div>
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">MMF VM100 휴대용 진동측정 시스템</h2>
@@ -275,16 +270,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <a href="pzt-tube-gauge.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
-        <img src="../assets/images/LINE ICON 현장계측.png" alt="현장 계측 스트레인게이지 부착 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-        <div style="display:none; width:96px; height:96px; border-radius:16px; margin-bottom:18px; background:var(--orange-tint); align-items:center; justify-content:center; flex-shrink:0;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
-        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">현장 계측 사례 · FIELD CASE</div>
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">PZT 튜브 스트레인게이지 부착 현장 계측</h2>
-        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">외경 6mm 피에조 튜브 스캐너(PiezoDrive TB4006-N)에 초소형 게이지 4장 부착 + ±260V 고전압 절연 설계 + 51μm 미세 변위 측정 성공 사례. 스트레인게이지 부착·측정 출장 지원 서비스 안내.</p>
-        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
-      </a>
-
-      <a href="rotor-balancing.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <a href="rotor-balancing.html" data-cat="vibration" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON 진동측정.png" alt="로터 발란싱 측정 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
         <div style="display:none; width:96px; height:96px; border-radius:16px; margin-bottom:18px; background:var(--orange-tint); align-items:center; justify-content:center; flex-shrink:0;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">BALANCING · VM100 · 1PLANE/2PLANE</div>
@@ -293,43 +279,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <a href="windturbine-stress.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
-        <img src="../assets/images/LINE ICON 현장계측.png" alt="풍력터빈 스트레인게이지 풀브릿지 응력 측정 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-        <div style="display:none; width:96px; height:96px; border-radius:16px; margin-bottom:18px; background:var(--orange-tint); align-items:center; justify-content:center; flex-shrink:0;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 9V2M12 22v-7M9 12H2M22 12h-7M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4l1.4-1.4M17 7l1.4-1.4"/></svg></div>
-        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">현장 계측 사례 · FULL BRIDGE</div>
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">풀브릿지 구성 응력 측정 — 풍력터빈 시험 모형</h2>
-        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">풍력터빈 시험 모형에 스트레인게이지 부착·풀브릿지 구성·이동식 스트레인 측정 시스템 제작·납품 일괄 지원 사례. 제품 센서화·응력 측정·측정 지원 서비스.</p>
-        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
-      </a>
-
-      <a href="field-service.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
-        <img src="../assets/images/LINE ICON 현장계측.png" alt="현장 계측 용역 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-        <div style="display:none; width:96px; height:96px; border-radius:16px; margin-bottom:18px; background:var(--orange-tint); align-items:center; justify-content:center; flex-shrink:0;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 9V2M12 22v-7M9 12H2M22 12h-7M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4l1.4-1.4M17 7l1.4-1.4"/></svg></div>
-        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">FIELD SERVICE · HIGH-TEMP</div>
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">현장 계측 용역 — 고온 환경 스트레인게이지 측정</h2>
-        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">발전소·플랜트 등 고온 설비 현장 응력 측정. 내열 접착제·특수 케이블·온도 보상 등 고온용 스트레인게이지 시공 노하우와 시험 설계부터 분석 보고서까지 원스톱 현장 계측 용역 소개.</p>
-        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
-      </a>
-
-      <a href="battery-case-strain.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
-        <img src="../assets/images/LINE ICON 스트레인게이지.png" alt="배터리 케이스 스트레인게이지 부착 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-        <div style="display:none; width:96px; height:96px; border-radius:16px; margin-bottom:18px; background:var(--orange-tint); align-items:center; justify-content:center; flex-shrink:0;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="7" width="12" height="14" rx="1"/><path d="M9 7V4h6v3"/><path d="M9 12h6M9 16h6"/></svg></div>
-        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">현장 계측 사례 · EV BATTERY</div>
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">차량용 배터리 케이스 스트레인게이지 부착 — 충전 팽창 응력 측정</h2>
-        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">배터리 셀·케이스에 스트레인게이지를 부착해 충전 시 발생하는 팽창 변형을 측정한 현장 계측 사례. DAQ 시스템 연동 신호 확인부터 데이터 취득까지 지원.</p>
-        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
-      </a>
-
-      <a href="dt9837-daq.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
-        <img src="../assets/images/LINE ICON DAQ.png" alt="DT9837 DT9857E 진동 데이터수집장치 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-        <div style="display:none; width:96px; height:96px; border-radius:16px; margin-bottom:18px; background:var(--orange-tint); align-items:center; justify-content:center; flex-shrink:0;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="4" height="9"/><rect x="10" y="5" width="4" height="13"/><rect x="17" y="12" width="4" height="6"/></svg></div>
-        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">DT9837 · DT9857E · UP TO 64CH</div>
-        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">소음·진동 측정 장비 - USB 타입 DAQ (DT9837·DT9857E)</h2>
-        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">4채널 USB 기본형 DT9837과 8·16채널부터 마스터/슬레이브로 최대 64채널까지 확장되는 DT9857E 비교. IEPE 센서 입력, 타코미터 동기화, QuickDAQ 소프트웨어 소개.</p>
-        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
-      </a>
-
-      <a href="building-vibration-monitoring.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <a href="building-vibration-monitoring.html" data-cat="vibration" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON 진동측정.png" alt="건축물 빌딩 진동 모니터링 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
         <div style="display:none; width:96px; height:96px; border-radius:16px; margin-bottom:18px; background:var(--orange-tint); align-items:center; justify-content:center; flex-shrink:0;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/><path d="M9 12h.01M15 12h.01M9 8h.01M15 8h.01"/></svg></div>
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">DIN 4150-3 · IoT 원격 모니터링</div>
@@ -338,12 +288,93 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
-      <a href="multicon-controller.html" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+      <h3 class="res-cat-heading" data-cat-heading="daq">DAQ · 계측 시스템</h3>
+
+      <a href="telemetry.html" data-cat="daq" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+        <img src="../assets/images/LINE ICON TELEMETRY SYSTEM.png" alt="텔레메터리 시스템 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">WIRELESS DAQ</div>
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">텔레메터리 시스템 (Telemetry System)</h2>
+        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">무선 계측 시스템 구성, 회전체·이동체 계측 적용, 데이터 수집·전송 방식 및 구축 사례.</p>
+        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
+      </a>
+
+      <a href="daq-system.html" data-cat="daq" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+        <img src="../assets/images/LINE ICON DAQ.png" alt="DAQ 데이터 수집장치 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">DATA ACQUISITION</div>
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">데이터 수집장치 완전 가이드 (DAQ System)</h2>
+        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">DAQ 3가지 유형(데이터로거·DAQ장치·모듈식) 비교, ADC 분해능 해설, HBM QuantumX·Gantner Q.Series X·GTDL 제품 선택 가이드.</p>
+        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
+      </a>
+
+      <a href="gtdl.html" data-cat="daq" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+        <img src="../assets/images/LINE ICON DAQ.png" alt="GTDL DAQ 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">GTDL-350 · GTDL-360</div>
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">GTDL DAQ System</h2>
+        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">최대 128채널 동기 수집, 채널당 1,000Hz 고속 샘플링, 브리지 회로 내장 모듈형 DAQ. GTDL-350/360 사양 비교, MultiScan·Multiload 소프트웨어 소개.</p>
+        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
+      </a>
+
+      <a href="dt9837-daq.html" data-cat="daq" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+        <img src="../assets/images/LINE ICON DAQ.png" alt="DT9837 DT9857E 진동 데이터수집장치 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div style="display:none; width:96px; height:96px; border-radius:16px; margin-bottom:18px; background:var(--orange-tint); align-items:center; justify-content:center; flex-shrink:0;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="4" height="9"/><rect x="10" y="5" width="4" height="13"/><rect x="17" y="12" width="4" height="6"/></svg></div>
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">DT9837 · DT9857E · UP TO 64CH</div>
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">소음·진동 측정 장비 - USB 타입 DAQ (DT9837·DT9857E)</h2>
+        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">4채널 USB 기본형 DT9837과 8·16채널부터 마스터/슬레이브로 최대 64채널까지 확장되는 DT9857E 비교. IEPE 센서 입력, 타코미터 동기화, QuickDAQ 소프트웨어 소개.</p>
+        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
+      </a>
+
+      <a href="multicon-controller.html" data-cat="daq" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
         <img src="../assets/images/LINE ICON DAQ.png" alt="SIMEX MultiCon 산업용 컨트롤러 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
         <div style="display:none; width:96px; height:96px; border-radius:16px; margin-bottom:18px; background:var(--orange-tint); align-items:center; justify-content:center; flex-shrink:0;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg></div>
         <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">SIMEX MULTICON · SCADA</div>
         <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">산업용 컨트롤러 SIMEX MultiCon</h2>
         <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">계측기+컨트롤러+HMI+SCADA가 하나로 통합된 SIMEX MultiCon CMC-141 소개. 최대 41개 입출력 모듈·90개 논리채널, 전압·전류·압력·온도·변위·Force 등 다신호 계측.</p>
+        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
+      </a>
+
+      <a href="pressure-sensor.html" data-cat="daq" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+        <img src="../assets/images/LINE ICON 압력측정.png" alt="BD센서 압력센서 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;">
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">BD SENSOR · 압력·수위</div>
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">BD센서 압력센서 기술자료</h2>
+        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">독일 BD SENSOR 압력센서 전 라인업 — DMP320 고정밀, LMP308 수위레벨, DCL531 RS485 Modbus, DS401 압력스위치, LMK858 낙뢰보호 세라믹센서 사양 비교 및 적용 사례.</p>
+        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
+      </a>
+
+      <h3 class="res-cat-heading" data-cat-heading="field">현장 계측 사례</h3>
+
+      <a href="pzt-tube-gauge.html" data-cat="field" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+        <img src="../assets/images/LINE ICON 현장계측.png" alt="현장 계측 스트레인게이지 부착 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div style="display:none; width:96px; height:96px; border-radius:16px; margin-bottom:18px; background:var(--orange-tint); align-items:center; justify-content:center; flex-shrink:0;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">현장 계측 사례 · FIELD CASE</div>
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">PZT 튜브 스트레인게이지 부착 현장 계측</h2>
+        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">외경 6mm 피에조 튜브 스캐너(PiezoDrive TB4006-N)에 초소형 게이지 4장 부착 + ±260V 고전압 절연 설계 + 51μm 미세 변위 측정 성공 사례. 스트레인게이지 부착·측정 출장 지원 서비스 안내.</p>
+        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
+      </a>
+
+      <a href="windturbine-stress.html" data-cat="field" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+        <img src="../assets/images/LINE ICON 현장계측.png" alt="풍력터빈 스트레인게이지 풀브릿지 응력 측정 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div style="display:none; width:96px; height:96px; border-radius:16px; margin-bottom:18px; background:var(--orange-tint); align-items:center; justify-content:center; flex-shrink:0;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 9V2M12 22v-7M9 12H2M22 12h-7M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4l1.4-1.4M17 7l1.4-1.4"/></svg></div>
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">현장 계측 사례 · FULL BRIDGE</div>
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">풀브릿지 구성 응력 측정 — 풍력터빈 시험 모형</h2>
+        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">풍력터빈 시험 모형에 스트레인게이지 부착·풀브릿지 구성·이동식 스트레인 측정 시스템 제작·납품 일괄 지원 사례. 제품 센서화·응력 측정·측정 지원 서비스.</p>
+        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
+      </a>
+
+      <a href="field-service.html" data-cat="field" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+        <img src="../assets/images/LINE ICON 현장계측.png" alt="현장 계측 용역 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div style="display:none; width:96px; height:96px; border-radius:16px; margin-bottom:18px; background:var(--orange-tint); align-items:center; justify-content:center; flex-shrink:0;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 9V2M12 22v-7M9 12H2M22 12h-7M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4l1.4-1.4M17 7l1.4-1.4"/></svg></div>
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">FIELD SERVICE · HIGH-TEMP</div>
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">현장 계측 용역 — 고온 환경 스트레인게이지 측정</h2>
+        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">발전소·플랜트 등 고온 설비 현장 응력 측정. 내열 접착제·특수 케이블·온도 보상 등 고온용 스트레인게이지 시공 노하우와 시험 설계부터 분석 보고서까지 원스톱 현장 계측 용역 소개.</p>
+        <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
+      </a>
+
+      <a href="battery-case-strain.html" data-cat="field" style="text-decoration:none; display:block; padding:36px; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); transition:all 0.3s;" class="res-card fade-in">
+        <img src="../assets/images/LINE ICON 스트레인게이지.png" alt="배터리 케이스 스트레인게이지 부착 아이콘" style="width:96px; height:96px; border-radius:16px; margin-bottom:18px; display:block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div style="display:none; width:96px; height:96px; border-radius:16px; margin-bottom:18px; background:var(--orange-tint); align-items:center; justify-content:center; flex-shrink:0;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="7" width="12" height="14" rx="1"/><path d="M9 7V4h6v3"/><path d="M9 12h6M9 16h6"/></svg></div>
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:10px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">현장 계측 사례 · EV BATTERY</div>
+        <h2 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">차량용 배터리 케이스 스트레인게이지 부착 — 충전 팽창 응력 측정</h2>
+        <p style="font-size:14px; color:var(--text-dim); line-height:1.75; margin-bottom:20px;">배터리 셀·케이스에 스트레인게이지를 부착해 충전 시 발생하는 팽창 변형을 측정한 현장 계측 사례. DAQ 시스템 연동 신호 확인부터 데이터 취득까지 지원.</p>
         <span style="font-size:13px; color:var(--accent-deep); font-weight:600;">자세히 보기 →</span>
       </a>
 
@@ -391,6 +422,25 @@ if (menuBtn && mobileNav) {
   navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
   mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
 }
+
+// Category filter
+const resFilterBtns = document.querySelectorAll('.res-filter-btn');
+const resCards = document.querySelectorAll('.res-card[data-cat]');
+const resHeadings = document.querySelectorAll('.res-cat-heading');
+resFilterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    resFilterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    resCards.forEach(card => {
+      card.classList.toggle('res-hide', f !== 'all' && card.dataset.cat !== f);
+    });
+    resHeadings.forEach(h => {
+      h.style.display = (f === 'all' || h.dataset.catHeading === f) ? '' : 'none';
+    });
+    window.scrollTo({ top: document.querySelector('.res-filter-bar').getBoundingClientRect().top + window.scrollY - 140, behavior: 'smooth' });
+  });
+});
 
 // Fade-in
 const observer = new IntersectionObserver(entries => {
