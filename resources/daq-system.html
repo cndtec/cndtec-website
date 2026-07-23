@@ -52,8 +52,13 @@
         },
         {
           "@type": "Question",
-          "name": "여러 종류의 센서를 동시에 측정하려면 어떤 시스템이 적합한가요?",
-          "acceptedAnswer": {"@type": "Answer", "text": "스트레인게이지·온도·진동 등 다른 종류의 센서를 동시에 측정해야 할 경우, 모듈식 DAQ 시스템(HBM QuantumX 또는 Gantner Q.Series X)이 가장 적합합니다. 필요한 측정 모듈을 조합해 구성하고 모듈 추가로 채널을 확장할 수 있어, 복잡한 계측 환경을 단일 시스템으로 통합 대응합니다."}
+          "name": "스트레인게이지 신호도 취득할 수 있나요? 쿼터·하프·풀브릿지 모두 지원되나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "네, 가능합니다. HBM QuantumX, Gantner Q.Series X 등 씨앤디테크가 공급하는 DAQ 시스템은 스트레인게이지 전용 입력 모듈을 통해 쿼터브릿지(1/4 브릿지)·하프브릿지(1/2 브릿지)·풀브릿지(전체 브릿지) 구성을 모두 지원합니다. 내장된 완성 저항으로 쿼터·하프 브릿지를 손쉽게 구성할 수 있고, 브릿지 여기전압·게이지율(Gauge Factor)·션트 캘리브레이션 설정을 소프트웨어에서 직접 조정할 수 있어 1축·2축·3축 로젯 등 다양한 스트레인게이지 구성에 대응합니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "여러 종류의 센서(스트레인게이지·진동·온도·압력)를 동시에 측정하려면 어떤 시스템이 필요한가요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "서로 다른 종류의 센서 신호를 동시에 측정해야 할 경우, 모듈식 DAQ 시스템(HBM QuantumX 또는 Gantner Q.Series X)이 가장 적합합니다. 스트레인게이지(쿼터·하프·풀브릿지), IEPE·전하출력 진동센서, 열전대·RTD 온도센서, 압력 트랜스듀서 등 입력 방식이 서로 다른 모듈을 하나의 섀시에 조합해 채널마다 다른 종류의 신호를 동기화된 타임스탬프로 동시에 기록할 수 있습니다. 모듈만 추가하면 채널을 확장할 수 있어, 복잡한 다물리량 계측 환경도 단일 시스템으로 통합 대응합니다."}
         },
         {
           "@type": "Question",
@@ -772,10 +777,18 @@ body, .container, p, h1, h2, h3, h4, span, div, li, td, th, button, a {
 
         <div class="daq-faq-item">
           <button class="daq-faq-q" onclick="toggleFaq(this)">
-            <span class="daq-faq-q-txt">여러 종류의 센서(스트레인·온도·진동)를 동시에 측정하려면 어떤 시스템이 필요한가요?</span>
+            <span class="daq-faq-q-txt">스트레인게이지 신호도 취득할 수 있나요? 쿼터·하프·풀브릿지 모두 지원되나요?</span>
             <span class="daq-faq-ico">+</span>
           </button>
-          <div class="daq-faq-a">서로 다른 종류의 센서를 동시에 측정해야 할 경우, 모듈식 DAQ 시스템(HBM QuantumX 또는 Gantner Q.Series X)이 가장 적합합니다. 필요한 측정 모듈을 조합해 구성하고 모듈만 추가해 채널을 확장할 수 있어, 복잡한 계측 환경을 단일 시스템으로 통합 대응합니다. 거의 모든 현존하는 센서 신호를 동시 수집할 수 있습니다.</div>
+          <div class="daq-faq-a">네, 가능합니다. HBM QuantumX, Gantner Q.Series X 등 씨앤디테크가 공급하는 DAQ 시스템은 스트레인게이지 전용 입력 모듈을 통해 <strong>쿼터브릿지(1/4 브릿지)·하프브릿지(1/2 브릿지)·풀브릿지(전체 브릿지)</strong> 구성을 모두 지원합니다. 내장된 완성 저항으로 쿼터·하프 브릿지를 손쉽게 구성할 수 있고, 브릿지 여기전압·게이지율(Gauge Factor)·션트 캘리브레이션 설정을 소프트웨어에서 직접 조정할 수 있어 1축·2축·3축 로젯 등 다양한 스트레인게이지 구성에 대응합니다.</div>
+        </div>
+
+        <div class="daq-faq-item">
+          <button class="daq-faq-q" onclick="toggleFaq(this)">
+            <span class="daq-faq-q-txt">여러 종류의 센서(스트레인게이지·진동·온도·압력)를 동시에 측정하려면 어떤 시스템이 필요한가요?</span>
+            <span class="daq-faq-ico">+</span>
+          </button>
+          <div class="daq-faq-a">서로 다른 종류의 센서 신호를 동시에 측정해야 할 경우, 모듈식 DAQ 시스템(HBM QuantumX 또는 Gantner Q.Series X)이 가장 적합합니다. <strong>스트레인게이지(쿼터·하프·풀브릿지), IEPE·전하출력 진동센서, 열전대·RTD 온도센서, 압력 트랜스듀서</strong> 등 입력 방식이 서로 다른 모듈을 하나의 섀시에 조합해 채널마다 다른 종류의 신호를 동기화된 타임스탬프로 동시에 기록할 수 있습니다. 모듈만 추가하면 채널을 확장할 수 있어, 복잡한 다물리량 계측 환경도 단일 시스템으로 통합 대응합니다.</div>
         </div>
 
         <div class="daq-faq-item">
