@@ -176,6 +176,24 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 .plm-thumb img{width:100%;height:110px;object-fit:contain;display:block;border-radius:6px;background:#f8fafc;}
 .plm-thumb-cap{font-size:11px;color:var(--text-mute);text-align:center;margin-top:6px;line-height:1.4;}
 .plm-inline-thumb{width:120px;height:90px;object-fit:contain;border-radius:6px;background:#f8fafc;border:1px solid #e5e7eb;flex-shrink:0;}
+.plm-mode-thumb-row{display:flex;gap:12px;align-items:flex-start;}
+/* ── 모바일 최적화 (2026-07-24 추가) ── */
+@media(max-width:600px){
+  .plm-thumb-row{flex-direction:column;}
+  .plm-thumb{width:100%;min-width:0;}
+  .plm-thumb img{height:auto;max-height:180px;}
+  .plm-mode-thumb-row{flex-direction:column;align-items:center;}
+  .plm-mode-thumb-row .mc-text{order:2;}
+  .plm-inline-thumb{width:100%;max-width:220px;height:auto;max-height:150px;order:1;}
+  .plm-diagram-grid{gap:18px;}
+  .plm-photo-card{padding:10px;}
+  .plm-hero-img{margin-top:24px;}
+  .plm-note-box{padding:12px 14px;font-size:12.5px;}
+}
+@media(max-width:400px){
+  .plm-table{font-size:12px;}
+  .plm-table td, .plm-table th{padding:9px 10px;}
+}
 </style>
 </head>
 <body>
@@ -307,8 +325,8 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
             <div class="plm-mode-name">직접식 측정 (포스 트랜스듀서)</div>
           </div>
           <div class="plm-mode-body">
-            <div style="display:flex; gap:12px; align-items:flex-start;">
-              <div>금형의 힘 전달 경로(Force Flow) 안에 포스 트랜스듀서를 직접 삽입해 하중을 측정합니다. 정확도가 높고 조립 후 힘(N) 값을 곧바로 확인할 수 있지만, 트랜스듀서가 금형 특성에 영향을 주고 대하중일수록 센서가 커지고 고가가 됩니다.</div>
+            <div class="plm-mode-thumb-row">
+              <div class="mc-text">금형의 힘 전달 경로(Force Flow) 안에 포스 트랜스듀서를 직접 삽입해 하중을 측정합니다. 정확도가 높고 조립 후 힘(N) 값을 곧바로 확인할 수 있지만, 트랜스듀서가 금형 특성에 영향을 주고 대하중일수록 센서가 커지고 고가가 됩니다.</div>
               <img src="../assets/images/Press monitoring system/HBM FORCE SENSOR.jpg" alt="직접식 포스 트랜스듀서 예시" class="plm-inline-thumb" loading="lazy">
             </div>
             <div style="font-size:11px; color:var(--text-mute); text-align:right; margin-top:6px;">▲ 직접식 포스 트랜스듀서 예시</div>
