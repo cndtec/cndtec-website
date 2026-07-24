@@ -1,5 +1,13 @@
 # CND TECH 웹사이트 — 작업 현황
 
+## ⭐ 2026-07-24 지침: 타이틀에 영문 병기(괄호) 추가 시 줄바꿈 규칙
+기술자료 타이틀에 영문 용어를 괄호로 병기해달라는 요청(예: "프레스 로드 모니터링 시스템 (Tonnage Monitoring System)")이 있을 때는 위치별로 다르게 처리할 것:
+- `<title>` / `og:title` / `og:description` / JSON-LD `headline` 등 **일반 텍스트 컨텍스트**: 국문 제목 바로 뒤에 영문을 괄호로 병기하고 한 줄로 유지 (HTML 태그 삽입 불가한 위치이므로 줄바꿈 없음). 예: `프레스 로드 모니터링 시스템 (Tonnage Monitoring System) - 스트레인 트랜스듀서 기반 하중·상태진단 | 씨앤디테크`
+- `<h1>` 등 **화면에 렌더링되는 헤딩**: 국문 제목과 영문 병기 사이에 `<br>`을 넣어 줄바꿈 처리 (큰 폰트에서 가독성 확보). 예: `프레스 로드 모니터링 시스템<br>(Tonnage Monitoring System)`
+- `resources/index.html` 카드 `<h2>`: 짧게 한 줄로 유지 가능하면 `<br>` 없이 국영문 병기 (예: `프레스 로드 모니터링 시스템 (Tonnage Monitoring System)`), 카드 폭이 좁아 넘칠 경우에만 `<br>` 고려.
+- 영문 용어는 `<meta name="keywords">`에도 소문자 그대로 추가 (예: `tonnage monitoring system`).
+- 페이지 저장 후에는 항상 `grep -n "<영문용어>"`로 title/og:title/headline/H1/index.html 카드 전부에 일관되게 반영됐는지 확인하고, div 밸런스·`</html>` 종료 여부도 함께 재확인할 것.
+
 ## ⭐ 2026-07-13 완료: 홈페이지 hover 효과(스포트라이트) 전체 페이지 확대 + 파일 손상 2건 발견/복구
 - 커서 스포트라이트(fx-spotlight) 색 강도 2배 진하게 조정(opacity 0.16→0.32, css/style.css).
 - 테두리 드로잉(fx-border) 효과는 사용자 피드백으로 완전 제거(클래스+CSS 모두 삭제).
@@ -58,6 +66,8 @@
 - 기술자료 신규 페이지 자동 체크리스트 + sitemap 자동 업데이트 지침 추가 ✅ (2026-06-22, CLAUDE.md에 "⭐ 기술자료 신규 페이지 작업 시 자동 체크리스트" 섹션 신설 — 앞으로 기술자료 요청 시 sitemap.xml 추가를 별도 요청 없이 항상 수행)
 - 도메인 오류 수정: cndtec.com → cndtec.co.kr ✅ (2026-06-22, Google Search Console 인증 중 발견. about/contact/index/products/projects의 og:url, robots.txt의 sitemap 경로, sitemap.xml 전체 <loc>, _redirects www 리다이렉트 규칙까지 전체 수정) — 커밋/푸시 필요
 - SEO 전수 감사 및 수정 ✅ (2026-07-11) — searchfit-seo:seo-audit로 32개 페이지 전수 점검 후: ① custom-sensor.html sitemap.xml·resources/index.html 카드 누락 발견해 등록, ② 실제 콘텐츠 있는데 sitemap 누락된 6개 페이지(heat-treatment/peening/welding-residual-stress, pzt-tube-gauge, rotor-balancing, windturbine-stress) sitemap.xml 추가, ③ index/about/products/projects/contact/resources/index.html에 canonical 태그 신규 삽입 + og:url을 sitemap과 동일한 확장자 없는 형태로 통일(about.html→/about 등, 이전엔 .html 붙어있어 중복 콘텐츠 위험 있었음), ④ about.html/products.html/resources/rotor-balancing.html/resources/windturbine-stress.html 파일 끝 trailing NUL byte(최대 6971개) 제거 — 커밋/푸시 필요
+- 자동차 언더커버 스트레인게이지+3D스캐닝 기술자료 페이지 신규 생성 ✅ (2026-07-24, resources/car-undercover-strain.html, sitemap.xml·resources/index.html 카드 등록 포함) 후 사용자 요청으로 "TPO 2.5T / PP(Recycle) 2.0T" 재질 스펙 문구 및 "왜 언더커버 변형을 측정하는가" 표현 전체 제거·일반화 — 커밋/푸시 필요
+- 프레스 로드 모니터링 시스템 기술자료 페이지 신규 생성 ✅ (2026-07-24, resources/press-load-monitoring.html — candj.tistory.com/63 자사 블로그 + HBM 백서를 참고하되 문구는 원본 재구성, sitemap.xml·resources/index.html 카드 등록 포함, 타이틀에 영문 "Tonnage Monitoring System" 병기) 이어서 업로드된 "단조 프레스 strain gauge 측정 자료" 문서의 "02 타이로드 게이지 부착 상세도"(4-게이지 풀브릿지, 벤딩모멘트 상쇄+자동 온도보상, 250~300°C, 접착형 게이지로 충분) 내용을 신규 03번 섹션으로 추가하고, 전 섹션 번호를 04~07로 재조정. 사용자가 새로 만든 로컬 이미지 폴더 `assets/images/Press monitoring system/` 실사진 9장(Main image, HBM FORCE/PIEZO SENSOR, Bolt on sensor, strain gage_bolt on sensor install, 교정 검증 그래프 1장, 노후 프레스 상태진단 사진 2장+그래프 1장)을 히어로·섹션 02·03·04·05·07에 반영 — HBM 브랜드/모델명(SLB700, CST/300 등)은 캡션에서 노출하지 않고 "포스 트랜스듀서", "압전(피에조) 트랜스듀서" 등 일반 명칭만 사용. 교정 검증 그래프 2장 중 데이터 이상(SLB700 계열이 첫 포인트 이후 0으로 평탄화)이 있는 "Total Load Data" 그래프는 제외하고 "P4 Load Data" 그래프만 채택 — 커밋/푸시 필요 (새 이미지 폴더 `assets/images/Press monitoring system/` 포함해서 커밋해야 함)
 
 ## 프로젝트 구조
 ```

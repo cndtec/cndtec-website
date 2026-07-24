@@ -4,11 +4,11 @@
 <meta charset="UTF-8" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>프레스 로드 모니터링 시스템 - 스트레인 트랜스듀서 기반 하중·상태진단 | 씨앤디테크</title>
+<title>프레스 로드 모니터링 시스템 (Tonnage Monitoring System) - 스트레인 트랜스듀서 기반 하중·상태진단 | 씨앤디테크</title>
 <meta name="description" content="프레스(성형·단조·조립 프레스) 하중을 실시간으로 감시하는 프레스 로드 모니터링 시스템 가이드. 직접식 포스트랜스듀서와 션트방식 스트레인 트랜스듀서 비교, 스트레인게이지·압전 센서 선택 기준, 벤딩모멘트 보상 원리, 2점 교정 절차, 진동·온도 동시 계측을 통한 베어링·냉각계통 예방진단까지 소개합니다. 씨앤디테크 프레스 모니터링 시스템 공급·기술지원." />
-<meta name="keywords" content="프레스 로드 모니터링, 프레스 모니터링 시스템, 프레스 하중측정, 스트레인 트랜스듀서, 포스 트랜스듀서, 프레스 상태진단, 베어링 진단, 다이쿠션 모니터링, 프레스 제어시스템, 성형 하중 측정" />
+<meta name="keywords" content="프레스 로드 모니터링, 프레스 모니터링 시스템, tonnage monitoring system, 프레스 하중측정, 스트레인 트랜스듀서, 포스 트랜스듀서, 프레스 상태진단, 베어링 진단, 다이쿠션 모니터링, 프레스 제어시스템, 성형 하중 측정" />
 <link rel="canonical" href="https://www.cndtec.co.kr/resources/press-load-monitoring.html" />
-<meta property="og:title" content="프레스 로드 모니터링 시스템 - 스트레인 트랜스듀서 기반 하중·상태진단 | 씨앤디테크" />
+<meta property="og:title" content="프레스 로드 모니터링 시스템 (Tonnage Monitoring System) - 스트레인 트랜스듀서 기반 하중·상태진단 | 씨앤디테크" />
 <meta property="og:description" content="프레스 하중을 실시간으로 감시하는 프레스 로드 모니터링 시스템. 직접식·션트방식 하중측정, 스트레인게이지·압전 센서 비교, 교정 절차, 진동·온도 동시 계측을 통한 예방진단까지 소개." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.cndtec.co.kr/resources/press-load-monitoring.html" />
@@ -26,7 +26,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "프레스 로드 모니터링 시스템 — 스트레인 트랜스듀서 기반 하중·상태진단",
+  "headline": "프레스 로드 모니터링 시스템 (Tonnage Monitoring System) — 스트레인 트랜스듀서 기반 하중·상태진단",
   "description": "프레스 하중을 실시간으로 감시하는 프레스 로드 모니터링 시스템 완전 가이드. 직접식·션트방식 하중측정 비교, 스트레인게이지·압전 센서 선택 기준, 벤딩모멘트 보상, 교정 절차, 진동·온도 동시 계측 예방진단.",
   "keywords": "프레스 로드 모니터링, 프레스 모니터링 시스템, 프레스 하중측정, 스트레인 트랜스듀서, 포스 트랜스듀서, 베어링 진단",
   "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
@@ -162,6 +162,20 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 .plm-faq-item.open .plm-fq-icon{transform:rotate(45deg);}
 .plm-faq-a{display:none;padding:16px 22px 20px;background:#fff;font-size:14px;color:var(--text-dim);line-height:1.8;border-top:1px solid var(--line);}
 .plm-faq-item.open .plm-faq-a{display:block;}
+/* photo / diagram blocks (2026-07-24 추가) */
+.plm-hero-img{width:100%;max-width:760px;border-radius:var(--radius);margin:32px auto 0;display:block;border:1px solid var(--line);}
+.plm-diagram-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;margin-top:20px;align-items:start;}
+@media(max-width:760px){.plm-diagram-grid{grid-template-columns:1fr;}}
+.plm-photo-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px;}
+.plm-photo-card img{width:100%;height:auto;object-fit:contain;display:block;border-radius:6px;background:#f8fafc;border:1px solid #e5e7eb;}
+.plm-photo-cap{font-size:11.5px;color:var(--text-mute);text-align:center;margin-top:8px;line-height:1.5;}
+.plm-note-box{margin-top:18px;padding:14px 18px;background:var(--orange-tint);border:1px solid var(--orange-line);border-radius:10px;font-size:13px;color:var(--text-dim);line-height:1.7;}
+.plm-note-box strong{color:var(--accent-deep);}
+.plm-thumb-row{display:flex;gap:14px;margin-top:16px;flex-wrap:wrap;}
+.plm-thumb{flex:1;min-width:150px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px;}
+.plm-thumb img{width:100%;height:110px;object-fit:contain;display:block;border-radius:6px;background:#f8fafc;}
+.plm-thumb-cap{font-size:11px;color:var(--text-mute);text-align:center;margin-top:6px;line-height:1.4;}
+.plm-inline-thumb{width:120px;height:90px;object-fit:contain;border-radius:6px;background:#f8fafc;border:1px solid #e5e7eb;flex-shrink:0;}
 </style>
 </head>
 <body>
@@ -215,9 +229,10 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
     <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
     <div style="margin-top:20px;">
       <div class="plm-tag">프레스 로드 모니터링 · 하중·진동·온도 통합 상태진단</div>
-      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(28px,5vw,54px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal); line-height:1.15;">프레스 로드 모니터링 시스템<br>— 스트레인 트랜스듀서 기반 하중·상태진단</h1>
+      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(28px,5vw,54px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal); line-height:1.15;">프레스 로드 모니터링 시스템<br>(Tonnage Monitoring System)</h1>
       <p style="font-size:17px; color:var(--text-dim); max-width:700px; line-height:1.75; margin-bottom:0;">프레스(성형·단조·조립 프레스)의 하중을 실시간으로 계측·감시하는 프레스 로드 모니터링 시스템 가이드입니다. 직접식·션트방식 하중측정 원리, 스트레인게이지·압전 센서 선택 기준, 교정 절차부터 진동·온도 동시 계측을 통한 예방진단까지 소개합니다.</p>
     </div>
+    <img src="../assets/images/Press monitoring system/Main image.png" alt="프레스 로드 모니터링 시스템 개념도 — 로드·진동·온도 통합 실시간 모니터링" class="plm-hero-img fade-in" loading="lazy">
     <div class="plm-stat-grid">
       <div class="plm-stat">
         <div class="plm-stat-num">2가지 방식</div>
@@ -291,7 +306,13 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
             <div class="plm-mode-num">METHOD 1</div>
             <div class="plm-mode-name">직접식 측정 (포스 트랜스듀서)</div>
           </div>
-          <div class="plm-mode-body">금형의 힘 전달 경로(Force Flow) 안에 포스 트랜스듀서를 직접 삽입해 하중을 측정합니다. 정확도가 높고 조립 후 힘(N) 값을 곧바로 확인할 수 있지만, 트랜스듀서가 금형 특성에 영향을 주고 대하중일수록 센서가 커지고 고가가 됩니다.</div>
+          <div class="plm-mode-body">
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <div>금형의 힘 전달 경로(Force Flow) 안에 포스 트랜스듀서를 직접 삽입해 하중을 측정합니다. 정확도가 높고 조립 후 힘(N) 값을 곧바로 확인할 수 있지만, 트랜스듀서가 금형 특성에 영향을 주고 대하중일수록 센서가 커지고 고가가 됩니다.</div>
+              <img src="../assets/images/Press monitoring system/HBM FORCE SENSOR.jpg" alt="직접식 포스 트랜스듀서 예시" class="plm-inline-thumb" loading="lazy">
+            </div>
+            <div style="font-size:11px; color:var(--text-mute); text-align:right; margin-top:6px;">▲ 직접식 포스 트랜스듀서 예시</div>
+          </div>
         </div>
         <div class="plm-mode-card">
           <div class="plm-mode-head">
@@ -305,9 +326,50 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 
     <hr class="plm-divider">
 
-    <!-- 03 센서 기술 비교 -->
+    <!-- 03 타이로드(컬럼) 게이지 부착 상세 -->
     <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
-      <div class="plm-section-tag">03 · SENSOR TECHNOLOGY</div>
+      <div class="plm-section-tag">03 · TIE-ROD SENSOR INSTALLATION</div>
+      <h2 class="plm-h2">타이로드(컬럼) 게이지 부착 상세 — 4-게이지 풀브릿지 구성</h2>
+      <p class="plm-sub">션트방식 하중측정은 실제로 프레스의 타이로드(Tie-rod) 또는 컬럼(프레임 기둥)에 스트레인 트랜스듀서를 부착해 구현합니다. 굽힘(벤딩모멘트) 성분을 제거하고 순수한 축방향 하중만 추출하려면, 로드 둘레에 4개의 게이지를 정확한 위치·각도로 배치한 풀브릿지 구성이 핵심입니다.</p>
+
+      <div class="plm-diagram-grid">
+        <div>
+          <div style="font-size:14px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">4-게이지 풀브릿지 배치</div>
+          <ul style="font-size:13.5px; color:var(--text-dim); line-height:1.85; padding-left:18px; margin:0 0 14px;">
+            <li>타이로드(또는 컬럼) 둘레 4방향(전면 0°·좌측 90°·후면 180°·우측 90°)에 게이지 1개씩 부착</li>
+            <li>4개 게이지를 풀브릿지로 결선 — 굽힘에 의한 (+)(−) 변형 성분이 서로 상쇄되어 순수 축방향(인장) 하중만 추출</li>
+            <li>대칭 배치 구조 자체가 온도 변화에 대한 자동 보상 기능도 함께 제공</li>
+            <li>접착형(Adhesive) 스트레인게이지로 충분하며, 별도의 용접형 게이지는 필요하지 않음</li>
+            <li>부착부 온도 조건 약 250~300°C까지 대응 가능</li>
+          </ul>
+          <div class="plm-note-box"><strong>Point.</strong> 굽힘 성분을 제거한 순수 축력 신호를 얻어야 단조 충격 하중, 4방향 하중 밸런스, 피로 누적 이력 등을 정확하게 모니터링할 수 있습니다. 게이지 부착 위치·각도가 정확하지 않으면 벤딩 성분이 완전히 상쇄되지 않아 측정 오차로 이어집니다.</div>
+        </div>
+        <div class="plm-photo-card">
+          <img src="../assets/images/Press monitoring system/strain gage_bolt on sensor install.png" alt="프레스 컬럼(타이로드) 볼트온 스트레인 트랜스듀서 설치 예시" loading="lazy">
+          <div class="plm-photo-cap">▲ 프레스 컬럼(타이로드)에 부착된 볼트온(Bolt-on) 스트레인 트랜스듀서 설치 예시</div>
+        </div>
+      </div>
+
+      <div class="plm-thumb-row">
+        <div class="plm-thumb">
+          <img src="../assets/images/Press monitoring system/Bolt on sensor.png" alt="볼트온 스트레인 트랜스듀서 예시" loading="lazy">
+          <div class="plm-thumb-cap">볼트온(Bolt-on) 스트레인 트랜스듀서 예시</div>
+        </div>
+      </div>
+
+      <div class="plm-feat-grid" style="margin-top:20px;">
+        <div class="plm-feat-item"><div class="fi">💥</div><div><strong>단조 충격 하중 실시간 감시</strong><br>충격성 하중의 피크값을 실시간으로 계측·기록합니다.</div></div>
+        <div class="plm-feat-item"><div class="fi">⚖️</div><div><strong>4방향 하중 밸런스 비교</strong><br>4방향 신호를 개별 비교해 램 편심·금형 편심 등 불균형을 감지합니다.</div></div>
+        <div class="plm-feat-item"><div class="fi">📊</div><div><strong>피로 누적 이력 관리</strong><br>사이클별 최대·최소 하중을 자동 기록해 피로 누적 이력을 추적합니다.</div></div>
+        <div class="plm-feat-item"><div class="fi">🚨</div><div><strong>임계값 기반 이상 감지·경보</strong><br>설정한 임계값을 벗어나면 즉시 이상으로 판단해 경보를 전달합니다.</div></div>
+      </div>
+    </div>
+
+    <hr class="plm-divider">
+
+    <!-- 04 센서 기술 비교 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="plm-section-tag">04 · SENSOR TECHNOLOGY</div>
       <h2 class="plm-h2">스트레인게이지 방식 vs 압전(피에조) 방식</h2>
       <p class="plm-sub">션트방식 하중측정에는 스트레인게이지 기반 트랜스듀서와 압전(피에조) 트랜스듀서가 함께 사용됩니다. 두 방식 모두 실무에서 널리 쓰이며, 설치 환경과 요구 성능에 따라 선택합니다.</p>
 
@@ -341,13 +403,20 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         </table>
       </div>
       <p style="font-size:12px; color:var(--text-mute); margin-top:12px;">※ 두 방식 모두 실제로는 다수의 프레스 현장에서 병행 적용되며, 요구 정확도·설치 환경·예산에 맞춰 선정합니다.</p>
+
+      <div class="plm-thumb-row" style="max-width:220px;">
+        <div class="plm-thumb">
+          <img src="../assets/images/Press monitoring system/HBM PIEZO SENSOR.jpg" alt="압전(피에조) 트랜스듀서 예시" loading="lazy">
+          <div class="plm-thumb-cap">압전(피에조) 트랜스듀서 예시 — 소형·경량, 나사 하나로 설치</div>
+        </div>
+      </div>
     </div>
 
     <hr class="plm-divider">
 
-    <!-- 04 교정 절차 -->
+    <!-- 05 교정 절차 -->
     <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
-      <div class="plm-section-tag">04 · CALIBRATION</div>
+      <div class="plm-section-tag">05 · CALIBRATION</div>
       <h2 class="plm-h2">스트레인 트랜스듀서 교정(캘리브레이션) 절차</h2>
       <p class="plm-sub">스트레인 트랜스듀서의 출력은 mV/V 단위의 상대값이므로, 실제 힘(N)으로 환산하려면 교정 과정이 필요합니다. 최소 2개의 하중 지점에서 출력을 측정해 감도를 계산하는 방식이 일반적입니다.</p>
 
@@ -373,13 +442,18 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
           <div class="plm-step-body"><strong>재하 검증</strong><p>교정 후에는 반드시 시스템에 재하해 표시값을 재확인하며, 실제 사용 하중 부근에서 교정할수록 정확도가 높아집니다.</p></div>
         </div>
       </div>
+
+      <div class="plm-photo-card" style="margin-top:24px; max-width:540px;">
+        <img src="../assets/images/Press monitoring system/Press calibration graph_loadcell vs strain_02.png" alt="스트레인 트랜스듀서와 기준 로드셀 비교 검증 데이터" loading="lazy">
+        <div class="plm-photo-cap">▲ 스트레인 트랜스듀서(션트방식)와 기준 로드셀(직접식) 현장 비교 검증 데이터 — 측정 전 구간에서 두 값이 높은 일치도를 보입니다.</div>
+      </div>
     </div>
 
     <hr class="plm-divider">
 
-    <!-- 05 예방진단 -->
+    <!-- 06 예방진단 -->
     <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
-      <div class="plm-section-tag">05 · PREVENTIVE DIAGNOSTICS</div>
+      <div class="plm-section-tag">06 · PREVENTIVE DIAGNOSTICS</div>
       <h2 class="plm-h2">로드·진동·온도 동시 계측을 통한 예방진단</h2>
       <p class="plm-sub">프레스 로드 모니터링 시스템의 가치는 하중 계측에만 있지 않습니다. 로드 채널과 함께 진동·온도·압력 채널을 동시에 계측하면 프레스 자체의 상태를 종합적으로 진단할 수 있습니다.</p>
 
@@ -395,9 +469,9 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 
     <hr class="plm-divider">
 
-    <!-- 06 씨앤디테크 공급 사례 -->
+    <!-- 07 씨앤디테크 공급 사례 -->
     <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
-      <div class="plm-section-tag">06 · CND TECH DELIVERY TRACK RECORD</div>
+      <div class="plm-section-tag">07 · CND TECH DELIVERY TRACK RECORD</div>
       <h2 class="plm-h2">씨앤디테크 프레스 모니터링 시스템</h2>
       <p class="plm-sub">씨앤디테크는 프레스의 하중·베어링 상태를 실시간으로 모니터링하는 기술을 개발·공급하고 있으며, 국내외 대형 프레스에 하중 모니터링·유지보수 모니터링 시스템을 공급한 실적을 보유하고 있습니다.</p>
       <div class="plm-feat-grid">
@@ -424,6 +498,21 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <div class="plm-feat-item">
           <div class="fi">✔</div>
           <div>표준 이더넷 TCP-IP 프로토콜로 어디서든 데이터 모니터링·분석이 가능합니다.</div>
+        </div>
+      </div>
+
+      <div class="plm-thumb-row" style="margin-top:24px;">
+        <div class="plm-thumb">
+          <img src="../assets/images/Press monitoring system/노후 프레스 상태진단_01.png" alt="노후 프레스 현장 계측 사례" loading="lazy">
+          <div class="plm-thumb-cap">노후 프레스 현장 계측 사례</div>
+        </div>
+        <div class="plm-thumb">
+          <img src="../assets/images/Press monitoring system/노후 프레스 상태 진단_02.png" alt="현장 설치형 데이터수집 시스템" loading="lazy">
+          <div class="plm-thumb-cap">현장 설치형 데이터수집 시스템</div>
+        </div>
+        <div class="plm-thumb">
+          <img src="../assets/images/Press monitoring system/노후 프레스 상태진단 측정 그래프.png" alt="다채널 변형률 스캔 데이터 — 노후 프레스 상태 진단" loading="lazy">
+          <div class="plm-thumb-cap">다채널 변형률 스캔 데이터 — 상태 진단 결과</div>
         </div>
       </div>
     </div>
