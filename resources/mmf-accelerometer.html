@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MMF 가속도센서(진동센서) 전체 라인업 — 모델별 사양 가이드 | 씨앤디테크</title>
+<meta name="description" content="독일 MMF(Metra) 가속도센서(진동센서) 전 제품군 소개. 범용·소형·고감도·3축·산업용 가속도센서부터 4-20mA 전류루프 트랜스듀서, 포스 트랜스듀서까지 모델별 사양 비교 및 선정 가이드를 씨앤디테크가 정리합니다." />
+<meta name="keywords" content="MMF, Metra, MMF 가속도센서, MMF 진동센서, 가속도센서, 진동센서, 압전 가속도센서, IEPE 가속도센서, 3축 가속도센서, 소형 가속도센서, 고감도 가속도센서, 산업용 가속도센서, TEDS 가속도센서, KS76C, KS77C, KS78C, KS84B, KS85, KS813B, KS823B, KS943B, KS963B, KS973, KB12VD, KS48C, KF24, 4-20mA 진동센서, 포스 트랜스듀서" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/mmf-accelerometer.html" />
+<meta property="og:title" content="MMF 가속도센서(진동센서) 전체 라인업 — 모델별 사양 가이드 | 씨앤디테크" />
+<meta property="og:description" content="독일 MMF(Metra) 가속도센서(진동센서) 전 라인업 — 범용·소형·고감도·3축·산업용부터 4-20mA 트랜스듀서·포스 트랜스듀서까지 사양 비교." />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/cnd-logo-400.png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:alt" content="CND TECH 씨앤디테크 로고" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/mmf-accelerometer.html" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="../css/style.css?v=6">
+<style>
+body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "MMF 가속도센서(진동센서) 전체 라인업 — 모델별 사양 가이드",
+      "description": "독일 MMF(Metra) 가속도센서(진동센서) 전 제품군. 범용·소형·고감도·3축·산업용 가속도센서부터 4-20mA 전류루프 트랜스듀서, 포스 트랜스듀서까지 모델별 사양 및 적용.",
+      "url": "https://www.cndtec.co.kr/resources/mmf-accelerometer.html",
+      "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+      "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+      "datePublished": "2026-07-25",
+      "dateModified": "2026-07-25",
+      "inLanguage": "ko"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "MMF 가속도센서(진동센서)는 어떤 제품군으로 구분되나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "독일 MMF(Metra Meß- und Frequenztechnik)의 가속도센서는 크게 6가지로 구분됩니다. ① 범용 가속도센서(Universal Accelerometer) — 실험실·산업 현장 표준형(KS56·KS76C·KS77C·KS78C 등), ② 소형 가속도센서(Miniature Accelerometer) — 경량 측정물·모달해석용(KS91C·KS94·KS96B~98B 등), ③ 고감도 가속도센서(High Sensitivity Accelerometer) — 건물·교량 등 저주파 진동 측정용(KB12VD·KS48C), ④ 3축 가속도센서(Triaxial Accelerometer) — 3방향 동시 측정(KS813B·KS943B·KS963B·KS973 등), ⑤ 산업용 가속도센서(Industrial Accelerometer) — TEDS 내장 고내구성(KS74C·KS84B·KS85), ⑥ 4-20mA 전류루프 트랜스듀서(KSI84 시리즈)입니다. 별도로 동적 인장·압축력 측정용 포스 트랜스듀서(KF24)도 공급합니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "가속도센서와 진동센서는 같은 의미인가요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "실무에서는 거의 같은 의미로 쓰입니다. '가속도센서(Accelerometer)'는 압전(Piezoelectric) 소자를 이용해 물체의 가속도를 전기 신호로 변환하는 센서의 정식 명칭이며, '진동센서(Vibration Sensor)'는 이 가속도센서를 포함해 진동을 감지하는 센서 전반을 가리키는 통칭입니다. MMF의 제품군은 모두 압전 가속도 원리를 사용하므로, 정확한 제품명은 '가속도센서'이고 응용 분야에서는 '진동센서'로도 흔히 불립니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "모델명 뒤에 붙는 10, 100, 500 숫자는 무엇을 의미하나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "MMF 가속도센서는 동일한 형상·하우징에 감도(Sensitivity)만 다른 여러 버전으로 출시됩니다. 예를 들어 KS84B10은 10 mV/g(측정범위 약 600g), KS84B100은 100 mV/g(약 60g), KS84B500은 500 mV/g(약 11g)로, 뒷자리 숫자가 클수록 감도는 높아지고 측정 가능한 최대 가속도 범위는 좁아집니다. 외형과 장착 방식은 동일하므로 제품 사진도 공용으로 사용됩니다. 저주파·미세 진동은 감도가 높은 100·500 버전을, 고진폭·충격성 진동은 감도가 낮은 10 버전을 선택하는 것이 일반적입니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "IEPE 출력과 전하(Charge) 출력의 차이는 무엇인가요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "IEPE(Integrated Electronics Piezo-Electric)는 센서 내부에 신호 증폭 회로를 내장해 정전류(2~20mA)로 전원을 공급받고 저임피던스 전압 신호를 출력하는 방식으로, 케이블을 길게 연결해도 노이즈에 강해 현재 산업 현장에서 가장 널리 사용됩니다. 전하(Charge) 출력은 별도의 전하 증폭기(Charge Amplifier)가 필요하지만 250°C 이상의 고온이나 초고감도 측정처럼 IEPE 내장 전자회로가 견디기 어려운 극한 환경에 적합합니다. MMF는 두 출력 방식을 모두 제공하며, KS56·KS57·KS93·KS90·KF24 등이 전하 출력, 나머지 대부분 모델이 IEPE 출력입니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "TEDS 기능이 있는 가속도센서는 어떤 장점이 있나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "TEDS(Transducer Electronic Data Sheet)는 센서 내부에 감도·측정범위·시리얼번호 같은 교정 정보를 전자적으로 저장하는 IEEE 1451.4 표준 기능입니다. 다채널 DAQ 시스템에서 센서를 서로 바꿔 연결해도 소프트웨어가 자동으로 올바른 스케일 값을 인식하므로, 채널 설정 오류를 방지하고 현장에서 센서 교체 시간을 크게 단축할 수 있습니다. MMF의 KS84B·KS85·KS96B·KS97B·KS98B·KS903B·KS943B·KS963B·KS973 시리즈가 TEDS를 기본 내장합니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "3축 가속도센서는 언제 사용해야 하나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "단축 센서 3개를 각 방향에 개별 설치하는 대신, 3축(Triaxial) 센서 1개로 X·Y·Z 방향 진동을 동시에 측정할 수 있어 모달해석(Modal Analysis), 회전기계 정밀 진단, 건물·구조물 진동 모니터링에 주로 사용됩니다. MMF의 KS943B·KS963B·KS973 시리즈는 중앙 관통홀 구조로 축 정렬이 쉽고, KS813B·KS823B는 IP67 방수 등급의 산업용 3축 센서로 옥외·플랜트 환경에 적합합니다."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+/* ── mmf- prefix: MMF accelerometer page ── */
+.mmf-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+.mmf-product-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 26px 22px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.mmf-product-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  transform: translateY(-2px);
+}
+.mmf-product-img {
+  margin: -26px -26px 16px -26px;
+  height: 150px;
+  background: #f8f8f8;
+  border-radius: var(--radius) var(--radius) 0 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--line);
+}
+.mmf-product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 16px;
+}
+.mmf-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  background: var(--orange-tint);
+  border: 1px solid var(--orange-line);
+  border-radius: 999px;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 10px;
+  color: var(--accent-deep);
+  font-weight: 700;
+  margin-bottom: 13px;
+  letter-spacing: 0.04em;
+}
+.mmf-product-card h3 {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.mmf-product-card p {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.65;
+  margin-bottom: 15px;
+}
+.mmf-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--line);
+  padding-top: 13px;
+}
+.mmf-spec-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 12.5px;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--line);
+  gap: 8px;
+}
+.mmf-spec-list li:last-child { border-bottom: none; }
+.mmf-spec-list .mmf-spec-key {
+  color: var(--text-dim);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.mmf-spec-list .mmf-spec-val {
+  color: var(--charcoal);
+  font-weight: 600;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 12px;
+  text-align: right;
+}
+.mmf-app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+.mmf-app-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 22px;
+  box-shadow: var(--shadow-sm);
+}
+.mmf-app-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--orange-tint);
+  border: 1px solid var(--orange-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  font-size: 20px;
+}
+.mmf-app-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+.mmf-app-card p {
+  font-size: 12.5px;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+.mmf-output-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 24px;
+}
+.mmf-output-table thead th {
+  background: var(--charcoal);
+  color: #fff;
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 11.5px;
+  font-family: 'Pretendard', sans-serif;
+  letter-spacing: 0.05em;
+}
+.mmf-output-table tbody tr:nth-child(even) { background: var(--bg); }
+.mmf-output-table tbody td {
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--charcoal);
+  vertical-align: top;
+}
+.mmf-output-table tbody td:first-child {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-deep);
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .mmf-output-table { font-size: 11.5px; }
+  .mmf-output-table thead th, .mmf-output-table tbody td { padding: 7px 8px; }
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+<nav class="mobile-subnav" aria-label="모바일 카테고리 메뉴">
+  <a href="../about.html">회사소개</a>
+  <a href="../products.html">사업분야·제품</a>
+  <a href="../projects.html">주요실적</a>
+  <a href="index.html" class="pill-active">기술자료</a>
+  <a href="../index.html#blog">블로그</a>
+  <a href="../contact.html">문의</a>
+</nav>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a>
+    <a href="../products.html">사업분야·제품</a>
+    <a href="../projects.html">주요실적</a>
+    <a href="index.html">기술자료</a>
+    <a href="../index.html#blog">블로그</a>
+    <a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- Hero -->
+<section style="padding-top:160px; padding-bottom:60px;">
+  <div class="container">
+    <a href="index.html" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; color:var(--text-dim); text-decoration:none; margin-bottom:24px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      기술자료 목록으로
+    </a>
+    <div class="sec-tag"><span class="bar"></span>ACCELEROMETER · MMF</div>
+    <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(28px,4.5vw,50px); font-weight:700; letter-spacing:-0.03em; margin:16px 0 20px; color:var(--charcoal); line-height:1.2;">MMF 가속도센서<br>(진동센서) 완전 가이드</h1>
+    <p style="font-size:18px; color:var(--text-dim); max-width:700px; line-height:1.75; margin-bottom:32px;">독일 MMF(Metra Meß- und Frequenztechnik)의 압전 가속도센서 전 라인업 — <strong style="color:var(--charcoal);">범용 · 소형 · 고감도 · 3축 · 산업용</strong> 가속도센서부터 4-20mA 전류루프 트랜스듀서, 포스 트랜스듀서까지. 모델별 사양 비교와 선정 가이드를 씨앤디테크가 정리합니다.</p>
+    <div style="display:flex; flex-wrap:wrap; gap:12px;">
+      <span class="mmf-badge">범용 · KS76C·KS77C·KS78C</span>
+      <span class="mmf-badge">소형 · KS91C~KS98B</span>
+      <span class="mmf-badge">고감도 · KB12VD·KS48C</span>
+      <span class="mmf-badge">3축 · KS813B·KS943B·KS973</span>
+      <span class="mmf-badge">산업용 · KS74C·KS84B·KS85</span>
+    </div>
+  </div>
+</section>
+
+<!-- MMF 소개 -->
+<section style="padding-bottom:70px;">
+  <div class="container">
+    <div style="background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:40px 44px; box-shadow:var(--shadow-sm); max-width:860px;">
+      <div style="display:flex; align-items:center; gap:14px; margin-bottom:20px;">
+        <div style="width:48px; height:48px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px;">🇩🇪</div>
+        <div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:11px; color:var(--accent-deep); font-weight:700; letter-spacing:0.05em; margin-bottom:2px;">RADEBEUL, GERMANY</div>
+          <h2 style="font-size:20px; font-weight:700; color:var(--charcoal); margin:0;">독일 MMF (Metra Meß- und Frequenztechnik)</h2>
+        </div>
+      </div>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:18px;">MMF는 독일 라데보일(Radebeul)에 위치한 진동 계측 전문 제조사로, 압전(Piezoelectric) 원리 기반의 가속도센서와 진동 측정 시스템을 40년 이상 생산해 온 업체입니다. IEPE·전하(Charge) 출력 가속도센서, 3축 센서, TEDS 내장 산업용 센서, 진동계·교정기까지 폭넓은 라인업을 보유하며, 자동차·철도·풍력·조선·플랜트·건축물 진동 모니터링 등 다양한 산업에 공급하고 있습니다.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:16px;">
+        <div style="text-align:center; padding:16px; background:var(--bg); border-radius:10px; border:1px solid var(--line);">
+          <div style="font-size:22px; font-weight:700; color:var(--accent-deep); font-family:'Pretendard',sans-serif;">40+</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-top:4px;">년 진동계측 전문</div>
+        </div>
+        <div style="text-align:center; padding:16px; background:var(--bg); border-radius:10px; border:1px solid var(--line);">
+          <div style="font-size:22px; font-weight:700; color:var(--accent-deep); font-family:'Pretendard',sans-serif;">30+</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-top:4px;">가속도센서 모델</div>
+        </div>
+        <div style="text-align:center; padding:16px; background:var(--bg); border-radius:10px; border:1px solid var(--line);">
+          <div style="font-size:22px; font-weight:700; color:var(--accent-deep); font-family:'Pretendard',sans-serif;">37 kHz</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-top:4px;">최대 선형 대역폭</div>
+        </div>
+        <div style="text-align:center; padding:16px; background:var(--bg); border-radius:10px; border:1px solid var(--line);">
+          <div style="font-size:22px; font-weight:700; color:var(--accent-deep); font-family:'Pretendard',sans-serif;">2.4 g</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-top:4px;">최소 센서 중량</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 제품 라인업 -->
+<section style="padding-bottom:80px;">
+  <div class="container">
+    <div class="sec-tag"><span class="bar"></span>PRODUCT LINEUP</div>
+    <h2 style="font-size:clamp(22px,3.5vw,34px); font-weight:700; color:var(--charcoal); margin:16px 0 8px;">제품 라인업 — MMF 공식 6대 가속도센서 제품군</h2>
+    <p style="font-size:16px; color:var(--text-dim); max-width:680px; line-height:1.7;">MMF는 가속도센서(Accelerometer)를 <strong style="color:var(--charcoal);">범용 · 소형 · 고감도 · 3축 · 산업용 · 4-20mA 전류루프</strong> 6개 카테고리로 공식 분류합니다. 모델명 뒷자리 숫자(10·100·500)는 감도(mV/g) 차이만 있는 동일 외형 버전이라 사진은 공용으로 사용됩니다. 용도와 환경에 따라 최적 모델을 선택하세요.</p>
+
+    <!-- 범용 가속도센서 -->
+    <h3 style="font-size:19px; font-weight:700; color:var(--charcoal); margin:40px 0 4px; display:flex; align-items:center; gap:10px;"><span style="display:inline-block; width:8px; height:8px; border-radius:2px; background:var(--accent-deep);"></span>범용 가속도센서 (Universal Accelerometer)</h3>
+    <p style="font-size:13.5px; color:var(--text-dim); margin-bottom:4px;">실험실·산업 현장 표준형. 스테인리스 스틸 하우징, M5 바닥 나사산.</p>
+    <div class="mmf-product-grid">
+
+      <!-- KS56 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks56.png" alt="MMF KS56 고온형 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">고온형 · 전하 출력</div>
+        <h3>KS56<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">고온 전용 가속도센서 (축방향)</span></h3>
+        <p>250°C까지 사용 가능한 고온 전용 가속도센서. 전하(Charge) 출력으로 별도 전하 증폭기 필요. 온도 변화·측정물 굽힘에 둔감한 전단(Shear) 방식.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">18 pC/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±4000 g</span></li>
+          <li><span class="mmf-spec-key">주파수응답</span><span class="mmf-spec-val">~17 kHz (3dB)</span></li>
+          <li><span class="mmf-spec-key">온도범위</span><span class="mmf-spec-val">-30 ~ 250 °C</span></li>
+          <li><span class="mmf-spec-key">커넥터</span><span class="mmf-spec-val">UNF 10-32, 축방향</span></li>
+        </ul>
+      </div>
+
+      <!-- KS57 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks57.png" alt="MMF KS57 고온형 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">고온형 · 전하 출력</div>
+        <h3>KS57<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">고온 전용 가속도센서 (측면방향)</span></h3>
+        <p>KS56과 동일 사양이나 커넥터가 측면(radial)으로 배치돼 협소 공간 설치에 유리. 250°C 고온 환경, 엔진·배기계·노(爐) 진동 측정에 적합.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">18 pC/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±4000 g</span></li>
+          <li><span class="mmf-spec-key">주파수응답</span><span class="mmf-spec-val">~17 kHz (3dB)</span></li>
+          <li><span class="mmf-spec-key">온도범위</span><span class="mmf-spec-val">-30 ~ 250 °C</span></li>
+          <li><span class="mmf-spec-key">커넥터</span><span class="mmf-spec-val">UNF 10-32, 측면</span></li>
+        </ul>
+      </div>
+
+      <!-- KS76C10/100 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks76c_10.png" alt="MMF KS76C10 범용 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">IEPE · 범용</div>
+        <h3>KS76C10 / C100<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">IEPE 범용 가속도센서 (축방향)</span></h3>
+        <p>가장 널리 쓰이는 IEPE 표준형. 감도 2종(10/100 mV/g)으로 측정 범위 선택 가능. 스테인리스 하우징, M5 바닥 나사산, 축방향 UNF 10-32 커넥터.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">10 / 100 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±600 g / ±60 g</span></li>
+          <li><span class="mmf-spec-key">주파수응답</span><span class="mmf-spec-val">0.12~33 / 0.13~24 kHz</span></li>
+          <li><span class="mmf-spec-key">온도범위</span><span class="mmf-spec-val">-20 ~ 120 °C</span></li>
+          <li><span class="mmf-spec-key">무게</span><span class="mmf-spec-val">20 g / 23 g</span></li>
+        </ul>
+      </div>
+
+      <!-- KS77C10/100 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks77c_10.png" alt="MMF KS77C10 범용 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">IEPE · 범용</div>
+        <h3>KS77C10 / C100<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">IEPE 범용 가속도센서 (측면방향)</span></h3>
+        <p>KS76C와 동일 사양, 커넥터만 측면(radial)으로 배치. 협소 공간·수직 설치면에서 케이블 배선이 유리한 현장에 적합.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">10 / 100 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±600 g / ±60 g</span></li>
+          <li><span class="mmf-spec-key">주파수응답</span><span class="mmf-spec-val">0.12~33 / 0.13~24 kHz</span></li>
+          <li><span class="mmf-spec-key">온도범위</span><span class="mmf-spec-val">-20 ~ 120 °C</span></li>
+          <li><span class="mmf-spec-key">커넥터</span><span class="mmf-spec-val">UNF 10-32, 측면</span></li>
+        </ul>
+      </div>
+
+      <!-- KS78C10/100 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks78b_100.png" alt="MMF KS78C 범용 가속도센서 TEDS" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">IEPE · TEDS 내장</div>
+        <h3>KS78C10 / C100<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">TEDS 내장 범용 가속도센서</span></h3>
+        <p>전자식 데이터시트(TEDS)를 내장해 다채널 DAQ 시스템에서 센서 교체 시 채널 설정 오류를 방지. 경량 측정물용 절연 하우징, 가성비 좋은 표준 모델.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">10 / 100 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±500 g / ±60 g</span></li>
+          <li><span class="mmf-spec-key">TEDS</span><span class="mmf-spec-val">내장</span></li>
+          <li><span class="mmf-spec-key">커넥터</span><span class="mmf-spec-val">UNF 10-32 (Microdot)</span></li>
+          <li><span class="mmf-spec-key">하우징</span><span class="mmf-spec-val">절연형, M5 바닥나사</span></li>
+        </ul>
+      </div>
+
+      <!-- KS90B -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks90_pins.png" alt="MMF KS90 OEM 가속도센서 핀타입" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">OEM · 전하 출력</div>
+        <h3>KS90<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">OEM 내장형 가속도센서</span></h3>
+        <p>장비·기계 내부에 접착 삽입하는 초소형 OEM 센서. TO-39 트랜지스터 패키지에 납땜 핀 단자. Ø10mm 드릴홀에 접착 장착.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">10 pC/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±5000 g</span></li>
+          <li><span class="mmf-spec-key">무게</span><span class="mmf-spec-val">5.1 g</span></li>
+          <li><span class="mmf-spec-key">온도범위</span><span class="mmf-spec-val">-40 ~ 150 °C</span></li>
+          <li><span class="mmf-spec-key">장착</span><span class="mmf-spec-val">Ø10mm 드릴홀 접착</span></li>
+        </ul>
+      </div>
+
+      <!-- KS901B10/100 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks901b_10.png" alt="MMF KS901B10 OEM 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">OEM · IEPE</div>
+        <h3>KS901B10 / B100<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">OEM 내장형 가속도센서 (IEPE)</span></h3>
+        <p>KS90의 IEPE 출력 버전. UNF 10-32(Microdot) 커넥터로 케이블 탈착 가능. 장비 내장형 진동 모니터링, 컴팩트 설계에 적합.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">10 / 100 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±500 g / ±60 g</span></li>
+          <li><span class="mmf-spec-key">주파수응답</span><span class="mmf-spec-val">0.35~28 kHz</span></li>
+          <li><span class="mmf-spec-key">무게</span><span class="mmf-spec-val">5.2 g / 5.6 g</span></li>
+          <li><span class="mmf-spec-key">장착</span><span class="mmf-spec-val">Ø10mm 드릴홀 접착</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 소형 가속도센서 -->
+    <h3 style="font-size:19px; font-weight:700; color:var(--charcoal); margin:48px 0 4px; display:flex; align-items:center; gap:10px;"><span style="display:inline-block; width:8px; height:8px; border-radius:2px; background:var(--accent-deep);"></span>소형 가속도센서 (Miniature Accelerometer)</h3>
+    <p style="font-size:13.5px; color:var(--text-dim); margin-bottom:4px;">경량 측정물·모달해석(Modal Analysis)용. 2.4~3.8g 초경량, 높은 상한 주파수.</p>
+    <div class="mmf-product-grid">
+
+      <!-- KS91C -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks91c.png" alt="MMF KS91C 소형 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">IEPE · 절연 접지</div>
+        <h3>KS91C<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">소형 가속도센서</span></h3>
+        <p>절연된 바닥면으로 접지 루프(Ground Loop) 노이즈를 방지. 0.3Hz까지 측정 가능한 저잡음 개선 버전. 소형 측정물의 정밀 진동 분석에 적합.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">10 mV/g</span></li>
+          <li><span class="mmf-spec-key">출력</span><span class="mmf-spec-val">IEPE</span></li>
+          <li><span class="mmf-spec-key">커넥터</span><span class="mmf-spec-val">UNF 10-32</span></li>
+          <li><span class="mmf-spec-key">특징</span><span class="mmf-spec-val">절연 바닥, 접지루프 방지</span></li>
+          <li><span class="mmf-spec-key">용도</span><span class="mmf-spec-val">모달해석, 소형 측정물</span></li>
+        </ul>
+      </div>
+
+      <!-- KS93 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks93.png" alt="MMF KS93 소형 가속도센서 전하출력" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">전하 출력 · 탈착 케이블</div>
+        <h3>KS93<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">소형 가속도센서 (전하 출력)</span></h3>
+        <p>전하 출력으로 고온·고감도 특수 측정에 적합. 케이블 탈착식, M3 바닥 나사산. 넓은 다이내믹 레인지와 높은 공진주파수가 특징.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">5 pC/g</span></li>
+          <li><span class="mmf-spec-key">출력</span><span class="mmf-spec-val">전하(Charge)</span></li>
+          <li><span class="mmf-spec-key">장착</span><span class="mmf-spec-val">M3 바닥 나사산</span></li>
+          <li><span class="mmf-spec-key">특징</span><span class="mmf-spec-val">탈착식 케이블</span></li>
+          <li><span class="mmf-spec-key">용도</span><span class="mmf-spec-val">고온·고감도 특수측정</span></li>
+        </ul>
+      </div>
+
+      <!-- KS94C10/100 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks94b_10.png" alt="MMF KS94C10 소형 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">IEPE · 소형</div>
+        <h3>KS94C10 / C100<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">소형 가속도센서</span></h3>
+        <p>내부 공진 대역 보정으로 36kHz까지 선형 응답. 3.5g 초경량, Subminiatur M3 축방향 커넥터. 경량 부품·기판 진동 측정에 적합.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">10 / 100 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±600 g / ±60 g</span></li>
+          <li><span class="mmf-spec-key">주파수응답</span><span class="mmf-spec-val">~35 / ~28 kHz</span></li>
+          <li><span class="mmf-spec-key">무게</span><span class="mmf-spec-val">3.5 g</span></li>
+          <li><span class="mmf-spec-key">온도범위</span><span class="mmf-spec-val">-40 ~ 120 °C</span></li>
+        </ul>
+      </div>
+
+      <!-- KS94L -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks94l.png" alt="MMF KS94L 저전력 소형 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">Low Power IEPE</div>
+        <h3>KS94L<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">저전력 소형 가속도센서</span></h3>
+        <p>저전력(Low Power) IEPE 출력으로 배터리 구동·텔레메트리 시스템에 최적화. 회전체·무선 진동 모니터링 등 전력 제약이 있는 현장에 적합.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">14 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±240 g</span></li>
+          <li><span class="mmf-spec-key">전류소모</span><span class="mmf-spec-val">0.5~6 mA</span></li>
+          <li><span class="mmf-spec-key">무게</span><span class="mmf-spec-val">3.5 g</span></li>
+          <li><span class="mmf-spec-key">용도</span><span class="mmf-spec-val">텔레메트리, 배터리 구동</span></li>
+        </ul>
+      </div>
+
+      <!-- KS95C10/100 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks95b_10.png" alt="MMF KS95C10 소형 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">IEPE · 탈착 케이블</div>
+        <h3>KS95C10 / C100<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">소형 가속도센서 (탈착 케이블)</span></h3>
+        <p>KS94C와 동일 성능에 Subminiatur 소켓으로 케이블 탈착 가능. M3 바닥 나사산으로 소형 부품에 직접 장착.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">10 / 100 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±600 g / ±60 g</span></li>
+          <li><span class="mmf-spec-key">주파수응답</span><span class="mmf-spec-val">~35 / ~28 kHz</span></li>
+          <li><span class="mmf-spec-key">무게</span><span class="mmf-spec-val">3.2 g</span></li>
+          <li><span class="mmf-spec-key">커넥터</span><span class="mmf-spec-val">Subminiatur M3, 탈착식</span></li>
+        </ul>
+      </div>
+
+      <!-- KS96B10/100 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks96_10.png" alt="MMF KS96B10 소형 가속도센서 TEDS" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">IEPE · TEDS · 축방향</div>
+        <h3>KS96B10 / B100<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">소형 가속도센서 (TEDS 내장)</span></h3>
+        <p>TEDS 전자 데이터시트 내장. 극저잡음 압전 소자로 대진폭·미세진동을 모두 정밀 측정. 축방향(axial) UNF 10-32 커넥터.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">10 / 100 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±500 g / ±60 g</span></li>
+          <li><span class="mmf-spec-key">무게</span><span class="mmf-spec-val">2.4 g / 3.2 g</span></li>
+          <li><span class="mmf-spec-key">TEDS</span><span class="mmf-spec-val">내장</span></li>
+          <li><span class="mmf-spec-key">커넥터</span><span class="mmf-spec-val">UNF 10-32, 축방향</span></li>
+        </ul>
+      </div>
+
+      <!-- KS97B10/100 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks97_10.png" alt="MMF KS97B10 소형 가속도센서 TEDS" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">IEPE · TEDS · 측면</div>
+        <h3>KS97B10 / B100<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">소형 가속도센서 (TEDS, 측면 커넥터)</span></h3>
+        <p>KS96B와 동일 사양, 커넥터가 측면(radial)으로 배치. 케이블이 옆으로 빠져나가야 하는 협소 설치 공간의 모달해석에 적합.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">10 / 100 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±500 g / ±60 g</span></li>
+          <li><span class="mmf-spec-key">무게</span><span class="mmf-spec-val">2.4 g / 3.2 g</span></li>
+          <li><span class="mmf-spec-key">TEDS</span><span class="mmf-spec-val">내장</span></li>
+          <li><span class="mmf-spec-key">커넥터</span><span class="mmf-spec-val">UNF 10-32, 측면</span></li>
+        </ul>
+      </div>
+
+      <!-- KS98B10/100 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks98_10_clip.png" alt="MMF KS98B10 클립형 3방향 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">IEPE · TEDS · 클립 3방향</div>
+        <h3>KS98B10 / B100<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">클립형 3방향 소형 가속도센서</span></h3>
+        <p>플라스틱 클립(1407)으로 하우징 홈에 끼워 X/Y/Z 3방향 측정을 센서 1개+클립만으로 수행. 접착 또는 클립 장착, 모달해석 현장 작업 효율이 높음.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">10 / 100 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±500 g / ±60 g</span></li>
+          <li><span class="mmf-spec-key">무게</span><span class="mmf-spec-val">3.8 g</span></li>
+          <li><span class="mmf-spec-key">장착</span><span class="mmf-spec-val">접착 + 클립 1407(X/Y/Z)</span></li>
+          <li><span class="mmf-spec-key">TEDS</span><span class="mmf-spec-val">내장</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 고감도 가속도센서 -->
+    <h3 style="font-size:19px; font-weight:700; color:var(--charcoal); margin:48px 0 4px; display:flex; align-items:center; gap:10px;"><span style="display:inline-block; width:8px; height:8px; border-radius:2px; background:var(--accent-deep);"></span>고감도 가속도센서 (High Sensitivity Accelerometer)</h3>
+    <p style="font-size:13.5px; color:var(--text-dim); margin-bottom:4px;">저주파 미세진동 측정 특화. 건물·교량·풍력발전기·지반 진동 모니터링에 사용.</p>
+    <div class="mmf-product-grid">
+
+      <!-- KB12VD -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/kb12vd-600x600.png" alt="MMF KB12VD 고감도 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">초고감도 · IEPE</div>
+        <h3>KB12VD<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">초고감도 저주파 가속도센서</span></h3>
+        <p>내부 증폭 없이도 뛰어난 분해능과 최저 수준 노이즈를 제공하는 벤딩(Bender)형 압전 소자. 공기 감쇠 구조로 공진을 억제하고 과부하를 보호. 0.08Hz 초저주파까지 측정.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">10,000 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±0.6 g</span></li>
+          <li><span class="mmf-spec-key">주파수응답</span><span class="mmf-spec-val">0.08~260 Hz</span></li>
+          <li><span class="mmf-spec-key">온도범위</span><span class="mmf-spec-val">-20 ~ 80 °C</span></li>
+          <li><span class="mmf-spec-key">용도</span><span class="mmf-spec-val">지진·건물·저주파 진동</span></li>
+        </ul>
+      </div>
+
+      <!-- KS48C -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks48c.png" alt="MMF KS48C 고감도 방수 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">고감도 · IP67 방수</div>
+        <h3>KS48C<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">고감도 방수 가속도센서</span></h3>
+        <p>전단(Shear)형 압전 소자로 KB12VD보다 넓은 대역(4kHz)까지 대응하면서 IP67 방수 등급을 확보. 옥외 구조물·교량·풍력발전기 타워 진동 모니터링에 적합.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">1,000 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±6 g</span></li>
+          <li><span class="mmf-spec-key">주파수응답</span><span class="mmf-spec-val">0.1~4000 Hz</span></li>
+          <li><span class="mmf-spec-key">방수등급</span><span class="mmf-spec-val">IP67</span></li>
+          <li><span class="mmf-spec-key">온도범위</span><span class="mmf-spec-val">-20 ~ 120 °C</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 3축 가속도센서 -->
+    <h3 style="font-size:19px; font-weight:700; color:var(--charcoal); margin:48px 0 4px; display:flex; align-items:center; gap:10px;"><span style="display:inline-block; width:8px; height:8px; border-radius:2px; background:var(--accent-deep);"></span>3축 가속도센서 (Triaxial Accelerometer)</h3>
+    <p style="font-size:13.5px; color:var(--text-dim); margin-bottom:4px;">센서 1개로 X·Y·Z 3방향 동시 측정. 모달해석·회전기계 진단·구조물 모니터링에 사용.</p>
+    <div class="mmf-product-grid">
+
+      <!-- KS813B -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks813b.png" alt="MMF KS813B 산업용 3축 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">산업용 3축 · IP67</div>
+        <h3>KS813B<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">산업용 방수 3축 가속도센서</span></h3>
+        <p>중앙 관통홀 구조로 축 정렬이 간편한 산업용 3축 센서. IP67 방수, 절연 바닥으로 접지루프 방지. 건물 진동 측정용 마운팅 액세서리 제공.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">100 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±55 g</span></li>
+          <li><span class="mmf-spec-key">방수등급</span><span class="mmf-spec-val">IP67</span></li>
+          <li><span class="mmf-spec-key">장착</span><span class="mmf-spec-val">중앙 관통홀</span></li>
+          <li><span class="mmf-spec-key">용도</span><span class="mmf-spec-val">건물·구조물 진동 측정</span></li>
+        </ul>
+      </div>
+
+      <!-- KS823B -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks823b.png" alt="MMF KS823B 고감도 3축 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">고감도 3축 · IP67</div>
+        <h3>KS823B<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">고감도 방수 3축 가속도센서</span></h3>
+        <p>KS813B보다 높은 감도(500mV/g)로 저진폭 미세 진동까지 3축 동시 포착. 마운팅 어댑터(629)로 360° 축 정렬 가능, 삼각대형 바닥판 옵션 제공.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">500 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±12 g</span></li>
+          <li><span class="mmf-spec-key">방수등급</span><span class="mmf-spec-val">IP67</span></li>
+          <li><span class="mmf-spec-key">장착</span><span class="mmf-spec-val">어댑터 360° 축정렬</span></li>
+          <li><span class="mmf-spec-key">용도</span><span class="mmf-spec-val">저진폭 정밀 3축 측정</span></li>
+        </ul>
+      </div>
+
+      <!-- KS903B10/100 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks903_10.png" alt="MMF KS903B10 컴팩트 3축 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">IEPE · TEDS · 컴팩트</div>
+        <h3>KS903B10 / B100<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">컴팩트 3축 가속도센서</span></h3>
+        <p>6.2g 초경량 컴팩트 설계의 3축 센서. 1/4-28 UNF 4핀 커넥터, M5 나사산 장착. 모달해석·일반 3축 진동 측정에 널리 사용.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">10 / 100 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±600 g / ±60 g</span></li>
+          <li><span class="mmf-spec-key">무게</span><span class="mmf-spec-val">6.2 g / 9 g</span></li>
+          <li><span class="mmf-spec-key">TEDS</span><span class="mmf-spec-val">내장</span></li>
+          <li><span class="mmf-spec-key">장착</span><span class="mmf-spec-val">M5 나사산 (X/Y축)</span></li>
+        </ul>
+      </div>
+
+      <!-- KS943B10/100 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks943b_10.png" alt="MMF KS943B10 3축 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">IEPE · 소형 3축</div>
+        <h3>KS943B10 / B100<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">소형 3축 가속도센서</span></h3>
+        <p>소형 M5 커넥터와 중앙 관통홀로 간편한 축 정렬. 3방향 진동을 동시에 측정해야 하는 범용 모달해석·기계 진단에 사용.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">10 / 100 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±600 g / ±60 g</span></li>
+          <li><span class="mmf-spec-key">커넥터</span><span class="mmf-spec-val">미니어처 M5</span></li>
+          <li><span class="mmf-spec-key">장착</span><span class="mmf-spec-val">중앙 관통홀</span></li>
+          <li><span class="mmf-spec-key">용도</span><span class="mmf-spec-val">모달해석, 기계 진단</span></li>
+        </ul>
+      </div>
+
+      <!-- KS943L -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks943l.png" alt="MMF KS943L 저전력 3축 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">Low Power IEPE · 3축</div>
+        <h3>KS943L<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">저전력 3축 가속도센서</span></h3>
+        <p>저전력 IEPE 출력으로 텔레메트리·배터리 구동 3축 진동 모니터링 시스템에 최적화. 회전체·이동체의 무선 진동 측정에 적합.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">14 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±240 g</span></li>
+          <li><span class="mmf-spec-key">출력</span><span class="mmf-spec-val">Low Power IEPE</span></li>
+          <li><span class="mmf-spec-key">용도</span><span class="mmf-spec-val">텔레메트리, 회전체 3축</span></li>
+          <li><span class="mmf-spec-key">장착</span><span class="mmf-spec-val">중앙 관통홀</span></li>
+        </ul>
+      </div>
+
+      <!-- KS963B10/100 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks963_10.png" alt="MMF KS963B10 평판형 3축 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">IEPE · TEDS · 평판형</div>
+        <h3>KS963B10 / B100<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">평판형 3축 가속도센서</span></h3>
+        <p>납작한(Flat) 설계로 협소한 측정면에 밀착 장착 가능한 3축 센서. TEDS 내장, 1/4-28 UNF 4핀 커넥터. 범용 진동 측정·모달해석에 사용.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">10 / 100 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±500 g / ±60 g</span></li>
+          <li><span class="mmf-spec-key">무게</span><span class="mmf-spec-val">8.5 g / 11 g</span></li>
+          <li><span class="mmf-spec-key">TEDS</span><span class="mmf-spec-val">내장</span></li>
+          <li><span class="mmf-spec-key">장착</span><span class="mmf-spec-val">관통홀 Ø2.6, M3(Z)/M2.5(X·Y)</span></li>
+        </ul>
+      </div>
+
+      <!-- KS973.10/100 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks973_10_oben_seite.png" alt="MMF KS973.10 평판형 방수 3축 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">IEPE · TEDS · IP67</div>
+        <h3>KS973.10 / .100<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">평판형 방수 3축 가속도센서</span></h3>
+        <p>KS963B와 동일한 평판 관통홀 구조에 IP67 방수 등급을 더한 버전. 옥외·습기 환경의 모달해석 및 3축 진동 측정에 적합.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">10 / 100 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±500 g / ±60 g</span></li>
+          <li><span class="mmf-spec-key">방수등급</span><span class="mmf-spec-val">IP67</span></li>
+          <li><span class="mmf-spec-key">TEDS</span><span class="mmf-spec-val">내장</span></li>
+          <li><span class="mmf-spec-key">커넥터</span><span class="mmf-spec-val">Binder 707 (M5)</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 산업용 가속도센서 -->
+    <h3 style="font-size:19px; font-weight:700; color:var(--charcoal); margin:48px 0 4px; display:flex; align-items:center; gap:10px;"><span style="display:inline-block; width:8px; height:8px; border-radius:2px; background:var(--accent-deep);"></span>산업용 가속도센서 (Industrial Accelerometer)</h3>
+    <p style="font-size:13.5px; color:var(--text-dim); margin-bottom:4px;">가혹한 산업 환경 전용. TEDS 내장, IP64~IP68 방수, 넓은 온도범위.</p>
+    <div class="mmf-product-grid">
+
+      <!-- KS74C10/100 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks74c_10.png" alt="MMF KS74C10 산업용 가속도센서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">산업용 · TNC 커넥터</div>
+        <h3>KS74C10 / C100<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">산업용 가속도센서</span></h3>
+        <p>낮은 온도계수와 M12 대체용 TNC 커넥터로 견고한 산업 현장에 적합한 가성비 모델. M5 바닥 나사산, IP64 방수.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">10 / 100 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±600 g / ±60 g</span></li>
+          <li><span class="mmf-spec-key">방수등급</span><span class="mmf-spec-val">IP64</span></li>
+          <li><span class="mmf-spec-key">온도범위</span><span class="mmf-spec-val">-30 ~ 130 °C</span></li>
+          <li><span class="mmf-spec-key">무게</span><span class="mmf-spec-val">28.5 g / 32 g</span></li>
+        </ul>
+      </div>
+
+      <!-- KS84B10/100/500 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks84.png" alt="MMF KS84B 산업용 가속도센서 TEDS" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">산업용 · TEDS · IP68</div>
+        <h3>KS84B10 / B100 / B500<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">산업용 가속도센서 (TEDS 내장)</span></h3>
+        <p>표준 산업용 센서 대비 넓은 주파수 대역, 낮은 온도민감도, 낮은 노이즈를 갖춘 고성능 모델. 완전 절연·IP68(수심 1m) 방수, Binder 713 축방향 커넥터.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">10 / 100 / 500 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±600 / ±60 / ±11 g</span></li>
+          <li><span class="mmf-spec-key">방수등급</span><span class="mmf-spec-val">절연, IP68 (1m)</span></li>
+          <li><span class="mmf-spec-key">온도범위</span><span class="mmf-spec-val">-40 ~ 120 °C</span></li>
+          <li><span class="mmf-spec-key">TEDS</span><span class="mmf-spec-val">내장</span></li>
+        </ul>
+      </div>
+
+      <!-- KS85.10/100/500 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/ks85_10.png" alt="MMF KS85 산업용 가속도센서 회전형 베이스" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">산업용 · TEDS · 360° 회전</div>
+        <h3>KS85.10 / .100 / .500<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">산업용 가속도센서 (회전형 베이스)</span></h3>
+        <p>KS84B의 측면 케이블 버전. 마운팅 베이스 위에서 360° 자유 회전이 가능해 케이블 방향을 현장에서 자유롭게 조정. M8 또는 1/4"-28 장착 옵션.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">10 / 100 / 500 mV/g</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">±600 / ±60 / ±11 g</span></li>
+          <li><span class="mmf-spec-key">방수등급</span><span class="mmf-spec-val">절연, IP68 (1m)</span></li>
+          <li><span class="mmf-spec-key">커넥터</span><span class="mmf-spec-val">Binder 713 (M12), 측면·회전형</span></li>
+          <li><span class="mmf-spec-key">TEDS</span><span class="mmf-spec-val">내장</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 4-20mA 전류루프 트랜스듀서 -->
+    <h3 style="font-size:19px; font-weight:700; color:var(--charcoal); margin:48px 0 4px; display:flex; align-items:center; gap:10px;"><span style="display:inline-block; width:8px; height:8px; border-radius:2px; background:var(--text-mute);"></span>4-20mA 전류루프 트랜스듀서 · 포스 트랜스듀서</h3>
+    <p style="font-size:13.5px; color:var(--text-dim); margin-bottom:4px;">PLC·DCS 직결용 전류루프 진동 트랜스듀서, 동적 힘(Force) 측정용 압전 로드셀.</p>
+    <div class="mmf-product-grid">
+
+      <!-- KSI84 시리즈 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/4 to 20 mA Transducers.png" alt="MMF KSI84 시리즈 4-20mA 전류루프 진동 트랜스듀서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">4-20mA · PLC 직결</div>
+        <h3>KSI84 시리즈<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">4-20mA 전류루프 진동 트랜스듀서</span></h3>
+        <p>4~20mA 표준 전류루프 신호를 출력해 PLC·DCS 등 전류입력 장비에 직결 가능. 가속도·속도·변위 중 RMS 또는 피크값 출력, 필터 옵션까지 250종 이상의 조합을 제공.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">출력</span><span class="mmf-spec-val">4~20 mA</span></li>
+          <li><span class="mmf-spec-key">측정량</span><span class="mmf-spec-val">가속도·속도·변위</span></li>
+          <li><span class="mmf-spec-key">측정모드</span><span class="mmf-spec-val">RMS · Peak · Peak-Peak</span></li>
+          <li><span class="mmf-spec-key">온도범위</span><span class="mmf-spec-val">-40 ~ 100 °C, 방수</span></li>
+          <li><span class="mmf-spec-key">용도</span><span class="mmf-spec-val">PLC·DCS 상시 모니터링</span></li>
+        </ul>
+      </div>
+
+      <!-- KF24 -->
+      <div class="mmf-product-card fade-in">
+        <div class="mmf-product-img"><img src="../assets/images/MMF Vibration sensor/kf24.png" alt="MMF KF24 압전 포스 트랜스듀서" loading="lazy" onerror="this.closest('.mmf-product-img').style.display='none'"></div>
+        <div class="mmf-badge">포스 트랜스듀서 · 전하 출력</div>
+        <h3>KF24<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">압전 포스(힘) 트랜스듀서</span></h3>
+        <p>동적 인장·압축력 측정용 압전 로드셀. 스트레인게이지 방식 대비 훨씬 높은 분해능. 전하 증폭기와 함께 사용, 0.1~1Hz 하한 주파수.</p>
+        <ul class="mmf-spec-list">
+          <li><span class="mmf-spec-key">감도</span><span class="mmf-spec-val">300 pC/N</span></li>
+          <li><span class="mmf-spec-key">측정범위</span><span class="mmf-spec-val">+2000 / -300 N</span></li>
+          <li><span class="mmf-spec-key">출력</span><span class="mmf-spec-val">전하(Charge)</span></li>
+          <li><span class="mmf-spec-key">장착</span><span class="mmf-spec-val">M5 바닥 나사산</span></li>
+          <li><span class="mmf-spec-key">용도</span><span class="mmf-spec-val">동적 인장·압축력 측정</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 출력 신호 비교표 -->
+<section style="padding-bottom:80px; background:var(--bg);">
+  <div class="container">
+    <div class="sec-tag"><span class="bar"></span>MODEL COMPARISON</div>
+    <h2 style="font-size:clamp(20px,3vw,30px); font-weight:700; color:var(--charcoal); margin:16px 0 8px;">전 모델 사양 한눈에 비교</h2>
+    <p style="font-size:15px; color:var(--text-dim); max-width:640px; line-height:1.7; margin-bottom:4px;">감도(mV/g·pC/g)와 측정범위(g)를 기준으로 용도에 맞는 모델을 빠르게 선택하세요.</p>
+    <div style="overflow-x:auto;">
+      <table class="mmf-output-table">
+        <thead>
+          <tr>
+            <th>모델</th>
+            <th>출력</th>
+            <th>감도</th>
+            <th>측정범위</th>
+            <th>주요 용도</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>KS56 / KS57</td><td>전하(Charge)</td><td>18 pC/g</td><td>±4000 g</td><td>고온(250°C) 전용</td></tr>
+          <tr><td>KS76C10/100</td><td>IEPE</td><td>10 / 100 mV/g</td><td>±600 / ±60 g</td><td>범용 표준(축방향)</td></tr>
+          <tr><td>KS77C10/100</td><td>IEPE</td><td>10 / 100 mV/g</td><td>±600 / ±60 g</td><td>범용 표준(측면)</td></tr>
+          <tr><td>KS78C10/100</td><td>IEPE</td><td>10 / 100 mV/g</td><td>±500 / ±60 g</td><td>TEDS 내장 범용</td></tr>
+          <tr><td>KS90</td><td>전하(Charge)</td><td>10 pC/g</td><td>±5000 g</td><td>OEM 내장형</td></tr>
+          <tr><td>KS901B10/100</td><td>IEPE</td><td>10 / 100 mV/g</td><td>±500 / ±60 g</td><td>OEM 내장형(IEPE)</td></tr>
+          <tr><td>KS91C</td><td>IEPE</td><td>10 mV/g</td><td>-</td><td>소형, 접지루프 방지</td></tr>
+          <tr><td>KS93</td><td>전하(Charge)</td><td>5 pC/g</td><td>-</td><td>소형, 고온·특수측정</td></tr>
+          <tr><td>KS94C10/100</td><td>IEPE</td><td>10 / 100 mV/g</td><td>±600 / ±60 g</td><td>소형 범용</td></tr>
+          <tr><td>KS94L</td><td>Low Power IEPE</td><td>14 mV/g</td><td>±240 g</td><td>소형, 텔레메트리</td></tr>
+          <tr><td>KS95C10/100</td><td>IEPE</td><td>10 / 100 mV/g</td><td>±600 / ±60 g</td><td>소형, 탈착 케이블</td></tr>
+          <tr><td>KS96B10/100</td><td>IEPE</td><td>10 / 100 mV/g</td><td>±500 / ±60 g</td><td>소형 TEDS(축방향)</td></tr>
+          <tr><td>KS97B10/100</td><td>IEPE</td><td>10 / 100 mV/g</td><td>±500 / ±60 g</td><td>소형 TEDS(측면)</td></tr>
+          <tr><td>KS98B10/100</td><td>IEPE</td><td>10 / 100 mV/g</td><td>±500 / ±60 g</td><td>클립형 3방향 소형</td></tr>
+          <tr><td>KB12VD</td><td>IEPE</td><td>10,000 mV/g</td><td>±0.6 g</td><td>초고감도, 저주파</td></tr>
+          <tr><td>KS48C</td><td>IEPE</td><td>1,000 mV/g</td><td>±6 g</td><td>고감도, IP67 방수</td></tr>
+          <tr><td>KS813B</td><td>IEPE</td><td>100 mV/g</td><td>±55 g</td><td>산업용 3축, IP67</td></tr>
+          <tr><td>KS823B</td><td>IEPE</td><td>500 mV/g</td><td>±12 g</td><td>고감도 3축, IP67</td></tr>
+          <tr><td>KS903B10/100</td><td>IEPE</td><td>10 / 100 mV/g</td><td>±600 / ±60 g</td><td>컴팩트 3축</td></tr>
+          <tr><td>KS943B10/100</td><td>IEPE</td><td>10 / 100 mV/g</td><td>±600 / ±60 g</td><td>소형 3축</td></tr>
+          <tr><td>KS943L</td><td>Low Power IEPE</td><td>14 mV/g</td><td>±240 g</td><td>3축, 텔레메트리</td></tr>
+          <tr><td>KS963B10/100</td><td>IEPE</td><td>10 / 100 mV/g</td><td>±500 / ±60 g</td><td>평판형 3축, TEDS</td></tr>
+          <tr><td>KS973.10/100</td><td>IEPE</td><td>10 / 100 mV/g</td><td>±500 / ±60 g</td><td>평판형 3축, IP67</td></tr>
+          <tr><td>KS74C10/100</td><td>IEPE</td><td>10 / 100 mV/g</td><td>±600 / ±60 g</td><td>산업용, IP64</td></tr>
+          <tr><td>KS84B10/100/500</td><td>IEPE</td><td>10/100/500 mV/g</td><td>±600/±60/±11 g</td><td>산업용 TEDS, IP68</td></tr>
+          <tr><td>KS85.10/100/500</td><td>IEPE</td><td>10/100/500 mV/g</td><td>±600/±60/±11 g</td><td>산업용 회전베이스</td></tr>
+          <tr><td>KSI84 시리즈</td><td>4~20 mA</td><td>-</td><td>모델별 상이</td><td>PLC·DCS 상시 감시</td></tr>
+          <tr><td>KF24</td><td>전하(Charge)</td><td>300 pC/N</td><td>+2000/-300 N</td><td>동적 인장·압축력</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 적용 분야 -->
+<section style="padding-bottom:80px;">
+  <div class="container">
+    <div class="sec-tag"><span class="bar"></span>APPLICATION FIELDS</div>
+    <h2 style="font-size:clamp(20px,3vw,30px); font-weight:700; color:var(--charcoal); margin:16px 0 8px;">적용 분야</h2>
+    <p style="font-size:15px; color:var(--text-dim); max-width:600px; line-height:1.7; margin-bottom:4px;">씨앤디테크가 공급한 MMF 가속도센서의 주요 적용 현장입니다.</p>
+    <div class="mmf-app-grid">
+      <div class="mmf-app-card">
+        <div class="mmf-app-icon">⚙️</div>
+        <h4>회전기계 진단</h4>
+        <p>KS76C·KS77C·KS78C 범용 센서로 모터·펌프·팬·베어링의 상태기반정비(CBM) 진동 데이터를 수집. TEDS 모델은 다채널 시스템 채널 오류를 방지.</p>
+      </div>
+      <div class="mmf-app-card">
+        <div class="mmf-app-icon">🏗️</div>
+        <h4>건물·구조물 모니터링</h4>
+        <p>KB12VD·KS48C·KS813B로 건물, 교량, 댐, 풍력발전기 타워의 저주파 미세 진동을 장기간 모니터링. IP67 방수로 옥외 상시 설치 가능.</p>
+      </div>
+      <div class="mmf-app-card">
+        <div class="mmf-app-icon">🔬</div>
+        <h4>모달해석 · 진동시험</h4>
+        <p>KS94~98B 소형·초경량 센서와 KS903B·KS943B·KS963B·KS973 3축 센서로 구조물 모드형상 분석 및 진동시험(Shaker Test)을 수행.</p>
+      </div>
+      <div class="mmf-app-card">
+        <div class="mmf-app-icon">🔥</div>
+        <h4>고온 환경 측정</h4>
+        <p>KS56·KS57 고온형(250°C) 전하 출력 센서로 엔진, 배기계, 노(爐), 터빈 등 고온 설비의 진동을 측정. 전하 증폭기와 함께 사용.</p>
+      </div>
+      <div class="mmf-app-card">
+        <div class="mmf-app-icon">🏭</div>
+        <h4>산업용 상시 감시</h4>
+        <p>KS84B·KS85 TEDS 내장 IP68 센서와 KSI84 4-20mA 트랜스듀서로 플랜트 설비에 24시간 상시 진동 감시 시스템을 구축, PLC·DCS 직결.</p>
+      </div>
+      <div class="mmf-app-card">
+        <div class="mmf-app-icon">📡</div>
+        <h4>텔레메트리·회전체 측정</h4>
+        <p>KS94L·KS943L 저전력(Low Power) IEPE 센서로 배터리 구동 무선 텔레메트리 시스템에 연동해 회전축·이동체의 진동을 원격 측정.</p>
+      </div>
+      <div class="mmf-app-card">
+        <div class="mmf-app-icon">🔩</div>
+        <h4>OEM 내장형 진동감시</h4>
+        <p>KS90·KS901B OEM 초소형 센서를 장비·기계 내부에 직접 매입해 제품 출하 단계부터 진동 감시 기능을 내장.</p>
+      </div>
+      <div class="mmf-app-card">
+        <div class="mmf-app-icon">🧲</div>
+        <h4>동적 힘(Force) 측정</h4>
+        <p>KF24 압전 포스 트랜스듀서로 프레스, 충격시험, 재료시험의 동적 인장·압축력을 스트레인게이지보다 높은 분해능으로 측정.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding-bottom:80px; background:var(--bg);">
+  <div class="container" style="max-width:860px;">
+    <div class="sec-tag"><span class="bar"></span>FAQ</div>
+    <h2 style="font-size:clamp(20px,3vw,30px); font-weight:700; color:var(--charcoal); margin:16px 0 32px;">자주 묻는 질문</h2>
+
+    <details style="background:var(--white); border:1px solid var(--line); border-radius:12px; padding:20px 24px; margin-bottom:12px;">
+      <summary style="cursor:pointer; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+        MMF 가속도센서(진동센서)는 어떤 제품군으로 구분되나요?
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; margin-left:12px;"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <p style="margin-top:14px; font-size:14px; color:var(--text-dim); line-height:1.75;">독일 MMF(Metra Meß- und Frequenztechnik)의 가속도센서는 크게 6가지로 구분됩니다. ① 범용 가속도센서(Universal Accelerometer) — 실험실·산업 현장 표준형(KS56·KS76C·KS77C·KS78C 등), ② 소형 가속도센서(Miniature Accelerometer) — 경량 측정물·모달해석용(KS91C·KS94·KS96B~98B 등), ③ 고감도 가속도센서(High Sensitivity Accelerometer) — 건물·교량 등 저주파 진동 측정용(KB12VD·KS48C), ④ 3축 가속도센서(Triaxial Accelerometer) — 3방향 동시 측정(KS813B·KS943B·KS963B·KS973 등), ⑤ 산업용 가속도센서(Industrial Accelerometer) — TEDS 내장 고내구성(KS74C·KS84B·KS85), ⑥ 4-20mA 전류루프 트랜스듀서(KSI84 시리즈)입니다. 별도로 동적 인장·압축력 측정용 포스 트랜스듀서(KF24)도 공급합니다.</p>
+    </details>
+
+    <details style="background:var(--white); border:1px solid var(--line); border-radius:12px; padding:20px 24px; margin-bottom:12px;">
+      <summary style="cursor:pointer; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+        가속도센서와 진동센서는 같은 의미인가요?
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; margin-left:12px;"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <p style="margin-top:14px; font-size:14px; color:var(--text-dim); line-height:1.75;">실무에서는 거의 같은 의미로 쓰입니다. '가속도센서(Accelerometer)'는 압전(Piezoelectric) 소자를 이용해 물체의 가속도를 전기 신호로 변환하는 센서의 정식 명칭이며, '진동센서(Vibration Sensor)'는 이 가속도센서를 포함해 진동을 감지하는 센서 전반을 가리키는 통칭입니다. MMF의 제품군은 모두 압전 가속도 원리를 사용하므로, 정확한 제품명은 '가속도센서'이고 응용 분야에서는 '진동센서'로도 흔히 불립니다.</p>
+    </details>
+
+    <details style="background:var(--white); border:1px solid var(--line); border-radius:12px; padding:20px 24px; margin-bottom:12px;">
+      <summary style="cursor:pointer; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+        모델명 뒤에 붙는 10, 100, 500 숫자는 무엇을 의미하나요?
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; margin-left:12px;"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <p style="margin-top:14px; font-size:14px; color:var(--text-dim); line-height:1.75;">MMF 가속도센서는 동일한 형상·하우징에 감도(Sensitivity)만 다른 여러 버전으로 출시됩니다. 예를 들어 KS84B10은 10 mV/g(측정범위 약 600g), KS84B100은 100 mV/g(약 60g), KS84B500은 500 mV/g(약 11g)로, 뒷자리 숫자가 클수록 감도는 높아지고 측정 가능한 최대 가속도 범위는 좁아집니다. 외형과 장착 방식은 동일하므로 제품 사진도 공용으로 사용됩니다. 저주파·미세 진동은 감도가 높은 100·500 버전을, 고진폭·충격성 진동은 감도가 낮은 10 버전을 선택하는 것이 일반적입니다.</p>
+    </details>
+
+    <details style="background:var(--white); border:1px solid var(--line); border-radius:12px; padding:20px 24px; margin-bottom:12px;">
+      <summary style="cursor:pointer; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+        IEPE 출력과 전하(Charge) 출력의 차이는 무엇인가요?
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; margin-left:12px;"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <p style="margin-top:14px; font-size:14px; color:var(--text-dim); line-height:1.75;">IEPE(Integrated Electronics Piezo-Electric)는 센서 내부에 신호 증폭 회로를 내장해 정전류(2~20mA)로 전원을 공급받고 저임피던스 전압 신호를 출력하는 방식으로, 케이블을 길게 연결해도 노이즈에 강해 현재 산업 현장에서 가장 널리 사용됩니다. 전하(Charge) 출력은 별도의 전하 증폭기(Charge Amplifier)가 필요하지만 250°C 이상의 고온이나 초고감도 측정처럼 IEPE 내장 전자회로가 견디기 어려운 극한 환경에 적합합니다. MMF는 두 출력 방식을 모두 제공하며, KS56·KS57·KS93·KS90·KF24 등이 전하 출력, 나머지 대부분 모델이 IEPE 출력입니다.</p>
+    </details>
+
+    <details style="background:var(--white); border:1px solid var(--line); border-radius:12px; padding:20px 24px; margin-bottom:12px;">
+      <summary style="cursor:pointer; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+        TEDS 기능이 있는 가속도센서는 어떤 장점이 있나요?
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; margin-left:12px;"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <p style="margin-top:14px; font-size:14px; color:var(--text-dim); line-height:1.75;">TEDS(Transducer Electronic Data Sheet)는 센서 내부에 감도·측정범위·시리얼번호 같은 교정 정보를 전자적으로 저장하는 IEEE 1451.4 표준 기능입니다. 다채널 DAQ 시스템에서 센서를 서로 바꿔 연결해도 소프트웨어가 자동으로 올바른 스케일 값을 인식하므로, 채널 설정 오류를 방지하고 현장에서 센서 교체 시간을 크게 단축할 수 있습니다. MMF의 KS84B·KS85·KS96B·KS97B·KS98B·KS903B·KS943B·KS963B·KS973 시리즈가 TEDS를 기본 내장합니다.</p>
+    </details>
+
+    <details style="background:var(--white); border:1px solid var(--line); border-radius:12px; padding:20px 24px; margin-bottom:12px;">
+      <summary style="cursor:pointer; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+        3축 가속도센서는 언제 사용해야 하나요?
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; margin-left:12px;"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <p style="margin-top:14px; font-size:14px; color:var(--text-dim); line-height:1.75;">단축 센서 3개를 각 방향에 개별 설치하는 대신, 3축(Triaxial) 센서 1개로 X·Y·Z 방향 진동을 동시에 측정할 수 있어 모달해석(Modal Analysis), 회전기계 정밀 진단, 건물·구조물 진동 모니터링에 주로 사용됩니다. MMF의 KS943B·KS963B·KS973 시리즈는 중앙 관통홀 구조로 축 정렬이 쉽고, KS813B·KS823B는 IP67 방수 등급의 산업용 3축 센서로 옥외·플랜트 환경에 적합합니다.</p>
+    </details>
+
+  </div>
+</section>
+
+<!-- 관련 기술자료 내부 링크 -->
+<section style="padding-bottom:60px;">
+  <div class="container">
+    <div class="sec-tag"><span class="bar"></span>RELATED RESOURCES</div>
+    <h2 style="font-size:clamp(18px,2.5vw,26px); font-weight:700; color:var(--charcoal); margin:16px 0 24px;">관련 기술자료</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px;">
+      <a href="vibration-sensor.html" style="text-decoration:none; display:flex; align-items:center; gap:14px; padding:18px 20px; background:var(--white); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow-sm); transition:all 0.25s;" class="res-card">
+        <span style="font-size:24px;">〰️</span>
+        <div>
+          <div style="font-size:13px; font-weight:700; color:var(--charcoal);">진동센서(가속도계) 원리 가이드</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-top:3px;">피에조일렉트릭 가속도센서 원리·선택·설치 방법</div>
+        </div>
+      </a>
+      <a href="vibration.html" style="text-decoration:none; display:flex; align-items:center; gap:14px; padding:18px 20px; background:var(--white); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow-sm); transition:all 0.25s;" class="res-card">
+        <span style="font-size:24px;">📈</span>
+        <div>
+          <div style="font-size:13px; font-weight:700; color:var(--charcoal);">진동측정 종합 가이드</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-top:3px;">진동 측정 원리와 계측 시스템 구성</div>
+        </div>
+      </a>
+      <a href="daq-system.html" style="text-decoration:none; display:flex; align-items:center; gap:14px; padding:18px 20px; background:var(--white); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow-sm); transition:all 0.25s;" class="res-card">
+        <span style="font-size:24px;">📊</span>
+        <div>
+          <div style="font-size:13px; font-weight:700; color:var(--charcoal);">데이터 수집장치(DAQ)</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-top:3px;">센서 신호를 PC로 수집하는 DAQ 시스템 구성 및 선택 가이드</div>
+        </div>
+      </a>
+      <a href="vibration-calibrator.html" style="text-decoration:none; display:flex; align-items:center; gap:14px; padding:18px 20px; background:var(--white); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow-sm); transition:all 0.25s;" class="res-card">
+        <span style="font-size:24px;">🎯</span>
+        <div>
+          <div style="font-size:13px; font-weight:700; color:var(--charcoal);">진동 교정기 (VC 시리즈)</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-top:3px;">가속도센서 현장 교정용 진동 캘리브레이터</div>
+        </div>
+      </a>
+      <a href="building-vibration-monitoring.html" style="text-decoration:none; display:flex; align-items:center; gap:14px; padding:18px 20px; background:var(--white); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow-sm); transition:all 0.25s;" class="res-card">
+        <span style="font-size:24px;">🏢</span>
+        <div>
+          <div style="font-size:13px; font-weight:700; color:var(--charcoal);">건축물 진동 모니터링</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-top:3px;">건물·구조물 상시 진동 계측 시스템</div>
+        </div>
+      </a>
+      <a href="ship-vibration-iso20283.html" style="text-decoration:none; display:flex; align-items:center; gap:14px; padding:18px 20px; background:var(--white); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow-sm); transition:all 0.25s;" class="res-card">
+        <span style="font-size:24px;">🚢</span>
+        <div>
+          <div style="font-size:13px; font-weight:700; color:var(--charcoal);">선박 진동 측정 (ISO 20283-5)</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-top:3px;">선박 구조 진동 측정 시스템 가이드</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding-bottom:100px;">
+  <div class="container">
+    <div style="background:linear-gradient(135deg,var(--charcoal) 0%,#2a3a4a 100%); border-radius:var(--radius); padding:56px 48px; text-align:center; position:relative; overflow:hidden;">
+      <div style="position:absolute; top:-40px; right:-40px; width:200px; height:200px; border-radius:50%; background:var(--accent); opacity:0.08;"></div>
+      <div style="position:relative; z-index:1;">
+        <div style="font-family:'Pretendard',sans-serif; font-size:11px; color:var(--accent); font-weight:700; letter-spacing:0.1em; margin-bottom:16px;">MMF AUTHORIZED PARTNER</div>
+        <h2 style="font-size:clamp(22px,3.5vw,36px); font-weight:700; color:#fff; margin-bottom:16px; line-height:1.3;">가속도센서 모델 선정이<br>필요하신가요?</h2>
+        <p style="font-size:16px; color:rgba(255,255,255,0.7); max-width:520px; margin:0 auto 32px; line-height:1.7;">측정 대상, 진폭·주파수 범위, 설치 환경을 알려주시면 최적 MMF 모델을 추천해 드립니다. 견적부터 납품까지 씨앤디테크가 지원합니다.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+          <a href="../contact.html" class="btn btn-primary" style="font-size:15px; padding:14px 32px;">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          <a href="tel:031-680-1225" style="display:inline-flex; align-items:center; gap:8px; padding:14px 28px; border:1px solid rgba(255,255,255,0.25); border-radius:8px; color:#fff; font-size:15px; font-weight:600; text-decoration:none; transition:all 0.25s;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.25 1.21 2 2 0 012.25 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.07-.57a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            031-680-1225
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>COMPANY</h5>
+          <ul>
+            <li><a href="../about.html">회사소개</a></li>
+            <li><a href="../products.html">사업분야·제품</a></li>
+            <li><a href="../projects.html">주요실적</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>RESOURCES</h5>
+          <ul>
+            <li><a href="vibration-sensor.html">진동센서 원리</a></li>
+            <li><a href="mmf-accelerometer.html">MMF 가속도센서</a></li>
+            <li><a href="pressure-sensor.html">압력센서</a></li>
+            <li><a href="index.html">기술자료 전체</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>CONTACT</h5>
+          <ul>
+            <li><a href="tel:031-680-1225">031-680-1225</a></li>
+            <li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li>
+            <li><a href="../contact.html">문의하기</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-meta"><span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span></div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
