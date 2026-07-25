@@ -1,5 +1,12 @@
 # CND TECH 웹사이트 — 작업 현황
 
+## ⭐ 2026-07-25 완료: 기술자료 라이브러리에 "센서" 카테고리 신설
+- resources/index.html에 새 필터 카테고리 신설: `<button data-filter="sensor">센서</button>` (전체 다음, 잔류응력측정 앞) + `<h3 data-cat-heading="sensor">센서</h3>` 섹션을 그리드 최상단(잔류응력측정 섹션 바로 앞)에 추가.
+- 센서 섹션에 4개 카드 배치: ① tachometer-sensor.html(RPM 센서) — 기존 "소음·진동 측정" 섹션에서 이동, ② ir-temperature-sensor.html(온도센서) — 기존 "DAQ·계측 시스템" 섹션에서 이동, ③ pressure-sensor.html(압력센서) — 기존 "DAQ·계측 시스템" 섹션에서 이동, ④ vibration-sensor.html(진동센서) — 사용자 지침에 따라 "소음·진동 측정" 섹션의 원본 카드는 그대로 두고 센서 섹션에 카드를 복제 추가(진동센서만 두 카테고리에 중복 노출).
+- RPM·온도·압력 3개는 이전 위치의 카드를 완전히 제거하고 센서 섹션으로 단일 이동(중복 노출 아님). 진동센서만 유일하게 data-cat="vibration"과 data-cat="sensor" 두 곳에 각각 존재.
+- 필터 스크립트(하단 `<script>`)는 `.res-filter-btn`/`.res-cat-heading`을 범용적으로 순회하는 구조라 별도 JS 수정 없이 새 카테고리가 자동으로 동작함(클릭 시 해당 섹션으로 스크롤).
+- 검증: div 밸런스(75/75), `</html>` 정상 종료, 필터 버튼 8개/헤딩 8개 일치 확인, href별 중복 카운트 확인(vibration-sensor.html만 2회, 나머지는 1회).
+
 ## ⭐ 2026-07-25 완료: 비접촉식 적외선(IR) 온도센서 기술자료 페이지 신규 생성
 - resources/ir-temperature-sensor.html 신규 생성. candj.tistory.com/91(비접촉 온도 측정 모니터링 — 오토닉스 KN-2000W 인디게이터 연동 실납품 사례, 300°C급 대상) + 사용자가 업로드한 USB형 IR 온도센서 PDF 데이터시트 참조.
 - 2개 제품 카테고리로 구성: ① RS485·아날로그(0-10V, 4-20mA) 출력형(0~1200°C, 초고온 특별버전) — tistory 실제 사례 기반, ② USB 인터페이스형(-20~1000°C, Modbus RTU/가상 COM, IP65, M16×1mm, 45mm, 1.5m 케이블, 85g) — 업로드 PDF 데이터시트 기반.
