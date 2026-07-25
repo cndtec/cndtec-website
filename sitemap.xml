@@ -173,6 +173,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.cndtec.co.kr/resources/ir-temperature-sensor.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <url>
     <loc>https://www.cndtec.co.kr/resources/custom-sensor.html</loc>

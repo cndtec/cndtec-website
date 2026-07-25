@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>비접촉식 적외선(IR) 온도센서 | 씨앤디테크</title>
+<meta name="description" content="비접촉식 적외선(IR) 온도센서 소개. RS485·아날로그(0-10V, 4-20mA) 출력형과 USB 인터페이스형까지 방식별 사양 비교, 인디게이터 연동 사례, 적용 분야를 씨앤디테크가 정리합니다." />
+<meta name="keywords" content="적외선 온도센서, IR 온도센서, 비접촉 온도측정, 비접촉 온도센서, RS485 온도센서, USB 온도센서, 방사온도계, 적외선 온도계, 논콘택트 온도측정, 고온측정센서, 온도 모니터링, 인디게이터 연동, 산업용 온도센서" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/ir-temperature-sensor.html" />
+<meta property="og:title" content="비접촉식 적외선(IR) 온도센서 | 씨앤디테크" />
+<meta property="og:description" content="비접촉식 적외선(IR) 온도센서 — RS485·아날로그 출력형과 USB 인터페이스형 방식별 사양 비교." />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/cnd-logo-400.png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:alt" content="CND TECH 씨앤디테크 로고" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/ir-temperature-sensor.html" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="../css/style.css?v=6">
+<style>
+body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "비접촉식 적외선(IR) 온도센서",
+      "description": "비접촉식 적외선(IR) 온도센서 방식별 소개. RS485·아날로그(0-10V, 4-20mA) 출력형과 USB 인터페이스형 사양 및 적용, 인디게이터 연동 사례.",
+      "url": "https://www.cndtec.co.kr/resources/ir-temperature-sensor.html",
+      "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+      "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+      "datePublished": "2026-07-25",
+      "dateModified": "2026-07-25",
+      "inLanguage": "ko"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "적외선(IR) 온도센서는 어떤 원리로 온도를 측정하나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "모든 물체는 표면 온도에 비례하는 적외선(열) 에너지를 방사합니다. IR 온도센서는 렌즈로 이 적외선 방사에너지를 모아 검출기(서모파일 등)로 받아들이고, 대상 물체의 방사율(emissivity)을 반영해 실제 표면온도로 환산합니다. 센서를 대상에 직접 접촉시키지 않아도 온도를 측정할 수 있어 고온·고속 회전체·접근이 어려운 대상에 적합합니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "접촉식 온도센서 대신 비접촉 IR 센서를 써야 하는 경우는 언제인가요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "대상이 고속으로 움직이거나 회전하는 경우, 매체가 부식성·유해성 물질인 경우, 대상 온도가 매우 높아 열전대·RTD 등 접촉식 센서의 내열 한계를 초과하는 경우, 또는 대상에 물리적으로 손상을 주지 않고 측정해야 하는 경우에 비접촉 IR 온도센서가 적합합니다. 반대로 대상 표면의 방사율이 불명확하거나 배경 반사가 심한 환경에서는 접촉식이 더 정확할 수 있습니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "RS485 출력형과 USB 출력형 IR 온도센서는 어떻게 다른가요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "RS485·아날로그(0-10V, 4-20mA) 출력형은 PLC·DCS·인디게이터 등 산업 계측 시스템과 배선으로 직접 연결해 상시 모니터링하는 현장 설치용입니다. USB 출력형은 PC에 바로 꽂아 가상 COM 포트(Modbus RTU)로 통신하며, 전용 구성 소프트웨어로 방사율·측정범위 등을 설정할 수 있어 실험실 계측이나 소규모 데이터 로깅, 랩탑 기반 현장 점검에 편리합니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "IR 온도센서의 측정 온도 범위는 어느 정도인가요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "RS485·아날로그 출력형 표준 모델은 0~1200°C 범위를 지원하며, 초고온 대상은 별도 특별 버전으로 대응합니다. USB형은 -20~1000°C 범위를 지원해 상온 근처의 저온 대상부터 고온 공정까지 폭넓게 측정할 수 있습니다. 실제 적용 사례에서는 300°C급 대상 온도를 안정적으로 측정한 경우도 있습니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "IR 온도센서를 디지털 인디게이터와 연동할 수 있나요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "네, 가능합니다. IR 온도센서 전용 인디게이터도 있지만, 현장에서 이미 사용 중인 범용 디지털 인디게이터(예: 오토닉스 KN-2000W 등)와 조합해 세팅하는 경우도 많습니다. 센서의 아날로그(0-10V, 4-20mA) 또는 RS485 출력을 인디게이터 입력 사양에 맞춰 설정하면, 온도값을 현장에서 바로 표시하고 알람 접점(AHH/AH/AL/ALL)으로 상한·하한 감시도 함께 구성할 수 있습니다."}
+        },
+        {
+          "@type": "Question",
+          "name": "IR 온도센서 설치 시 주의할 점은 무엇인가요?",
+          "acceptedAnswer": {"@type": "Answer", "text": "측정 거리와 대상 크기에 따라 시야각(FOV)이 달라지므로, 센서와 대상 사이 거리 대 측정 스팟 크기(D:S 비율)를 확인해 설치해야 합니다. 대상의 방사율이 낮은 금속 표면은 별도 보정이 필요할 수 있으며, 렌즈에 분진·수증기가 쌓이면 측정 오차가 커지므로 방수·방진 등급(IP65 이상)과 주기적인 렌즈 청소가 중요합니다. 고온 환경에서는 센서 자체의 주변온도(Ambient) 사양도 함께 확인해야 합니다."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+/* ── irt- prefix: 비접촉식 적외선(IR) 온도센서 페이지 ── */
+.irt-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 28px;
+}
+.irt-product-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 28px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.irt-product-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  transform: translateY(-2px);
+}
+.irt-product-img {
+  margin: -28px -28px 18px -28px;
+  height: 180px;
+  background: #f8f8f8;
+  border-radius: var(--radius) var(--radius) 0 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--line);
+}
+.irt-product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+}
+.irt-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  background: var(--orange-tint);
+  border: 1px solid var(--orange-line);
+  border-radius: 999px;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 10px;
+  color: var(--accent-deep);
+  font-weight: 700;
+  margin-bottom: 14px;
+  letter-spacing: 0.04em;
+}
+.irt-product-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.irt-product-card p {
+  font-size: 13.5px;
+  color: var(--text-dim);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.irt-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+.irt-spec-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 12.5px;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--line);
+  gap: 8px;
+}
+.irt-spec-list li:last-child { border-bottom: none; }
+.irt-spec-list .irt-spec-key {
+  color: var(--text-dim);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.irt-spec-list .irt-spec-val {
+  color: var(--charcoal);
+  font-weight: 600;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 12px;
+  text-align: right;
+}
+.irt-app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+.irt-app-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 22px;
+  box-shadow: var(--shadow-sm);
+}
+.irt-app-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--orange-tint);
+  border: 1px solid var(--orange-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  font-size: 20px;
+}
+.irt-app-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+.irt-app-card p {
+  font-size: 12.5px;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+.irt-output-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  margin-top: 24px;
+}
+.irt-output-table thead th {
+  background: var(--charcoal);
+  color: #fff;
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 12px;
+  font-family: 'Pretendard', sans-serif;
+  letter-spacing: 0.05em;
+}
+.irt-output-table tbody tr:nth-child(even) { background: var(--bg); }
+.irt-output-table tbody td {
+  padding: 9px 16px;
+  border-bottom: 1px solid var(--line);
+  color: var(--charcoal);
+  vertical-align: top;
+}
+.irt-output-table tbody td:first-child {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent-deep);
+}
+@media (max-width: 640px) {
+  .irt-output-table { font-size: 12px; }
+  .irt-output-table thead th, .irt-output-table tbody td { padding: 8px 10px; }
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+<nav class="mobile-subnav" aria-label="모바일 카테고리 메뉴">
+  <a href="../about.html">회사소개</a>
+  <a href="../products.html">사업분야·제품</a>
+  <a href="../projects.html">주요실적</a>
+  <a href="index.html" class="pill-active">기술자료</a>
+  <a href="../index.html#blog">블로그</a>
+  <a href="../contact.html">문의</a>
+</nav>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a>
+    <a href="../products.html">사업분야·제품</a>
+    <a href="../projects.html">주요실적</a>
+    <a href="index.html">기술자료</a>
+    <a href="../index.html#blog">블로그</a>
+    <a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- Hero -->
+<section style="padding-top:160px; padding-bottom:60px;">
+  <div class="container">
+    <a href="index.html" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; color:var(--text-dim); text-decoration:none; margin-bottom:24px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      기술자료 목록으로
+    </a>
+    <div class="sec-tag"><span class="bar"></span>NON-CONTACT TEMPERATURE SENSOR</div>
+    <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(28px,4.5vw,50px); font-weight:700; letter-spacing:-0.03em; margin:16px 0 20px; color:var(--charcoal); line-height:1.2;">비접촉식 적외선(IR)<br>온도센서</h1>
+    <p style="font-size:18px; color:var(--text-dim); max-width:700px; line-height:1.75; margin-bottom:32px;">대상 표면에 직접 접촉하지 않고 적외선 방사에너지로 온도를 측정하는 IR 온도센서 — <strong style="color:var(--charcoal);">RS485·아날로그(0-10V, 4-20mA) 출력형</strong>과 <strong style="color:var(--charcoal);">USB 인터페이스형</strong>까지. 방식별 사양 비교와 인디게이터 연동 사례를 씨앤디테크가 정리합니다.</p>
+    <div style="display:flex; flex-wrap:wrap; gap:12px;">
+      <span class="irt-badge">RS485 · 0-10V · 4-20mA</span>
+      <span class="irt-badge">USB · Modbus RTU</span>
+      <span class="irt-badge">0~1200°C 측정범위</span>
+      <span class="irt-badge">-20~1000°C 특수형</span>
+      <span class="irt-badge">인디게이터 연동</span>
+    </div>
+  </div>
+</section>
+
+<!-- 비접촉 온도 측정 원리 -->
+<section style="padding-bottom:70px;">
+  <div class="container">
+    <div style="background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:40px 44px; box-shadow:var(--shadow-sm); max-width:860px;">
+      <div style="display:flex; align-items:center; gap:14px; margin-bottom:20px;">
+        <div style="width:48px; height:48px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px;">🌡️</div>
+        <div>
+          <div style="font-family:'Pretendard',sans-serif; font-size:11px; color:var(--accent-deep); font-weight:700; letter-spacing:0.05em; margin-bottom:2px;">NON-CONTACT TEMPERATURE MEASUREMENT</div>
+          <h2 style="font-size:20px; font-weight:700; color:var(--charcoal); margin:0;">비접촉 온도 측정 원리</h2>
+        </div>
+      </div>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:18px;">모든 물체는 표면 온도에 비례해 적외선(열) 에너지를 방사합니다. IR 온도센서는 렌즈로 이 방사에너지를 모아 검출기로 받아들이고, 대상의 방사율(emissivity)을 반영해 실제 표면온도로 환산합니다. 센서가 대상에 직접 닿지 않아 고속 회전체, 고온 공정, 부식성·유해성 매체, 접근이 어려운 대상까지 안전하고 신속하게 온도를 측정할 수 있습니다. 출력 방식에 따라 산업 현장의 PLC·인디게이터와 상시 연동하는 RS485·아날로그형과, PC에 바로 연결해 설정·로깅하는 USB형으로 구분됩니다.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:16px;">
+        <div style="text-align:center; padding:16px; background:var(--bg); border-radius:10px; border:1px solid var(--line);">
+          <div style="font-size:22px; font-weight:700; color:var(--accent-deep); font-family:'Pretendard',sans-serif;">0~1200°C</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-top:4px;">RS485·아날로그형 측정범위</div>
+        </div>
+        <div style="text-align:center; padding:16px; background:var(--bg); border-radius:10px; border:1px solid var(--line);">
+          <div style="font-size:22px; font-weight:700; color:var(--accent-deep); font-family:'Pretendard',sans-serif;">-20~1000°C</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-top:4px;">USB형 측정범위</div>
+        </div>
+        <div style="text-align:center; padding:16px; background:var(--bg); border-radius:10px; border:1px solid var(--line);">
+          <div style="font-size:22px; font-weight:700; color:var(--accent-deep); font-family:'Pretendard',sans-serif;">125 ms</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-top:4px;">USB형 응답시간(t90)</div>
+        </div>
+        <div style="text-align:center; padding:16px; background:var(--bg); border-radius:10px; border:1px solid var(--line);">
+          <div style="font-size:22px; font-weight:700; color:var(--accent-deep); font-family:'Pretendard',sans-serif;">IP65</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-top:4px;">USB형 방수·방진 등급</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 제품 라인업 -->
+<section style="padding-bottom:80px;">
+  <div class="container">
+    <div class="sec-tag"><span class="bar"></span>SENSOR TYPES</div>
+    <h2 style="font-size:clamp(22px,3.5vw,34px); font-weight:700; color:var(--charcoal); margin:16px 0 8px;">적외선 온도센서 방식별 라인업</h2>
+    <p style="font-size:16px; color:var(--text-dim); max-width:680px; line-height:1.7;">연결 방식과 사용 환경에 따라 <strong style="color:var(--charcoal);">RS485·아날로그 출력형</strong>과 <strong style="color:var(--charcoal);">USB 인터페이스형</strong> 중 최적 모델을 선택할 수 있습니다.</p>
+
+    <div class="irt-product-grid">
+
+      <!-- RS485/아날로그 출력형 -->
+      <div class="irt-product-card fade-in">
+        <div class="irt-product-img"><img src="../assets/images/비접촉식 온도센서/적외선온도센서3.png" alt="RS485 아날로그 출력 적외선 온도센서" loading="lazy" onerror="this.closest('.irt-product-img').style.display='none'"></div>
+        <div class="irt-badge">RS485 · 0-10V · 4-20mA</div>
+        <h3>RS485·아날로그 출력형<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">산업 현장 상시 연동형 IR 온도센서</span></h3>
+        <p>PLC·DCS·인디게이터와 배선으로 직접 연결해 상시 모니터링하는 현장 설치용 IR 온도센서. RS485 디지털 통신과 0-10V·4-20mA 아날로그 출력을 함께 지원해 기존 계측 시스템에 쉽게 통합됩니다.</p>
+        <ul class="irt-spec-list">
+          <li><span class="irt-spec-key">측정범위</span><span class="irt-spec-val">0 ~ 1200 °C</span></li>
+          <li><span class="irt-spec-key">초고온 대응</span><span class="irt-spec-val">특별 버전 지원</span></li>
+          <li><span class="irt-spec-key">출력</span><span class="irt-spec-val">RS485 / 0-10V / 4-20mA</span></li>
+          <li><span class="irt-spec-key">연동</span><span class="irt-spec-val">PLC·DAQ·디지털 인디게이터</span></li>
+          <li><span class="irt-spec-key">적용 실적</span><span class="irt-spec-val">300°C급 대상 상시 모니터링</span></li>
+        </ul>
+      </div>
+
+      <!-- USB형 -->
+      <div class="irt-product-card fade-in">
+        <div class="irt-product-img"><img src="../assets/images/비접촉식 온도센서/usb-type-ir-sensor.png" alt="USB 인터페이스 적외선 온도센서" loading="lazy" onerror="this.closest('.irt-product-img').style.display='none'"></div>
+        <div class="irt-badge">USB · PC 직결형</div>
+        <h3>USB 인터페이스형<br><span style="font-size:13px; font-weight:500; color:var(--text-dim);">PC 직결·가상 COM 통신 IR 온도센서</span></h3>
+        <p>스테인리스 하우징의 소형 프로브를 USB 케이블로 PC에 바로 연결해 사용하는 IR 온도센서. 가상 COM 포트를 통한 Modbus RTU 통신으로 측정값을 바로 읽고, PC 전용 구성 소프트웨어로 방사율·측정범위 등을 설정합니다.</p>
+        <ul class="irt-spec-list">
+          <li><span class="irt-spec-key">측정범위</span><span class="irt-spec-val">-20 ~ 1000 °C</span></li>
+          <li><span class="irt-spec-key">정확도</span><span class="irt-spec-val">± 1 % 또는 ± 1 °C</span></li>
+          <li><span class="irt-spec-key">응답시간</span><span class="irt-spec-val">125 ms (t90)</span></li>
+          <li><span class="irt-spec-key">분광범위</span><span class="irt-spec-val">8 ~ 14 μm</span></li>
+          <li><span class="irt-spec-key">인터페이스</span><span class="irt-spec-val">USB (가상 COM, Modbus RTU)</span></li>
+          <li><span class="irt-spec-key">등급/치수</span><span class="irt-spec-val">IP65, M16×1mm, 길이 45mm</span></li>
+          <li><span class="irt-spec-key">케이블/무게</span><span class="irt-spec-val">1.5 m / 85 g</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 인디게이터 연동 사례 -->
+<section style="padding-bottom:80px; background:var(--bg);">
+  <div class="container">
+    <div class="sec-tag"><span class="bar"></span>FIELD CASE</div>
+    <h2 style="font-size:clamp(20px,3vw,30px); font-weight:700; color:var(--charcoal); margin:16px 0 8px;">디지털 인디게이터 연동 적용 사례</h2>
+    <p style="font-size:15px; color:var(--text-dim); max-width:700px; line-height:1.7; margin-bottom:28px;">고객사 요청으로 300°C급 대상을 측정하는 RS485·아날로그 출력형 IR 온도센서를 오토닉스(Autonics) KN-2000W 디지털 인디게이터와 조합해 세팅·검수 후 공급한 사례입니다. IR 온도센서 전용 인디게이터도 있지만, 현장에서 이미 사용 중인 범용 인디게이터와 조합해 구성하는 경우도 많습니다.</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px;">
+      <figure style="margin:0;">
+        <img src="../assets/images/비접촉식 온도센서/IR 온도센서.jpg" alt="비접촉 IR 온도센서 실제 제품 사진" style="width:100%; border-radius:10px; border:1px solid var(--line); box-shadow:var(--shadow-sm); display:block;" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption style="margin-top:8px; font-size:12px; color:var(--text-mute); text-align:center;">RS485·아날로그 출력형 IR 온도센서</figcaption>
+      </figure>
+      <figure style="margin:0;">
+        <img src="../assets/images/비접촉식 온도센서/IR 온도센서_02.jpg" alt="비접촉 IR 온도센서 케이블 출력 단자" style="width:100%; border-radius:10px; border:1px solid var(--line); box-shadow:var(--shadow-sm); display:block;" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption style="margin-top:8px; font-size:12px; color:var(--text-mute); text-align:center;">4-20mA 출력 케이블 단자</figcaption>
+      </figure>
+      <figure style="margin:0;">
+        <img src="../assets/images/비접촉식 온도센서/Main-02.jpg" alt="IR 온도센서와 오토닉스 KN-2000W 디지털 인디게이터 연동 구성" style="width:100%; border-radius:10px; border:1px solid var(--line); box-shadow:var(--shadow-sm); display:block;" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption style="margin-top:8px; font-size:12px; color:var(--text-mute); text-align:center;">센서 + 오토닉스 KN-2000W 인디게이터 연동 구성</figcaption>
+      </figure>
+      <figure style="margin:0;">
+        <img src="../assets/images/비접촉식 온도센서/온도센서 케이블 연결.jpg" alt="IR 온도센서 케이블 커넥터 연결부" style="width:100%; border-radius:10px; border:1px solid var(--line); box-shadow:var(--shadow-sm); display:block;" loading="lazy" onerror="this.closest('figure').style.display='none'">
+        <figcaption style="margin-top:8px; font-size:12px; color:var(--text-mute); text-align:center;">현장 설치용 케이블·커넥터 연결부</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 출력 신호 비교표 -->
+<section style="padding-bottom:80px;">
+  <div class="container">
+    <div class="sec-tag"><span class="bar"></span>TYPE COMPARISON</div>
+    <h2 style="font-size:clamp(20px,3vw,30px); font-weight:700; color:var(--charcoal); margin:16px 0 8px;">방식별 사양 한눈에 비교</h2>
+    <p style="font-size:15px; color:var(--text-dim); max-width:640px; line-height:1.7; margin-bottom:4px;">연결 환경과 측정 온도 범위를 기준으로 현장에 맞는 방식을 빠르게 선택하세요.</p>
+    <div style="overflow-x:auto;">
+      <table class="irt-output-table">
+        <thead>
+          <tr>
+            <th>방식</th>
+            <th>출력/인터페이스</th>
+            <th>측정범위</th>
+            <th>주요 용도</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>RS485·아날로그 출력형</td><td>RS485 / 0-10V / 4-20mA</td><td>0 ~ 1200 °C (특별 버전 초고온)</td><td>산업 현장 상시 모니터링, PLC·인디게이터 연동</td></tr>
+          <tr><td>USB 인터페이스형</td><td>USB (가상 COM, Modbus RTU)</td><td>-20 ~ 1000 °C</td><td>PC 기반 설정·로깅, 실험실·소규모 계측</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 적용 분야 -->
+<section style="padding-bottom:80px; background:var(--bg);">
+  <div class="container">
+    <div class="sec-tag"><span class="bar"></span>APPLICATION FIELDS</div>
+    <h2 style="font-size:clamp(20px,3vw,30px); font-weight:700; color:var(--charcoal); margin:16px 0 8px;">적용 분야</h2>
+    <p style="font-size:15px; color:var(--text-dim); max-width:600px; line-height:1.7; margin-bottom:4px;">씨앤디테크가 공급한 비접촉식 IR 온도센서의 주요 적용 현장입니다.</p>
+    <div class="irt-app-grid">
+      <div class="irt-app-card">
+        <div class="irt-app-icon">🏭</div>
+        <h4>산업 공정 상시 온도 모니터링</h4>
+        <p>RS485·아날로그 출력을 PLC·DAQ에 연결해 생산 라인 공정 온도를 실시간으로 감시합니다.</p>
+      </div>
+      <div class="irt-app-card">
+        <div class="irt-app-icon">🔥</div>
+        <h4>고온 대상 비접촉 측정</h4>
+        <p>열원에 직접 접촉하기 어려운 고온 설비·배관·가열로 표면온도를 최대 1200°C까지 측정합니다.</p>
+      </div>
+      <div class="irt-app-card">
+        <div class="irt-app-icon">🔄</div>
+        <h4>고속 회전체 표면온도 측정</h4>
+        <p>접촉식 센서 부착이 어려운 고속 회전 롤러·스핀들 등의 표면온도를 비접촉으로 확인합니다.</p>
+      </div>
+      <div class="irt-app-card">
+        <div class="irt-app-icon">🖥️</div>
+        <h4>PC 기반 실험실 계측</h4>
+        <p>USB 인터페이스형으로 별도 전원·배선 없이 PC에 바로 연결해 실험실에서 온도 데이터를 로깅합니다.</p>
+      </div>
+      <div class="irt-app-card">
+        <div class="irt-app-icon">📟</div>
+        <h4>디지털 인디게이터 연동</h4>
+        <p>범용 디지털 인디게이터와 조합해 온도값을 현장에서 표시하고 상한·하한 알람 접점을 구성합니다.</p>
+      </div>
+      <div class="irt-app-card">
+        <div class="irt-app-icon">🧪</div>
+        <h4>부식성·유해 매체 온도 측정</h4>
+        <p>화학·플랜트 설비의 부식성 매체나 접촉이 위험한 대상의 온도를 안전하게 비접촉으로 측정합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding-bottom:80px;">
+  <div class="container" style="max-width:860px;">
+    <div class="sec-tag"><span class="bar"></span>FAQ</div>
+    <h2 style="font-size:clamp(20px,3vw,30px); font-weight:700; color:var(--charcoal); margin:16px 0 32px;">자주 묻는 질문</h2>
+
+    <details style="background:var(--white); border:1px solid var(--line); border-radius:12px; padding:20px 24px; margin-bottom:12px;">
+      <summary style="cursor:pointer; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+        적외선(IR) 온도센서는 어떤 원리로 온도를 측정하나요?
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; margin-left:12px;"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <p style="margin-top:14px; font-size:14px; color:var(--text-dim); line-height:1.75;">모든 물체는 표면 온도에 비례하는 적외선(열) 에너지를 방사합니다. IR 온도센서는 렌즈로 이 적외선 방사에너지를 모아 검출기(서모파일 등)로 받아들이고, 대상 물체의 방사율(emissivity)을 반영해 실제 표면온도로 환산합니다. 센서를 대상에 직접 접촉시키지 않아도 온도를 측정할 수 있어 고온·고속 회전체·접근이 어려운 대상에 적합합니다.</p>
+    </details>
+
+    <details style="background:var(--white); border:1px solid var(--line); border-radius:12px; padding:20px 24px; margin-bottom:12px;">
+      <summary style="cursor:pointer; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+        접촉식 온도센서 대신 비접촉 IR 센서를 써야 하는 경우는 언제인가요?
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; margin-left:12px;"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <p style="margin-top:14px; font-size:14px; color:var(--text-dim); line-height:1.75;">대상이 고속으로 움직이거나 회전하는 경우, 매체가 부식성·유해성 물질인 경우, 대상 온도가 매우 높아 열전대·RTD 등 접촉식 센서의 내열 한계를 초과하는 경우, 또는 대상에 물리적으로 손상을 주지 않고 측정해야 하는 경우에 비접촉 IR 온도센서가 적합합니다. 반대로 대상 표면의 방사율이 불명확하거나 배경 반사가 심한 환경에서는 접촉식이 더 정확할 수 있습니다.</p>
+    </details>
+
+    <details style="background:var(--white); border:1px solid var(--line); border-radius:12px; padding:20px 24px; margin-bottom:12px;">
+      <summary style="cursor:pointer; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+        RS485 출력형과 USB 출력형 IR 온도센서는 어떻게 다른가요?
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; margin-left:12px;"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <p style="margin-top:14px; font-size:14px; color:var(--text-dim); line-height:1.75;">RS485·아날로그(0-10V, 4-20mA) 출력형은 PLC·DCS·인디게이터 등 산업 계측 시스템과 배선으로 직접 연결해 상시 모니터링하는 현장 설치용입니다. USB 출력형은 PC에 바로 꽂아 가상 COM 포트(Modbus RTU)로 통신하며, 전용 구성 소프트웨어로 방사율·측정범위 등을 설정할 수 있어 실험실 계측이나 소규모 데이터 로깅, 랩탑 기반 현장 점검에 편리합니다.</p>
+    </details>
+
+    <details style="background:var(--white); border:1px solid var(--line); border-radius:12px; padding:20px 24px; margin-bottom:12px;">
+      <summary style="cursor:pointer; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+        IR 온도센서의 측정 온도 범위는 어느 정도인가요?
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; margin-left:12px;"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <p style="margin-top:14px; font-size:14px; color:var(--text-dim); line-height:1.75;">RS485·아날로그 출력형 표준 모델은 0~1200°C 범위를 지원하며, 초고온 대상은 별도 특별 버전으로 대응합니다. USB형은 -20~1000°C 범위를 지원해 상온 근처의 저온 대상부터 고온 공정까지 폭넓게 측정할 수 있습니다. 실제 적용 사례에서는 300°C급 대상 온도를 안정적으로 측정한 경우도 있습니다.</p>
+    </details>
+
+    <details style="background:var(--white); border:1px solid var(--line); border-radius:12px; padding:20px 24px; margin-bottom:12px;">
+      <summary style="cursor:pointer; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+        IR 온도센서를 디지털 인디게이터와 연동할 수 있나요?
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; margin-left:12px;"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <p style="margin-top:14px; font-size:14px; color:var(--text-dim); line-height:1.75;">네, 가능합니다. IR 온도센서 전용 인디게이터도 있지만, 현장에서 이미 사용 중인 범용 디지털 인디게이터(예: 오토닉스 KN-2000W 등)와 조합해 세팅하는 경우도 많습니다. 센서의 아날로그(0-10V, 4-20mA) 또는 RS485 출력을 인디게이터 입력 사양에 맞춰 설정하면, 온도값을 현장에서 바로 표시하고 알람 접점(AHH/AH/AL/ALL)으로 상한·하한 감시도 함께 구성할 수 있습니다.</p>
+    </details>
+
+    <details style="background:var(--white); border:1px solid var(--line); border-radius:12px; padding:20px 24px; margin-bottom:12px;">
+      <summary style="cursor:pointer; font-size:15px; font-weight:600; color:var(--charcoal); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+        IR 온도센서 설치 시 주의할 점은 무엇인가요?
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; margin-left:12px;"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <p style="margin-top:14px; font-size:14px; color:var(--text-dim); line-height:1.75;">측정 거리와 대상 크기에 따라 시야각(FOV)이 달라지므로, 센서와 대상 사이 거리 대 측정 스팟 크기(D:S 비율)를 확인해 설치해야 합니다. 대상의 방사율이 낮은 금속 표면은 별도 보정이 필요할 수 있으며, 렌즈에 분진·수증기가 쌓이면 측정 오차가 커지므로 방수·방진 등급(IP65 이상)과 주기적인 렌즈 청소가 중요합니다. 고온 환경에서는 센서 자체의 주변온도(Ambient) 사양도 함께 확인해야 합니다.</p>
+    </details>
+
+  </div>
+</section>
+
+<!-- 관련 기술자료 내부 링크 -->
+<section style="padding-bottom:60px;">
+  <div class="container">
+    <div class="sec-tag"><span class="bar"></span>RELATED RESOURCES</div>
+    <h2 style="font-size:clamp(18px,2.5vw,26px); font-weight:700; color:var(--charcoal); margin:16px 0 24px;">관련 기술자료</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px;">
+      <a href="pressure-sensor.html" style="text-decoration:none; display:flex; align-items:center; gap:14px; padding:18px 20px; background:var(--white); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow-sm); transition:all 0.25s;" class="res-card">
+        <span style="font-size:24px;">💧</span>
+        <div>
+          <div style="font-size:13px; font-weight:700; color:var(--charcoal);">BD SENSORS 압력센서</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-top:3px;">압력 트랜스미터·차압 트랜스미터·디지털 압력계</div>
+        </div>
+      </a>
+      <a href="daq-system.html" style="text-decoration:none; display:flex; align-items:center; gap:14px; padding:18px 20px; background:var(--white); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow-sm); transition:all 0.25s;" class="res-card">
+        <span style="font-size:24px;">📊</span>
+        <div>
+          <div style="font-size:13px; font-weight:700; color:var(--charcoal);">데이터 수집장치(DAQ)</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-top:3px;">센서 신호를 PC로 수집하는 DAQ 시스템 구성 및 선택 가이드</div>
+        </div>
+      </a>
+      <a href="multicon-controller.html" style="text-decoration:none; display:flex; align-items:center; gap:14px; padding:18px 20px; background:var(--white); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow-sm); transition:all 0.25s;" class="res-card">
+        <span style="font-size:24px;">🎛️</span>
+        <div>
+          <div style="font-size:13px; font-weight:700; color:var(--charcoal);">MultiCon 통합 계측 컨트롤러</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-top:3px;">온도·압력·변위 등 다신호 계측·HMI·SCADA 통합</div>
+        </div>
+      </a>
+      <a href="vibration-sensor.html" style="text-decoration:none; display:flex; align-items:center; gap:14px; padding:18px 20px; background:var(--white); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow-sm); transition:all 0.25s;" class="res-card">
+        <span style="font-size:24px;">〰️</span>
+        <div>
+          <div style="font-size:13px; font-weight:700; color:var(--charcoal);">진동센서(가속도계) 원리 가이드</div>
+          <div style="font-size:12px; color:var(--text-dim); margin-top:3px;">피에조일렉트릭 가속도센서 원리·선택·설치 방법</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding-bottom:100px;">
+  <div class="container">
+    <div style="background:linear-gradient(135deg,var(--charcoal) 0%,#2a3a4a 100%); border-radius:var(--radius); padding:56px 48px; text-align:center; position:relative; overflow:hidden;">
+      <div style="position:absolute; top:-40px; right:-40px; width:200px; height:200px; border-radius:50%; background:var(--accent); opacity:0.08;"></div>
+      <div style="position:relative; z-index:1;">
+        <div style="font-family:'Pretendard',sans-serif; font-size:11px; color:var(--accent); font-weight:700; letter-spacing:0.1em; margin-bottom:16px;">NON-CONTACT TEMPERATURE SENSOR</div>
+        <h2 style="font-size:clamp(22px,3.5vw,36px); font-weight:700; color:#fff; margin-bottom:16px; line-height:1.3;">IR 온도센서 선정이<br>필요하신가요?</h2>
+        <p style="font-size:16px; color:rgba(255,255,255,0.7); max-width:520px; margin:0 auto 32px; line-height:1.7;">측정 대상, 온도 범위, 연동할 계측 시스템(PLC·인디게이터·PC)을 알려주시면 최적 IR 온도센서 방식을 추천해 드립니다. 견적부터 납품까지 씨앤디테크가 지원합니다.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+          <a href="../contact.html" class="btn btn-primary" style="font-size:15px; padding:14px 32px;">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          <a href="tel:031-680-1225" style="display:inline-flex; align-items:center; gap:8px; padding:14px 28px; border:1px solid rgba(255,255,255,0.25); border-radius:8px; color:#fff; font-size:15px; font-weight:600; text-decoration:none; transition:all 0.25s;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.25 1.21 2 2 0 012.25 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.07-.57a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            031-680-1225
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>COMPANY</h5>
+          <ul>
+            <li><a href="../about.html">회사소개</a></li>
+            <li><a href="../products.html">사업분야·제품</a></li>
+            <li><a href="../projects.html">주요실적</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>RESOURCES</h5>
+          <ul>
+            <li><a href="vibration-sensor.html">진동센서 원리</a></li>
+            <li><a href="mmf-accelerometer.html">MMF 가속도센서</a></li>
+            <li><a href="pressure-sensor.html">압력센서</a></li>
+            <li><a href="index.html">기술자료 전체</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>CONTACT</h5>
+          <ul>
+            <li><a href="tel:031-680-1225">031-680-1225</a></li>
+            <li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li>
+            <li><a href="../contact.html">문의하기</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-meta"><span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span></div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

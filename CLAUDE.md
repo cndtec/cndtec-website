@@ -1,5 +1,16 @@
 # CND TECH 웹사이트 — 작업 현황
 
+## ⭐ 2026-07-25 완료: 비접촉식 적외선(IR) 온도센서 기술자료 페이지 신규 생성
+- resources/ir-temperature-sensor.html 신규 생성. candj.tistory.com/91(비접촉 온도 측정 모니터링 — 오토닉스 KN-2000W 인디게이터 연동 실납품 사례, 300°C급 대상) + 사용자가 업로드한 USB형 IR 온도센서 PDF 데이터시트 참조.
+- 2개 제품 카테고리로 구성: ① RS485·아날로그(0-10V, 4-20mA) 출력형(0~1200°C, 초고온 특별버전) — tistory 실제 사례 기반, ② USB 인터페이스형(-20~1000°C, Modbus RTU/가상 COM, IP65, M16×1mm, 45mm, 1.5m 케이블, 85g) — 업로드 PDF 데이터시트 기반.
+- ⚠️ **사용자 지침**: 업로드된 USB형 PDF의 제조사·제품 브랜드명("Calex"/"PyroMiniUSB" 등)을 본문·메타태그·이미지 파일명 어디에도 노출하지 말 것 — "USB 인터페이스형"이라는 일반 명칭으로 작성, 실측 스펙만 인용.
+- 제품 사진이 없는 USB형 이미지는 업로드 PDF 1페이지를 300dpi로 렌더링(pdftoppm) 후 브랜드 로고·텍스트가 없는 제품 사진 영역만 PIL로 크롭해 `assets/images/비접촉식 온도센서/usb-type-ir-sensor.png`로 저장(브랜드 텍스트가 페이지 하단에만 있어 크롭 영역에는 포함되지 않음을 렌더링 이미지로 사전 확인).
+- RS485형은 tistory 사례의 실제 인디게이터 브랜드(오토닉스 KN-2000W)를 그대로 인용 — 이 브랜드에 대해서는 사용자 지침이 없었고, pressure-sensor.html 등 기존 페이지도 실제 벤더명을 인용하는 관례를 따름.
+- 사용자가 준비한 assets/images/비접촉식 온도센서/ 폴더의 실사진 6장 중 5장 사용(IR 온도센서.jpg, IR 온도센서_02.jpg, Main-02.jpg, 온도센서 케이블 연결.jpg, 적외선온도센서3.png). Indicator.png·적외선온도센서4.png는 이번 페이지에서 미사용.
+- sitemap.xml에 <url> 등록, resources/index.html — "온도" 전용 필터 카테고리가 없어 pressure-sensor.html과 동일하게 data-cat="daq"로 등록(선행 사례 준수), pressure-sensor.html 카드 바로 다음에 배치. footer는 기존 4개 링크 유지(미변경).
+- 검증: div 밸런스(91/91), `</html>` 정상 종료, JSON-LD 파싱 성공 + FAQ 6개/visible details 6개 일치, 이미지 참조 전부 디스크 존재 확인, "calex"/"pyro" 문자열 본문에 없음(grep -i) 확인, resources/index.html div 밸런스(74/74)도 재확인.
+- ⚠️ git add 시 새 이미지 폴더 `assets/images/비접촉식 온도센서/` 포함 필요(PDF에서 크롭한 usb-type-ir-sensor.png 포함).
+
 ## ⭐ 2026-07-25 완료: 비접촉식 RPM 측정센서(타코미터) 기술자료 페이지 신규 생성
 - resources/tachometer-sensor.html 신규 생성. monarchinstrument.com/product-category/remote-speed-sensors/ 8개 제품(ROS, ROSM, ROLS, RLS, GE200-HP, IRS, ROS-HT-W-25, CSLS) + candj.tistory.com/72(비접촉 RPM 측정 센서/타코미터) 참조.
 - ⚠️ **사용자 지침**: 브랜드명(Monarch/Monarch Instrument)을 본문·이미지 파일명 어디에도 노출하지 말 것 — 8개 제품을 방식(가시광 LED 옵티컬 / 변조 LED 옵티컬 / 가시광 레이저 / 방수형(IP67) 러기드 레이저 / 유도형 스파크플러그 / 적외선 / 고온형 광학 / 스마트 디지털 레이저) 기준의 일반 명칭으로 재구성해 작성. 실측 스펙(속도범위·작동거리·전원·출력)은 공식 제품페이지에서 그대로 인용.
