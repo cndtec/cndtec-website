@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>선박 진동 측정 시스템 ISO 20283-5 - 거주구역 진동 측정·평가 가이드 | 씨앤디테크</title>
+<meta name="description" content="선박·상선 거주구역 진동을 ISO 20283-5(구 ISO 6954) 기준으로 측정·평가하는 방법을 소개합니다. ISO 8041 인체진동계·ISO 2631-1/-2 전신진동 기준 참조, Wm 가중필터·3축 측정 절차, 평가 방법, MMF VM31 휴대용 진동측정기와 3축 가속도센서 조합, 선박용 설치 모듈까지. 씨앤디테크 선박 진동 측정 솔루션 공급·기술지원." />
+<meta name="keywords" content="선박 진동 측정, ISO 20283-5, ISO 6954, 선박 진동 평가, 거주구역 진동, whole-body vibration, ISO 2631, ISO 8041, 3축 가속도센서, VM31, 선박 진동계측, 여객선 진동 측정, 상선 거주성 진동" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/ship-vibration-iso20283.html" />
+<meta property="og:title" content="선박 진동 측정 시스템 ISO 20283-5 - 거주구역 진동 측정·평가 가이드 | 씨앤디테크" />
+<meta property="og:description" content="선박·상선 거주구역 진동을 ISO 20283-5(구 ISO 6954) 기준으로 측정·평가하는 방법. 3축 측정 절차, 평가 기준, MMF VM31 휴대용 진동측정기와 3축 가속도센서 조합, 선박용 설치 모듈까지 소개." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/ship-vibration-iso20283.html" />
+<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/cnd-logo.png" />
+<meta property="og:site_name" content="씨앤디테크 기술자료" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="../css/style.css?v=6">
+<style>
+body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "선박 진동 측정 시스템 ISO 20283-5 — 거주구역 진동 측정·평가 가이드",
+  "description": "선박·상선 거주구역 진동을 ISO 20283-5(구 ISO 6954) 기준으로 측정·평가하는 방법 완전 가이드. ISO 8041·ISO 2631-1/-2 참조 관계, 측정 방법, 평가 기준, 추천 계측 시스템(VM31 + 3축 가속도센서), 선박용 설치 모듈.",
+  "keywords": "선박 진동 측정, ISO 20283-5, ISO 6954, 거주구역 진동, whole-body vibration, ISO 2631, VM31, 3축 가속도센서",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr", "logo": {"@type": "ImageObject", "url": "https://www.cndtec.co.kr/assets/images/cnd-logo.png"}},
+  "datePublished": "2026-07-25",
+  "dateModified": "2026-07-25",
+  "inLanguage": "ko",
+  "url": "https://www.cndtec.co.kr/resources/ship-vibration-iso20283.html",
+  "image": "https://www.cndtec.co.kr/assets/images/cnd-logo.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ISO 20283-5는 무엇이며 ISO 6954와 어떤 관계인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ISO 20283-5는 이전의 ISO 6954를 대체한 표준으로, 여객선 및 상선의 거주성과 관련된 진동의 측정·보고·평가에 대한 지침을 정의합니다. 인체 진동 측정기 자체의 사양은 ISO 8041을, 전신 진동(Whole-Body Vibration) 평가 방법은 ISO 2631-1/-2를 참조하는 구조로 되어 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "선박 진동 측정은 어떤 절차로 진행되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "사람이 머무를 수 있는 모든 데크에 충분한 수의 측정 위치를 선정하고, 각 위치에서 3축(X/Y/Z)으로 측정합니다. 각 갑판에서 최소 두 개 이상의 3축 측정을 수행해야 하며, 세 축 모두 ISO 2631-2에 따른 결합 필터 Wm으로 가중치를 부여합니다. 관심 주파수 범위는 1~80Hz입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "비교 가능한 측정값을 얻으려면 어떤 조건이 필요한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "비교 가능한 측정값을 수집하려면 균일한 항해 조건이 전제되어야 합니다. 구체적으로 ① 깨끗한 항해 및 직선 항로, ② 일정한 일반적인 추진력, ③ 3% 이하의 해상 상태, ④ 프로펠러가 완전히 물속에 있는 상태의 4가지 조건을 충족해야 신뢰할 수 있는 데이터를 얻을 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "진동 평가는 어떤 기준으로 판정하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "전체 측정 시간에 걸쳐 통합된 진동 가속도의 구간 RMS 값을 평가에 사용합니다. 최소 측정 시간은 1분이며, 주 주파수가 2Hz 미만인 경우 최소 2분 이상 측정해야 합니다. 3축(X/Y/Z) 값 중 가장 높은 값을 평가에 사용하며, Wm 가중 필터를 적용한 가속도를 ISO 20283-5의 가이드라인 값과 비교해 거주성 등급을 판정합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "어떤 장비로 선박 진동을 측정하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "독일 MMF사의 휴대용 진동 측정 시스템 VM31과 3축 가속도센서(KS823B)를 조합하면 ISO 20283-5 규격에 부합하는 측정이 가능합니다. 손-팔 진동(ISO 8041 Wh)과 전신 진동(Wb·Wc·Wd·Wj·Wk·Wm) 가중 필터를 모두 지원하며, 구간·러닝 RMS, 최대 RMS(MTVV), 진동 선량 값(VDV), 벡터 합, 피크값, FFT(125라인) 분석 기능을 갖추고 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "선박에 가속도센서는 어떻게 설치하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "선박 진동 측정 전용 설치 모듈로 스크류 체결형 베이스 모델 729와 마그네틱 흡착형 베이스 모델 508이 사용됩니다. 스크류 체결형은 영구 설치나 반복 측정 지점에, 마그네틱 베이스는 강자성체 표면에 공구 없이 신속하게 탈부착할 수 있어 임시 측정이나 다지점 순회 측정에 적합합니다."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+/* ── SHIP VIBRATION (ISO 20283-5) 페이지 전용 스타일 ── */
+.svib-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;background:var(--orange-tint);border:1px solid var(--orange-line);border-radius:999px;font-family:'Pretendard',sans-serif;font-size:11px;color:var(--accent-deep);font-weight:700;margin-bottom:14px;}
+.svib-h2{font-family:'Space Grotesk','Pretendard',sans-serif;font-size:clamp(20px,3.5vw,28px);font-weight:700;color:var(--charcoal);margin-bottom:8px;letter-spacing:-0.02em;}
+.svib-sub{font-size:15px;color:var(--text-dim);line-height:1.75;max-width:740px;margin-bottom:24px;}
+.svib-section-tag{font-size:11px;font-family:'Pretendard',sans-serif;font-weight:700;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+/* stat cards */
+.svib-stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px;}
+@media(max-width:700px){.svib-stat-grid{grid-template-columns:1fr 1fr;}}
+.svib-stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px 16px;text-align:center;}
+.svib-stat-num{font-family:'Pretendard',sans-serif;font-size:19px;font-weight:700;color:var(--accent);line-height:1;}
+.svib-stat-sub{font-size:11px;color:var(--text-mute);margin-top:5px;line-height:1.45;}
+/* hero image */
+.svib-hero-img{width:100%;max-width:280px;border-radius:var(--radius);margin:32px auto 0;display:block;border:1px solid var(--line);background:var(--surface);padding:14px;}
+/* feature grid */
+.svib-feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px;}
+@media(max-width:580px){.svib-feat-grid{grid-template-columns:1fr;}}
+.svib-feat-item{display:flex;gap:10px;align-items:flex-start;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;font-size:13.5px;color:var(--text-dim);line-height:1.6;}
+.svib-feat-item .fi{flex-shrink:0;width:28px;height:28px;border-radius:8px;background:var(--orange-tint);border:1px solid var(--orange-line);display:flex;align-items:center;justify-content:center;font-size:14px;margin-top:1px;}
+.svib-feat-item strong{color:var(--charcoal);}
+/* condition list */
+.svib-cond-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px;}
+@media(max-width:620px){.svib-cond-grid{grid-template-columns:1fr;}}
+.svib-cond-card{padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-radius:10px;}
+.svib-cond-num{font-family:'Space Grotesk','Pretendard',sans-serif;font-size:20px;font-weight:700;color:var(--accent);margin-bottom:6px;}
+.svib-cond-card p{font-size:13.5px;color:var(--text-dim);line-height:1.6;margin:0;}
+/* steps */
+.svib-steps{counter-reset:svibstep;margin-top:20px;display:flex;flex-direction:column;gap:0;}
+.svib-step{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);}
+.svib-step:last-child{border-bottom:none;}
+.svib-step-num{counter-increment:svibstep;flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--charcoal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;}
+.svib-step-num::before{content:counter(svibstep);}
+.svib-step-body strong{display:block;font-size:14.5px;color:var(--charcoal);margin-bottom:3px;}
+.svib-step-body p{font-size:13.5px;color:var(--text-dim);line-height:1.65;margin:0;}
+/* photo blocks */
+.svib-diagram-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;margin-top:20px;align-items:start;}
+@media(max-width:760px){.svib-diagram-grid{grid-template-columns:1fr;}}
+.svib-photo-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px;}
+.svib-photo-card img{width:100%;height:auto;object-fit:contain;display:block;border-radius:6px;background:#f8fafc;border:1px solid #e5e7eb;}
+.svib-photo-cap{font-size:11.5px;color:var(--text-mute);text-align:center;margin-top:8px;line-height:1.5;}
+.svib-thumb-row{display:flex;gap:14px;margin-top:16px;flex-wrap:wrap;}
+.svib-thumb{flex:1;min-width:180px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px;}
+.svib-thumb img{width:100%;height:150px;object-fit:contain;display:block;border-radius:6px;background:#f8fafc;}
+.svib-thumb-cap{font-size:11px;color:var(--text-mute);text-align:center;margin-top:6px;line-height:1.4;}
+.svib-note-box{margin-top:18px;padding:14px 18px;background:var(--orange-tint);border:1px solid var(--orange-line);border-radius:10px;font-size:13px;color:var(--text-dim);line-height:1.7;}
+.svib-note-box strong{color:var(--accent-deep);}
+/* divider */
+.svib-divider{border:none;border-top:1px solid var(--line);margin:48px 0 0;}
+/* faq */
+.svib-faq-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:24px;}
+.svib-faq-item{border-bottom:1px solid var(--line);}
+.svib-faq-item:last-child{border-bottom:none;}
+.svib-faq-q{width:100%;text-align:left;padding:18px 22px;background:var(--surface);border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14.5px;font-weight:600;color:var(--charcoal);line-height:1.5;}
+.svib-faq-q:hover{background:var(--orange-tint);}
+.svib-fq-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;transition:transform .25s;}
+.svib-faq-item.open .svib-fq-icon{transform:rotate(45deg);}
+.svib-faq-a{display:none;padding:16px 22px 20px;background:#fff;font-size:14px;color:var(--text-dim);line-height:1.8;border-top:1px solid var(--line);}
+.svib-faq-item.open .svib-faq-a{display:block;}
+/* ── 모바일 최적화 ── */
+@media(max-width:600px){
+  .svib-thumb-row{flex-direction:column;}
+  .svib-thumb{width:100%;min-width:0;}
+  .svib-diagram-grid{gap:18px;}
+  .svib-photo-card{padding:10px;}
+  .svib-note-box{padding:12px 14px;font-size:12.5px;}
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+<nav class="mobile-subnav" aria-label="모바일 카테고리 메뉴">
+  <a href="../about.html">회사소개</a>
+  <a href="../products.html">사업분야·제품</a>
+  <a href="../projects.html">주요실적</a>
+  <a href="index.html" class="pill-active">기술자료</a>
+  <a href="../index.html#blog">블로그</a>
+  <a href="../contact.html">문의</a>
+</nav>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../index.html#blog">블로그</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- ── HERO ───────────────────────────────────────────────────────── -->
+<section style="padding-top:160px; padding-bottom:0;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div class="svib-tag">선박 진동 측정 · ISO 20283-5 (구 ISO 6954) 거주성 평가</div>
+      <h1 style="font-family:'Space Grotesk','Pretendard',sans-serif; font-size:clamp(28px,5vw,54px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal); line-height:1.15;">선박 진동 측정 시스템<br><span style="color:var(--accent);">ISO 20283-5</span></h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:700px; line-height:1.75; margin-bottom:0;">여객선·상선의 거주성과 관련된 진동을 측정·보고·평가하는 국제표준 ISO 20283-5(구 ISO 6954) 가이드입니다. 측정 방법, 균일 조건, 평가 기준부터 규격에 부합하는 휴대용 계측 시스템과 선박용 센서 설치 모듈까지 소개합니다.</p>
+    </div>
+    <div class="svib-stat-grid">
+      <div class="svib-stat">
+        <div class="svib-stat-num">ISO 20283-5</div>
+        <div class="svib-stat-sub">구 ISO 6954 개정판 ·<br>거주성 진동 측정·평가</div>
+      </div>
+      <div class="svib-stat">
+        <div class="svib-stat-num">3축 X·Y·Z</div>
+        <div class="svib-stat-sub">전 데크 측정 위치<br>3축 동시 계측</div>
+      </div>
+      <div class="svib-stat">
+        <div class="svib-stat-num">1~80Hz</div>
+        <div class="svib-stat-sub">Wm 가중필터<br>관심 주파수 범위</div>
+      </div>
+      <div class="svib-stat">
+        <div class="svib-stat-num">최소 1분</div>
+        <div class="svib-stat-sub">구간 RMS 측정시간<br>(2Hz 미만은 2분 이상)</div>
+      </div>
+    </div>
+    <img src="../assets/images/Portable vibration/vm31.png" alt="MMF VM31 휴대용 진동 측정 시스템 — ISO 2631 전신진동 구간 RMS 값 표시" class="svib-hero-img fade-in" loading="lazy">
+  </div>
+</section>
+
+<!-- ── MAIN CONTENT ────────────────────────────────────────────────── -->
+<section style="padding:48px 0 100px;">
+  <div class="container" style="max-width:960px;">
+
+    <!-- 01 개요 -->
+    <div class="fade-in" style="padding-bottom:40px;">
+      <div class="svib-section-tag">01 · WHAT IS ISO 20283-5</div>
+      <h2 class="svib-h2">ISO 20283-5란 — 선박 거주성 진동 평가 표준</h2>
+      <p class="svib-sub">표준 ISO 20283-5(이전의 ISO 6954)는 승객 및 상선의 거주성과 관련된 진동의 측정, 보고 및 평가에 대한 지침을 정의하는 규격입니다. 규격 자체가 모든 세부 사항을 규정하지 않고, 관련 표준을 참조하는 구조로 되어 있어 함께 이해해야 합니다.</p>
+
+      <div class="svib-feat-grid">
+        <div class="svib-feat-item">
+          <div class="fi">📐</div>
+          <div><strong>ISO 8041 참조</strong><br>인체 진동 측정기 자체의 성능·사양 요구조건을 ISO 8041에서 정의합니다.</div>
+        </div>
+        <div class="svib-feat-item">
+          <div class="fi">🧍</div>
+          <div><strong>ISO 2631-1/-2 참조</strong><br>전신 진동(Whole-Body Vibration)의 평가 방법과 가중 필터는 ISO 2631-1/-2를 따릅니다.</div>
+        </div>
+        <div class="svib-feat-item">
+          <div class="fi">🚢</div>
+          <div><strong>적용 대상</strong><br>여객선·상선의 선실, 공용구역, 작업구역 등 사람이 머무르는 모든 거주 공간에 적용됩니다.</div>
+        </div>
+        <div class="svib-feat-item">
+          <div class="fi">📊</div>
+          <div><strong>측정·보고·평가 지침</strong><br>측정 절차, 균일 조건, 보고 방법, 가이드라인 값 대비 평가 방법을 함께 규정합니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="svib-divider">
+
+    <!-- 02 측정 방법 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="svib-section-tag">02 · MEASUREMENT METHOD</div>
+      <h2 class="svib-h2">측정 방법 — 위치 선정과 균일 조건</h2>
+      <p class="svib-sub">측정 위치는 사람이 머무를 수 있는 모든 데크에 충분한 수로 선정하여 3축(X/Y/Z)으로 측정을 진행합니다. 각 갑판에서 최소 두 개 이상의 3축 측정을 수행해야 하며, 비교 가능한 측정값을 얻으려면 아래의 균일한 항해 조건이 전제되어야 합니다.</p>
+
+      <div class="svib-cond-grid">
+        <div class="svib-cond-card">
+          <div class="svib-cond-num">01</div>
+          <p><strong style="color:var(--charcoal);">깨끗한 항해 및 직선 항로</strong><br>급선회·변침 등이 없는 안정적인 항해 조건에서 측정합니다.</p>
+        </div>
+        <div class="svib-cond-card">
+          <div class="svib-cond-num">02</div>
+          <p><strong style="color:var(--charcoal);">일정한 일반적인 추진력</strong><br>가감속 없이 일정한 추진 출력을 유지한 상태에서 측정합니다.</p>
+        </div>
+        <div class="svib-cond-card">
+          <div class="svib-cond-num">03</div>
+          <p><strong style="color:var(--charcoal);">3% 이하의 해상 상태</strong><br>파고·너울 등 해상 상태가 낮은 조건에서 외란의 영향을 최소화합니다.</p>
+        </div>
+        <div class="svib-cond-card">
+          <div class="svib-cond-num">04</div>
+          <p><strong style="color:var(--charcoal);">프로펠러가 완전히 물속에 있음</strong><br>공회전(레이싱)이 발생하지 않는 흘수 조건에서 측정합니다.</p>
+        </div>
+      </div>
+
+      <div class="svib-note-box"><strong>Point.</strong> 세 축 모두 ISO 2631-2에 따른 결합 필터 Wm으로 가중치를 부여하며, 관심 주파수 범위는 1~80Hz입니다. 균일 조건이 충족되지 않으면 측정값 간 비교가 어려워지므로, 반복 측정·구역 간 비교 시에는 항해 조건을 최대한 일치시켜야 합니다.</div>
+
+      <div class="svib-photo-card" style="margin-top:20px; max-width:520px;">
+        <img src="../assets/images/SHIP VIBRATION/GRAPH.png" alt="Wm 가중필터 주파수 응답 — ISO 8041 허용 범위와 VM31 실측 비교" loading="lazy">
+        <div class="svib-photo-cap">▲ Wm 가중필터 주파수 응답 비교 — ISO 8041이 규정하는 허용 범위(Wm min/max)와 VM31의 실측 Wm 필터 응답 곡선입니다.</div>
+      </div>
+    </div>
+
+    <hr class="svib-divider">
+
+    <!-- 03 평가 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="svib-section-tag">03 · EVALUATION</div>
+      <h2 class="svib-h2">진동 평가 방법</h2>
+      <p class="svib-sub">ISO 20283-5의 평가는 전체 측정 시간에 걸쳐 통합된 진동 가속도의 구간 RMS 값을 사용합니다. Wm 가중 필터를 적용한 가속도를 표준의 가이드라인 값과 비교해 거주성 등급을 판정하는 방식입니다.</p>
+
+      <div class="svib-steps">
+        <div class="svib-step">
+          <div class="svib-step-num"></div>
+          <div class="svib-step-body"><strong>구간 RMS 산출</strong><p>전체 측정 시간에 걸쳐 통합된 진동 가속도의 구간(Interval) RMS 값을 계산합니다.</p></div>
+        </div>
+        <div class="svib-step">
+          <div class="svib-step-num"></div>
+          <div class="svib-step-body"><strong>최소 측정 시간 확보</strong><p>최소 측정 시간은 1분이며, 주 주파수가 2Hz 미만인 경우에는 최소 2분 이상 측정해야 합니다.</p></div>
+        </div>
+        <div class="svib-step">
+          <div class="svib-step-num"></div>
+          <div class="svib-step-body"><strong>3축 중 최댓값 채택</strong><p>X·Y·Z 세 축의 값 중 가장 높은 값을 해당 측정 위치의 평가값으로 사용합니다.</p></div>
+        </div>
+        <div class="svib-step">
+          <div class="svib-step-num"></div>
+          <div class="svib-step-body"><strong>가이드라인 값 대비 판정</strong><p>Wm 가중 필터를 적용한 가속도를 ISO 20283-5의 허용 가능한 진동 가이드라인 값과 비교해 등급을 판정합니다. 제한된 측정 횟수에 따라 가이드라인 값을 초과할 수 있다는 점도 함께 고려합니다.</p></div>
+        </div>
+      </div>
+
+      <div class="svib-photo-card" style="margin-top:20px; max-width:640px;">
+        <img src="../assets/images/SHIP VIBRATION/ISO 20283-5 TABLE.png" alt="ISO 20283-5 거주구역 진동 가이드라인 값 — 승무원 구역·승객 구역" loading="lazy">
+        <div class="svib-photo-cap">▲ ISO 20283-5 거주구역 진동 가이드라인 값 예시 — 승무원 구역(선실·작업구역·사무실·개방갑판 휴게구역·항해 브릿지/기관제어실), 승객 구역(선실·공용구역·개방갑판 휴게구역) 기준값과 측정 초과 허용비율(10%)·최대 초과값을 규정합니다.</div>
+      </div>
+      <p style="font-size:12px; color:var(--text-mute); margin-top:12px;">※ 항해 브릿지·기관제어실은 초과가 허용되지 않는(no exceedance allowed) 가장 엄격한 구역입니다. 정확한 적용 범위·전체 구역 기준값은 ISO 20283-5 표준 원문을 확인하시기 바랍니다.</p>
+    </div>
+
+    <hr class="svib-divider">
+
+    <!-- 04 추천 시스템 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="svib-section-tag">04 · RECOMMENDED SYSTEM</div>
+      <h2 class="svib-h2">추천 시스템 — 포터블 진동 측정 시스템 VM31 + 3축 가속도센서</h2>
+      <p class="svib-sub">독일 MMF사의 휴대용 진동 측정 시스템 VM31과 3축 가속도센서(KS823B)를 사용하면 ISO 20283-5 규격에 부합되는 측정이 가능합니다.</p>
+
+      <div class="svib-diagram-grid">
+        <div>
+          <div style="font-size:14px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">휴대용 진동 측정 시스템의 특징</div>
+          <ul style="font-size:13.5px; color:var(--text-dim); line-height:1.85; padding-left:18px; margin:0 0 14px;">
+            <li>다채널 측정 채널 지원으로 여러 측정 지점을 효율적으로 기록</li>
+            <li>손-팔 진동에 대한 ISO 8041 Wh, 전신 진동에 대한 Wb·Wc·Wd·Wj·Wk·Wm 가중 필터 내장</li>
+            <li>구간·러닝 RMS, 최대 RMS(MTVV), 진동 선량 값(VDV), 벡터 합, 피크·최대 피크, 가속도·속도·변위 측정</li>
+            <li>125개 라인의 가속도 FFT 분석</li>
+            <li>날짜·설명이 포함된 10,000개 측정, 1,000개 FFT 저장 메모리</li>
+            <li>USB 인터페이스, 데이터 전송 및 일일 노출 A(8) 계산용 Excel 매크로 포함</li>
+            <li>컬러 OLED 화면, AAA(마이크로) 배터리 3개로 약 10시간 작동</li>
+            <li>손-팔 진동 키트·전신 진동 키트로 센서·액세서리 구성 가능</li>
+          </ul>
+        </div>
+        <div class="svib-photo-card">
+          <img src="../assets/images/Portable vibration/vm31.png" alt="MMF VM31 휴대용 진동 측정 시스템" loading="lazy">
+          <div class="svib-photo-cap">▲ MMF VM31 휴대용 진동 측정 시스템 — 화면에 ISO 2631 전신진동 구간 RMS(X·Y·Z), 벡터합·MTVV 값을 표시합니다.</div>
+        </div>
+      </div>
+
+      <div class="svib-thumb-row">
+        <div class="svib-thumb">
+          <img src="../assets/images/SHIP VIBRATION/VIBRATION SENSOR_01.jpg" alt="3축 가속도센서 KS823B" loading="lazy">
+          <div class="svib-thumb-cap">3축 가속도센서 KS823B — X·Y·Z 3축을 동시에 검출하는 원통형 가속도센서입니다.</div>
+        </div>
+        <div class="svib-thumb">
+          <img src="../assets/images/SHIP VIBRATION/DAQ SET.jpg" alt="현장 계측용 마운팅·액세서리 키트" loading="lazy">
+          <div class="svib-thumb-cap">현장 계측용 마운팅·액세서리 키트 — 센서 설치용 스터드·어댑터·공구를 휴대용 케이스로 구성했습니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="svib-divider">
+
+    <!-- 05 선박 진동 측정 모듈 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="svib-section-tag">05 · SHIP VIBRATION MODULE</div>
+      <h2 class="svib-h2">선박 진동 측정 모듈 — 센서 설치 방식</h2>
+      <p class="svib-sub">선박 진동 측정 전용 설치 모듈로는 스크류 체결형 베이스 모델 729와 마그네틱 흡착형 베이스 모델 508이 있어, 설치·측정이 용이합니다.</p>
+
+      <div class="svib-feat-grid">
+        <div class="svib-feat-item">
+          <div class="fi">🔩</div>
+          <div><strong>스크류 체결형 (베이스 모델 729)</strong><br>나사로 고정하는 방식으로, 반복 측정 지점이나 장기 설치에 적합해 견고한 고정이 필요할 때 사용합니다.</div>
+        </div>
+        <div class="svib-feat-item">
+          <div class="fi">🧲</div>
+          <div><strong>마그네틱 흡착형 (베이스 모델 508)</strong><br>강자성체 표면에 공구 없이 신속하게 탈부착할 수 있어, 임시 측정이나 다지점 순회 측정에 적합합니다.</div>
+        </div>
+      </div>
+
+      <div class="svib-photo-card" style="margin-top:20px; max-width:520px;">
+        <img src="../assets/images/SHIP VIBRATION/VIBRATION SENSOR PACKAGE.jpg" alt="선박 갑판 설치용 진동센서 마운팅 플레이트 — 수평계·KS823B 장착" loading="lazy">
+        <div class="svib-photo-cap">▲ 선박 갑판 설치용 마운팅 플레이트 — KS823B 가속도센서와 수평(레벨) 확인용 버블 레벨이 함께 장착되어 있어, 설치 시 수평 상태를 바로 확인할 수 있습니다.</div>
+      </div>
+
+      <div class="svib-thumb-row">
+        <div class="svib-thumb">
+          <img src="../assets/images/vibration sensor/마그네틱 베이스02.png" alt="마그네틱 베이스 규격표 — 508 모델 포함" loading="lazy">
+          <div class="svib-thumb-cap">마그네틱 베이스 규격표 — 508 모델(M8 내부나사, Ø54mm, 인장력 250N) 등 다양한 사이즈를 지원합니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="svib-divider">
+
+    <!-- 06 씨앤디테크 공급 -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="svib-section-tag">06 · CND TECH</div>
+      <h2 class="svib-h2">씨앤디테크 선박 진동 측정 솔루션</h2>
+      <p class="svib-sub">씨앤디테크는 ISO 20283-5 기준에 부합하는 선박 진동 측정 장비와 센서 구성을 공급하며, 측정 계획 수립부터 현장 계측·데이터 리포트 작성까지 기술지원을 제공합니다.</p>
+      <div class="svib-feat-grid">
+        <div class="svib-feat-item">
+          <div class="fi">✔</div>
+          <div>ISO 20283-5(구 ISO 6954) 기준에 맞춘 측정 위치·조건 컨설팅을 지원합니다.</div>
+        </div>
+        <div class="svib-feat-item">
+          <div class="fi">✔</div>
+          <div>MMF VM31 휴대용 진동 측정 시스템과 3축 가속도센서(KS823B)를 공급합니다.</div>
+        </div>
+        <div class="svib-feat-item">
+          <div class="fi">✔</div>
+          <div>스크류·마그네틱 등 설치 환경에 맞는 센서 마운팅 액세서리를 함께 제공합니다.</div>
+        </div>
+        <div class="svib-feat-item">
+          <div class="fi">✔</div>
+          <div>Excel 매크로 기반 데이터 정리, 구간 RMS·MTVV·VDV 리포트 작성을 지원합니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="svib-divider">
+
+    <!-- 07 FAQ -->
+    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
+      <div class="svib-section-tag">FAQ</div>
+      <h2 class="svib-h2">자주 묻는 질문</h2>
+      <div class="svib-faq-list">
+        <div class="svib-faq-item">
+          <button class="svib-faq-q"><span>ISO 20283-5는 무엇이며 ISO 6954와 어떤 관계인가요?</span><span class="svib-fq-icon">+</span></button>
+          <div class="svib-faq-a">ISO 20283-5는 이전의 ISO 6954를 대체한 표준으로, 여객선 및 상선의 거주성과 관련된 진동의 측정·보고·평가에 대한 지침을 정의합니다. 인체 진동 측정기 자체의 사양은 <strong>ISO 8041</strong>을, 전신 진동(Whole-Body Vibration) 평가 방법은 <strong>ISO 2631-1/-2</strong>를 참조하는 구조로 되어 있습니다.</div>
+        </div>
+        <div class="svib-faq-item">
+          <button class="svib-faq-q"><span>선박 진동 측정은 어떤 절차로 진행되나요?</span><span class="svib-fq-icon">+</span></button>
+          <div class="svib-faq-a">사람이 머무를 수 있는 모든 데크에 충분한 수의 측정 위치를 선정하고, 각 위치에서 3축(X/Y/Z)으로 측정합니다. 각 갑판에서 최소 두 개 이상의 3축 측정을 수행해야 하며, 세 축 모두 ISO 2631-2에 따른 결합 필터 Wm으로 가중치를 부여합니다. 관심 주파수 범위는 <strong>1~80Hz</strong>입니다.</div>
+        </div>
+        <div class="svib-faq-item">
+          <button class="svib-faq-q"><span>비교 가능한 측정값을 얻으려면 어떤 조건이 필요한가요?</span><span class="svib-fq-icon">+</span></button>
+          <div class="svib-faq-a">비교 가능한 측정값을 수집하려면 균일한 항해 조건이 전제되어야 합니다. 구체적으로 ① 깨끗한 항해 및 직선 항로, ② 일정한 일반적인 추진력, ③ 3% 이하의 해상 상태, ④ 프로펠러가 완전히 물속에 있는 상태의 4가지 조건을 충족해야 신뢰할 수 있는 데이터를 얻을 수 있습니다.</div>
+        </div>
+        <div class="svib-faq-item">
+          <button class="svib-faq-q"><span>진동 평가는 어떤 기준으로 판정하나요?</span><span class="svib-fq-icon">+</span></button>
+          <div class="svib-faq-a">전체 측정 시간에 걸쳐 통합된 진동 가속도의 구간 RMS 값을 평가에 사용합니다. 최소 측정 시간은 1분이며, 주 주파수가 2Hz 미만인 경우 최소 2분 이상 측정해야 합니다. 3축(X/Y/Z) 값 중 가장 높은 값을 평가에 사용하며, Wm 가중 필터를 적용한 가속도를 ISO 20283-5의 가이드라인 값과 비교해 거주성 등급을 판정합니다.</div>
+        </div>
+        <div class="svib-faq-item">
+          <button class="svib-faq-q"><span>어떤 장비로 선박 진동을 측정하나요?</span><span class="svib-fq-icon">+</span></button>
+          <div class="svib-faq-a">독일 MMF사의 휴대용 진동 측정 시스템 <strong>VM31</strong>과 3축 가속도센서(<strong>KS823B</strong>)를 조합하면 ISO 20283-5 규격에 부합하는 측정이 가능합니다. 손-팔 진동(ISO 8041 Wh)과 전신 진동(Wb·Wc·Wd·Wj·Wk·Wm) 가중 필터를 모두 지원하며, 구간·러닝 RMS, 최대 RMS(MTVV), 진동 선량 값(VDV), 벡터 합, 피크값, FFT(125라인) 분석 기능을 갖추고 있습니다.</div>
+        </div>
+        <div class="svib-faq-item">
+          <button class="svib-faq-q"><span>선박에 가속도센서는 어떻게 설치하나요?</span><span class="svib-fq-icon">+</span></button>
+          <div class="svib-faq-a">선박 진동 측정 전용 설치 모듈로 스크류 체결형 베이스 모델 <strong>729</strong>와 마그네틱 흡착형 베이스 모델 <strong>508</strong>이 사용됩니다. 스크류 체결형은 영구 설치나 반복 측정 지점에, 마그네틱 베이스는 강자성체 표면에 공구 없이 신속하게 탈부착할 수 있어 임시 측정이나 다지점 순회 측정에 적합합니다.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CTA ─────────────────────────────────────────────────────────── -->
+<section style="padding:0 0 100px;">
+  <div class="container">
+    <div style="padding:40px 48px; background:linear-gradient(135deg, var(--orange-tint) 0%, #fff 100%); border:1px solid var(--orange-line); border-radius:var(--radius); max-width:840px;" class="fade-in">
+      <div class="svib-tag">CONTACT</div>
+      <h3 style="font-size:24px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">선박 진동 측정 시스템 도입 상담</h3>
+      <p style="font-size:14.5px; color:var(--text-dim); line-height:1.75; margin-bottom:24px;">씨앤디테크는 ISO 20283-5 기준에 부합하는 선박 진동 측정 장비·센서 구성과 기술지원을 제공합니다. 선박 종류·측정 목적을 알려주시면 최적의 계측 시스템을 제안드립니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">선박 진동 측정 문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+      </div>
+      <p style="font-size:12px; color:var(--text-mute); margin-top:16px; margin-bottom:0;">관련 기술자료 →
+        <a href="vibration.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">휴대용 진동측정 장비</a> ·
+        <a href="vibration-sensor.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">진동센서 원리·설치</a> ·
+        <a href="vm100.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">다채널 진동측정기 VM100</a> ·
+        <a href="building-vibration-monitoring.html" style="color:var(--accent); text-decoration:none; margin-left:4px;">건축물 진동 모니터링</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="vibration.html">진동 측정</a></li><li><a href="vibration-sensor.html">진동센서</a></li><li><a href="vm100.html">다채널 진동측정기</a></li><li><a href="daq-system.html">DAQ 시스템</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank" rel="noopener">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta"><span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span></div>
+  </div>
+</footer>
+
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+document.querySelectorAll('.svib-faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.svib-faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.svib-faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
