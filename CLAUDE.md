@@ -1,5 +1,13 @@
 # CND TECH 웹사이트 — 작업 현황
 
+## ⭐ 2026-07-25 완료: MMF 신호처리 앰프(Signal Conditioner) 기술자료 페이지 신규 생성
+- resources/mmf-signal-conditioner.html 신규 생성. mmf.de/en/product-category/signal-conditioners/ 22개 제품(M29, M33, IEPE100, M72A1/B1/A3/B3, M72S1/S8/R1/R8, M208A/B, M14, M12, MQ20, MQ40, FB2, FB3, FBV, FBD, M29/33DIN) + 기존 카탈로그 PDF 참조.
+- 타이틀 "MMF 차지앰프 (신호처리 앰프)" — 2026-07-25 지침(완전가이드 금지) 준수. 제품을 7개 카테고리(IEPE 공급·증폭 모듈 / 1채널 데스크탑 / 3채널 데스크탑 / 랙 모듈형 8채널 / 8채널 표준형 / 진동 상시감시 모듈 / 액세서리)로 그룹핑, 22개 카드 + 22행 비교표 + 7개 적용분야 카드 + FAQ 6문항(JSON-LD TechArticle+FAQPage 동기화).
+- 사용자가 준비한 assets/images/Signal conditioner/ 폴더의 실사진 16장 사용(FB2·FB3·FBV·FBD·M29/33DIN 5개 액세서리는 실사진 없어 이미지 없이 텍스트만 구성, MQ40은 MQ20과 동일 사진 재사용 — MMF 공식 사이트도 동일 정책).
+- sitemap.xml에 <url> 등록, resources/index.html "소음·진동 측정" 카테고리에 mmf-accelerometer.html 카드 바로 다음 카드 추가, footer는 기존 4개 링크 유지(미변경).
+- 검증: div 밸런스(157/157), `</html>` 정상 종료, JSON-LD 파싱 성공 + FAQ 6개/visible details 6개 일치, 이미지 참조 19개 전부 디스크 존재 확인, resources/index.html div 밸런스(70/70)도 재확인.
+- ⚠️ git add 시 새 이미지 폴더 `assets/images/Signal conditioner/` 포함 필요.
+
 ## ⭐ 2026-07-25 지침: 기술자료 신규 페이지 타이틀에 "완전 가이드" 등 상투적 문구 금지
 - 신규 기술자료 페이지를 생성할 때 `<title>`/`og:title`/JSON-LD `headline`/`<h1>`/`resources/index.html` 카드 `<h2>`에 "완전 가이드", "전체 라인업" 같은 상투적·군더더기 문구를 붙이지 말 것. 브랜드명 + 정식 제품명(필요 시 괄호 병기)만으로 간결하게 구성. 예: "MMF 가속도센서 (진동센서)" (❌ "MMF 가속도센서(진동센서) 전체 라인업 — 모델별 사양 가이드"), 앞서 정한 "BD SENSORS 압력센서" 타이틀도 같은 원칙.
 - 기존에 이미 "완전 가이드"가 붙어 있는 페이지(볼트 축력 측정, 토크 측정 방법, 휴대용 진동측정 시스템, 데이터 수집장치)는 이번 지침 대상이 아니며 별도 요청 시에만 수정.
