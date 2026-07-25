@@ -1,5 +1,14 @@
 # CND TECH 웹사이트 — 작업 현황
 
+## ⭐ 2026-07-25 완료: 비접촉식 RPM 측정센서(타코미터) 기술자료 페이지 신규 생성
+- resources/tachometer-sensor.html 신규 생성. monarchinstrument.com/product-category/remote-speed-sensors/ 8개 제품(ROS, ROSM, ROLS, RLS, GE200-HP, IRS, ROS-HT-W-25, CSLS) + candj.tistory.com/72(비접촉 RPM 측정 센서/타코미터) 참조.
+- ⚠️ **사용자 지침**: 브랜드명(Monarch/Monarch Instrument)을 본문·이미지 파일명 어디에도 노출하지 말 것 — 8개 제품을 방식(가시광 LED 옵티컬 / 변조 LED 옵티컬 / 가시광 레이저 / 방수형(IP67) 러기드 레이저 / 유도형 스파크플러그 / 적외선 / 고온형 광학 / 스마트 디지털 레이저) 기준의 일반 명칭으로 재구성해 작성. 실측 스펙(속도범위·작동거리·전원·출력)은 공식 제품페이지에서 그대로 인용.
+- 이미지 파일명에 "Monarch-Instrument"가 포함되어 있던 것을 발견해 `assets/images/Tachometer/ros-ht-w-25-high-temp-sensor.jpg`로 리네임 후 참조 수정(브랜드명 URL 노출 방지, pressure-sensor.html의 bdsensors.de 제거 사례와 동일 원칙).
+- 사용자가 준비한 assets/images/Tachometer/ 폴더의 실사진 6장 사용(IRS·ROS-HT-W-25는 정확히 일치하는 실제 제품사진, 나머지 LED/레이저/방수형 카테고리는 housing이 동일한 사진을 방식별로 재사용). 유도형·스마트 디지털 레이저 2개 카테고리는 매칭되는 사진이 없어 텍스트만 구성(MMF 액세서리 카드와 동일 패턴). 폴더 내 "펄스미터.png"(Autonics 브랜드 별도 제품, 다운스트림 디지털 카운터/펄스미터)는 이번 페이지에서는 사용하지 않음.
+- sitemap.xml에 <url> 등록, resources/index.html "소음·진동 측정" 카테고리에 rotor-balancing.html 카드 바로 다음 카드 추가, footer는 기존 4개 링크 유지(미변경).
+- 검증: div 밸런스(111/111), `</html>` 정상 종료, JSON-LD 파싱 성공 + FAQ 6개/visible details 6개 일치, 이미지 참조 전부 디스크 존재 확인, "Monarch" 문자열 본문에 없음(grep -i) 확인, resources/index.html div 밸런스(72/72)도 재확인.
+- ⚠️ git add 시 새 이미지 폴더 `assets/images/Tachometer/` 포함 필요(리네임된 파일 포함).
+
 ## ⭐ 2026-07-25 완료: MMF 신호처리 앰프(Signal Conditioner) 기술자료 페이지 신규 생성
 - resources/mmf-signal-conditioner.html 신규 생성. mmf.de/en/product-category/signal-conditioners/ 22개 제품(M29, M33, IEPE100, M72A1/B1/A3/B3, M72S1/S8/R1/R8, M208A/B, M14, M12, MQ20, MQ40, FB2, FB3, FBV, FBD, M29/33DIN) + 기존 카탈로그 PDF 참조.
 - 타이틀 "MMF 차지앰프 (신호처리 앰프)" — 2026-07-25 지침(완전가이드 금지) 준수. 제품을 7개 카테고리(IEPE 공급·증폭 모듈 / 1채널 데스크탑 / 3채널 데스크탑 / 랙 모듈형 8채널 / 8채널 표준형 / 진동 상시감시 모듈 / 액세서리)로 그룹핑, 22개 카드 + 22행 비교표 + 7개 적용분야 카드 + FAQ 6문항(JSON-LD TechArticle+FAQPage 동기화).
