@@ -184,6 +184,17 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 @media (max-width: 640px) {
   .rs-img-duo { grid-template-columns: 1fr; }
 }
+.rs-img-quad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 24px 0;
+}
+@media (max-width: 760px) {
+  .rs-img-quad { grid-template-columns: 1fr 1fr; }
+}
+.rs-img-quad .rs-img-wrap img { height: 150px; }
+.rs-img-quad .rs-img-caption { font-size: 11px; }
 
 .rs-checklist {
   list-style: none;
@@ -331,8 +342,8 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
       </p>
 
       <div class="rs-img-wrap">
-        <img src="../assets/images/multicon/multicon-main.jpg" alt="SIMEX MultiCon 산업용 컨트롤러 데이터 레코더" loading="lazy" style="width:100%; height:auto; max-height:380px; object-fit:contain; background:#f8f8f8;" onerror="this.closest('.rs-img-wrap').style.display='none'">
-        <div class="rs-img-caption">SIMEX MultiCon 산업용 컨트롤러·데이터 레코더</div>
+        <img src="../assets/images/SIMEX/CMC-99.jpg" alt="SIMEX MultiCon 산업용 컨트롤러 데이터 레코더" loading="lazy" style="width:100%; height:auto; max-height:380px; object-fit:contain; background:#f8f8f8;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        <div class="rs-img-caption">SIMEX MultiCon CMC 시리즈 — 4채널 컨트롤러 뷰 디스플레이 예시</div>
       </div>
     </div>
 
@@ -350,8 +361,8 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
       </ul>
 
       <div class="rs-img-wrap">
-        <img src="../assets/images/multicon/multicon-product.jpg" alt="MultiCon CMC-141 제품 사진" loading="lazy" style="width:100%; height:auto; max-height:380px; object-fit:contain; background:#f8f8f8;" onerror="this.closest('.rs-img-wrap').style.display='none'">
-        <div class="rs-img-caption">MultiCon CMC-141 — 5.7인치 TFT 터치스크린 디스플레이</div>
+        <img src="../assets/images/SIMEX/CMC-141 DISPLAY.jpg" alt="MultiCon CMC-141 제품 사진 — SCADA 스타일 공정 화면" loading="lazy" style="width:100%; height:auto; max-height:380px; object-fit:contain; background:#f8f8f8;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+        <div class="rs-img-caption">MultiCon CMC-141 — 5.7인치 TFT 터치스크린 디스플레이, SCADA 스타일 공정 화면 구성 예시(정유 플랜트)</div>
       </div>
 
       <p style="font-size:14px; color:var(--text-dim); line-height:1.7; margin-top:16px;">
@@ -360,9 +371,15 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         생성이 가능하고 손쉽게 채널을 확장할 수 있습니다.
       </p>
 
-      <div class="rs-img-wrap">
-        <img src="../assets/images/multicon/multicon-panel.jpg" alt="MultiCon 산업 현장 패널 설치 사진" loading="lazy" style="width:100%; height:auto; max-height:380px; object-fit:contain; background:#f8f8f8;" onerror="this.closest('.rs-img-wrap').style.display='none'">
-        <div class="rs-img-caption">산업 자동 제어 현장 적용 사례</div>
+      <div class="rs-img-duo">
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/SIMEX/MULTICON GRAPH.jpg" alt="MultiCon 다채널 게이지 대시보드 화면" loading="lazy" style="width:100%; height:auto; max-height:340px; object-fit:contain; background:#f8f8f8;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+          <div class="rs-img-caption">습도·토크·속도·온도·전류·유량 등 다양한 신호를 한 화면에서 동시 모니터링하는 예시 화면</div>
+        </div>
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/SIMEX/MultiCon_CMC-141.jpg" alt="MultiCon 온도 모니터링 대시보드 화면" loading="lazy" style="width:100%; height:auto; max-height:340px; object-fit:contain; background:#f8f8f8;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+          <div class="rs-img-caption">구역별 온도 모니터링 대시보드 화면 구성 예시</div>
+        </div>
       </div>
     </div>
 
@@ -388,15 +405,25 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <tr><th>전원</th><td>1 x 24V DC ±5%, 최대 200mA</td></tr>
       </table>
 
-      <div class="rs-img-duo">
+      <div class="rs-img-quad">
         <div class="rs-img-wrap" style="margin:0;">
-          <img src="../assets/images/multicon/multicon-io-diagram-01.jpg" alt="MultiCon 입출력 모듈 구성도 1" loading="lazy" style="width:100%; height:220px; object-fit:cover;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+          <img src="../assets/images/SIMEX/CMC BACK CONNECTION.png" alt="MultiCon 후면 슬롯형 입출력 모듈 탈부착" loading="lazy" style="width:100%; height:150px; object-fit:contain; background:#f8f8f8; padding:6px;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+          <div class="rs-img-caption">후면 슬롯형 모듈 탈부착</div>
         </div>
         <div class="rs-img-wrap" style="margin:0;">
-          <img src="../assets/images/multicon/multicon-io-diagram-02.jpg" alt="MultiCon 입출력 모듈 구성도 2" loading="lazy" style="width:100%; height:220px; object-fit:cover;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+          <img src="../assets/images/SIMEX/INPUT BOARD_01.png" alt="MultiCon 전원 모듈 PS42" loading="lazy" style="width:100%; height:150px; object-fit:contain; background:#f8f8f8; padding:6px;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+          <div class="rs-img-caption">전원 모듈 PS42</div>
+        </div>
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/SIMEX/INPUT BOARD_02.png" alt="MultiCon 입력 모듈 U16" loading="lazy" style="width:100%; height:150px; object-fit:contain; background:#f8f8f8; padding:6px;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+          <div class="rs-img-caption">입력 모듈 U16</div>
+        </div>
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/SIMEX/INPUT BOARD_03.png" alt="MultiCon 출력 모듈 S8·S16" loading="lazy" style="width:100%; height:150px; object-fit:contain; background:#f8f8f8; padding:6px;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+          <div class="rs-img-caption">출력 모듈 S8·S16</div>
         </div>
       </div>
-      <p style="font-size:12px; color:var(--text-mute); text-align:center; margin-top:-8px;">MultiCon 슬롯형 입출력 모듈 구성</p>
+      <p style="font-size:12px; color:var(--text-mute); text-align:center; margin-top:-8px;">MultiCon 슬롯형 입출력 모듈 구성 — 전원·입력·출력 카드를 필요에 맞게 조합해 확장</p>
     </div>
 
     <!-- 4. 통신·소프트웨어 -->
@@ -412,10 +439,17 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
       <p style="font-size:14px; color:var(--text-dim); line-height:1.7; margin:16px 0;">
         이더넷·USB 지원으로 PC 소프트웨어를 통한 데이터 확인, 설정, 원격 모니터링이 가능합니다.
       </p>
-      <div class="rs-img-wrap">
-        <img src="../assets/images/multicon/multicon-software.jpg" alt="MultiCon PC 소프트웨어 화면" loading="lazy" style="width:100%; height:auto; max-height:380px; object-fit:contain; background:#f8f8f8;" onerror="this.closest('.rs-img-wrap').style.display='none'">
-        <div class="rs-img-caption">MultiCon PC 소프트웨어 — 이더넷·USB 연동</div>
+      <div class="rs-img-duo">
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/SIMEX/SOFTWARE_02.png" alt="MultiCon PC 소프트웨어 — 채널별 트렌드 그래프" loading="lazy" style="width:100%; height:auto; max-height:340px; object-fit:contain; background:#f8f8f8;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+          <div class="rs-img-caption">PC 소프트웨어 — 채널별 트렌드 그래프 확인 화면</div>
+        </div>
+        <div class="rs-img-wrap" style="margin:0;">
+          <img src="../assets/images/SIMEX/SOFTWARE.png" alt="MultiCon PC 소프트웨어 — 채널 설정 화면" loading="lazy" style="width:100%; height:auto; max-height:340px; object-fit:contain; background:#f8f8f8;" onerror="this.closest('.rs-img-wrap').style.display='none'">
+          <div class="rs-img-caption">PC 소프트웨어 — 채널별 상세 설정 화면</div>
+        </div>
       </div>
+      <p style="font-size:12px; color:var(--text-mute); text-align:center; margin-top:-8px;">MultiCon PC 소프트웨어 — 이더넷·USB 연동</p>
     </div>
 
     <!-- 5. 적용 분야 -->
