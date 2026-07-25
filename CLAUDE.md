@@ -1,5 +1,13 @@
 # CND TECH 웹사이트 — 작업 현황
 
+## ⭐ 2026-07-25 완료: 전 페이지 공통 "맨 위로 이동" 버튼 추가 + js/main.js 최초 생성
+- ⚠️ **발견한 기존 버그**: 최근 생성된 7개 리소스 페이지(tachometer-sensor.html, ir-temperature-sensor.html, mmf-accelerometer.html, mmf-signal-conditioner.html, pressure-sensor.html, field-service.html, sensors.html)가 `<script src="../js/main.js">`를 참조하고 있었지만, 실제로는 `js/main.js` 파일이 저장소에 한 번도 존재한 적이 없어 전부 404 상태였음(모바일 메뉴·언어토글 등이 각 페이지에 인라인으로 없어 해당 기능 미동작 상태였음). 이번 작업으로 `js/main.js`를 신규 생성해 이 버그가 함께 해결됨(back-to-top 기능만 포함, 기존 인라인 스크립트와의 충돌 방지를 위해 모바일 네비·언어토글 로직은 포함하지 않음).
+- `js/main.js` 신규 생성: 스크롤 400px 이상 시 우측 하단에 원형 버튼이 fade-in, 클릭 시 `window.scrollTo({top:0, behavior:'smooth'})`로 최상단 이동. 버튼 엘리먼트는 JS가 동적으로 생성해 `document.body`에 append하므로 각 HTML 파일의 본문(body) 마크업은 건드리지 않음.
+- `css/style.css`에 `.scroll-top-btn` 스타일 추가(우측 24px·하단 24px 고정, 48px 원형, `var(--charcoal)` 배경/`var(--accent)` 호버, z-index 120, 모바일 640px 이하에서 44px·16px 여백으로 축소).
+- 사이트 전체 46개 HTML 파일 중 39개(루트 페이지 6개 + design-preview 2개 + resources 31개)에 `<script src="js/main.js">` 또는 `<script src="../js/main.js">`를 `</body>` 직전에 자동 삽입(경로 깊이에 따라 상대경로 자동 계산). 기존에 이미 참조하던 7개 페이지는 파일이 새로 생겨 자동으로 정상 작동.
+- 검증: 46개 전체 페이지가 js/main.js를 참조함을 확인, `node --check js/main.js` 문법 검증 통과, 각 파일에 `</body>` 중복 없음 확인.
+- ⚠️ git add 시 신규 폴더 `js/` (main.js) 및 수정된 css/style.css, 그리고 39개 HTML 파일 전체 포함 필요.
+
 ## ⭐ 2026-07-25 완료: 기술자료 라이브러리에 "센서" 카테고리 신설
 - resources/index.html에 새 필터 카테고리 신설: `<button data-filter="sensor">센서</button>` (전체 다음, 잔류응력측정 앞) + `<h3 data-cat-heading="sensor">센서</h3>` 섹션을 그리드 최상단(잔류응력측정 섹션 바로 앞)에 추가.
 - 센서 섹션에 4개 카드 배치: ① tachometer-sensor.html(RPM 센서) — 기존 "소음·진동 측정" 섹션에서 이동, ② ir-temperature-sensor.html(온도센서) — 기존 "DAQ·계측 시스템" 섹션에서 이동, ③ pressure-sensor.html(압력센서) — 기존 "DAQ·계측 시스템" 섹션에서 이동, ④ vibration-sensor.html(진동센서) — 사용자 지침에 따라 "소음·진동 측정" 섹션의 원본 카드는 그대로 두고 센서 섹션에 카드를 복제 추가(진동센서만 두 카테고리에 중복 노출).
