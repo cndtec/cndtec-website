@@ -1,5 +1,12 @@
 # CND TECH 웹사이트 — 작업 현황
 
+## ⭐ 2026-07-25 완료: 기술자료 라이브러리 필터·카테고리 글자 크기 확대 + RPM 라인아이콘 적용
+- resources/index.html `.res-filter-btn`(전체/센서/잔류응력측정/스트레인게이지·힘측정 등 필터 버튼) font-size 16px→18px, padding 12px 22px→13px 24px로 확대. 모바일(700px 이하)도 14px→15px로 비례 확대.
+- `.res-cat-heading`(각 섹션 제목: 센서/잔류응력 측정/스트레인게이지·힘 측정 등) font-size 14px→20px로 확대(가장 작았던 요소), letter-spacing은 2px→1.2px로 축소해 커진 글자 크기에서도 답답해 보이지 않게 조정. 모바일 전용 17px 규칙 신규 추가.
+- 사용자가 준비한 `assets/images/LINE ICON  RPM센서.png`(파일명에 공백 2칸 포함, 정확히 일치시켜 참조)를 "센서" 카테고리의 tachometer-sensor.html 카드에 적용 — 기존에는 진동측정 아이콘을 임시로 재사용 중이었음.
+- 검증: div 밸런스(76/76), `</html>` 정상 종료, 신규 폰트 크기·아이콘 경로 grep으로 확인.
+- ⚠️ git add 시 신규 이미지 `assets/images/LINE ICON  RPM센서.png` 포함 필요.
+
 ## ⭐ 2026-07-25 완료: 온도 라인아이콘 적용 + MMF 차지앰프 타이틀 변경
 - 사용자가 준비한 `assets/images/LINE ICON 온도측정.png`를 resources/index.html "센서" 카테고리의 ir-temperature-sensor.html 카드에 적용(기존에는 아이콘 이미지가 없어 인라인 SVG만 있었음 — 이제 다른 카테고리(압력측정·진동측정 등)와 동일하게 실제 라인아이콘 PNG + onerror 시 인라인 SVG 폴백 패턴으로 통일).
 - resources/mmf-signal-conditioner.html 타이틀을 "MMF 차지앰프 (신호처리 앰프)" → "진동·차지 앰프 (IEPE/차지 앰프)"로 변경. `<title>`/`og:title`/JSON-LD `headline`/`<h1>` 4곳 모두 반영, resources/index.html 카드 `<h2>`도 동일하게 맞춤. 본문 설명(meta description/keywords, 섹션 h2, FAQ 등)의 "신호처리 앰프" 표현은 이번 요청 범위(타이틀만)를 벗어나 변경하지 않음.
