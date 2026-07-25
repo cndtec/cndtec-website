@@ -1,5 +1,17 @@
 # CND TECH 웹사이트 — 작업 현황
 
+## ⭐ 2026-07-25 완료: 온도 라인아이콘 적용 + MMF 차지앰프 타이틀 변경
+- 사용자가 준비한 `assets/images/LINE ICON 온도측정.png`를 resources/index.html "센서" 카테고리의 ir-temperature-sensor.html 카드에 적용(기존에는 아이콘 이미지가 없어 인라인 SVG만 있었음 — 이제 다른 카테고리(압력측정·진동측정 등)와 동일하게 실제 라인아이콘 PNG + onerror 시 인라인 SVG 폴백 패턴으로 통일).
+- resources/mmf-signal-conditioner.html 타이틀을 "MMF 차지앰프 (신호처리 앰프)" → "진동·차지 앰프 (IEPE/차지 앰프)"로 변경. `<title>`/`og:title`/JSON-LD `headline`/`<h1>` 4곳 모두 반영, resources/index.html 카드 `<h2>`도 동일하게 맞춤. 본문 설명(meta description/keywords, 섹션 h2, FAQ 등)의 "신호처리 앰프" 표현은 이번 요청 범위(타이틀만)를 벗어나 변경하지 않음.
+- `<h1>` 줄바꿈: `진동·차지 앰프<br>(IEPE/차지 앰프)` — 기존 2026-07-24 지침(타이틀-부가설명 사이 `<br>`) 그대로 적용. 두 줄 글자수(8자 vs 12자, 영문 IEPE는 폭이 좁아 실제 시각적으로는 더 비슷)를 비교해 균형 확인.
+- ⚠️ **지침 업데이트**: 위 "2026-07-24 지침"을 "영문 병기"에서 "괄호 부가설명 전반(영문 번역이든 약칭/기술용어든)"으로 일반화하고, 줄바꿈 균형을 확인하는 절차를 명시적으로 추가함(자세한 내용은 아래 지침 항목 참고). 앞으로 기술문서 타이틀을 만들거나 바꿀 때마다 이 확장된 규칙을 적용할 것.
+- 검증: mmf-signal-conditioner.html div 밸런스(157/157), JSON-LD 파싱 성공 + FAQ 6개/visible details 6개 일치, headline 값 확인. resources/index.html div 밸런스(76/76), 신규 아이콘 파일 존재 확인.
+
+## ⭐ 2026-07-25 완료: "센서" 카테고리 카드 교체 (진동센서원리 → MMF 가속도센서)
+- resources/index.html "센서" 섹션에서 vibration-sensor.html(진동센서 원리·선택·설치 가이드) 카드를 제거하고, mmf-accelerometer.html(MMF 가속도센서) 카드로 교체.
+- vibration-sensor.html은 "소음·진동 측정" 섹션에는 그대로 유지되어 있어 결과적으로 원래 위치로 단일 노출 복귀. 대신 mmf-accelerometer.html이 "소음·진동 측정"과 "센서" 두 카테고리에 중복 노출(사용자가 원래 진동센서에 요구했던 이중노출 패턴을 그대로 mmf-accelerometer.html에 적용).
+- 검증: div 밸런스(76/76), href 카운트 확인(vibration-sensor.html 1회, mmf-accelerometer.html 2회, 나머지 센서 3종 각 1회).
+
 ## ⭐ 2026-07-25 완료: 전 페이지 공통 "맨 위로 이동" 버튼 추가 + js/main.js 최초 생성
 - ⚠️ **발견한 기존 버그**: 최근 생성된 7개 리소스 페이지(tachometer-sensor.html, ir-temperature-sensor.html, mmf-accelerometer.html, mmf-signal-conditioner.html, pressure-sensor.html, field-service.html, sensors.html)가 `<script src="../js/main.js">`를 참조하고 있었지만, 실제로는 `js/main.js` 파일이 저장소에 한 번도 존재한 적이 없어 전부 404 상태였음(모바일 메뉴·언어토글 등이 각 페이지에 인라인으로 없어 해당 기능 미동작 상태였음). 이번 작업으로 `js/main.js`를 신규 생성해 이 버그가 함께 해결됨(back-to-top 기능만 포함, 기존 인라인 스크립트와의 충돌 방지를 위해 모바일 네비·언어토글 로직은 포함하지 않음).
 - `js/main.js` 신규 생성: 스크롤 400px 이상 시 우측 하단에 원형 버튼이 fade-in, 클릭 시 `window.scrollTo({top:0, behavior:'smooth'})`로 최상단 이동. 버튼 엘리먼트는 JS가 동적으로 생성해 `document.body`에 append하므로 각 HTML 파일의 본문(body) 마크업은 건드리지 않음.
@@ -47,13 +59,14 @@
 - 신규 기술자료 페이지를 생성할 때 `<title>`/`og:title`/JSON-LD `headline`/`<h1>`/`resources/index.html` 카드 `<h2>`에 "완전 가이드", "전체 라인업" 같은 상투적·군더더기 문구를 붙이지 말 것. 브랜드명 + 정식 제품명(필요 시 괄호 병기)만으로 간결하게 구성. 예: "MMF 가속도센서 (진동센서)" (❌ "MMF 가속도센서(진동센서) 전체 라인업 — 모델별 사양 가이드"), 앞서 정한 "BD SENSORS 압력센서" 타이틀도 같은 원칙.
 - 기존에 이미 "완전 가이드"가 붙어 있는 페이지(볼트 축력 측정, 토크 측정 방법, 휴대용 진동측정 시스템, 데이터 수집장치)는 이번 지침 대상이 아니며 별도 요청 시에만 수정.
 
-## ⭐ 2026-07-24 지침: 타이틀에 영문 병기(괄호) 추가 시 줄바꿈 규칙
-기술자료 타이틀에 영문 용어를 괄호로 병기해달라는 요청(예: "프레스 로드 모니터링 시스템 (Tonnage Monitoring System)")이 있을 때는 위치별로 다르게 처리할 것:
-- `<title>` / `og:title` / `og:description` / JSON-LD `headline` 등 **일반 텍스트 컨텍스트**: 국문 제목 바로 뒤에 영문을 괄호로 병기하고 한 줄로 유지 (HTML 태그 삽입 불가한 위치이므로 줄바꿈 없음). 예: `프레스 로드 모니터링 시스템 (Tonnage Monitoring System) - 스트레인 트랜스듀서 기반 하중·상태진단 | 씨앤디테크`
-- `<h1>` 등 **화면에 렌더링되는 헤딩**: 국문 제목과 영문 병기 사이에 `<br>`을 넣어 줄바꿈 처리 (큰 폰트에서 가독성 확보). 예: `프레스 로드 모니터링 시스템<br>(Tonnage Monitoring System)`
-- `resources/index.html` 카드 `<h2>`: 짧게 한 줄로 유지 가능하면 `<br>` 없이 국영문 병기 (예: `프레스 로드 모니터링 시스템 (Tonnage Monitoring System)`), 카드 폭이 좁아 넘칠 경우에만 `<br>` 고려.
-- 영문 용어는 `<meta name="keywords">`에도 소문자 그대로 추가 (예: `tonnage monitoring system`).
-- 페이지 저장 후에는 항상 `grep -n "<영문용어>"`로 title/og:title/headline/H1/index.html 카드 전부에 일관되게 반영됐는지 확인하고, div 밸런스·`</html>` 종료 여부도 함께 재확인할 것.
+## ⭐ 2026-07-24 지침 (2026-07-25 확장): 타이틀에 괄호 부가설명 추가 시 줄바꿈 규칙
+기술자료 타이틀이 "메인명칭 (부가설명)" 구조를 가질 때 — 부가설명이 영문 번역(예: "Tonnage Monitoring System")이든, 약칭/기술용어 병기(예: "신호처리 앰프", "IEPE/차지 앰프", "타코미터")든 상관없이 아래 규칙을 동일하게 적용할 것:
+- `<title>` / `og:title` / `og:description` / JSON-LD `headline` 등 **일반 텍스트 컨텍스트**: 메인명칭 바로 뒤에 부가설명을 괄호로 병기하고 한 줄로 유지 (HTML 태그 삽입 불가한 위치이므로 줄바꿈 없음). 예: `프레스 로드 모니터링 시스템 (Tonnage Monitoring System) - 스트레인 트랜스듀서 기반 하중·상태진단 | 씨앤디테크`
+- `<h1>` 등 **화면에 렌더링되는 헤딩**: 메인명칭과 괄호 부가설명 사이에 `<br>`을 넣어 두 줄로 줄바꿈 처리 (큰 폰트에서 가독성 확보). 예: `진동·차지 앰프<br>(IEPE/차지 앰프)`
+- `resources/index.html` 카드 `<h2>`: 짧게 한 줄로 유지 가능하면 `<br>` 없이 병기 (예: `프레스 로드 모니터링 시스템 (Tonnage Monitoring System)`), 카드 폭이 좁아 넘칠 경우에만 `<br>` 고려. 페이지 본문 h1과 반드시 동일한 타이틀 문구로 맞출 것(카드와 본문 제목이 다르면 안 됨).
+- 영문 용어가 포함된 경우 `<meta name="keywords">`에도 소문자 그대로 추가 (예: `tonnage monitoring system`).
+- **줄바꿈 균형 확인(신규, 2026-07-25)**: `<br>`로 나뉜 두 줄의 길이가 한쪽이 지나치게 짧거나 길어 보이지 않는지 확인할 것 — 대략 두 줄의 표시 글자 수(영문은 한글 대비 폭이 좁으므로 실제 폭 기준으로 어림)가 비슷한 수준이면 통과. 확연히 불균형하면(예: 한 줄은 3~4자, 다른 줄은 15자 이상) `<br>` 위치를 조정하거나 문구를 다듬을 것. 매번 실제 브라우저로 렌더링해 볼 필요는 없고, 문자 수 비교로 충분함.
+- 타이틀을 변경/생성할 때마다 이 규칙을 적용하고, 저장 후 항상 `grep -n "<새 문구>"`로 title/og:title/headline/H1/index.html 카드 전부에 일관되게 반영됐는지 확인하고, div 밸런스·`</html>` 종료 여부도 함께 재확인할 것.
 
 ## ⭐ 2026-07-13 완료: 홈페이지 hover 효과(스포트라이트) 전체 페이지 확대 + 파일 손상 2건 발견/복구
 - 커서 스포트라이트(fx-spotlight) 색 강도 2배 진하게 조정(opacity 0.16→0.32, css/style.css).
