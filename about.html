@@ -562,14 +562,6 @@ window.addEventListener('scroll', () => {
   document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40);
 });
 
-// 커서 스포트라이트 (fx-spotlight)
-document.querySelectorAll('.fx-spotlight').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const rect = card.getBoundingClientRect();
-    card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
-    card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
-  });
-});
 </script>
 
 

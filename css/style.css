@@ -400,20 +400,12 @@ header {
 .blog-card .blog-link svg { transition: transform 0.2s; }
 .blog-card:hover .blog-link svg { transform: translateX(4px); }
 
-/* ── Hover FX: cursor spotlight ── */
-.fx-spotlight { position: relative; }
-.fx-spotlight::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(242,148,0,0.32), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  z-index: 1;
+/* ── Hover FX: 박스 강조 (기술자료 카드와 동일한 톤 — 커서 스포트라이트 대신 테두리/그림자로 진하게 표시) ── */
+.fx-spotlight { transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease; }
+.fx-spotlight:hover {
+  border-color: var(--accent-deep);
+  box-shadow: 0 0 0 2px var(--accent-deep), var(--shadow-md);
 }
-.fx-spotlight:hover::before { opacity: 1; }
 
 /* ── Magnetic CTA button ── */
 .btn-magnetic { transition: transform 0.2s ease, background 0.2s, border-color 0.2s, box-shadow 0.2s; will-change: transform; }

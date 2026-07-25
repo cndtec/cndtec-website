@@ -360,7 +360,7 @@
       </a>
 
       <!-- P-04 -->
-      <a href="resources/sensors.html" class="prod-img-card fx-spotlight fade-in" data-id="sensors">
+      <a href="resources/pressure-sensor.html" class="prod-img-card fx-spotlight fade-in" data-id="sensors">
         <div class="img-zone has-photo" style="height:200px">
           <img src="assets/images/센서류.png" alt="센서 공급">
         </div>
@@ -496,14 +496,6 @@ window.addEventListener('scroll', () => {
   document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40);
 });
 
-// 커서 스포트라이트 (fx-spotlight)
-document.querySelectorAll('.fx-spotlight').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const rect = card.getBoundingClientRect();
-    card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
-    card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
-  });
-});
 </script>
 
 

@@ -789,15 +789,6 @@ document.querySelectorAll('.ripple-host').forEach(el => {
   });
 });
 
-// 커서 스포트라이트 (fx-spotlight)
-document.querySelectorAll('.fx-spotlight').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const rect = card.getBoundingClientRect();
-    card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
-    card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
-  });
-});
-
 // 마그네틱 버튼 (btn-magnetic) — 마우스 있는 기기에서만 동작
 if (window.matchMedia('(pointer: fine)').matches) {
   const MAG_STRENGTH = 14;
