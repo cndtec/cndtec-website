@@ -205,9 +205,9 @@ cndtec-website/
 - vibration.html도 실제 콘텐츠 완비 상태(스텁 아님, sitemap에도 이미 등록되어 있었음).
 
 ## 다음 기술자료 후보 (제목·키워드 이미 세팅된 빈 스텁 페이지)
-resources/field-service.html, sensors.html — 2개만 "// COMING SOON" 상태로 실제 콘텐츠 없음. 그래서 resources/index.html 목록에는 의도적으로 미노출, sitemap.xml에서도 제외, <meta name="robots" content="noindex, follow"> 추가해 둠 (저품질·중복 콘텐츠로 색인되는 것 방지).
-- field-service.html → 현장 계측 용역 (시험 설계·설치·분석 원스톱)
-- sensors.html → 센서 공급 (로드셀·토크·압력·변위, HBM·MMF·BD Sensors)
+- (2026-07-26 정정) field-service.html은 2026-07-13에 실제 콘텐츠 작성 완료됨(noindex 제거, resources/index.html 카드·sitemap.xml 등록 전부 완료). 아래 스텁 목록에서 제거.
+- resources/sensors.html — 유일하게 남은 스텁. "// COMING SOON" 상태, noindex 유지 중, resources/index.html·sitemap.xml에서 의도적으로 제외됨.
+  → sensors.html: 센서 공급 (로드셀·토크·압력·변위, HBM·MMF·BD Sensors)
 콘텐츠 작성 완료되면: noindex 메타태그 제거 → resources/index.html에 카드 추가 → sitemap.xml에 <url> 추가.
 
 ## ⭐ 신규 기술자료 페이지 만들 때마다 sitemap.xml 등록 여부 반드시 재확인할 것
@@ -380,3 +380,8 @@ SEO 적용사항:
 - index.html Organization JSON-LD의 "@type"을 "Organization" → ["Organization","ProfessionalService"]로 확장, "areaServed":"KR" 추가.
 - 검증: 전체 사이트 JSON-LD 66개 블록 전부 파싱 정상, div 밸런스 전 파일 유지, </html> 종료 정상, header→main→footer 순서 정상.
 - 참고: 프레임/테이블 레이아웃, HTTPS 미비, 메타태그/JSON-LD 부재 등 제미나이가 지적한 다른 항목들은 실제 코드 확인 결과 사실이 아니었음(사용자에게 별도 설명함).
+
+⭐ 2026-07-26 완료: resources/sensors.html 삭제 (사용하지 않는 고아 스텁 페이지)
+- resources/index.html, products.html, sitemap.xml 등 사이트 어디에서도 링크되지 않는 완전한 고아 페이지였음. 내용도 "// COMING SOON" 안내문뿐(noindex 처리돼 있었음).
+- 원래 다루려던 로드셀·토크·압력·변위 센서 공급 역할은 이미 pressure-sensor.html 등 개별 페이지와 products.html "센서·트랜스듀서" 카드로 대체되어 더 이상 필요 없음 → 파일 삭제, sitemap.xml의 관련 주석도 제거.
+- 검증: sitemap.xml XML 파싱 정상, sensors 관련 언급 전체 제거 확인.
