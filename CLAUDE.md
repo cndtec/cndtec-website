@@ -331,3 +331,11 @@ SEO 적용사항:
 - 조명 > 구도 > 후보정 순서
 - 삼각대 거치, 가로 방향, 3~5장 연속
 - Lightroom 보정 → Squoosh 변환 → 업로드
+
+⭐ 2026-07-26 완료: residual-stress.html 대표 이미지(og:image/스키마) 교체
+- 네이버 검색결과 썸네일이 로고 대신 본문의 프로그램 UI 스크린샷(mts3000-system.jpg)으로 나오는 문제 확인.
+  → 원인: og:image가 로고(cnd-logo-400.png)뿐이고 JSON-LD에 image 필드가 없어 네이버가 자체적으로 본문 이미지를 골라옴.
+- 사용자가 제공한 현장 홀드릴링 프로브 설치 사진을 assets/images/residual-stress/hole-drilling-probe-field.jpg로 저장(578×745, JPEG).
+- og:image, og:image:width/height/alt, JSON-LD TechArticle "image" 필드에 반영. 본문 "시스템 구성 다이어그램" 섹션 최상단에도 동일 사진 카드로 삽입.
+- 검증: div 밸런스 93/93, JSON-LD 파싱 정상, FAQ 6/6 일치.
+- 참고: 대표 이미지 지정은 og:image + 스키마 image 필드로 가능하나, 실제 검색결과 썸네일 반영은 재크롤링 후이므로 네이버 서치어드바이저에서 수집요청 시 더 빠르게 반영됨.
