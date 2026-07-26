@@ -354,3 +354,16 @@ SEO 적용사항:
    조치: index.html, resources/index.html의 canonical·og:url·(resources는 JSON-LD CollectionPage url도) 전부 실제 링크 형태인 /index.html, /resources/index.html로 통일. sitemap.xml의 해당 두 <loc>도 동일하게 수정. Organization/WebSite JSON-LD의 url(사이트 정체성 식별자, 슬래시 없는 도메인 루트)은 별개 개념이라 변경하지 않음.
 - 검증: div 밸런스 정상(index 88/88, resources/index 76/76), JSON-LD 파싱 정상.
 - 참고: Search Console에서 두 URL 모두 "색인 생성 요청"으로 재크롤링 요청하면 반영이 더 빠름.
+
+⭐ 2026-07-26 완료: 홈페이지 구글 검색/소셜 노출용 대표 커버 이미지 신규 제작
+- 사이트 브랜드 팔레트(--charcoal #1F1D1B, --orange #F29400 등)와 Pretendard 폰트를 그대로 사용해 1200×630(OG 표준 비율 1.91:1) 커버 이미지 신규 제작. 파일 62KB로 용량도 최적화.
+- 구성: 로고+"CND TECH · SINCE 2004", "씨앤디테크" 헤드라인, 한 줄 소개 문구, 취급 분야 키워드 5개(DAQ·데이터로거/스트레인게이지/잔류응력측정/진동·소음측정/토크·축력측정), 도메인.
+- assets/images/cnd-og-cover.jpg로 저장. index.html og:image(+width/height/alt)를 기존 로고(400×400)에서 이 커버로 교체, WebSite JSON-LD에도 image 필드 추가.
+- 검증: div 밸런스 88/88, JSON-LD 파싱 정상, 이미지 실제 사이즈 1200×630 확인.
+- 참고: 다른 하위 페이지들도 og:image가 로고뿐인 경우가 있으면 이 커버를 재사용하거나 각 페이지 전용 이미지로 교체 검토 가능.
+
+⭐ 2026-07-26 완료: 홈페이지 og:image 커버 이미지 교체 (사용자 제공 디자인으로 최종 확정)
+- 직접 제작한 1차 커버(브랜드 팔레트 기반)를 사용자가 제공한 "회사소개 커버.png"(로고+태그라인+8개 측정분야 아이콘 그리드)로 교체.
+- 원본 1983×793(비율 2.5:1)을 OG 표준 비율(1200×630, 1.91:1)에 맞추기 위해 내용을 자르지 않고 위아래 배경색(#F9F9F9, 원본 배경과 동일)으로 여백을 추가한 뒤 1200×630으로 리사이즈 — 로고/아이콘 잘림 없음.
+- assets/images/cnd-og-cover.jpg 교체, index.html og:image:alt를 새 이미지 내용(잔류응력·스트레인게이지·PCB응력·축력볼트·토크·진동·압력·온도 측정+DAQ)에 맞게 수정.
+- 검증: div 밸런스 88/88, JSON-LD 정상, 최종 이미지 1200×630 확인.
