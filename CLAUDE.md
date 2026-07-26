@@ -347,3 +347,10 @@ SEO 적용사항:
 - 통과 확인: robots.txt 전체 허용(JS/CSS 차단 없음), 해시뱅(#!) 없음, sitemap.xml 정상, title/description 중복·누락 없음(실 콘텐츠 페이지 기준), img alt 누락 0건, javascript:href·onClick 전용 링크 없음, 내부 디자인 미리보기 페이지는 이미 noindex 처리됨.
 - 수정: contact.html 사이트 주소 링크 http→https 프로토콜 통일. meta description이 160자를 초과한 3개 페이지(press-load-monitoring.html 197→129자, ship-vibration-iso20283.html 202→126자, vibration-calibrator.html 173→119자) 재작성, 검색결과 스니펫 잘림 방지. vibration-calibrator.html에서 "완전 가이드" 필러 표현도 제거(표준 지침과 통일).
 - 검증: 4개 파일 모두 div 밸런스 정상, </html> 종료 정상.
+
+⭐ 2026-07-26 완료: Search Console 색인 문제 2건 진단/조치
+1. field-service.html "NOINDEX 태그 제외" 보고 — 원인 확인: 2026-06-22 스텁이던 시절 noindex 추가됐다가, 2026-07-13 실제 콘텐츠 작성 시 이미 제거됨. 구글이 07-13 이전(07-05) 크롤링본을 기준으로 리포트해서 발생한 과거 데이터. 현재 파일엔 noindex 없음 — 코드 수정 불필요, 재크롤링만 기다리면 해소.
+2. "사용자가 선택한 표준이 없는 중복 페이지" — index.html ↔ resources/index.html 각각 실제 URL: 사이트 내부 링크는 전부(211건) index.html/../index.html/resources/index.html 형태(파일 경로)를 쓰는데, canonical·og:url·sitemap.xml만 슬래시형(/, /resources/)으로 선언되어 있어 시그널 불일치 발생 → 구글이 canonical 힌트를 무시하고 자체 판단.
+   조치: index.html, resources/index.html의 canonical·og:url·(resources는 JSON-LD CollectionPage url도) 전부 실제 링크 형태인 /index.html, /resources/index.html로 통일. sitemap.xml의 해당 두 <loc>도 동일하게 수정. Organization/WebSite JSON-LD의 url(사이트 정체성 식별자, 슬래시 없는 도메인 루트)은 별개 개념이라 변경하지 않음.
+- 검증: div 밸런스 정상(index 88/88, resources/index 76/76), JSON-LD 파싱 정상.
+- 참고: Search Console에서 두 URL 모두 "색인 생성 요청"으로 재크롤링 요청하면 반영이 더 빠름.
