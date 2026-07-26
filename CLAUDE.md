@@ -229,6 +229,7 @@ resources/field-service.html, sensors.html — 2개만 "// COMING SOON" 상태�
 1. resources/index.html "기술자료 목록"에 카드 추가 (아이콘 보유 시 매칭, 없으면 텍스트만)
 2. `<script type="application/ld+json">` 구조화 데이터 삽입 (Article 또는 HowTo, 기존 strain-gauge-bonding.html 패턴 참고)
 3. title / meta description / H1 — 타겟 키워드 1개에 집중해서 작성
+   - ⭐ meta description은 **160자 이내** (검색결과 스니펫 잘림 방지, 2026-07-26 네이버 SEO 점검 후 추가) — og:description은 이보다 더 짧게(120자 내외) 요약해도 무방
 4. 이미지 파일명·alt 텍스트는 영문 키워드로 (예: hbm-mx1615b-strain-gauge-setup.webp) — 사진 운영 규칙 섹션 참고
 5. **sitemap.xml에 `<url>` 블록 자동 추가** (loc, lastmod=작업일, changefreq=monthly, priority=0.7) — 사용자가 요청하지 않아도 항상 추가
 6. CLAUDE.md "완료된 작업 전체" 목록에 로그 한 줄 추가
@@ -249,6 +250,7 @@ resources/field-service.html, sensors.html — 2개만 "// COMING SOON" 상태�
 - (2026-07-11 파이프 잔류응력측정 페이지 최초 작성 시 고객 성적서 데이터를 과도하게 그대로 노출했다가 사용자 요청으로 전면 익명화/일반화함. 앞으로 모든 신규 기술자료(사례) 페이지 작성 시 처음부터 이 정책 적용할 것.)
 
 ## 작업 지침 (세션 공통)
+- ⭐ **수정할 부분을 발견하면 사용자에게 물어보지 말고 바로 수정할 것** — 자잘한 개선/버그/SEO 이슈 등은 확인 질문 없이 바로 고치고, 완료 후 무엇을 왜 고쳤는지만 보고 (2026-07-26 사용자 지시). 단, 범위가 크게 모호하거나 완전히 새로운 방향 전환이 필요한 경우에만 예외적으로 확인.
 - 파일 전체 Read 금지 → grep으로 필요 라인만 찾고, Read는 offset/limit으로 해당 부분만
 - Edit으로 정확히 그 부분만 교체
 - 컨텍스트 절약을 위해 불필요한 파일 내용 출력 최소화
