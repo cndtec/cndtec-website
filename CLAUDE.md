@@ -1,5 +1,11 @@
 # CND TECH 웹사이트 — 작업 현황
 
+## ⭐ 2026-07-25 완료: 카드 호버 테두리 과하게 진했던 문제 수정 (전역 .fx-spotlight)
+- 사용자가 스크린샷으로 지적한 카드("데이터 계측"/"센서·트랜스듀서"/"특수 목적 측정" — products.html의 `.area-card`)는 이전에 수정한 `.prod-img-card:hover`가 아니라, `css/style.css`에 정의된 **전역 공용 클래스** `.fx-spotlight:hover`가 적용된 것이었음(about.html·contact.html·index.html·products.html·projects.html의 블로그 카드·프로젝트 카드·영역 카드·제품 카드 등 다수 요소가 공유).
+- `.fx-spotlight:hover`를 `border-color: var(--accent-deep)`(진한 갈색-오렌지) + `box-shadow 2px` → `border-color: var(--accent)`(중간 오렌지) + `box-shadow 1px`로 완화 — 사이트 전역에 동일하게 적용되어 일관되게 더 연해짐.
+- products.html의 `.prod-img-card:hover`(직전 작업에서 추가했던 `border-color:var(--accent); box-shadow:0 0 0 1.5px`)는 이제 완화된 공용 `.fx-spotlight:hover`와 중복·상충되므로 제거하고 `transform: translateY(-4px)`만 남김 — 취급 제품 카드도 공용 클래스의 연한 톤을 그대로 따르도록 단순화.
+- 검증: products.html div 밸런스(71/71), `</html>` 정상 종료, 새 hover 값 grep으로 확인.
+
 ## ⭐ 2026-07-25 완료: products.html 취급 제품 카드 → 기술자료 라이브러리 카테고리 목록으로 연결 + 호버 테두리 강조
 - products.html "취급 제품 라인업" 섹션의 8개 카드(P-01~P-08) 링크를 개별 기술자료 페이지 1개(예: `resources/pressure-sensor.html`) 대신 **기술자료 라이브러리의 해당 카테고리 목록**(`resources/index.html#카테고리`)으로 연결하도록 변경. 매핑: P-01 DAQ·데이터로거→`#daq`, P-02 스트레인게이지 공급→`#strain`, P-03 잔류응력 측정→`#stress`, P-04 센서 공급→`#sensor`, P-05 커스텀 센서 제작→`#strain`, P-06 텔레메트리 시스템→`#daq`, P-07 진동·소음 측정→`#vibration`, P-08 현장 계측 용역→`#field` (각 카드가 이전에 링크하던 개별 페이지가 resources/index.html에서 속한 데이터-cat 값 그대로 사용해 결정, 임의 매핑 아님).
 - resources/index.html의 각 `<h3 class="res-cat-heading">`에 `id="센서|잔류응력측정|...(data-cat-heading 값과 동일)"`를 추가해 해시(`#daq` 등) 타겟팅 가능하게 함.

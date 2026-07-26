@@ -403,8 +403,8 @@ header {
 /* ── Hover FX: 박스 강조 (기술자료 카드와 동일한 톤 — 커서 스포트라이트 대신 테두리/그림자로 진하게 표시) ── */
 .fx-spotlight { transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease; }
 .fx-spotlight:hover {
-  border-color: var(--accent-deep);
-  box-shadow: 0 0 0 2px var(--accent-deep), var(--shadow-md);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), var(--shadow-md);
 }
 
 /* ── Magnetic CTA button ── */
