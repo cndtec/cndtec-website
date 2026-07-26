@@ -373,3 +373,10 @@ SEO 적용사항:
 - 조치: .area-card::before / .area-card:hover::before(상단 바 효과) 완전 제거. .area-card:hover의 transform도 -6px→-4px로 사이트 전역 표준값(다른 fx-spotlight 카드와 동일)에 맞춤. box-shadow는 어차피 .fx-spotlight:hover가 후순위 우선 적용되므로 중복 선언 제거.
 - 결과: 데이터 계측/센서·트랜스듀서/특수 목적 측정 카드가 사이트의 다른 fx-spotlight 카드들과 완전히 동일한 호버 효과(연한 오렌지 1px 링 + 4px 리프트)를 갖게 됨.
 - 검증: css/style.css 중괄호 밸런스 270/270 정상.
+
+⭐ 2026-07-26 완료: 시맨틱 HTML(<main>) 사이트 전역 적용 + Organization 스키마에 ProfessionalService 타입 추가
+- (제미나이 AI 진단 중 유일하게 타당했던 부분 반영) <header>~<footer> 사이 실제 콘텐츠를 <main> 태그로 감싸는 작업을 41개 HTML 파일에 자동 스크립트로 일괄 적용. 기존에 이미 <main style="...">이 있던 3개 파일(peening-residual-stress, rotor-balancing, welding-residual-stress)은 건너뜀. design-preview/design-font-preview(noindex 페이지)도 제외.
+- 적용 규칙: </header> 이후 첫 <section 앞에 <main> 삽입, <footer> 앞에 </main> 삽입 (모바일 nav 오버레이는 <main> 밖에 위치해 시맨틱상 올바름).
+- index.html Organization JSON-LD의 "@type"을 "Organization" → ["Organization","ProfessionalService"]로 확장, "areaServed":"KR" 추가.
+- 검증: 전체 사이트 JSON-LD 66개 블록 전부 파싱 정상, div 밸런스 전 파일 유지, </html> 종료 정상, header→main→footer 순서 정상.
+- 참고: 프레임/테이블 레이아웃, HTTPS 미비, 메타태그/JSON-LD 부재 등 제미나이가 지적한 다른 항목들은 실제 코드 확인 결과 사실이 아니었음(사용자에게 별도 설명함).
