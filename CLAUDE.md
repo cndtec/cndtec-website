@@ -339,3 +339,9 @@ SEO 적용사항:
 - og:image, og:image:width/height/alt, JSON-LD TechArticle "image" 필드에 반영. 본문 "시스템 구성 다이어그램" 섹션 최상단에도 동일 사진 카드로 삽입.
 - 검증: div 밸런스 93/93, JSON-LD 파싱 정상, FAQ 6/6 일치.
 - 참고: 대표 이미지 지정은 og:image + 스키마 image 필드로 가능하나, 실제 검색결과 썸네일 반영은 재크롤링 후이므로 네이버 서치어드바이저에서 수집요청 시 더 빠르게 반영됨.
+
+⭐ 2026-07-26 완료: 네이버 SEO 가이드 점검 및 사소한 이슈 수정
+- 네이버 서치어드바이저 SEO 가이드(자바스크립트 최적화/URL/색인효율/링크) 대비 전체 사이트 점검 실시.
+- 통과 확인: robots.txt 전체 허용(JS/CSS 차단 없음), 해시뱅(#!) 없음, sitemap.xml 정상, title/description 중복·누락 없음(실 콘텐츠 페이지 기준), img alt 누락 0건, javascript:href·onClick 전용 링크 없음, 내부 디자인 미리보기 페이지는 이미 noindex 처리됨.
+- 수정: contact.html 사이트 주소 링크 http→https 프로토콜 통일. meta description이 160자를 초과한 3개 페이지(press-load-monitoring.html 197→129자, ship-vibration-iso20283.html 202→126자, vibration-calibrator.html 173→119자) 재작성, 검색결과 스니펫 잘림 방지. vibration-calibrator.html에서 "완전 가이드" 필러 표현도 제거(표준 지침과 통일).
+- 검증: 4개 파일 모두 div 밸런스 정상, </html> 종료 정상.
