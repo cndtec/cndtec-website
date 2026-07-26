@@ -254,13 +254,7 @@ header {
   border-radius: var(--radius); transition: all 0.3s;
   overflow: hidden; box-shadow: var(--shadow-sm);
 }
-.area-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: var(--accent); transform: scaleX(0); transform-origin: left;
-  transition: transform 0.4s ease;
-}
-.area-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-.area-card:hover::before { transform: scaleX(1); }
+.area-card:hover { transform: translateY(-4px); }
 .area-icon {
   width: 52px; height: 52px; border-radius: 12px;
   background: var(--orange-tint); border: 1px solid var(--orange-line);
