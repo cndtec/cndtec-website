@@ -385,3 +385,8 @@ SEO 적용사항:
 - resources/index.html, products.html, sitemap.xml 등 사이트 어디에서도 링크되지 않는 완전한 고아 페이지였음. 내용도 "// COMING SOON" 안내문뿐(noindex 처리돼 있었음).
 - 원래 다루려던 로드셀·토크·압력·변위 센서 공급 역할은 이미 pressure-sensor.html 등 개별 페이지와 products.html "센서·트랜스듀서" 카드로 대체되어 더 이상 필요 없음 → 파일 삭제, sitemap.xml의 관련 주석도 제거.
 - 검증: sitemap.xml XML 파싱 정상, sensors 관련 언급 전체 제거 확인.
+
+⭐ 2026-07-26 완료: 기술자료 라이브러리 필터 버튼 글자 크기 축소
+- 이전(7/25)에 너무 작다고 키웠던 .res-filter-btn(18px)이 이번엔 본문 소개문(18px, 일반체)과 같은 크기인데 굵은체(600)라 시각적으로 더 커 보여서 축소 요청.
+- 데스크톱 18px→15px, 모바일 15px→13px, padding도 비례 축소.
+- 검증: div 밸런스 76/76 유지.
