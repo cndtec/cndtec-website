@@ -1,5 +1,12 @@
 # CND TECH 웹사이트 — 작업 현황
 
+## ⭐ 2026-07-25 완료: products.html 취급 제품 카드 → 기술자료 라이브러리 카테고리 목록으로 연결 + 호버 테두리 강조
+- products.html "취급 제품 라인업" 섹션의 8개 카드(P-01~P-08) 링크를 개별 기술자료 페이지 1개(예: `resources/pressure-sensor.html`) 대신 **기술자료 라이브러리의 해당 카테고리 목록**(`resources/index.html#카테고리`)으로 연결하도록 변경. 매핑: P-01 DAQ·데이터로거→`#daq`, P-02 스트레인게이지 공급→`#strain`, P-03 잔류응력 측정→`#stress`, P-04 센서 공급→`#sensor`, P-05 커스텀 센서 제작→`#strain`, P-06 텔레메트리 시스템→`#daq`, P-07 진동·소음 측정→`#vibration`, P-08 현장 계측 용역→`#field` (각 카드가 이전에 링크하던 개별 페이지가 resources/index.html에서 속한 데이터-cat 값 그대로 사용해 결정, 임의 매핑 아님).
+- resources/index.html의 각 `<h3 class="res-cat-heading">`에 `id="센서|잔류응력측정|...(data-cat-heading 값과 동일)"`를 추가해 해시(`#daq` 등) 타겟팅 가능하게 함.
+- resources/index.html 하단 스크립트를 리팩터링: 기존 필터 버튼 클릭 로직을 `goToResCategory(f, behavior)` 함수로 추출하고, 페이지 로드 시 URL 해시(`location.hash`)가 유효한 카테고리와 일치하면 해당 목록으로 스크롤 + 필터 버튼 active 처리(클릭했을 때와 동일한 동작). products.html 등 외부에서 `resources/index.html#daq`처럼 들어와도 자연스럽게 목록으로 이동.
+- products.html `.prod-img-card:hover` 테두리를 더 진하게 변경: `border-color: var(--orange-line)`(연한 살구색) → `var(--accent)`(진한 오렌지), 추가로 `box-shadow: 0 0 0 1.5px var(--accent)` 링을 얹어 테두리가 살짝 두꺼워 보이는 효과(레이아웃 흔들림 없이 box-shadow로만 구현).
+- 검증: resources/index.html div 밸런스(76/76), 하단 `<script>` 블록 `node --check`로 문법 검증 통과, 7개 카테고리 heading 전부 id 부여 확인. products.html div 밸런스(71/71), `</html>` 정상 종료, 8개 카드 href 전부 `resources/index.html#...` 형태로 변경 확인, hover CSS 변경 확인.
+
 ## ⭐ 2026-07-25 완료: 기술자료 라이브러리 필터·카테고리 글자 크기 확대 + RPM 라인아이콘 적용
 - resources/index.html `.res-filter-btn`(전체/센서/잔류응력측정/스트레인게이지·힘측정 등 필터 버튼) font-size 16px→18px, padding 12px 22px→13px 24px로 확대. 모바일(700px 이하)도 14px→15px로 비례 확대.
 - `.res-cat-heading`(각 섹션 제목: 센서/잔류응력 측정/스트레인게이지·힘 측정 등) font-size 14px→20px로 확대(가장 작았던 요소), letter-spacing은 2px→1.2px로 축소해 커진 글자 크기에서도 답답해 보이지 않게 조정. 모바일 전용 17px 규칙 신규 추가.
