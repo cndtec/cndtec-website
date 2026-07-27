@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>CND TECH 기술자료 - 씨앤디테크</title>
+<link>https://www.cndtec.co.kr/resources/index.html</link>
+<description>잔류응력·스트레인게이지·진동·토크·DAQ 등 계측 기술자료 업데이트 피드</description>
+<language>ko</language>
+<lastBuildDate>Mon, 27 Jul 2026 15:28:59 +0900</lastBuildDate>
+<atom:link href="https://www.cndtec.co.kr/rss.xml" rel="self" type="application/rss+xml" />
+<item>
+<title>BD SENSORS 압력센서 — 압력 트랜스미터·차압 트랜스미터·디지털 압력계</title>
+<link>https://www.cndtec.co.kr/resources/pressure-sensor.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/pressure-sensor.html</guid>
+<pubDate>Sat, 25 Jul 2026 00:00:00 +0900</pubDate>
+<description>독일 BD SENSORS(비디센서) 압력센서 전 제품군 소개. 압력 트랜스미터(DMP320·XMPi 등), 차압 트랜스미터(DPT200·DMD331 등), 디지털 압력계(DM01·BAROLI 등), 수위레벨·압력스위치 라인업까지 사양 비교 및 적용 사례.</description>
+</item>
+<item>
+<title>MMF 가속도센서 (진동센서)</title>
+<link>https://www.cndtec.co.kr/resources/mmf-accelerometer.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/mmf-accelerometer.html</guid>
+<pubDate>Sat, 25 Jul 2026 00:00:00 +0900</pubDate>
+<description>독일 MMF(Metra) 가속도센서(진동센서) 전 제품군 소개. 범용·소형·고감도·3축·산업용 가속도센서부터 4-20mA 전류루프 트랜스듀서, 포스 트랜스듀서까지 모델별 사양 비교 및 선정 가이드를 씨앤디테크가 정리합니다.</description>
+</item>
+<item>
+<title>진동·차지 앰프 (IEPE/차지 앰프)</title>
+<link>https://www.cndtec.co.kr/resources/mmf-signal-conditioner.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/mmf-signal-conditioner.html</guid>
+<pubDate>Sat, 25 Jul 2026 00:00:00 +0900</pubDate>
+<description>독일 MMF 차지앰프(신호처리 앰프) 전 제품군. IEPE 공급 모듈부터 1·3·8채널 데스크탑·랙형 차지/IEPE 증폭기, 진동 상시감시 모듈, 필터·적분기 액세서리까지 모델별 사양을 씨앤디테크가 정리합니다.</description>
+</item>
+<item>
+<title>비접촉식 RPM 측정센서 (타코미터)</title>
+<link>https://www.cndtec.co.kr/resources/tachometer-sensor.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/tachometer-sensor.html</guid>
+<pubDate>Sat, 25 Jul 2026 00:00:00 +0900</pubDate>
+<description>비접촉식 RPM 측정센서(타코미터) 전 방식 소개. 가시광 LED·변조 LED·레이저·방수형 레이저·유도형(스파크플러그)·적외선·고온형·스마트 디지털 레이저 옵티컬 센서까지 방식별 사양 비교를 씨앤디테크가 정리합니다.</description>
+</item>
+<item>
+<title>비접촉식 적외선(IR) 온도센서</title>
+<link>https://www.cndtec.co.kr/resources/ir-temperature-sensor.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/ir-temperature-sensor.html</guid>
+<pubDate>Sat, 25 Jul 2026 00:00:00 +0900</pubDate>
+<description>비접촉식 적외선(IR) 온도센서 소개. RS485·아날로그(0-10V, 4-20mA) 출력형과 USB 인터페이스형까지 방식별 사양 비교, 인디게이터 연동 사례, 적용 분야를 씨앤디테크가 정리합니다.</description>
+</item>
+<item>
+<title>산업용 컨트롤러 SIMEX MultiCon — 계측기·컨트롤러·HMI·SCADA 통합 시스템</title>
+<link>https://www.cndtec.co.kr/resources/multicon-controller.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/multicon-controller.html</guid>
+<pubDate>Sat, 25 Jul 2026 00:00:00 +0900</pubDate>
+<description>SIMEX MultiCon CMC-141 산업용 다채널 데이터 레코더·컨트롤러 소개. 계측기+컨트롤러+HMI+SCADA 통합, 최대 41개 입출력 모듈·90개 논리채널, 전압·전류·압력·온도·변위·Force 등 다양한 신호 계측 및 실시간 모니터링.</description>
+</item>
+<item>
+<title>선박 진동 측정 시스템 ISO 20283-5 - 거주구역 진동 측정·평가 가이드</title>
+<link>https://www.cndtec.co.kr/resources/ship-vibration-iso20283.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/ship-vibration-iso20283.html</guid>
+<pubDate>Sat, 25 Jul 2026 00:00:00 +0900</pubDate>
+<description>선박·상선 거주구역 진동을 ISO 20283-5(구 ISO 6954) 기준으로 측정·평가하는 방법. Wm 가중필터·3축 측정 절차, MMF VM31 휴대용 진동측정기와 3축 가속도센서 조합까지 소개. 씨앤디테크 공급·기술지원.</description>
+</item>
+<item>
+<title>DAQ 데이터수집장치 완전 가이드 — 데이터로거·모듈형·스트레인게이지 측정·HBM·Gantner·GTDL</title>
+<link>https://www.cndtec.co.kr/resources/daq-system.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/daq-system.html</guid>
+<pubDate>Fri, 24 Jul 2026 00:00:00 +0900</pubDate>
+<description>DAQ(데이터수집장치·데이터로거) 종류·선택 완전 가이드. 데이터로거·DAQ장치·모듈식 3가지 유형 비교, ADC 분해능 원리, 스트레인게이지·센서 다채널 측정, HBM QuantumX·Gantner Q.Series·GTDL 제품 소개. 씨앤디테크.</description>
+</item>
+<item>
+<title>스트레인게이지 부착·측정 지원 - 자동차 언더커버 변형 측정 (3축 로젯·3D 스캐닝)</title>
+<link>https://www.cndtec.co.kr/resources/car-undercover-strain.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/car-undercover-strain.html</guid>
+<pubDate>Fri, 24 Jul 2026 00:00:00 +0900</pubDate>
+<description>자동차 언더커버(하부커버) 부품에 3축 로젯 스트레인게이지를 부착하고 단계별 하중 시험을 진행, 스트레인게이지와 3D 스캐너(트래커)로 변형·처짐 변위를 동시 측정·비교한 현장 계측 사례. 사출 재질·두께별 스트레인 비교 포함. 씨앤디테크 스트레인게이지 부착·측정 출장 지원.</description>
+</item>
+<item>
+<title>프레스 로드 모니터링 시스템 (Tonnage Monitoring System) - 스트레인 트랜스듀서 기반 하중·상태진단</title>
+<link>https://www.cndtec.co.kr/resources/press-load-monitoring.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/press-load-monitoring.html</guid>
+<pubDate>Fri, 24 Jul 2026 00:00:00 +0900</pubDate>
+<description>프레스(성형·단조·조립) 하중을 실시간으로 감시하는 로드 모니터링 시스템 가이드. 직접식·션트방식 트랜스듀서 비교, 센서 선택 기준, 벤딩모멘트 보상, 교정 절차, 진동·온도 동시 계측 예방진단까지 소개. 씨앤디테크 공급·기술지원.</description>
+</item>
+<item>
+<title>다채널 진동측정기 - 베어링진단·발란싱·인체진동 측정 (MMF VM100)</title>
+<link>https://www.cndtec.co.kr/resources/vm100.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/vm100.html</guid>
+<pubDate>Thu, 23 Jul 2026 00:00:00 +0900</pubDate>
+<description>9채널 동시 계측 다채널 진동측정기로 베어링 진단, 로터 발란싱(1/2면), 인체진동(ISO 5349·2631), FFT·Third-Octave 주파수 분석까지 하나의 장비로 해결합니다. 독일 MMF VM100, 씨앤디테크 공급·기술지원.</description>
+</item>
+<item>
+<title>건축물(빌딩) 진동 모니터링 시스템 - DIN 4150-3 상시 계측 가이드 (MMF VM40C)</title>
+<link>https://www.cndtec.co.kr/resources/building-vibration-monitoring.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/building-vibration-monitoring.html</guid>
+<pubDate>Thu, 23 Jul 2026 00:00:00 +0900</pubDate>
+<description>건축물·빌딩 진동 상시 모니터링 완전 가이드. 진동 발생 원인, 측정 목표·매개변수, DIN 4150-3·BS 7385 등 국제 표준, 독일 MMF VM40C 진동 모니터(3축 가속도계, IoT 원격 모니터링, SMS 알람) 소개.</description>
+</item>
+<item>
+<title>진동 센서 교정기 - 가속도계·속도계 현장 캘리브레이터 (MMF VC20·VC21·VC120)</title>
+<link>https://www.cndtec.co.kr/resources/vibration-calibrator.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/vibration-calibrator.html</guid>
+<pubDate>Thu, 23 Jul 2026 00:00:00 +0900</pubDate>
+<description>가속도계·속도계·변위 센서 감도를 현장에서 검증하는 진동 교정기 가이드. 고정주파수 VC20, 다중주파수 VC21·VC21D, 광대역 VC120 등 독일 MMF 라인업과 선정 기준 소개. 씨앤디테크 공급·기술지원.</description>
+</item>
+<item>
+<title>토크 측정 방법 완전 가이드 — SAW·EMD·광학·토크센서·스트레인게이지 5가지 방식 비교</title>
+<link>https://www.cndtec.co.kr/resources/torque-measurement.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/torque-measurement.html</guid>
+<pubDate>Mon, 20 Jul 2026 00:00:00 +0900</pubDate>
+<description>토크를 측정하는 5가지 방식(SAW·EMD·광학·토크센서·스트레인게이지 무선)을 비교하고, 가장 정밀한 토크센서(Torque Transducer)의 선정 기준과 Shaft형·Flange형 종류를 씨앤디테크가 설명합니다.</description>
+</item>
+<item>
+<title>축마력(Shaft Power)·비틀림 진동(Torsional Vibration) 측정·분석 완전 가이드 — Telemetry·TNF·API 684</title>
+<link>https://www.cndtec.co.kr/resources/torsional-vibration.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/torsional-vibration.html</guid>
+<pubDate>Mon, 20 Jul 2026 00:00:00 +0900</pubDate>
+<description>축마력(Shaft Power) 계측과 비틀림 진동(Torsional Vibration) 측정 원리·3가지 운전 모드(Runup·정속·과도)·Waterfall/Campbell 분석·TNF 식별·API 684 분리여유 판정 기준을 씨앤디테크 현장 자료로 설명합니다.</description>
+</item>
+<item>
+<title>소음·진동 측정 장비 - USB 타입 DAQ (DT9837·DT9857E)</title>
+<link>https://www.cndtec.co.kr/resources/dt9837-daq.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/dt9837-daq.html</guid>
+<pubDate>Mon, 20 Jul 2026 00:00:00 +0900</pubDate>
+<description>Data Translation DT9837 4채널 USB 진동 데이터수집장치와 DT9857E 8·16채널(최대 64채널 확장) 소음·진동 측정 시스템 비교 가이드. IEPE 센서 입력, 동기화 회전속도계, QuickDAQ 소프트웨어 소개.</description>
+</item>
+<item>
+<title>차량용 배터리 케이스 스트레인게이지 부착 — 충전 팽창 응력 측정</title>
+<link>https://www.cndtec.co.kr/resources/battery-case-strain.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/battery-case-strain.html</guid>
+<pubDate>Mon, 13 Jul 2026 00:00:00 +0900</pubDate>
+<description>차량용 배터리 케이스·셀에 스트레인게이지를 부착해 충전 시 발생하는 팽창 변형을 측정한 현장 계측 사례. DAQ 시스템 연동 신호 확인부터 데이터 취득까지 씨앤디테크가 지원했습니다.</description>
+</item>
+<item>
+<title>현장 계측 용역 — 고온 환경 스트레인게이지 부착·측정</title>
+<link>https://www.cndtec.co.kr/resources/field-service.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/field-service.html</guid>
+<pubDate>Sun, 12 Jul 2026 00:00:00 +0900</pubDate>
+<description>발전소·플랜트 등 고온 설비 현장에서의 스트레인게이지 부착·응력 측정 노하우. 내열 접착제·특수 케이블·온도 보상까지 현장 계측 용역 전 과정을 소개합니다. 씨앤디테크.</description>
+</item>
+<item>
+<title>커스텀 센서 제작 — 볼트 축력·토크·로드셀 스트레인게이지 맞춤 제작</title>
+<link>https://www.cndtec.co.kr/resources/custom-sensor.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/custom-sensor.html</guid>
+<pubDate>Sat, 11 Jul 2026 00:00:00 +0900</pubDate>
+<description>씨앤디테크 커스텀 센서 제작 서비스. 풀브릿지 스트레인게이지 기반 볼트 축력 센서, 토크 측정 센서, 로드셀 맞춤 설계·제작·교정 일괄 제공. 1개 소량부터 양산까지. 25년 계측 경험.</description>
+</item>
+<item>
+<title>열처리 공정별 잔류응력 분포 측정 — 퀜칭·템퍼링 조건 비교</title>
+<link>https://www.cndtec.co.kr/resources/heat-treatment-residual-stress.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/heat-treatment-residual-stress.html</guid>
+<pubDate>Sat, 11 Jul 2026 00:00:00 +0900</pubDate>
+<description>퀜칭·템퍼링 조건(온도·냉각매체·시간)별 잔류응력 분포 변화를 ASTM E837 홀드릴링으로 정밀 비교 측정. 공정 조건 차이가 잔류응력 분포에 미치는 영향을 정량 분석. 치수변형·균열·SCC 원인 규명 및 최적 공정 조건 도출. 씨앤디테크 측정 용역.</description>
+</item>
+<item>
+<title>강관(파이프) 잔류응력 측정 — 다중 위치·조건별 비교</title>
+<link>https://www.cndtec.co.kr/resources/pipe-residual-stress.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/pipe-residual-stress.html</guid>
+<pubDate>Sat, 11 Jul 2026 00:00:00 +0900</pubDate>
+<description>강관 표면 다중 위치·공정 조건별 잔류응력 변화를 ASTM E837-13 홀드릴링으로 정밀 측정. 용접부·모재 다중 포인트 실측 사례, 16채널 다중 채널 측정, CALC1/2/3 3중 해석. 씨앤디테크 측정 용역.</description>
+</item>
+<item>
+<title>피닝 공정별 잔류응력 측정 (레이저 피닝·쇼트피닝)</title>
+<link>https://www.cndtec.co.kr/resources/peening-residual-stress.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/peening-residual-stress.html</guid>
+<pubDate>Sat, 11 Jul 2026 00:00:00 +0900</pubDate>
+<description>레이저 피닝·쇼트피닝 후 압축 잔류응력 분포 측정·분석. ASTM E837 홀드릴링법으로 피닝 횟수·조건별 잔류응력 정량 평가. 피로수명 향상 검증. 씨앤디테크 측정 용역 및 장비 공급.</description>
+</item>
+<item>
+<title>용접부 잔류응력 측정 (용접 잔류응력 원인·분석)</title>
+<link>https://www.cndtec.co.kr/resources/welding-residual-stress.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/welding-residual-stress.html</guid>
+<pubDate>Sat, 11 Jul 2026 00:00:00 +0900</pubDate>
+<description>용접 시 발생하는 잔류응력 원인 3가지와 ASTM E837 홀드릴링법 측정 방법. 용접부 및 HAZ 다중 포인트 측정, 깊이별 응력 분포 분석. 씨앤디테크 측정 용역 및 장비 공급.</description>
+</item>
+<item>
+<title>스트레인게이지 부착·브릿지 구성·현장 측정 지원 — PZT 튜브 고전압 절연 계측 사례</title>
+<link>https://www.cndtec.co.kr/resources/pzt-tube-gauge.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/pzt-tube-gauge.html</guid>
+<pubDate>Sat, 11 Jul 2026 00:00:00 +0900</pubDate>
+<description>스트레인게이지 부착·브릿지 구성·현장 측정 전 과정을 씨앤디테크가 지원합니다. 외경 6mm PZT 피에조 튜브 스캐너에 하프브릿지 2채널 구성, ±260V 고전압 절연 설계, 51μm 변위 현장 측정 완료 사례.</description>
+</item>
+<item>
+<title>회전기계 로터 발란싱 측정 - VM100 — 현장 불균형 진단</title>
+<link>https://www.cndtec.co.kr/resources/rotor-balancing.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/rotor-balancing.html</guid>
+<pubDate>Sat, 11 Jul 2026 00:00:00 +0900</pubDate>
+<description>MMF VM100 진동분석기의 발란싱 기능으로 회전기계 로터의 Static·Couple·Dynamic 불균형을 현장에서 측정·보정합니다. 1면/2면 발란싱, 극좌표 표시, CSV 보고서 출력까지 — 씨앤디테크 기술자료.</description>
+</item>
+<item>
+<title>풀브릿지 구성 응력 측정 — 풍력터빈 시험 모형 스트레인 측정 시스템 제작 납품</title>
+<link>https://www.cndtec.co.kr/resources/windturbine-stress.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/windturbine-stress.html</guid>
+<pubDate>Sat, 11 Jul 2026 00:00:00 +0900</pubDate>
+<description>씨앤디테크 현장 계측 사례 — 풍력터빈 시험 모형에 스트레인게이지 부착·풀브릿지 구성·이동식 스트레인 측정 시스템 제작·납품까지 일괄 지원. 제품 센서화·응력 측정·측정 지원 서비스.</description>
+</item>
+<item>
+<title>스트레인게이지 원리·종류·선정 가이드</title>
+<link>https://www.cndtec.co.kr/resources/strain-gauge.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/strain-gauge.html</guid>
+<pubDate>Sat, 27 Jun 2026 00:00:00 +0900</pubDate>
+<description>스트레인게이지(Strain Gauge) 원리, 금속포일·반도체·광섬유 종류 비교, 저항값·형태별 선정 기준 총정리. 씨앤디테크 HBM·TML 공급 및 측정 서비스.</description>
+</item>
+<item>
+<title>잔류응력이란? 정의·발생 원인·측정 방법 총정리</title>
+<link>https://www.cndtec.co.kr/resources/what-is-residual-stress.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/what-is-residual-stress.html</guid>
+<pubDate>Wed, 24 Jun 2026 00:00:00 +0900</pubDate>
+<description>잔류응력(Residual Stress)의 정의, 발생 원인, 산업별 영향, 홀드릴링·XRD·초음파 측정 방법 비교까지 한눈에. 씨앤디테크 기술 가이드.</description>
+</item>
+<item>
+<title>플라스틱·사출물·복합재료 잔류응력 측정 가이드 (ABS·PC·CFRP)</title>
+<link>https://www.cndtec.co.kr/resources/plastic-residual-stress.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/plastic-residual-stress.html</guid>
+<pubDate>Wed, 24 Jun 2026 00:00:00 +0900</pubDate>
+<description>ABS·PC·HDPE·PP·PA·POM·테프론(PTFE)·CFRP 등 플라스틱·사출물·복합재료 잔류응력 측정 완전 가이드. MTS3000-Restan 특수 고분자 모드로 더미게이지 기술·저속 드릴링 적용. ASTM E837 기준 성적서 발행. 씨앤디테크 장비 공급 및 측정 용역.</description>
+</item>
+<item>
+<title>볼트 축력 측정 완전 가이드 — 스트레인게이지 볼트 센서 제작·체결력 계측</title>
+<link>https://www.cndtec.co.kr/resources/bolt-tension.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/bolt-tension.html</guid>
+<pubDate>Wed, 24 Jun 2026 00:00:00 +0900</pubDate>
+<description>볼트 축력(Axial Load) 직접 측정 방법 완전 가이드. 풀브릿지 외부 부착형·중심홀 삽입형·와셔형 포스센서 3가지 방식 비교, 제작 4단계 공정, 볼트 규격별 선택 기준, 산업별 적용 사례. 씨앤디테크 커스텀 볼트 센서 제작 문의.</description>
+</item>
+<item>
+<title>휴대용 진동측정 시스템 VM — MMF VM22·VM25·VM31 비교</title>
+<link>https://www.cndtec.co.kr/resources/vibration.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/vibration.html</guid>
+<pubDate>Wed, 24 Jun 2026 00:00:00 +0900</pubDate>
+<description>MMF VM 시리즈 휴대용 진동측정 시스템. VM22·VM23·VM24·VM25·VM31 모델 비교, ISO 10816 기계 상태 판정, VDI 3832 베어링 진단, FFT 분석. 씨앤디테크.</description>
+</item>
+<item>
+<title>GTDL DAQ System 데이터수집장치 — 128CH·1000Hz·모듈형</title>
+<link>https://www.cndtec.co.kr/resources/gtdl.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/gtdl.html</guid>
+<pubDate>Wed, 24 Jun 2026 00:00:00 +0900</pubDate>
+<description>GTDL DAQ System 상세 사양: 최대 128채널 동기 수집, 채널당 1,000Hz 고속 샘플링, 브리지 내장 모듈형 구조. GTDL-350 / GTDL-360 모델 비교 및 MultiScan·Multiload 소프트웨어 소개.</description>
+</item>
+<item>
+<title>진동센서(가속도계) 원리·선택·설치 완전 가이드 — 피에조일렉트릭·주파수 응답·설치법</title>
+<link>https://www.cndtec.co.kr/resources/vibration-sensor.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/vibration-sensor.html</guid>
+<pubDate>Wed, 24 Jun 2026 00:00:00 +0900</pubDate>
+<description>피에조일렉트릭 가속도센서의 원리(PZT·지진 질량)·측정 파라미터(가속도·속도·변위)·주파수 응답 특성부터 진동센서 올바른 설치 방법(스터드·마그네틱·접착제·프로브)까지 씨앤디테크가 정리합니다.</description>
+</item>
+<item>
+<title>홀드릴링 잔류응력 측정 (ASTM E837)</title>
+<link>https://www.cndtec.co.kr/resources/residual-stress.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/residual-stress.html</guid>
+<pubDate>Mon, 22 Jun 2026 00:00:00 +0900</pubDate>
+<description>ASTM E837-20 국제표준에 따른 홀드릴링 잔류응력 측정. SINT MTS3000-Restan 자동 시스템으로 400,000rpm 고속드릴링, ±5μm 깊이 정밀제어. 금속·플라스틱·유리·고분자 소재 측정 가능. 씨앤디테크 장비 공급 및 측정 용역.</description>
+</item>
+<item>
+<title>스트레인게이지 부착법 (Strain Gauge Installation) - 10단계 가이드 | CND TECH 씨앤디테크</title>
+<link>https://www.cndtec.co.kr/resources/strain-gauge-bonding.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/strain-gauge-bonding.html</guid>
+<pubDate>Mon, 22 Jun 2026 00:00:00 +0900</pubDate>
+<description>스트레인게이지 부착법(Strain Gauge Installation)을 표면 연마, 세척, 위치 마킹, 접착제 도포, 압착, 보호 처리까지 10단계로 사진과 함께 설명하는 씨앤디테크의 현장 노하우 가이드.</description>
+</item>
+<item>
+<title>PCB 스트레인·응력 측정 가이드 (IPC/JEDEC-9704A)</title>
+<link>https://www.cndtec.co.kr/resources/pcb-stress.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/pcb-stress.html</guid>
+<pubDate>Mon, 22 Jun 2026 00:00:00 +0900</pubDate>
+<description>IPC/JEDEC-9704A 기반 PCB 스트레인·응력 측정 완전 가이드. BGA 솔더 조인트·MLCC 불량 방지를 위한 3축 로젯 스트레인게이지 부착, HBM QuantumX DAQ 시스템, Pass/Fail 분석 소프트웨어까지 씨앤디테크 토탈 솔루션.</description>
+</item>
+<item>
+<title>텔레메터리 시스템 — 회전체 무선 계측·토크·응력·축마력 측정</title>
+<link>https://www.cndtec.co.kr/resources/telemetry.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/telemetry.html</guid>
+<pubDate>Mon, 22 Jun 2026 00:00:00 +0900</pubDate>
+<description>씨앤디테크 텔레메터리(Telemetry) 시스템. 회전체 샤프트에 스트레인게이지 부착 후 RF 무선으로 토크·응력·온도를 실시간 측정. 배터리·인덕티브 방식, 1채널~다채널. datatel 제품 공급·기술지원.</description>
+</item>
+</channel>
+</rss>
