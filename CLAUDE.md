@@ -390,3 +390,14 @@ SEO 적용사항:
 - 이전(7/25)에 너무 작다고 키웠던 .res-filter-btn(18px)이 이번엔 본문 소개문(18px, 일반체)과 같은 크기인데 굵은체(600)라 시각적으로 더 커 보여서 축소 요청.
 - 데스크톱 18px→15px, 모바일 15px→13px, padding도 비례 축소.
 - 검증: div 밸런스 76/76 유지.
+
+⭐ 2026-07-27 완료: GSC 검색 실적(성과) 시트 분석 — CTR 저하 원인 진단
+- 사용자가 구글시트(Performance on Search)를 공유해 "노출은 괜찮은데 CTR이 낮다"고 문의. 최근 4주(6/27~7/24) 합계: 클릭 70 / 노출 3,063 / CTR 2.3% / 평균 순위 15.3위.
+- 원인은 전체 평균이 아니라 페이지 2개(strain-gauge.html 노출939·22.9위, daq-system.html 노출701·12.4위)가 전체 노출의 54%를 차지하면서 순위가 낮아 CTR이 0.75~1%로 붕괴 → 전체 평균을 끌어내림. 반면 홈/pcb-stress.html/vm100.html처럼 5위 안팎인 페이지는 CTR 6~18%로 정상.
+- 추가로 top10인데도 CTR 낮은 페이지(bolt-tension.html 7.1위·1.34%, what-is-residual-stress.html 8.6위·1.55%, vibration-sensor.html 9.9위·1.41%)는 title/meta 재작성 후보로 제안함(아직 실행 안 함, 사용자 요청 시 진행).
+
+⭐ 2026-07-27 완료: 네이버 서치어드바이저 www 미등록 문제 발견 및 소유확인 태그 추가
+- 사용자가 서치어드바이저에서 "콘텐츠 노출/클릭 정보 없음"을 확인 — 등록된 사이트가 `cndtec.co.kr`(www 없음, _redirects에서 www로 301 리다이렉트만 하는 껍데기 URL)이라, 실제 색인·트래픽이 발생하는 `www.cndtec.co.kr`과 다른 프로퍼티였음. GSC에서 겪었던 www/non-www 불일치와 동일한 유형의 문제.
+- 사용자가 `www.cndtec.co.kr`을 새 사이트로 등록 후 발급받은 소유확인 코드(`ec5716642e5db1537997d486da27cf578712afe7`)를 index.html에 추가함. 기존 non-www용 코드(`f888270d5ec18fa94bd21f2b2045235a171a4616`)는 그대로 유지(두 개의 naver-site-verification 메타 태그 공존, 문제 없음).
+- 검증: div 밸런스 88/88 유지, </html> 정상 종료.
+- 남은 절차(사용자가 서치어드바이저에서 직접): www 사이트 소유확인 완료 → 요청>사이트맵 제출에 https://www.cndtec.co.kr/sitemap.xml 제출 → 리포트>콘텐츠 노출/클릭은 www 프로퍼티에서 확인.
