@@ -237,6 +237,7 @@ cndtec-website/
    - 이미 FAQPage JSON-LD schema가 있어도 UI 섹션이 없으면 별도로 삽입
    - FAQ 없이 페이지를 만들면 안 됨 — 검색 노출·AI 검색 대응에 필수
 8. ⭐ **CTA(문의하기) 섹션 필수 포함** — 페이지 최하단, FAQ 다음에 배치. 연락처(031-680-1225, wgjeon@cndtec.co.kr) 또는 contact.html 링크 버튼 포함 (2026-07-05 추가)
+9. ⭐ **rss.xml 재생성** — 신규 기술자료 페이지의 title(사이트명 접미사 제거)/link/pubDate(작업일, sitemap lastmod와 동일)/description(meta description)을 최신 항목으로 맨 위에 추가. 최근 25~37개 항목만 유지해도 무방(과거 항목 오래되면 정리 가능). (2026-07-27 추가 — 네이버 서치어드바이저 RSS 제출용으로 최초 생성)
 
 ## ⭐ 기술자료(사례) 페이지 정보 노출 정책 — 반드시 준수 (2026-07-11 사용자 지시)
 실측 사례를 소개하는 기술자료 페이지를 작성할 때는 아래 원칙을 처음부터 적용할 것. 별도 요청 없이도 항상 적용:
@@ -401,3 +402,10 @@ SEO 적용사항:
 - 사용자가 `www.cndtec.co.kr`을 새 사이트로 등록 후 발급받은 소유확인 코드(`ec5716642e5db1537997d486da27cf578712afe7`)를 index.html에 추가함. 기존 non-www용 코드(`f888270d5ec18fa94bd21f2b2045235a171a4616`)는 그대로 유지(두 개의 naver-site-verification 메타 태그 공존, 문제 없음).
 - 검증: div 밸런스 88/88 유지, </html> 정상 종료.
 - 남은 절차(사용자가 서치어드바이저에서 직접): www 사이트 소유확인 완료 → 요청>사이트맵 제출에 https://www.cndtec.co.kr/sitemap.xml 제출 → 리포트>콘텐츠 노출/클릭은 www 프로퍼티에서 확인.
+
+⭐ 2026-07-27 완료: rss.xml 신규 생성 (기술자료 37건) + resources/index.html RSS 자동검색 링크 추가
+- 서치어드바이저 "RSS 제출" 메뉴 문의 중, 사이트에 RSS 피드가 전혀 없었다는 것을 발견 — sitemap.xml의 lastmod + 각 기술자료 페이지의 title(사이트명 접미사 제거)/meta description을 Python 스크립트로 추출해 표준 RSS 2.0 포맷(`rss.xml`, 사이트 루트)으로 생성. lastmod 최신순(2026-07-25~2026-06-22) 37개 항목 전부 포함.
+- resources/index.html `<head>`에 `<link rel="alternate" type="application/rss+xml" .../>` 자동검색 태그 추가.
+- 검증: `xml.etree.ElementTree.parse('rss.xml')` 파싱 성공, item 37개 확인. resources/index.html div 76/76 유지, `</html>` 정상 종료.
+- ⚠️ 위 체크리스트(9번) 반영: 앞으로 기술자료 신규 페이지 만들 때마다 rss.xml에도 항목 추가할 것 — 지금은 수동 스크립트 방식, 자동화 안 돼 있음.
+- 남은 절차(사용자가 서치어드바이저에서 직접): RSS 제출 메뉴에 `https://www.cndtec.co.kr/rss.xml` 입력.
