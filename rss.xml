@@ -5,8 +5,15 @@
 <link>https://www.cndtec.co.kr/resources/index.html</link>
 <description>잔류응력·스트레인게이지·진동·토크·DAQ 등 계측 기술자료 업데이트 피드</description>
 <language>ko</language>
-<lastBuildDate>Mon, 27 Jul 2026 15:28:59 +0900</lastBuildDate>
+<lastBuildDate>Wed, 29 Jul 2026 00:00:00 +0900</lastBuildDate>
 <atom:link href="https://www.cndtec.co.kr/rss.xml" rel="self" type="application/rss+xml" />
+<item>
+<title>마이크로폰·소음계 원리·종류·선정 가이드</title>
+<link>https://www.cndtec.co.kr/resources/microphone-sound-level-meter.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/microphone-sound-level-meter.html</guid>
+<pubDate>Wed, 29 Jul 2026 00:00:00 +0900</pubDate>
+<description>콘덴서형 마이크로폰 원리, 소음계 Class 1/2 구분, 선정 기준과 측정 방법·유의사항, DT9837 DAQ 연동까지 씨앤디테크가 정리합니다.</description>
+</item>
 <item>
 <title>BD SENSORS 압력센서 — 압력 트랜스미터·차압 트랜스미터·디지털 압력계</title>
 <link>https://www.cndtec.co.kr/resources/pressure-sensor.html</link>

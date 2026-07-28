@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>마이크로폰·소음계 원리·종류·선정 가이드 | 씨앤디테크</title>
+<meta name="description" content="콘덴서형 마이크로폰 원리, 소음계 Class 1/2 구분, 선정 기준과 측정 방법·유의사항, DT9837 DAQ 연동까지 씨앤디테크가 정리합니다." />
+<meta name="keywords" content="마이크로폰 원리, 소음계 종류, Class 1 소음계, Class 2 소음계, 측정용 마이크로폰, IEPE 마이크로폰, 콘덴서 마이크로폰, DT9837 마이크로폰, 소음 측정 방법, 자유음장 마이크로폰" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/microphone-sound-level-meter.html" />
+<meta property="og:title" content="마이크로폰·소음계 원리·종류·선정 가이드 | 씨앤디테크" />
+<meta property="og:description" content="콘덴서형 마이크로폰 원리부터 소음계 Class 1/2, 선정·측정 유의사항, DT9837 연동까지 — 씨앤디테크 기술자료." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/microphone-sound-level-meter.html" />
+<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/mircophone/20260723_124325.jpg" />
+<meta property="og:image:width" content="4000" />
+<meta property="og:image:height" content="3000" />
+<meta property="og:image:alt" content="정밀 측정용 마이크로폰과 보관 케이스, BNC 연장 케이블" />
+<meta property="og:site_name" content="씨앤디테크 기술자료" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="../css/style.css?v=6">
+<style>
+body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "마이크로폰·소음계 원리·종류·선정 가이드",
+  "description": "콘덴서형 마이크로폰의 원리(다이어프램·백플레이트·프리앰프), 지향성·크기·출력방식에 따른 종류, 소음계 Class 1/2 구분, 마이크로폰·소음계 선정 기준, 현장 측정 방법과 유의사항, DT9837 DAQ 연동을 씨앤디테크가 정리합니다.",
+  "keywords": "마이크로폰 원리, 소음계 종류, Class 1 소음계, IEPE 마이크로폰, 콘덴서 마이크로폰, DT9837 마이크로폰, 소음 측정 방법",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr", "logo": {"@type": "ImageObject", "url": "https://www.cndtec.co.kr/assets/images/cnd-logo.png"}},
+  "datePublished": "2026-07-29",
+  "dateModified": "2026-07-29",
+  "inLanguage": "ko",
+  "url": "https://www.cndtec.co.kr/resources/microphone-sound-level-meter.html",
+  "image": "https://www.cndtec.co.kr/assets/images/mircophone/20260723_124325.jpg"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "콘덴서 마이크로폰과 다이나믹 마이크로폰은 어떻게 다른가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "콘덴서(정전용량형) 마이크로폰은 얇은 다이어프램과 고정된 백플레이트가 커패시터를 형성하며, 음압에 의한 다이어프램 진동이 정전용량 변화로 이어져 전기 신호를 만듭니다. 감도가 높고 주파수 응답이 평탄해 정밀 측정용으로 사용됩니다. 다이나믹 마이크로폰은 코일과 마그넷의 전자기 유도 방식으로, 구조가 튼튼하고 저렴하지만 감도와 주파수 응답 평탄도가 떨어져 정밀 계측에는 거의 사용하지 않습니다. 소음·진동 측정용 마이크로폰은 대부분 콘덴서형입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "프리폴라라이즈드(IEPE)와 외부 폴라라이즈드 마이크로폰 중 어떤 것을 선택해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "외부 폴라라이즈드 마이크로폰은 약 200V의 분극 전압을 별도로 공급해야 하며 전용 프리앰프와 전하 증폭기가 필요해 실험실 정밀 계측에 주로 사용됩니다. 프리폴라라이즈드(전극 표면에 영구 전하를 심어 놓은 방식) 마이크로폰은 외부 분극 전압이 필요 없고, 대부분 IEPE(ICP®) 방식의 정전류로 구동되어 표준 BNC 케이블 하나로 DAQ에 직결할 수 있습니다. 현장 측정·휴대용 시스템에는 IEPE 타입이 셋업이 간단해 실용적이며, 국가 표준급 정밀 캘리브레이션이 필요한 경우에는 외부 폴라라이즈드 타입을 검토합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "소음계 Class 1과 Class 2는 어떻게 다른가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IEC 61672-1 국제표준 기준으로 Class 1(정밀급)은 허용 오차가 작고 측정 주파수·온도 범위가 넓어 법정 소음 측정, 환경영향평가, 정밀 연구에 사용됩니다. Class 2(일반급)는 허용 오차가 다소 크지만 저렴하고 휴대성이 좋아 현장 간이 점검, 작업환경 소음 확인 등 일반 목적에 적합합니다. 국내 소음·진동 관련 법정 측정에서는 대부분 Class 1(과거 명칭 Type 1급) 장비를 요구하므로 용도를 먼저 확인해야 합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "자유음장형과 확산음장형 마이크로폰은 어떻게 다른가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "자유음장형(Free-field)은 음원을 향해 정면(0° 입사각)으로 배치했을 때 평탄한 주파수 응답을 갖도록 보정되어, 반사가 없는 야외나 무향실처럼 하나의 명확한 음원을 측정할 때 사용합니다. 확산음장형(Random-incidence)은 다양한 방향에서 반사된 소리가 뒤섞인 실내·잔향 공간에서 평탄한 응답을 갖도록 보정되어 있어 일반 실내 소음 측정에 적합합니다. 압력형(Pressure)은 마이크로폰 표면 자체의 음압을 측정하는 방식으로 벽면·구조물에 밀착 설치하는 특수 용도에 사용됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "배경소음이 있는 현장에서는 측정값을 어떻게 보정하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "대상 소음원을 끈 상태의 배경소음 레벨과, 소음원을 켠 상태의 전체 소음 레벨을 각각 측정해 차이를 비교합니다. 차이가 10dB 이상이면 배경소음의 영향은 무시할 수 있어 보정이 필요 없습니다. 3~10dB 차이라면 로그 감산 공식으로 배경소음 성분을 제외한 순수 소음원 레벨을 계산합니다. 차이가 3dB 미만이면 신뢰할 수 있는 보정이 불가능하므로, 측정 위치를 소음원에 가깝게 하거나 배경소음 자체를 낮추는 조치가 필요합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "DT9837로 마이크로폰 측정이 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, IEPE(ICP®) 방식의 프리폴라라이즈드 마이크로폰이라면 DT9837의 4채널 IEPE 입력에 BNC 케이블로 직접 연결해 별도의 신호 컨디셔너 없이 측정할 수 있습니다. QuickDAQ 소프트웨어에서 마이크로폰 감도값(mV/Pa)을 입력하면 전압 신호를 dB SPL로 직접 환산해 표시하며, A/C 주파수 가중 및 옥타브밴드 분석도 지원합니다. 단, 외부 폴라라이즈드(비IEPE) 타입은 별도의 전하 증폭기·컨디셔너를 거쳐야 DT9837과 연동할 수 있습니다."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+.ms-tag{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:var(--orange-tint);border:1px solid var(--orange-line);border-radius:999px;font-family:'Pretendard',sans-serif;font-size:11px;color:var(--accent-deep);font-weight:700;margin-bottom:20px;}
+.ms-stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;}
+@media(max-width:640px){.ms-stat-grid{grid-template-columns:1fr;}}
+.ms-stat{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:18px 16px;text-align:center;}
+.ms-stat-num{font-family:'Pretendard',sans-serif;font-size:19px;font-weight:700;color:var(--accent);line-height:1.2;}
+.ms-stat-sub{font-size:11.5px;color:var(--text-mute);margin-top:6px;line-height:1.5;}
+.ms-section{padding:48px 0;border-bottom:1px solid var(--line);}
+.ms-section:last-child{border-bottom:none;}
+.ms-section-tag{font-size:11px;font-family:'Pretendard',sans-serif;font-weight:700;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+.ms-h2{font-family:'Pretendard',sans-serif;font-size:clamp(20px,3.5vw,26px);font-weight:700;color:var(--charcoal);margin-bottom:8px;letter-spacing:-0.02em;}
+.ms-sub{font-size:14.5px;color:var(--text-dim);line-height:1.8;max-width:760px;margin-bottom:22px;}
+.ms-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px;}
+@media(max-width:760px){.ms-card-grid{grid-template-columns:1fr;}}
+.ms-card{padding:20px 18px;border:1px solid var(--line);border-radius:var(--radius);background:var(--white);}
+.ms-card-badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:10.5px;font-weight:700;margin-bottom:8px;background:var(--orange-tint);color:var(--accent-deep);}
+.ms-card-name{font-size:14.5px;font-weight:700;color:var(--charcoal);margin-bottom:6px;}
+.ms-card-desc{font-size:13px;color:var(--text-dim);line-height:1.7;margin:0;}
+.ms-tip-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:8px;}
+.ms-tip-list li{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:var(--text-dim);line-height:1.7;padding:14px 16px;background:var(--white);border:1px solid var(--line);border-radius:10px;}
+.ms-tip-list li .tip-num{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.ms-wrap{overflow-x:auto;margin-top:16px;}
+.ms-table{width:100%;border-collapse:collapse;font-size:13px;min-width:560px;}
+.ms-table th{background:var(--charcoal);color:#fff;padding:11px 13px;text-align:center;font-weight:600;font-size:12px;}
+.ms-table th:first-child{text-align:left;}
+.ms-table td{padding:10px 13px;border-bottom:1px solid var(--line);color:var(--text-dim);text-align:center;vertical-align:middle;}
+.ms-table td:first-child{text-align:left;font-weight:700;color:var(--charcoal);}
+.ms-table tr:last-child td{border-bottom:none;}
+.ms-img-wrap{margin:20px 0 0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--white);}
+.ms-img-wrap img{width:100%;height:auto;display:block;}
+.ms-img-caption{padding:10px 16px;font-size:12px;color:var(--text-mute);background:var(--white);border-top:1px solid var(--line);text-align:center;}
+.ms-img-trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:8px;}
+@media(max-width:760px){.ms-img-trio{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.ms-img-trio{grid-template-columns:1fr;}}
+.ms-img-duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px;}
+@media(max-width:640px){.ms-img-duo{grid-template-columns:1fr;}}
+.ms-img-trio img, .ms-img-duo img{width:100%;height:200px;object-fit:contain;background:#f8fafc;border-radius:var(--radius);border:1px solid var(--line);display:block;}
+.ms-note{margin-top:16px;padding:16px 18px;background:var(--orange-tint);border:1px solid var(--orange-line);border-radius:var(--radius);font-size:13px;color:var(--text-dim);line-height:1.75;}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+<nav class="mobile-subnav" aria-label="모바일 카테고리 메뉴">
+  <a href="../about.html">회사소개</a>
+  <a href="../products.html">사업분야·제품</a>
+  <a href="../projects.html">주요실적</a>
+  <a href="index.html" class="pill-active">기술자료</a>
+  <a href="../index.html#blog">블로그</a>
+  <a href="../contact.html">문의</a>
+</nav>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../index.html#blog">블로그</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<main>
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div class="ms-tag">MICROPHONE · SOUND LEVEL METER · DT9837</div>
+      <h1 style="font-family:'Pretendard',sans-serif; font-size:clamp(28px,5vw,48px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal); line-height:1.2;">마이크로폰·소음계<br>원리·종류·선정 가이드</h1>
+      <p style="font-size:16.5px; color:var(--text-dim); max-width:720px; line-height:1.75; margin-bottom:0;">콘덴서형 마이크로폰이 소리를 전기 신호로 변환하는 원리부터, 지향성·크기·출력방식에 따른 마이크로폰 종류, Class 1·2 소음계 구분, 용도에 맞는 선정 기준과 현장 측정 방법·유의사항, DT9837 등 DAQ와의 연동까지 씨앤디테크가 정리합니다.</p>
+    </div>
+
+    <div class="ms-stat-grid fade-in">
+      <div class="ms-stat">
+        <div class="ms-stat-num">정전용량형</div>
+        <div class="ms-stat-sub">다이어프램·백플레이트<br>콘덴서 구조로 음압 감지</div>
+      </div>
+      <div class="ms-stat">
+        <div class="ms-stat-num">IEPE 직결</div>
+        <div class="ms-stat-sub">프리폴라라이즈드 타입은<br>BNC 케이블로 DAQ 바로 연결</div>
+      </div>
+      <div class="ms-stat">
+        <div class="ms-stat-num">Class 1 · 2</div>
+        <div class="ms-stat-sub">IEC 61672-1 기준<br>소음계 정확도 등급</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 본문 ── -->
+<section style="padding:0 0 100px;">
+  <div class="container" style="max-width:900px;">
+
+    <!-- 01 마이크로폰 원리 -->
+    <div class="ms-section fade-in">
+      <div class="ms-section-tag">01 · MICROPHONE PRINCIPLE</div>
+      <h2 class="ms-h2">콘덴서 마이크로폰 — 원리와 구조</h2>
+      <p class="ms-sub">소음·진동 측정에 쓰이는 정밀 마이크로폰은 대부분 <strong>콘덴서(정전용량형, Condenser)</strong> 방식입니다. 얇은 금속 다이어프램과 그 아래 고정된 백플레이트가 하나의 커패시터를 형성하고, 소리에 의해 다이어프램이 미세하게 진동하면 두 판 사이의 간극이 변하면서 정전용량이 변화합니다. 이 정전용량 변화가 음압에 비례하는 전기 신호로 출력됩니다.</p>
+
+      <div class="ms-card-grid">
+        <div class="ms-card">
+          <div class="ms-card-badge">다이어프램</div>
+          <div class="ms-card-name">진동판</div>
+          <p class="ms-card-desc">음압에 반응해 미세하게 움직이는 얇은 금속(또는 금속 코팅) 막. 두께·장력이 감도와 주파수 응답을 결정합니다.</p>
+        </div>
+        <div class="ms-card">
+          <div class="ms-card-badge">백플레이트</div>
+          <div class="ms-card-name">고정 전극</div>
+          <p class="ms-card-desc">다이어프램과 일정 간극을 두고 고정된 전극. 다이어프램과 함께 커패시터를 구성합니다.</p>
+        </div>
+        <div class="ms-card">
+          <div class="ms-card-badge">프리앰프</div>
+          <div class="ms-card-name">전치 증폭기</div>
+          <p class="ms-card-desc">커패시터의 매우 높은 출력 임피던스를 낮은 임피던스로 변환해, 긴 케이블로도 노이즈 없이 신호를 전송할 수 있게 합니다.</p>
+        </div>
+      </div>
+
+      <div class="ms-note">
+        <strong style="color:var(--charcoal);">분극(폴라라이제이션) 전압이란?</strong> 커패시터가 정전용량 변화를 전압 신호로 만들어내려면 전극 사이에 전하가 채워져 있어야 합니다. 이 전하를 <strong>외부에서 약 200V DC를 공급해</strong> 유지하는 방식을 외부 폴라라이즈드(Externally Polarized)라 하고, <strong>전극 표면 자체에 영구적으로 전하를 심어 놓아</strong> 별도 전압 공급이 필요 없는 방식을 프리폴라라이즈드(Prepolarized, 일렉트릿) 마이크로폰이라 합니다.
+      </div>
+    </div>
+
+    <!-- 02 마이크로폰 종류 -->
+    <div class="ms-section fade-in">
+      <div class="ms-section-tag">02 · MICROPHONE TYPES</div>
+      <h2 class="ms-h2">마이크로폰 종류 — 지향성·크기·출력방식</h2>
+      <p class="ms-sub">측정용 마이크로폰은 세 가지 기준으로 구분해 선택합니다.</p>
+
+      <h3 style="font-size:15px; font-weight:700; color:var(--charcoal); margin:24px 0 10px;">① 음장 보정 방식(지향성)</h3>
+      <div class="ms-card-grid">
+        <div class="ms-card">
+          <div class="ms-card-badge">FREE-FIELD</div>
+          <div class="ms-card-name">자유음장형</div>
+          <p class="ms-card-desc">음원을 정면(0° 입사각)으로 향하도록 배치했을 때 평탄한 주파수 응답. 반사가 거의 없는 야외·무향실에서 단일 음원 측정에 적합.</p>
+        </div>
+        <div class="ms-card">
+          <div class="ms-card-badge">RANDOM</div>
+          <div class="ms-card-name">확산음장형</div>
+          <p class="ms-card-desc">사방에서 반사된 소리가 뒤섞인 잔향 공간에서 평탄한 응답. 일반 실내·작업환경 소음 측정에 널리 사용.</p>
+        </div>
+        <div class="ms-card">
+          <div class="ms-card-badge">PRESSURE</div>
+          <div class="ms-card-name">압력형</div>
+          <p class="ms-card-desc">마이크로폰 표면에서의 음압 자체를 측정. 벽면·구조물 표면에 밀착 설치하는 특수 계측에 사용.</p>
+        </div>
+      </div>
+
+      <h3 style="font-size:15px; font-weight:700; color:var(--charcoal); margin:28px 0 10px;">② 캡슐 직경</h3>
+      <div class="ms-wrap">
+        <table class="ms-table">
+          <thead><tr><th>직경</th><th>고주파 응답</th><th>감도</th><th>다이나믹 레인지</th><th>주요 용도</th></tr></thead>
+          <tbody>
+            <tr><td>1인치</td><td>낮음</td><td>매우 높음</td><td>저음압 특화</td><td>저소음 정밀 계측</td></tr>
+            <tr><td>1/2인치</td><td>중간</td><td>높음</td><td>넓음</td><td>범용 정밀 측정(가장 보편적)</td></tr>
+            <tr><td>1/4인치</td><td>높음</td><td>중간</td><td>고음압까지</td><td>고주파·고음압 측정</td></tr>
+            <tr><td>1/8인치</td><td>매우 높음</td><td>낮음</td><td>매우 높은 음압까지</td><td>초고주파·충격음 특수 계측</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12.5px; color:var(--text-mute); margin-top:8px;">캡슐이 작을수록 고주파 응답과 다이나믹 레인지 상한이 좋아지지만 감도(mV/Pa)는 낮아지는 트레이드오프가 있습니다.</p>
+
+      <h3 style="font-size:15px; font-weight:700; color:var(--charcoal); margin:28px 0 10px;">③ 출력 방식</h3>
+      <div class="ms-card-grid" style="grid-template-columns:1fr 1fr;">
+        <div class="ms-card">
+          <div class="ms-card-badge">전하출력형</div>
+          <div class="ms-card-name">외부 폴라라이즈드</div>
+          <p class="ms-card-desc">약 200V 분극 전압과 전용 전하 증폭기가 필요. 셋업이 복잡하지만 국가 표준급 정밀 계측에 사용됩니다.</p>
+        </div>
+        <div class="ms-card">
+          <div class="ms-card-badge">IEPE · ICP®</div>
+          <div class="ms-card-name">프리폴라라이즈드</div>
+          <p class="ms-card-desc">정전류로 구동되는 내장 프리앰프. 표준 BNC 케이블 하나로 DT9837 등 IEPE 입력 DAQ에 직결할 수 있어 현장 측정에 실용적입니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 소음계 종류 -->
+    <div class="ms-section fade-in">
+      <div class="ms-section-tag">03 · SOUND LEVEL METER TYPES</div>
+      <h2 class="ms-h2">소음계(Sound Level Meter) 종류</h2>
+      <p class="ms-sub">마이크로폰이 소리를 전기 신호로 바꾸면, 소음계(또는 DAQ+소프트웨어)가 이를 사람이 판단할 수 있는 소음 지표로 변환·표시합니다.</p>
+
+      <div class="ms-wrap">
+        <table class="ms-table">
+          <thead><tr><th>구분</th><th>Class 1 (정밀급)</th><th>Class 2 (일반급)</th></tr></thead>
+          <tbody>
+            <tr><td>기준 표준</td><td>IEC 61672-1</td><td>IEC 61672-1</td></tr>
+            <tr><td>허용 오차</td><td>좁음(고정밀)</td><td>다소 넓음</td></tr>
+            <tr><td>주요 용도</td><td>법정 소음 측정·환경영향평가·정밀 연구</td><td>현장 간이 점검·작업환경 확인</td></tr>
+            <tr><td>가격·휴대성</td><td>상대적으로 고가</td><td>저렴·휴대성 우수</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size:15px; font-weight:700; color:var(--charcoal); margin:28px 0 10px;">기능별 분류</h3>
+      <div class="ms-card-grid">
+        <div class="ms-card">
+          <div class="ms-card-badge">적분형</div>
+          <div class="ms-card-name">Integrating SLM</div>
+          <p class="ms-card-desc">Leq(등가소음레벨)·Lmax·Lmin·Lpeak·통계레벨(Ln)을 시간에 따라 적분·통계 처리. 환경·생활 소음 측정의 표준 방식.</p>
+        </div>
+        <div class="ms-card">
+          <div class="ms-card-badge">주파수분석형</div>
+          <div class="ms-card-name">Spectrum Analyzer</div>
+          <p class="ms-card-desc">1/1·1/3 옥타브밴드 또는 FFT로 주파수별 소음 성분을 분해. 소음원 식별·저감 대책 수립에 활용.</p>
+        </div>
+        <div class="ms-card">
+          <div class="ms-card-badge">노이즈 도시미터</div>
+          <div class="ms-card-name">Personal Noise Dosimeter</div>
+          <p class="ms-card-desc">작업자가 착용해 하루 누적 소음 노출량을 기록. 산업안전보건 소음 노출 관리에 사용.</p>
+        </div>
+      </div>
+
+      <div class="ms-note">
+        <strong style="color:var(--charcoal);">주파수·시간 가중치</strong> — 사람 청감 특성에 맞춘 <strong>A 가중</strong>(dB(A), 일반 환경·생활 소음 기준), 저주파 성분을 더 반영하는 <strong>C 가중</strong>(dB(C), 충격음·저주파 평가), 가중 없는 <strong>Z 가중</strong>이 있습니다. 시간 가중치는 반응 속도에 따라 <strong>Fast(0.125초)·Slow(1초)·Impulse(충격음 특화)</strong>로 나뉩니다.
+      </div>
+    </div>
+
+    <!-- 04 선정 시 유의사항 -->
+    <div class="ms-section fade-in">
+      <div class="ms-section-tag">04 · SELECTION GUIDE</div>
+      <h2 class="ms-h2">마이크로폰·소음계 선정 시 유의사항</h2>
+      <p class="ms-sub">측정 목적과 현장 조건에 맞지 않는 장비를 선택하면 데이터 자체를 신뢰할 수 없게 됩니다. 아래 기준을 먼저 확인합니다.</p>
+      <ul class="ms-tip-list">
+        <li><div class="tip-num">1</div><div><strong style="color:var(--charcoal);">측정 목적에 맞는 지향성</strong> — 단일 음원을 실외·무향 환경에서 측정한다면 자유음장형, 반사가 많은 실내·일반 환경이라면 확산음장형을 선택합니다.</div></li>
+        <li><div class="tip-num">2</div><div><strong style="color:var(--charcoal);">Class 1/2 등급 확인</strong> — 법정 소음 측정, 환경영향평가 등 공인 데이터가 필요한 경우 Class 1 장비가 요구되는지 관련 규정을 먼저 확인합니다.</div></li>
+        <li><div class="tip-num">3</div><div><strong style="color:var(--charcoal);">측정 주파수·다이나믹 레인지</strong> — 초저주파·초음파 영역이나 매우 높은 음압(충격음)을 측정해야 한다면 캡슐 크기와 사양을 그에 맞게 선택합니다.</div></li>
+        <li><div class="tip-num">4</div><div><strong style="color:var(--charcoal);">DAQ와의 신호 호환성</strong> — 기존에 IEPE 기반 DAQ(DT9837 등)를 사용 중이라면 프리폴라라이즈드(IEPE) 마이크로폰을 선택해야 별도 컨디셔너 없이 바로 연동됩니다.</div></li>
+        <li><div class="tip-num">5</div><div><strong style="color:var(--charcoal);">방풍·방수 액세서리 필요성</strong> — 실외 측정이라면 윈드스크린(방풍망), 강우·습기가 우려되면 방수 커버 등 현장 조건에 맞는 액세서리를 함께 준비합니다.</div></li>
+        <li><div class="tip-num">6</div><div><strong style="color:var(--charcoal);">캘리브레이션 이력 관리</strong> — 마이크로폰은 개체마다 감도(Sensitivity)가 미세하게 다르므로, 개별 캘리브레이션 인증서를 확보하고 정기적으로 재교정 주기를 관리해야 합니다.</div></li>
+      </ul>
+    </div>
+
+    <!-- 05 측정 방법 -->
+    <div class="ms-section fade-in">
+      <div class="ms-section-tag">05 · MEASUREMENT METHOD</div>
+      <h2 class="ms-h2">현장 측정 방법</h2>
+      <p class="ms-sub">동일한 마이크로폰이라도 배치·절차가 잘못되면 측정값의 신뢰도가 크게 떨어집니다.</p>
+      <ul class="ms-tip-list">
+        <li><div class="tip-num">1</div><div><strong style="color:var(--charcoal);">배치 방향</strong> — 자유음장형은 음원 정면(0°)을 향해, 확산음장형은 통상 음원을 향해 그대로 배치하거나 제조사 권장 입사각을 따릅니다.</div></li>
+        <li><div class="tip-num">2</div><div><strong style="color:var(--charcoal);">측정 거리·높이</strong> — 소음원으로부터의 거리, 지면·바닥으로부터의 높이는 관련 규격(예: 환경 소음 측정 기준 1~1.2m 이상)에 맞춰 설정하고 매 측정마다 동일하게 유지합니다.</div></li>
+        <li><div class="tip-num">3</div><div><strong style="color:var(--charcoal);">배경소음 보정</strong> — 대상 소음원을 켠 상태와 끈 상태를 각각 측정해 차이가 10dB 이상이면 보정 불필요, 3~10dB면 로그 감산으로 보정, 3dB 미만이면 측정 위치를 재검토합니다.</div></li>
+        <li><div class="tip-num">4</div><div><strong style="color:var(--charcoal);">가중치 설정</strong> — 목적에 맞는 주파수 가중(A/C/Z)과 시간 가중(Fast/Slow/Impulse)을 측정 전에 설정하고, 결과 보고 시 함께 명시합니다.</div></li>
+        <li><div class="tip-num">5</div><div><strong style="color:var(--charcoal);">현장 캘리브레이션</strong> — 측정 시작 전·후에 피스톤폰 등 기준 음압 발생기로 마이크로폰 감도를 현장에서 재확인합니다.</div></li>
+      </ul>
+    </div>
+
+    <!-- 06 측정 시 유의사항 -->
+    <div class="ms-section fade-in">
+      <div class="ms-section-tag">06 · PRECAUTIONS</div>
+      <h2 class="ms-h2">측정 시 유의사항</h2>
+      <ul class="ms-tip-list">
+        <li><div class="tip-num">1</div><div><strong style="color:var(--charcoal);">풍절음(바람 노이즈)</strong> — 실외에서 바람이 조금이라도 있으면 캡슐에 부딪히는 풍절음이 실제 소음보다 큰 오차를 유발합니다. 윈드스크린(방풍망) 착용이 거의 필수입니다.</div></li>
+        <li><div class="tip-num">2</div><div><strong style="color:var(--charcoal);">반사면 회피</strong> — 측정자의 몸, 벽면, 바닥 등 근접한 반사면은 측정값을 왜곡시킵니다. 마이크로폰과 반사면 사이에 충분한 거리를 둡니다.</div></li>
+        <li><div class="tip-num">3</div><div><strong style="color:var(--charcoal);">온도·습도 영향</strong> — 고온다습 환경은 프리앰프 특성과 다이어프램 장력에 영향을 줄 수 있어, 극한 환경 측정 시 제조사 사양의 사용 범위를 확인합니다.</div></li>
+        <li><div class="tip-num">4</div><div><strong style="color:var(--charcoal);">케이블·커넥터 상태</strong> — BNC 커넥터 접촉 불량이나 케이블 노화는 노이즈 유입·신호 끊김의 원인이 됩니다. 연장 케이블이 길어질수록 전기적 노이즈에 더 취약해집니다.</div></li>
+        <li><div class="tip-num">5</div><div><strong style="color:var(--charcoal);">거치 방식</strong> — 손으로 들고 측정하면 신체 반사와 흔들림이 섞입니다. 붐 스탠드·삼각대에 거치해 수평(레벨)을 맞추고 고정된 상태로 측정하는 것이 원칙입니다.</div></li>
+        <li><div class="tip-num">6</div><div><strong style="color:var(--charcoal);">개체별 감도값 반영</strong> — 마이크로폰마다 개별 캘리브레이션 인증서의 감도(mV/Pa) 값이 다르므로, 측정 소프트웨어에 해당 개체의 실제 감도값을 정확히 입력해야 합니다.</div></li>
+      </ul>
+    </div>
+
+    <!-- 07 실측 시스템 구성 -->
+    <div class="ms-section fade-in">
+      <div class="ms-section-tag">07 · FIELD SETUP</div>
+      <h2 class="ms-h2">실측 시스템 구성 사진</h2>
+      <p class="ms-sub">씨앤디테크가 협력업체를 통해 공급한 정밀 측정용 마이크로폰의 실제 현장 구성 사례입니다.</p>
+
+      <div class="ms-img-wrap">
+        <img src="../assets/images/mircophone/20260723_123905.jpg" alt="붐 스탠드에 거치된 측정 마이크로폰 — 수평 확인용 버블 레벨 내장" loading="lazy">
+        <div class="ms-img-caption">붐 스탠드에 거치된 측정 마이크로폰 — 수평 확인용 버블 레벨 내장</div>
+      </div>
+
+      <div class="ms-img-trio">
+        <img src="../assets/images/mircophone/20260723_124259.jpg" alt="마이크로폰 스위블 클립 마운트 — 각도 조절용 볼조인트" loading="lazy" onerror="this.style.display='none'">
+        <img src="../assets/images/mircophone/20260723_124318.jpg" alt="마이크로폰 프리앰프 본체를 클립 마운트에 장착한 모습" loading="lazy" onerror="this.style.display='none'">
+        <img src="../assets/images/mircophone/20260723_124338.jpg" alt="BNC 커넥터 연장 케이블 — 다채널 DAQ 연결용" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <p style="font-size:12px; color:var(--text-mute); text-align:center; margin-top:10px;">마이크로폰 스위블 클립 마운트 · 프리앰프 장착 모습 · 다채널 연결용 BNC 연장 케이블</p>
+
+      <div class="ms-img-wrap">
+        <img src="../assets/images/mircophone/20260723_124325.jpg" alt="정밀 측정용 마이크로폰과 보관 케이스, BNC 연장 케이블" loading="lazy">
+        <div class="ms-img-caption">정밀 측정용 마이크로폰과 보관 케이스, BNC 연장 케이블</div>
+      </div>
+
+      <div class="ms-img-wrap">
+        <img src="../assets/images/mircophone/20260723_125001.jpg" alt="마이크로폰 개별 캘리브레이션 인증서 및 캡슐 — 개체별 감도 관리" loading="lazy">
+        <div class="ms-img-caption">마이크로폰 개별 캘리브레이션 인증서 및 캡슐 — 개체별 감도 관리 예시(분극 전압 0V, 다이나믹 레인지 상한 136dB, 기준 주파수 250Hz)</div>
+      </div>
+    </div>
+
+    <!-- 08 DT9837 연동 -->
+    <div class="ms-section fade-in">
+      <div class="ms-section-tag">08 · DT9837 INTEGRATION</div>
+      <h2 class="ms-h2">DT9837 DAQ 연동</h2>
+      <p class="ms-sub"><a href="dt9837-daq.html" style="color:var(--accent-deep); text-decoration:none; font-weight:700;">DT9837</a>은 4채널 IEPE(ICP®) 입력을 지원하는 소형 USB 진동·소음 데이터수집장치로, USB 케이블 하나로 PC 연결과 전원 공급이 동시에 이루어져 별도 전원 장치가 필요 없습니다.</p>
+      <ul class="ms-tip-list">
+        <li><div class="tip-num">1</div><div><strong style="color:var(--charcoal);">직결 조건</strong> — 프리폴라라이즈드(IEPE) 방식 마이크로폰이라면 BNC 케이블로 DT9837의 IEPE 입력에 바로 연결해 측정할 수 있습니다. 외부 폴라라이즈드(비IEPE) 타입은 별도의 전하 증폭기·신호 컨디셔너를 거쳐야 합니다.</div></li>
+        <li><div class="tip-num">2</div><div><strong style="color:var(--charcoal);">dB SPL 환산</strong> — QuickDAQ 소프트웨어에 마이크로폰의 실제 감도값(mV/Pa)을 입력하면 전압 신호를 dB SPL 단위로 직접 환산해 표시합니다.</div></li>
+        <li><div class="tip-num">3</div><div><strong style="color:var(--charcoal);">가중·분석 옵션</strong> — A/C 주파수 가중치 적용, 1/1·1/3 옥타브밴드 분석, FFT 분석(옵션)까지 QuickDAQ 내에서 처리할 수 있습니다.</div></li>
+        <li><div class="tip-num">4</div><div><strong style="color:var(--charcoal);">다채널 동시 측정</strong> — 4개 채널을 활용해 여러 지점의 소음을 동시에 측정하거나, 마이크로폰과 가속도센서를 함께 연결해 소음·진동을 동시에 계측할 수도 있습니다. 더 많은 채널이 필요하면 8·16채널 구성에서 최대 64채널까지 확장되는 <a href="dt9837-daq.html" style="color:var(--accent-deep); text-decoration:none;">DT9857E</a>를 검토합니다.</div></li>
+      </ul>
+
+      <p style="font-size:14px; color:var(--text-mute); margin-top:20px; margin-bottom:12px;">관련 기술자료 더 보기:</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="dt9837-daq.html" style="padding:8px 16px; background:var(--white); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ DT9837·DT9857E DAQ</a>
+        <a href="vibration-sensor.html" style="padding:8px 16px; background:var(--white); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 진동센서(가속도계) 원리·선택</a>
+        <a href="vibration-calibrator.html" style="padding:8px 16px; background:var(--white); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 진동 센서 교정기</a>
+        <a href="daq-system.html" style="padding:8px 16px; background:var(--white); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ DAQ 데이터수집장치</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="sec-faq" style="padding-top:0;">
+  <div class="container" style="max-width:900px;">
+    <div class="fade-in">
+      <h2 class="ms-h2" style="margin-bottom:6px;">자주 묻는 질문</h2>
+      <p class="ms-sub">마이크로폰·소음계 선정과 측정 관련 자주 접수되는 질문입니다.</p>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-q"><span>콘덴서 마이크로폰과 다이나믹 마이크로폰은 어떻게 다른가요?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-a"><p>콘덴서(정전용량형) 마이크로폰은 다이어프램과 백플레이트가 커패시터를 형성하며, 음압에 의한 정전용량 변화로 신호를 만듭니다. 감도가 높고 주파수 응답이 평탄해 정밀 측정용으로 사용됩니다. 다이나믹 마이크로폰은 코일-마그넷의 전자기 유도 방식으로 구조가 튼튼하지만 정밀 계측에는 거의 사용하지 않습니다. 소음·진동 측정용 마이크로폰은 대부분 콘덴서형입니다.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q"><span>프리폴라라이즈드(IEPE)와 외부 폴라라이즈드 마이크로폰 중 어떤 것을 선택해야 하나요?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-a"><p>외부 폴라라이즈드는 약 200V 분극 전압과 전용 전하 증폭기가 필요해 실험실 정밀 계측에 주로 쓰입니다. 프리폴라라이즈드(IEPE/ICP®)는 별도 전압 공급 없이 표준 BNC 케이블로 DAQ에 직결할 수 있어 현장·휴대용 측정에 실용적입니다. 국가 표준급 정밀 캘리브레이션이 필요하다면 외부 폴라라이즈드 타입을 검토합니다.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q"><span>소음계 Class 1과 Class 2는 어떻게 다른가요?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-a"><p>IEC 61672-1 기준 Class 1(정밀급)은 허용 오차가 작아 법정 소음 측정·환경영향평가·정밀 연구에 사용됩니다. Class 2(일반급)는 오차가 다소 크지만 저렴하고 휴대성이 좋아 현장 간이 점검에 적합합니다. 국내 법정 소음 측정은 대부분 Class 1을 요구하므로 용도를 먼저 확인해야 합니다.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q"><span>자유음장형과 확산음장형 마이크로폰은 어떻게 다른가요?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-a"><p>자유음장형은 음원 정면(0°) 배치 시 평탄한 응답을 갖도록 보정되어 반사가 없는 야외·무향실의 단일 음원 측정에 적합합니다. 확산음장형은 반사가 뒤섞인 잔향 공간에서 평탄한 응답을 갖도록 보정되어 일반 실내 소음 측정에 적합합니다. 압력형은 벽면·구조물 표면 밀착 설치용 특수 방식입니다.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q"><span>배경소음이 있는 현장에서는 측정값을 어떻게 보정하나요?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-a"><p>소음원을 끈 상태와 켠 상태를 각각 측정해 차이를 비교합니다. 차이가 10dB 이상이면 보정이 필요 없고, 3~10dB면 로그 감산으로 순수 소음원 레벨을 계산합니다. 3dB 미만이면 신뢰할 수 있는 보정이 불가능하므로 측정 위치를 소음원에 가깝게 하거나 배경소음 자체를 낮추어야 합니다.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q"><span>DT9837로 마이크로폰 측정이 가능한가요?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-a"><p>네, IEPE(ICP®) 방식의 프리폴라라이즈드 마이크로폰이라면 DT9837의 4채널 IEPE 입력에 BNC 케이블로 직접 연결해 측정할 수 있습니다. QuickDAQ에서 마이크로폰 감도값(mV/Pa)을 입력하면 dB SPL로 직접 환산 표시되며, A/C 가중 및 옥타브밴드 분석도 지원합니다. 외부 폴라라이즈드(비IEPE) 타입은 별도 컨디셔너가 필요합니다.</p></div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section style="padding:0 0 100px;">
+  <div class="container" style="max-width:900px;">
+    <div style="padding:40px 48px; background:linear-gradient(135deg, var(--orange-tint) 0%, #fff 100%); border:1px solid var(--orange-line); border-radius:var(--radius);" class="fade-in">
+      <div class="ms-tag" style="margin-bottom:14px;">CONTACT</div>
+      <h3 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">마이크로폰·소음계 측정 시스템 구성, 지금 문의하세요</h3>
+      <p style="font-size:14.5px; color:var(--text-dim); line-height:1.75; margin-bottom:24px;">측정 목적, 현장 조건(실내/실외), 필요 정확도 등급(Class 1/2), DAQ 연동 여부를 알려주시면 협력업체를 통해 최적의 마이크로폰·소음계와 DT9837 등 DAQ 연동 구성을 제안드립니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">소음 측정 시스템 문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="microphone-sound-level-meter.html">마이크로폰·소음계</a></li><li><a href="vibration-sensor.html">진동센서 원리·설치</a></li><li><a href="dt9837-daq.html">DT9837 DAQ</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank" rel="noopener">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta"><span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span></div>
+  </div>
+</footer>
+
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+<script src="../js/main.js"></script>
+</body>
+</html>
