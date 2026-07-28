@@ -15,6 +15,13 @@
 <description>콘덴서형 마이크로폰 원리, 소음계 Class 1/2 구분, 선정 기준과 측정 방법·유의사항, DT9837 DAQ 연동까지 씨앤디테크가 정리합니다.</description>
 </item>
 <item>
+<title>진동센서(가속도계) 원리·종류·선정·설치 가이드 — 피에조일렉트릭·IEPE(ICP®)·측정 방식</title>
+<link>https://www.cndtec.co.kr/resources/vibration-sensor.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/vibration-sensor.html</guid>
+<pubDate>Wed, 29 Jul 2026 00:00:00 +0900</pubDate>
+<description>피에조일렉트릭 가속도센서의 원리, 전하출력형·IEPE(ICP®) 신호 방식 차이, 압전형·압저항형·MEMS 등 진동센서 종류와 선정 기준, 측정 방식과 올바른 설치 방법까지 씨앤디테크가 정리합니다.</description>
+</item>
+<item>
 <title>BD SENSORS 압력센서 — 압력 트랜스미터·차압 트랜스미터·디지털 압력계</title>
 <link>https://www.cndtec.co.kr/resources/pressure-sensor.html</link>
 <guid isPermaLink="true">https://www.cndtec.co.kr/resources/pressure-sensor.html</guid>
@@ -239,12 +246,6 @@
 <description>GTDL DAQ System 상세 사양: 최대 128채널 동기 수집, 채널당 1,000Hz 고속 샘플링, 브리지 내장 모듈형 구조. GTDL-350 / GTDL-360 모델 비교 및 MultiScan·Multiload 소프트웨어 소개.</description>
 </item>
 <item>
-<title>진동센서(가속도계) 원리·선택·설치 완전 가이드 — 피에조일렉트릭·주파수 응답·설치법</title>
-<link>https://www.cndtec.co.kr/resources/vibration-sensor.html</link>
-<guid isPermaLink="true">https://www.cndtec.co.kr/resources/vibration-sensor.html</guid>
-<pubDate>Wed, 24 Jun 2026 00:00:00 +0900</pubDate>
-<description>피에조일렉트릭 가속도센서의 원리(PZT·지진 질량)·측정 파라미터(가속도·속도·변위)·주파수 응답 특성부터 진동센서 올바른 설치 방법(스터드·마그네틱·접착제·프로브)까지 씨앤디테크가 정리합니다.</description>
-</item>
 <item>
 <title>홀드릴링 잔류응력 측정 (ASTM E837)</title>
 <link>https://www.cndtec.co.kr/resources/residual-stress.html</link>
