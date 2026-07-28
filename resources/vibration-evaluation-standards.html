@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>진동 평가 기준·규격 가이드 — VC 곡선·ISO 10816·ISO 2631·ISO 20283 | 씨앤디테크</title>
+<meta name="description" content="기계(ISO 10816/20816), 정밀시설(VC 곡선), 인체(ISO 2631·5349), 선박(ISO 20283) 등 진동 평가 기준과 규격을 목적별로 정리했습니다. 씨앤디테크." />
+<meta name="keywords" content="진동평가기준, Vibration Criteria, VC곡선, ISO 10816, ISO 20816, ISO 2631, ISO 5349, ISO 20283, 진동 규격, 전신진동, 수부진동, 정밀시설 진동기준, DIN 4150" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/vibration-evaluation-standards.html" />
+<meta property="og:title" content="진동 평가 기준·규격 가이드 | 씨앤디테크" />
+<meta property="og:description" content="기계·정밀시설·인체·선박, 무엇을 평가하느냐에 따라 달라지는 진동 규격을 한눈에 정리했습니다 — 씨앤디테크 진동 측정 기술자료." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/vibration-evaluation-standards.html" />
+<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/cnd-logo.png" />
+<meta property="og:site_name" content="씨앤디테크 기술자료" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="../css/style.css?v=6">
+<style>
+body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "진동 평가 기준·규격 가이드",
+  "description": "기계 진동(ISO 10816/20816), 정밀시설 진동(VC 곡선), 인체 진동 노출(ISO 2631·ISO 5349), 선박 진동(ISO 20283) 등 측정 대상별로 적용해야 할 진동 평가 규격을 씨앤디테크가 정리합니다.",
+  "keywords": "진동평가기준, Vibration Criteria, VC곡선, ISO 10816, ISO 20816, ISO 2631, ISO 5349, ISO 20283, DIN 4150",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr", "logo": {"@type": "ImageObject", "url": "https://www.cndtec.co.kr/assets/images/cnd-logo.png"}},
+  "datePublished": "2026-07-29",
+  "dateModified": "2026-07-29",
+  "inLanguage": "ko",
+  "url": "https://www.cndtec.co.kr/resources/vibration-evaluation-standards.html",
+  "image": "https://www.cndtec.co.kr/assets/images/cnd-logo.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "VC 곡선과 ISO 10816은 무엇이 다른가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "둘 다 진동을 속도(mm/s 또는 µm/s)로 평가하지만 목적이 다릅니다. ISO 10816(현 ISO 20816)은 회전·왕복동 기계 자체의 상태(정상/이상)를 하우징 진동으로 판정하는 규격이고, VC 곡선(Vibration Criteria)은 반도체 노광기·전자현미경 등 진동에 민감한 정밀장비가 설치된 바닥·구조물의 진동이 그 장비의 성능을 보장할 만큼 낮은지를 평가하는 기준입니다. 전자는 '기계가 고장났는가', 후자는 '주변 진동이 장비 성능에 영향을 주는가'를 봅니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "우리 설비에는 어떤 규격을 적용해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "평가 대상이 무엇인지에 따라 갈립니다. 모터·펌프·컴프레서 등 회전·왕복동 기계 자체의 이상 진동은 ISO 10816/20816, 반도체 클린룸이나 정밀 계측실처럼 진동에 민감한 장비가 설치되는 바닥은 VC 곡선, 작업자가 손이나 전신으로 받는 진동 노출은 ISO 5349(수부진동)·ISO 2631(전신진동), 인근 공사·교통으로 인한 건축물 손상 우려는 DIN 4150·ISO 4866, 선박 구조·거주성 진동은 ISO 20283을 적용합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ISO 10816과 ISO 20816은 같은 규격인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ISO 20816은 ISO 10816을 대체한 최신 개정판으로, 평가 원리(Zone A~D)와 속도 기반 판정 방식은 동일하게 이어받았습니다. ISO 2372(구 규격)는 이미 폐지되어 ISO 20816-1로 대체되었고, ISO 10816의 각 파트(-1, -3, -6, -7 등)도 순차적으로 ISO 20816 시리즈로 옮겨가고 있습니다. 실무에서는 두 명칭이 혼용되지만 최신 문서를 참조할 때는 ISO 20816을 기준으로 확인하는 것이 안전합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "반도체 클린룸은 왜 VC-D, VC-E처럼 엄격한 기준을 쓰나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VC 곡선은 원래 마이크로전자공학(반도체 노광), 의료, 바이오제약 산업의 정밀장비 요구사항을 기반으로 개발되었습니다. 반도체 노광장치(스테퍼·얼라이너)의 선폭이 미세해질수록(예: 1um→1/2nm) 요구되는 진동 허용치도 함께 낮아지며, VC-C(1um 선폭급)에서 VC-D·VC-E(수십 나노 선폭급)로 갈수록 허용 속도가 절반 이하로 낮아집니다. 최신 첨단 공정 라인일수록 더 엄격한 VC 등급의 바닥 진동 관리가 필요합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "작업자의 진동 노출은 어떤 규격으로 평가하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "손으로 잡는 동력 공구(그라인더, 해머드릴 등)로 인한 수부진동(Hand-Arm Vibration)은 ISO 5349로, 지게차·중장비·차량 운전석처럼 몸 전체로 받는 전신진동(Whole-Body Vibration)은 ISO 2631로 평가합니다. 두 규격 모두 하루 노출시간을 고려한 등가가속도(A(8) 등) 산출식을 제공하며, 국내 산업안전보건 기준도 이를 준용합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "건축물 진동 기준(DIN 4150)과 VC 곡선을 같이 적용해도 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 서로 다른 목적이라 함께 적용하는 것이 일반적입니다. DIN 4150-3·BS 7385·ISO 4866은 건축물 구조 자체의 손상(균열 등) 방지를 위한 기준이고, VC 곡선은 그 건물 안에 설치되는 정밀장비의 성능 보장을 위한 기준입니다. 예를 들어 반도체 공장을 지을 때는 DIN 4150 등으로 공사 중 인접 구조물 손상 여부를 관리하고, 완공 후 클린룸 바닥은 VC-C~E 기준으로 정밀장비 설치 적합성을 평가합니다."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+.vc-tag{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:var(--orange-tint);border:1px solid var(--orange-line);border-radius:999px;font-family:'Pretendard',sans-serif;font-size:11px;color:var(--accent-deep);font-weight:700;margin-bottom:20px;}
+.vc-stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px;}
+@media(max-width:760px){.vc-stat-grid{grid-template-columns:1fr 1fr;}}
+.vc-stat{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:18px 16px;text-align:center;}
+.vc-stat-num{font-family:'Pretendard',sans-serif;font-size:17px;font-weight:700;color:var(--accent);line-height:1.2;}
+.vc-stat-sub{font-size:11px;color:var(--text-mute);margin-top:6px;line-height:1.5;}
+.vc-section{padding:48px 0;border-bottom:1px solid var(--line);}
+.vc-section:last-child{border-bottom:none;}
+.vc-section-tag{font-size:11px;font-family:'Pretendard',sans-serif;font-weight:700;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+.vc-h2{font-family:'Pretendard',sans-serif;font-size:clamp(20px,3.5vw,26px);font-weight:700;color:var(--charcoal);margin-bottom:8px;letter-spacing:-0.02em;}
+.vc-sub{font-size:14.5px;color:var(--text-dim);line-height:1.8;max-width:760px;margin-bottom:22px;}
+.vc-card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px;}
+@media(max-width:900px){.vc-card-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.vc-card-grid{grid-template-columns:1fr;}}
+.vc-card{padding:18px 16px;border:1px solid var(--line);border-radius:var(--radius);background:var(--white);}
+.vc-card-badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:10px;font-weight:700;margin-bottom:8px;background:var(--orange-tint);color:var(--accent-deep);}
+.vc-card-name{font-size:14px;font-weight:700;color:var(--charcoal);margin-bottom:6px;}
+.vc-card-desc{font-size:12.5px;color:var(--text-dim);line-height:1.65;margin:0 0 10px;}
+.vc-card-link{font-size:12px;color:var(--accent-deep);text-decoration:none;font-weight:600;}
+.vc-tip-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:8px;}
+.vc-tip-list li{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:var(--text-dim);line-height:1.7;padding:14px 16px;background:var(--white);border:1px solid var(--line);border-radius:10px;}
+.vc-tip-list li .tip-num{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.vc-wrap{overflow-x:auto;margin-top:16px;}
+.vc-table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:640px;}
+.vc-table th{background:var(--charcoal);color:#fff;padding:10px 12px;text-align:center;font-weight:600;font-size:11.5px;}
+.vc-table th:first-child{text-align:left;}
+.vc-table td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--text-dim);text-align:center;vertical-align:middle;}
+.vc-table td:first-child{text-align:left;font-weight:700;color:var(--charcoal);}
+.vc-table tr:last-child td{border-bottom:none;}
+.vc-note{margin-top:16px;padding:16px 18px;background:var(--orange-tint);border:1px solid var(--orange-line);border-radius:var(--radius);font-size:13px;color:var(--text-dim);line-height:1.75;}
+.vc-pill-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+.vc-pill{padding:8px 16px;background:var(--white);border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--text-dim);text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+<nav class="mobile-subnav" aria-label="모바일 카테고리 메뉴">
+  <a href="../about.html">회사소개</a>
+  <a href="../products.html">사업분야·제품</a>
+  <a href="../projects.html">주요실적</a>
+  <a href="index.html" class="pill-active">기술자료</a>
+  <a href="../index.html#blog">블로그</a>
+  <a href="../contact.html">문의</a>
+</nav>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../index.html#blog">블로그</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<main>
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div class="vc-tag">VIBRATION CRITERIA · ISO 10816/20816 · ISO 2631 · ISO 20283</div>
+      <h1 style="font-family:'Pretendard',sans-serif; font-size:clamp(28px,5vw,48px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal); line-height:1.2;">진동 평가 기준·규격<br>완전 가이드</h1>
+      <p style="font-size:16.5px; color:var(--text-dim); max-width:720px; line-height:1.75; margin-bottom:0;">진동을 "측정"하는 것과 "평가"하는 것은 다릅니다. 같은 속도값이라도 회전기계의 상태 판정, 반도체 클린룸 바닥의 정밀도, 작업자의 신체 노출, 건축물의 안전성 중 무엇을 보느냐에 따라 적용해야 할 국제 규격과 등급 기준이 완전히 달라집니다. 씨앤디테크가 목적별로 정리했습니다.</p>
+    </div>
+
+    <div class="vc-stat-grid fade-in">
+      <div class="vc-stat">
+        <div class="vc-stat-num">기계</div>
+        <div class="vc-stat-sub">ISO 10816<br>→ ISO 20816</div>
+      </div>
+      <div class="vc-stat">
+        <div class="vc-stat-num">정밀시설</div>
+        <div class="vc-stat-sub">VC 곡선<br>VC-A ~ VC-M</div>
+      </div>
+      <div class="vc-stat">
+        <div class="vc-stat-num">인체</div>
+        <div class="vc-stat-sub">ISO 2631 · ISO 5349<br>전신·수부진동</div>
+      </div>
+      <div class="vc-stat">
+        <div class="vc-stat-num">선박</div>
+        <div class="vc-stat-sub">ISO 20283<br>구조·거주성</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 본문 ── -->
+<section style="padding:0 0 100px;">
+  <div class="container" style="max-width:960px;">
+
+    <!-- 01 왜 필요한가 -->
+    <div class="vc-section fade-in">
+      <div class="vc-section-tag">01 · WHY EVALUATION CRITERIA</div>
+      <h2 class="vc-h2">진동 평가 규격이 왜 필요한가</h2>
+      <p class="vc-sub">진동 측정기는 "지금 진동이 얼마인지"까지만 알려줍니다. 그 값이 "괜찮은지 아닌지"를 판단하려면 평가 대상별로 정해진 국제·국가 표준의 등급 기준과 비교해야 합니다. 평가 대상은 크게 4가지로 나뉩니다.</p>
+
+      <div class="vc-card-grid">
+        <div class="vc-card">
+          <div class="vc-card-badge">MACHINE</div>
+          <div class="vc-card-name">기계 자체의 상태</div>
+          <p class="vc-card-desc">모터·펌프·컴프레서 등 회전·왕복동 기계의 하우징 진동으로 이상 유무를 판정합니다.</p>
+          <span class="vc-card-link">→ ISO 10816 / 20816</span>
+        </div>
+        <div class="vc-card">
+          <div class="vc-card-badge">FACILITY</div>
+          <div class="vc-card-name">정밀시설·건축물</div>
+          <p class="vc-card-desc">클린룸·정밀계측실 바닥이 장비 성능을 보장할 만큼 조용한지, 건축물이 손상 없이 안전한지 평가합니다.</p>
+          <span class="vc-card-link">→ VC 곡선 / DIN 4150 / ISO 4866</span>
+        </div>
+        <div class="vc-card">
+          <div class="vc-card-badge">HUMAN</div>
+          <div class="vc-card-name">인체 노출</div>
+          <p class="vc-card-desc">작업자가 손이나 몸 전체로 받는 진동이 건강에 영향을 줄 수 있는 수준인지 평가합니다.</p>
+          <span class="vc-card-link">→ ISO 2631 / ISO 5349</span>
+        </div>
+        <div class="vc-card">
+          <div class="vc-card-badge">SHIP</div>
+          <div class="vc-card-name">선박</div>
+          <p class="vc-card-desc">선체 구조 진동과 선내 거주성(승선감)을 별도 기준으로 평가합니다.</p>
+          <span class="vc-card-link">→ ISO 20283</span>
+        </div>
+      </div>
+
+      <div class="vc-note">
+        같은 "속도(mm/s 또는 µm/s)"라는 물리량을 쓰더라도, 위 4가지는 서로 다른 목적의 규격이라 <strong>기준값을 서로 대체할 수 없습니다.</strong> 예를 들어 ISO 10816의 Zone A(정상) 기준을 반도체 클린룸 바닥에 적용하면 안 되고, VC 곡선의 정밀시설 기준을 회전기계 진단에 적용해도 안 됩니다.
+      </div>
+    </div>
+
+    <!-- 02 기계 진동 -->
+    <div class="vc-section fade-in">
+      <div class="vc-section-tag">02 · MACHINE VIBRATION</div>
+      <h2 class="vc-h2">기계 진동 평가 — ISO 10816 → ISO 20816</h2>
+      <p class="vc-sub">회전·왕복동 기계의 하우징(비회전부)에서 측정한 진동 속도(mm/s RMS)를 기준값과 비교해 <strong>Zone A(신규 기계 정상)~Zone D(손상 위험)</strong> 4단계로 상태를 판정하는 국제 표준입니다. 기계 종류·출력·회전속도에 따라 파트가 나뉩니다(-1 일반, -3 산업용 15~300kW, -6 왕복동, -7 원심펌프 등).</p>
+
+      <ul class="vc-tip-list">
+        <li><div class="tip-num">1</div><div><strong style="color:var(--charcoal);">ISO 2372(구) → ISO 10816 → ISO 20816</strong> — ISO 2372는 폐지되어 ISO 20816-1로 대체되었고, ISO 10816의 각 파트도 순차적으로 ISO 20816 시리즈(Part 2~9)로 이관되는 중입니다. 최신 문서 확인 시 ISO 20816을 우선 참조합니다.</div></li>
+        <li><div class="tip-num">2</div><div><strong style="color:var(--charcoal);">Zone A~D 판정</strong> — Zone A(신규 기계 수준, 정상)·Zone B(장기운전 무제한 허용)·Zone C(단기운전 가능, 개선 필요)·Zone D(손상 위험, 즉시 조치)로 구분합니다.</div></li>
+        <li><div class="tip-num">3</div><div><strong style="color:var(--charcoal);">기계 등급(Class I~IV)</strong> — 소형기계, 강성/연성 기초 위의 중형·대형 기계 등 등급에 따라 동일 Zone이라도 허용 속도값이 달라집니다.</div></li>
+        <li><div class="tip-num">4</div><div><strong style="color:var(--charcoal);">보완 규격 VDI 3832</strong> — ISO 10816/20816이 기계 전체 상태를 보는 반면, VDI 3832는 롤러 베어링 손상을 베어링 계수(K(t))로 특화 진단합니다. 두 규격을 함께 적용하면 기계 상태와 베어링 상태를 모두 커버할 수 있습니다.</div></li>
+      </ul>
+
+      <div class="vc-note">
+        Zone별 상세 허용 속도표(ISO 10816-1/-3/-6/-7 비교)와 MMF VM 시리즈 휴대용 진동측정기로 현장에서 자동 판정하는 방법은 <a href="vibration.html" style="color:var(--accent-deep); font-weight:700; text-decoration:none;">휴대용 진동측정 시스템 VM 기술자료</a>에서 상세히 다룹니다.
+      </div>
+    </div>
+
+    <!-- 03 정밀시설 진동 -->
+    <div class="vc-section fade-in">
+      <div class="vc-section-tag">03 · FACILITY VIBRATION — VC CRITERIA</div>
+      <h2 class="vc-h2">정밀시설 진동 평가 — VC 곡선(Vibration Criteria)</h2>
+      <p class="vc-sub">VC 곡선은 1980년대 에릭 웅가(Eric Ungar)와 콜린 고든(Colin Gordon)이 반도체·의료·바이오제약 산업의 진동 민감 장비 설계자를 위해 만든 '일반' 진동 기준입니다. 1994년 IEST(환경과학기술연구소)가 표준화했으며, 추가 연구를 통해 현재 VC-A~VC-M까지 확장되었습니다.</p>
+
+      <ul class="vc-tip-list">
+        <li><div class="tip-num">1</div><div><strong style="color:var(--charcoal);">1/3 옥타브밴드 속도 스펙트럼</strong> — 변위·속도·가속도 중 속도(RMS)를 기준으로 삼습니다. 장비 유형에 따라 최대 민감 주파수가 다르지만, 그 지점들이 대체로 일정한 속도 곡선 위에 놓이기 때문입니다.</div></li>
+        <li><div class="tip-num">2</div><div><strong style="color:var(--charcoal);">비례 대역폭(23%)</strong> — 고정 대역폭이 아니라 중심주파수에 비례하는 대역폭(각 대역폭 = 중심주파수의 23%)을 사용합니다. 대부분의 환경진동이 광대역·무작위 에너지로 지배된다는 경험적 근거 때문입니다.</div></li>
+        <li><div class="tip-num">3</div><div><strong style="color:var(--charcoal);">측정 방향</strong> — 수직 1방향과 수평 2방향(총 3축)에서 진동을 측정해 VC 곡선을 개발·평가합니다.</div></li>
+        <li><div class="tip-num">4</div><div><strong style="color:var(--charcoal);">"세부 크기(Detail Size)"</strong> — 표에 표시되는 세부 크기는 반도체 공정의 선폭, 의료·제약 연구의 입자(세포) 크기 등을 의미하며, 공정이 미세해질수록 더 엄격한 VC 등급이 요구됩니다.</div></li>
+      </ul>
+
+      <div class="vc-wrap">
+        <table class="vc-table" style="margin-top:20px;">
+          <thead><tr><th>등급(Class)</th><th>4~8Hz 가속도(gal)</th><th>8~80Hz 변위(µm)</th><th>속도(µm/s)</th><th>대표 적용 대상</th></tr></thead>
+          <tbody>
+            <tr><td>일반 작업장</td><td>4</td><td>16</td><td>800</td><td>일반 공장·작업 환경</td></tr>
+            <tr><td>사무실</td><td>2</td><td>8</td><td>400</td><td>사무 공간</td></tr>
+            <tr><td>거주지 · Computer System</td><td>1</td><td>4</td><td>200</td><td>주거지, 일반 컴퓨터실</td></tr>
+            <tr><td>일반 정밀 (~100배)</td><td>0.5</td><td>2</td><td>100</td><td>100배급 현미경, 로봇, 수술실, 일반 연구실</td></tr>
+            <tr><td>ISO VC-A</td><td>0.25</td><td>1</td><td>50</td><td>400배급 현미경, 측정실, 광학 비교기, 전자장비 생산설비</td></tr>
+            <tr><td>ISO VC-B</td><td>0.13</td><td>0.5</td><td>25</td><td>400배 이상 현미경, 정밀안과·신경외과 수술실, 3µm급 노광장치</td></tr>
+            <tr><td>ISO VC-C</td><td>0.06</td><td>0.25</td><td>12</td><td>30,000배까지 전자현미경, MRI, 1µm급 노광장치(1M DRAM급)</td></tr>
+            <tr><td>ISO VC-D</td><td>0.03</td><td>0.12</td><td>6</td><td>30,000배 이상 전자현미경, 질량분석기, 1/2nm급 노광장치(4M DRAM급)</td></tr>
+            <tr><td>ISO VC-E</td><td>0.015</td><td>0.06</td><td>3</td><td>비isolated 레이저·광학 연구, 1/4µm급 노광장치(64M DRAM급)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12px; color:var(--text-mute); margin-top:8px;">VC-F~VC-M은 최첨단 나노 공정·초정밀 연구시설에 적용되는 더 엄격한 확장 등급입니다. 실제 적용 시 최신 IEST 표준 원문 수치를 확인하시기 바랍니다.</p>
+
+      <div class="vc-note">
+        <strong style="color:var(--charcoal);">VC 곡선 ≠ 건축물 손상 기준</strong> — VC 곡선은 정밀장비의 "성능 보장"이 목적이고, DIN 4150-3·BS 7385·ISO 4866은 건축물 구조 자체의 "손상 방지"가 목적인 별개의 규격군입니다. 반도체 공장처럼 두 요구가 공존하는 시설은 두 기준을 함께 적용합니다. 건축물 손상 기준의 상세 내용은 <a href="building-vibration-monitoring.html" style="color:var(--accent-deep); font-weight:700; text-decoration:none;">건축물 진동 모니터링 기술자료</a>에서 다룹니다.
+      </div>
+    </div>
+
+    <!-- 04 인체 진동 -->
+    <div class="vc-section fade-in">
+      <div class="vc-section-tag">04 · HUMAN EXPOSURE</div>
+      <h2 class="vc-h2">인체 진동 노출 평가 — ISO 2631 · ISO 5349</h2>
+      <p class="vc-sub">작업자가 진동에 얼마나, 얼마나 오래 노출되는지는 건강과 직결됩니다. 노출 부위에 따라 두 규격으로 나뉩니다.</p>
+
+      <div class="vc-card-grid" style="grid-template-columns:1fr 1fr;">
+        <div class="vc-card">
+          <div class="vc-card-badge">WHOLE-BODY</div>
+          <div class="vc-card-name">ISO 2631 — 전신진동</div>
+          <p class="vc-card-desc">지게차·중장비·차량 운전석 등 좌석·바닥을 통해 몸 전체로 전달되는 진동을 평가합니다. 주파수 가중 가속도(1~80Hz)를 기준으로 건강(Health)·안락감(Comfort)·인지(Perception) 3개 관점의 지침을 제공하며, Part 2는 건축물 내 진동(1~80Hz)까지 확장 적용합니다.</p>
+        </div>
+        <div class="vc-card">
+          <div class="vc-card-badge">HAND-ARM</div>
+          <div class="vc-card-name">ISO 5349 — 수부진동</div>
+          <p class="vc-card-desc">그라인더·해머드릴·체인톱 등 손으로 잡는 동력공구로부터 손·팔로 전달되는 진동을 평가합니다. 8시간 등가가속도 A(8)을 산출해 하루 사용 시간별 노출 한계를 판단하며, 장기 노출 시 수완진동증후군(HAVS) 예방이 목적입니다.</p>
+        </div>
+      </div>
+
+      <div class="vc-note">
+        국내 산업안전보건법 및 관련 고시도 ISO 2631·ISO 5349의 평가 개념을 준용합니다. 작업자 진동 노출 실측·평가가 필요하다면 씨앤디테크의 <a href="field-service.html" style="color:var(--accent-deep); font-weight:700; text-decoration:none;">현장 계측 서비스</a>로 문의하실 수 있습니다.
+      </div>
+    </div>
+
+    <!-- 05 선박 진동 -->
+    <div class="vc-section fade-in">
+      <div class="vc-section-tag">05 · SHIP VIBRATION</div>
+      <h2 class="vc-h2">선박 진동 평가 — ISO 20283</h2>
+      <p class="vc-sub">선박은 선체 구조 진동과 선내 거주성(승선감)을 별도로 평가합니다. ISO 20283은 과거 ISO 4867·4868·6954를 통합·대체한 시리즈로, Part 2(구조 진동 측정)·Part 3(설치 전 사전측정)·Part 4(추진기관 진동)·Part 5(거주성 평가, 구 ISO 6954 대체)로 구성됩니다.</p>
+      <div class="vc-note">
+        선박 진동 측정·평가의 구체적인 절차와 기준값은 <a href="ship-vibration-iso20283.html" style="color:var(--accent-deep); font-weight:700; text-decoration:none;">선박 진동 측정 ISO 20283 기술자료</a>에서 자세히 다룹니다.
+      </div>
+    </div>
+
+    <!-- 06 규격 선택 가이드 -->
+    <div class="vc-section fade-in">
+      <div class="vc-section-tag">06 · WHICH STANDARD TO USE</div>
+      <h2 class="vc-h2">우리 현장엔 어떤 규격? — 빠른 선택 가이드</h2>
+      <p class="vc-sub">"무엇을 평가하려는가"를 먼저 정하면 규격 선택은 단순해집니다.</p>
+      <ul class="vc-tip-list">
+        <li><div class="tip-num">1</div><div><strong style="color:var(--charcoal);">모터·펌프·컴프레서 등 회전·왕복동 기계의 이상 유무</strong> → ISO 10816 / ISO 20816 (+ 베어링 특화 진단은 VDI 3832)</div></li>
+        <li><div class="tip-num">2</div><div><strong style="color:var(--charcoal);">반도체·정밀계측 장비가 설치될 바닥·구조물의 적합성</strong> → VC 곡선(VC-A~VC-M), 공정 선폭·장비 사양에 맞는 등급 선택</div></li>
+        <li><div class="tip-num">3</div><div><strong style="color:var(--charcoal);">공사·교통으로 인한 인근 건축물 손상 우려</strong> → DIN 4150-3, BS 7385, ISO 4866</div></li>
+        <li><div class="tip-num">4</div><div><strong style="color:var(--charcoal);">동력공구를 사용하는 작업자의 손·팔 진동 노출</strong> → ISO 5349</div></li>
+        <li><div class="tip-num">5</div><div><strong style="color:var(--charcoal);">중장비·차량 운전자의 전신 진동 노출</strong> → ISO 2631-1(전신진동), 건축물 내 인체 영향은 ISO 2631-2</div></li>
+        <li><div class="tip-num">6</div><div><strong style="color:var(--charcoal);">선박 구조·거주성 진동</strong> → ISO 20283 시리즈</div></li>
+        <li><div class="tip-num">7</div><div><strong style="color:var(--charcoal);">센서 자체의 정확도 검증(교정)</strong> → ISO 16063 시리즈 — 이는 평가 규격이 아니라 <strong>측정 장비의 신뢰도</strong>를 보증하는 별개의 규격군입니다.</div></li>
+      </ul>
+
+      <p style="font-size:14px; color:var(--text-mute); margin-top:20px; margin-bottom:12px;">관련 기술자료 더 보기:</p>
+      <div class="vc-pill-row">
+        <a href="vibration.html" class="vc-pill">→ 휴대용 진동측정기 VM (ISO 10816)</a>
+        <a href="building-vibration-monitoring.html" class="vc-pill">→ 건축물 진동 모니터링 (DIN 4150·ISO 4866)</a>
+        <a href="ship-vibration-iso20283.html" class="vc-pill">→ 선박 진동 측정 (ISO 20283)</a>
+        <a href="vibration-sensor.html" class="vc-pill">→ 진동센서(가속도계) 원리·종류·선정</a>
+        <a href="vibration-calibrator.html" class="vc-pill">→ 진동 센서 교정기</a>
+        <a href="torsional-vibration.html" class="vc-pill">→ 비틀림 진동 측정</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="sec-faq" style="padding-top:0;">
+  <div class="container" style="max-width:960px;">
+    <div class="fade-in">
+      <h2 class="vc-h2" style="margin-bottom:6px;">자주 묻는 질문</h2>
+      <p class="vc-sub">진동 평가 기준·규격 선택과 관련해 자주 접수되는 질문입니다.</p>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-q"><span>VC 곡선과 ISO 10816은 무엇이 다른가요?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-a"><p>둘 다 속도(mm/s 또는 µm/s)로 진동을 평가하지만 목적이 다릅니다. ISO 10816(현 ISO 20816)은 회전·왕복동 기계 자체의 상태를 하우징 진동으로 판정하는 규격이고, VC 곡선은 반도체 노광기·전자현미경 등 정밀장비가 설치된 바닥·구조물의 진동이 그 장비의 성능을 보장할 만큼 낮은지를 평가하는 기준입니다. 전자는 "기계가 고장났는가", 후자는 "주변 진동이 장비 성능에 영향을 주는가"를 봅니다.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q"><span>우리 설비에는 어떤 규격을 적용해야 하나요?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-a"><p>평가 대상이 무엇인지에 따라 갈립니다. 모터·펌프·컴프레서 등 회전·왕복동 기계 자체의 이상 진동은 ISO 10816/20816, 반도체 클린룸이나 정밀 계측실처럼 진동에 민감한 장비가 설치되는 바닥은 VC 곡선, 작업자가 손이나 전신으로 받는 진동 노출은 ISO 5349(수부진동)·ISO 2631(전신진동), 인근 공사·교통으로 인한 건축물 손상 우려는 DIN 4150·ISO 4866, 선박 구조·거주성 진동은 ISO 20283을 적용합니다.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q"><span>ISO 10816과 ISO 20816은 같은 규격인가요?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-a"><p>ISO 20816은 ISO 10816을 대체한 최신 개정판으로, 평가 원리(Zone A~D)와 속도 기반 판정 방식은 동일하게 이어받았습니다. ISO 2372(구 규격)는 이미 폐지되어 ISO 20816-1로 대체되었고, ISO 10816의 각 파트도 순차적으로 ISO 20816 시리즈로 옮겨가는 중입니다. 최신 문서를 참조할 때는 ISO 20816을 기준으로 확인하는 것이 안전합니다.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q"><span>반도체 클린룸은 왜 VC-D, VC-E처럼 엄격한 기준을 쓰나요?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-a"><p>VC 곡선은 원래 마이크로전자공학(반도체 노광), 의료, 바이오제약 산업의 정밀장비 요구사항을 기반으로 개발되었습니다. 반도체 노광장치의 선폭이 미세해질수록(예: 1µm→1/2nm) 요구되는 진동 허용치도 낮아지며, VC-C(1µm 선폭급)에서 VC-D·VC-E(수십 나노 선폭급)로 갈수록 허용 속도가 절반 이하로 낮아집니다. 최신 첨단 공정 라인일수록 더 엄격한 VC 등급의 바닥 진동 관리가 필요합니다.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q"><span>작업자의 진동 노출은 어떤 규격으로 평가하나요?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-a"><p>손으로 잡는 동력 공구로 인한 수부진동은 ISO 5349로, 지게차·중장비·차량 운전석처럼 몸 전체로 받는 전신진동은 ISO 2631로 평가합니다. 두 규격 모두 하루 노출시간을 고려한 등가가속도(A(8) 등) 산출식을 제공하며, 국내 산업안전보건 기준도 이를 준용합니다.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q"><span>건축물 진동 기준(DIN 4150)과 VC 곡선을 같이 적용해도 되나요?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-a"><p>네, 서로 다른 목적이라 함께 적용하는 것이 일반적입니다. DIN 4150-3·BS 7385·ISO 4866은 건축물 구조 자체의 손상 방지를 위한 기준이고, VC 곡선은 그 건물 안에 설치되는 정밀장비의 성능 보장을 위한 기준입니다. 반도체 공장을 지을 때는 DIN 4150 등으로 공사 중 인접 구조물 손상 여부를 관리하고, 완공 후 클린룸 바닥은 VC-C~E 기준으로 정밀장비 설치 적합성을 평가합니다.</p></div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section style="padding:0 0 100px;">
+  <div class="container" style="max-width:960px;">
+    <div style="padding:40px 48px; background:linear-gradient(135deg, var(--orange-tint) 0%, #fff 100%); border:1px solid var(--orange-line); border-radius:var(--radius);" class="fade-in">
+      <div class="vc-tag" style="margin-bottom:14px;">CONTACT</div>
+      <h3 style="font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:10px;">어떤 규격을 적용해야 할지 모르겠다면, 지금 문의하세요</h3>
+      <p style="font-size:14.5px; color:var(--text-dim); line-height:1.75; margin-bottom:24px;">평가 대상(기계/시설/인체/선박)과 현장 조건을 알려주시면, 적용해야 할 규격과 등급 기준부터 측정 장비 구성까지 씨앤디테크가 함께 제안드립니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">진동 평가 문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="vibration-evaluation-standards.html">진동 평가 기준·규격</a></li><li><a href="vibration-sensor.html">진동센서 원리·종류·선정</a></li><li><a href="vibration.html">휴대용 진동측정기</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank" rel="noopener">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta"><span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span></div>
+  </div>
+</footer>
+
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+<script src="../js/main.js"></script>
+</body>
+</html>

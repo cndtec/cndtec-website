@@ -453,3 +453,12 @@ SEO 적용사항:
 - 05 선정가이드 항목4(환경사양): PZT 큐리온도(~320°C)와 IEPE 전자회로 한계(120°C)를 구분하고, 고온 환경엔 전하출력형+리모트 IEPE 컨버터 구성을 대안으로 제시. IP67/IP68 등급 의미 예시 추가.
 - 검증: div 184/184, table 3/3, `.vs-faq-item` 8개/JSON-LD Question 8개 유지, `</html>` 정상 종료(890행).
 - ⚠ MMF 원본 다이어그램(피에조효과·IEPE 회로도·주파수응답곡선 등)은 저작권상 그대로 복사하지 않음 — 대신 신규 제작이 필요한 이미지 목록을 사용자에게 별도 안내(자체 제작 또는 MMF 공식 대리점 자격으로 사용 허가 요청 필요).
+
+⭐ 2026-07-29 완료: resources/vibration-evaluation-standards.html 신규 생성 — 진동 평가 기준·규격 완전 가이드
+- 사용자 요청: mmf.de/en/theory-and-standards/standards/(수십 개 표준기구의 진동 관련 규격 총람)와 candj.tistory.com/99(씨앤디테크 자사 블로그, meta-by 태그로 자사 저작물 확인됨 — 저작권 문제 없음)를 참고해 "진동평가기준 규격" 기술자료 신규 페이지 제작.
+- mmf.de/standards 페이지는 143,787자로 web_fetch 토큰 한도 초과 → 도구가 자동 저장한 로컬 .txt 파일을 Read로 3회 분할(130줄 단위) 읽어 전체 표 확보. ISO 10816/20816, ISO 2631(전신진동), ISO 5349(수부진동), ISO 4866, ISO 20283(선박), ISO 16063(캘리브레이션), DIN 4150 등 관련 규격 taxonomy 추출.
+- 사전 중복 점검(Grep): vibration.html(ISO 10816/20816 Zone A~D 표 이미 상세 보유), building-vibration-monitoring.html(DIN 4150/BS 7385/ISO 4866 이미 상세 보유), ship-vibration-iso20283.html(ISO 20283 이미 보유) 확인 → 이 3개 페이지는 요약 + 링크만 하고 중복 서술 금지. 반대로 ISO 2631·ISO 5349(인체 진동)는 사이트 전체에 전무함을 확인 → 신규 페이지의 실질 신규 콘텐츠로 채택.
+- 페이지 구성(신규, 글로벌 `<details class="faq-item">` FAQ 패턴 사용 — vibration-sensor.html의 구식 커스텀 아코디언 미사용): 01 진동평가 규격이 왜 필요한가(4대 분류 카드: 기계/정밀시설/인체/선박), 02 기계 진동(ISO10816→20816 요약+vibration.html 링크), 03 정밀시설 진동 — VC 곡선(candj.tistory.com/99 기반 VC-A~VC-E 전체 수치표: 4~8Hz 가속도(gal)/8~80Hz 변위(µm)/속도(µm/s), 1/3옥타브·비례대역폭(23%) 설명, VC≠건축물손상기준 구분+building-vibration-monitoring.html 링크), 04 인체 진동 — ISO 2631(전신)·ISO 5349(수부) 신규 서술, 05 선박 진동(ISO20283 요약+ship-vibration-iso20283.html 링크), 06 규격 선택 가이드(7개 체크리스트+관련기술자료 6개 링크 pill), FAQ 6문항(JSON-LD+화면 동일), CTA.
+- TechArticle+FAQPage JSON-LD 작성(datePublished/dateModified 2026-07-29), 카드는 `var(--white)` 사용(레거시 `var(--surface)` 버그 재사용 안 함).
+- 검증: div 100/100, table 1/1, `<details class="faq-item">` 6개/JSON-LD Question 6개 일치, `</html>` 정상 종료(488행).
+- resources/index.html에 vibration 카테고리 신규 카드 추가(마이크로폰 카드 다음, DAQ 섹션 앞). sitemap.xml에 `<url>` 항목 추가(lastmod 2026-07-29). rss.xml 최상단에 신규 `<item>` 삽입.
