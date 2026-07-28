@@ -419,3 +419,13 @@ SEO 적용사항:
 - 검증: microphone-sound-level-meter.html div 129/129, `<details>` 6개/JSON-LD Question 6개 일치, `</html>` 정상 종료.
 - 참고(미수정, 향후 정리 후보): vibration-sensor.html·dt9837-daq.html이 `var(--surface)`/`var(--bg-card)`를 쓰는데 이 두 변수는 css/style.css에 정의돼 있지 않아 배경이 항상 투명 처리되고 있음(테두리는 정상 표시되어 큰 문제로 안 보였던 듯). 이번 신규 페이지는 실제 정의된 `var(--white)`로 작성함. 기존 2개 파일은 이번엔 손대지 않음(11곳 산발적 수정이라 별도 작업으로 진행 권장).
 - ⚠️ 이 작업 중 세션의 bash 툴이 7회 연속 타임아웃되어 완전히 응답 불가 상태였음(사용자에게 별도 보고함) — Read/Edit/Write/Grep/Glob 파일 도구는 정상 작동해 페이지 작성 자체는 문제없이 진행함.
+
+⭐ 2026-07-29 완료: 마이크로폰 전용 라인아이콘 적용 + 다이어그램 이미지 4장 삽입
+- 사용자가 `assets/images/LINE ICON 마이크로폰.svg`(붐스탠드 위 마이크로폰 라인아트, 오렌지 포인트) 업로드 → resources/index.html의 마이크로폰 카드 아이콘을 기존 재사용 아이콘(`LINE ICON 진동측정.png` + 인라인 SVG 폴백)에서 이 전용 SVG로 교체(다른 카드와 동일한 `onerror` 폴백 패턴 유지).
+- `assets/images/mircophone/` 폴더에 사용자가 추가한 다이어그램/제품 렌더 이미지 4장을 `Read`로 직접 열어 파일명과 실제 내용 일치 확인 후 microphone-sound-level-meter.html 각 섹션에 배치:
+  - `cndtech-condenser-microphone-principle.png`(콘덴서 마이크 단면도) → 01 원리 섹션, 카드그리드 다음
+  - `cndtech-measurement-microphone-capsule-sizes.png`(1"~1/8" 캡슐 4종 비교) → 02 종류 섹션 ② 캡슐 직경 표 앞
+  - `cndtech-class-1-sound-level-meter.png`(삼각대 거치 소음계) → 03 소음계 종류 섹션, Class 1/2 표 앞
+  - `cndtech-iepe-microphone-daq-connection.png`(붐스탠드 마이크+BNC+4채널 DAQ 연결) → 08 DT9837 연동 섹션, 인트로 문단 다음
+  - 4장 모두 기존 `.ms-img-wrap`(전체폭 + 캡션) 패턴 재사용, alt·캡션 텍스트는 실제 이미지 내용 확인 후 작성(추측 없음).
+- 검증: microphone-sound-level-meter.html div 137/137(이미지 삽입으로 8개 증가, 균형 유지), `<details>` 6개/JSON-LD Question 6개 유지, `</html>` 정상 종료(579행). resources/index.html div 78/78 유지, `</html>` 정상 종료(562행).

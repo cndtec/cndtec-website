@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Noise measurement microphone line icon</title>
+  <desc id="desc">A precision measurement microphone on a boom stand with sound-wave marks.</desc>
+  <rect width="512" height="512" rx="54" fill="#FFF6E6"/>
+  <rect x="20" y="20" width="472" height="472" rx="40" stroke="#F29400" stroke-width="4"/>
+  <g stroke="#1F1D1B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M156 370H356"/>
+    <path d="M256 370V292"/>
+    <path d="M256 370L192 420M256 370L320 420"/>
+    <path d="M166 420H218M294 420H346"/>
+    <path d="M238 258V292H274V258"/>
+    <rect x="224" y="136" width="64" height="122" rx="26" fill="#FFF6E6"/>
+    <path d="M224 178H288M224 202H288M224 226H288" stroke-width="5"/>
+    <path d="M242 148V246M256 144V250M270 148V246" stroke-width="5"/>
+    <path d="M288 180H314V246H288"/>
+    <path d="M314 210H330"/>
+    <path d="M352 184C370 202 370 230 352 248" stroke="#F29400"/>
+    <path d="M380 158C409 187 409 245 380 274" stroke="#F29400"/>
+    <path d="M162 186C146 202 146 228 162 244"/>
+  </g>
+</svg>

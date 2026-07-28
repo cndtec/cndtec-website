@@ -246,6 +246,11 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         </div>
       </div>
 
+      <div class="ms-img-wrap">
+        <img src="../assets/images/mircophone/cndtech-condenser-microphone-principle.png" alt="콘덴서 마이크로폰 단면 구조도 — 다이어프램, 백플레이트, 프리앰프, 하우징" loading="lazy">
+        <div class="ms-img-caption">콘덴서 마이크로폰 단면 구조 — 다이어프램(진동판)이 백플레이트와 커패시터를 형성하고, 하단 프리앰프가 신호를 증폭합니다.</div>
+      </div>
+
       <div class="ms-note">
         <strong style="color:var(--charcoal);">분극(폴라라이제이션) 전압이란?</strong> 커패시터가 정전용량 변화를 전압 신호로 만들어내려면 전극 사이에 전하가 채워져 있어야 합니다. 이 전하를 <strong>외부에서 약 200V DC를 공급해</strong> 유지하는 방식을 외부 폴라라이즈드(Externally Polarized)라 하고, <strong>전극 표면 자체에 영구적으로 전하를 심어 놓아</strong> 별도 전압 공급이 필요 없는 방식을 프리폴라라이즈드(Prepolarized, 일렉트릿) 마이크로폰이라 합니다.
       </div>
@@ -290,6 +295,11 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
       </div>
       <p style="font-size:12.5px; color:var(--text-mute); margin-top:8px;">캡슐이 작을수록 고주파 응답과 다이나믹 레인지 상한이 좋아지지만 감도(mV/Pa)는 낮아지는 트레이드오프가 있습니다.</p>
 
+      <div class="ms-img-wrap">
+        <img src="../assets/images/mircophone/cndtech-measurement-microphone-capsule-sizes.png" alt="측정용 마이크로폰 캡슐 직경 비교 — 1인치, 1/2인치, 1/4인치, 1/8인치 순으로 크기 비교" loading="lazy">
+        <div class="ms-img-caption">캡슐 직경 비교(좌→우: 1인치·1/2인치·1/4인치·1/8인치) — 캡슐이 작아질수록 고주파 응답이 넓어지고 감도는 낮아집니다.</div>
+      </div>
+
       <h3 style="font-size:15px; font-weight:700; color:var(--charcoal); margin:28px 0 10px;">③ 출력 방식</h3>
       <div class="ms-card-grid" style="grid-template-columns:1fr 1fr;">
         <div class="ms-card">
@@ -310,6 +320,11 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
       <div class="ms-section-tag">03 · SOUND LEVEL METER TYPES</div>
       <h2 class="ms-h2">소음계(Sound Level Meter) 종류</h2>
       <p class="ms-sub">마이크로폰이 소리를 전기 신호로 바꾸면, 소음계(또는 DAQ+소프트웨어)가 이를 사람이 판단할 수 있는 소음 지표로 변환·표시합니다.</p>
+
+      <div class="ms-img-wrap">
+        <img src="../assets/images/mircophone/cndtech-class-1-sound-level-meter.png" alt="삼각대에 거치된 Class 1급 소음계 — 마이크로폰 캡슐과 디스플레이·조작부" loading="lazy">
+        <div class="ms-img-caption">삼각대에 거치된 소음계 — 상단 마이크로폰 캡슐이 소리를 감지하고, 본체 디스플레이에서 Leq·Lmax 등 소음 지표를 실시간 표시합니다.</div>
+      </div>
 
       <div class="ms-wrap">
         <table class="ms-table">
@@ -424,6 +439,12 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
       <div class="ms-section-tag">08 · DT9837 INTEGRATION</div>
       <h2 class="ms-h2">DT9837 DAQ 연동</h2>
       <p class="ms-sub"><a href="dt9837-daq.html" style="color:var(--accent-deep); text-decoration:none; font-weight:700;">DT9837</a>은 4채널 IEPE(ICP®) 입력을 지원하는 소형 USB 진동·소음 데이터수집장치로, USB 케이블 하나로 PC 연결과 전원 공급이 동시에 이루어져 별도 전원 장치가 필요 없습니다.</p>
+
+      <div class="ms-img-wrap">
+        <img src="../assets/images/mircophone/cndtech-iepe-microphone-daq-connection.png" alt="붐 스탠드에 거치된 IEPE 마이크로폰과 BNC 케이블로 연결된 4채널 DAQ 장치" loading="lazy">
+        <div class="ms-img-caption">IEPE 프리폴라라이즈드 마이크로폰을 BNC 케이블로 4채널 DAQ에 직결한 구성 — 별도 신호 컨디셔너 없이 채널 1에 바로 연결됩니다.</div>
+      </div>
+
       <ul class="ms-tip-list">
         <li><div class="tip-num">1</div><div><strong style="color:var(--charcoal);">직결 조건</strong> — 프리폴라라이즈드(IEPE) 방식 마이크로폰이라면 BNC 케이블로 DT9837의 IEPE 입력에 바로 연결해 측정할 수 있습니다. 외부 폴라라이즈드(비IEPE) 타입은 별도의 전하 증폭기·신호 컨디셔너를 거쳐야 합니다.</div></li>
         <li><div class="tip-num">2</div><div><strong style="color:var(--charcoal);">dB SPL 환산</strong> — QuickDAQ 소프트웨어에 마이크로폰의 실제 감도값(mV/Pa)을 입력하면 전압 신호를 dB SPL 단위로 직접 환산해 표시합니다.</div></li>
