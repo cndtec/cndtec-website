@@ -314,9 +314,10 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px 24px; margin-top:10px; font-size:13px; color:var(--text-dim); line-height:1.7;">
           <span>지진 조사 미세 진동 &lt; 0.001 m/s²</span>
           <span>고속 열차 ICE 3 평균 ≈ 0.5 m/s²</span>
-          <span>우주왕복선 발사·재진입 최대 30 m/s²</span>
-          <span>경주용 자동차 운전자 최대 50 m/s²</span>
+          <span>스프린터 출발 가속 최대 4 m/s²</span>
+          <span>경주용 자동차 운전자 최대 50 m/s²(60 m/s² 이상은 대부분 실신)</span>
           <span>1m 낙하 노트북 충격 최대 20,000 m/s²</span>
+          <span>재봉틀 바늘 진동 최대 60,000 m/s²</span>
           <span>탄도·폭발 시험 100,000 m/s² 이상</span>
         </div>
       </div>
@@ -374,6 +375,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
           충격용: 고공진·저감도 / 지진용: 저공진·고감도
         </div>
       </div>
+      <p style="font-size:13px; color:var(--text-dim); line-height:1.75; margin-bottom:16px;"><strong style="color:var(--charcoal);">하한 주파수는 프리앰프에 따라 결정</strong> — 상한이 공진 주파수(기계적 특성)로 결정되는 것과 달리, 하한 주파수는 프리앰프 방식에 좌우됩니다. 전압증폭기를 사용하는 경우 센서·케이블·증폭기 입력 커패시턴스와 입력저항이 만드는 <strong>RC 시상수</strong>가 하한을 결정하며, IEPE(전류구동 내장 프리앰프)는 대부분 0.3Hz(전단형·굴곡형) 또는 3Hz(압축형) 수준까지 낮출 수 있습니다.</p>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
         <img src="../assets/images/vibration sensor/가속도 응답곡선.png"
              alt="피에조 가속도계 주파수 응답 곡선 — 공진 주파수와 측정 범위" loading="lazy"
@@ -397,33 +399,55 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
           <div class="vs-method-body">
             <div class="vs-method-badge ok">△ 고임피던스 · 전하 신호</div>
             <div class="vs-method-name">전하출력형 (Charge Output)</div>
-            <p class="vs-method-desc">PZT가 생성한 전하(pC 단위)를 그대로 출력합니다. 센서 자체에 전자부품이 없어 초고온 환경(300°C 이상)에도 사용할 수 있지만, 출력 임피던스가 매우 높아 별도의 <strong>전하 증폭기(Charge Amplifier)</strong>가 반드시 필요하고, 케이블이 길어지거나 습기·오염이 있으면 노이즈에 취약합니다.</p>
+            <p class="vs-method-desc">PZT가 생성한 전하(pC 단위)를 그대로 출력합니다. 센서 자체에 전자부품이 없어 초고온 환경에도 사용할 수 있지만, 출력 임피던스가 매우 높아 별도의 <strong>전하 증폭기(Charge Amplifier)</strong>가 반드시 필요하고, 저노이즈 특수 케이블을 10m 이내로 사용해야 노이즈에 취약해지지 않습니다.</p>
           </div>
         </div>
         <div class="vs-method-card" style="overflow:visible;">
           <div class="vs-method-body">
             <div class="vs-method-badge best">◎ 저임피던스 · 전압 신호</div>
-            <div class="vs-method-name">IEPE(ICP®) — Integrated Electronics Piezoelectric</div>
-            <p class="vs-method-desc">센서 내부에 임피던스 변환 프리앰프(전하→전압 변환 회로)를 내장해, 2~20mA 정전류로 구동하고 표준 동축(BNC) 케이블 하나로 저임피던스 전압 신호를 출력합니다. DT9837 등 IEPE 입력 DAQ에 <strong>별도 컨디셔너 없이 직결</strong>할 수 있어, 씨앤디테크가 공급하는 산업용 가속도센서 대부분이 이 방식입니다.</p>
+            <div class="vs-method-name">IEPE — Integrated Electronics Piezoelectric</div>
+            <p class="vs-method-desc">센서 내부에 임피던스 변환 프리앰프(전하→전압 변환 회로)를 내장해, 2~20mA 정전류로 구동하고 표준 동축(BNC) 케이블 하나로 저임피던스 전압 신호를 출력합니다. 출력 임피던스가 100Ω 이하라 <strong>저가 표준 케이블로 수백 m까지</strong> 전송할 수 있고, DT9837 등 IEPE 입력 DAQ에 별도 컨디셔너 없이 직결됩니다. 씨앤디테크가 공급하는 산업용 가속도센서 대부분이 이 방식입니다.</p>
           </div>
         </div>
       </div>
 
+      <div style="margin-top:16px; padding:14px 16px; background:#f8fafc; border-radius:8px; font-size:13px; color:var(--text-dim); line-height:1.7;">
+        <strong style="color:var(--charcoal);">IEPE의 다른 이름</strong> — IEPE는 "Integrated Electronics Piezo-Electric"의 약자로, 제조사마다 ICP®(PCB Piezotronics), CCLD(Dytran·HBK), Isotron®(Meggitt/Endevco), Deltatron®(Brüel &amp; Kjær/HBK), Piezotron®(Kistler) 등 서로 다른 상표명을 쓰지만 <strong>모두 동일한 정전류 구동 원리</strong>이며 표준 IEPE 입력 DAQ와 호환됩니다.
+      </div>
+
       <div class="vs-wrap">
-        <table class="vs-table" style="margin-top:20px;">
+        <table class="vs-table" style="margin-top:16px;">
           <thead><tr><th>구분</th><th>전하출력형</th><th>IEPE(ICP®)</th></tr></thead>
           <tbody>
             <tr><td>출력 신호</td><td>전하(pC/g)</td><td>전압(mV/g)</td></tr>
-            <tr><td>필요 전원</td><td>없음(센서 자체는 무전원)</td><td>정전류 파워(DAQ·컨디셔너 내장)</td></tr>
-            <tr><td>케이블</td><td>저노이즈 특수 케이블, 길이 제한적</td><td>표준 동축(BNC) 케이블, 장거리 가능</td></tr>
+            <tr><td>출력 임피던스</td><td>매우 높음</td><td>낮음(&lt;100Ω)</td></tr>
+            <tr><td>필요 전원</td><td>없음(센서 자체는 무전원)</td><td>정전류 파워 2~20mA(통상 4mA)</td></tr>
+            <tr><td>케이블</td><td>저노이즈 특수 케이블, 10m 이내</td><td>표준 동축(BNC) 케이블, 수백 m 가능</td></tr>
             <tr><td>연동 장비</td><td>전하 증폭기 필수</td><td>IEPE 입력 DAQ 직결(DT9837 등)</td></tr>
-            <tr><td>사용 온도</td><td>고온(300°C 이상)까지 대응 가능</td><td>내장 전자부품 한계로 통상 120~150°C 이하</td></tr>
-            <tr><td>주요 용도</td><td>고온 특수 계측, 항공우주·연구용</td><td>산업 현장 상태 모니터링, 정밀 진동 분석 전반</td></tr>
+            <tr><td>자가 진단</td><td>미지원</td><td>바이어스 전압으로 단선·과부하 자가 진단 가능</td></tr>
+            <tr><td>사용 온도</td><td>더 높은 온도까지 대응 가능</td><td>내장 전자부품 한계로 통상 120°C 이하</td></tr>
+            <tr><td>주요 용도</td><td>고온 특수 계측, 배터리 구동 장비</td><td>산업 현장 상태 모니터링, 정밀 진동 분석 전반</td></tr>
           </tbody>
         </table>
       </div>
+
+      <div class="vs-adv-grid" style="margin-top:20px;">
+        <div class="vs-adv-item"><strong style="color:var(--charcoal);">IEPE 장점</strong> — 케이블 길이·품질에 무관한 일정 감도, 저임피던스로 가혹한 환경에서도 장거리 전송, 특수 케이블 불필요, 자가진단(Self-test) 기능, 먼지·습기에 강함</div>
+        <div class="vs-adv-item"><strong style="color:var(--charcoal);">IEPE 단점</strong> — 정전류 여자 필요(배터리 소모), 내장 전자회로 자체가 노이즈원, 사용 온도 &lt;120°C로 제한</div>
+        <div class="vs-adv-item"><strong style="color:var(--charcoal);">전하출력형 장점</strong> — 전원 불필요(배터리 장비에 유리), 노이즈 없이 최고 분해능, 넓은 다이나믹 레인지, 더 높은 사용 온도, 더 작은 센서 제작 가능</div>
+        <div class="vs-adv-item"><strong style="color:var(--charcoal);">전하출력형 단점</strong> — 케이블 길이 제한(10m 이내), 특수 저노이즈 케이블 필요, 전하 증폭기 필요</div>
+      </div>
+
+      <div style="margin-top:16px; padding:14px 16px; background:#f8fafc; border-radius:8px; font-size:13px; color:var(--text-dim); line-height:1.7;">
+        <strong style="color:var(--charcoal);">로우파워 IEPE</strong> — 배터리로 구동되는 휴대용 장비는 4mA/24V 정전류(약 100mW) 공급이 부담될 수 있습니다. 로우파워 IEPE는 바이어스 전압 4~8V, 컴플라이언스 전압 10~12V로 낮추고 정전류를 최소 0.1mA까지 줄여 전력 소비를 최대 99%까지 절감합니다.
+      </div>
+
       <div style="margin-top:16px; padding:16px 18px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius); font-size:13px; color:var(--text-dim); line-height:1.75;">
         <strong style="color:var(--charcoal);">참고</strong> — "피에조일렉트릭 가속도센서는 전원이 필요 없다"는 설명은 <strong>전하출력형</strong>에만 해당합니다. 씨앤디테크가 DT9837 등과 함께 공급하는 <strong>IEPE(ICP®) 방식</strong>은 정전류 파워가 필요하지만, 대부분 DAQ 자체에 내장되어 있어 사용자가 별도 전원 장치를 준비할 필요는 없습니다.
+      </div>
+
+      <div style="margin-top:16px; padding:16px 18px; background:#fef2f2; border:1px solid #fecaca; border-radius:var(--radius); font-size:13px; color:#7f1d1d; line-height:1.75;">
+        <strong>⚠ 주의</strong> — IEPE 센서에 정전류 조절 없는 일반 전압원을 연결하거나 케이블 극성을 반대로 연결하면 내장 전자회로가 <strong>즉시 손상</strong>될 수 있습니다. 배선 전 극성과 전류 설정을 반드시 확인하세요. 자가진단은 입력단 바이어스 전압으로 판단합니다 — <strong>2V 미만</strong>: 단선 또는 음의 과부하, <strong>2~18V</strong>: 정상 범위, <strong>18V 초과</strong>: 양의 과부하 또는 케이블 단선(오픈).
       </div>
     </div>
 
@@ -433,17 +457,17 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
     <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
       <div class="vs-section-tag">04 · SENSOR TYPES</div>
       <h2 class="vs-h2">가속도센서(진동센서) 종류</h2>
-      <p class="vs-sub">감지 소자의 원리에 따라 가속도센서는 압전형·압저항형·정전용량형(MEMS) 등으로 나뉩니다. 산업 현장의 중~고주파 진동·베어링 결함 진단에는 압전형(특히 IEPE)이 가장 널리 사용되며, 나머지 방식은 특정 용도에 보완적으로 사용됩니다.</p>
+      <p class="vs-sub">감지 소자의 원리에 따라 가속도센서는 압전형·압저항형·정전용량형(MEMS)·전자기유도형 등으로 나뉩니다. 산업 현장의 중~고주파 진동·베어링 결함 진단에는 압전형(특히 IEPE)이 가장 널리 사용되며, 나머지 방식은 특정 용도에 보완적으로 사용됩니다.</p>
 
       <div class="vs-wrap">
         <table class="vs-table" style="margin-top:8px;">
-          <thead><tr><th>구분</th><th>압전형(Piezoelectric)</th><th>압저항형(Piezoresistive)</th><th>정전용량형(MEMS)</th></tr></thead>
+          <thead><tr><th>구분</th><th>압전형(Piezoelectric)</th><th>압저항형(Piezoresistive)</th><th>정전용량형(MEMS)</th><th>전자기유도형(Electrodynamic)</th></tr></thead>
           <tbody>
-            <tr><td>DC 응답</td><td class="tag-low">✕ 불가(교류만)</td><td class="tag-best">◎ 가능</td><td class="tag-best">◎ 가능</td></tr>
-            <tr><td>주파수 범위</td><td class="tag-best">중~고주파(수십 kHz까지)</td><td class="tag-good">DC~수 kHz</td><td class="tag-ok">DC~수 kHz</td></tr>
-            <tr><td>감도·노이즈</td><td class="tag-best">높은 감도, 저노이즈</td><td class="tag-ok">중간, 온도 드리프트 있음</td><td class="tag-ok">중간, 노이즈 플로어 다소 높음</td></tr>
-            <tr><td>내구성</td><td class="tag-best">매우 우수</td><td class="tag-good">우수(충격시험용 설계)</td><td class="tag-good">우수, 소형·경량</td></tr>
-            <tr><td>주요 용도</td><td>베어링 결함, 기계 상태 모니터링, 정밀 진동 분석</td><td>충격시험, 크래시 테스트, 낙하시험</td><td>저가·소형 IoT 진동감시, 자세 감지</td></tr>
+            <tr><td>DC 응답</td><td class="tag-low">✕ 불가(교류만)</td><td class="tag-best">◎ 가능</td><td class="tag-best">◎ 가능</td><td class="tag-low">✕ 불가</td></tr>
+            <tr><td>주파수 범위</td><td class="tag-best">중~고주파(수십 kHz까지)</td><td class="tag-good">DC~수 kHz</td><td class="tag-ok">DC~수 kHz</td><td class="tag-low">저주파 전용</td></tr>
+            <tr><td>감도·노이즈</td><td class="tag-best">높은 감도, 저노이즈</td><td class="tag-ok">중간, 온도 드리프트 있음</td><td class="tag-ok">중간, 노이즈 플로어 다소 높음</td><td class="tag-ok">중간, 별도 전원 불필요</td></tr>
+            <tr><td>내구성·크기</td><td class="tag-best">매우 우수, 소형</td><td class="tag-good">우수(충격시험용 설계)</td><td class="tag-good">우수, 소형·경량</td><td class="tag-low">부피·무게 큼</td></tr>
+            <tr><td>주요 용도</td><td>베어링 결함, 기계 상태 모니터링, 정밀 진동 분석</td><td>충격시험, 크래시 테스트, 낙하시험</td><td>저가·소형 IoT 진동감시, 자세 감지</td><td>구형 저주파 진동 스위치·픽업(현재는 압전형·MEMS로 대체 추세)</td></tr>
           </tbody>
         </table>
       </div>
@@ -452,7 +476,8 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <div class="vs-adv-item">압전형 — 넓은 동적 범위와 주파수 응답, 자가발전(전하출력) 또는 IEPE 방식으로 대부분의 산업 진동 진단에 사용</div>
         <div class="vs-adv-item">압저항형 — 정지 상태(0Hz)의 가속도까지 측정 가능해 충격·크래시 시험처럼 DC 성분이 중요한 시험에 사용</div>
         <div class="vs-adv-item">정전용량형(MEMS) — 반도체 공정으로 소형·저전력·저비용 구현이 가능해 다지점 상시 모니터링·IoT 센서에 적합</div>
-        <div class="vs-adv-item">씨앤디테크는 산업 현장 특성상 대부분 IEPE 방식 압전형 가속도센서를 DT9837 등 DAQ와 함께 공급합니다</div>
+        <div class="vs-adv-item">전자기유도형 — 코일·마그넷의 상대 운동으로 전압을 발생시키는 자가발전 방식이지만 저주파·대형 구조라 현재는 압전형·MEMS로 대체되는 추세</div>
+        <div class="vs-adv-item" style="grid-column:1/-1;">씨앤디테크는 산업 현장 특성상 대부분 IEPE 방식 압전형 가속도센서를 DT9837 등 DAQ와 함께 공급합니다</div>
       </div>
     </div>
 
@@ -467,7 +492,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <li><div class="tip-num">1</div><div><strong style="color:var(--charcoal);">측정 주파수 범위</strong> — 대상 진동의 최고 주파수가 센서 공진 주파수의 1/3~1/5 이내에 들어오는지 확인합니다. 베어링 고주파 결함 진단이라면 공진 주파수가 높은(수십 kHz) 모델이 필요합니다.</div></li>
         <li><div class="tip-num">2</div><div><strong style="color:var(--charcoal);">감도(Sensitivity)와 다이나믹 레인지</strong> — mV/g(IEPE) 또는 pC/g(전하출력) 감도값과 측정 가능한 최대 가속도(g)를 확인합니다. 저진동 정밀 계측은 고감도, 충격 계측은 넓은 다이나믹 레인지가 필요합니다.</div></li>
         <li><div class="tip-num">3</div><div><strong style="color:var(--charcoal);">신호 출력 방식(IEPE vs 전하출력)</strong> — 보유하거나 도입할 DAQ의 입력 방식을 먼저 확인합니다. IEPE 입력 DAQ(DT9837 등)에는 IEPE 센서를, 전하 증폭기가 있는 시스템에는 전하출력형을 선택합니다.</div></li>
-        <li><div class="tip-num">4</div><div><strong style="color:var(--charcoal);">환경 사양</strong> — 사용 온도 범위, 방수·방폭 등급(IP 등급), 케이블·커넥터 내구성을 현장 조건(고온 설비, 실외, 방폭 구역 등)에 맞춰 확인합니다.</div></li>
+        <li><div class="tip-num">4</div><div><strong style="color:var(--charcoal);">환경 사양</strong> — PZT 소재 자체는 큐리온도(약 320°C)까지 압전 특성을 유지하지만 IEPE 내장 전자회로는 통상 120°C 이하로 제한되므로, 고온 설비라면 전하출력형+리모트 IEPE 컨버터 구성을 검토합니다. 방수·방폭 등급(IEC 60529 IP 등급 — 예: IP67 일시침수, IP68 영구침수), 케이블·커넥터 내구성도 실외·방폭 구역 등 현장 조건에 맞춰 확인합니다.</div></li>
         <li><div class="tip-num">5</div><div><strong style="color:var(--charcoal);">측정 축 수(단축/3축)</strong> — 단일 방향만 필요하면 단축, 여러 방향을 동시에 봐야 하면 3축 일체형 또는 마운팅 큐브 구성을 검토합니다.</div></li>
         <li><div class="tip-num">6</div><div><strong style="color:var(--charcoal);">무게·크기 및 캘리브레이션 이력</strong> — 센서 무게는 측정 대상의 10% 이내로 유지하고, 개별 캘리브레이션 인증서(감도값)를 확보해 정기 재교정 주기를 관리해야 합니다.</div></li>
       </ul>
