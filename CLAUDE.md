@@ -480,3 +480,8 @@ SEO 적용사항:
 - AskUserQuestion으로 3개 후보(진동 평가 기준·규격 / 진동평가 국제기준·규격(사용자 원문 그대로) / 진동 판정기준·규격) 제시 → "진동 평가 기준·규격"(추천안) 선택됨.
 - title/H1/JSON-LD headline/og:title/resources 카드 h2/rss.xml item title에서 "완전 가이드" 문구 전부 제거, "진동 평가 기준·규격 — ISO 10816·VC 곡선·ISO 2631·ISO 20283" 형태로 통일(meta description·og:description·JSON-LD description·키워드는 이미 "가이드" 없이 작성돼 있어 변경 불필요).
 - 검증: div 100/100 유지. 사이트 내 다른 "완전 가이드" 표기 페이지(볼트 축력·토크 측정·휴대용 진동측정기·DAQ 등)는 이번 요청 범위 밖이라 그대로 둠.
+
+⭐ 2026-07-29 완료: vibration-evaluation-standards.html — 03 정밀시설 진동(VC 곡선) 섹션에 이미지 삽입
+- 사용자가 `assets/images/Vibration standard/VC vibration measurement.png` 신규 업로드. Read로 실제 내용 확인 — 액세스 플로어(정밀시설 이중바닥)에 스터드 마운팅된 가속도센서가 진동을 감지(오렌지 물결 아이콘)해 케이블로 4채널 DAQ에 연결되고, 배경에 정밀 계측장비(현미경형 광학기기)가 놓인 구성으로, VC 곡선 섹션의 "정밀시설 바닥 진동 측정" 개념과 정확히 일치.
+- 03 섹션(정밀시설 진동 평가 — VC 곡선) 인트로 문단 다음, VC 특성 4항목 리스트 앞에 이미지+캡션 삽입.
+- 검증: div 101/101(이미지 삽입으로 1개 증가, 균형 유지).
