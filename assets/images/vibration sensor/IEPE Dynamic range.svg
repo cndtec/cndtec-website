@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">IEPE dynamic range and overload</title>
+  <desc id="desc">An IEPE sensor output diagram showing bias voltage, available dynamic range, maximum output level and positive and negative overload clipping.</desc>
+  <defs>
+    <pattern id="softGrid" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="26" stroke="#E7E7E7" stroke-width="2"/>
+    </pattern>
+    <marker id="arrowInk" markerWidth="11" markerHeight="11" refX="8" refY="5.5" orient="auto"><path d="M0,0 L10,5.5 L0,11" fill="none" stroke="#1F1D1B" stroke-width="1.8"/></marker>
+    <marker id="arrowOrange" markerWidth="11" markerHeight="11" refX="8" refY="5.5" orient="auto"><path d="M0,0 L10,5.5 L0,11" fill="none" stroke="#F29400" stroke-width="2.2"/></marker>
+    <style>
+      .ink{stroke:#1F1D1B;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .thin{stroke:#1F1D1B;stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .dash{stroke:#8C8C8C;stroke-width:2.4;stroke-dasharray:8 8;fill:none}
+      .trace{stroke:#F29400;stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .title{fill:#1F1D1B;font-family:Arial,sans-serif;font-size:45px;font-weight:800;letter-spacing:-1px}
+      .sub{fill:#777;font-family:Arial,sans-serif;font-size:22px;font-weight:600}
+      .label{fill:#1F1D1B;font-family:Arial,sans-serif;font-size:25px;font-weight:700}
+      .small{fill:#666;font-family:Arial,sans-serif;font-size:21px;font-weight:500}
+      .orange{fill:#F29400;font-family:Arial,sans-serif;font-size:24px;font-weight:800}
+      .white{fill:#fff}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="#fff"/>
+  <text x="90" y="92" class="title">IEPE Dynamic Range &amp; Overload</text>
+  <text x="90" y="130" class="sub">Output swing around the sensor bias voltage</text>
+  <line x1="90" y1="162" x2="1510" y2="162" stroke="#E6E7E7" stroke-width="2"/>
+
+  <!-- axes and plot -->
+  <line x1="440" y1="720" x2="440" y2="230" class="ink" marker-end="url(#arrowInk)"/>
+  <line x1="440" y1="720" x2="1425" y2="720" class="ink" marker-end="url(#arrowInk)"/>
+  <rect x="440" y="310" width="900" height="380" fill="url(#softGrid)" stroke="#1F1D1B" stroke-width="2.5"/>
+  <rect x="440" y="310" width="900" height="380" fill="none" stroke="#F29400" stroke-width="3"/>
+  <line x1="440" y1="500" x2="1340" y2="500" class="dash"/>
+  <line x1="440" y1="310" x2="1340" y2="310" class="thin"/>
+  <line x1="440" y1="690" x2="1340" y2="690" class="thin"/>
+
+  <!-- waveform -->
+  <path class="trace" d="M440 505 L470 455 L495 545 L530 480 L570 580 L610 395 L645 560 L685 345 L718 610 L755 475 L790 650 L835 310 L867 310 L890 575 L925 468 L962 550 L1008 338 L1042 600 L1080 475 L1114 650 L1158 410 L1195 340 L1230 550 L1265 625 L1295 470 L1315 535 L1340 500"/>
+  <!-- clipped peaks -->
+  <line x1="835" y1="310" x2="867" y2="310" stroke="#F29400" stroke-width="8" stroke-linecap="round"/>
+  <line x1="790" y1="690" x2="808" y2="690" stroke="#F29400" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- labels left -->
+  <text x="400" y="290" text-anchor="end" class="label">Maximum sensor output</text>
+  <text x="400" y="322" text-anchor="end" class="small">constant-current supply voltage</text>
+  <text x="400" y="350" text-anchor="end" class="small">typically 24–30 V</text>
+  <line x1="400" y1="310" x2="440" y2="310" class="thin"/>
+  <text x="400" y="492" text-anchor="end" class="label">Bias voltage</text>
+  <text x="400" y="521" text-anchor="end" class="small">typically 12–14 V</text>
+  <text x="400" y="682" text-anchor="end" class="label">Sensor saturation voltage</text>
+  <line x1="400" y1="690" x2="440" y2="690" class="thin"/>
+  <text x="410" y="742" text-anchor="end" class="small">0 V</text>
+
+  <!-- overload callouts -->
+  <text x="850" y="240" text-anchor="middle" class="orange">Positive overload</text>
+  <line x1="850" y1="255" x2="850" y2="303" stroke="#F29400" stroke-width="3" marker-end="url(#arrowOrange)"/>
+  <text x="790" y="805" text-anchor="middle" class="orange">Negative overload</text>
+  <line x1="790" y1="780" x2="790" y2="698" stroke="#F29400" stroke-width="3" marker-end="url(#arrowOrange)"/>
+
+  <!-- dynamic range bracket -->
+  <line x1="1430" y1="310" x2="1430" y2="690" stroke="#F29400" stroke-width="4" marker-start="url(#arrowOrange)" marker-end="url(#arrowOrange)"/>
+  <text x="1490" y="520" transform="rotate(-90 1490 520)" class="label" text-anchor="middle">Available dynamic range</text>
+
+  <!-- reference note -->
+  <rect x="90" y="820" width="1420" height="44" rx="12" fill="#FFF9F1" stroke="#FFE0A8" stroke-width="2"/>
+  <circle cx="120" cy="842" r="7" fill="#F29400"/>
+  <text x="143" y="849" class="small">The AC vibration signal must remain within the available voltage swing around the IEPE bias point.</text>
+</svg>

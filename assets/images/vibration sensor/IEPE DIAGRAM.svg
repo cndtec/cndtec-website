@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">IEPE signal principle</title>
+  <desc id="desc">IEPE signal circuit showing piezo element, integrated amplifier, coaxial cable, constant-current supply, coupling capacitor and instrument input</desc>
+  <style>
+    .bg { fill:#ffffff; }
+    .ink { stroke:#1F1D1B; stroke-width:4; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+    .thin { stroke:#1F1D1B; stroke-width:2.5; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+    .muted { fill:#F4F5F5; stroke:#1F1D1B; stroke-width:3; }
+    .orange { stroke:#F29400; stroke-width:5; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+    .orange-fill { fill:#F29400; }
+    .title { fill:#1F1D1B; font-family:Pretendard,Arial,sans-serif; font-size:44px; font-weight:800; letter-spacing:-1px; }
+    .sub { fill:#777777; font-family:Pretendard,Arial,sans-serif; font-size:22px; font-weight:600; }
+    .label { fill:#1F1D1B; font-family:Pretendard,Arial,sans-serif; font-size:25px; font-weight:700; }
+    .small { fill:#555555; font-family:Pretendard,Arial,sans-serif; font-size:21px; font-weight:500; }
+    .note { fill:#555555; font-family:Pretendard,Arial,sans-serif; font-size:18px; font-weight:500; }
+    .accent { fill:#F29400; font-family:Pretendard,Arial,sans-serif; font-size:22px; font-weight:800; }
+    .mono { fill:#1F1D1B; font-family:Arial,sans-serif; font-size:26px; font-weight:700; }
+  </style>
+  <rect class="bg" width="1600" height="900"/>
+
+  <text x="90" y="92" class="title">IEPE Signal Principle</text>
+  <text x="90" y="130" class="sub">IEPE / ICP® sensor → coaxial cable → constant-current powered instrument input</text>
+  <line x1="90" y1="162" x2="1510" y2="162" stroke="#E6E7E7" stroke-width="2"/>
+
+  <!-- Sensor enclosure -->
+  <rect x="90" y="230" width="385" height="300" rx="12" fill="#FFFDFC" stroke="#F29400" stroke-width="3" stroke-dasharray="10 8"/>
+  <text x="282" y="268" text-anchor="middle" class="label">IEPE Accelerometer</text>
+  <text x="150" y="322" class="small">Piezo</text>
+  <!-- Piezo capacitor -->
+  <line x1="195" y1="346" x2="195" y2="370" class="ink"/>
+  <line x1="176" y1="370" x2="214" y2="370" class="ink"/>
+  <line x1="176" y1="388" x2="214" y2="388" class="ink"/>
+  <line x1="195" y1="388" x2="195" y2="420" class="ink"/>
+  <line x1="168" y1="420" x2="222" y2="420" class="thin"/>
+  <line x1="177" y1="429" x2="213" y2="429" class="thin"/>
+  <line x1="186" y1="438" x2="204" y2="438" class="thin"/>
+  <text x="235" y="382" class="accent">Q</text>
+  <!-- amplifier -->
+  <text x="340" y="344" text-anchor="middle" class="note">Integrated amplifier</text>
+  <path d="M285 350 L285 445 L385 397 Z" class="ink" fill="#F4F5F5"/>
+  <line x1="195" y1="379" x2="285" y2="379" class="ink"/>
+  <line x1="385" y1="397" x2="448" y2="397" class="ink"/>
+  <text x="418" y="376" class="accent">U</text>
+  <!-- sensor ground -->
+  <line x1="448" y1="397" x2="448" y2="435" class="thin"/>
+  <line x1="421" y1="435" x2="475" y2="435" class="thin"/>
+  <line x1="430" y1="444" x2="466" y2="444" class="thin"/>
+  <line x1="439" y1="453" x2="457" y2="453" class="thin"/>
+  <text x="448" y="482" text-anchor="middle" class="small">GND</text>
+
+  <!-- Coax cable -->
+  <text x="540" y="354" class="label">Coaxial cable</text>
+  <line x1="475" y1="397" x2="785" y2="397" class="ink"/>
+  <line x1="475" y1="419" x2="785" y2="419" class="thin"/>
+  <line x1="522" y1="419" x2="522" y2="452" class="thin"/>
+  <line x1="496" y1="452" x2="548" y2="452" class="thin"/>
+  <line x1="505" y1="461" x2="539" y2="461" class="thin"/>
+  <line x1="514" y1="470" x2="530" y2="470" class="thin"/>
+  <text x="522" y="498" text-anchor="middle" class="small">GND</text>
+  <!-- cable capacitance -->
+  <line x1="652" y1="397" x2="652" y2="444" class="thin"/>
+  <line x1="632" y1="444" x2="672" y2="444" class="ink"/>
+  <line x1="632" y1="462" x2="672" y2="462" class="ink"/>
+  <line x1="652" y1="462" x2="652" y2="490" class="thin"/>
+  <line x1="625" y1="490" x2="679" y2="490" class="thin"/>
+  <line x1="634" y1="499" x2="670" y2="499" class="thin"/>
+  <line x1="643" y1="508" x2="661" y2="508" class="thin"/>
+  <text x="684" y="458" class="mono">C<tspan baseline-shift="sub" font-size="16">L</tspan></text>
+
+  <!-- Constant current source -->
+  <line x1="785" y1="397" x2="785" y2="277" class="ink"/>
+  <circle cx="785" cy="323" r="20" fill="#ffffff" stroke="#1F1D1B" stroke-width="3"/>
+  <path d="M785 341 L785 306 M785 306 L777 316 M785 306 L793 316" class="thin"/>
+  <text x="820" y="330" class="mono">I<tspan baseline-shift="sub" font-size="16">const</tspan></text>
+  <text x="758" y="260" class="mono">U<tspan baseline-shift="sub" font-size="16">s</tspan></text>
+  <!-- supply node -->
+  <line x1="758" y1="277" x2="812" y2="277" class="ink"/>
+
+  <!-- Instrument input -->
+  <text x="1080" y="268" class="label">Instrument · IEPE input</text>
+  <line x1="785" y1="397" x2="1050" y2="397" class="ink"/>
+  <!-- coupling capacitor -->
+  <line x1="924" y1="376" x2="924" y2="418" class="ink"/>
+  <line x1="944" y1="376" x2="944" y2="418" class="ink"/>
+  <text x="906" y="460" class="mono">C<tspan baseline-shift="sub" font-size="16">c</tspan></text>
+  <!-- Instrument boundary and input resistance -->
+  <path d="M1050 285 L1050 397 L1120 397" class="ink"/>
+  <line x1="1050" y1="397" x2="1050" y2="448" class="thin"/>
+  <path d="M1050 448 L1038 460 L1062 472 L1038 484 L1062 496 L1038 508 L1050 520" class="ink"/>
+  <line x1="1050" y1="520" x2="1050" y2="544" class="thin"/>
+  <line x1="1023" y1="544" x2="1077" y2="544" class="thin"/>
+  <line x1="1032" y1="553" x2="1068" y2="553" class="thin"/>
+  <line x1="1041" y1="562" x2="1059" y2="562" class="thin"/>
+  <text x="1080" y="492" class="mono">R<tspan baseline-shift="sub" font-size="16">i</tspan></text>
+  <text x="1080" y="523" class="small">Input resistance</text>
+
+  <!-- Legend block -->
+  <rect x="90" y="618" width="1420" height="195" rx="16" fill="#FFF9F1" stroke="#FFE0A8" stroke-width="2"/>
+  <circle cx="135" cy="674" r="8" class="orange-fill"/>
+  <text x="160" y="683" class="note"><tspan font-weight="800" fill="#1F1D1B">C<tspan baseline-shift="sub" font-size="14">L</tspan></tspan></text>
+  <text x="220" y="683" class="note">Cable capacitance · approx. 100 pF/m</text>
+  <circle cx="135" cy="730" r="8" class="orange-fill"/>
+  <text x="160" y="739" class="note"><tspan font-weight="800" fill="#1F1D1B">C<tspan baseline-shift="sub" font-size="14">c</tspan></tspan></text>
+  <text x="220" y="739" class="note">Coupling capacitor · typical 1–10 µF</text>
+  <circle cx="870" cy="674" r="8" class="orange-fill"/>
+  <text x="895" y="683" class="note"><tspan font-weight="800" fill="#1F1D1B">I<tspan baseline-shift="sub" font-size="14">const</tspan></tspan></text>
+  <text x="965" y="683" class="note">Constant current · recommended 4 mA</text>
+  <circle cx="870" cy="730" r="8" class="orange-fill"/>
+  <text x="895" y="739" class="note"><tspan font-weight="800" fill="#1F1D1B">U<tspan baseline-shift="sub" font-size="14">s</tspan></tspan></text>
+  <text x="950" y="739" class="note">Supply voltage · recommended &gt; 18 V</text>
+</svg>

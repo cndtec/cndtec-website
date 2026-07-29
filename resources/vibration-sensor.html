@@ -366,6 +366,24 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         <p style="font-size:14px; color:var(--text-dim); line-height:1.8; margin:0;">센서 내부에 임피던스 변환 프리앰프(전하→전압 변환 회로)를 내장해, 2~20mA 정전류로 구동하고 표준 동축(BNC) 케이블 하나로 저임피던스 전압 신호를 출력합니다. 출력 임피던스가 100Ω 이하라 <strong>저가 표준 케이블로 수백 m까지</strong> 전송할 수 있고, DT9837 등 IEPE 입력 DAQ에 별도 컨디셔너 없이 직결됩니다.</p>
       </div>
 
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:16px;">
+        <img src="../assets/images/vibration sensor/가속도센서.png"
+             alt="IEPE 가속도센서 내부 구조 — PZT 세라믹과 지진 질량" loading="lazy"
+             style="width:100%; height:180px; border-radius:var(--radius); display:block; border:1px solid var(--line); object-fit:contain; background:#f8fafc; padding:8px;">
+        <img src="../assets/images/vibration sensor/피에조 일렉트릭 센서의 원리 그림01.png"
+             alt="IEPE 가속도센서 동작 원리 다이어그램 — 지진 질량과 PZT" loading="lazy"
+             style="width:100%; height:180px; border-radius:var(--radius); display:block; border:1px solid var(--line); object-fit:contain; background:#f8fafc; padding:8px;">
+        <img src="../assets/images/vibration sensor/압전 가속도계의 원리.png"
+             alt="IEPE 가속도센서 동작 원리 — 지진 질량과 PZT 소자" loading="lazy"
+             style="width:100%; height:180px; border-radius:var(--radius); display:block; border:1px solid var(--line); object-fit:contain; background:#f8fafc; padding:8px;">
+      </div>
+
+      <div style="margin-top:16px; border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);">
+        <img src="../assets/images/vibration sensor/IEPE DIAGRAM.svg"
+             alt="IEPE 신호 회로도 — 압전소자, 내장 프리앰프, 동축케이블, 정전류원, 커플링 커패시터, 계측기 입력 구성" loading="lazy"
+             style="width:100%; display:block; background:#fff;">
+      </div>
+
       <div style="margin-top:16px; padding:14px 16px; background:#f8fafc; border-radius:8px; font-size:13px; color:var(--text-dim); line-height:1.7;">
         <strong style="color:var(--charcoal);">IEPE의 다른 이름</strong> — IEPE는 "Integrated Electronics Piezo-Electric"의 약자로, 제조사마다 ICP®(PCB Piezotronics), CCLD(Dytran·HBK), Isotron®(Meggitt/Endevco), Deltatron®(Brüel &amp; Kjær/HBK), Piezotron®(Kistler) 등 서로 다른 상표명을 쓰지만 <strong>모두 동일한 정전류 구동 원리</strong>이며 표준 IEPE 입력 DAQ와 호환됩니다.
       </div>
@@ -376,6 +394,12 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 
       <div style="margin-top:16px; padding:16px 18px; background:#fef2f2; border:1px solid #fecaca; border-radius:var(--radius); font-size:13px; color:#7f1d1d; line-height:1.75;">
         <strong>⚠ 주의</strong> — IEPE 센서에 정전류 조절 없는 일반 전압원을 연결하거나 케이블 극성을 반대로 연결하면 내장 전자회로가 <strong>즉시 손상</strong>될 수 있습니다. 배선 전 극성과 전류 설정을 반드시 확인하세요. 자가진단은 입력단 바이어스 전압으로 판단합니다 — <strong>2V 미만</strong>: 단선 또는 음의 과부하, <strong>2~18V</strong>: 정상 범위, <strong>18V 초과</strong>: 양의 과부하 또는 케이블 단선(오픈).
+      </div>
+
+      <div style="margin-top:16px; border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);">
+        <img src="../assets/images/vibration sensor/IEPE Dynamic range.svg"
+             alt="IEPE 다이나믹 레인지와 오버로드 다이어그램 — 바이어스 전압, 정상 출력 범위, 양·음 과부하 구간" loading="lazy"
+             style="width:100%; display:block; background:#fff;">
       </div>
 
       <div class="vs-adv-grid">
@@ -408,15 +432,9 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
             </div>
           </div>
           <div>
-            <img src="../assets/images/vibration sensor/가속도센서.png"
-                 alt="피에조일렉트릭 가속도센서 내부 구조 — PZT 세라믹과 지진 질량" loading="lazy"
-                 style="width:100%; border-radius:var(--radius); display:block; border:1px solid var(--line);">
-            <img src="../assets/images/vibration sensor/피에조 일렉트릭 센서의 원리 그림01.png"
-                 alt="압전 가속도계 동작 원리 다이어그램 — 지진 질량과 PZT" loading="lazy"
-                 style="width:100%; border-radius:var(--radius); display:block; border:1px solid var(--line); margin-top:12px;">
-            <img src="../assets/images/vibration sensor/압전 가속도계의 원리.png"
-                 alt="압전 가속도계 동작 원리 — 지진 질량과 PZT 소자" loading="lazy"
-                 style="width:100%; border-radius:var(--radius); display:block; border:1px solid var(--line); margin-top:12px;">
+            <img src="../assets/images/vibration sensor/피에조센서.png"
+                 alt="피에조(전하출력형) 가속도센서 제품 — 스터드 마운팅형 압전 가속도계" loading="lazy"
+                 style="width:100%; border-radius:var(--radius); display:block; border:1px solid var(--line); object-fit:contain; background:#f8fafc;">
           </div>
         </div>
       </div>
@@ -438,13 +456,10 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
         </div>
       </div>
       <p style="font-size:13px; color:var(--text-dim); line-height:1.75; margin-bottom:16px;"><strong style="color:var(--charcoal);">하한 주파수는 프리앰프에 따라 결정</strong> — 상한이 공진 주파수(기계적 특성)로 결정되는 것과 달리, 하한 주파수는 프리앰프 방식에 좌우됩니다. 전하출력형에 쓰는 전압증폭기는 센서·케이블·증폭기 입력 커패시턴스와 입력저항이 만드는 <strong>RC 시상수</strong>가 하한을 결정하며, IEPE(전류구동 내장 프리앰프)는 대부분 0.3Hz(전단형·굴곡형) 또는 3Hz(압축형) 수준까지 낮출 수 있습니다.</p>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px;">
+      <div style="margin-bottom:20px;">
         <img src="../assets/images/vibration sensor/가속도 응답곡선.png"
              alt="피에조 가속도계 주파수 응답 곡선 — 공진 주파수와 측정 범위" loading="lazy"
-             style="width:100%; border-radius:var(--radius); display:block; border:1px solid var(--line); object-fit:contain; background:#f8fafc; padding:8px;">
-        <img src="../assets/images/vibration sensor/그래프.png"
-             alt="가속도계 주파수 응답 — 저주파 한계와 RC 시상수" loading="lazy"
-             style="width:100%; border-radius:var(--radius); display:block; border:1px solid var(--line); object-fit:contain; background:#f8fafc; padding:8px;">
+             style="width:100%; max-width:520px; margin:0 auto; border-radius:var(--radius); display:block; border:1px solid var(--line); object-fit:contain; background:#f8fafc; padding:8px;">
       </div>
 
       <div style="padding:20px 22px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);">
@@ -489,25 +504,9 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 
     <hr class="vs-divider">
 
-    <!-- 06 측정 방식 -->
+    <!-- 06 선정 가이드 -->
     <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
-      <div class="vs-section-tag">06 · MEASUREMENT METHOD</div>
-      <h2 class="vs-h2">가속도센서 측정 방식 — DAQ 연동부터 분석까지</h2>
-      <p class="vs-sub">센서를 올바르게 장착했더라도, DAQ 설정과 분석 방식이 잘못되면 측정값을 신뢰할 수 없습니다. 현장 측정은 아래 절차를 따릅니다.</p>
-      <ul class="vs-tip-list">
-        <li><div class="tip-num">1</div><div><strong style="color:var(--charcoal);">센서 배치·축 정렬</strong> — 측정하고자 하는 진동 방향과 센서의 감지 축을 정확히 일치시켜 장착합니다. 오정렬이 클수록 횡방향 진동이 섞여 들어가 오차가 커집니다.</div></li>
-        <li><div class="tip-num">2</div><div><strong style="color:var(--charcoal);">IEPE 파워 및 채널 설정</strong> — DT9837 등 DAQ에서 사용할 채널의 IEPE 정전류(통상 2~4mA) 여자(Excitation)를 켜고, 센서 개별 캘리브레이션 인증서의 감도값(mV/g)을 QuickDAQ 등 소프트웨어에 입력해 물리량(g, m/s²)으로 환산되도록 설정합니다.</div></li>
-        <li><div class="tip-num">3</div><div><strong style="color:var(--charcoal);">샘플링레이트·안티앨리어싱</strong> — 관심 최고 주파수의 최소 2.56배 이상으로 샘플링레이트를 설정하고, DAQ 내장 안티앨리어싱 필터가 나이키스트 주파수 이상을 충분히 감쇠하는지 확인합니다.</div></li>
-        <li><div class="tip-num">4</div><div><strong style="color:var(--charcoal);">시간영역 분석</strong> — RMS·Peak·Peak-to-Peak 값을 산출해 ISO 10816 등 기준과 비교합니다. 트렌드 모니터링에는 RMS, 충격성 결함 확인에는 Peak 값이 유용합니다.</div></li>
-        <li><div class="tip-num">5</div><div><strong style="color:var(--charcoal);">주파수영역 분석(FFT·옥타브밴드)</strong> — FFT 스펙트럼으로 특정 주파수 성분(베어링 결함 주파수, 회전 불균형 1× 성분 등)을 식별하거나, 1/1·1/3 옥타브밴드로 대역별 진동 에너지를 평가합니다.</div></li>
-      </ul>
-    </div>
-
-    <hr class="vs-divider">
-
-    <!-- 07 선정 가이드 -->
-    <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
-      <div class="vs-section-tag">07 · SELECTION GUIDE</div>
+      <div class="vs-section-tag">06 · SELECTION GUIDE</div>
       <h2 class="vs-h2">가속도센서 선정 시 확인해야 할 사양</h2>
       <p class="vs-sub">측정 목적에 맞지 않는 센서를 선택하면 데이터 신뢰도 자체가 무너집니다. 아래 6가지 사양을 발주 전에 반드시 확인합니다.</p>
       <ul class="vs-tip-list">
@@ -524,7 +523,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 
     <!-- 08 설치 방법 -->
     <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
-      <div class="vs-section-tag">08 · MOUNTING METHODS</div>
+      <div class="vs-section-tag">07 · MOUNTING METHODS</div>
       <h2 class="vs-h2">진동센서 설치 방법 5가지</h2>
       <p class="vs-sub">설치 환경·시험 목적에 따라 적합한 방법을 선택합니다. 방법에 따라 특히 고주파 성능에서 큰 차이가 있습니다.</p>
 
@@ -634,7 +633,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 
     <!-- 09 성능 비교 -->
     <div class="fade-in" style="padding-bottom:40px; padding-top:48px;">
-      <div class="vs-section-tag">09 · PERFORMANCE COMPARISON</div>
+      <div class="vs-section-tag">08 · PERFORMANCE COMPARISON</div>
       <h2 class="vs-h2">설치 방법별 고주파 성능 비교</h2>
       <p class="vs-sub">아래 그래프는 질량 증가 및 장착 강성 감소에 따른 각 장착 방법의 고주파 성능을 비교한 것입니다. 주파수가 높을수록 방법 간 차이가 커집니다.</p>
 
