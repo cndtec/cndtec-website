@@ -336,7 +336,11 @@ const setLang = (lang) => {
   try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
 };
 langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
-try { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); } catch(e) {}
+try {
+  const urlLang = new URLSearchParams(location.search).get('lang');
+  if (urlLang === 'en' || urlLang === 'ko') { setLang(urlLang); }
+  else { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); }
+} catch(e) {}
 const menuBtn = document.getElementById('menuBtn');
 const mobileNav = document.getElementById('mobileNav');
 const navClose = document.getElementById('navClose');
