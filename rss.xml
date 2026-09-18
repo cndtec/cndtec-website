@@ -5,8 +5,15 @@
 <link>https://www.cndtec.co.kr/resources/index.html</link>
 <description>잔류응력·스트레인게이지·진동·토크·DAQ 등 계측 기술자료 업데이트 피드</description>
 <language>ko</language>
-<lastBuildDate>Wed, 29 Jul 2026 00:00:00 +0900</lastBuildDate>
+<lastBuildDate>Mon, 07 Sep 2026 00:00:00 +0900</lastBuildDate>
 <atom:link href="https://www.cndtec.co.kr/rss.xml" rel="self" type="application/rss+xml" />
+<item>
+<title>스트레인게이지 측정 사례 — 휠체어 동적 충돌시험 고속 샘플링 계측</title>
+<link>https://www.cndtec.co.kr/resources/wheelchair-crash-test.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/wheelchair-crash-test.html</guid>
+<pubDate>Mon, 07 Sep 2026 00:00:00 +0900</pubDate>
+<description>수동·전동 휠체어 프레임에 다중 포인트 스트레인게이지를 부착하고 HBM QuantumX DAQ로 32채널 이상을 동시 계측, 국내 공인시험기관의 동적 충돌(슬레드) 시험에서 19.6kHz 고속 샘플링으로 프레임 변형률을 실시간 측정한 현장 계측 사례. 씨앤디테크.</description>
+</item>
 <item>
 <title>진동 평가 기준·규격 — ISO 10816·VC 곡선·ISO 2631·ISO 20283</title>
 <link>https://www.cndtec.co.kr/resources/vibration-evaluation-standards.html</link>

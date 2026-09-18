@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>스트레인게이지 측정 사례 - 휠체어 동적 충돌시험 고속 샘플링 계측 | 씨앤디테크</title>
+<meta name="description" content="수동·전동 휠체어 프레임에 다중 포인트 스트레인게이지를 부착하고 HBM QuantumX DAQ로 32채널 이상을 동시 계측, 국내 공인시험기관의 동적 충돌(슬레드) 시험에서 19.6kHz 고속 샘플링으로 프레임 변형률을 실시간 측정한 현장 계측 사례." />
+<meta name="keywords" content="휠체어 충돌시험, 휠체어 스트레인게이지, 동적 충돌시험, 고속 샘플링, 슬레드 시험, HBM QuantumX, catmanAP, 다채널 스트레인게이지, 현장 계측 사례" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/wheelchair-crash-test.html" />
+<meta property="og:title" content="스트레인게이지 측정 사례 - 휠체어 동적 충돌시험 고속 샘플링 계측 | 씨앤디테크" />
+<meta property="og:description" content="휠체어 프레임 다중 포인트 스트레인게이지 부착 + HBM QuantumX DAQ 32채널 동시 계측 + 국내 공인시험기관 동적 충돌(슬레드) 시험에서 19.6kHz 고속 샘플링으로 계측한 현장 계측 사례." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/wheelchair-crash-test.html" />
+<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/wheelchair-crash-test/wct-14-atd-legs-closeup.jpg" />
+<meta property="og:site_name" content="씨앤디테크 기술자료" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="../css/style.css?v=6">
+<style>
+body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "스트레인게이지 측정 사례 — 휠체어 동적 충돌시험 고속 샘플링 계측",
+  "description": "수동·전동 휠체어 프레임에 다중 포인트 스트레인게이지를 부착하고 HBM QuantumX DAQ로 32채널 이상을 동시 계측, 국내 공인시험기관의 동적 충돌(슬레드) 시험에서 19.6kHz 고속 샘플링으로 프레임 변형률을 실시간 측정한 현장 계측 사례.",
+  "keywords": "휠체어 충돌시험, 휠체어 스트레인게이지, 동적 충돌시험, 고속 샘플링, 슬레드 시험, HBM QuantumX, catmanAP, 다채널 스트레인게이지",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr", "logo": {"@type": "ImageObject", "url": "https://www.cndtec.co.kr/assets/images/cnd-logo.png"}},
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "inLanguage": "ko",
+  "url": "https://www.cndtec.co.kr/resources/wheelchair-crash-test.html",
+  "image": "https://www.cndtec.co.kr/assets/images/wheelchair-crash-test/wct-14-atd-legs-closeup.jpg"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "휠체어 충돌시험에서 스트레인게이지로 무엇을 측정하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "충돌(슬레드) 시험 중 휠체어 프레임의 각 부위에 순간적으로 발생하는 동적 변형률(다이내믹 스트레인)을 측정합니다. 충돌 시 프레임에 가해지는 하중이 특정 용접부·연결부·튜브 구간에 집중되는지, 어느 지점에서 항복점에 근접한 변형이 발생하는지를 실측 데이터로 확인해 구조적 안전성을 정량적으로 검증하는 것이 목적입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "왜 이렇게 많은 채널(32채널 이상)을 동시에 계측하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "휠체어 프레임은 좌석 지지대, 뒷바퀴 축, 발판 지지대, 구동부 마운트 등 하중 경로가 여러 갈래로 나뉘는 복잡한 구조물입니다. 한두 지점만 계측하면 실제 최대 변형이 발생하는 위치를 놓칠 수 있어, 프레임 전체에 게이지 번호를 부여한 다중 포인트를 동시에 계측했습니다. 이 시험에서는 HBM QuantumX MX1615/1815 DAQ 2대를 연결해 32채널을 동시에 수집했습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "SG 쿼터브릿지 120Ω 3선식 회로란 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "쿼터브릿지(1/4 브리지)는 휘트스톤 브리지의 4변 중 1개 변에만 스트레인게이지를 연결하는 가장 기본적인 결선 방식이며, 120Ω은 사용한 게이지의 저항 규격입니다. 3선식(3-wire) 결선은 리드선 저항의 온도 변화가 측정값에 미치는 영향을 상쇄하기 위한 배선 방식으로, 리드선이 길거나 다채널을 동시에 배선하는 현장 계측에서 표준적으로 사용됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "왜 19.6kHz의 고속 샘플링이 필요한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "충돌은 수십~수백 밀리초(ms) 안에 하중이 급격히 상승·하강하는 동적 이벤트입니다. 정적 하중 시험처럼 초 단위로 값을 읽는 방식으로는 충돌 순간의 피크 변형률을 놓치게 되므로, 이 시험에서는 샘플링레이트 19.6kHz로 계측해 충돌 순간의 파형을 왜곡 없이 기록했습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "이 시험은 어디서, 어떤 방식으로 진행되었나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "국내 공인시험기관의 동적 충돌(슬레드) 시험 설비에서 진행되었습니다. 휠체어를 충돌 슬레드에 고정하고 ATD(충돌시험용 더미)를 좌석벨트로 구속한 상태에서 슬레드를 주행시켜 충돌 상황을 모사하고, 동시에 프레임에 부착된 스트레인게이지로 각 부위의 변형률을 실시간 기록했습니다."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+.wct-stat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:32px 0; }
+@media (max-width:640px) { .wct-stat-grid { grid-template-columns:1fr; } }
+.wct-stat-card { padding:24px 20px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius); text-align:center; }
+.wct-stat-card .stat-val { font-family:'Pretendard',sans-serif; font-size:22px; font-weight:700; color:var(--accent); line-height:1.1; margin-bottom:6px; }
+.wct-stat-card .stat-label { font-size:13px; color:var(--text-mute); line-height:1.4; }
+
+.wct-section { padding:44px 0; border-bottom:1px solid var(--line); }
+.wct-section:last-child { border-bottom:none; }
+.wct-section-title { font-family:'Manrope','Pretendard',sans-serif; font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+.wct-section-title::before { content:''; display:inline-block; width:4px; height:22px; background:var(--accent); border-radius:2px; flex-shrink:0; }
+
+.wct-img-wrap { margin:24px 0; border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:var(--bg-card); }
+.wct-img-wrap img { width:100%; height:auto; display:block; }
+.wct-img-caption { padding:10px 16px; font-size:12px; color:var(--text-mute); background:var(--bg-card); border-top:1px solid var(--line); text-align:center; }
+
+.wct-img-duo { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:24px 0; }
+.wct-img-duo .wct-img-wrap img { height:240px; object-fit:cover; }
+.wct-img-trio { grid-template-columns:1fr 1fr 1fr; }
+@media (max-width:780px) { .wct-img-trio { grid-template-columns:1fr 1fr; } }
+@media (max-width:640px) { .wct-img-duo { grid-template-columns:1fr; } }
+
+.wct-step-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:24px 0; }
+@media (max-width:720px) { .wct-step-grid { grid-template-columns:1fr 1fr; } }
+@media (max-width:480px) { .wct-step-grid { grid-template-columns:1fr; } }
+.wct-step { padding:20px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius); }
+.wct-step .step-num { font-family:'Pretendard',sans-serif; font-size:11px; color:var(--accent); font-weight:700; margin-bottom:8px; letter-spacing:0.1em; }
+.wct-step .step-title { font-weight:700; font-size:14px; color:var(--charcoal); margin-bottom:6px; }
+.wct-step .step-desc { font-size:13px; color:var(--text-mute); line-height:1.5; }
+
+.wct-app-tags { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0; }
+.wct-app-tag { padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); }
+
+.wct-faq-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:24px;}
+.wct-faq-item{border-bottom:1px solid var(--line);}
+.wct-faq-item:last-child{border-bottom:none;}
+.wct-faq-q{width:100%;text-align:left;padding:18px 22px;background:var(--surface);border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14.5px;font-weight:600;color:var(--charcoal);line-height:1.5;}
+.wct-faq-q:hover{background:var(--orange-tint);}
+.wct-fq-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;transition:transform .25s;}
+.wct-faq-item.open .wct-fq-icon{transform:rotate(45deg);}
+.wct-faq-a{display:none;padding:16px 22px 20px;background:#fff;font-size:14px;color:var(--text-dim);line-height:1.8;border-top:1px solid var(--line);}
+.wct-faq-item.open .wct-faq-a{display:block;}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+<nav class="mobile-subnav" aria-label="모바일 카테고리 메뉴">
+  <a href="../about.html">회사소개</a>
+  <a href="../products.html">사업분야·제품</a>
+  <a href="../projects.html">주요실적</a>
+  <a href="index.html" class="pill-active">기술자료</a>
+  <a href="../index.html#blog">블로그</a>
+  <a href="../contact.html">문의</a>
+</nav>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../index.html#blog">블로그</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<main>
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">현장 계측 사례 · 휠체어 동적 충돌시험</div>
+      <h1 style="font-family:'Manrope','Pretendard',sans-serif; font-size:clamp(28px,5vw,52px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">스트레인게이지 측정 사례<br><span class="accent">휠체어 동적 충돌시험 고속 샘플링 계측</span></h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:720px; line-height:1.7; margin-bottom:0;">수동·전동 휠체어 프레임에 다중 포인트 스트레인게이지를 부착하고 HBM QuantumX DAQ로 32채널 이상을 동시 계측, 국내 공인시험기관의 동적 충돌(슬레드) 시험에서 <strong>19.6kHz 고속 샘플링</strong>으로 프레임 변형률을 실시간 측정한 현장 계측 사례입니다.</p>
+    </div>
+
+    <div class="wct-stat-grid fade-in">
+      <div class="wct-stat-card">
+        <div class="stat-val">32+ 채널</div>
+        <div class="stat-label">프레임 다중 포인트<br>동시 계측</div>
+      </div>
+      <div class="wct-stat-card">
+        <div class="stat-val">HBM QuantumX</div>
+        <div class="stat-label">MX1615/1815 DAQ ·<br>catmanAP 소프트웨어</div>
+      </div>
+      <div class="wct-stat-card">
+        <div class="stat-val">19.6kHz</div>
+        <div class="stat-label">고속 동적 샘플링<br>충돌 순간 파형 기록</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 본문 ── -->
+<section style="padding:0 0 100px;">
+  <div class="container" style="max-width:860px;">
+
+    <!-- 1. 개요 -->
+    <div class="wct-section fade-in">
+      <h2 class="wct-section-title">시험 개요</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:0;">
+        씨앤디테크는 수동·전동 휠체어 프레임 여러 지점에 스트레인게이지를 부착하고, 국내 공인시험기관의 동적 충돌(슬레드) 시험 설비에서
+        ATD(충돌시험용 더미)를 좌석벨트로 구속한 상태로 충돌 상황을 모사하며 프레임 변형률을 실시간으로 계측했습니다.
+      </p>
+
+      <div class="wct-img-duo">
+        <div class="wct-img-wrap" style="margin:0;">
+          <img src="../assets/images/wheelchair-crash-test/wct-10-power-wheelchair-side.jpg" alt="스트레인게이지 배선을 완료한 전동 휠체어 측면 전경" loading="lazy">
+          <div class="wct-img-caption">배선을 완료한 전동 휠체어</div>
+        </div>
+        <div class="wct-img-wrap" style="margin:0;">
+          <img src="../assets/images/wheelchair-crash-test/wct-03-instrumented-wheelchairs.jpg" alt="스트레인게이지 배선을 완료한 수동형·전동형 휠체어" loading="lazy">
+          <div class="wct-img-caption">배선을 완료한 수동형·전동형 휠체어</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. 측정 절차 -->
+    <div class="wct-section fade-in">
+      <h2 class="wct-section-title">계측 절차</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:0;">
+        프레임 전면에 걸쳐 게이지를 부착하고 채널을 정리한 뒤, 고속 동적 DAQ 시스템을 구성해 충돌 순간의 변형률을 왜곡 없이 기록했습니다.
+      </p>
+
+      <div class="wct-step-grid">
+        <div class="wct-step">
+          <div class="step-num">01</div>
+          <div class="step-title">다중 포인트 게이지 부착</div>
+          <div class="step-desc">프레임 여러 지점에 게이지 번호를 부여해 스트레인게이지 부착</div>
+        </div>
+        <div class="wct-step">
+          <div class="step-num">02</div>
+          <div class="step-title">배선 및 채널 정리</div>
+          <div class="step-desc">다핀 커넥터 블록으로 리드선을 색상별로 정리·결선</div>
+        </div>
+        <div class="wct-step">
+          <div class="step-num">03</div>
+          <div class="step-title">계측 대상 준비</div>
+          <div class="step-desc">수동형·전동형 휠체어 2기종에 배선을 완료해 시험 투입</div>
+        </div>
+        <div class="wct-step">
+          <div class="step-num">04</div>
+          <div class="step-title">DAQ 시스템 구성</div>
+          <div class="step-desc">HBM QuantumX DAQ 2대 32채널, SG 쿼터브릿지 120Ω 3선식 설정</div>
+        </div>
+        <div class="wct-step">
+          <div class="step-num">05</div>
+          <div class="step-title">고속 동적 샘플링</div>
+          <div class="step-desc">샘플링레이트 19.6kHz로 충돌 순간 파형 기록</div>
+        </div>
+        <div class="wct-step">
+          <div class="step-num">06</div>
+          <div class="step-title">충돌 슬레드 시험 진행</div>
+          <div class="step-desc">ATD·좌석벨트 구속 상태로 슬레드 주행, 전 채널 동시 계측</div>
+        </div>
+      </div>
+
+      <div class="wct-img-duo">
+        <div class="wct-img-wrap" style="margin:0;">
+          <img src="../assets/images/wheelchair-crash-test/wct-13-multi-point-gauges.jpg" alt="휠체어 프레임 좌석 지지대에 다중 포인트로 번호가 부여된 스트레인게이지 부착부" loading="lazy">
+          <div class="wct-img-caption">프레임 다중 포인트 게이지 부착</div>
+        </div>
+        <div class="wct-img-wrap" style="margin:0;">
+          <img src="../assets/images/wheelchair-crash-test/wct-01-gauge-bonding.jpg" alt="휠체어 프레임 튜브에 부착된 스트레인게이지와 리드선 납땜부 클로즈업" loading="lazy">
+          <div class="wct-img-caption">게이지 리드선 납땜부 클로즈업</div>
+        </div>
+        <div class="wct-img-wrap" style="margin:0;">
+          <img src="../assets/images/wheelchair-crash-test/wct-12-frame-joint-gauge.jpg" alt="휠체어 프레임 관절부에 부착된 스트레인게이지와 리드선" loading="lazy">
+          <div class="wct-img-caption">프레임 관절부 게이지 부착</div>
+        </div>
+        <div class="wct-img-wrap" style="margin:0;">
+          <img src="../assets/images/wheelchair-crash-test/wct-11-hub-wiring-closeup.jpg" alt="휠체어 휠허브 인근 프레임에 부착된 게이지와 색상별 리드선 배선" loading="lazy">
+          <div class="wct-img-caption">휠허브 인근 게이지·배선 클로즈업</div>
+        </div>
+        <div class="wct-img-wrap" style="margin:0;">
+          <img src="../assets/images/wheelchair-crash-test/wct-07-hbm-mx-daq.jpg" alt="적층된 HBM QuantumX MX1615/1815 16채널 DAQ 모듈 2대" loading="lazy">
+          <div class="wct-img-caption">HBM QuantumX DAQ 32채널</div>
+        </div>
+        <div class="wct-img-wrap" style="margin:0;">
+          <img src="../assets/images/wheelchair-crash-test/wct-14-atd-legs-closeup.jpg" alt="좌석벨트로 구속되고 충격 마커가 부착된 ATD 더미 하체 클로즈업" loading="lazy">
+          <div class="wct-img-caption">ATD·좌석벨트 구속 충돌시험</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. 지원 역량 -->
+    <div class="wct-section fade-in">
+      <h2 class="wct-section-title">지원 역량 및 서비스 범위</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:20px;">
+        씨앤디테크는 다중 포인트 스트레인게이지 부착부터 고속 동적 DAQ 시스템 구성, 공인시험기관 충돌·슬레드 시험 계측 지원까지
+        시험 설계부터 데이터 취득까지 원스톱으로 지원합니다.
+      </p>
+
+      <div class="wct-app-tags">
+        <span class="wct-app-tag">이동 보조기구 구조 안전성 검증</span>
+        <span class="wct-app-tag">동적 충돌·슬레드 시험 계측</span>
+        <span class="wct-app-tag">32채널 이상 다중 포인트 계측</span>
+        <span class="wct-app-tag">공인시험기관 현장 지원</span>
+        <span class="wct-app-tag">HBM QuantumX DAQ 시스템 구성</span>
+      </div>
+
+      <p style="font-size:14px; color:var(--text-mute); margin-top:24px; margin-bottom:16px;">관련 기술 자료 더 보기:</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="strain-gauge-bonding.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 스트레인게이지 부착법 가이드</a>
+        <a href="daq-system.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ DAQ 시스템 가이드</a>
+        <a href="car-undercover-strain.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 자동차 언더커버 변형 측정 사례</a>
+        <a href="field-service.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 현장 계측 용역</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section style="padding:48px 0 0;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in">
+      <h2 style="font-family:'Manrope','Pretendard',sans-serif; font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:8px; padding-left:14px; border-left:4px solid var(--accent);">자주 묻는 질문 (FAQ)</h2>
+      <p style="font-size:13px; color:var(--text-mute); margin-bottom:0; padding-left:18px;">휠체어 충돌시험 스트레인게이지 계측 관련 질문</p>
+
+      <div class="wct-faq-list">
+        <div class="wct-faq-item">
+          <button class="wct-faq-q"><span>휠체어 충돌시험에서 스트레인게이지로 무엇을 측정하나요?</span><span class="wct-fq-icon">+</span></button>
+          <div class="wct-faq-a">충돌(슬레드) 시험 중 휠체어 프레임의 각 부위에 순간적으로 발생하는 동적 변형률(다이내믹 스트레인)을 측정합니다. 충돌 시 프레임에 가해지는 하중이 특정 용접부·연결부·튜브 구간에 집중되는지, 어느 지점에서 항복점에 근접한 변형이 발생하는지를 실측 데이터로 확인해 구조적 안전성을 정량적으로 검증하는 것이 목적입니다.</div>
+        </div>
+        <div class="wct-faq-item">
+          <button class="wct-faq-q"><span>왜 이렇게 많은 채널(32채널 이상)을 동시에 계측하나요?</span><span class="wct-fq-icon">+</span></button>
+          <div class="wct-faq-a">휠체어 프레임은 좌석 지지대, 뒷바퀴 축, 발판 지지대, 구동부 마운트 등 하중 경로가 여러 갈래로 나뉘는 복잡한 구조물입니다. 한두 지점만 계측하면 실제 최대 변형이 발생하는 위치를 놓칠 수 있어, 프레임 전체에 게이지 번호를 부여한 다중 포인트를 동시에 계측했습니다. 이 시험에서는 <strong>HBM QuantumX MX1615/1815</strong> DAQ 2대를 연결해 32채널을 동시에 수집했습니다.</div>
+        </div>
+        <div class="wct-faq-item">
+          <button class="wct-faq-q"><span>SG 쿼터브릿지 120Ω 3선식 회로란 무엇인가요?</span><span class="wct-fq-icon">+</span></button>
+          <div class="wct-faq-a"><strong>쿼터브릿지(1/4 브리지)</strong>는 휘트스톤 브리지의 4변 중 1개 변에만 스트레인게이지를 연결하는 가장 기본적인 결선 방식이며, 120Ω은 사용한 게이지의 저항 규격입니다. <strong>3선식(3-wire)</strong> 결선은 리드선 저항의 온도 변화가 측정값에 미치는 영향을 상쇄하기 위한 배선 방식으로, 리드선이 길거나 다채널을 동시에 배선하는 현장 계측에서 표준적으로 사용됩니다.</div>
+        </div>
+        <div class="wct-faq-item">
+          <button class="wct-faq-q"><span>왜 19.6kHz의 고속 샘플링이 필요한가요?</span><span class="wct-fq-icon">+</span></button>
+          <div class="wct-faq-a">충돌은 수십~수백 밀리초(ms) 안에 하중이 급격히 상승·하강하는 동적 이벤트입니다. 정적 하중 시험처럼 초 단위로 값을 읽는 방식으로는 충돌 순간의 피크 변형률을 놓치게 되므로, 이 시험에서는 샘플링레이트 19.6kHz로 계측해 충돌 순간의 파형을 왜곡 없이 기록했습니다.</div>
+        </div>
+        <div class="wct-faq-item">
+          <button class="wct-faq-q"><span>이 시험은 어디서, 어떤 방식으로 진행되었나요?</span><span class="wct-fq-icon">+</span></button>
+          <div class="wct-faq-a">국내 공인시험기관의 동적 충돌(슬레드) 시험 설비에서 진행되었습니다. 휠체어를 충돌 슬레드에 고정하고 ATD(충돌시험용 더미)를 좌석벨트로 구속한 상태에서 슬레드를 주행시켜 충돌 상황을 모사하고, 동시에 프레임에 부착된 스트레인게이지로 각 부위의 변형률을 실시간 기록했습니다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section style="padding:40px 0 80px;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in" style="padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius);">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">동적·충돌 계측 지원 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">계측 대상, 시험 목적, 채널 수를 알려주시면 최적 게이지 구성과 DAQ 시스템을 안내해 드립니다. 공인시험기관 현장 출장 계측도 지원합니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+        <a href="mailto:wgjeon@cndtec.co.kr" class="btn btn-ghost">wgjeon@cndtec.co.kr</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="strain-gauge-bonding.html">스트레인게이지 부착</a></li><li><a href="daq-system.html">DAQ 시스템</a></li><li><a href="field-service.html">현장 계측 용역</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank" rel="noopener">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta"><span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span></div>
+  </div>
+</footer>
+
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try {
+  const urlLang = new URLSearchParams(location.search).get('lang');
+  if (urlLang === 'en' || urlLang === 'ko') { setLang(urlLang); }
+  else { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); }
+} catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+document.querySelectorAll('.wct-faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.wct-faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.wct-faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+<script src="../js/main.js"></script>
+</body>
+</html>
