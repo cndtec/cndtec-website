@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>용접부 Toe 잔류응력 측정 사례 - 후판 용접 시편 홀드릴링 (ASTM E837) | 씨앤디테크</title>
+<meta name="description" content="두께 100mm급 후판 용접 시편의 비드 인접 Toe 위치(양측 4개소)에 스트레인게이지 로제트를 부착하고 ASTM E837 홀드릴링으로 잔류응력을 측정한 현장 계측 사례." />
+<meta name="keywords" content="용접부 잔류응력, Toe 잔류응력, 후판 용접 잔류응력, 홀드릴링, ASTM E837, SINT MTS3000, 스트레인게이지 로제트, 현장 계측 사례" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/weld-toe-residual-stress.html" />
+<meta property="og:title" content="용접부 Toe 잔류응력 측정 사례 - 후판 용접 시편 홀드릴링 (ASTM E837) | 씨앤디테크" />
+<meta property="og:description" content="후판 용접 시편 비드 인접 Toe 4개소 로제트 부착 + ASTM E837 홀드릴링 잔류응력 측정 현장 계측 사례." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/weld-toe-residual-stress.html" />
+<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/welding-toe/wtoe-01.jpg" />
+<meta property="og:site_name" content="씨앤디테크 기술자료" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="../css/style.css?v=6">
+<style>
+body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "용접부 Toe 잔류응력 측정 사례 - 후판 용접 시편 홀드릴링 (ASTM E837)",
+  "description": "두께 100mm급 후판 용접 시편의 비드 인접 Toe 위치(양측 4개소)에 스트레인게이지 로제트를 부착하고 ASTM E837 홀드릴링으로 잔류응력을 측정한 현장 계측 사례.",
+  "keywords": "용접부 잔류응력, Toe 잔류응력, 후판 용접 잔류응력, 홀드릴링, ASTM E837, SINT MTS3000, 스트레인게이지 로제트, 현장 계측 사례",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr", "logo": {"@type": "ImageObject", "url": "https://www.cndtec.co.kr/assets/images/cnd-logo.png"}},
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "inLanguage": "ko",
+  "url": "https://www.cndtec.co.kr/resources/weld-toe-residual-stress.html",
+  "image": "https://www.cndtec.co.kr/assets/images/welding-toe/wtoe-01.jpg"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "용접부 Toe(토) 위치에서 잔류응력을 왜 측정하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Toe는 용접 비드와 모재가 만나는 경계 부위로, 단면이 급변해 응력이 집중되고 피로 균열이 시작되기 쉬운 곳입니다. 이 위치의 잔류응력이 인장인지 압축인지에 따라 피로 수명이 달라질 수 있어, 비드에 최대한 인접한 Toe에서 실측하는 것이 의미가 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "홀드릴링법(ASTM E837)은 어떻게 잔류응력을 구하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "측정 위치에 스트레인게이지 로제트를 부착한 뒤 중앙에 작은 구멍을 단계적으로 가공하면, 구멍 주변에서 응력이 해방되며 변형률이 변합니다. 이 변형률 변화를 ASTM E837 해석 절차로 계산해 잔류응력의 크기와 방향을 구합니다. 시편에 미치는 손상이 작아 현장 측정에 많이 쓰입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "두꺼운 후판 시편도 측정할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가능합니다. 이번 사례는 두께 100mm급 후판 용접 시편이었으며, 용접 깊이 조건이 다른 시편을 비교하는 용도였습니다. 시편 표면에 계측 장비를 안정적으로 고정할 수 있으면 두께와 상관없이 표면 잔류응력을 측정할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "측정 위치는 어떻게 구분했나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "용접 비드 양쪽 Toe에 각각 로제트를 부착하고 A, B, C, D로 위치를 표시해 데이터가 섞이지 않도록 관리했습니다. 위치 표시는 현장 측정에서 사후 분석의 정확도를 좌우하는 기본 절차입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "현장 출장 측정이 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가능합니다. 씨앤디테크는 SINT MTS3000 홀드릴링 장비를 현장에 가져가 시편 보관 장소나 제작 현장에서 직접 측정합니다. 시편 크기, 소재, 측정 위치를 알려주시면 일정과 방법을 안내해 드립니다."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+.wtp-stat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:32px 0; }
+@media (max-width:640px) { .wtp-stat-grid { grid-template-columns:1fr; } }
+.wtp-stat-card { padding:24px 20px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius); text-align:center; }
+.wtp-stat-card .stat-val { font-family:'Pretendard',sans-serif; font-size:22px; font-weight:700; color:var(--accent); line-height:1.1; margin-bottom:6px; }
+.wtp-stat-card .stat-label { font-size:13px; color:var(--text-mute); line-height:1.4; }
+
+.wtp-section { padding:44px 0; border-bottom:1px solid var(--line); }
+.wtp-section:last-child { border-bottom:none; }
+.wtp-section-title { font-family:'Manrope','Pretendard',sans-serif; font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+.wtp-section-title::before { content:''; display:inline-block; width:4px; height:22px; background:var(--accent); border-radius:2px; flex-shrink:0; }
+
+.wtp-img-wrap { margin:24px 0; border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:var(--bg-card); }
+.wtp-img-wrap img { width:100%; height:auto; display:block; }
+.wtp-img-caption { padding:10px 16px; font-size:12px; color:var(--text-mute); background:var(--bg-card); border-top:1px solid var(--line); text-align:center; }
+
+.wtp-img-duo { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:24px 0; }
+.wtp-img-duo .wtp-img-wrap img { height:240px; object-fit:cover; }
+.wtp-img-trio { grid-template-columns:1fr 1fr 1fr; }
+@media (max-width:780px) { .wtp-img-trio { grid-template-columns:1fr 1fr; } }
+@media (max-width:640px) { .wtp-img-duo { grid-template-columns:1fr; } }
+
+.wtp-step-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:24px 0; }
+@media (max-width:720px) { .wtp-step-grid { grid-template-columns:1fr 1fr; } }
+@media (max-width:480px) { .wtp-step-grid { grid-template-columns:1fr; } }
+.wtp-step { padding:20px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius); }
+.wtp-step .step-num { font-family:'Pretendard',sans-serif; font-size:11px; color:var(--accent); font-weight:700; margin-bottom:8px; letter-spacing:0.1em; }
+.wtp-step .step-title { font-weight:700; font-size:14px; color:var(--charcoal); margin-bottom:6px; }
+.wtp-step .step-desc { font-size:13px; color:var(--text-mute); line-height:1.5; }
+
+.wtp-app-tags { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0; }
+.wtp-app-tag { padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); }
+
+.wtp-faq-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:24px;}
+.wtp-faq-item{border-bottom:1px solid var(--line);}
+.wtp-faq-item:last-child{border-bottom:none;}
+.wtp-faq-q{width:100%;text-align:left;padding:18px 22px;background:var(--surface);border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14.5px;font-weight:600;color:var(--charcoal);line-height:1.5;}
+.wtp-faq-q:hover{background:var(--orange-tint);}
+.wtp-fq-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;transition:transform .25s;}
+.wtp-faq-item.open .wtp-fq-icon{transform:rotate(45deg);}
+.wtp-faq-a{display:none;padding:16px 22px 20px;background:#fff;font-size:14px;color:var(--text-dim);line-height:1.8;border-top:1px solid var(--line);}
+.wtp-faq-item.open .wtp-faq-a{display:block;}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+<nav class="mobile-subnav" aria-label="모바일 카테고리 메뉴">
+  <a href="../about.html">회사소개</a>
+  <a href="../products.html">사업분야·제품</a>
+  <a href="../projects.html">주요실적</a>
+  <a href="index.html" class="pill-active">기술자료</a>
+  <a href="../index.html#blog">블로그</a>
+  <a href="../contact.html">문의</a>
+</nav>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../index.html#blog">블로그</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<main>
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">현장 계측 사례 · 용접부 Toe 잔류응력</div>
+      <h1 style="font-family:'Manrope','Pretendard',sans-serif; font-size:clamp(28px,5vw,52px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">용접부 Toe 잔류응력 측정 사례<br><span class="accent">후판 용접 시편 홀드릴링</span></h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:720px; line-height:1.7; margin-bottom:0;">두께 100mm급 후판 용접 시편의 <strong>비드 인접 Toe 위치 4개소</strong>에 스트레인게이지 로제트를 부착하고, ASTM E837 홀드릴링으로 잔류응력을 측정한 현장 계측 사례입니다.</p>
+    </div>
+
+    <div class="wtp-stat-grid fade-in">
+      <div class="wtp-stat-card">
+        <div class="stat-val">100mm 후판</div>
+        <div class="stat-label">용접 깊이 조건이 다른<br>시편 비교</div>
+      </div>
+      <div class="wtp-stat-card">
+        <div class="stat-val">Toe 4개소</div>
+        <div class="stat-label">비드 양측 인접 위치<br>A·B·C·D</div>
+      </div>
+      <div class="wtp-stat-card">
+        <div class="stat-val">ASTM E837</div>
+        <div class="stat-label">SINT MTS3000<br>홀드릴링 측정</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 본문 ── -->
+<section style="padding:0 0 100px;">
+  <div class="container" style="max-width:860px;">
+
+    <div class="wtp-section fade-in">
+      <h2 class="wtp-section-title">시험 개요</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:0;">
+        용접 Toe는 비드와 모재가 만나는 경계로, 단면이 급변해 응력이 집중되고 피로 균열이 시작되기 쉬운 부위입니다.
+        씨앤디테크는 두꺼운 후판 용접 시편에서 비드에 최대한 인접한 Toe 위치를 양측에서 선정하고,
+        각 위치에 스트레인게이지 로제트를 부착해 ASTM E837 홀드릴링으로 잔류응력을 측정했습니다.
+      </p>
+
+      <div class="wtp-img-duo">
+        <div class="wtp-img-wrap" style="margin:0;">
+          <img src="../assets/images/welding-toe/wtoe-01.jpg" alt="후판 용접 비드 양측 Toe에 A, B, C, D로 위치를 표시하고 로제트를 부착한 시편 전경" loading="lazy">
+          <div class="wtp-img-caption">비드 양측 Toe 4개소 로제트 부착 (A·B·C·D)</div>
+        </div>
+        <div class="wtp-img-wrap" style="margin:0;">
+          <img src="../assets/images/welding-toe/wtoe-02.jpg" alt="용접 비드 인접 Toe에 부착된 스트레인게이지 로제트와 리드선" loading="lazy">
+          <div class="wtp-img-caption">비드 인접 Toe 로제트 부착부</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wtp-section fade-in">
+      <h2 class="wtp-section-title">계측 절차</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:0;">
+        위치마다 로제트를 부착하고 표시한 뒤, 현장에서 홀드릴링 장비를 설치해 단계별로 변형률을 기록했습니다.
+      </p>
+
+      <div class="wtp-step-grid">
+        <div class="wtp-step">
+          <div class="step-num">01</div>
+          <div class="step-title">시편·측정 위치 확인</div>
+          <div class="step-desc">시편 정보와 비드 인접 Toe 측정 위치를 사전 협의</div>
+        </div>
+        <div class="wtp-step">
+          <div class="step-num">02</div>
+          <div class="step-title">측정 표면 준비</div>
+          <div class="step-desc">측정 부위 표면을 정리해 게이지 접착면 확보</div>
+        </div>
+        <div class="wtp-step">
+          <div class="step-num">03</div>
+          <div class="step-title">로제트 부착·위치 표시</div>
+          <div class="step-desc">비드 양측 Toe에 로제트 부착, A~D 위치 표시</div>
+        </div>
+        <div class="wtp-step">
+          <div class="step-num">04</div>
+          <div class="step-title">결선·영점 설정</div>
+          <div class="step-desc">리드선 결선 후 안정화, 변형률 영점 설정</div>
+        </div>
+        <div class="wtp-step">
+          <div class="step-num">05</div>
+          <div class="step-title">홀드릴링 가공</div>
+          <div class="step-desc">SINT MTS3000으로 단계별 드릴링, 변형률 기록</div>
+        </div>
+        <div class="wtp-step">
+          <div class="step-num">06</div>
+          <div class="step-title">ASTM E837 해석</div>
+          <div class="step-desc">변형률 변화로 잔류응력 크기·방향 산출</div>
+        </div>
+      </div>
+
+      <div class="wtp-img-duo">
+        <div class="wtp-img-wrap" style="margin:0;">
+          <img src="../assets/images/welding-toe/wtoe-03.jpg" alt="용접 비드 인접 Toe C 위치에 부착된 로제트" loading="lazy">
+          <div class="wtp-img-caption">C 위치 Toe 로제트</div>
+        </div>
+        <div class="wtp-img-wrap" style="margin:0;">
+          <img src="../assets/images/welding-toe/wtoe-04.jpg" alt="용접 비드 양측 A, C 위치에 부착된 로제트와 결선" loading="lazy">
+          <div class="wtp-img-caption">비드 양측 로제트 결선</div>
+        </div>
+        <div class="wtp-img-wrap" style="margin:0;">
+          <img src="../assets/images/welding-toe/wtoe-06.jpg" alt="후판 시편의 Toe 위치에 설치된 홀드릴링 장비" loading="lazy">
+          <div class="wtp-img-caption">Toe 위치 홀드릴링 장비 설치</div>
+        </div>
+        <div class="wtp-img-wrap" style="margin:0;">
+          <img src="../assets/images/welding-toe/wtoe-07.jpg" alt="비드 인접 Toe에 설치된 SINT MTS3000 홀드릴링 장비와 B 위치 표시" loading="lazy">
+          <div class="wtp-img-caption">홀드릴링 측정 진행 (B 위치)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wtp-section fade-in">
+      <h2 class="wtp-section-title">지원 역량 및 서비스 범위</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:20px;">
+        씨앤디테크는 SINT MTS3000 홀드릴링 장비로 후판·용접부 시편의 잔류응력을 현장에서 직접 측정하고,
+        위치 선정부터 로제트 부착, 데이터 해석까지 한 번에 지원합니다.
+      </p>
+
+      <div class="wtp-app-tags">
+        <span class="wtp-app-tag">용접부 Toe 잔류응력 측정</span>
+        <span class="wtp-app-tag">후판 용접 시편 홀드릴링</span>
+        <span class="wtp-app-tag">ASTM E837 해석</span>
+        <span class="wtp-app-tag">현장 출장 측정</span>
+        <span class="wtp-app-tag">용접 조건별 비교 시험</span>
+      </div>
+
+      <p style="font-size:14px; color:var(--text-mute); margin-top:24px; margin-bottom:16px;">관련 기술 자료 더 보기:</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="welding-residual-stress.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 용접부 잔류응력 측정</a>
+        <a href="residual-stress.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 홀드릴링 잔류응력 측정 (ASTM E837)</a>
+        <a href="pipe-residual-stress.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 강관 잔류응력 측정</a>
+        <a href="what-is-residual-stress.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 잔류응력이란?</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section style="padding:48px 0 0;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in">
+      <h2 style="font-family:'Manrope','Pretendard',sans-serif; font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:8px; padding-left:14px; border-left:4px solid var(--accent);">자주 묻는 질문 (FAQ)</h2>
+      <p style="font-size:13px; color:var(--text-mute); margin-bottom:0; padding-left:18px;">용접부 Toe 잔류응력 측정 관련 질문</p>
+
+      <div class="wtp-faq-list">
+        <div class="wtp-faq-item">
+          <button class="wtp-faq-q"><span>용접부 Toe(토) 위치에서 잔류응력을 왜 측정하나요?</span><span class="wtp-fq-icon">+</span></button>
+          <div class="wtp-faq-a">Toe는 용접 비드와 모재가 만나는 경계 부위로, 단면이 급변해 응력이 집중되고 피로 균열이 시작되기 쉬운 곳입니다. 이 위치의 잔류응력이 인장인지 압축인지에 따라 피로 수명이 달라질 수 있어, 비드에 최대한 인접한 Toe에서 실측하는 것이 의미가 있습니다.</div>
+        </div>
+        <div class="wtp-faq-item">
+          <button class="wtp-faq-q"><span>홀드릴링법(ASTM E837)은 어떻게 잔류응력을 구하나요?</span><span class="wtp-fq-icon">+</span></button>
+          <div class="wtp-faq-a">측정 위치에 스트레인게이지 로제트를 부착한 뒤 중앙에 작은 구멍을 단계적으로 가공하면, 구멍 주변에서 응력이 해방되며 변형률이 변합니다. 이 변형률 변화를 ASTM E837 해석 절차로 계산해 잔류응력의 크기와 방향을 구합니다. 시편에 미치는 손상이 작아 현장 측정에 많이 쓰입니다.</div>
+        </div>
+        <div class="wtp-faq-item">
+          <button class="wtp-faq-q"><span>두꺼운 후판 시편도 측정할 수 있나요?</span><span class="wtp-fq-icon">+</span></button>
+          <div class="wtp-faq-a">가능합니다. 이번 사례는 두께 100mm급 후판 용접 시편이었으며, 용접 깊이 조건이 다른 시편을 비교하는 용도였습니다. 시편 표면에 계측 장비를 안정적으로 고정할 수 있으면 두께와 상관없이 표면 잔류응력을 측정할 수 있습니다.</div>
+        </div>
+        <div class="wtp-faq-item">
+          <button class="wtp-faq-q"><span>측정 위치는 어떻게 구분했나요?</span><span class="wtp-fq-icon">+</span></button>
+          <div class="wtp-faq-a">용접 비드 양쪽 Toe에 각각 로제트를 부착하고 A, B, C, D로 위치를 표시해 데이터가 섞이지 않도록 관리했습니다. 위치 표시는 현장 측정에서 사후 분석의 정확도를 좌우하는 기본 절차입니다.</div>
+        </div>
+        <div class="wtp-faq-item">
+          <button class="wtp-faq-q"><span>현장 출장 측정이 가능한가요?</span><span class="wtp-fq-icon">+</span></button>
+          <div class="wtp-faq-a">가능합니다. 씨앤디테크는 SINT MTS3000 홀드릴링 장비를 현장에 가져가 시편 보관 장소나 제작 현장에서 직접 측정합니다. 시편 크기, 소재, 측정 위치를 알려주시면 일정과 방법을 안내해 드립니다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section style="padding:40px 0 80px;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in" style="padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius);">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">용접부 잔류응력 측정 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">시편 소재, 두께, 측정 위치를 알려주시면 측정 방법과 일정을 안내해 드립니다. 현장 출장 측정도 지원합니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+        <a href="mailto:wgjeon@cndtec.co.kr" class="btn btn-ghost">wgjeon@cndtec.co.kr</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="strain-gauge-bonding.html">스트레인게이지 부착</a></li><li><a href="daq-system.html">DAQ 시스템</a></li><li><a href="field-service.html">현장 계측 용역</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank" rel="noopener">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta"><span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span></div>
+  </div>
+</footer>
+
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try {
+  const urlLang = new URLSearchParams(location.search).get('lang');
+  if (urlLang === 'en' || urlLang === 'ko') { setLang(urlLang); }
+  else { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); }
+} catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+document.querySelectorAll('.wtp-faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.wtp-faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.wtp-faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+<script src="../js/main.js"></script>
+</body>
+</html>

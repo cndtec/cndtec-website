@@ -499,3 +499,49 @@ SEO 적용사항:
 - 03 IEPE TYPE 섹션: 3열 이미지 그리드에서 두 공식 다이어그램(피에조 일렉트릭 센서의 원리 그림01.png, 압전 가속도계의 원리.png) 제거, 남은 가속도센서.png(MMF KS943 3축 제품 사진) 1장을 중앙정렬 단일 이미지로 재구성.
 - 04 PIEZOELECTRIC TYPE 섹션: vs-principle-grid 우측에 있던 피에조센서.png(제품 사진) 아래에 두 공식 다이어그램을 추가 배치 — "감지 요소 구성"(PZT 세라믹·지진 질량) 텍스트 설명과 정확히 매칭.
 - 검증: div 161/161(제거 2 + 추가 2로 총량 동일), `</html>` 정상 종료(855행).
+
+## ⭐ 2026-09-07 완료: 신규 현장 계측 사례 페이지 — 휠체어 충돌시험 (resources/wheelchair-crash-test.html)
+- 사용자가 `클로이드 폴더/휠체어 충돌시험/` 폴더에 넣어둔 원본 사진 67장(삼성 갤럭시 S24+ 촬영, 2026-08-06~08-10)을 검토해 신규 기술자료 페이지 생성. 서사: ① 프레임 다중 포인트 스트레인게이지 부착(번호 태그 + 적/백 리드선 납땜) → ② 튜브 내 다핀 커넥터 블록으로 채널 정리 → ③ 수동형(틸트리클라이닝)·전동형(좌우 구동모터) 휠체어 2기종 계측 → ④ HBM QuantumX MX1615/1815 DAQ 2대(32채널) + catmanAP 소프트웨어, SG 쿼터브릿지 120Ω 3선식, 캐리어 19,200Hz/BE 1,000Hz 동적 샘플링 → ⑤ TS 한국교통안전공단 자동차안전연구원 충돌 슬레드 설비에서 ATD 더미 + 좌석벨트 구속 상태로 동적 충돌시험 진행(사진 속 시설 표지판으로 실제 확인).
+- 휠체어 제조사명은 사진에서 확인되지 않아 본문에 언급하지 않음(제품명 없이 "수동·전동 휠체어"로만 서술). 관련 국제규격(예: ISO 7176-19)은 사진으로 확증되지 않아 임의로 단정하지 않고 본문에서 제외 — 실제로 확인된 사실(장비명·시설명·수치)만 기술.
+- 사진 9장을 선별해 `assets/images/wheelchair-crash-test/wct-01~09-*.jpg`로 리사이즈(가로 1600px, JPEG q82, EXIF 방향 보정)해 저장, 원본은 용량이 커서(272M/67장) 저해상도 압축본만 웹에 사용.
+- car-undercover-strain.html(현장 계측 사례 페이지)의 구조·CSS 클래스 패턴(`cu-` 접두사)을 그대로 차용해 `wct-` 접두사로 재구성 — hero 스탯 4개, 7개 섹션(개요/부착/배선/계측대상/DAQ/충돌시험/의의) + FAQ 5문항(JSON-LD TechArticle+FAQPage 동기화).
+- 등록: resources/index.html "현장 계측 사례"(`#field`) 카테고리에 car-undercover-strain.html 카드 다음으로 신규 카드 추가, sitemap.xml에 `<url>` 추가(lastmod 2026-09-07), rss.xml 최상단에 신규 `<item>` 추가 + lastBuildDate 갱신.
+- 검증: div 밸런스(98/98), `</html>` 정상 종료, JSON-LD 2블록 모두 파싱 성공(TechArticle + FAQPage 5문항), 화면상 FAQ 버튼 5개와 일치, 이미지 참조 9개 전부 디스크 존재 확인, resources/index.html div 밸런스(82/82) 재확인.
+- ⚠️ git add 시 신규 파일 `resources/wheelchair-crash-test.html`, 신규 이미지 폴더 `assets/images/wheelchair-crash-test/`(9장, 총 3.2M), 수정된 `resources/index.html`·`sitemap.xml`·`rss.xml` 포함 필요.
+- 사용자가 함께 만든 폴더 `용접잔류응력측정`, `축력볼트제작`은 이번 작업 범위 밖 — 아직 미착수.
+
+## ⭐ 2026-09-07 완료: 휠체어 충돌시험 페이지 → 홈페이지용으로 축약 (블로그는 별도 버전 예정)
+- 사용자 요청: "블로그에도 올릴 거라 홈페이지용과 다르게 갈 것" → resources/wheelchair-crash-test.html을 CLAUDE.md 콘텐츠 전략("홈페이지: 짧고 전문적, CTA 명확" vs "블로그: 길고 친근하게")에 맞춰 축약. 긴 서사형(cu- 패턴, 7섹션+개별 이미지) → battery-case-strain.html의 짧은 케이스스터디 패턴(rs-/wct- 스탯카드+스텝그리드+이미지 트리오, 3섹션)으로 재구성.
+- 섹션 7개(개요/부착/배선/계측대상/DAQ/충돌시험/의의) → 3개(개요/계측절차 6-스텝 그리드/지원역량)로 축소, 이미지 9장 표시 → 6장(hero 1 + duo 2 + trio 3)으로 축소. FAQ 5문항·JSON-LD는 내용 그대로 유지(사실 기반 콘텐츠라 축약 대상 아님).
+- 미사용으로 남은 이미지(wct-04, wct-05, wct-06)는 폴더에 그대로 보존 — 사용자가 별도로 준비할 블로그(네이버) 버전에서 활용 가능.
+- 검증: div 밸런스(90/90), `</html>` 정상 종료, JSON-LD FAQPage 5문항 파싱 확인, 화면상 FAQ 버튼 5개 일치, 이미지 참조 6개 전부 디스크 존재 확인. 파일 길이 약 600줄 → 432줄로 축소.
+- resources/index.html·sitemap.xml·rss.xml 등록은 기존 그대로 유지(파일명·URL 변경 없음, 내용만 축약이라 재등록 불필요).
+
+## ⭐ 2026-09-07 완료: 휠체어 충돌시험 페이지 — 시설명 삭제·신규 사진 6장 교체·샘플링레이트 수정
+- 사용자가 신규 사진 6장을 채팅에 직접 첨부하고 4가지 수정 요청: ① hero 메인 이미지(wct-09-crash-sled-facility.jpg, 시설 표지판 노출) 완전 삭제, ② "TS 한국교통안전공단 자동차안전연구원" 시설명 전체 삭제(메타 description·키워드·hero 스탯카드·FAQ Q5 답변·JSON-LD FAQ 답변 총 6곳), ③ 개요 문단의 "휠체어는 차량 이동 중이나 충돌 상황에서도... 견뎌야 합니다" 문장 삭제, ④ 샘플링레이트 오기 수정 — "캐리어 19,200Hz/유효대역폭(BE) 1,000Hz" 2단 표기가 실제와 달라 "19.6kHz" 단일 값으로 정정(스탯카드·스텝05·FAQ Q4 질문+답변·JSON-LD FAQ Q4 총 5곳).
+- 신규 첨부 사진 6장을 업로드 폴더에서 직접 Read로 확인: 전동 휠체어 측면 전경(→wct-10), 수동+전동 휠체어 나란히 촬영(기존 wct-03과 원본파일명 동일 → 재처리 없이 기존 자산 재사용), 휠허브 배선 클로즈업(→wct-11, 이번 라운드에서는 미사용), 프레임 관절부 게이지 클로즈업(→wct-12), 좌석 지지대 4포인트 게이지 부착부(→wct-13), ATD 더미 하체·충격마커·좌석벨트 클로즈업(→wct-14). "VOLKSWAGEN GROUP" 마킹 배송박스가 배경에 우연히 노출된 사진 1장은 무관한 배경물이라 본문에서 언급하지 않음.
+- PIL 파이프라인(EXIF 방향보정→1600px 리사이즈→JPEG q82)으로 5장 신규 처리(wct-10~14, 중복 1장 제외), Read로 wct-13/14 정방향 렌더링 확인.
+- hero 이미지 블록(wct-09) 전체 삭제, hero 스탯카드 3번째 항목을 시설명→"19.6kHz 고속 동적 샘플링"으로 교체. 개요 섹션 이미지 duo를 wct-01→wct-10(전동 휠체어)로 교체(wct-03은 유지). 계측절차 섹션 이미지를 기존 trio(wct-02/07/08)에서 wct-13·wct-12·wct-07(유지)·wct-14 4장 grid로 교체 — `.wct-img-duo`가 4개 자식을 자동으로 2×2로 감싸는 특성을 활용해 별도 CSS 수정 없이 확장.
+- og:image·JSON-LD image를 삭제된 wct-09에서 wct-14-atd-legs-closeup.jpg로 교체.
+- 검증: `TS 한국교통안전공단`·`자동차안전연구원`·`1,000Hz`·`BE 1` 등 잔존 텍스트 grep 0건, 이미지 참조 6개(wct-03/07/10/12/13/14) 전부 디스크 존재 확인, JSON-LD 2블록 모두 파싱 성공(FAQPage 5문항 유지), 화면상 `.wct-faq-item` 5개와 일치, div 밸런스(90/90) 유지.
+- 미사용으로 남은 이미지(wct-01/02/04/05/06/08/09/11)는 폴더에 그대로 보존 — 사용자가 별도로 준비할 블로그(네이버) 버전에서 활용 가능.
+
+## ⭐ 2026-09-07 완료: 휠체어 충돌시험 페이지 — 타이틀·본문에 "동적 시험·고속 샘플링" 명시 보완
+- 사용자 요청: 타이틀에 단순 "휠체어 충돌시험"뿐 아니라 동적 시험에서 고속 샘플링으로 측정했다는 내용이 드러나야 함.
+- title/H1/og:title/JSON-LD TechArticle headline을 "스트레인게이지 측정 사례 - 휠체어 충돌시험"→"스트레인게이지 측정 사례 - 휠체어 동적 충돌시험 고속 샘플링 계측"으로 변경.
+- meta description/og:description/JSON-LD description/hero 인트로 문단/keywords에 "19.6kHz 고속 샘플링" 문구 추가(기존에는 샘플링레이트 수치가 스탯카드·FAQ에만 있고 상단 요약 텍스트에는 없었음). hero 배지 태그도 "휠체어 충돌시험"→"휠체어 동적 충돌시험"으로 통일.
+- resources/index.html 카드(h2·설명문)와 rss.xml item(title·description)도 동일하게 동기화해 사이트 전역에서 타이틀 표기가 일치하도록 함. sitemap.xml은 lastmod 이미 2026-09-07로 최신이라 별도 수정 불필요.
+- 검증: JSON-LD 2블록 파싱 성공(TechArticle headline 반영 확인, FAQPage 5문항 유지), div 밸런스 90/90(본문), 82/82(resources/index.html) 유지.
+
+## ⭐ 2026-09-07 완료: 휠체어 충돌시험 페이지 — 이미지 크기 불균일 수정 + 게이지 부착 사진 2장 추가
+- 사용자 지적: 사진 크기가 제각각 → 원본 사진들이 세로형(1600×2133, 초상 방향)과 가로형(1600×1200)이 섞여 있고 `.wct-img-wrap img { width:100%; height:auto; }`만 적용돼 그리드 내 각 이미지 높이가 서로 달랐던 것이 원인.
+- 수정: `.wct-img-duo .wct-img-wrap img { height:240px; object-fit:cover; }` 규칙 추가(이미 car-undercover-strain.html에서 사용 중인 사이트 기존 패턴과 동일한 값 재사용) — 그리드 내 모든 사진이 방향에 관계없이 동일한 높이·비율로 크롭되어 표시되도록 통일.
+- 프레임 스트레인게이지 부착 사진 2장 추가 요청 반영: `wct-01-gauge-bonding.jpg`(게이지 리드선 납땜부 클로즈업, 기존에 있던 원본 게이지 본딩 사진 재사용)와 `wct-11-hub-wiring-closeup.jpg`(휠허브 인근 프레임에 부착된 게이지·리드선 배선 클로즈업, Read로 실제 내용 재확인 — 이전 라운드에서 처리만 해두고 미사용 상태였음)를 "계측 절차" 섹션 이미지 그리드에 삽입. 그리드가 4장(2×2)→6장(2×3, `.wct-img-duo` 자동 줄바꿈)으로 확장되며 부착 관련 사진이 2장→4장으로 증가.
+- 검증: div 밸런스 94/94(이미지 2장 추가로 90→94, 이미지당 wrap+caption 2개 div × 2장), 이미지 참조 8개 전부 디스크 존재 확인, JSON-LD 2블록 파싱 성공(FAQPage 5문항 유지, 이번 변경은 FAQ 내용과 무관).
+
+- 2026-10-10: 신규 현장 계측 사례 페이지 resources/weld-toe-residual-stress.html (용접부 Toe 잔류응력, 후판 홀드릴링 ASTM E837, prefix wtp-, 이미지 assets/images/welding-toe/wtoe-01~16, 사용 01·02·03·04·06·07). 고객사명·시험결과·정확한 위치 비공개. resources/index.html(field 카드)·sitemap.xml·rss.xml 등록.
+- 2026-10-10: 휠체어 샘플링레이트 19.6kHz → 19.2kHz(19200Hz, catman 화면 기준)로 정정 (홈페이지 페이지·index·rss·블로그 2종).
+
+- 2026-10-10: 신규 현장 계측 사례 페이지 resources/bent-pipe-residual-stress.html (절곡면 잔류응력, 강관 절곡 시편 5종 9포인트, ASTM E837, prefix bpr-, 이미지 assets/images/bend-residual-stress/wbend-01~12, 페이지 사용 01·03·06·08·09·10). 고객사명·시험결과 비공개. index(field 카드)·sitemap·rss 등록.
+
+- 2026-10-10: 신규 현장 계측 사례 페이지 resources/plastic-container-residual-stress.html (화장품 용기·어닐링 전후 플라스틱 트레이 홀드릴링, prefix plp-, 이미지 assets/images/plastic-residual-stress/wpl-01~14, 페이지 사용 01·03·07·09·11·13). 기존 plastic-residual-stress.html(일반 가이드)과 상호 링크. 고객사명·브랜드·시험결과 비공개. index·sitemap·rss 등록.
