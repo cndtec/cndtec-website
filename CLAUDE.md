@@ -545,3 +545,4 @@ SEO 적용사항:
 - 2026-10-10: 신규 현장 계측 사례 페이지 resources/bent-pipe-residual-stress.html (절곡면 잔류응력, 강관 절곡 시편 5종 9포인트, ASTM E837, prefix bpr-, 이미지 assets/images/bend-residual-stress/wbend-01~12, 페이지 사용 01·03·06·08·09·10). 고객사명·시험결과 비공개. index(field 카드)·sitemap·rss 등록.
 
 - 2026-10-10: 신규 현장 계측 사례 페이지 resources/plastic-container-residual-stress.html (화장품 용기·어닐링 전후 플라스틱 트레이 홀드릴링, prefix plp-, 이미지 assets/images/plastic-residual-stress/wpl-01~14, 페이지 사용 01·03·07·09·11·13). 기존 plastic-residual-stress.html(일반 가이드)과 상호 링크. 고객사명·브랜드·시험결과 비공개. index·sitemap·rss 등록.
+- 2026-10-10: 소음측정 블로그(네이버·티스토리) 제작용 사진 호스팅 assets/images/noise-measurement/nm-01~12 추가 (홈페이지 페이지 변경 없음, microphone-sound-level-meter.html과 연계).
