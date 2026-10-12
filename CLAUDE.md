@@ -549,3 +549,4 @@ SEO 적용사항:
 - 2026-10-10: plastic-container-residual-stress.html 수정 — 화장품 용기/PC 트레이 별도 측정으로 정정, '측정으로 확인할 수 있는 데이터(사출 공정·어닐링 조건별)' 섹션 추가, 'ASTM E837 금속 기준' FAQ 삭제. index·rss 설명 갱신, 블로그 2종 동일 반영.
 - 2026-10-12: 화장품 용기 자료 재작성 — resources/cosmetic-container-residual-stress.html 신설(카테고리 stress=잔류응력측정, prefix ccp-, 이미지 assets/images/cosmetic-container/wcc-01~09). SAN 82TR 3품목 바닥면 게이트부, 사출(보압)·항온 테스트·자연 냉각 조건 상대 비교 + 편광 필터 데이터 비교. 업체명·구체 공정수치·ASTM-금속 FAQ 없음. 기존 plastic-container-residual-stress.html(현장계측 사례, 트레이 혼합) 삭제·index/sitemap/rss 교체. PC 트레이는 별도 자료로 추후 작성.
 - 2026-10-12: 절곡면 페이지 수정 — 시편 규격(길이·두께) 문구·'시편이 작아도' FAQ 삭제, '로제트'→'잔류응력측정용 스트레인게이지' 통일, 첫 이미지 줄 잘림 해결(nocrop), 측정 사진 캡션을 '잔류응력측정'으로 변경. index·rss·블로그 2종 동일 반영.
+- 2026-10-12: 용접부 Toe·절곡면 페이지 카테고리 field→stress(잔류응력측정)로 이동, 타이틀 재작성(용접부 잔류응력 측정 - Toe 부위 잔류응력 해석 케이스 / 잔류응력 측정 - 강관 절곡면 측정 케이스), 키워드·og·rss·카드 아이콘 갱신.
