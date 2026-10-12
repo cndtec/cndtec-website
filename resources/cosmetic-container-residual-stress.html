@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>플라스틱 잔류응력 측정 - 화장품 용기 잔류응력 분석 사례 (SAN, 사출·항온 조건별 비교) | 씨앤디테크</title>
+<meta name="description" content="SAN 82TR 화장품 용기 3품목의 바닥면 게이트부를 홀드릴링으로 측정하고, 사출 조건·항온 테스트 이력·자연 냉각 조건에 따른 잔류응력 차이를 편광 필터 관찰 데이터와 함께 비교한 분석 사례." />
+<meta name="keywords" content="플라스틱 잔류응력, 화장품 용기 잔류응력, SAN 잔류응력, 사출 보압 잔류응력, 게이트부 잔류응력, 편광 필터 응력 분포, 홀드릴링, 항온 테스트, 잔류응력 분석" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/cosmetic-container-residual-stress.html" />
+<meta property="og:title" content="플라스틱 잔류응력 측정 - 화장품 용기 잔류응력 분석 사례 (SAN, 사출·항온 조건별 비교) | 씨앤디테크" />
+<meta property="og:description" content="SAN 화장품 용기 3품목 게이트부 홀드릴링 측정, 사출 조건·항온 테스트·냉각 조건별 비교 및 편광 필터 데이터 비교 사례." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/cosmetic-container-residual-stress.html" />
+<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/cosmetic-container/wcc-01.jpg" />
+<meta property="og:site_name" content="씨앤디테크 기술자료" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="../css/style.css?v=6">
+<style>
+body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "플라스틱 잔류응력 측정 - 화장품 용기 잔류응력 분석 사례 (SAN, 사출·항온 조건별 비교)",
+  "description": "SAN 82TR 화장품 용기 3품목의 바닥면 게이트부를 홀드릴링으로 측정하고, 사출 조건·항온 테스트 이력·자연 냉각 조건에 따른 잔류응력 차이를 편광 필터 관찰 데이터와 함께 비교한 분석 사례.",
+  "keywords": "플라스틱 잔류응력, 화장품 용기 잔류응력, SAN 잔류응력, 사출 보압 잔류응력, 게이트부 잔류응력, 편광 필터 응력 분포, 홀드릴링, 항온 테스트, 잔류응력 분석",
+  "author": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr"},
+  "publisher": {"@type": "Organization", "name": "씨앤디테크", "url": "https://www.cndtec.co.kr", "logo": {"@type": "ImageObject", "url": "https://www.cndtec.co.kr/assets/images/cnd-logo.png"}},
+  "datePublished": "2026-10-12",
+  "dateModified": "2026-10-12",
+  "inLanguage": "ko",
+  "url": "https://www.cndtec.co.kr/resources/cosmetic-container-residual-stress.html",
+  "image": "https://www.cndtec.co.kr/assets/images/cosmetic-container/wcc-01.jpg"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "사출 조건(보압 등)이 다른 용기끼리 잔류응력 차이를 확인할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가능합니다. 같은 용기, 같은 측정 위치(예: 바닥면 게이트부)를 같은 방법으로 측정하면 사출 조건의 차이가 잔류응력의 크기와 방향에 어떻게 나타나는지 수치로 비교할 수 있습니다. 게이트부는 수지가 유입되고 보압이 가해지는 부위라 조건 차이가 잘 드러나는 위치입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "항온 테스트를 거친 샘플과 자연 냉각 샘플을 비교하는 의미는 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "동일한 사출 조건으로 만든 샘플이라도 저온·고온에 노출된 이력이 있으면 잔류응력 상태가 달라질 수 있습니다. 항온 테스트 샘플과 자연 냉각 샘플을 같은 위치에서 측정해 비교하면 환경 시험 이력이 잔류응력에 미치는 영향을 확인할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "편광 필터 관찰과 홀드릴링 측정은 어떻게 다른가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "편광 필터는 투명 성형품 전체의 응력 분포를 줄무늬(색 무늬) 형태로 한눈에 보여 주지만 정성적인 비교에 가깝습니다. 홀드릴링은 한 지점의 잔류응력 크기와 방향을 수치로 알려 줍니다. 편광으로 응력이 집중된 부위를 찾고 그 지점을 홀드릴링으로 측정하면 두 데이터를 함께 해석할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "작은 투명 화장품 용기도 홀드릴링 측정이 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "로제트를 부착할 면과 시편을 안정적으로 고정할 방법이 있으면 가능합니다. 이번 사례는 용기 바닥면 게이트부에 로제트를 부착해 측정했습니다. 용기 크기와 형상을 알려주시면 측정 가능 여부를 안내해 드립니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "플라스틱 소재도 측정할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가능합니다. 씨앤디테크의 SINT MTS3000은 고분자 전용 측정 모드를 지원하며, 이번 사례의 SAN을 비롯해 ABS, PC, PP 등 다양한 플라스틱 성형품을 측정합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "현장 출장 측정이 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "가능합니다. 시편이 있는 현장에서 홀드릴링 장비로 직접 측정합니다. 시편 소재, 형상, 측정 목적을 알려주시면 일정과 방법을 안내해 드립니다."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+<style>
+.ccp-stat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:32px 0; }
+@media (max-width:640px) { .ccp-stat-grid { grid-template-columns:1fr; } }
+.ccp-stat-card { padding:24px 20px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius); text-align:center; }
+.ccp-stat-card .stat-val { font-family:'Pretendard',sans-serif; font-size:22px; font-weight:700; color:var(--accent); line-height:1.1; margin-bottom:6px; }
+.ccp-stat-card .stat-label { font-size:13px; color:var(--text-mute); line-height:1.4; }
+
+.ccp-section { padding:44px 0; border-bottom:1px solid var(--line); }
+.ccp-section:last-child { border-bottom:none; }
+.ccp-section-title { font-family:'Manrope','Pretendard',sans-serif; font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+.ccp-section-title::before { content:''; display:inline-block; width:4px; height:22px; background:var(--accent); border-radius:2px; flex-shrink:0; }
+
+.ccp-img-wrap { margin:24px 0; border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:var(--bg-card); }
+.ccp-img-wrap img { width:100%; height:auto; display:block; }
+.ccp-img-caption { padding:10px 16px; font-size:12px; color:var(--text-mute); background:var(--bg-card); border-top:1px solid var(--line); text-align:center; }
+
+.ccp-img-duo { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:24px 0; }
+.ccp-img-duo .ccp-img-wrap img { height:240px; object-fit:cover; }
+.ccp-img-trio { grid-template-columns:1fr 1fr 1fr; }
+@media (max-width:780px) { .ccp-img-trio { grid-template-columns:1fr 1fr; } }
+@media (max-width:640px) { .ccp-img-duo { grid-template-columns:1fr; } }
+
+.ccp-step-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:24px 0; }
+@media (max-width:720px) { .ccp-step-grid { grid-template-columns:1fr 1fr; } }
+@media (max-width:480px) { .ccp-step-grid { grid-template-columns:1fr; } }
+.ccp-step { padding:20px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius); }
+.ccp-step .step-num { font-family:'Pretendard',sans-serif; font-size:11px; color:var(--accent); font-weight:700; margin-bottom:8px; letter-spacing:0.1em; }
+.ccp-step .step-title { font-weight:700; font-size:14px; color:var(--charcoal); margin-bottom:6px; }
+.ccp-step .step-desc { font-size:13px; color:var(--text-mute); line-height:1.5; }
+
+.ccp-app-tags { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0; }
+.ccp-app-tag { padding:6px 14px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); }
+
+.ccp-faq-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:24px;}
+.ccp-faq-item{border-bottom:1px solid var(--line);}
+.ccp-faq-item:last-child{border-bottom:none;}
+.ccp-faq-q{width:100%;text-align:left;padding:18px 22px;background:var(--surface);border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14.5px;font-weight:600;color:var(--charcoal);line-height:1.5;}
+.ccp-faq-q:hover{background:var(--orange-tint);}
+.ccp-fq-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;transition:transform .25s;}
+.ccp-faq-item.open .ccp-fq-icon{transform:rotate(45deg);}
+.ccp-faq-a{display:none;padding:16px 22px 20px;background:#fff;font-size:14px;color:var(--text-dim);line-height:1.8;border-top:1px solid var(--line);}
+.ccp-faq-item.open .ccp-faq-a{display:block;}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+<nav class="mobile-subnav" aria-label="모바일 카테고리 메뉴">
+  <a href="../about.html">회사소개</a>
+  <a href="../products.html">사업분야·제품</a>
+  <a href="../projects.html">주요실적</a>
+  <a href="index.html" class="pill-active">기술자료</a>
+  <a href="../index.html#blog">블로그</a>
+  <a href="../contact.html">문의</a>
+</nav>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../index.html#blog">블로그</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<main>
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">잔류응력 측정 · 플라스틱 · 화장품 용기</div>
+      <h1 style="font-family:'Manrope','Pretendard',sans-serif; font-size:clamp(28px,5vw,52px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">플라스틱 잔류응력 측정<br><span class="accent">화장품 용기 잔류응력 분석 사례</span></h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:720px; line-height:1.7; margin-bottom:0;">SAN 82TR 화장품 용기 <strong>3품목의 바닥면 게이트부</strong>를 홀드릴링으로 측정하고, 사출 조건·항온 테스트 이력·냉각 조건에 따른 잔류응력 차이를 <strong>편광 필터 관찰 데이터</strong>와 함께 비교한 분석 사례입니다.</p>
+    </div>
+
+    <div class="ccp-stat-grid fade-in">
+      <div class="ccp-stat-card">
+        <div class="stat-val">3품목 · 1포인트</div>
+        <div class="stat-label">SAN 82TR 화장품 용기<br>바닥면 게이트부 측정</div>
+      </div>
+      <div class="ccp-stat-card">
+        <div class="stat-val">조건별 비교</div>
+        <div class="stat-label">사출 조건 · 항온 테스트<br>· 자연 냉각 조건</div>
+      </div>
+      <div class="ccp-stat-card">
+        <div class="stat-val">편광 필터 비교</div>
+        <div class="stat-label">편광 필터 응력 분포와<br>홀드릴링 수치 비교</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0 0 100px;">
+  <div class="container" style="max-width:860px;">
+
+    <div class="ccp-section fade-in">
+      <h2 class="ccp-section-title">분석 개요</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:0;">
+        사출 성형품은 냉각 과정의 속도 차이 때문에 내부에 잔류응력이 남기 쉽고, 특히 수지가 유입되고 보압이 가해지는 게이트부는 사출 조건의 영향이 크게 나타나는 부위입니다.
+        이번 사례는 SAN 82TR 소재의 투명 화장품 용기를 대상으로, 사출 조건과 후처리 이력이 다른 3품목의 바닥면 게이트부에 각각 로제트를 부착해 홀드릴링으로 측정했습니다.
+      </p>
+      <table style="width:100%; border-collapse:collapse; font-size:14px; margin:16px 0 8px;"><tr><th style="border:1px solid var(--line); padding:10px 12px; background:var(--bg-card); text-align:left; vertical-align:top;">품목</th><th style="border:1px solid var(--line); padding:10px 12px; background:var(--bg-card); text-align:left; vertical-align:top;">사출 조건</th><th style="border:1px solid var(--line); padding:10px 12px; background:var(--bg-card); text-align:left; vertical-align:top;">후처리 이력</th><th style="border:1px solid var(--line); padding:10px 12px; background:var(--bg-card); text-align:left; vertical-align:top;">측정 위치</th></tr><tr><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);"><strong>A</strong></td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">사출 조건 ① (보압 조건 상이)</td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">항온 테스트 샘플</td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">바닥면 게이트부 1포인트</td></tr><tr><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);"><strong>B</strong></td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">사출 조건 ②</td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">항온 테스트 샘플</td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">바닥면 게이트부 1포인트</td></tr><tr><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);"><strong>C</strong></td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">사출 조건 ② (B와 동일)</td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">자연 냉각 샘플</td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">바닥면 게이트부 1포인트</td></tr></table>
+      <p style="font-size:13px; color:var(--text-mute); margin-top:8px; margin-bottom:0;">※ 사출업체와 구체적인 공정 수치는 게재하지 않고, 조건의 상대적 차이만 표기했습니다.</p>
+
+      <div class="ccp-img-duo">
+        <div class="ccp-img-wrap" style="margin:0;">
+          <img src="../assets/images/cosmetic-container/wcc-01.jpg" alt="화장품 용기 바닥면 게이트부에 부착한 스트레인게이지 로제트" loading="lazy">
+          <div class="ccp-img-caption">용기 바닥면 게이트부 로제트 부착</div>
+        </div>
+        <div class="ccp-img-wrap" style="margin:0;">
+          <img src="../assets/images/cosmetic-container/wcc-04.jpg" alt="로제트와 리드선을 연결한 화장품 용기 시편" loading="lazy">
+          <div class="ccp-img-caption">품목별 로제트 부착 시편</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ccp-section fade-in">
+      <h2 class="ccp-section-title">조건별 비교 구성</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:0;">
+        세 품목을 아래와 같이 조합해 비교하면 사출 조건과 후처리 이력 각각의 영향을 분리해서 볼 수 있습니다.
+      </p>
+      <table style="width:100%; border-collapse:collapse; font-size:14px; margin:16px 0 8px;"><tr><th style="border:1px solid var(--line); padding:10px 12px; background:var(--bg-card); text-align:left; vertical-align:top;">비교 조합</th><th style="border:1px solid var(--line); padding:10px 12px; background:var(--bg-card); text-align:left; vertical-align:top;">달라진 조건</th><th style="border:1px solid var(--line); padding:10px 12px; background:var(--bg-card); text-align:left; vertical-align:top;">확인하려는 내용</th></tr><tr><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);"><strong>A ↔ B</strong></td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">사출 조건(보압 조건)</td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">보압 조건 차이가 게이트부 잔류응력에 미치는 영향</td></tr><tr><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);"><strong>B ↔ C</strong></td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">항온 테스트 이력 / 냉각 조건</td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">환경 시험 이력 유무에 따른 잔류응력 변화</td></tr><tr><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);"><strong>A ↔ C</strong></td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">사출 조건 + 후처리 이력</td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">두 가지 조건이 함께 달라졌을 때의 전체 차이</td></tr></table>
+    </div>
+
+    <div class="ccp-section fade-in">
+      <h2 class="ccp-section-title">계측 절차</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:0;">
+        품목마다 같은 위치, 같은 방법으로 측정해야 조건 간 비교가 의미를 가집니다. 로제트를 부착한 뒤 용기를 고정하고 홀드릴링 장비로 단계별 변형률을 기록했습니다.
+      </p>
+
+      <div class="ccp-step-grid">
+        <div class="ccp-step">
+          <div class="step-num">01</div>
+          <div class="step-title">시편·측정 위치 확인</div>
+          <div class="step-desc">3품목 용기의 바닥면 게이트부를 측정 위치로 선정</div>
+        </div>
+        <div class="ccp-step">
+          <div class="step-num">02</div>
+          <div class="step-title">표면 준비</div>
+          <div class="step-desc">측정 부위 표면 정리, 게이트부 형상 확인</div>
+        </div>
+        <div class="ccp-step">
+          <div class="step-num">03</div>
+          <div class="step-title">로제트 부착</div>
+          <div class="step-desc">품목별로 로제트 부착, 리드선 연결, A·B·C 구분 표시</div>
+        </div>
+        <div class="ccp-step">
+          <div class="step-num">04</div>
+          <div class="step-title">시편 고정</div>
+          <div class="step-desc">용기 형상에 맞게 안정적으로 고정</div>
+        </div>
+        <div class="ccp-step">
+          <div class="step-num">05</div>
+          <div class="step-title">홀드릴링 가공</div>
+          <div class="step-desc">SINT MTS3000 고분자 모드로 단계별 가공, 변형률 기록</div>
+        </div>
+        <div class="ccp-step">
+          <div class="step-num">06</div>
+          <div class="step-title">해석·비교</div>
+          <div class="step-desc">품목별 잔류응력 산출 후 조건별, 편광 데이터와 비교</div>
+        </div>
+      </div>
+
+      <div class="ccp-img-duo">
+        <div class="ccp-img-wrap" style="margin:0;">
+          <img src="../assets/images/cosmetic-container/wcc-05.jpg" alt="화장품 용기 위에 설치한 홀드릴링 장비" loading="lazy">
+          <div class="ccp-img-caption">홀드릴링 장비 설치</div>
+        </div>
+        <div class="ccp-img-wrap" style="margin:0;">
+          <img src="../assets/images/cosmetic-container/wcc-06.jpg" alt="용기 로제트 위에 맞춘 드릴 헤드" loading="lazy">
+          <div class="ccp-img-caption">로제트 중심 정렬</div>
+        </div>
+        <div class="ccp-img-wrap" style="margin:0;">
+          <img src="../assets/images/cosmetic-container/wcc-07.jpg" alt="홀드릴링 장비와 용기 시편" loading="lazy">
+          <div class="ccp-img-caption">용기 시편 측정 구성</div>
+        </div>
+        <div class="ccp-img-wrap" style="margin:0;">
+          <img src="../assets/images/cosmetic-container/wcc-08.jpg" alt="노트북과 연결한 홀드릴링 측정 구성" loading="lazy">
+          <div class="ccp-img-caption">데이터 수집 구성</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ccp-section fade-in">
+      <h2 class="ccp-section-title">편광 필터 데이터와의 비교</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:0;">
+        투명 성형품은 편광 필터로 보면 응력이 걸린 부위가 색 줄무늬로 나타납니다. 이번 사례에서도 3품목의 편광 필터 관찰 이미지가 있었고, 이 분포를 홀드릴링 수치와 함께 비교했습니다.
+        편광 필터는 전체 분포를, 홀드릴링은 특정 지점의 값을 알려 주기 때문에 서로 보완되는 데이터입니다.
+      </p>
+
+      <figure style="margin:24px auto; max-width:380px;">
+        <img src="../assets/images/cosmetic-container/wcc-09.jpg" alt="3품목 A, B, C의 편광 필터 관찰 이미지" loading="lazy" style="width:100%; height:auto; border-radius:12px; border:1px solid var(--line);">
+        <figcaption style="font-size:13px; color:var(--text-mute); text-align:center; margin-top:8px;">품목별 편광 필터 관찰 이미지 (A·B·C)</figcaption>
+      </figure>
+
+      <table style="width:100%; border-collapse:collapse; font-size:14px; margin:16px 0 8px;"><tr><th style="border:1px solid var(--line); padding:10px 12px; background:var(--bg-card); text-align:left; vertical-align:top;">구분</th><th style="border:1px solid var(--line); padding:10px 12px; background:var(--bg-card); text-align:left; vertical-align:top;">편광 필터 관찰</th><th style="border:1px solid var(--line); padding:10px 12px; background:var(--bg-card); text-align:left; vertical-align:top;">홀드릴링 측정</th></tr><tr><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);"><strong>정보</strong></td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">응력 분포를 줄무늬(색 무늬)로 표시</td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">한 지점의 잔류응력 크기·방향 수치</td></tr><tr><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);"><strong>범위</strong></td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">용기 전체를 한눈에 확인</td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">지정한 위치(이번 사례는 게이트부)</td></tr><tr><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);"><strong>성격</strong></td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">정성적 비교, 응력 집중 부위 탐색</td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">정량 값, 조건 간 수치 비교</td></tr><tr><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);"><strong>활용</strong></td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">측정 위치 선정, 분포 경향 파악</td><td style="border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; color:var(--text-dim);">편광 분포 해석의 정량 근거</td></tr></table>
+      <p style="font-size:14px; color:var(--text-dim); line-height:1.8; margin-top:16px; margin-bottom:0;">
+        이렇게 두 데이터를 함께 보면, 편광 줄무늬로 확인한 분포 경향이 실제 잔류응력 값과 어떻게 대응하는지 확인할 수 있고, 조건이 달라진 샘플끼리의 차이를 정성과 정량 양쪽에서 뒷받침할 수 있습니다.
+        한 번 상관관계를 확인해 두면 이후에는 편광 관찰로 1차 선별하고 필요한 샘플만 홀드릴링으로 정량 측정하는 방식으로 활용할 수도 있습니다.
+      </p>
+    </div>
+
+    <div class="ccp-section fade-in">
+      <h2 class="ccp-section-title">측정으로 확인할 수 있는 데이터</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:8px;">
+        홀드릴링 측정 결과로 아래 값을 얻을 수 있으며, 사출 조건·냉각 조건·항온 테스트 이력이 다른 샘플끼리 같은 위치에서 비교하는 데 활용합니다.
+      </p>
+      <div class="ccp-app-tags">
+        <span class="ccp-app-tag">위치별 주응력 크기(최대·최소)</span>
+        <span class="ccp-app-tag">응력 방향</span>
+        <span class="ccp-app-tag">인장·압축 구분</span>
+        <span class="ccp-app-tag">가공 깊이별 응력 변화</span>
+        <span class="ccp-app-tag">조건별 샘플 간 수치 비교</span>
+      </div>
+      <p style="font-size:13px; color:var(--text-mute); margin-top:16px; margin-bottom:0;">※ 측정값은 시편 형상과 측정 위치에 따라 달라지므로 비교할 때는 동일 위치, 동일 방법을 유지합니다.</p>
+    </div>
+
+    <div class="ccp-section fade-in">
+      <h2 class="ccp-section-title">지원 역량 및 서비스 범위</h2>
+      <p style="font-size:15px; color:var(--text-dim); line-height:1.8; margin-bottom:20px;">
+        씨앤디테크는 SINT MTS3000 고분자 전용 모드로 플라스틱 성형품의 잔류응력을 측정하며,
+        시편 형상에 맞는 고정 방법과 측정 위치 선정, 조건별 비교 해석까지 지원합니다.
+      </p>
+
+      <div class="ccp-app-tags">
+        <span class="ccp-app-tag">플라스틱 용기 잔류응력 측정</span>
+        <span class="ccp-app-tag">사출 보압 조건별 비교</span>
+        <span class="ccp-app-tag">항온 테스트 전후 비교</span>
+        <span class="ccp-app-tag">편광 필터 데이터 병행 분석</span>
+        <span class="ccp-app-tag">현장 출장 측정</span>
+      </div>
+
+      <p style="font-size:14px; color:var(--text-mute); margin-top:24px; margin-bottom:16px;">관련 기술 자료 더 보기:</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="plastic-residual-stress.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 플라스틱·사출물·복합재료 잔류응력 측정</a>
+        <a href="residual-stress.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 홀드릴링 잔류응력 측정</a>
+        <a href="what-is-residual-stress.html" style="padding:8px 16px; background:var(--bg-card); border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--text-dim); text-decoration:none;">→ 잔류응력이란?</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section style="padding:48px 0 0;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in">
+      <h2 style="font-family:'Manrope','Pretendard',sans-serif; font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:8px; padding-left:14px; border-left:4px solid var(--accent);">자주 묻는 질문 (FAQ)</h2>
+      <p style="font-size:13px; color:var(--text-mute); margin-bottom:0; padding-left:18px;">플라스틱 용기 잔류응력 분석 관련 질문</p>
+
+      <div class="ccp-faq-list">
+        <div class="ccp-faq-item">
+          <button class="ccp-faq-q"><span>사출 조건(보압 등)이 다른 용기끼리 잔류응력 차이를 확인할 수 있나요?</span><span class="ccp-fq-icon">+</span></button>
+          <div class="ccp-faq-a">가능합니다. 같은 용기, 같은 측정 위치(예: 바닥면 게이트부)를 같은 방법으로 측정하면 사출 조건의 차이가 잔류응력의 크기와 방향에 어떻게 나타나는지 수치로 비교할 수 있습니다. 게이트부는 수지가 유입되고 보압이 가해지는 부위라 조건 차이가 잘 드러나는 위치입니다.</div>
+        </div>
+        <div class="ccp-faq-item">
+          <button class="ccp-faq-q"><span>항온 테스트를 거친 샘플과 자연 냉각 샘플을 비교하는 의미는 무엇인가요?</span><span class="ccp-fq-icon">+</span></button>
+          <div class="ccp-faq-a">동일한 사출 조건으로 만든 샘플이라도 저온·고온에 노출된 이력이 있으면 잔류응력 상태가 달라질 수 있습니다. 항온 테스트 샘플과 자연 냉각 샘플을 같은 위치에서 측정해 비교하면 환경 시험 이력이 잔류응력에 미치는 영향을 확인할 수 있습니다.</div>
+        </div>
+        <div class="ccp-faq-item">
+          <button class="ccp-faq-q"><span>편광 필터 관찰과 홀드릴링 측정은 어떻게 다른가요?</span><span class="ccp-fq-icon">+</span></button>
+          <div class="ccp-faq-a">편광 필터는 투명 성형품 전체의 응력 분포를 줄무늬(색 무늬) 형태로 한눈에 보여 주지만 정성적인 비교에 가깝습니다. 홀드릴링은 한 지점의 잔류응력 크기와 방향을 수치로 알려 줍니다. 편광으로 응력이 집중된 부위를 찾고 그 지점을 홀드릴링으로 측정하면 두 데이터를 함께 해석할 수 있습니다.</div>
+        </div>
+        <div class="ccp-faq-item">
+          <button class="ccp-faq-q"><span>작은 투명 화장품 용기도 홀드릴링 측정이 가능한가요?</span><span class="ccp-fq-icon">+</span></button>
+          <div class="ccp-faq-a">로제트를 부착할 면과 시편을 안정적으로 고정할 방법이 있으면 가능합니다. 이번 사례는 용기 바닥면 게이트부에 로제트를 부착해 측정했습니다. 용기 크기와 형상을 알려주시면 측정 가능 여부를 안내해 드립니다.</div>
+        </div>
+        <div class="ccp-faq-item">
+          <button class="ccp-faq-q"><span>플라스틱 소재도 측정할 수 있나요?</span><span class="ccp-fq-icon">+</span></button>
+          <div class="ccp-faq-a">가능합니다. 씨앤디테크의 SINT MTS3000은 고분자 전용 측정 모드를 지원하며, 이번 사례의 SAN을 비롯해 ABS, PC, PP 등 다양한 플라스틱 성형품을 측정합니다.</div>
+        </div>
+        <div class="ccp-faq-item">
+          <button class="ccp-faq-q"><span>현장 출장 측정이 가능한가요?</span><span class="ccp-fq-icon">+</span></button>
+          <div class="ccp-faq-a">가능합니다. 시편이 있는 현장에서 홀드릴링 장비로 직접 측정합니다. 시편 소재, 형상, 측정 목적을 알려주시면 일정과 방법을 안내해 드립니다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:40px 0 80px;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in" style="padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius);">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">플라스틱 잔류응력 측정 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px;">시편 소재, 형상, 측정 목적(사출 조건 비교, 후처리 효과 확인 등)을 알려주시면 측정 방법과 일정을 안내해 드립니다. 현장 출장 측정도 지원합니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+        <a href="mailto:wgjeon@cndtec.co.kr" class="btn btn-ghost">wgjeon@cndtec.co.kr</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="strain-gauge-bonding.html">스트레인게이지 부착</a></li><li><a href="daq-system.html">DAQ 시스템</a></li><li><a href="field-service.html">현장 계측 용역</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank" rel="noopener">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta"><span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span></div>
+  </div>
+</footer>
+
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try {
+  const urlLang = new URLSearchParams(location.search).get('lang');
+  if (urlLang === 'en' || urlLang === 'ko') { setLang(urlLang); }
+  else { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); }
+} catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+document.querySelectorAll('.ccp-faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.ccp-faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.ccp-faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+<script src="../js/main.js"></script>
+</body>
+</html>
