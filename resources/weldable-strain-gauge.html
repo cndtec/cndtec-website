@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>용접형 스트레인게이지 (Weldable Strain Gauge) - 종류·부착법·측정법 | 씨앤디테크</title>
+<meta name="description" content="용접형 스트레인게이지의 종류(TML AWM·AWH·AWHU·AWMD·AW-6, HBK LS31 등), 스폿용접 부착 절차와 브리지 구성별 측정 방법, 유의사항을 정리했습니다." />
+<meta name="keywords" content="용접형 스트레인게이지, 웰더블 스트레인게이지, weldable strain gauge, 스폿용접 스트레인게이지, TML AWH, AWHU, AWM, AWMD, AW-6, W-50RC, HBK LS31, 고온 스트레인게이지" />
+<link rel="canonical" href="https://www.cndtec.co.kr/resources/weldable-strain-gauge.html" />
+<meta property="og:title" content="용접형 스트레인게이지 (Weldable Strain Gauge) - 종류·부착법·측정법 | 씨앤디테크" />
+<meta property="og:description" content="TML AW 시리즈·HBK LS31 등 용접형 스트레인게이지의 종류, 스폿용접 부착법, 측정법." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cndtec.co.kr/resources/weldable-strain-gauge.html" />
+<meta property="og:image" content="https://www.cndtec.co.kr/assets/images/cnd-logo-400.png" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:alt" content="CND TECH 씨앤디테크 로고" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="../css/style.css?v=6">
+<style>
+body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+}
+</style>
+<style>
+.htg-section { padding:44px 0; border-bottom:1px solid var(--line); }
+.htg-section:last-child { border-bottom:none; }
+.htg-title { font-family:'Manrope','Pretendard',sans-serif; font-size:22px; font-weight:700; color:var(--charcoal); margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+.htg-title::before { content:''; display:inline-block; width:4px; height:22px; background:var(--accent); border-radius:2px; flex-shrink:0; }
+.htg-section h3 { font-size:17px; font-weight:700; color:var(--charcoal); margin:26px 0 8px; }
+.htg-section p, .htg-section li { font-size:15px; color:var(--text-dim); line-height:1.8; }
+.htg-section ul, .htg-section ol { padding-left:20px; margin:8px 0 0; }
+.htg-section li { margin-bottom:4px; }
+.htg-tbl-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; margin:16px 0 8px; }
+.htg-tbl { width:100%; min-width:560px; border-collapse:collapse; font-size:13.5px; }
+.htg-tbl th, .htg-tbl td { border:1px solid var(--line); padding:9px 11px; text-align:left; vertical-align:top; line-height:1.6; }
+.htg-tbl th { background:var(--bg-card); color:var(--charcoal); white-space:nowrap; }
+.htg-tbl td { color:var(--text-dim); }
+.htg-note { font-size:13px !important; color:var(--text-mute) !important; margin-top:8px; }
+.htg-stat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:32px 0 0; }
+@media (max-width:640px) { .htg-stat-grid { grid-template-columns:1fr; } }
+.htg-stat { padding:22px 18px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius); text-align:center; }
+.htg-stat .v { font-size:22px; font-weight:700; color:var(--accent); line-height:1.15; margin-bottom:6px; }
+.htg-stat .l { font-size:13px; color:var(--text-mute); line-height:1.45; }
+.htg-box { padding:22px 24px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius); margin:20px 0; }
+.htg-box p, .htg-box li { font-size:14.5px; }
+.htg-steps { display:flex; flex-direction:column; gap:14px; margin:18px 0 0; }
+.htg-step { display:flex; gap:14px; padding:18px 20px; background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius); }
+.htg-step .n { flex-shrink:0; width:32px; height:32px; border-radius:50%; background:var(--orange-tint); border:1px solid var(--orange-line); color:var(--accent-deep); font-weight:700; font-size:13px; display:inline-flex; align-items:center; justify-content:center; }
+.htg-step .t { font-weight:700; font-size:15px; color:var(--charcoal); margin-bottom:4px; }
+.htg-step .d { font-size:14px; color:var(--text-dim); line-height:1.75; }
+.htg-img { margin:22px 0; border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:var(--bg-card); }
+.htg-img img { width:100%; height:auto; max-height:520px; object-fit:contain; display:block; background:#f4f4f4; }
+.htg-img .c { padding:10px 16px; font-size:12px; color:var(--text-mute); border-top:1px solid var(--line); text-align:center; }
+.htg-links { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+.htg-links a { padding:8px 14px; border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--accent-deep); text-decoration:none; background:var(--white); }
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "TechArticle",
+ "headline": "용접형 스트레인게이지 (Weldable Strain Gauge) - 종류·부착법·측정법",
+ "description": "용접형 스트레인게이지의 종류(TML AWM·AWH·AWHU·AWMD·AW-6, HBK LS31 등), 스폿용접 부착 절차와 브리지 구성별 측정 방법, 유의사항을 정리했습니다.",
+ "datePublished": "2026-11-08",
+ "dateModified": "2026-11-08",
+ "image": "https://www.cndtec.co.kr/assets/images/cnd-logo-400.png",
+ "author": {
+  "@type": "Organization",
+  "name": "씨앤디테크",
+  "url": "https://www.cndtec.co.kr"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "씨앤디테크",
+  "url": "https://www.cndtec.co.kr",
+  "logo": {
+   "@type": "ImageObject",
+   "url": "https://www.cndtec.co.kr/assets/images/cnd-logo-400.png"
+  }
+ },
+ "mainEntityOfPage": "https://www.cndtec.co.kr/resources/weldable-strain-gauge.html",
+ "inLanguage": "ko",
+ "keywords": "용접형 스트레인게이지, 웰더블 스트레인게이지, weldable strain gauge, 스폿용접 스트레인게이지, TML AWH, AWHU, AWM, AWMD, AW-6, W-50RC, HBK LS31, 고온 스트레인게이지"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "HowTo",
+ "name": "용접형 스트레인게이지 스폿용접 부착법",
+ "description": "용접형 스트레인게이지를 전용 스폿용접기로 측정 대상에 설치하는 절차",
+ "step": [
+  {
+   "@type": "HowToStep",
+   "position": 1,
+   "name": "시험 용접(필링 테스트)"
+  },
+  {
+   "@type": "HowToStep",
+   "position": 2,
+   "name": "표면 처리"
+  },
+  {
+   "@type": "HowToStep",
+   "position": 3,
+   "name": "위치 마킹"
+  },
+  {
+   "@type": "HowToStep",
+   "position": 4,
+   "name": "슬리브·케이블 선고정"
+  },
+  {
+   "@type": "HowToStep",
+   "position": 5,
+   "name": "감지부 가고정"
+  },
+  {
+   "@type": "HowToStep",
+   "position": 6,
+   "name": "본용접"
+  },
+  {
+   "@type": "HowToStep",
+   "position": 7,
+   "name": "케이블 고정"
+  },
+  {
+   "@type": "HowToStep",
+   "position": 8,
+   "name": "보호 및 점검"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "용접형 스트레인게이지는 측정 대상에 손상을 주지 않나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "전용 콘덴서 방전식 스폿용접기는 펄스 폭이 수 ms로 매우 짧아 열 영향 범위가 용접점 주변 극히 일부로 제한됩니다. 다만 얇은 판, 피로 시험 시편, 열처리 민감 소재는 용접점이 응력 집중원이 될 수 있으므로 적용 여부를 사전에 검토해야 합니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "일반 스폿용접기로 설치해도 되나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "권장하지 않습니다. 일반 저항용접기는 에너지가 커서 금속 베이스가 녹거나 감지부가 손상됩니다. TML W-50RC처럼 용접 에너지를 1~50W·s 범위에서 정밀하게 조정할 수 있는 전용 용접기를 사용하고, 시험 용접으로 조건을 먼저 확인합니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "알루미늄이나 비금속에도 사용할 수 있나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "용접형은 스폿용접이 가능한 금속(탄소강, 스테인리스, 인코넬 등)에만 적용됩니다. 알루미늄은 스폿용접 조건 확보가 어려워 일반적으로 접착형 게이지를 사용하며, 콘크리트·복합재 등 비금속도 접착형을 사용합니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "800℃에서 정적 측정이 가능한가요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "TML AWHU는 800℃까지 정적·동적 측정이 가능합니다. AWMD도 800℃까지 사용할 수 있지만 하이패스 필터를 거치는 동적 전용 제품입니다. 고온 정적 측정은 열출력·드리프트 보정이 결과를 좌우하므로 온도 동시 측정과 사전 열 사이클이 필요합니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "용접형과 고온 접착형 중 무엇을 선택해야 하나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "300℃ 이하이고 오븐·히터로 접착제 경화가 가능하면 접착형(TML ZF, HBK C 시리즈)이 감도와 응답이 좋습니다. 300℃를 넘거나, 대형 구조물이라 열경화가 불가능하거나, 수중·가스 환경의 장기 측정이라면 용접형이 유리합니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "MI 케이블은 잘라서 길이를 조정해도 되나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "안 됩니다. AWH·AWHU는 MI 케이블 길이까지 포함해 열출력을 조정한 주문 제작품입니다. 필요한 길이는 주문 시 지정(MI 케이블 1m 단위, 비닐 케이블 0.5m 단위)하고, 연장이 필요하면 상온 구간에서 일반 케이블로 연장합니다."
+   }
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B25Y10FQK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B25Y10FQK1');
+</script>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orange-glow"></div>
+<header>
+  <div class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../assets/images/cnd-logo.png" alt="CND TECH" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span style="display:none; align-items:center; gap:6px; font-family:'Pretendard',sans-serif; font-weight:700; font-size:18px; color:var(--charcoal)"><span style="color:var(--accent)">CND</span> TECH</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../about.html" data-ko="회사소개" data-en="About">회사소개</a>
+      <a href="../products.html" data-ko="사업분야·제품" data-en="Products">사업분야·제품</a>
+      <a href="../projects.html" data-ko="주요실적" data-en="Projects">주요실적</a>
+      <a href="index.html" class="page-active" data-ko="기술자료" data-en="Resources">기술자료</a>
+      <a href="../index.html#blog" data-ko="블로그" data-en="Blog">블로그</a>
+      <a href="../contact.html" data-ko="문의" data-en="Contact">문의</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <a href="../contact.html" class="btn btn-primary" data-ko="문의하기" data-en="Contact Us">문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="menu-toggle" id="menuBtn" aria-label="메뉴"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+<nav class="mobile-subnav" aria-label="모바일 카테고리 메뉴">
+  <a href="../about.html">회사소개</a>
+  <a href="../products.html">사업분야·제품</a>
+  <a href="../projects.html">주요실적</a>
+  <a href="index.html" class="pill-active">기술자료</a>
+  <a href="../index.html#blog">블로그</a>
+  <a href="../contact.html">문의</a>
+</nav>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" id="navClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <a href="../about.html">회사소개</a><a href="../products.html">사업분야·제품</a><a href="../projects.html">주요실적</a><a href="index.html">기술자료</a><a href="../index.html#blog">블로그</a><a href="../contact.html">문의</a>
+    <div class="nav-divider"></div>
+    <a href="../contact.html" class="btn btn-primary" style="justify-content:center; margin-top:8px">문의하기</a>
+  </div>
+</div>
+
+<main>
+<section style="padding-top:160px; padding-bottom:20px;">
+  <div class="container">
+    <a href="index.html" style="font-size:13px; color:var(--text-mute); text-decoration:none;">← 기술자료 목록</a>
+    <div style="margin-top:20px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">WELDABLE · SPOT WELDING · UP TO 800℃</div>
+      <h1 style="font-family:'Manrope','Pretendard',sans-serif; font-size:clamp(28px,5vw,52px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">용접형 스트레인게이지<br><span class="accent" style="white-space:nowrap">(Weldable Strain Gauge)</span></h1>
+      <p style="font-size:17px; color:var(--text-dim); max-width:720px; line-height:1.7; margin-bottom:0;">접착제 대신 <strong>스폿용접</strong>으로 설치하는 <strong>용접형 스트레인게이지</strong>의 종류와 부착법, 측정법을 정리했습니다. 접착제가 견디지 못하는 300~800℃ 고온이나 가혹 환경, 대형 구조물 현장 계측에 사용합니다.</p>
+    </div>
+    <div class="htg-stat-grid fade-in"><div class="htg-stat"><div class="v">~800℃</div><div class="l">TML AWHU<br>정적·동적 측정</div></div><div class="htg-stat"><div class="v">경화 불필요</div><div class="l">스폿용접 후<br>바로 결선·측정</div></div><div class="htg-stat"><div class="v">3가지 구성</div><div class="l">1/4 브리지 · 풀 브리지<br>· 동적 전용(HPF)</div></div></div>
+  </div>
+</section>
+
+<section style="padding:0 0 40px;">
+  <div class="container" style="max-width:860px;">
+<div class="htg-section fade-in">
+<h2 class="htg-title">용접형 스트레인게이지란</h2>
+
+<p>용접형 스트레인게이지(Weldable Strain Gauge)는 감지부를 <strong>얇은 금속 베이스(스테인리스·인코넬)에 미리 부착하거나 금속관 안에 봉입</strong>해 두고, 현장에서는 이 금속 베이스를 <strong>저에너지 스폿용접</strong>으로 측정 대상에 고정하는 게이지입니다. 접착제 경화가 필요 없어 설치가 빠르고, 봉입형은 300~800℃의 고온이나 수중·가스 환경에서도 사용할 수 있습니다.</p>
+<h3>이런 경우에 적합합니다</h3>
+<ul>
+<li>접착제 사용온도를 넘는 <strong>고온</strong>(300~800℃) — 발전 설비 배관, 보일러, 터빈 케이싱, 배기계</li>
+<li>열경화 접착이 불가능한 <strong>대형 구조물</strong>, 표면 청정도를 확보하기 어려운 건설·플랜트 현장</li>
+<li>수중·고습·가스 등 <strong>가혹 환경의 장기 측정</strong></li>
+<li>짧은 공정 중단 시간 안에 설치해야 하는 <strong>설비 운전 중 계측</strong></li>
+</ul>
+<h3>한계도 알고 선택해야 합니다</h3>
+<ul>
+<li>용접 가능한 금속(강·스테인리스·인코넬 등)에만 적용 가능하며, 얇은 판·소형 부품에는 금속 베이스의 보강 효과와 용접 열 영향이 커집니다.</li>
+<li>금속 베이스를 통해 변형이 전달되므로 접착형보다 감도·응답이 떨어지고, 최대 변형률도 대개 ±1,000~±3,000μm/m 수준입니다.</li>
+<li>곡면 설치는 최소 곡률반경 제한이 있습니다(예: HBK LS31 75mm, MM LWK 50mm).</li>
+</ul>
+
+</div>
+<div class="htg-section fade-in">
+<h2 class="htg-title">종류: TML(도쿄쇼키) AW 시리즈</h2>
+<div class="htg-tbl-wrap"><table class="htg-tbl"><tr><th>모델</th><th>사용온도</th><th>브리지 구성</th><th>베이스 / 치수</th><th>특징</th></tr><tr><td><strong>AWM-8</strong></td><td>−196~+300℃ (정적·동적)</td><td>1/4 브리지 3선식, 120Ω</td><td>인코넬600(-1A) 또는 SUS304(-1B), L16×W5×T0.7mm</td><td>감지부 금속관 봉입, MI 케이블 2m + 비닐 0.5m</td></tr><tr><td><strong>AWH-4 / AWH-8</strong></td><td>정적 −196~+600℃<br>동적 −196~+650℃</td><td>풀 브리지 (액티브+더미 하프 + 온도보상 기판)</td><td>인코넬600 또는 SUS304</td><td>정적 600℃급, 가스·액체 환경 사용 가능</td></tr><tr><td><strong>AWHU-5 / AWHU-8</strong></td><td>−196~+800℃ (정적·동적)</td><td>풀 브리지 + 온도보상 기판</td><td>인코넬600, L16×W3×T0.8mm(-8)</td><td>800℃급 최고 사양, MI 케이블 + FEP 케이블</td></tr><tr><td><strong>AWMD-5 / AWMD-8</strong></td><td>−196~+800℃ (동적 전용)</td><td>1/4 브리지 3선식을 하이패스 필터로 풀 브리지 측정</td><td>인코넬600</td><td>DC 여기 동적 변형 측정기 전용, HPF 1.6/7.2/16Hz 선택</td></tr><tr><td><strong>AW-6-350</strong></td><td>−196~+300℃</td><td>1/4 브리지 3선식, 350Ω</td><td>SUS304 0.08mm 시트, L24×W5mm</td><td>고온 게이지를 얇은 시트에 열경화 접착한 구조, 2축(AWCA)·3축(AWRA) 있음</td></tr><tr><td><strong>AWC-8B</strong></td><td>−20~+100℃</td><td>1/4 브리지 3선식, 120Ω</td><td>SUS304, L28×W5×T1mm</td><td>스테인리스관 봉입, 수중·장기 측정용</td></tr></table></div><p class="htg-note">※ AW 시리즈 형번 예: <strong>AWH-8-7A-2-11.0</strong> = AWH, 게이지 길이 8mm, 온도보상 범위 7(RT~600℃), 베이스 A(인코넬600), MI 케이블 2(Ø1.6mm 2m), 보상 대상 소재 11.0(연강). AWH·AWHU는 측정 소재·MI 케이블 길이·온도 범위에 맞춰 열출력을 조정하는 주문 제작품입니다(AWH-4-7A-2-11.0, AWH-8-7A-2-11.0 제외).</p>
+</div>
+<div class="htg-section fade-in">
+<h2 class="htg-title">종류: HBK 및 기타 제조사</h2>
+<div class="htg-tbl-wrap"><table class="htg-tbl"><tr><th>제조사 / 모델</th><th>사용온도</th><th>구성</th><th>비고</th></tr><tr><td><strong>HBK LS31</strong></td><td>−50~+250℃, 단시간 300℃ (공식 제품 페이지 기준)</td><td>6mm 포일 격자, 350Ω, 1/4 브리지, 금속 캐리어 40×10mm, 0.5m 리드</td><td>페라이트강 매칭(10.8ppm/K), 패키지당 5개 + 연습용 플레이트 2장</td></tr><tr><td><strong>Kyowa KH</strong></td><td>−50~+350℃</td><td>NiCr 포일, 스테인리스 베이스</td><td>스폿용접</td></tr><tr><td><strong>Kyowa KHC</strong></td><td>−196~+550℃</td><td>내열 특수합금 봉입형, MI 케이블</td><td>스폿용접, 액티브-더미 구성</td></tr><tr><td><strong>MM LWK</strong></td><td>−195~+260℃ (단시간 +290℃)</td><td>NiCr 격자, 유리섬유 에폭시-페놀 봉입, 3선식 테플론 리드 250mm</td><td>±5,000μm/m, 최소 곡률반경 약 50mm</td></tr></table></div><p class="htg-note">※ HBK LS31은 구 카탈로그(2010)와 현재 공식 페이지의 온도 표기가 다르므로 구매 시점 데이터시트로 확인하시기 바랍니다.</p>
+</div>
+<div class="htg-section fade-in">
+<h2 class="htg-title">부착법: 스폿용접 절차 (TML W-50RC 기준)</h2>
+
+<p>용접형 게이지는 전용 <strong>콘덴서 방전식 스폿용접기</strong>로 설치합니다. TML W-50RC는 용접 에너지 1~10 / 5~50 W·s(2레인지, 연속 가변), 펄스 폭 약 5ms, 가압력 4.9~19.6N, 팁 Ø1mm 사양으로, 짧은 펄스 덕분에 측정 대상의 열 손상이 매우 작습니다.</p>
+<div class="htg-steps"><div class="htg-step"><span class="n">01</span><div><div class="t">시험 용접(필링 테스트)</div><div class="d">측정 대상과 같은 소재(또는 동봉된 연습용 플레이트)에 금속 리본을 용접한 뒤 떼어내 봅니다. 리본이 찢어지며 용접점이 모재에 남으면 양호, 쉽게 떨어지거나 구멍이 나면 에너지·가압력을 조정합니다.</div></div></div><div class="htg-step"><span class="n">02</span><div><div class="t">표면 처리</div><div class="d">용접 부위의 도장·산화 스케일·녹을 제거하고 사포(#400 동봉)로 금속면을 노출한 뒤 탈지합니다. 접착형만큼 엄격하지는 않지만 용접 품질을 위해 금속면 노출은 필수입니다.</div></div></div><div class="htg-step"><span class="n">03</span><div><div class="t">위치 마킹</div><div class="d">게이지 중심과 축 방향 기준선을 표시합니다.</div></div></div><div class="htg-step"><span class="n">04</span><div><div class="t">슬리브·케이블 선고정</div><div class="d">봉입형(AWM·AWH·AWHU)은 게이지를 대상면에 밀착시킨 상태에서 MI 케이블 슬리브 A를 동봉된 금속 리본으로 먼저 고정합니다.</div></div></div><div class="htg-step"><span class="n">05</span><div><div class="t">감지부 가고정</div><div class="d">게이지 감지부를 기준선에 맞추고, 양쪽에 1점씩 스폿용접해 위치를 잡습니다.</div></div></div><div class="htg-step"><span class="n">06</span><div><div class="t">본용접</div><div class="d">제조사 매뉴얼의 순서대로 베이스 둘레를 약 0.8mm 간격으로 용접합니다. 한쪽으로 몰아서 용접하면 베이스가 들뜨거나 비틀리므로 순서를 지킵니다.</div></div></div><div class="htg-step"><span class="n">07</span><div><div class="t">케이블 고정</div><div class="d">MI 케이블과 연장 케이블을 금속 리본(5mm·10mm × 0.08mm)으로 고정합니다. 케이블을 약간 곡선으로 두어 슬리브에 하중이 걸리지 않게 하고, 직선으로 팽팽하게 고정하면 꺾임으로 감지부가 손상될 수 있습니다.</div></div></div><div class="htg-step"><span class="n">08</span><div><div class="t">보호 및 점검</div><div class="d">필요 시 고온 코팅재로 보호하고, 게이지 저항·절연저항을 확인합니다. 접착형처럼 경화 대기 시간이 없어 바로 결선·측정할 수 있습니다.</div></div></div></div>
+</div>
+<div class="htg-section fade-in">
+<h2 class="htg-title">측정법</h2>
+<div class="htg-tbl-wrap"><table class="htg-tbl"><tr><th>모델</th><th>결선 / 측정 방식</th><th>측정 시 유의점</th></tr><tr><td>AWM, AW-6, AWC, HBK LS31</td><td>1/4 브리지 3선식으로 일반 스트레인 앰프(브리지 입력)에 연결</td><td>열출력이 그대로 출력에 포함되므로 온도 동시 측정 후 보정, 3선식으로 리드 저항 온도 변화 상쇄</td></tr><tr><td>AWH, AWHU</td><td>액티브+더미 하프 브리지를 동봉된 온도보상 기판으로 풀 브리지 구성 후 앰프에 연결</td><td>보상 기판·MI 케이블 길이·소재 조건이 세트로 조정되어 있으므로 케이블을 임의로 자르거나 교체하지 않음</td></tr><tr><td>AWMD</td><td>동봉 하이패스 필터를 거쳐 풀 브리지로 DC 여기 동적 변형 측정기에 연결</td><td><strong>동적 전용</strong> — 필터 차단 주파수(1.6/7.2/16Hz) 이하의 정적 성분은 측정 불가</td></tr></table></div>
+<h3>측정 정확도를 높이는 방법</h3>
+<ul>
+<li><strong>게이지율(감도) 적용</strong> — 용접형은 접착형보다 게이지율이 낮거나 금속 베이스 전달 손실이 있으므로, 패키지에 표기된 게이지율을 앰프에 정확히 입력합니다.</li>
+<li><strong>온도 동시 측정</strong> — 게이지 인근에 열전대를 함께 용접·고정해 열출력과 게이지율 온도 변화를 보정합니다.</li>
+<li><strong>설치 후 영점 확인</strong> — 무하중 상태에서 사용 온도까지 승온·냉각해 영점 복귀성을 확인하고 기준값을 기록합니다.</li>
+<li><strong>션트 교정</strong> — MI 케이블·연장 케이블이 길어 생기는 감도 저하를 션트 저항으로 확인합니다.</li>
+<li><strong>노이즈 대책</strong> — 고온 설비 주변은 히터·모터 노이즈가 크므로 차폐 접지를 한 점에서 처리하고, AW 시리즈의 접지(E) 옵션 등을 활용합니다.</li>
+</ul>
+<p>씨앤디테크는 HBM QuantumX 등 다채널 DAQ와 함께 용접형·고온 접착형 게이지를 조합한 <a href="field-service.html" style="color:var(--accent-deep);">현장 고온 계측</a>을 수행합니다.</p>
+<div class="htg-links">
+<a href="high-temperature-strain-gauge.html">고온용 스트레인게이지 종류</a>
+<a href="high-temperature-strain-gauge-bonding.html">고온용 스트레인게이지 부착법</a>
+<a href="weldable-strain-gauge.html">용접형 스트레인게이지</a>
+<a href="field-service.html">현장계측용역 (고온 스트레인게이지)</a>
+<a href="strain-gauge-bonding.html">스트레인게이지 부착법 (상온)</a>
+</div>
+</div>
+
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="sec-faq" style="padding-top:20px;">
+  <div class="container" style="max-width:860px;">
+    <div class="fade-in">
+      <h2 class="htg-title">자주 묻는 질문</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-q"><span>용접형 스트레인게이지는 측정 대상에 손상을 주지 않나요?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-a"><p>전용 콘덴서 방전식 스폿용접기는 펄스 폭이 수 ms로 매우 짧아 열 영향 범위가 용접점 주변 극히 일부로 제한됩니다. 다만 얇은 판, 피로 시험 시편, 열처리 민감 소재는 용접점이 응력 집중원이 될 수 있으므로 적용 여부를 사전에 검토해야 합니다.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q"><span>일반 스폿용접기로 설치해도 되나요?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-a"><p>권장하지 않습니다. 일반 저항용접기는 에너지가 커서 금속 베이스가 녹거나 감지부가 손상됩니다. TML W-50RC처럼 용접 에너지를 1~50W·s 범위에서 정밀하게 조정할 수 있는 전용 용접기를 사용하고, 시험 용접으로 조건을 먼저 확인합니다.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q"><span>알루미늄이나 비금속에도 사용할 수 있나요?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-a"><p>용접형은 스폿용접이 가능한 금속(탄소강, 스테인리스, 인코넬 등)에만 적용됩니다. 알루미늄은 스폿용접 조건 확보가 어려워 일반적으로 접착형 게이지를 사용하며, 콘크리트·복합재 등 비금속도 접착형을 사용합니다.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q"><span>800℃에서 정적 측정이 가능한가요?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-a"><p>TML AWHU는 800℃까지 정적·동적 측정이 가능합니다. AWMD도 800℃까지 사용할 수 있지만 하이패스 필터를 거치는 동적 전용 제품입니다. 고온 정적 측정은 열출력·드리프트 보정이 결과를 좌우하므로 온도 동시 측정과 사전 열 사이클이 필요합니다.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q"><span>용접형과 고온 접착형 중 무엇을 선택해야 하나요?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-a"><p>300℃ 이하이고 오븐·히터로 접착제 경화가 가능하면 접착형(TML ZF, HBK C 시리즈)이 감도와 응답이 좋습니다. 300℃를 넘거나, 대형 구조물이라 열경화가 불가능하거나, 수중·가스 환경의 장기 측정이라면 용접형이 유리합니다.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q"><span>MI 케이블은 잘라서 길이를 조정해도 되나요?</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-a"><p>안 됩니다. AWH·AWHU는 MI 케이블 길이까지 포함해 열출력을 조정한 주문 제작품입니다. 필요한 길이는 주문 시 지정(MI 케이블 1m 단위, 비닐 케이블 0.5m 단위)하고, 연장이 필요하면 상온 구간에서 일반 케이블로 연장합니다.</p></div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section style="padding:40px 0 100px;">
+  <div class="container" style="max-width:860px;">
+    <div style="padding:36px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:var(--radius);">
+      <h3 style="font-size:20px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">용접형 스트레인게이지 공급·현장 계측 문의</h3>
+      <p style="font-size:14px; color:var(--text-dim); margin-bottom:20px; line-height:1.75;">씨앤디테크는 TML·HBK·Kyowa·MM 고온용·용접형 스트레인게이지 공급과 함께 부착, 결선, 측정, 데이터 해석까지 현장 계측 서비스를 제공합니다. 측정 온도와 대상 소재를 알려주시면 적합한 게이지·접착제·리드선 조합을 제안해 드립니다.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary">문의하기 →</a>
+        <a href="tel:031-680-1225" class="btn btn-ghost">031-680-1225</a>
+        <a href="mailto:wgjeon@cndtec.co.kr" class="btn btn-ghost">wgjeon@cndtec.co.kr</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <img src="../assets/images/cnd-logo-white.png" alt="CND TECH" class="brand-logo-dark" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-family:'Pretendard',sans-serif; font-weight:700; font-size:16px; color:#fff">CND TECH</span>
+        <p>시험·계측 토탈 솔루션. 25년 이상의 현장 경험으로, 측정의 정확도를 책임집니다.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h5>COMPANY</h5><ul><li><a href="../about.html">회사소개</a></li><li><a href="../products.html">사업분야</a></li><li><a href="../projects.html">주요실적</a></li></ul></div>
+        <div class="footer-col"><h5>RESOURCES</h5><ul><li><a href="residual-stress.html">잔류응력 측정</a></li><li><a href="strain-gauge.html">스트레인게이지</a></li><li><a href="strain-gauge-bonding.html">스트레인게이지 부착법</a></li><li><a href="pcb-stress.html">PCB 응력 측정</a></li></ul></div>
+        <div class="footer-col"><h5>CONTACT</h5><ul><li><a href="tel:031-680-1225">031-680-1225</a></li><li><a href="mailto:wgjeon@cndtec.co.kr">wgjeon@cndtec.co.kr</a></li><li><a href="https://candj.tistory.com/" target="_blank">Tistory Blog</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-meta"><span>© 2026 CNDTECH (씨앤디테크) · 경기도 화성시 동탄영천동 131 코너원스마트타워 1018호 · TEL 031-680-1225 · wgjeon@cndtec.co.kr</span></div>
+  </div>
+</footer>
+<script>
+const langBtns = document.querySelectorAll('.lang-btn');
+const setLang = (lang) => {
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-ko]').forEach(el => { const t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
+  langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  try { localStorage.setItem('cndtec-lang', lang); } catch(e) {}
+};
+langBtns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try {
+  const urlLang = new URLSearchParams(location.search).get('lang');
+  if (urlLang === 'en' || urlLang === 'ko') { setLang(urlLang); }
+  else { const saved = localStorage.getItem('cndtec-lang'); if (saved) setLang(saved); }
+} catch(e) {}
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navClose = document.getElementById('navClose');
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose && navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.addEventListener('click', e => { if (e.target === mobileNav) mobileNav.classList.remove('open'); });
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => { document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 40); });
+</script>
+
+
+<script src="../js/main.js"></script>
+</body>
+</html>

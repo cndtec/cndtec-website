@@ -349,4 +349,22 @@
   </url>
 
 
+  <url>
+    <loc>https://www.cndtec.co.kr/resources/high-temperature-strain-gauge.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.cndtec.co.kr/resources/high-temperature-strain-gauge-bonding.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.cndtec.co.kr/resources/weldable-strain-gauge.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

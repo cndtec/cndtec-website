@@ -5,8 +5,29 @@
 <link>https://www.cndtec.co.kr/resources/index.html</link>
 <description>잔류응력·스트레인게이지·진동·토크·DAQ 등 계측 기술자료 업데이트 피드</description>
 <language>ko</language>
-<lastBuildDate>Fri, 23 Oct 2026 00:00:00 +0900</lastBuildDate>
+<lastBuildDate>Sun, 08 Nov 2026 00:00:00 +0900</lastBuildDate>
 <atom:link href="https://www.cndtec.co.kr/rss.xml" rel="self" type="application/rss+xml" />
+<item>
+<title>고온용 스트레인게이지 (High-Temperature Strain Gauge) - HBK·TML 제품 비교</title>
+<link>https://www.cndtec.co.kr/resources/high-temperature-strain-gauge.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/high-temperature-strain-gauge.html</guid>
+<pubDate>Sun, 08 Nov 2026 00:00:00 +0900</pubDate>
+<description>200~350℃ 고온 접착형과 800℃급 용접형까지, TML QF·ZF·EF·HZF와 HBK Y·C 시리즈·LS31의 사용온도, 온도보상, 접착제 조합을 비교하고 선정 기준을 정리했습니다.</description>
+</item>
+<item>
+<title>고온용 스트레인게이지 부착법 (High-Temperature Installation) - 접착제·경화·유의사항</title>
+<link>https://www.cndtec.co.kr/resources/high-temperature-strain-gauge-bonding.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/high-temperature-strain-gauge-bonding.html</guid>
+<pubDate>Sun, 08 Nov 2026 00:00:00 +0900</pubDate>
+<description>고온용 스트레인게이지 부착 절차와 유의사항. TML NP-50B·C-1, HBK X280·EP 계열 접착제 경화 조건, 후경화, 고온 결선·코팅, 열출력 보정까지 정리했습니다.</description>
+</item>
+<item>
+<title>용접형 스트레인게이지 (Weldable Strain Gauge) - 종류·부착법·측정법</title>
+<link>https://www.cndtec.co.kr/resources/weldable-strain-gauge.html</link>
+<guid isPermaLink="true">https://www.cndtec.co.kr/resources/weldable-strain-gauge.html</guid>
+<pubDate>Sun, 08 Nov 2026 00:00:00 +0900</pubDate>
+<description>용접형 스트레인게이지의 종류(TML AWM·AWH·AWHU·AWMD·AW-6, HBK LS31 등), 스폿용접 부착 절차와 브리지 구성별 측정 방법, 유의사항을 정리했습니다.</description>
+</item>
 <item>
 <title>홀드릴링 잔류응력 측정 시스템 MTS3000 - ASTM E837</title>
 <link>https://www.cndtec.co.kr/resources/mts3000-hole-drilling-system.html</link>
