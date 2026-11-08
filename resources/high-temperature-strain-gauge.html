@@ -118,7 +118,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
    "name": "고온에서 측정값이 하중 없이도 변하는 이유는 무엇인가요?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "온도 변화로 생기는 겉보기 변형률(열출력) 때문입니다. 게이지 격자의 저항온도계수와 게이지·시편 간 선팽창계수 차이로 발생하며, 자기온도보상 범위를 벗어나면 크게 증가합니다. 제조사가 제공하는 열출력 곡선과 동시 측정한 온도로 보정하거나, 더미 게이지를 이용한 하프 브리지로 상쇄합니다."
+    "text": "온도 변화로 생기는 Apparent Strain(열출력) 때문입니다. 게이지 격자의 저항온도계수와 게이지·시편 간 선팽창계수 차이로 발생하며, 자기온도보상 범위를 벗어나면 크게 증가합니다. 제조사가 제공하는 열출력 곡선과 동시 측정한 온도로 보정하거나, 더미 게이지를 이용한 하프 브리지로 상쇄합니다."
    }
   },
   {
@@ -126,7 +126,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
    "name": "온도보상 코드 -11, -17, -23은 무엇을 뜻하나요?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "측정 대상 소재의 선팽창계수(×10-6/℃)입니다. -11은 연강, -17은 스테인리스강(SUS304 등), -23은 알루미늄입니다. 소재와 코드가 맞지 않으면 온도 변화에 따른 겉보기 변형률이 크게 발생하므로 반드시 일치시켜야 합니다."
+    "text": "측정 대상 소재의 선팽창계수(×10-6/℃)입니다. -11은 연강, -17은 스테인리스강(SUS304 등), -23은 알루미늄입니다. 소재와 코드가 맞지 않으면 온도 변화에 따른 Apparent Strain이 크게 발생하므로 반드시 일치시켜야 합니다."
    }
   },
   {
@@ -200,7 +200,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
     <div style="margin-top:20px;">
       <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--orange-tint); border:1px solid var(--orange-line); border-radius:999px; font-family:'Pretendard',sans-serif; font-size:11px; color:var(--accent-deep); font-weight:700; margin-bottom:20px;">STRAIN GAUGE · HIGH TEMPERATURE · TML · HBK</div>
       <h1 style="font-family:'Manrope','Pretendard',sans-serif; font-size:clamp(28px,5vw,52px); font-weight:700; letter-spacing:-0.03em; margin-bottom:16px; color:var(--charcoal);">고온용 스트레인게이지<br><span class="accent" style="white-space:nowrap">(High-Temperature Strain Gauge)</span></h1>
-      <p style="font-size:17px; color:var(--text-dim); max-width:720px; line-height:1.7; margin-bottom:0;">일반 스트레인게이지가 견디지 못하는 200~800℃ 환경에서 사용하는 <strong>고온용 스트레인게이지</strong>의 종류를 <strong>TML(도쿄쇼키)</strong>와 <strong>HBK(HBM)</strong> 제품 중심으로 비교하고, 온도대별 선정 기준을 정리했습니다.</p>
+      <p style="font-size:17px; color:var(--text-dim); max-width:720px; line-height:1.7; margin-bottom:0;">200~800℃ 환경에서 사용하는 <strong>고온용 스트레인게이지</strong>의 종류를 <strong>TML(도쿄쇼키)</strong>와 <strong>HBK(HBM)</strong> 제품 중심으로 비교하고, 온도대별 선정 기준을 정리했습니다.</p>
     </div>
     <div class="htg-stat-grid fade-in"><div class="htg-stat"><div class="v">~350℃</div><div class="l">고온 접착형<br>TML HZF 기준</div></div><div class="htg-stat"><div class="v">~800℃</div><div class="l">용접형(봉입형)<br>TML AWHU 기준</div></div><div class="htg-stat"><div class="v">시스템 온도</div><div class="l">게이지·접착제·리드·코팅 중<br>가장 낮은 값</div></div></div>
   </div>
@@ -213,7 +213,7 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
 
 <p>일반 스트레인게이지(Cu-Ni 합금 포일 + 폴리이미드·에폭시 베이스)는 대부분 <strong>약 80~150℃</strong>에서 사용 한계에 도달합니다. 그 이상의 온도에서는 다음 네 가지 문제가 동시에 커지기 때문에, 격자 합금·베이스·접착제·리드선을 모두 고온용으로 바꾼 전용 게이지를 사용합니다.</p>
 <ul>
-<li><strong>겉보기 변형률(열출력, Thermal Output)</strong> — 하중이 없어도 온도만으로 출력이 발생합니다. 자기온도보상 범위를 벗어나면 그 양이 급격히 커집니다.</li>
+<li><strong>Apparent Strain(열출력, Thermal Output)</strong> — 하중이 없어도 온도만으로 출력이 발생합니다. 자기온도보상 범위를 벗어나면 그 양이 급격히 커집니다.</li>
 <li><strong>게이지율의 온도 변화</strong> — 고온에서는 게이지율 자체가 변하므로 감도 보정이 필요합니다.</li>
 <li><strong>영점 드리프트·크리프</strong> — 접착층과 베이스가 고온에서 서서히 변형되어 정적(장시간) 측정의 영점이 흔들립니다.</li>
 <li><strong>절연저항 저하·산화</strong> — 접착제·코팅·리드선 피복이 열화되고 금속 표면이 산화되면서 신호가 불안정해집니다.</li>
@@ -299,13 +299,13 @@ body, .container, p, h1, h2, h3, h4, h5, span, div, li, td, th, button, a {
           <summary class="faq-q"><span>고온에서 측정값이 하중 없이도 변하는 이유는 무엇인가요?</span>
             <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
-          <div class="faq-a"><p>온도 변화로 생기는 <strong>겉보기 변형률(열출력)</strong> 때문입니다. 게이지 격자의 저항온도계수와 게이지·시편 간 선팽창계수 차이로 발생하며, 자기온도보상 범위를 벗어나면 크게 증가합니다. 제조사가 제공하는 열출력 곡선과 동시 측정한 온도로 보정하거나, 더미 게이지를 이용한 하프 브리지로 상쇄합니다.</p></div>
+          <div class="faq-a"><p>온도 변화로 생기는 <strong>Apparent Strain(열출력)</strong> 때문입니다. 게이지 격자의 저항온도계수와 게이지·시편 간 선팽창계수 차이로 발생하며, 자기온도보상 범위를 벗어나면 크게 증가합니다. 제조사가 제공하는 열출력 곡선과 동시 측정한 온도로 보정하거나, 더미 게이지를 이용한 하프 브리지로 상쇄합니다.</p></div>
         </details>
         <details class="faq-item">
           <summary class="faq-q"><span>온도보상 코드 -11, -17, -23은 무엇을 뜻하나요?</span>
             <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
           </summary>
-          <div class="faq-a"><p>측정 대상 소재의 선팽창계수(×10<sup>-6</sup>/℃)입니다. -11은 연강, -17은 스테인리스강(SUS304 등), -23은 알루미늄입니다. 소재와 코드가 맞지 않으면 온도 변화에 따른 겉보기 변형률이 크게 발생하므로 반드시 일치시켜야 합니다.</p></div>
+          <div class="faq-a"><p>측정 대상 소재의 선팽창계수(×10<sup>-6</sup>/℃)입니다. -11은 연강, -17은 스테인리스강(SUS304 등), -23은 알루미늄입니다. 소재와 코드가 맞지 않으면 온도 변화에 따른 Apparent Strain이 크게 발생하므로 반드시 일치시켜야 합니다.</p></div>
         </details>
         <details class="faq-item">
           <summary class="faq-q"><span>고온용 게이지에 일반 비닐 리드선을 사용해도 되나요?</span>
