@@ -134,11 +134,11 @@
 <description>선박·상선 거주구역 진동을 ISO 20283-5(구 ISO 6954) 기준으로 측정·평가하는 방법. Wm 가중필터·3축 측정 절차, MMF VM31 휴대용 진동측정기와 3축 가속도센서 조합까지 소개. 씨앤디테크 공급·기술지원.</description>
 </item>
 <item>
-<title>DAQ 데이터수집장치 완전 가이드 — 데이터로거·모듈형·스트레인게이지 측정·HBM·Gantner·GTDL</title>
+<title>데이터수집장치(DAQ) 종류·선정 방법 — 데이터로거·모듈형·스트레인게이지 측정·HBM·Gantner·GTDL</title>
 <link>https://www.cndtec.co.kr/resources/daq-system.html</link>
 <guid isPermaLink="true">https://www.cndtec.co.kr/resources/daq-system.html</guid>
 <pubDate>Fri, 24 Jul 2026 00:00:00 +0900</pubDate>
-<description>DAQ(데이터수집장치·데이터로거) 종류·선택 완전 가이드. 데이터로거·DAQ장치·모듈식 3가지 유형 비교, ADC 분해능 원리, 스트레인게이지·센서 다채널 측정, HBM QuantumX·Gantner Q.Series·GTDL 제품 소개. 씨앤디테크.</description>
+<description>DAQ(데이터수집장치·데이터로거) 종류·선택 가이드. 데이터로거·DAQ장치·모듈식 3가지 유형 비교, ADC 분해능 원리, 스트레인게이지·센서 다채널 측정, HBM QuantumX·Gantner Q.Series·GTDL 제품 소개. 씨앤디테크.</description>
 </item>
 <item>
 <title>스트레인게이지 부착·측정 지원 - 자동차 언더커버 변형 측정 (3축 로젯·3D 스캐닝)</title>
@@ -166,7 +166,7 @@
 <link>https://www.cndtec.co.kr/resources/building-vibration-monitoring.html</link>
 <guid isPermaLink="true">https://www.cndtec.co.kr/resources/building-vibration-monitoring.html</guid>
 <pubDate>Thu, 23 Jul 2026 00:00:00 +0900</pubDate>
-<description>건축물·빌딩 진동 상시 모니터링 완전 가이드. 진동 발생 원인, 측정 목표·매개변수, DIN 4150-3·BS 7385 등 국제 표준, 독일 MMF VM40C 진동 모니터(3축 가속도계, IoT 원격 모니터링, SMS 알람) 소개.</description>
+<description>건축물·빌딩 진동 상시 모니터링 가이드. 진동 발생 원인, 측정 목표·매개변수, DIN 4150-3·BS 7385 등 국제 표준, 독일 MMF VM40C 진동 모니터(3축 가속도계, IoT 원격 모니터링, SMS 알람) 소개.</description>
 </item>
 <item>
 <title>진동 센서 교정기 - 가속도계·속도계 현장 캘리브레이터 (MMF VC20·VC21·VC120)</title>
@@ -176,14 +176,14 @@
 <description>가속도계·속도계·변위 센서 감도를 현장에서 검증하는 진동 교정기 가이드. 고정주파수 VC20, 다중주파수 VC21·VC21D, 광대역 VC120 등 독일 MMF 라인업과 선정 기준 소개. 씨앤디테크 공급·기술지원.</description>
 </item>
 <item>
-<title>토크 측정 방법 완전 가이드 — SAW·EMD·광학·토크센서·스트레인게이지 5가지 방식 비교</title>
+<title>토크 측정 방법 5가지 비교 — SAW·EMD·광학·토크센서·스트레인게이지</title>
 <link>https://www.cndtec.co.kr/resources/torque-measurement.html</link>
 <guid isPermaLink="true">https://www.cndtec.co.kr/resources/torque-measurement.html</guid>
 <pubDate>Mon, 20 Jul 2026 00:00:00 +0900</pubDate>
 <description>토크를 측정하는 5가지 방식(SAW·EMD·광학·토크센서·스트레인게이지 무선)을 비교하고, 가장 정밀한 토크센서(Torque Transducer)의 선정 기준과 Shaft형·Flange형 종류를 씨앤디테크가 설명합니다.</description>
 </item>
 <item>
-<title>축마력(Shaft Power)·비틀림 진동(Torsional Vibration) 측정·분석 완전 가이드 — Telemetry·TNF·API 684</title>
+<title>축마력(Shaft Power)·비틀림 진동(Torsional Vibration) 측정·분석 방법 — Telemetry·TNF·API 684</title>
 <link>https://www.cndtec.co.kr/resources/torsional-vibration.html</link>
 <guid isPermaLink="true">https://www.cndtec.co.kr/resources/torsional-vibration.html</guid>
 <pubDate>Mon, 20 Jul 2026 00:00:00 +0900</pubDate>
@@ -285,14 +285,14 @@
 <link>https://www.cndtec.co.kr/resources/plastic-residual-stress.html</link>
 <guid isPermaLink="true">https://www.cndtec.co.kr/resources/plastic-residual-stress.html</guid>
 <pubDate>Wed, 24 Jun 2026 00:00:00 +0900</pubDate>
-<description>ABS·PC·HDPE·PP·PA·POM·테프론(PTFE)·CFRP 등 플라스틱·사출물·복합재료 잔류응력 측정 완전 가이드. MTS3000-Restan 특수 고분자 모드로 더미게이지 기술·저속 드릴링 적용. ASTM E837 기준 성적서 발행. 씨앤디테크 장비 공급 및 측정 용역.</description>
+<description>ABS·PC·HDPE·PP·PA·POM·테프론(PTFE)·CFRP 등 플라스틱·사출물·복합재료 잔류응력 측정 가이드. MTS3000-Restan 특수 고분자 모드로 더미게이지 기술·저속 드릴링 적용. ASTM E837 기준 성적서 발행. 씨앤디테크 장비 공급 및 측정 용역.</description>
 </item>
 <item>
 <title>축력 측정 볼트 센서 제작</title>
 <link>https://www.cndtec.co.kr/resources/bolt-tension.html</link>
 <guid isPermaLink="true">https://www.cndtec.co.kr/resources/bolt-tension.html</guid>
 <pubDate>Wed, 24 Jun 2026 00:00:00 +0900</pubDate>
-<description>볼트 축력(Axial Load) 직접 측정 방법 완전 가이드. 풀브릿지 외부 부착형·중심홀 삽입형·와셔형 포스센서 3가지 방식 비교, 제작 4단계 공정, 볼트 규격별 선택 기준, 산업별 적용 사례. 씨앤디테크 커스텀 볼트 센서 제작 문의.</description>
+<description>볼트 축력(Axial Load) 직접 측정 방법 가이드. 풀브릿지 외부 부착형·중심홀 삽입형·와셔형 포스센서 3가지 방식 비교, 제작 4단계 공정, 볼트 규격별 선택 기준, 산업별 적용 사례. 씨앤디테크 커스텀 볼트 센서 제작 문의.</description>
 </item>
 <item>
 <title>휴대용 진동측정 시스템 VM — MMF VM22·VM25·VM31 비교</title>
@@ -327,7 +327,7 @@
 <link>https://www.cndtec.co.kr/resources/pcb-stress.html</link>
 <guid isPermaLink="true">https://www.cndtec.co.kr/resources/pcb-stress.html</guid>
 <pubDate>Mon, 22 Jun 2026 00:00:00 +0900</pubDate>
-<description>IPC/JEDEC-9704A 기반 PCB 스트레인·응력 측정 완전 가이드. BGA 솔더 조인트·MLCC 불량 방지를 위한 3축 로젯 스트레인게이지 부착, HBM QuantumX DAQ 시스템, Pass/Fail 분석 소프트웨어까지 씨앤디테크 토탈 솔루션.</description>
+<description>IPC/JEDEC-9704A 기반 PCB 스트레인·응력 측정 가이드. BGA 솔더 조인트·MLCC 불량 방지를 위한 3축 로젯 스트레인게이지 부착, HBM QuantumX DAQ 시스템, Pass/Fail 분석 소프트웨어까지 씨앤디테크 토탈 솔루션.</description>
 </item>
 <item>
 <title>텔레메터리 시스템 — 회전체 무선 계측·토크·응력·축마력 측정</title>
